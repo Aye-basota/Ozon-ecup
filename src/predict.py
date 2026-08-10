@@ -77,16 +77,18 @@ def main():
     ap.add_argument("--blend", nargs="+", default=["direct"], help="direct two_part catboost")
     ap.add_argument("--weights", nargs="*", type=float, default=None)
     ap.add_argument("--drop", nargs="*", default=None)
+    ap.add_argument("--norm-long", action="store_true")
     ap.add_argument("--delta", type=float, default=0.0, help="глобальный лог-сдвиг")
     ap.add_argument("--seeds", nargs="*", type=int, default=[42])
-    ap.add_argument("--out", default="submission_strategy_1.csv")
+    ap.add_argument("--out", default=None, help="если задан — сразу пишет сабмит")
+    ap.add_argument("--variant", default=None, help="имя, под которым сохранить z на тесте")
     a = ap.parse_args()
 
     from src.train import select_features
     s = Setup(L=a.L, min_history=a.min_history, step=a.step, rounds=a.rounds,
-              train_blocks=a.train_blocks, drop_groups=a.drop or [])
+              train_blocks=a.train_blocks, drop_groups=a.drop or [], norm_long=a.norm_long)
     load()
-    Xt, _ = make_xy(CUTOFF_TEST, s.L, s.panel_blocks, with_target=False)
+    Xt, _ = make_xy(CUTOFF_TEST, s.L, s.panel_blocks, with_target=False, norm_long=s.norm_long)
     feats = select_features(feature_names(Xt), s.drop_groups, None)
     At = to_np(Xt, feats)
     log(f"тестовая матрица {At.shape[0]:,} x {At.shape[1]}")
@@ -108,6 +110,12 @@ def main():
     z = np.average(np.vstack(zs), axis=0, weights=w)     # усреднение В ЛОГ-ПРОСТРАНСТВЕ
     log(f"ансамбль {dict(zip(names, np.round(w, 3)))}: mean(log1p(pred))={z.mean():.4f}")
 
+    variant = a.variant or a.exp
+    np.save(ARTIFACTS / f"ztest_{variant}.npy", z)
+    np.save(ARTIFACTS / f"uid_{variant}.npy", Xt["user_id"].to_numpy())
+    log(f"z на тесте сохранён: artifacts/ztest_{variant}.npy")
+    if not a.out:
+        return
     z_cal = np.maximum(z + a.delta, 0.0)
     lo, hi = ANCHOR_BAND
     log(f"после delta={a.delta:+.4f}: mean(log1p(pred))={z_cal.mean():.4f}  "
@@ -119,7 +127,6 @@ def main():
     check_submission(sub)
     out = SUBMISSIONS / a.out
     sub.write_csv(out, float_precision=6)
-    np.save(ARTIFACTS / f"ztest_{a.exp}.npy", z_cal)
     log(f"сабмит записан: {out}")
 
 

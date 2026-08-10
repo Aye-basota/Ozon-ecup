@@ -47,6 +47,7 @@ def main():
     ap.add_argument("--exp", default=None, help="ID эксперимента с OOF для бэктеста калибровки")
     ap.add_argument("--L", type=int, default=HISTORY_L)
     ap.add_argument("--step", type=int, default=7)
+    ap.add_argument("--skip-panels", action="store_true", help="пропустить часть A")
     a = ap.parse_args()
     L = None if a.L <= 0 else a.L
     load()

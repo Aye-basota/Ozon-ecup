@@ -62,10 +62,15 @@ S3_VAL = dt.date(2025, 2, 13)
 CUTOFF_VAL = VAL_FOLDS_S1[-1]
 
 # --- модель ---------------------------------------------------------------------
+import os
+
+# число потоков — из окружения, чтобы можно было гонять два эксперимента параллельно
+LGB_THREADS = int(os.environ.get("LGB_THREADS", "12"))
+
 LGB_PARAMS = dict(
     objective="regression", metric="rmse", learning_rate=0.05, num_leaves=127,
     min_data_in_leaf=200, feature_fraction=0.7, bagging_fraction=0.8, bagging_freq=1,
-    lambda_l2=5.0, verbose=-1, seed=SEED, num_threads=12, max_bin=63,
+    lambda_l2=5.0, verbose=-1, seed=SEED, num_threads=LGB_THREADS, max_bin=63,
     force_row_wise=True,
 )
 LGB_ROUNDS = 600

@@ -41,6 +41,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--L", type=int, action="append", default=None)
     ap.add_argument("--cuts", nargs="*", default=None)
+    ap.add_argument("--norm-long", action="store_true")
     a = ap.parse_args()
     Ls = a.L or [0, 90, 180, 270]
     cuts = [dt.date.fromisoformat(s) for s in a.cuts] if a.cuts else PAIRS_DEFAULT
@@ -49,11 +50,11 @@ def main():
     print("-" * 110)
     for L in Ls:
         LL = None if L <= 0 else L
-        Xt, _ = make_xy(CUTOFF_TEST, LL, with_target=False)
+        Xt, _ = make_xy(CUTOFF_TEST, LL, with_target=False, norm_long=a.norm_long)
         feats = feature_names(Xt)
         At = to_np(Xt, feats)
         for V in cuts:
-            Xv, _ = make_xy(V, LL)
+            Xv, _ = make_xy(V, LL, norm_long=a.norm_long)
             Av = to_np(Xv, feats)
             auc, drv = adv_auc(Av, At, feats)
             print(f"{L if L else 'нет':>6} {str(V):>12} {auc:>16.4f}   {', '.join(drv[:6])}")

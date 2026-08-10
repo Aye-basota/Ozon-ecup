@@ -40,6 +40,12 @@ GROUPS = {
     "recency": lambda c: c in ("rec_any", "rec_search", "rec_cart", "rec_buy", "rec_cat"),
     "weekend": lambda c: c == "weekend_share",
     "cal": lambda c: c.startswith("cutoff_"),
+    # признаки, глубина которых зависит от того, сколько истории доступно на cutoff'е:
+    # на 2025-04-03 это 92 дня, на тесте — 409. Главные подозреваемые в отказе
+    # экстраполяции (eda_findings §7.4). Работает только при L=None.
+    "long": lambda c: (c.startswith("w365") or c.startswith("all_")
+                       or c.startswith("lifetime_") or c in ("tenure", "first_buy_age")
+                       or c.endswith("_365")),
 }
 
 
@@ -72,7 +78,8 @@ class Setup:
 
     def __init__(self, L=HISTORY_L, min_history=None, step=CUTOFF_STEP, panel_blocks=PANEL_BLOCKS,
                  model="direct", rounds=LGB_ROUNDS, params=None, drop_groups=(), keep_only=None,
-                 calendar=False, weight_tau=None, cutoffs=None, vals=None, train_blocks=None):
+                 calendar=False, weight_tau=None, cutoffs=None, vals=None, train_blocks=None,
+                 norm_long=False):
         self.L = None if (L is None or L <= 0) else L
         self.min_history = min_history if min_history is not None else (self.L or 90)
         self.step = step
@@ -85,6 +92,7 @@ class Setup:
         self.keep_only = keep_only
         self.calendar = calendar
         self.weight_tau = weight_tau          # экспоненциальный вес cutoff'ов, дни
+        self.norm_long = norm_long            # нормировка длинных окон на доступную историю
         self.cutoffs = cutoffs                # 'all' | 'recentN' | явный список
         self.vals = vals or VAL_FOLDS_S1
 
@@ -108,7 +116,8 @@ class Setup:
                     panel_blocks=self.panel_blocks, train_blocks=self.train_blocks,
                     model=self.model, rounds=self.rounds,
                     params=self.params, drop_groups=self.drop_groups, keep_only=self.keep_only,
-                    calendar=self.calendar, weight_tau=self.weight_tau, cutoffs=self.cutoffs)
+                    calendar=self.calendar, weight_tau=self.weight_tau, cutoffs=self.cutoffs,
+                    norm_long=self.norm_long)
 
 
 _XY: dict = {}
@@ -116,11 +125,11 @@ _XY: dict = {}
 
 def xy(T: dt.date, s: Setup, with_target=True, blocks=None):
     b = s.panel_blocks if blocks is None else blocks
-    k = (T, s.L, b, with_target)
+    k = (T, s.L, b, with_target, s.norm_long)
     if len(_XY) > 6:
         _XY.clear()
     if k not in _XY:
-        _XY[k] = make_xy(T, s.L, b, with_target=with_target)
+        _XY[k] = make_xy(T, s.L, b, with_target=with_target, norm_long=s.norm_long)
     return _XY[k]
 
 
@@ -251,7 +260,8 @@ def build_setup(a) -> Setup:
                                            ("min_data_in_leaf", a.min_leaf)] if v is not None},
                  drop_groups=a.drop or [], keep_only=a.keep, calendar=a.calendar,
                  weight_tau=a.weight_tau, cutoffs=a.cutoffs, train_blocks=a.train_blocks,
-                 vals=VAL_FOLDS_S1[-a.folds:] if getattr(a, "folds", 0) else None)
+                 vals=VAL_FOLDS_S1[-a.folds:] if getattr(a, "folds", 0) else None,
+                 norm_long=getattr(a, "norm_long", False))
 
 
 def main():
@@ -271,6 +281,8 @@ def main():
     ap.add_argument("--drop", nargs="*", default=None, choices=list(GROUPS))
     ap.add_argument("--keep", nargs="*", default=None, choices=list(GROUPS))
     ap.add_argument("--calendar", action="store_true")
+    ap.add_argument("--norm-long", action="store_true",
+                    help="нормировать w365_*/tenure на доступную глубину истории")
     ap.add_argument("--weight-tau", type=float, default=None)
     ap.add_argument("--cutoffs", default=None, help="all | recentN | everyN")
     ap.add_argument("--imp", action="store_true")
