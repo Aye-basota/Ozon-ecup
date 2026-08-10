@@ -1,0 +1,37 @@
+﻿[     5s 3.86GB] built 2025-06-15 n=179,735 agg=227 seq=80
+[     9s 4.06GB] built 2025-07-15 n=182,086 agg=227 seq=80
+[    15s 4.29GB] built 2025-08-15 n=185,692 agg=227 seq=80
+[    21s 4.46GB] built 2025-09-16 n=190,690 agg=227 seq=80
+
+================================================================================================
+A. SEQUENCE PROBE: aggregates vs + 80 weekly log-features vs weekly ONLY
+================================================================================================
+  aggregates only        RMSLE=1.77086  mean(z)=2.7343
+  aggregates + weekly    RMSLE=1.77062  delta=-0.00024
+  weekly ONLY            RMSLE=1.79011  (zero hand-made aggregates)
+
+================================================================================================
+B. STRUCTURAL: Poisson(buy-days) x lognormal(value) -> exact E[log1p(S)]
+================================================================================================
+  lambda mean=2.0508  true=1.9762
+  raw           RMSLE=1.80034  mean(z)=2.9654  true=2.6431
+  calibrated (sigma x1.0, mu-0.40)  RMSLE=1.77459  mean(z)=2.7010
+
+================================================================================================
+C. DIVERSITY AND BLENDING (all in log space)
+================================================================================================
+  residual correlations:
+    agg         vs seq_only     pred=0.9734  resid=0.9799
+    agg         vs agg+seq      pred=0.9934  resid=0.9949
+    agg         vs structural   pred=0.9889  resid=0.9904
+    seq_only    vs agg+seq      pred=0.9750  resid=0.9811
+    seq_only    vs structural   pred=0.9706  resid=0.9785
+    agg+seq     vs structural   pred=0.9888  resid=0.9903
+
+  pairwise blends with 'agg':
+    agg + seq_only   : best w=0.25 -> RMSLE=1.76864 (agg alone 1.77086, gain +0.00222)
+    agg + agg+seq    : best w=0.50 -> RMSLE=1.76847 (agg alone 1.77086, gain +0.00239)
+    agg + structural : best w=0.40 -> RMSLE=1.76819 (agg alone 1.77086, gain +0.00267)
+
+  best 3-way agg/agg+seq/structural = 0.3/0.4/0.3 -> RMSLE=1.76713  (gain vs agg alone +0.00373)
+[   174s 4.53GB] done
