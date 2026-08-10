@@ -1,16 +1,100 @@
-"""Единая схема валидации и метрика для всех.
+"""Единая схема валидации и метрика.
 
-Out-of-time: фолды по cutoff-датам из config.CUTOFFS_TRAIN + CUTOFF_VAL.
-Никаких случайных сплитов. Менять — только по явному запросу.
+Out-of-time cutoff-схема. Никаких случайных сплитов: одна строка = один
+пользователь на одном cutoff'е, и порядок во времени обязателен.
+
+Три сценария (research/strategy_1.md §3.2):
+  S1  rolling out-of-time — 4 фолда в конце чистого коридора, train: T <= V-30;
+  S2  max-gap            — train до 2025-06-15, val 2025-10-16 (разрыв 123 дня
+                           ~ тестовому разрыву 120 дней); измеряет дрейф;
+  S3  сезонный           — val 2025-02-13 (календарный аналог теста), 1-блочная
+                           панель; используется ТОЛЬКО для оценки поправки.
 """
-from src.config import CUTOFF_VAL, CUTOFFS_TRAIN
+from __future__ import annotations
+
+import datetime as dt
+
+import numpy as np
+
+from src.config import (CORRIDOR_END, CUTOFF_STEP, HISTORY_L, S2_TRAIN_END, S2_VAL, S3_VAL,
+                        TARGET_DAYS, VAL_FOLDS_S1, cutoff_grid)
 
 
-def get_folds():
-    """Вернуть список (train_cutoffs, val_cutoff) для CV."""
-    raise NotImplementedError
+# --------------------------------------------------------------------------- метрика
+def rmsle(y_true, y_pred) -> float:
+    """Метрика соревнования: RMSLE с log1p и клиппингом отрицательных предсказаний."""
+    return float(np.sqrt(np.mean((np.log1p(y_true) - np.log1p(np.maximum(y_pred, 0.0))) ** 2)))
 
 
-def metric(y_true, y_pred) -> float:
-    """Метрика соревнования. Уточнить на странице e-cup."""
-    raise NotImplementedError
+def rmsle_z(y_true, z_pred) -> float:
+    """То же, но предсказание уже в лог-пространстве z = log1p(pred)."""
+    return float(np.sqrt(np.mean((np.log1p(y_true) - np.maximum(z_pred, 0.0)) ** 2)))
+
+
+def bias_z(y_true, z_pred) -> float:
+    """mean(log1p(y)) - mean(z). Отрицательный = модель перепрогнозирует."""
+    return float(np.log1p(y_true).mean() - np.asarray(z_pred).mean())
+
+
+def best_offset(y_true, z_pred, lo: float = -0.6, hi: float = 0.6, n: int = 241):
+    """Оптимальный глобальный сдвиг в лог-пространстве и скор после него."""
+    ly = np.log1p(y_true)
+    grid = np.linspace(lo, hi, n)
+    sc = np.array([np.sqrt(np.mean((ly - np.maximum(z_pred + d, 0.0)) ** 2)) for d in grid])
+    i = int(sc.argmin())
+    return float(grid[i]), float(sc[i])
+
+
+# --------------------------------------------------------------------------- фолды
+def get_folds(min_history: int = HISTORY_L, step: int = CUTOFF_STEP,
+              vals: list[dt.date] | None = None) -> list[tuple[list[dt.date], dt.date]]:
+    """S1: список (train_cutoffs, val_cutoff).
+
+    Train-cutoff допускается только если его target-окно полностью в прошлом
+    относительно val-cutoff'а: T + TARGET_DAYS <= V. Это исключает пересечение
+    обучающего таргета с признаковым окном валидации.
+    """
+    vals = vals or VAL_FOLDS_S1
+    grid = cutoff_grid(min_history, step)
+    out = []
+    for V in vals:
+        tr = [T for T in grid if T + dt.timedelta(days=TARGET_DAYS) <= V]
+        out.append((tr, V))
+    return out
+
+
+def gap_curve_folds(min_history: int = HISTORY_L, step: int = CUTOFF_STEP,
+                    val: dt.date = S2_VAL, n_train: int = 4):
+    """S2: одна val-точка, несколько train-блоков на растущем удалении от неё.
+
+    Даёт зависимость bias(gap). Реальный разрыв «последний чистый cutoff -> тест»
+    равен 120 дням и локально недостижим, поэтому bias на нём экстраполируется
+    по этой кривой (research/strategy_1.md §10, Эксперимент 5).
+    """
+    grid = [T for T in cutoff_grid(min_history, step) if T + dt.timedelta(days=TARGET_DAYS) <= val]
+    out = []
+    for end_i in range(n_train - 1, len(grid)):
+        tr = grid[max(0, end_i - n_train + 1):end_i + 1]
+        out.append((tr, val, (val - tr[-1]).days))
+    return out
+
+
+def s3_fold(step: int = CUTOFF_STEP):
+    """Сезонный фолд: 1-блочная панель, val = 2025-02-13 (YoY-аналог теста).
+
+    Train — cutoff'ы весны-лета с той же (усечённой) глубиной истории, что и у val.
+    Возвращает (train_cutoffs, val_cutoff, L_eff): на 2025-02-13 доступно всего
+    43 дня истории, поэтому L для этого сценария принудительно мал.
+    """
+    L_eff = 43
+    grid = [dt.date(2025, 4, 15) + dt.timedelta(days=step * k) for k in range(14)]
+    grid = [T for T in grid if T <= CORRIDOR_END]
+    return grid, S3_VAL, L_eff
+
+
+def describe_folds(folds) -> str:
+    rows = []
+    for tr, V in folds:
+        gap = (V - max(tr)).days
+        rows.append(f"  val {V}  train {min(tr)}..{max(tr)} ({len(tr)} cutoffs, gap {gap}d)")
+    return "\n".join(rows)
