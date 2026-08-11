@@ -5,3 +5,10 @@ lightgbm
 catboost
 xgboost
 pyarrow
+
+# Standard DS/ML extras
+matplotlib
+seaborn
+jupyter
+notebook
+ipykernel
