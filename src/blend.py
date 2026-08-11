@@ -19,6 +19,17 @@ from src.tracking import load_oof
 from src.validation import best_offset, rmsle_z
 
 
+def shifted_rmsle(ly: np.ndarray, z: np.ndarray) -> float:
+    """RMSLE после ОПТИМАЛЬНОГО глобального сдвига, аналитически.
+
+    MSE(delta) = mean((ly - z - delta)^2) минимизируется при delta = mean(ly - z),
+    и тогда MSE = Var(ly - z). Сеточный поиск здесь не нужен и в 241 раз дороже —
+    это важно при переборе тысяч комбинаций весов.
+    """
+    r = ly - z
+    return float(np.sqrt(r.var()))
+
+
 def aligned(exps: list[str]):
     """Выравнивает OOF по (cutoff, user_id) — порядок строк обязан совпадать."""
     ds = [load_oof(e) for e in exps]

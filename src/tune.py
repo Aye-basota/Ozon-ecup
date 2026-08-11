@@ -58,15 +58,16 @@ def main():
     ap.add_argument("--rounds", type=int, default=2500)
     ap.add_argument("--lr", type=float, default=0.05)
     ap.add_argument("--folds", type=int, default=2)
+    ap.add_argument("--norm-long", action="store_true")
     a = ap.parse_args()
     load()
     s = Setup(L=a.L, min_history=a.min_history, train_blocks=a.train_blocks,
-              params={"learning_rate": a.lr})
+              params={"learning_rate": a.lr}, norm_long=a.norm_long)
     folds = get_folds(s.min_history, s.step)[-a.folds:]
     feats = feature_names(xy(folds[0][1], s)[0])
 
     if a.mode == "rounds":
-        cps = [200, 400, 600, 900, 1200, 1600, 2000, 2500]
+        cps = [25, 50, 75, 100, 125, 150, 200, 250, 300, 400, 600, 900, 1200, 1600, 2000, 2500]
         cps = [c for c in cps if c <= a.rounds]
         print(f"кривая по раундам, lr={a.lr}, L={a.L}, фолдов={len(folds)}, feats={len(feats)}")
         pf = curve(s, feats, folds, a.rounds, cps)
