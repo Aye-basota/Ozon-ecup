@@ -133,22 +133,43 @@ def xy(T: dt.date, s: Setup, with_target=True, blocks=None):
     return _XY[k]
 
 
+CAL_COLS = ("cutoff_doy_sin", "cutoff_doy_cos", "cutoff_month")
+
+
+def block_rows(T: dt.date, s: Setup) -> int:
+    """Число строк на cutoff'е. Это высота панели — признаки читать для этого не нужно."""
+    if s.train_blocks == 0:
+        return xy(T, s, blocks=0)[0].height
+    from src.features import panel_users
+    return panel_users(T, s.train_blocks).height
+
+
 def assemble(cuts: list[dt.date], s: Setup, feats: list[str], V: dt.date | None = None):
-    Xs, ys, ws = [], [], []
-    for T in cuts:
-        X, y = xy(T, s, blocks=s.train_blocks)
-        A = to_np(X, feats)
+    """Матрица обучения по списку cutoff'ов.
+
+    Блоки пишутся сразу в общий буфер: `np.vstack` держал бы в пике и список
+    блоков, и результат — на плотной сетке это лишние 4.5 ГБ, из-за которых два
+    эксперимента перестают помещаться в память одновременно.
+    """
+    sizes = [block_rows(T, s) for T in cuts]
+    X = np.empty((sum(sizes), len(feats) + (3 if s.calendar else 0)), np.float32)
+    ys, ws, i = [], [], 0
+    for T, n in zip(cuts, sizes):
+        Xb, y = xy(T, s, blocks=s.train_blocks)
+        A = to_np(Xb, feats)
         if s.calendar:
             cal = calendar_cols(T, A.shape[0])
-            A = np.hstack([A] + [cal[c].reshape(-1, 1) for c in ("cutoff_doy_sin", "cutoff_doy_cos",
-                                                                 "cutoff_month")])
-        Xs.append(A)
+            A = np.hstack([A] + [cal[c].reshape(-1, 1) for c in CAL_COLS])
+        assert A.shape[0] == n, f"{T}: строк {A.shape[0]}, панель обещала {n}"
+        X[i:i + n] = A
+        i += n
+        del A
         ys.append(y)
         w = 1.0
         if s.weight_tau and V is not None:
             w = float(np.exp(-((V - T).days) / s.weight_tau))
-        ws.append(np.full(A.shape[0], w, np.float32))
-    return np.vstack(Xs), np.concatenate(ys), np.concatenate(ws)
+        ws.append(np.full(n, w, np.float32))
+    return X, np.concatenate(ys), np.concatenate(ws)
 
 
 def fit(s: Setup, Xtr, ytr, wtr):
@@ -157,6 +178,8 @@ def fit(s: Setup, Xtr, ytr, wtr):
         return models.train_direct(Xtr, ytr, wtr, s.params, s.rounds)
     if s.model == "two_part":
         return models.train_two_part(Xtr, ytr, wtr, s.params, s.rounds)
+    if s.model == "dist":
+        return models.train_dist(Xtr, ytr, wtr, s.params, s.rounds)
     if s.model == "catboost":
         return models.train_catboost(Xtr, ytr, wtr, s.params, s.rounds)
     raise ValueError(s.model)
@@ -165,28 +188,33 @@ def fit(s: Setup, Xtr, ytr, wtr):
 def fit_free(s: Setup, box: list, ytr, wtr):
     """box = [Xtr]. Матрица биннится и освобождается ДО бустинга (экономит 5+ ГБ)."""
     from src import models
-    if s.model in ("direct", "two_part"):
+    if s.model in ("direct", "two_part", "dist"):
         dss = models.make_datasets(s.model, box[0], ytr, wtr, s.params)
         box[0] = None
         gc.collect()
         if s.model == "direct":
             return models.train_direct_ds(dss[0], s.params, s.rounds)
+        if s.model == "dist":
+            return models.train_dist_ds(dss, s.params, s.rounds)
         return models.train_two_part_ds(dss, s.params, s.rounds)
     m = fit(s, box[0], ytr, wtr)
     box[0] = None
     return m
 
 
-def infer(s: Setup, m, A) -> np.ndarray:
+def infer(s: Setup, m, A, num_iteration: int | None = None) -> np.ndarray:
     from src import models
     if s.model == "two_part":
-        return models.predict_two_part(m, A)
+        return models.predict_two_part(m, A, num_iteration)
+    if s.model == "dist":
+        return models.predict_dist(m, A, num_iteration)
     if s.model == "catboost":
         return models.predict_catboost(m, A)
-    return m.predict(A)
+    return m.predict(A, num_iteration=num_iteration)
 
 
-def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=False):
+def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=False,
+        snap: tuple[int, ...] = (), no_log: bool = False):
     load()
     folds = get_folds(s.min_history, s.step, s.vals)
     base_feats = feature_names(xy(folds[0][1], s)[0])
@@ -206,6 +234,7 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
         t = time.time()
         Xtr, ytr, wtr = assemble(tr_cuts, s, feats, V)
         n_tr = Xtr.shape[0]
+        _XY.clear()          # ~2.3 ГБ кэша обучающих фреймов больше не нужны
         box = [Xtr]
         del Xtr
         m = fit_free(s, box, ytr, wtr if s.weight_tau else None)
@@ -224,6 +253,11 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
         log(f"  val {V} (n={len(yv):,}, train {len(tr_cuts)} cuts / {n_tr:,} rows, "
             f"gap {(V - max(tr_cuts)).days}d): RMSLE={sc:.5f} bias={b:+.4f} "
             f"off*={o:+.3f}->{sc_o:.5f}  [{time.time() - t:.0f}s]")
+        for k in snap:
+            # срез по числу раундов стоит один инференс, а не переобучение
+            zk = np.maximum(infer(s, m, Av, num_iteration=k), 0.0)
+            log(f"      срез {k:4d} раундов: RMSLE={rmsle_z(yv, zk):.5f} "
+                f"bias={bias_z(yv, zk):+.4f} off*->{best_offset(yv, zk)[1]:.5f}")
         if verbose_imp and s.model == "direct":
             from src.models import importance
             names = feats + (["cutoff_doy_sin", "cutoff_doy_cos", "cutoff_month"] if s.calendar else [])
@@ -241,12 +275,13 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
     log(f"  CV mean={cv:.5f} std={sd:.5f} | OOF={oof:.5f} bias={bm:+.4f} "
         f"| после сдвига {o_all:+.3f}: {oof_cal:.5f}")
     save_oof(exp_id, np.concatenate(oof_u), np.concatenate(oof_c), z_all, y_all)
-    log_experiment(exp_id=exp_id, description=desc, scenario="S1",
-                   n_features=nfeat, model=s.model, params=s.as_dict(),
-                   cutoffs=f"{len(s.train_cutoffs(s.vals[-1]))} @ step {s.step}", L=s.L,
-                   panel_blocks=s.panel_blocks, fold_scores=scores, cv_mean=cv, cv_std=sd,
-                   bias_mean=bm, best_offset=o_all, cv_mean_calib=oof_cal,
-                   runtime_s=round(time.time() - T0, 1))
+    if not no_log:
+        log_experiment(exp_id=exp_id, description=desc, scenario="S1",
+                       n_features=nfeat, model=s.model, params=s.as_dict(),
+                       cutoffs=f"{len(s.train_cutoffs(s.vals[-1]))} @ step {s.step}", L=s.L,
+                       panel_blocks=s.panel_blocks, fold_scores=scores, cv_mean=cv, cv_std=sd,
+                       bias_mean=bm, best_offset=o_all, cv_mean_calib=oof_cal,
+                       runtime_s=round(time.time() - T0, 1))
     if save_model_feats:
         (ARTIFACTS / f"feats_{exp_id}.txt").write_text("\n".join(feats), encoding="utf-8")
     return dict(exp_id=exp_id, scores=scores, cv=cv, std=sd, oof=oof, bias=bm,
@@ -260,7 +295,8 @@ def build_setup(a) -> Setup:
                                            ("min_data_in_leaf", a.min_leaf)] if v is not None},
                  drop_groups=a.drop or [], keep_only=a.keep, calendar=a.calendar,
                  weight_tau=a.weight_tau, cutoffs=a.cutoffs, train_blocks=a.train_blocks,
-                 vals=VAL_FOLDS_S1[-a.folds:] if getattr(a, "folds", 0) else None,
+                 vals=([dt.date.fromisoformat(v) for v in a.val] if getattr(a, "val", None)
+                       else VAL_FOLDS_S1[-a.folds:] if getattr(a, "folds", 0) else None),
                  norm_long=getattr(a, "norm_long", False))
 
 
@@ -273,7 +309,8 @@ def main():
     ap.add_argument("--step", type=int, default=CUTOFF_STEP)
     ap.add_argument("--panel-blocks", type=int, default=PANEL_BLOCKS)
     ap.add_argument("--train-blocks", type=int, default=None)
-    ap.add_argument("--model", default="direct", choices=["direct", "two_part", "catboost"])
+    ap.add_argument("--model", default="direct",
+                    choices=["direct", "two_part", "catboost", "dist"])
     ap.add_argument("--rounds", type=int, default=LGB_ROUNDS)
     ap.add_argument("--lr", type=float, default=None)
     ap.add_argument("--leaves", type=int, default=None)
@@ -287,8 +324,16 @@ def main():
     ap.add_argument("--cutoffs", default=None, help="all | recentN | everyN")
     ap.add_argument("--imp", action="store_true")
     ap.add_argument("--folds", type=int, default=0, help="взять только последние N фолдов (скрининг)")
+    ap.add_argument("--val", nargs="*", default=None,
+                    help="явные val-cutoff'ы YYYY-MM-DD; нужен, чтобы гнать фолды "
+                         "разными процессами (--folds берёт только ПОСЛЕДНИЕ N)")
+    ap.add_argument("--snap", nargs="*", type=int, default=None,
+                    help="срезы по числу раундов: оценка без переобучения")
+    ap.add_argument("--no-log", action="store_true",
+                    help="не писать строку в experiments/log.csv (для пофолдовых прогонов)")
     a = ap.parse_args()
-    run(a.exp, a.desc, build_setup(a), save_model_feats=True, verbose_imp=a.imp)
+    run(a.exp, a.desc, build_setup(a), save_model_feats=True, verbose_imp=a.imp,
+        snap=tuple(a.snap or ()), no_log=a.no_log)
 
 
 if __name__ == "__main__":

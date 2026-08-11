@@ -38,6 +38,8 @@ def train_full(s: Setup, feats: list[str], models: list[str]):
     cuts = s.grid()
     log(f"train cutoffs: {len(cuts)} шт, {min(cuts)}..{max(cuts)}")
     Xtr, ytr, wtr = assemble(cuts, s, feats)
+    from src.train import _XY
+    _XY.clear()          # кэш обучающих фреймов больше не нужен, это ~2.3 ГБ
     log(f"train matrix {Xtr.shape[0]:,} x {Xtr.shape[1]}  "
         f"mean log1p(y)={np.log1p(ytr).mean():.4f}")
     out = {}
