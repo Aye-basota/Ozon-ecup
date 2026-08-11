@@ -77,6 +77,20 @@ def test_infer_supports_iteration_snapshot():
     ok(not np.array_equal(z5, z20), "срез на 5 раундах отличается от полного")
 
 
+def test_train_cutoffs_of_last_fold_stop_30_days_before_it():
+    """Обучающая выборка фолда: T + 30 <= V. На это опирается `--train-for-fold`."""
+    import datetime as dt
+
+    s = Setup(L=0, norm_long=True, train_blocks=1)
+    cuts = s.train_cutoffs(dt.date(2025, 10, 16))
+    ok(len(cuts) == 24, f"фолд 2025-10-16: {len(cuts)} обучающих cutoff'ов, ожидается 24")
+    ok(cuts[0] == dt.date(2025, 4, 3), f"первый {cuts[0]}, ожидается 2025-04-03")
+    ok(cuts[-1] == dt.date(2025, 9, 11), f"последний {cuts[-1]}, ожидается 2025-09-11")
+    ok(all(T + dt.timedelta(days=30) <= dt.date(2025, 10, 16) for T in cuts),
+       "ни один обучающий таргет не заходит за val-cutoff")
+    ok(len(s.grid()) == 29, f"полный коридор {len(s.grid())} cutoff'ов, ожидается 29")
+
+
 def _fold_arrays(cutoff: str, n: int, seed: int):
     r = np.random.default_rng(seed)
     y = np.expm1(np.maximum(r.normal(2.0, 1.0, n), 0.0))

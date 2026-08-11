@@ -33,10 +33,17 @@ def log(*a):
     print(f"[{time.time() - T0:6.0f}s]", *a, flush=True)
 
 
-def train_full(s: Setup, feats: list[str], models: list[str]):
-    """Обучает по одной модели каждого типа на всех чистых cutoff'ах коридора."""
-    cuts = s.grid()
-    log(f"train cutoffs: {len(cuts)} шт, {min(cuts)}..{max(cuts)}")
+def train_full(s: Setup, feats: list[str], models: list[str], for_fold: dt.date | None = None):
+    """Обучает по одной модели каждого типа на всех чистых cutoff'ах коридора.
+
+    `for_fold` — обучить ровно на обучающей выборке этого фолда (`T + 30 <= V`)
+    вместо всего коридора. Нужно, чтобы перенести на тест ту самую модель,
+    чей скор виден на фолде. Данных при этом МЕНЬШЕ: у фолда 2025-10-16 это
+    24 cutoff'а из 29, без пяти самых свежих.
+    """
+    cuts = s.train_cutoffs(for_fold) if for_fold else s.grid()
+    log(f"train cutoffs: {len(cuts)} шт, {min(cuts)}..{max(cuts)}"
+        + (f"  (обучающая выборка фолда {for_fold})" if for_fold else "  (весь коридор)"))
     Xtr, ytr, wtr = assemble(cuts, s, feats)
     from src.train import _XY
     _XY.clear()          # кэш обучающих фреймов больше не нужен, это ~2.3 ГБ
@@ -84,7 +91,11 @@ def main():
     ap.add_argument("--seeds", nargs="*", type=int, default=[42])
     ap.add_argument("--out", default=None, help="если задан — сразу пишет сабмит")
     ap.add_argument("--variant", default=None, help="имя, под которым сохранить z на тесте")
+    ap.add_argument("--train-for-fold", default=None,
+                    help="обучить на обучающей выборке этого фолда (YYYY-MM-DD), "
+                         "а не на всём коридоре")
     a = ap.parse_args()
+    for_fold = dt.date.fromisoformat(a.train_for_fold) if a.train_for_fold else None
 
     from src.train import select_features
     s = Setup(L=a.L, min_history=a.min_history, step=a.step, rounds=a.rounds,
@@ -98,7 +109,7 @@ def main():
     zs, names = [], []
     for seed in a.seeds:
         s.params = dict(s.params, seed=seed, bagging_seed=seed, feature_fraction_seed=seed)
-        trained = train_full(s, feats, a.blend)
+        trained = train_full(s, feats, a.blend, for_fold)
         for mt, (s_i, m) in trained.items():
             z = np.maximum(infer(s_i, m, At), 0.0)
             zs.append(z); names.append(f"{mt}/seed{seed}")
