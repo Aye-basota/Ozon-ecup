@@ -3,3 +3,4 @@ submissions/
 __pycache__/
 *.pyc
 .venv/
+draft.ipynb
