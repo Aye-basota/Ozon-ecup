@@ -80,7 +80,7 @@ class Setup:
     def __init__(self, L=HISTORY_L, min_history=None, step=CUTOFF_STEP, panel_blocks=PANEL_BLOCKS,
                  model="direct", rounds=LGB_ROUNDS, params=None, drop_groups=(), keep_only=None,
                  calendar=False, weight_tau=None, cutoffs=None, vals=None, train_blocks=None,
-                 norm_long=False):
+                 norm_long=False, min_gap=30, n_cutoffs=None):
         self.L = None if (L is None or L <= 0) else L
         self.min_history = min_history if min_history is not None else (self.L or 90)
         self.step = step
@@ -96,21 +96,27 @@ class Setup:
         self.norm_long = norm_long            # нормировка длинных окон на доступную историю
         self.cutoffs = cutoffs                # 'all' | 'recentN' | явный список
         self.vals = vals or VAL_FOLDS_S1
+        self.min_gap = max(30, int(min_gap))  # 30 дней — жёсткий порог антилукапа
+        self.n_cutoffs = None if n_cutoffs is None else int(n_cutoffs)
+        if self.n_cutoffs is not None and self.n_cutoffs <= 0:
+            raise ValueError("n_cutoffs должен быть положительным")
 
     def grid(self):
         return cutoff_grid(self.min_history, self.step)
 
     def train_cutoffs(self, V: dt.date):
-        g = [T for T in self.grid() if T + dt.timedelta(days=30) <= V]
+        g = [T for T in self.grid() if T + dt.timedelta(days=self.min_gap) <= V]
         c = self.cutoffs
         if c is None or c == "all":
-            return g
-        if isinstance(c, str) and c.startswith("recent"):
-            return g[-int(c[6:]):]
-        if isinstance(c, str) and c.startswith("every"):        # every30 -> шаг 30 дней
+            selected = g
+        elif isinstance(c, str) and c.startswith("recent"):
+            selected = g[-int(c[6:]):]
+        elif isinstance(c, str) and c.startswith("every"):        # every30 -> шаг 30 дней
             k = int(c[5:]) // self.step
-            return g[::-1][::max(k, 1)][::-1]
-        return [T for T in c if T + dt.timedelta(days=30) <= V]
+            selected = g[::-1][::max(k, 1)][::-1]
+        else:
+            selected = [T for T in c if T + dt.timedelta(days=self.min_gap) <= V]
+        return selected[-self.n_cutoffs:] if self.n_cutoffs is not None else selected
 
     def as_dict(self):
         return dict(L=self.L, min_history=self.min_history, step=self.step,
@@ -118,7 +124,8 @@ class Setup:
                     model=self.model, rounds=self.rounds,
                     params=self.params, drop_groups=self.drop_groups, keep_only=self.keep_only,
                     calendar=self.calendar, weight_tau=self.weight_tau, cutoffs=self.cutoffs,
-                    norm_long=self.norm_long)
+                    norm_long=self.norm_long, min_gap=self.min_gap,
+                    n_cutoffs=self.n_cutoffs)
 
 
 _XY: dict = {}
@@ -240,7 +247,8 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
     nfeat = len(feats) + (3 if s.calendar else 0)
     log(f"{exp_id}: {desc}")
     log(f"  L={s.L} min_hist={s.min_history} step={s.step} blocks={s.panel_blocks} "
-        f"train_blocks={s.train_blocks} model={s.model} rounds={s.rounds} feats={nfeat}")
+        f"train_blocks={s.train_blocks} min_gap={s.min_gap} n_cutoffs={s.n_cutoffs} "
+        f"model={s.model} rounds={s.rounds} feats={nfeat}")
 
     oof_u, oof_c, oof_z, oof_y = [], [], [], []
     snap_z: dict[int, list] = {k: [] for k in snap}      # OOF каждого среза по раундам
@@ -333,7 +341,8 @@ def build_setup(a) -> Setup:
                  weight_tau=a.weight_tau, cutoffs=a.cutoffs, train_blocks=a.train_blocks,
                  vals=([dt.date.fromisoformat(v) for v in a.val] if getattr(a, "val", None)
                        else VAL_FOLDS_S1[-a.folds:] if getattr(a, "folds", 0) else None),
-                 norm_long=getattr(a, "norm_long", False))
+                 norm_long=getattr(a, "norm_long", False),
+                 min_gap=getattr(a, "min_gap", 30), n_cutoffs=getattr(a, "n_cutoffs", None))
 
 
 def main():
@@ -362,6 +371,10 @@ def main():
                     help="нормировать w365_*/tenure на доступную глубину истории")
     ap.add_argument("--weight-tau", type=float, default=None)
     ap.add_argument("--cutoffs", default=None, help="all | recentN | everyN")
+    ap.add_argument("--min-gap", type=int, default=30,
+                    help="минимальный разрыв train cutoff -> val; значения <30 запрещены")
+    ap.add_argument("--n-cutoffs", type=int, default=None,
+                    help="взять последние N допустимых cutoff'ов после фильтра по gap")
     ap.add_argument("--imp", action="store_true")
     ap.add_argument("--folds", type=int, default=0, help="взять только последние N фолдов (скрининг)")
     ap.add_argument("--val", nargs="*", default=None,

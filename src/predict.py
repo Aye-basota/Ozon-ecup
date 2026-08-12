@@ -21,7 +21,7 @@ import time
 import numpy as np
 import polars as pl
 
-from src.config import ANCHOR_BAND, ARTIFACTS, CUTOFF_TEST, SUBMISSIONS
+from src.config import ANCHOR_BAND, ARTIFACTS, CUTOFF_TEST, SEED, SUBMISSIONS
 from src.data import load, sample_submit
 from src.features import feature_names, make_xy, to_np
 from src.train import Setup, assemble, fit, infer
@@ -88,7 +88,7 @@ def main():
     ap.add_argument("--drop", nargs="*", default=None)
     ap.add_argument("--norm-long", action="store_true")
     ap.add_argument("--delta", type=float, default=0.0, help="глобальный лог-сдвиг")
-    ap.add_argument("--seeds", nargs="*", type=int, default=[42])
+    ap.add_argument("--seeds", nargs="*", type=int, default=[SEED])
     ap.add_argument("--out", default=None, help="если задан — сразу пишет сабмит")
     ap.add_argument("--variant", default=None, help="имя, под которым сохранить z на тесте")
     ap.add_argument("--train-for-fold", default=None,
@@ -108,7 +108,9 @@ def main():
 
     zs, names = [], []
     for seed in a.seeds:
-        s.params = dict(s.params, seed=seed, bagging_seed=seed, feature_fraction_seed=seed)
+        # Match validation exactly: LightGBM derives all subordinate RNG streams
+        # from the master seed unless they are explicitly overridden.
+        s.params = dict(s.params, seed=seed)
         trained = train_full(s, feats, a.blend, for_fold)
         for mt, (s_i, m) in trained.items():
             z = np.maximum(infer(s_i, m, At), 0.0)

@@ -135,6 +135,8 @@ Out-of-time cutoff-схема, `src/validation.py` + `src/report.py`:
 │   ├── merge_oof.py     — склейка пофолдовых прогонов в один эксперимент
 │   ├── blend.py         — веса смеси по wCV на OOF, LOFO-проверка подбора
 │   ├── seedavg.py       — усреднение прогонов по сидам, разброс и кривая усреднения
+│   ├── gapval.py        — STRATEGY_01: gap-CV при фиксированном числе cutoff'ов
+│   ├── sampleval.py     — STRATEGY_02A: train_blocks=0, capacity curve и avg3
 │   ├── predict.py       — инференс на тесте и сборка сабмита
 │   ├── anchor.py        — якорная калибровка уровня + её бэктест
 │   ├── seasonal.py      — dm(T), сезонная поправка
@@ -160,6 +162,8 @@ python -m src.smoke                      # проверки: панель 250k, 
 python -m src.test_dist                  # проверки головы распределения
 python -m src.test_pipeline              # проверки сборки матрицы и склейки OOF
 python -m src.test_validation            # проверки валидатора (wCV, калибровка, отчёт)
+python -m src.gapval --run                # gap-axis 35/63/91/126 дней, k=5
+python -m src.sampleval --run --train-blocks 0 --seeds 42  # Variant A screening
 python -m src.features --L 180 --min-history 90   # прогреть кэш фичей (~3 c/cutoff)
 python -m src.train --exp MY-EXP --L 180 --min-history 90 --train-blocks 1 --cutoffs all
 python -m src.predict --exp S1-BEST ...  # сабмит

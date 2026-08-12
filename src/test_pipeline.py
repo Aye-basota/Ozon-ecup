@@ -91,6 +91,32 @@ def test_train_cutoffs_of_last_fold_stop_30_days_before_it():
     ok(len(s.grid()) == 29, f"полный коридор {len(s.grid())} cutoff'ов, ожидается 29")
 
 
+def test_gap_axis_keeps_fixed_sample_size_without_weakening_anti_lookup():
+    """S_01: меняется возраст cutoff'ов, но не их число и не правило антилукапа."""
+    import datetime as dt
+
+    V = dt.date(2025, 9, 4)
+    for gap, actual_gap in ((30, 35), (60, 63), (90, 91), (120, 126)):
+        s = Setup(L=0, norm_long=True, train_blocks=1, min_gap=gap, n_cutoffs=5)
+        cuts = s.train_cutoffs(V)
+        ok(len(cuts) == 5, f"G={gap}: фиксированные 5 cutoff'ов")
+        ok((V - cuts[-1]).days == actual_gap,
+           f"G={gap}: фактический gap {(V - cuts[-1]).days} == {actual_gap}")
+        ok(all(T + dt.timedelta(days=max(30, gap)) <= V for T in cuts),
+           f"G={gap}: ни один target не заходит в признаки validation")
+
+
+def test_gap_axis_never_allows_less_than_30_days():
+    import datetime as dt
+
+    V = dt.date(2025, 10, 16)
+    s = Setup(L=0, min_gap=1, n_cutoffs=5)
+    cuts = s.train_cutoffs(V)
+    ok(s.min_gap == 30, "min_gap<30 принудительно поднят до порога антилукапа")
+    ok(all(T + dt.timedelta(days=30) <= V for T in cuts),
+       "ослабить 30-дневный порог через CLI невозможно")
+
+
 def _fold_arrays(cutoff: str, n: int, seed: int):
     r = np.random.default_rng(seed)
     y = np.expm1(np.maximum(r.normal(2.0, 1.0, n), 0.0))
