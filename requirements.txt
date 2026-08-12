@@ -5,3 +5,4 @@ lightgbm
 catboost
 xgboost
 pyarrow
+duckdb
