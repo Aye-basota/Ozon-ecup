@@ -3,10 +3,13 @@
 Усреднение делается **в лог-пространстве** z, а не в сыром GMV: метрика — MSE по z,
 а усреднение сырых предсказаний смещает уровень вверх (неравенство Йенсена).
 
-Веса подбираются на OOF и только на OOF. Одновременно печатается корреляция
-остатков — она показывает, есть ли смысл в ансамбле вообще.
+Веса подбираются на OOF и только на OOF, по главной метрике **wCV**
+(`src/report.py`). Дополнительно печатается `--lofo`: веса подбираются на трёх
+фолдах и проверяются на четвёртом. Это единственная доступная проверка того, что
+подбор весов не переобучается на те же фолды, по которым он и оптимизируется, —
+без неё «улучшение смеси» неотличимо от подгонки.
 
-Запуск: python -m src.blend --exps S1-E02 S1-E03a
+Запуск: python -m src.blend --exps S1-E02 S1-E03a --lofo
 """
 from __future__ import annotations
 
@@ -15,8 +18,10 @@ import itertools
 
 import numpy as np
 
+from src.config import FOLD_WEIGHTS_S1, VAL_FOLDS_S1
+from src.report import evaluate, format_report
 from src.tracking import load_oof
-from src.validation import best_offset, rmsle_z
+from src.validation import calibrate, rmsle_z
 
 
 def shifted_rmsle(ly: np.ndarray, z: np.ndarray) -> float:
@@ -34,7 +39,7 @@ def aligned(exps: list[str]):
     """Выравнивает OOF по (cutoff, user_id) — порядок строк обязан совпадать."""
     ds = [load_oof(e) for e in exps]
     keys = [np.char.add(np.asarray(d["cutoff"], dtype="U10"),
-                        np.asarray(d["user_id"]).astype("U10")) for d in ds]
+                        np.asarray(d["user_id"]).astype("U20")) for d in ds]
     base = keys[0]
     order = np.argsort(base)
     y = ds[0]["y"][order]
@@ -43,51 +48,98 @@ def aligned(exps: list[str]):
         o = np.argsort(k)
         assert np.array_equal(k[o], base[order]), "OOF на разных наборах строк"
         Z.append(d["z"][o])
-    return np.vstack(Z), y, ds[0]["cutoff"][order]
+    return np.vstack(Z), y, np.asarray(ds[0]["cutoff"], dtype="U10")[order]
+
+
+def fold_masks(cut: np.ndarray):
+    folds = sorted(set(cut.tolist()))
+    return folds, [cut == c for c in folds]
+
+
+def fold_cal_matrix(Z, ly, masks, ws):
+    """Пофолдовый калиброванный RMSLE для каждой комбинации весов: (комбинаций, фолдов)."""
+    out = np.empty((len(ws), len(masks)))
+    for i, w in enumerate(ws):
+        z = np.average(Z, axis=0, weights=w)
+        for j, m in enumerate(masks):
+            out[i, j] = shifted_rmsle(ly[m], z[m])
+    return out
+
+
+def weight_grid(n: int, step: float):
+    g = np.arange(0, 1 + 1e-9, step)
+    return [w for w in itertools.product(g, repeat=n) if abs(sum(w) - 1) < 1e-9]
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--exps", nargs="+", required=True)
-    ap.add_argument("--step", type=float, default=0.1)
+    ap.add_argument("--step", type=float, default=0.05)
+    ap.add_argument("--ref", nargs="*", type=float, default=None,
+                    help="веса опорной смеси, чтобы печатать дельты к ней")
+    ap.add_argument("--lofo", action="store_true",
+                    help="подобрать веса без каждого фолда и проверить на нём")
     a = ap.parse_args()
     Z, y, cut = aligned(a.exps)
-    print(f"n = {len(y):,} строк OOF, моделей {len(a.exps)}\n")
-    print(f"{'модель':>12} {'RMSLE':>9} {'после сдвига':>13}")
-    res = []
-    for e, z in zip(a.exps, Z):
-        o, sc = best_offset(y, z)
-        res.append(sc)
-        print(f"{e:>12} {rmsle_z(y, z):>9.5f} {sc:>13.5f}  (сдвиг {o:+.3f})")
-
     ly = np.log1p(y)
+    folds, masks = fold_masks(cut)
+    full = folds == [d.isoformat() for d in VAL_FOLDS_S1]
+    w_f = np.asarray(FOLD_WEIGHTS_S1[:len(folds)], float)
+    w_f = w_f / w_f.sum()
+    print(f"n = {len(y):,} строк OOF, моделей {len(a.exps)}, фолдов {len(folds)}")
+    if not full:
+        print("  ВНИМАНИЕ: набор фолдов неполный, веса усечены — это НЕ wCV проекта\n")
+    else:
+        print()
+
+    print(f"{'модель':>12} {'wCV':>9} {'OOF cal':>9}   пофолдово (калибр.)")
+    for e, z in zip(a.exps, Z):
+        fc = [shifted_rmsle(ly[m], z[m]) for m in masks]
+        print(f"{e:>12} {float(np.dot(w_f, fc)):>9.5f} {calibrate(y, z)[1]:>9.5f}   "
+              + " ".join(f"{v:.5f}" for v in fc))
+
     print("\nкорреляция остатков (в лог-пространстве):")
     R = np.vstack([ly - z for z in Z])
     for i, j in itertools.combinations(range(len(a.exps)), 2):
-        print(f"  {a.exps[i]:>12} vs {a.exps[j]:<12} {np.corrcoef(R[i], R[j])[0, 1]:.4f}")
+        print(f"  {a.exps[i]:>12} vs {a.exps[j]:<12} corr {np.corrcoef(R[i], R[j])[0, 1]:.4f}"
+              f"   Var(z_i - z_j) {np.var(Z[i] - Z[j]):.5f}")
 
-    print("\nперебор весов (после оптимального сдвига у каждой смеси):")
-    ws = [w for w in itertools.product(np.arange(0, 1 + 1e-9, a.step), repeat=len(a.exps))
-          if abs(sum(w) - 1) < 1e-9]
-    best = None
-    for w in ws:
-        z = np.average(Z, axis=0, weights=w)
-        o, sc = best_offset(y, z)
-        if best is None or sc < best[1]:
-            best = (w, sc, o)
-        if len(a.exps) == 2 and abs(w[0] * 10 - round(w[0] * 10)) < 1e-6:
-            print(f"  w={np.round(w, 2)}  RMSLE={rmsle_z(y, z):.5f}  после сдвига {sc:.5f}")
-    print(f"\nлучшая смесь: w={np.round(best[0], 2)}  RMSLE после сдвига {best[1]:.5f} "
-          f"(сдвиг {best[2]:+.3f})")
-    print(f"выигрыш над лучшей одиночной моделью: {min(res) - best[1]:+.5f}")
+    ws = weight_grid(len(a.exps), a.step)
+    FC = fold_cal_matrix(Z, ly, masks, ws)
+    sc = FC @ w_f
+    o = np.argsort(sc)
+    ref_fc = None
+    if a.ref:
+        assert abs(sum(a.ref) - 1) < 1e-9, "веса опорной смеси не суммируются в 1"
+        ref_fc = fold_cal_matrix(Z, ly, masks, [a.ref])[0]
+        print(f"\nопорная смесь {np.round(a.ref, 2)}: wCV={float(np.dot(w_f, ref_fc)):.5f}   "
+              + " ".join(f"{v:.5f}" for v in ref_fc))
 
-    print("\nпо фолдам (лучшая смесь):")
-    zb = np.average(Z, axis=0, weights=best[0])
-    for c in np.unique(cut):
-        m = cut == c
-        o, sc = best_offset(y[m], zb[m])
-        singles = " ".join(f"{best_offset(y[m], z[m])[1]:.5f}" for z in Z)
-        print(f"  {c}: смесь {sc:.5f}   одиночные {singles}")
+    print(f"\nлучшие смеси по wCV ({len(ws)} комбинаций, шаг {a.step}):")
+    for i in o[:6]:
+        d = ("   " + " ".join(f"{v - r:+.5f}" for v, r in zip(FC[i], ref_fc))
+             + f"   {(FC[i] < ref_fc).sum()}/{len(folds)}") if ref_fc is not None else ""
+        print(f"  w={np.round(ws[i], 2)}  wCV={sc[i]:.5f}" + d)
+    plateau = int((sc <= sc[o[0]] + 5e-5).sum())
+    print(f"  плато: {plateau} комбинаций в пределах 0.00005 от оптимума из {len(ws)}")
+
+    if a.lofo and ref_fc is not None:
+        print("\nLOFO: веса подобраны без фолда, проверены на нём (честная оценка выигрыша)")
+        print(f"{'отложенный фолд':<16}{'веса без него':<34}{'на нём':>10}{'опорная':>10}{'дельта':>10}")
+        held = np.zeros(len(folds))
+        for h in range(len(folds)):
+            idx = [i for i in range(len(folds)) if i != h]
+            wh = w_f[idx] / w_f[idx].sum()
+            b = int(np.argmin(FC[:, idx] @ wh))
+            held[h] = FC[b, h]
+            print(f"{folds[h]:<16}{str(np.round(ws[b], 2)):<34}{FC[b, h]:>10.5f}"
+                  f"{ref_fc[h]:>10.5f}{FC[b, h] - ref_fc[h]:>+10.5f}")
+        print(f"  честный выигрыш по wCV: {float(np.dot(w_f, held - ref_fc)):+.5f}"
+              f"   (в выборке: {sc[o[0]] - float(np.dot(w_f, ref_fc)):+.5f})")
+
+    best = ws[o[0]]
+    zb = np.average(Z, axis=0, weights=best)
+    print(format_report(evaluate(y, zb, cut)))
 
 
 if __name__ == "__main__":

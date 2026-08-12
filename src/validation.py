@@ -9,6 +9,13 @@ Out-of-time cutoff-схема. Никаких случайных сплитов:
                            ~ тестовому разрыву 120 дней); измеряет дрейф;
   S3  сезонный           — val 2025-02-13 (календарный аналог теста), 1-блочная
                            панель; используется ТОЛЬКО для оценки поправки.
+
+**Главная метрика проекта — `wcv`** (exp_016): взвешенное среднее пофолдовых
+RMSLE *после оптимального лог-сдвига*, веса `FOLD_WEIGHTS_S1 = 1:2:4:8`.
+Калибровка обязательна, потому что уровень сабмита ставится по измеренному на LB
+якорю: ошибка уровня на тесте равна нулю по построению и не должна участвовать в
+сравнении моделей. Веса — потому что поздние фолды ближе к тесту и коэффициент
+переноса на LB у них устойчивее. Полный набор метрик собирает `src/report.py`.
 """
 from __future__ import annotations
 
@@ -16,8 +23,8 @@ import datetime as dt
 
 import numpy as np
 
-from src.config import (CORRIDOR_END, CUTOFF_STEP, HISTORY_L, S2_TRAIN_END, S2_VAL, S3_VAL,
-                        TARGET_DAYS, VAL_FOLDS_S1, cutoff_grid)
+from src.config import (CORRIDOR_END, CUTOFF_STEP, FOLD_WEIGHTS_S1, HISTORY_L, S2_TRAIN_END,
+                        S2_VAL, S3_VAL, TARGET_DAYS, VAL_FOLDS_S1, cutoff_grid)
 
 
 # --------------------------------------------------------------------------- метрика
@@ -37,12 +44,54 @@ def bias_z(y_true, z_pred) -> float:
 
 
 def best_offset(y_true, z_pred, lo: float = -0.6, hi: float = 0.6, n: int = 241):
-    """Оптимальный глобальный сдвиг в лог-пространстве и скор после него."""
+    """Оптимальный глобальный сдвиг в лог-пространстве и скор после него (по сетке)."""
     ly = np.log1p(y_true)
     grid = np.linspace(lo, hi, n)
     sc = np.array([np.sqrt(np.mean((ly - np.maximum(z_pred + d, 0.0)) ** 2)) for d in grid])
     i = int(sc.argmin())
     return float(grid[i]), float(sc[i])
+
+
+def calibrate(y_true, z_pred, iters: int = 25):
+    """Оптимальный лог-сдвиг и скор после него: (delta, RMSLE).
+
+    Без клиппинга оптимум был бы ровно `d = mean(ly - z) = bias`. Но метрика
+    клипует `z + d` нулём, и строки, ушедшие под ноль, перестают зависеть от `d`:
+
+        MSE(d) = mean_{z+d>0} (ly - z - d)^2 + mean_{z+d<=0} ly^2
+        dMSE/dd = 0   <=>   d = mean(ly - z) ПО АКТИВНОМУ МНОЖЕСТВУ {z + d > 0}
+
+    Это неподвижная точка, и итерация от `bias` сходится за единицы шагов.
+    На боевых прогонах поправка нулевая (предсказания уже неотрицательны, сдвиги
+    порядка 0.05), но на сильно смещённых прогнозах сетка из `best_offset` и
+    наивный `bias` расходятся с истинным минимумом в 4-м знаке.
+    """
+    ly = np.log1p(y_true)
+    z = np.asarray(z_pred, dtype=float)
+    d = float((ly - z).mean())
+    for _ in range(iters):
+        act = z + d > 0
+        if not act.any():
+            break
+        d_new = float((ly[act] - z[act]).mean())
+        if abs(d_new - d) < 1e-12:
+            d = d_new
+            break
+        d = d_new
+    return d, rmsle_z(y_true, z + d)
+
+
+def wcv(fold_scores, weights=None) -> float:
+    """Главная метрика: взвешенное среднее пофолдовых скоров, веса 1:2:4:8.
+
+    Порядок `fold_scores` обязан совпадать с `VAL_FOLDS_S1` (от раннего к позднему).
+    """
+    s = np.asarray(fold_scores, float)
+    w = np.asarray(FOLD_WEIGHTS_S1 if weights is None else weights, float)
+    # усечение весов под неполный набор фолдов дало бы правдоподобное, но чужое число
+    assert len(w) == len(s), (
+        f"скоров {len(s)}, весов {len(w)}: wCV определён только на полной схеме S1")
+    return float(np.dot(w, s) / w.sum())
 
 
 # --------------------------------------------------------------------------- фолды

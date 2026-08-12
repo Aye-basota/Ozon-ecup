@@ -1,0 +1,11 @@
+file,exp_id,date,level,lb_public,oof_source,note
+submission_strategy_1_level_low.csv,S1-BEST,2026-08-10,2.2803,1.6519790,,уровневый сабмит: та же смесь при другом delta
+submission_strategy_1.csv,S1-BEST,2026-08-10,2.3391,1.6512803,blend:S1-E10=0.45|S1-E02=0.45|S1-E03a=0.10,"первая боевая смесь; уровень промахнулся на +0.0098, level-free 1.6512512"
+submission_strategy_1_level_high.csv,S1-BEST,2026-08-10,2.4051,1.6529909,,уровневый сабмит: та же смесь при другом delta
+experimental_submission_1.csv,EXP-MIN,2026-08-10,2.3293,1.6674246,,15 признаков + extreme regularization
+experimental_submission_2.csv,EXP-SIM,2026-08-10,2.3293,1.6682180,,0.50 S1-BEST + 0.50 rank-cohort similarity
+submission_strategy_2.csv,S2-BEST,2026-08-11,2.3293,1.6619325,,структурная BTYD-модель, ветка team-a-strategy-2-impl
+submission_dist_head.csv,S1-DIST-MIX,2026-08-11,2.3293,1.6507774,blend:S1-E10=0.15|S1-E02=0.30|S1-E03a=0.10|S1-DIST=0.45,ЛУЧШИЙ результат проекта
+submission_experimental_f4.csv,S1-DIST-F4,2026-08-11,2.3293,,,"чистая dist-модель на выборке фолда 2025-10-16; лучший из двух f4-сабмитов = 1.6512012383165489, какой именно — не разделено"
+submission_experimental_f4_mix.csv,S1-DIST-F4-MIX,2026-08-11,2.3293,1.6512012,,"та же смесь, S1-DIST заменён на 24-cutoff'ную версию; лучший из двух f4-сабмитов"
+submission_candidate_e11mix.csv,S1-MIX-E11,2026-08-11,2.3293,1.6510029,blend:S1-E10=0.10|S1-E02=0.35|S1-DIST=0.30|S1-E11=0.25,"последний сабмит; wCV 1.74911 (−0.00038 к S1-DIST-MIX) обещал улучшение, на LB +0.00023 — первая инверсия порядка, см. exp_016 §8"

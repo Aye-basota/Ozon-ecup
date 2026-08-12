@@ -18,12 +18,13 @@ import time
 import numpy as np
 import polars as pl
 
-from src.config import (ARTIFACTS, CUTOFF_STEP, HISTORY_L, LGB_ROUNDS, PANEL_BLOCKS,
+from src.config import (ARTIFACTS, CUTOFF_STEP, HISTORY_L, LGB_ROUNDS, PANEL_BLOCKS, SEED,
                         VAL_FOLDS_S1, cutoff_grid)
 from src.data import load
 from src.features import feature_names, make_xy, to_np
-from src.tracking import log_experiment, save_oof
-from src.validation import best_offset, bias_z, get_folds, rmsle_z
+from src.report import evaluate, format_report, save_report
+from src.tracking import log_from_report, save_oof
+from src.validation import bias_z, calibrate, get_folds, rmsle_z
 
 T0 = time.time()
 
@@ -213,8 +214,25 @@ def infer(s: Setup, m, A, num_iteration: int | None = None) -> np.ndarray:
     return m.predict(A, num_iteration=num_iteration)
 
 
+def save_snapshot(exp_id: str, uid, cuts, z, y, desc: str, s: Setup, rounds: int, nfeat: int):
+    """Срез по числу раундов сохраняется как самостоятельный эксперимент.
+
+    Префикс из `rounds` деревьев — это ровно та модель, которая получилась бы
+    при обучении на `rounds` раундов: бустинг жадный, поздние деревья не меняют
+    ранние. Поэтому такой OOF сопоставим с обычным прогоном напрямую, и вся
+    кривая по ёмкости стоит одного обучения вместо восьми.
+    """
+    rep = evaluate(y, z, cuts)
+    save_oof(exp_id, uid, cuts, z, y)
+    save_report(exp_id, rep, extra=dict(description=f"{desc} [срез {rounds} раундов]",
+                                        model=s.model, params={**s.as_dict(), "rounds": rounds},
+                                        n_features=nfeat, snapshot_rounds=rounds))
+    return rep
+
+
 def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=False,
-        snap: tuple[int, ...] = (), no_log: bool = False):
+        snap: tuple[int, ...] = (), no_log: bool = False, ref: str | None = None,
+        snap_save: bool = False):
     load()
     folds = get_folds(s.min_history, s.step, s.vals)
     base_feats = feature_names(xy(folds[0][1], s)[0])
@@ -224,8 +242,8 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
     log(f"  L={s.L} min_hist={s.min_history} step={s.step} blocks={s.panel_blocks} "
         f"train_blocks={s.train_blocks} model={s.model} rounds={s.rounds} feats={nfeat}")
 
-    scores, biases, offs, sizes = [], [], [], []
     oof_u, oof_c, oof_z, oof_y = [], [], [], []
+    snap_z: dict[int, list] = {k: [] for k in snap}      # OOF каждого среза по раундам
     for _, V in folds:
         tr_cuts = s.train_cutoffs(V)
         if not tr_cuts:
@@ -246,8 +264,7 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
                                                                    "cutoff_month")])
         z = np.maximum(infer(s, m, Av), 0.0)
         sc, b = rmsle_z(yv, z), bias_z(yv, z)
-        o, sc_o = best_offset(yv, z)
-        scores.append(sc); biases.append(b); offs.append(o); sizes.append(len(yv))
+        o, sc_o = calibrate(yv, z)
         oof_u.append(Xv["user_id"].to_numpy()); oof_c.append([V.isoformat()] * len(yv))
         oof_z.append(z); oof_y.append(yv)
         log(f"  val {V} (n={len(yv):,}, train {len(tr_cuts)} cuts / {n_tr:,} rows, "
@@ -256,8 +273,10 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
         for k in snap:
             # срез по числу раундов стоит один инференс, а не переобучение
             zk = np.maximum(infer(s, m, Av, num_iteration=k), 0.0)
+            if snap_save:
+                snap_z[k].append(zk)
             log(f"      срез {k:4d} раундов: RMSLE={rmsle_z(yv, zk):.5f} "
-                f"bias={bias_z(yv, zk):+.4f} off*->{best_offset(yv, zk)[1]:.5f}")
+                f"bias={bias_z(yv, zk):+.4f} off*->{calibrate(yv, zk)[1]:.5f}")
         if verbose_imp and s.model == "direct":
             from src.models import importance
             names = feats + (["cutoff_doy_sin", "cutoff_doy_cos", "cutoff_month"] if s.calendar else [])
@@ -267,32 +286,49 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
         del ytr, wtr, m, Av, box
         gc.collect()
 
-    cv, sd = float(np.mean(scores)), float(np.std(scores))
-    bm = float(np.mean(biases))
     z_all = np.concatenate(oof_z); y_all = np.concatenate(oof_y)
-    oof = rmsle_z(y_all, z_all)
-    o_all, oof_cal = best_offset(y_all, z_all)
-    log(f"  CV mean={cv:.5f} std={sd:.5f} | OOF={oof:.5f} bias={bm:+.4f} "
-        f"| после сдвига {o_all:+.3f}: {oof_cal:.5f}")
-    save_oof(exp_id, np.concatenate(oof_u), np.concatenate(oof_c), z_all, y_all)
+    cuts_all = np.concatenate(oof_c)
+    # единый отчёт: пофолдовые скоры, wCV, OOF, bias, скор после сдвига, mean z
+    rep = evaluate(y_all, z_all, cuts_all)
+    ref_rep = _load_ref(ref)
+    print(format_report(rep, ref_rep), flush=True)
+    u_all = np.concatenate(oof_u)
+    save_oof(exp_id, u_all, cuts_all, z_all, y_all)
+    save_report(exp_id, rep, extra=dict(description=desc, model=s.model, params=s.as_dict(),
+                                        n_features=nfeat, ref=ref,
+                                        runtime_s=round(time.time() - T0, 1)))
+    for k in (snap if snap_save else ()):
+        save_snapshot(f"{exp_id}-R{k}", u_all, cuts_all, np.concatenate(snap_z[k]), y_all,
+                      desc, s, k, nfeat)
+        log(f"  срез {k} раундов сохранён как эксперимент {exp_id}-R{k}")
     if not no_log:
-        log_experiment(exp_id=exp_id, description=desc, scenario="S1",
-                       n_features=nfeat, model=s.model, params=s.as_dict(),
-                       cutoffs=f"{len(s.train_cutoffs(s.vals[-1]))} @ step {s.step}", L=s.L,
-                       panel_blocks=s.panel_blocks, fold_scores=scores, cv_mean=cv, cv_std=sd,
-                       bias_mean=bm, best_offset=o_all, cv_mean_calib=oof_cal,
-                       runtime_s=round(time.time() - T0, 1))
+        log_from_report(exp_id, desc, rep, scenario="S1", n_features=nfeat, model=s.model,
+                        params=s.as_dict(), L=s.L, panel_blocks=s.panel_blocks,
+                        cutoffs=f"{len(s.train_cutoffs(s.vals[-1]))} @ step {s.step}",
+                        runtime_s=round(time.time() - T0, 1))
     if save_model_feats:
         (ARTIFACTS / f"feats_{exp_id}.txt").write_text("\n".join(feats), encoding="utf-8")
-    return dict(exp_id=exp_id, scores=scores, cv=cv, std=sd, oof=oof, bias=bm,
-                offset=o_all, oof_cal=oof_cal, feats=feats)
+    return dict(exp_id=exp_id, feats=feats, **rep)
+
+
+def _load_ref(ref: str | None) -> dict | None:
+    """Отчёт опорного эксперимента для колонки дельт; отсутствие OOF — не ошибка."""
+    if not ref:
+        return None
+    try:
+        from src.report import from_oof
+        return from_oof(ref)
+    except FileNotFoundError:
+        log(f"  опорный {ref}: OOF не найден, дельты не считаются")
+        return None
 
 
 def build_setup(a) -> Setup:
     return Setup(L=a.L, min_history=a.min_history, step=a.step, panel_blocks=a.panel_blocks,
                  model=a.model, rounds=a.rounds,
                  params={k: v for k, v in [("learning_rate", a.lr), ("num_leaves", a.leaves),
-                                           ("min_data_in_leaf", a.min_leaf)] if v is not None},
+                                           ("min_data_in_leaf", a.min_leaf),
+                                           ("seed", getattr(a, "seed", None))] if v is not None},
                  drop_groups=a.drop or [], keep_only=a.keep, calendar=a.calendar,
                  weight_tau=a.weight_tau, cutoffs=a.cutoffs, train_blocks=a.train_blocks,
                  vals=([dt.date.fromisoformat(v) for v in a.val] if getattr(a, "val", None)
@@ -312,6 +348,10 @@ def main():
     ap.add_argument("--model", default="direct",
                     choices=["direct", "two_part", "catboost", "dist"])
     ap.add_argument("--rounds", type=int, default=LGB_ROUNDS)
+    ap.add_argument("--seed", type=int, default=SEED,
+                    help="seed модели; по умолчанию config.SEED. Отклонение от него обязано "
+                         "быть видно в имени эксперимента и в params журнала. LightGBM "
+                         "выводит из него bagging_seed/feature_fraction_seed/data_random_seed")
     ap.add_argument("--lr", type=float, default=None)
     ap.add_argument("--leaves", type=int, default=None)
     ap.add_argument("--min-leaf", type=int, default=None)
@@ -329,11 +369,15 @@ def main():
                          "разными процессами (--folds берёт только ПОСЛЕДНИЕ N)")
     ap.add_argument("--snap", nargs="*", type=int, default=None,
                     help="срезы по числу раундов: оценка без переобучения")
+    ap.add_argument("--snap-save", action="store_true",
+                    help="сохранить OOF каждого среза как эксперимент <exp>-R<раунды>")
     ap.add_argument("--no-log", action="store_true",
                     help="не писать строку в experiments/log.csv (для пофолдовых прогонов)")
+    ap.add_argument("--ref", default=None,
+                    help="опорный эксперимент: печатать дельты по фолдам и по wCV")
     a = ap.parse_args()
     run(a.exp, a.desc, build_setup(a), save_model_feats=True, verbose_imp=a.imp,
-        snap=tuple(a.snap or ()), no_log=a.no_log)
+        snap=tuple(a.snap or ()), no_log=a.no_log, ref=a.ref, snap_save=a.snap_save)
 
 
 if __name__ == "__main__":

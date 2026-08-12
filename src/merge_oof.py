@@ -18,30 +18,22 @@ import argparse
 
 import numpy as np
 
-from src.tracking import load_oof, log_experiment, save_oof
-from src.validation import best_offset, bias_z, rmsle_z
+from src.report import evaluate, format_report, save_report
+from src.tracking import load_oof, log_from_report, save_oof
+from src.validation import rmsle_z
 
 
 def merge_arrays(user_id, cutoff, z, y) -> dict:
-    """Метрики склеенного OOF. Пара (cutoff, user_id) обязана быть уникальной."""
+    """Метрики склеенного OOF. Пара (cutoff, user_id) обязана быть уникальной.
+
+    Считает ровно тот же отчёт, что и `train.run`: пофолдовые прогоны и цельный
+    прогон обязаны давать побитово одинаковые числа, иначе их нельзя сравнивать.
+    """
     cutoff = np.asarray(cutoff, dtype="U10")
     keys = np.char.add(cutoff, np.asarray(user_id).astype("U20"))
     assert len(np.unique(keys)) == len(keys), (
         "повтор пары (cutoff, user_id): один и тот же фолд склеен дважды")
-    folds = sorted(np.unique(cutoff).tolist())
-    scores, biases, offs, sizes = [], [], [], []
-    for c in folds:
-        m = cutoff == c
-        scores.append(rmsle_z(y[m], z[m]))
-        biases.append(bias_z(y[m], z[m]))
-        offs.append(best_offset(y[m], z[m]))
-        sizes.append(int(m.sum()))
-    o_all, oof_cal = best_offset(y, z)
-    return dict(n=len(y), folds=folds, sizes=sizes, fold_scores=scores, fold_biases=biases,
-                fold_offsets=[o for o, _ in offs], fold_calib=[s for _, s in offs],
-                cv_mean=float(np.mean(scores)), cv_std=float(np.std(scores)),
-                bias_mean=float(np.mean(biases)), oof=rmsle_z(y, z),
-                best_offset=o_all, oof_calib=oof_cal)
+    return evaluate(y, z, cutoff)
 
 
 def diversity(z, y, z_ref) -> dict:
@@ -91,36 +83,31 @@ def main():
 
     uid, cut, z, y = load_parts(a.parts)
     m = merge_arrays(uid, cut, z, y)
-    print(f"склеено {len(a.parts)} прогонов -> {m['n']:,} строк OOF\n")
-    print(f"{'фолд':>12} {'n':>9} {'RMSLE':>9} {'bias':>8} {'после сдвига':>13}")
-    for c, n, sc, b, o, cal in zip(m["folds"], m["sizes"], m["fold_scores"], m["fold_biases"],
-                                   m["fold_offsets"], m["fold_calib"]):
-        print(f"{c:>12} {n:>9,} {sc:>9.5f} {b:>+8.4f} {cal:>13.5f}  (сдвиг {o:+.3f})")
-    print(f"\nCV mean={m['cv_mean']:.5f} std={m['cv_std']:.5f} | OOF={m['oof']:.5f} "
-          f"bias={m['bias_mean']:+.4f} | после сдвига {m['best_offset']:+.3f}: {m['oof_calib']:.5f}")
-    print(f"AUC(1[y>0]) = {auc_positive(y, z):.5f}")
+    print(f"склеено {len(a.parts)} прогонов -> {m['n']:,} строк OOF")
 
+    mr = None
     if a.ref:
         z_ref = aligned_ref(uid, cut, a.ref)
-        d = diversity(z, y, z_ref)
         mr = merge_arrays(uid, cut, z_ref, y)
-        print(f"\nпротив {a.ref}: OOF {mr['oof_calib']:.5f} -> {m['oof_calib']:.5f} "
-              f"({m['oof_calib'] - mr['oof_calib']:+.5f} калиброванного)")
-        wins = sum(s < r for s, r in zip(m["fold_calib"], mr["fold_calib"]))
-        print(f"  лучше на {wins} фолдах из {len(m['folds'])}: "
-              + " ".join(f"{s - r:+.5f}" for s, r in zip(m["fold_calib"], mr["fold_calib"])))
+    print(format_report(m, mr))
+    print(f"  AUC(1[y>0]) = {auc_positive(y, z):.5f}")
+
+    if mr is not None:
+        d = diversity(z, y, z_ref)
+        w0, w1 = mr["wcv"], m["wcv"]
+        wtxt = (f"wCV {w0:.5f} -> {w1:.5f} ({w1 - w0:+.5f})" if w0 and w1 else "wCV н/д")
+        print(f"\nпротив {a.ref}: {wtxt}, OOF калибр. {mr['oof_cal']:.5f} -> {m['oof_cal']:.5f} "
+              f"({m['oof_cal'] - mr['oof_cal']:+.5f})")
         print(f"  Var(z - z_ref) = {d['var_delta']:.5f}  (ориентир разнообразия >= 0.10)")
         print(f"  corr предсказаний {d['corr_pred']:.5f}, corr остатков {d['corr_resid']:.5f}")
         print(f"  AUC опорной = {auc_positive(y, z_ref):.5f}")
 
     save_oof(a.out, uid, cut, z, y)
-    print(f"\nOOF сохранён: artifacts/oof_{a.out}.npz")
+    save_report(a.out, m, extra=dict(description=a.desc, parts=a.parts, ref=a.ref))
+    print(f"\nOOF сохранён: artifacts/oof_{a.out}.npz, отчёт: artifacts/report_{a.out}.json")
     if not a.no_log:
-        log_experiment(exp_id=a.out, description=a.desc, scenario="S1",
-                       n_features=a.n_features, model=a.model, params=a.params,
-                       fold_scores=m["fold_scores"], cv_mean=m["cv_mean"], cv_std=m["cv_std"],
-                       bias_mean=m["bias_mean"], best_offset=m["best_offset"],
-                       cv_mean_calib=m["oof_calib"])
+        log_from_report(a.out, a.desc, m, scenario="S1", n_features=a.n_features,
+                        model=a.model, params=a.params)
         print("строка записана в experiments/log.csv")
 
 
