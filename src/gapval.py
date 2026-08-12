@@ -175,6 +175,18 @@ def summarize(rows: list[dict], n_cutoffs: int, out_name: str) -> dict:
     selected = select_capacity(rows)
     by = {(r["probe"], r["requested_gap"]): r for r in selected}
 
+    # Registered output shape: every metric is addressable by the explicit
+    # <validation cutoff>|G<requested gap> key, while reports remain ordinary
+    # project reports whose experiment id already contains G.
+    fold_gap_metrics = {}
+    for r in selected:
+        probe_rows = fold_gap_metrics.setdefault(r["probe"], {})
+        for V, score, bias, raw in zip(
+                VAL_FOLDS_S1, r["fold_cal"], r["fold_bias"], r["fold_scores"]):
+            probe_rows[f"{V.isoformat()}|G{r['requested_gap']}"] = dict(
+                actual_gap=r["actual_gap"], rounds=r["rounds"],
+                rmsle_cal=score, rmsle_raw=raw, bias=bias)
+
     slopes = {}
     for probe in sorted({r["probe"] for r in selected}):
         rs = [by[(probe, g)] for g in DEFAULT_GAPS if (probe, g) in by]
@@ -246,7 +258,7 @@ def summarize(rows: list[dict], n_cutoffs: int, out_name: str) -> dict:
 
     summary = dict(
         n_cutoffs=n_cutoffs, capacity_rule="argmin weighted calibrated fold score per probe and gap",
-        rows=len(rows), selected=selected, bias_slopes=slopes,
+        rows=len(rows), selected=selected, fold_gap_metrics=fold_gap_metrics, bias_slopes=slopes,
         bias_slopes_fixed_round=fixed_slopes, e03a_vs_e10=model_delta,
         gcv=gcv, rank_correlation=rank, variant_c_cutoff_identity=_variant_c_identity(),
         notes=[
