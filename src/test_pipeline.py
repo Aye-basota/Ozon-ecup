@@ -11,7 +11,7 @@ import numpy as np
 
 from src.config import cutoff_grid
 from src.features import feature_names, make_xy, to_np
-from src.train import Setup, assemble, infer
+from src.train import Setup, assemble, infer, row_sample_mask
 
 RNG = np.random.default_rng(0)
 
@@ -50,6 +50,26 @@ def test_assemble_applies_exponential_cutoff_weights():
     A, y, w = assemble(cuts, s, feature_names(X0), V=cuts[-1])
     ok(w.min() < w.max(), "разные cutoff'ы получили разные веса")
     ok(abs(float(w.max()) - 1.0) < 1e-6, "ближайший к val cutoff весит 1.0")
+
+
+def test_dense_row_sampling_is_deterministic_and_aligned():
+    """S_02B: hash-маска не зависит от target и одинаково режет X/y/block_rows."""
+    cuts = cutoff_grid(90, 3)[-2:]
+    s = Setup(L=0, min_history=90, step=3, norm_long=True,
+              train_blocks=1, row_frac=0.422)
+    X0, _ = make_xy(cuts[0], s.L, 1, norm_long=True)
+    feats = feature_names(X0)
+    A, y, w = assemble(cuts, s, feats)
+    expected = 0
+    for T in cuts:
+        X, yt = make_xy(T, s.L, 1, norm_long=True)
+        keep = row_sample_mask(X["user_id"], s.row_frac)
+        expected += int(keep.sum())
+        ok(np.array_equal(keep, row_sample_mask(X["user_id"], s.row_frac)),
+           f"{T}: hash-маска воспроизводима")
+        ok(len(yt[keep]) == int(keep.sum()), f"{T}: target выровнен с маской")
+    ok(A.shape[0] == len(y) == len(w) == expected,
+       f"assemble сохранил ровно {expected:,} sampled строк")
 
 
 def test_infer_dispatches_dist_to_distribution_head():

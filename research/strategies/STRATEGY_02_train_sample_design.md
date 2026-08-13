@@ -1,7 +1,8 @@
 # Strategy: дизайн обучающей выборки v2 — панель, плотность сетки, веса cutoff'ов
 
 ## Status
-PARTIALLY_TESTED (проверены две ручки из пяти, три никогда не включались)
+PARTIALLY_TESTED — Variant A REJECT, Variant B **FAIL** (`exp_020`, `exp_022`);
+веса cutoff'ов C и комбинация D не запускались.
 
 ## Priority
 Tier A

@@ -1,0 +1,45 @@
+{
+  "variant": "HOLIDAY-YOY-FAST",
+  "method": "direct zero-mean YoY correction",
+  "betas_yoy_minus_placebo": {
+    "gmv": 0.023602857884972333,
+    "orders": 0.03885351972075643,
+    "days_buy": 0.052988868969527335,
+    "cart": 0.04813138198925266,
+    "searches": 0.05552928629558429,
+    "catalog": 0.03426741439253105
+  },
+  "weights_unchanged": {
+    "S1-E10": 0.15,
+    "S1-E02": 0.3,
+    "S1-E03a": 0.1,
+    "S1-DIST": 0.45
+  },
+  "level": 2.3293,
+  "submission_level": 2.3293,
+  "base_wcv": 1.7494835972519431,
+  "new_wcv": 1.7495766939331436,
+  "delta_wcv": 9.309668120049963e-05,
+  "base_fold_cal": [
+    1.769133567786002,
+    1.7625660980009894,
+    1.7507266459314086,
+    1.7431352014081916
+  ],
+  "new_fold_cal": [
+    1.7691684770593543,
+    1.7626254023982222,
+    1.7508230276746135,
+    1.743242377055363
+  ],
+  "base_auc": 0.8433383084809839,
+  "new_auc": 0.8433348869295976,
+  "delta_auc": -3.421551386328936e-06,
+  "var_z_new_minus_base": 0.00017194056468112113,
+  "test_var_adjustment": 0.00014015872151091024,
+  "test_max_abs_adjustment": 0.13003389065769197,
+  "test_no_history_share": 0.431084,
+  "diagnostic_signal_pass": true,
+  "decision": "SEND_HIGH_RISK",
+  "submission": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_HOLIDAY-YOY.csv"
+}

@@ -1,4 +1,13 @@
-# STRATEGY_02 — Variant A (`train_blocks=0`)
+# STRATEGY_02 — дизайн обучающей выборки
+
+Проверены два независимых варианта:
+
+- **Variant A — `train_blocks=0`: REJECT.** Подробности ниже.
+- **Variant B — dense step=3 при равном объёме: FAIL.** wCV `+0.001263`, 0/4 fold,
+  activity AUC и оба проблемных сегмента хуже. Полный отчёт:
+  [`variant_B.md`](variant_B.md).
+
+## Variant A — `train_blocks=0`
 
 - **Дата:** 2026-08-12
 - **Scope:** только Variant A; B/C/D не запускались

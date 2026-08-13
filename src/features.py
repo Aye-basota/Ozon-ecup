@@ -229,9 +229,19 @@ def features_cached(T: dt.date, L: int | None = HISTORY_L,
 
 
 def make_xy(T: dt.date, L: int | None = HISTORY_L, n_blocks: int = PANEL_BLOCKS,
-            horizon: int = TARGET_DAYS, with_target: bool = True, norm_long: bool = False):
-    """(X, y) на cutoff'е T: панель -> фичи -> таргет. y=None для тестового cutoff'а."""
+            horizon: int = TARGET_DAYS, with_target: bool = True, norm_long: bool = False,
+            ptime: str | None = None, ptime_source: str = "real"):
+    """(X, y) на cutoff'е T: панель -> фичи -> таргет. y=None для тестового cutoff'а.
+
+    `ptime` (STRATEGY_08) — подмножество признаков личного времени из `src/ptime.py`
+    ('od' | 'full'), приклеиваемое отдельным join'ом. Кэш `feat_*` при этом не
+    меняется, поэтому OOF прежних экспериментов остаётся сравнимым напрямую.
+    """
     f = features_cached(T, L, norm_long)
+    if ptime:
+        from src.ptime import SUBSETS, ptime_cached
+        pt = ptime_cached(T, L, ptime_source).select(["user_id"] + SUBSETS[ptime])
+        f = f.join(pt, on="user_id", how="left")
     # n_blocks=0 — панель не накладывается: берём всех, у кого есть хоть одна строка
     # в окне признаков. Максимум обучающих данных, проверяется экспериментом S1-E05.
     u = f.select("user_id") if n_blocks == 0 else panel_users(T, n_blocks)

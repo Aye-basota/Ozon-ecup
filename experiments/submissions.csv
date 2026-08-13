@@ -1,4 +1,5 @@
 file,exp_id,date,level,lb_public,oof_source,note
+submission_HOLIDAY-YOY.csv,HOLIDAY-YOY,2026-08-12,2.3293,,oof_HOLIDAY-YOY-FAST.npz,"prepared, not uploaded; SEND_HIGH_RISK: wCV +0.000093 but YoY diagnostic materially stronger than placebo; E03a/S1-CAP kept"
 submission_tier_a_checkpoint.csv,TIER-A-CHECKPOINT,2026-08-12,2.3293,,blend:TIER-A-DIRECT-AVG3-R300=0.15|S1-UNC=0.30|S1-CAP=0.10|S1-DIST=0.45,"prepared, not uploaded; Tier A checkpoint"
 submission_strategy_1_level_low.csv,S1-BEST,2026-08-10,2.2803,1.6519790,,уровневый сабмит: та же смесь при другом delta
 submission_strategy_1.csv,S1-BEST,2026-08-10,2.3391,1.6512803,blend:S1-E10=0.45|S1-E02=0.45|S1-E03a=0.10,"первая боевая смесь; уровень промахнулся на +0.0098, level-free 1.6512512"
@@ -10,3 +11,4 @@ submission_dist_head.csv,S1-DIST-MIX,2026-08-11,2.3293,1.6507774,blend:S1-E10=0.
 submission_experimental_f4.csv,S1-DIST-F4,2026-08-11,2.3293,,,"чистая dist-модель на выборке фолда 2025-10-16; лучший из двух f4-сабмитов = 1.6512012383165489, какой именно — не разделено"
 submission_experimental_f4_mix.csv,S1-DIST-F4-MIX,2026-08-11,2.3293,1.6512012,,"та же смесь, S1-DIST заменён на 24-cutoff'ную версию; лучший из двух f4-сабмитов"
 submission_candidate_e11mix.csv,S1-MIX-E11,2026-08-11,2.3293,1.6510029,blend:S1-E10=0.10|S1-E02=0.35|S1-DIST=0.30|S1-E11=0.25,"последний сабмит; wCV 1.74911 (−0.00038 к S1-DIST-MIX) обещал улучшение, на LB +0.00023 — первая инверсия порядка, см. exp_016 §8"
+submission_SEQ01_mix.csv,SEQ-01-MIX,2026-08-13,2.3293,,"blend:S1-NORM=0.15|S1-UNC=0.20|S1-CAP=0.10|S1-DIST=0.25|SEQ-01=0.30","prepared, not uploaded; exp_025 CONTINUE. wCV 1.748343 (-0.001141 к S1-DIST-MIX), 4/4 фолда; LOFO-честно -0.00106 при S1-E03a/S1-CAP=0.10. Вес 0.30 — нижний край плато 28 комбинаций (разброс 0.00007). z теста с --depth-clip 289: на тестовом cutoff'е доступны все 365 дней, а модель обучалась на глубинах 93..254, corr(FULL, clip)=0.98326"

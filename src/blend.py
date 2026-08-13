@@ -66,9 +66,32 @@ def fold_cal_matrix(Z, ly, masks, ws):
     return out
 
 
-def weight_grid(n: int, step: float):
-    g = np.arange(0, 1 + 1e-9, step)
-    return [w for w in itertools.product(g, repeat=n) if abs(sum(w) - 1) < 1e-9]
+def weight_grid(n: int, step: float, fixed: dict[int, float] | None = None):
+    """Все веса на сетке `step`, суммирующиеся в 1.
+
+    `fixed` — веса, которые НЕ подбираются (индекс модели -> значение). Нужен для
+    страховки `S1-E03a`: перебор её всегда обнуляет, а `MIX-E11` показал, что
+    обнуление стоит +0.00023 LB при локальном выигрыше −0.00038. Без `fixed`
+    поведение прежнее.
+    """
+    if not fixed:
+        g = np.arange(0, 1 + 1e-9, step)
+        return [w for w in itertools.product(g, repeat=n) if abs(sum(w) - 1) < 1e-9]
+    rest = 1.0 - sum(fixed.values())
+    assert rest > -1e-9, "фиксированные веса дают больше единицы"
+    free = [i for i in range(n) if i not in fixed]
+    g = np.arange(0, rest + 1e-9, step)
+    out = []
+    for w in itertools.product(g, repeat=len(free)):
+        if abs(sum(w) - rest) > 1e-9:
+            continue
+        full = [0.0] * n
+        for i, v in fixed.items():
+            full[i] = v
+        for i, v in zip(free, w):
+            full[i] = v
+        out.append(tuple(full))
+    return out
 
 
 def main():
@@ -79,6 +102,8 @@ def main():
                     help="веса опорной смеси, чтобы печатать дельты к ней")
     ap.add_argument("--lofo", action="store_true",
                     help="подобрать веса без каждого фолда и проверить на нём")
+    ap.add_argument("--fix", nargs="*", default=None, metavar="EXP=W",
+                    help="не подбирать вес модели, а зафиксировать: --fix S1-E03a=0.10")
     a = ap.parse_args()
     Z, y, cut = aligned(a.exps)
     ly = np.log1p(y)
@@ -104,7 +129,15 @@ def main():
         print(f"  {a.exps[i]:>12} vs {a.exps[j]:<12} corr {np.corrcoef(R[i], R[j])[0, 1]:.4f}"
               f"   Var(z_i - z_j) {np.var(Z[i] - Z[j]):.5f}")
 
-    ws = weight_grid(len(a.exps), a.step)
+    fixed = {}
+    for spec in (a.fix or []):
+        name, val = spec.split("=")
+        assert name in a.exps, f"--fix {name}: такой модели нет в --exps"
+        fixed[a.exps.index(name)] = float(val)
+    if fixed:
+        print("\nфиксированные веса (не подбираются): "
+              + ", ".join(f"{a.exps[i]}={v}" for i, v in fixed.items()))
+    ws = weight_grid(len(a.exps), a.step, fixed)
     FC = fold_cal_matrix(Z, ly, masks, ws)
     sc = FC @ w_f
     o = np.argsort(sc)

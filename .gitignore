@@ -4,3 +4,6 @@ __pycache__/
 *.pyc
 .venv/
 artifacts/
+
+# крупные диагностические кадры — регенерируются build_frame.py за минуту
+research/rmsle_diagnostics/*.parquet

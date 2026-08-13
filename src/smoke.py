@@ -55,6 +55,10 @@ trunc = build_features(T, HISTORY_L)
 data._CACHE["df"] = df
 ok(full.equals(trunc), "build_features(T) не зависит от строк с event_date > T")
 
+print("== 3b. leakage-тест build_ptime (STRATEGY_08) ==")
+from src.ptime import selftest as ptime_selftest
+ptime_selftest(T, None)
+
 print("== 4. таргет и окна ==")
 X, y = make_xy(T, HISTORY_L)
 ok(X.height == 190_690, f"3-блочная панель на 2025-09-16: n={X.height:,} (ожидание 190 690)")

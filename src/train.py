@@ -47,6 +47,8 @@ GROUPS = {
     "long": lambda c: (c.startswith("w365") or c.startswith("all_")
                        or c.startswith("lifetime_") or c in ("tenure", "first_buy_age")
                        or c.endswith("_365")),
+    # личное время (STRATEGY_08): ablation одним `--drop ptime`
+    "ptime": lambda c: c.startswith("pt_"),
 }
 
 
@@ -80,7 +82,8 @@ class Setup:
     def __init__(self, L=HISTORY_L, min_history=None, step=CUTOFF_STEP, panel_blocks=PANEL_BLOCKS,
                  model="direct", rounds=LGB_ROUNDS, params=None, drop_groups=(), keep_only=None,
                  calendar=False, weight_tau=None, cutoffs=None, vals=None, train_blocks=None,
-                 norm_long=False, min_gap=30, n_cutoffs=None):
+                 norm_long=False, min_gap=30, n_cutoffs=None, ptime=None, ptime_source="real",
+                 row_frac=1.0):
         self.L = None if (L is None or L <= 0) else L
         self.min_history = min_history if min_history is not None else (self.L or 90)
         self.step = step
@@ -94,12 +97,17 @@ class Setup:
         self.calendar = calendar
         self.weight_tau = weight_tau          # экспоненциальный вес cutoff'ов, дни
         self.norm_long = norm_long            # нормировка длинных окон на доступную историю
+        self.ptime = ptime                    # 'od' | 'full' | None — признаки личного времени
+        self.ptime_source = ptime_source      # 'real' | 'shuf' (контроль честности, STRATEGY_08 C)
         self.cutoffs = cutoffs                # 'all' | 'recentN' | явный список
         self.vals = vals or VAL_FOLDS_S1
         self.min_gap = max(30, int(min_gap))  # 30 дней — жёсткий порог антилукапа
         self.n_cutoffs = None if n_cutoffs is None else int(n_cutoffs)
         if self.n_cutoffs is not None and self.n_cutoffs <= 0:
             raise ValueError("n_cutoffs должен быть положительным")
+        self.row_frac = float(row_frac)
+        if not 0.0 < self.row_frac <= 1.0:
+            raise ValueError("row_frac должен лежать в (0, 1]")
 
     def grid(self):
         return cutoff_grid(self.min_history, self.step)
@@ -125,7 +133,8 @@ class Setup:
                     params=self.params, drop_groups=self.drop_groups, keep_only=self.keep_only,
                     calendar=self.calendar, weight_tau=self.weight_tau, cutoffs=self.cutoffs,
                     norm_long=self.norm_long, min_gap=self.min_gap,
-                    n_cutoffs=self.n_cutoffs)
+                    n_cutoffs=self.n_cutoffs, ptime=self.ptime,
+                    ptime_source=self.ptime_source, row_frac=self.row_frac)
 
 
 _XY: dict = {}
@@ -133,23 +142,42 @@ _XY: dict = {}
 
 def xy(T: dt.date, s: Setup, with_target=True, blocks=None):
     b = s.panel_blocks if blocks is None else blocks
-    k = (T, s.L, b, with_target, s.norm_long)
+    k = (T, s.L, b, with_target, s.norm_long, s.ptime, s.ptime_source)
     if len(_XY) > 6:
         _XY.clear()
     if k not in _XY:
-        _XY[k] = make_xy(T, s.L, b, with_target=with_target, norm_long=s.norm_long)
+        _XY[k] = make_xy(T, s.L, b, with_target=with_target, norm_long=s.norm_long,
+                         ptime=s.ptime, ptime_source=s.ptime_source)
     return _XY[k]
 
 
 CAL_COLS = ("cutoff_doy_sin", "cutoff_doy_cos", "cutoff_month")
+ROW_HASH_MOD = 1000
+
+
+def row_sample_mask(user_ids, row_frac: float) -> np.ndarray:
+    """Детерминированная target-free подвыборка пользователей.
+
+    Один user_id получает одно и то же решение на всех cutoff'ах. Это сохраняет
+    временную траекторию выбранных пользователей и меняет только число траекторий,
+    а не плотность temporal grid внутри каждой из них.
+    """
+    ids = np.asarray(user_ids, dtype=np.uint64)
+    if row_frac >= 1.0:
+        return np.ones(len(ids), dtype=bool)
+    threshold = int(round(row_frac * ROW_HASH_MOD))
+    hashed = (ids * np.uint64(2654435761)) % np.uint64(ROW_HASH_MOD)
+    return hashed < threshold
 
 
 def block_rows(T: dt.date, s: Setup) -> int:
     """Число строк на cutoff'е. Это высота панели — признаки читать для этого не нужно."""
     if s.train_blocks == 0:
-        return xy(T, s, blocks=0)[0].height
-    from src.features import panel_users
-    return panel_users(T, s.train_blocks).height
+        users = xy(T, s, blocks=0)[0]["user_id"]
+    else:
+        from src.features import panel_users
+        users = panel_users(T, s.train_blocks)["user_id"]
+    return int(row_sample_mask(users, s.row_frac).sum())
 
 
 def assemble(cuts: list[dt.date], s: Setup, feats: list[str], V: dt.date | None = None):
@@ -164,6 +192,10 @@ def assemble(cuts: list[dt.date], s: Setup, feats: list[str], V: dt.date | None 
     ys, ws, i = [], [], 0
     for T, n in zip(cuts, sizes):
         Xb, y = xy(T, s, blocks=s.train_blocks)
+        if s.row_frac < 1.0:
+            keep = row_sample_mask(Xb["user_id"], s.row_frac)
+            Xb = Xb.filter(pl.Series(keep))
+            y = y[keep]
         A = to_np(Xb, feats)
         if s.calendar:
             cal = calendar_cols(T, A.shape[0])
@@ -248,7 +280,8 @@ def run(exp_id: str, desc: str, s: Setup, save_model_feats=False, verbose_imp=Fa
     log(f"{exp_id}: {desc}")
     log(f"  L={s.L} min_hist={s.min_history} step={s.step} blocks={s.panel_blocks} "
         f"train_blocks={s.train_blocks} min_gap={s.min_gap} n_cutoffs={s.n_cutoffs} "
-        f"model={s.model} rounds={s.rounds} feats={nfeat}")
+        f"model={s.model} rounds={s.rounds} feats={nfeat} "
+        f"row_frac={s.row_frac:.3f} ptime={s.ptime or 'off'}/{s.ptime_source}")
 
     oof_u, oof_c, oof_z, oof_y = [], [], [], []
     snap_z: dict[int, list] = {k: [] for k in snap}      # OOF каждого среза по раундам
@@ -342,7 +375,10 @@ def build_setup(a) -> Setup:
                  vals=([dt.date.fromisoformat(v) for v in a.val] if getattr(a, "val", None)
                        else VAL_FOLDS_S1[-a.folds:] if getattr(a, "folds", 0) else None),
                  norm_long=getattr(a, "norm_long", False),
-                 min_gap=getattr(a, "min_gap", 30), n_cutoffs=getattr(a, "n_cutoffs", None))
+                 min_gap=getattr(a, "min_gap", 30), n_cutoffs=getattr(a, "n_cutoffs", None),
+                 ptime=(None if getattr(a, "ptime", "off") == "off" else a.ptime),
+                 ptime_source=getattr(a, "ptime_source", "real"),
+                 row_frac=getattr(a, "row_frac", 1.0))
 
 
 def main():
@@ -354,6 +390,8 @@ def main():
     ap.add_argument("--step", type=int, default=CUTOFF_STEP)
     ap.add_argument("--panel-blocks", type=int, default=PANEL_BLOCKS)
     ap.add_argument("--train-blocks", type=int, default=None)
+    ap.add_argument("--row-frac", type=float, default=1.0,
+                    help="детерминированная hash-доля train user_id; target не используется")
     ap.add_argument("--model", default="direct",
                     choices=["direct", "two_part", "catboost", "dist"])
     ap.add_argument("--rounds", type=int, default=LGB_ROUNDS)
@@ -369,6 +407,12 @@ def main():
     ap.add_argument("--calendar", action="store_true")
     ap.add_argument("--norm-long", action="store_true",
                     help="нормировать w365_*/tenure на доступную глубину истории")
+    ap.add_argument("--ptime", default="off", choices=["off", "od", "full"],
+                    help="признаки личного времени (STRATEGY_08): od = только просрочка "
+                         "относительно собственного распределения интервалов, full = все 30")
+    ap.add_argument("--ptime-source", default="real", choices=["real", "shuf"],
+                    help="shuf = профиль личного времени переставлен между пользователями "
+                         "(контроль честности, STRATEGY_08 вариант C)")
     ap.add_argument("--weight-tau", type=float, default=None)
     ap.add_argument("--cutoffs", default=None, help="all | recentN | everyN")
     ap.add_argument("--min-gap", type=int, default=30,
