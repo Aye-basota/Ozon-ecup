@@ -6,3 +6,8 @@
 
 | ID | Дата | Автор | Гипотеза | CV | Вердикт |
 |----|------|-------|----------|-----|---------|
+| exp_005 | 2026-08-13 | Codex | G4 multi-cutoff 8x14d | 1.717040 | reject, код откатан |
+| exp_004 | 2026-08-13 | Codex | G3 EWM-агрегаты | 1.716725 | reject, код откатан |
+| exp_003 | 2026-08-13 | Codex | G2 календарные признаки cutoff | 1.717017 | reject, код откатан |
+| exp_002 | 2026-08-13 | Codex | G1 SPLY same-period year-ago | 1.717011 | reject, код откатан |
+| exp_001 | 2026-08-12 | Codex | LightGBM на 50 user-based признаках | 1.717017 | baseline accept, LB 1.6615 |
