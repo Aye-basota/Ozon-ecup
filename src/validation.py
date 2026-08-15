@@ -3,8 +3,6 @@
 This module must stay model-agnostic: no baseline-specific thresholds,
 experiment-specific heuristics, or model comparisons.
 """
-from __future__ import annotations
-
 from collections.abc import Callable, Sequence
 
 import numpy as np
@@ -17,11 +15,6 @@ FOLDS = [
     {"fold": 1, "train_cutoff": "2025-12-15", "val_cutoff": "2026-01-14"},
     {"fold": 2, "train_cutoff": "2025-11-15", "val_cutoff": "2025-12-15"},
 ]
-
-
-def get_folds() -> list[dict[str, int | str]]:
-    """Return out-of-time folds from PLAN.md."""
-    return [dict(fold) for fold in FOLDS]
 
 
 def metric(y_true: pd.Series | np.ndarray, y_pred: pd.Series | np.ndarray) -> float:
@@ -77,7 +70,6 @@ def run_validation(
         [pd.DataFrame, pd.Series, pd.DataFrame, pd.Series, dict[str, int | str]],
         pd.Series | np.ndarray,
     ],
-    folds: Sequence[dict[str, int | str]] | None = None,
     verbose: bool = True,
 ) -> float:
     """Run out-of-time validation and return mean RMSLE.
@@ -85,10 +77,9 @@ def run_validation(
     fit_predict_fn receives X_train, y_train, X_val, y_val, fold_cfg and returns
     validation predictions.
     """
-    fold_list = [dict(fold) for fold in (folds if folds is not None else get_folds())]
     scores: list[float] = []
 
-    for fold_cfg in fold_list:
+    for fold_cfg in FOLDS:
         fold = int(fold_cfg["fold"])
         train_cutoff = str(fold_cfg["train_cutoff"])
         val_cutoff = str(fold_cfg["val_cutoff"])
