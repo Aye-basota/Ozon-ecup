@@ -74,6 +74,35 @@ FEATURES = [
     "w14_gmv",
     "buygap_std",
     "w14_days_cart",
+    "lag1_gmv",
+    "lag1_orders",
+    "lag1_carts",
+    "lag1_searches",
+    "lag2_gmv",
+    "lag2_orders",
+    "lag2_carts",
+    "lag2_searches",
+    "lag3_gmv",
+    "lag3_orders",
+    "lag3_carts",
+    "lag3_searches",
+    "lag7_gmv",
+    "lag7_orders",
+    "lag7_carts",
+    "lag7_searches",
+    "lag14_gmv",
+    "lag14_orders",
+    "lag14_carts",
+    "lag14_searches",
+    "lag21_gmv",
+    "lag21_orders",
+    "lag21_carts",
+    "lag21_searches",
+    "lag28_gmv",
+    "lag28_orders",
+    "lag28_carts",
+    "lag28_searches",
+    "var_predictability",
 ]
 
 CHECK_COLS = ["gmv", "to_ord", "to_cart", "searches"]
@@ -207,6 +236,24 @@ def _add_window_aggs(
 
     agg = part.groupby("user_id", sort=False).agg(**aggregations)
     return X.join(agg, how="left")
+
+
+def _add_daily_lag_features(X: pd.DataFrame, history: pd.DataFrame, cutoff: pd.Timestamp) -> pd.DataFrame:
+    cols = ["gmv", "to_ord", "to_cart", "searches"]
+    rename_base = {"gmv": "gmv", "to_ord": "orders", "to_cart": "carts", "searches": "searches"}
+    for lag in [1, 2, 3, 7, 14, 21, 28]:
+        lag_date = cutoff - pd.Timedelta(days=lag)
+        part = history.loc[history["event_date"] == lag_date, ["user_id"] + cols]
+        if part.empty:
+            for suffix in rename_base.values():
+                X[f"lag{lag}_{suffix}"] = 0.0
+            continue
+
+        lag_frame = part.set_index("user_id")[cols].rename(
+            columns={col: f"lag{lag}_{name}" for col, name in rename_base.items()}
+        )
+        X = X.join(lag_frame, how="left")
+    return X
 
 
 def _gap_stats(days: pd.DataFrame, all_users: pd.Index) -> pd.DataFrame:
@@ -435,6 +482,9 @@ def build_features(
     X["dlog_buyd_90_365"] = np.log1p(X["w90_days_buy"] / 90.0) - np.log1p(
         np.maximum(X["w365_days_buy"] - X["w90_days_buy"], 0.0) / 275.0
     )
+    X = _add_daily_lag_features(X, history, cutoff)
+    amount_cv = X["w365_lgmv_std"] / (X["w365_lgmv_mean"].abs() + 1.0)
+    X["var_predictability"] = amount_cv + X["buygap_cv"].clip(lower=0, upper=10) + X["gap_cv"].clip(lower=0, upper=10)
 
     for feature in FEATURES:
         if feature not in X.columns:

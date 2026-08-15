@@ -33,7 +33,7 @@ ARTIFACTS = ROOT / "artifacts"
 NAIVE30_FOLD1_RANGE = (2.0, 2.4)
 MIN_LGBM_IMPROVEMENT = 0.05
 REFERENCE_FOLD = {"fold": 3, "train_cutoff": "2025-10-16", "val_cutoff": "2025-11-15"}
-CALIBRATION_DELTA = -0.17
+CALIBRATION_DELTA = 0.0
 LGBM_PARAMS = dict(
     objective="regression",
     learning_rate=0.05,
@@ -274,7 +274,7 @@ def run_cv(
         }
         return pred_lgbm
 
-    main_folds = get_folds()
+    main_folds = 
     cv_score = run_validation(
         df=df,
         all_users=all_users,
