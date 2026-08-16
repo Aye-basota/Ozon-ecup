@@ -6,6 +6,10 @@
 
 | ID | Дата | Автор | Гипотеза | CV | Вердикт |
 |----|------|-------|----------|-----|---------|
+| exp_007 | 2026-08-11 | Codex | Multi-cutoff CV для baseline | mean RMSLE 1.729343; std 0.015957 | Нейтрально: validation audit |
+| exp_006 | 2026-08-11 | Codex | LightGBM вместо HGBR на baseline | RMSE 243.895440; RMSLE 1.710143 | Успех |
+| exp_005 | 2026-08-11 | Codex | Scale calibration baseline-прогноза | scale 0.65; RMSLE 1.672748 | Сильный успех |
+| exp_004 | 2026-08-11 | Codex | Recency по последним действиям | RMSE 244.749083; RMSLE 1.710617 | Успех |
 | exp_003 | 2026-08-11 | Codex | Isolated тренды активности | RMSE 244.595270; RMSLE 1.711856 | Провал |
 | exp_002 | 2026-08-11 | Codex | Конверсии search→cart/order, cart→order, средние чеки, доли GMV | RMSE 243.974514; RMSLE 1.710919 | Успех: маленькое улучшение |
 | exp_001 | 2026-08-11 | Codex | Baseline на оконных агрегатах активности + log1p target | RMSE 244.596747; RMSLE 1.711195 | Нейтрально: рабочая точка отсчёта |

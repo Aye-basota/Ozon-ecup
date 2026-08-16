@@ -52,6 +52,7 @@ FEATURE_SETS = {
     "recency",
     "conversions_recency",
     "long_buy",
+    "long_buy_post_order",
 }
 
 
@@ -148,6 +149,89 @@ def _add_trend_features(features: pd.DataFrame) -> pd.DataFrame:
     return pd.concat([features, pd.DataFrame(trend_features, index=features.index)], axis=1)
 
 
+def _add_post_order_features(features: pd.DataFrame, cutoff_date: str) -> pd.DataFrame:
+    query = f"""
+        WITH base AS (
+            SELECT *
+            FROM read_parquet($path)
+            WHERE event_date < CAST($cutoff AS DATE)
+        ),
+        last_order AS (
+            SELECT
+                user_id,
+                MAX(CASE WHEN to_ord > 0 THEN event_date END) AS last_order_date
+            FROM base
+            GROUP BY user_id
+        )
+        SELECT
+            b.user_id,
+            SUM(CASE WHEN lo.last_order_date IS NOT NULL AND b.event_date > lo.last_order_date THEN 1 ELSE 0 END)
+                AS post_order_active_days,
+            SUM(CASE WHEN lo.last_order_date IS NOT NULL AND b.event_date > lo.last_order_date AND b.search > 0 THEN 1 ELSE 0 END)
+                AS post_order_search_days,
+            SUM(CASE WHEN lo.last_order_date IS NOT NULL AND b.event_date > lo.last_order_date AND b.cat > 0 THEN 1 ELSE 0 END)
+                AS post_order_cat_days,
+            SUM(CASE WHEN lo.last_order_date IS NOT NULL AND b.event_date > lo.last_order_date AND b.to_cart > 0 THEN 1 ELSE 0 END)
+                AS post_order_cart_days,
+            SUM(CASE WHEN lo.last_order_date IS NOT NULL AND b.event_date > lo.last_order_date THEN b.search ELSE 0 END)
+                AS post_order_search_sum,
+            SUM(CASE WHEN lo.last_order_date IS NOT NULL AND b.event_date > lo.last_order_date THEN b.cat ELSE 0 END)
+                AS post_order_cat_sum,
+            SUM(CASE WHEN lo.last_order_date IS NOT NULL AND b.event_date > lo.last_order_date THEN b.searches ELSE 0 END)
+                AS post_order_searches_sum,
+            SUM(CASE WHEN lo.last_order_date IS NOT NULL AND b.event_date > lo.last_order_date THEN b.to_cart ELSE 0 END)
+                AS post_order_cart_sum
+        FROM base AS b
+        JOIN last_order AS lo USING (user_id)
+        GROUP BY b.user_id
+    """
+    with duckdb.connect() as con:
+        duckdb_tmp = DATA_PROCESSED / "duckdb_tmp"
+        duckdb_tmp.mkdir(parents=True, exist_ok=True)
+        con.execute("SET preserve_insertion_order = false")
+        con.execute("SET temp_directory = ?", [str(duckdb_tmp)])
+        post_order = con.execute(
+            query,
+            {"path": str(RAW_TRAIN), "cutoff": cutoff_date},
+        ).fetchdf()
+
+    features = features.merge(post_order, on="user_id", how="left").fillna(0)
+    has_order = features["recency_to_ord_days"] < 9999
+    derived = {
+        "has_activity_after_last_order": (features["post_order_active_days"] > 0).astype("int8"),
+        "has_search_after_last_order": (features["post_order_search_days"] > 0).astype("int8"),
+        "has_cart_after_last_order": (features["post_order_cart_days"] > 0).astype("int8"),
+        "no_activity_after_last_order": (
+            (features["recency_to_ord_days"] < 9999) & (features["post_order_active_days"] == 0)
+        ).astype("int8"),
+        "last_search_after_last_order": (
+            (features["recency_to_ord_days"] < 9999)
+            & (features["recency_search_days"] < features["recency_to_ord_days"])
+        ).astype("int8"),
+        "last_cart_after_last_order": (
+            (features["recency_to_ord_days"] < 9999)
+            & (features["recency_to_cart_days"] < features["recency_to_ord_days"])
+        ).astype("int8"),
+        "days_last_order_to_last_search": (features["recency_to_ord_days"] - features["recency_search_days"]).where(
+            has_order,
+            0,
+        ),
+        "days_last_order_to_last_cart": (features["recency_to_ord_days"] - features["recency_to_cart_days"]).where(
+            has_order,
+            0,
+        ),
+        "post_order_active_share": _safe_ratio(features["post_order_active_days"], features["recency_to_ord_days"]),
+        "post_order_search_share_all": _safe_ratio(features["post_order_searches_sum"], features["searches_sum_all"]),
+        "post_order_cart_share_all": _safe_ratio(features["post_order_cart_sum"], features["to_cart_sum_all"]),
+        "post_order_searches_per_day": _safe_ratio(
+            features["post_order_searches_sum"],
+            features["post_order_active_days"],
+        ),
+        "post_order_cart_per_day": _safe_ratio(features["post_order_cart_sum"], features["post_order_active_days"]),
+    }
+    return pd.concat([features, pd.DataFrame(derived, index=features.index)], axis=1)
+
+
 def build_features(cutoff_date: str, feature_set: str = DEFAULT_FEATURE_SET) -> pd.DataFrame:
     """Построить фичи для всех пользователей на дату cutoff.
 
@@ -188,7 +272,7 @@ def build_features(cutoff_date: str, feature_set: str = DEFAULT_FEATURE_SET) -> 
                 f"SUM(CASE WHEN {condition} THEN {col} ELSE 0 END) AS {col}_sum_{days}d"
             )
 
-    if feature_set in {"recency", "conversions_recency", "long_buy"}:
+    if feature_set in {"recency", "conversions_recency", "long_buy", "long_buy_post_order"}:
         event_conditions = {
             "search": "search > 0",
             "cat": "cat > 0",
@@ -205,7 +289,7 @@ def build_features(cutoff_date: str, feature_set: str = DEFAULT_FEATURE_SET) -> 
                 f"9999) AS recency_{name}_days"
             )
 
-    if feature_set == "long_buy":
+    if feature_set in {"long_buy", "long_buy_post_order"}:
         select_parts.extend(
             [
                 "DATE_DIFF('day', MIN(event_date), CAST($cutoff AS DATE)) AS tenure_days",
@@ -264,7 +348,7 @@ def build_features(cutoff_date: str, feature_set: str = DEFAULT_FEATURE_SET) -> 
         features = _add_conversion_features(features)
     elif feature_set == "trends":
         features = _add_trend_features(features)
-    elif feature_set == "long_buy":
+    elif feature_set in {"long_buy", "long_buy_post_order"}:
         long_features = {
             "lifetime_gmv_per_day": _safe_ratio(features["gmv_sum_all"], features["tenure_days"]),
             "buyday_rate_all": _safe_ratio(features["all_days_buy"], features["active_days_all"]),
@@ -291,6 +375,8 @@ def build_features(cutoff_date: str, feature_set: str = DEFAULT_FEATURE_SET) -> 
             long_features[f"w{days}_orders_per_day"] = features[f"w{days}_orders"] / days
             long_features[f"w{days}_gmv_per_day"] = features[f"w{days}_gmv"] / days
         features = pd.concat([features, pd.DataFrame(long_features, index=features.index)], axis=1)
+        if feature_set == "long_buy_post_order":
+            features = _add_post_order_features(features, cutoff_date)
 
     features = features.sort_values("user_id")
     features.to_parquet(cache_path, index=False)
