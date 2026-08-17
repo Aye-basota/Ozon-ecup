@@ -187,6 +187,12 @@ def get_target(df_raw: pd.DataFrame, cutoff_date: pd.Timestamp, window: int):
     end = cutoff_date + window
     df['event_date'] = pd.to_datetime(df['event_date'])
     df_history = df[(df['event_date'] > start) & (df['event_date'] < end)]
-    target = df_history.groupby('user_id')['gmv'].sum()
+ 
+    df_target = pd.DataFrame({
+        'user_id': df['user_id'].unique()
+    })
+    df_target['target_gmv'] = df_target['user_id'].map(
+        df_history.groupby('user_id')['gmv'].sum()
+    ).fillna(0)
 
-    return target
+    return df_target
