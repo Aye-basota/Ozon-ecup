@@ -186,7 +186,8 @@ def get_target(df_raw: pd.DataFrame, cutoff_date: pd.Timestamp, window: int):
     start = cutoff_date
     end = cutoff_date + window
     df['event_date'] = pd.to_datetime(df['event_date'])
-    df_history = df[(df['event_date'] > start) & (df['event_date'] < end)]
+    df_history = df[(df['event_date'] >= start)
+                    & (df['event_date'] < end)]
  
     df_target = pd.DataFrame({
         'user_id': df['user_id'].unique()
