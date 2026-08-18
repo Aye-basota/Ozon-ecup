@@ -197,3 +197,10 @@ def get_target(df_raw: pd.DataFrame, cutoff_date: pd.Timestamp, window: int):
     ).fillna(0)
 
     return df_target
+
+def build_df(df_raw, cutoff_date, window):
+    X = build_features(df_raw, cutoff_date)
+    target_df = get_target(df_raw, cutoff_date, window)
+
+    df_processed = X.merge(target_df, on='user_id', how='left')
+    return df_processed
