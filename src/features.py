@@ -195,6 +195,8 @@ def get_target(df_raw: pd.DataFrame, cutoff_date: pd.Timestamp, window: int):
     df_target['target_gmv'] = df_target['user_id'].map(
         df_history.groupby('user_id')['gmv'].sum()
     ).fillna(0)
+    df_target['target_gmv_above_zero'] = (df_target['target_gmv'] > 0).astype(int)
+    df_target['target_log_gmv'] = np.log1p(df_target['target_gmv'])
 
     return df_target
 
