@@ -2,8 +2,8 @@
 
 ## Текущий лучший
 
-- Лучший LB: exp_017 dist head on post-order, LB 1.6546318191.
-- Лучший локальный CV-кандидат: exp_017 dist head on post-order, mean RMSLE 1.708295; LB 1.6546318191.
+- Лучший LB: exp_019 behavior_v1 dist-head, LB 1.6545023535300867.
+- Лучший локальный CV-кандидат: exp_019 behavior_v1 dist-head, mean RMSLE 1.707699; LB 1.6545023535300867.
 
 ## Метрика и валидация
 
@@ -22,6 +22,9 @@
 
 | ID | Дата | Автор | Гипотеза | CV | Вердикт |
 |----|------|-------|----------|-----|---------|
+| exp_020 | 2026-08-17 | Codex | behavior_v1_slim: top-50 новых b1_ вместо 114 | CV 1.707699 → 1.707796; LB 1.654736 | Хуже exp017 на LB |
+| exp_019 | 2026-08-17 | Codex | behavior_v1: 114 поведенческих фичей в dist-head | CV 1.708295 → 1.707699; LB 1.654502 | Лучший LB |
+| exp_018 | 2026-08-16 | Codex | CatBoost как третий компонент поверх recency + post-order dist-head | CV 1.708295 → 1.707921; submit ready | Локально лучший, LB pending |
 | exp_017 | 2026-08-15 | Codex | Dist-head из team-a на post-order фичах | CV 1.708883 → 1.708295; LB 1.654632 | Лучший LB |
 | exp_016 | 2026-08-15 | Codex | Post-order activity фичи: активен после последней покупки или ушёл | CV 1.709007 → 1.708883; LB 1.654779 | Лучший LB |
 | exp_015 | 2026-08-14 | Codex | Grid весов recency/long_buy при scale 1.20 | w_rec 0.525 CV 1.709004, но LB чуть хуже exp_011 | Нейтрально/провал |
@@ -29,9 +32,6 @@
 | exp_013 | 2026-08-13 | Codex | Scale grid 1.10..1.35 на validation из main | CV best scale 1.30, but LB worse: 1.275=1.655708, 1.300=1.656280 | Провал |
 | exp_012 | 2026-08-13 | Codex | Проверка validation из main против LB на exp_011 scales | scale 1.2 best: CV 1.709007; LB 1.654910 | Успех: rank совпал |
 | exp_011 | 2026-08-13 | Codex | Dense weekly clean-cutoff ensemble | clean val best scale 1.4, LB best scale 1.2 = 1.654910 | Лучший LB |
-| exp_010 | 2026-08-12 | Codex | Тюнинг веса/scale для exp_009 ensemble | best near RMSLE 1.670716 | LB-кандидаты |
-| exp_009 | 2026-08-12 | Codex | Long-buy фичи из importance + log-space ensemble | RMSLE 1.670716; LB 1.656853 | Лучший LB |
-| exp_008 | 2026-08-11 | Codex | Champion: recency + LightGBM + scale 0.64 | RMSE 254.269612; RMSLE 1.671639; LB 1.657 | Лучший LB |
 
 ## Backlog
 

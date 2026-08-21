@@ -140,7 +140,7 @@ def run_cv(args):
         val_cutoff = fold["val_cutoff"]
         print(f"\nfold={fold['fold']} train={train_cutoffs[0]} val={val_cutoff}", flush=True)
         z_recency = fit_predict_z("recency", train_cutoffs, val_cutoff, scale=0.64)
-        z_dist = fit_predict_dist_z("long_buy_post_order", train_cutoffs, val_cutoff, scale=0.62, args=args)
+        z_dist = fit_predict_dist_z(args.dist_feature_set, train_cutoffs, val_cutoff, scale=0.62, args=args)
         y_val = build_target(val_cutoff).reindex(z_recency.index).fillna(0.0)
         for weight in weights:
             pred = mix_predictions(z_recency, z_dist, weight, args.global_scale)
@@ -153,7 +153,7 @@ def run_cv(args):
             }
             rows.append(row)
             print(
-                f"dist_post_order w_rec={weight:.3f} RMSLE={row['rmsle']:.6f} "
+                f"dist_{args.dist_feature_set} w_rec={weight:.3f} RMSLE={row['rmsle']:.6f} "
                 f"bias={row['bias']:+.4f}",
                 flush=True,
             )
@@ -178,7 +178,7 @@ def run_submit(args):
     train_cutoffs = clean_grid()[-args.recent_train_cutoffs :]
     print(f"submit train_cutoffs={len(train_cutoffs)} {train_cutoffs[0]}..{train_cutoffs[-1]}", flush=True)
     z_recency = fit_predict_z("recency", train_cutoffs, TEST_CUTOFF, scale=0.64)
-    z_dist = fit_predict_dist_z("long_buy_post_order", train_cutoffs, TEST_CUTOFF, scale=0.62, args=args)
+    z_dist = fit_predict_dist_z(args.dist_feature_set, train_cutoffs, TEST_CUTOFF, scale=0.62, args=args)
     pred = mix_predictions(z_recency, z_dist, args.recency_weight, args.global_scale)
 
     SUBMISSIONS.mkdir(parents=True, exist_ok=True)
@@ -204,6 +204,7 @@ def parse_args():
         p.add_argument("--rounds", type=int, default=250)
         p.add_argument("--learning-rate", type=float, default=0.05)
         p.add_argument("--num-leaves", type=int, default=31)
+        p.add_argument("--dist-feature-set", default="long_buy_post_order")
         p.add_argument("--output", default="exp_017_dist_post_order.csv")
     return parser.parse_args()
 
