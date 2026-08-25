@@ -1,0 +1,5 @@
+submission_id,date,source_experiment,public_score,path,sha256,status,oof_equivalent,notes
+STRONGEST_CURRENT,2026-08-20,EXP_037_STRONGEST_CURRENT,1.6496571,C:/Users/Admin/Desktop/OZON-E-CUP/submissions/submission_STRONGEST_CURRENT.csv,abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda,SUBMITTED,yes,Canonical research submission
+TEAMMATE_LATEST,2026-08-24,,1.6492175622,C:/Users/Admin/Desktop/OZON-E-CUP/пайплайн сокомандника/latest/latest.csv,7ef5b2c58925bd28c5bc7eb83b9cfd4785c608a0c8b2a6d7a3277730cba8e722,SUBMITTED,no,Externally reported score; occurrence components lack canonical OOF
+SUBMIT_V2_SHRUNK,2026-08-25,,1.6467120249048954,C:/Users/Admin/Desktop/submission_geometry_research/current_best/SUBMIT_v2_shrunk.csv,50f8d11dca25c782d42f66ebd46ba50a71a533188ca5f20bad4178cb005b74aa,SUBMITTED,no,Separate 65-source geometry line
+SUBMIT_NEXT_BEST,2026-08-25,,1.6466079084,C:/Users/Admin/Desktop/submission_geometry_research/submission_geometry/SUBMIT_NEXT_BEST.csv,95f3fa982d8173e5382b199888748f57601b86fe8d0dcaa692984dde67d34677,SUBMITTED,no,Current public incumbent supplied by user; no fold-safe equivalent

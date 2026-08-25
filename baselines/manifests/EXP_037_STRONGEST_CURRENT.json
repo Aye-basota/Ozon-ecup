@@ -1,0 +1,25 @@
+{
+  "baseline_id": "EXP_037_STRONGEST_CURRENT",
+  "artifact": "artifacts/oof/EXP_037_STRONGEST_CURRENT.parquet",
+  "artifact_sha256": "8ac8aebea5dd875a34f5ccfbcedbd6dc12be39147e29c9a5efae236d895b5c9d",
+  "artifact_bytes": 9518701,
+  "prediction_space": "log1p",
+  "row_key": ["cutoff", "user_id"],
+  "rows": 770616,
+  "folds": ["2025-09-04", "2025-09-18", "2025-10-02", "2025-10-16"],
+  "fold_sizes": [188518, 191025, 193694, 197379],
+  "fold_weights": [1.0, 2.0, 4.0, 8.0],
+  "expected_wcv": 1.7475098625201952,
+  "recipe": {
+    "S1-E03a_CAP": 0.10,
+    "S1-E02_UNC": 0.20,
+    "S1-DIST": 0.25,
+    "SEQ-AVG3": 0.225,
+    "ETX-AVG3": 0.225
+  },
+  "public_submission": {
+    "score": 1.6496571,
+    "sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda"
+  },
+  "notes": "The current 1.6466079084 geometry incumbent has no fold-safe OOF equivalent and is not represented here."
+}

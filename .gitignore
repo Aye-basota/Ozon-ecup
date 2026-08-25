@@ -1,0 +1,40 @@
+# Local machine configuration
+config/paths.local.yaml
+.env
+.env.*
+!.env.example
+
+# Python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# External or generated data
+data/
+cache/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.bin
+
+# Prediction artifacts are external by default. The frozen canonical OOF is the
+# only reviewed binary artifact intentionally versioned in this repository.
+artifacts/oof/*.parquet
+!artifacts/oof/EXP_037_STRONGEST_CURRENT.parquet
+artifacts/test/*
+!artifacts/test/.gitkeep
+artifacts/submissions/*
+!artifacts/submissions/.gitkeep
+
+# Local logs and scratch outputs
+*.log
+tmp/
+scratch/
+reports/rendered/

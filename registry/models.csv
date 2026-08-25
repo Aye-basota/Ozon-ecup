@@ -1,0 +1,10 @@
+model_id,family,role,oof_source,test_source,reusable_status,notes
+S1_E03A_CAP,lightgbm_direct,EXP037 component,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-E03a.npz,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/ztest_S1-CAP.npy,external_reusable,Fixed 0.10 baseline weight
+S1_E02_UNC,lightgbm_direct,EXP037 component,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-E02.npz,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/ztest_S1-UNC.npy,external_reusable,Fixed 0.20 baseline weight
+S1_DIST,lightgbm_distribution,EXP037 component,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-DIST.npz,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/ztest_S1-DIST.npy,external_reusable,Fixed 0.25 baseline weight
+SEQ_AVG3,dilated_tcn,EXP037 component,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_SEQ-AVG3.npz,see artifacts/manifests/prediction_sources.csv,external_reusable,Depth clip 289 for TEST members
+ETX_AVG3,event_transformer,EXP037 component,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_ETX-AVG3.npz,see artifacts/manifests/prediction_sources.csv,external_reusable,DCW TEST policy
+S1_E10,lightgbm_direct,major tabular donor,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-E10.npz,,external_reusable,Normalized long-window features
+S1_E11,lightgbm_two_part,occurrence donor,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-E11.npz,,external_reusable,Direct EXP063 integration rejected
+BTYD_STABLE,BG_NBD_residual,orthogonal residual donor,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/BTYD_STABLE_EXP051/oof_raw.npz,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/BTYD_STABLE_EXP051/test_raw.npz,external_candidate,Small fixed production-supported direction
+FRESH_CONTRAST,conditional_sequence_residual,orthogonal residual donor,C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_FRESH_CONTRAST_MOE.npz,,external_candidate,WEAK_SIGNAL only

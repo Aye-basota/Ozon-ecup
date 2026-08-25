@@ -1,0 +1,16 @@
+experiment_id: EXP_XXX_NAME
+name: short_name
+family: direct
+hypothesis: "Replace with one falsifiable claim."
+parent_baseline: EXP_037_STRONGEST_CURRENT
+history_days: null
+normalize_long_windows: true
+min_history_days: 90
+cutoff_step_days: 7
+train_panel_blocks: 1
+validation_panel_blocks: 3
+rounds: 600
+model_params: {}
+validation: canonical_4fold_wCV_1_2_4_8
+exact_change: "Describe the only intended change."
+success_gate: "Define before execution."

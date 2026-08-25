@@ -1,0 +1,6 @@
+# Copy to config/paths.local.yaml and replace every value with an absolute path.
+# paths.local.yaml is intentionally ignored by Git.
+data_root: /absolute/path/to/OZON-E-CUP/data
+old_repo_root: /absolute/path/to/OZON-E-CUP
+external_artifacts_root: /absolute/path/to/OZON-E-CUP/artifacts
+submission_geometry_root: /absolute/path/to/submission_geometry_research

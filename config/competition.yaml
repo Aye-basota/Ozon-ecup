@@ -1,0 +1,63 @@
+competition: ozon_e_cup
+task: predict_30_day_user_gmv
+metric: RMSLE
+prediction_space: log1p
+seed: 42
+
+data:
+  start_date: "2025-01-01"
+  end_date: "2026-02-13"
+  test_cutoff: "2026-02-13"
+  target_horizon_days: 30
+  raw_parquet: raw/train.parquet
+  sample_submission: raw/sample_submit.csv
+
+eligibility:
+  panel_blocks: 3
+  block_days: 30
+  rule: at_least_one_observed_day_in_each_block
+
+validation:
+  folds:
+    - "2025-09-04"
+    - "2025-09-18"
+    - "2025-10-02"
+    - "2025-10-16"
+  fold_weights: [1.0, 2.0, 4.0, 8.0]
+  clean_corridor_end: "2025-10-16"
+  cutoff_step_days: 7
+  min_history_days: 90
+  min_gap_days: 30
+  train_panel_blocks: 1
+  validation_panel_blocks: 3
+  per_fold_log_offset: true
+
+features:
+  history_days: null
+  normalize_long_windows: true
+  cache_dir: processed
+
+lightgbm:
+  rounds: 600
+  objective: regression
+  metric: rmse
+  learning_rate: 0.05
+  num_leaves: 127
+  min_data_in_leaf: 200
+  feature_fraction: 0.7
+  bagging_fraction: 0.8
+  bagging_freq: 1
+  lambda_l2: 5.0
+  max_bin: 63
+  force_row_wise: true
+
+offline_baseline:
+  id: EXP_037_STRONGEST_CURRENT
+  artifact: artifacts/oof/EXP_037_STRONGEST_CURRENT.parquet
+  expected_wcv: 1.7475098625201952
+  tolerance: 1.0e-10
+
+public_incumbent:
+  score: 1.6466079084
+  oof_equivalent_available: false
+  research_line: submission_geometry
