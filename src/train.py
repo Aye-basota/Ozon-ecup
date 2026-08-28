@@ -35,7 +35,7 @@ def make_models():
 
     lgbm_regressor = LGBMRegressor(
         objective="regression",
-        n_estimators=900,
+        n_estimators=200,
         learning_rate=0.05,
         num_leaves=63,
         min_data_in_leaf=100,
@@ -50,7 +50,7 @@ def make_models():
 
     lgbm_second_regressor = LGBMRegressor(
         objective="regression",
-        n_estimators=1100,
+        n_estimators=200,
         learning_rate=0.05,
         num_leaves=63,
         min_data_in_leaf=100,
