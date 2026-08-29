@@ -1,9 +1,20 @@
-from lightgbm import LGBMClassifier, LGBMRegressor
+import sys
+from pathlib import Path
+
+import pandas as pd
 from catboost import CatBoostRegressor
+from lightgbm import LGBMClassifier, LGBMRegressor
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.config import SEED, TARGET_DAYS
 from src.features import build_df
 
+
+FINAL_TRAIN_CUTOFF = pd.Timestamp("2026-01-15")
+FINAL_TEST_CUTOFF = pd.Timestamp("2026-02-14")
 
 TARGET_COLUMNS = [
     "user_id",
@@ -116,3 +127,48 @@ def train_models(df_raw, cutoff_date, target_days=TARGET_DAYS):
     fit_models(models, df_train, features)
 
     return models, features
+
+
+def _format_cutoff(cutoff_date):
+    return pd.to_datetime(cutoff_date).date().isoformat()
+
+
+def _pack_final_models(current_models, current_features, team_models, team_meta):
+    return {
+        "current": current_models,
+        "current_features": current_features,
+        "team": team_models,
+        "team_meta": team_meta,
+    }
+
+
+def train_final_models(df_raw, train_cutoff):
+    from src.team_model import train_models as train_team_models
+
+    train_cutoff = pd.to_datetime(train_cutoff)
+    print(f"train current models: cutoff={_format_cutoff(train_cutoff)}", flush=True)
+    current_models, current_features = train_models(
+        df_raw,
+        train_cutoff,
+        TARGET_DAYS,
+    )
+    print("train team models", flush=True)
+    team_models, team_meta = train_team_models(
+        df_raw,
+        train_cutoff=train_cutoff,
+    )
+    return _pack_final_models(current_models, current_features, team_models, team_meta)
+
+
+def train_submit_models(df_raw):
+    from src.team_model import train_models as train_team_models
+
+    print(f"train current models: cutoff={_format_cutoff(FINAL_TRAIN_CUTOFF)}", flush=True)
+    current_models, current_features = train_models(
+        df_raw,
+        FINAL_TRAIN_CUTOFF,
+        TARGET_DAYS,
+    )
+    print("train team models", flush=True)
+    team_models, team_meta = train_team_models(df_raw)
+    return _pack_final_models(current_models, current_features, team_models, team_meta)
