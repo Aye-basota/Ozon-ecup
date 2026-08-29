@@ -5,6 +5,7 @@ lightgbm
 catboost
 xgboost
 pyarrow
+duckdb
 
 # Standard DS/ML extras
 matplotlib
