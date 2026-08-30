@@ -1,0 +1,16 @@
+{
+  "mode": "canonical frozen artifact reuse",
+  "family": "cap",
+  "cutoff": "2025-10-16",
+  "source_name": "S1-E03a",
+  "source_paths": [
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E03a.npz"
+  ],
+  "source_sha256": [
+    "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525"
+  ],
+  "runtime_seconds": 0.0,
+  "config_changed": false,
+  "artifact": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP082_PURGED_TEMPORAL_RESIDUAL\\production_components\\cap_2025-10-16.npz",
+  "sha256": "3062d2b921e8ca4b5ac1dc1451c4575b2cdbbb88f957502e2d26aa10d35f6661"
+}

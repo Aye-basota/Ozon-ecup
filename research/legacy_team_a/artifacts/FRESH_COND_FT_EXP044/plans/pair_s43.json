@@ -1,0 +1,115 @@
+{
+  "added_conditional_batch": 128,
+  "added_slot_plan_sha256": "1466e3cfac57390524c98333e42ca14cecfa167d373960ec6a1a8c6c309e5215",
+  "arms": [
+    "FT-VOL-S43-V1016",
+    "FT-FRESH-S43-V1016"
+  ],
+  "array_sha256": {
+    "added_slot": "1466e3cfac57390524c98333e42ca14cecfa167d373960ec6a1a8c6c309e5215",
+    "batch_seed": "2de64b0ce034324d1a1922a62e06a889e50a8abb7a026d24fef95683399ecd40",
+    "chunk_cutoff": "a87b08dc5e0ca91e73830045e515e8706c0387d40a71f362e6e0e24bef735524",
+    "chunk_sample_offsets": "0f765f35d07eba34f184bfb35a824dfd4a1c716348c09e22b4b2ecaa5bbff58d",
+    "clean_center": "82beea0ef5480a56650aeb9e9d71ce43361dd297001b89645f1a835905fdf13b",
+    "common_index": "465108623bc44a5a52373d10205d98a28a5c2e5d4185b6d80319c8e3ae7254ad",
+    "conditional_lr": "c468652d3ebaa36f6a1ecd6aab365a76d00e9edca12da55b962b663a0ab2e536",
+    "cuts": "1b3af5c6117a14375cda89444230a59754f64696845625e45557db116b80e1aa",
+    "encoder_lr": "c8be47e8a45ffdea225f8fd9b6206669d2ff3eda41ea08752a355051feddc8ab",
+    "extra_center": "dfc187a916027d0594da9c4e644458a1f5940f9b737c5e60bf760400d96e15f4",
+    "extra_ci": "8a3ec46c552de74e999301b019080260f0c862432400bf7ca19019958a45f63c",
+    "extra_cuts": "05bbe008d3878431e2029a41b2bb3a70a4e740b5587c6292b76d0c8739001479",
+    "extra_rows": "3a17ca613fcb2b94238c4eab539cd08f23d8f8a14942dfffe5b8824b5d10f5d5",
+    "extra_z": "0dd87c65557e742632273b26af7dd8b67bed18cf94f22ba724123b6c2a1b1325",
+    "group_chunk_offsets": "1de00ae17fe827070252b41e35851265e99265fa7971c5bea0c3abc400a414d9",
+    "lr_multiplier": "eb78382161fcf2343a952ccb424c985ec5f87a3982b69e363287853f0de70520",
+    "sample_indices": "bf01c8db7052c5215fa92d6c34db9a78ff69d376464a5dd1402015799ed47784",
+    "snapshot_steps": "c4d48d0eb6894109726aecd0df16fa95bd5e0289f5927a6afe0c2942d1c7b086",
+    "val_rows": "d5d30c46269c8fd083665b2d3dd08d5de10a1b2be8986ae8111839bd8fbd47e1",
+    "val_user_id": "5e408053b344ceee25276d2f4dcff0ff4f3f5e13aea05710303278150a4db3bf",
+    "val_y": "afe74b95d369bf349375f75c309f33e4133db82745d4b9287fe5a4d2bc8348c7",
+    "vol_added_index": "01b20a0ad30ebfae0e3a5f9f19fb1e74730583e5e0161fab026bb6fcb36776b9"
+  },
+  "baseline_checkpoint": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_DETSEQ01-S43-V1016.pt",
+  "baseline_checkpoint_sha256": "819cf3bf09729f700bdb1e97fdaedb3868c4ca59ca822b035cc64e29a515f0b2",
+  "baseline_model_sha256": "14000cc3463af4b03e3c67ae51e58bf0a6f01a73b38616459beb58353999de3a",
+  "baseline_name": "DETSEQ01-S43-V1016",
+  "baseline_prediction_sha256": "97a996d9a1b0efd35adc4a0fe21a3178ca5bfa6f6129422181080e0a4e71f0a1",
+  "centering": {
+    "clean": "positive CLEAN training rows grouped by their cutoff",
+    "extra": "positive EXTRA group-B training rows grouped by their cutoff",
+    "other_arm_used": false,
+    "test_used": false,
+    "validation_used": false
+  },
+  "clean_data_sha256": {
+    "ci": "35e77c32e7b7ae1bfcec56fb73789fccdd752e271819bbaea02fe46ab74b5def",
+    "cuts": "1b3af5c6117a14375cda89444230a59754f64696845625e45557db116b80e1aa",
+    "ri": "3f70c6d950f4115dbe63b1154cb5de2ee45c6d469608e5275fb7f48bd84a96f9",
+    "zy": "41c9ac1daaf4a74ec126f848ae7d41f59cc91a88b50860f6449bce98c7de9a51"
+  },
+  "common_conditional_batch": 128,
+  "common_plan_sha256": "465108623bc44a5a52373d10205d98a28a5c2e5d4185b6d80319c8e3ae7254ad",
+  "common_semantics": "all CLEAN-positive training rows; common materialized index plan",
+  "conditional_initialization": {
+    "file_sha256": "77a6de485962c68d20286574a0846c505137d2aab83e9e8bbe53b518799cdaea",
+    "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\plans\\pair_s43_conditional_init.pt",
+    "state_sha256": "e3630d075f705d85405cd445cd0354e297bc5a1ea161af3d8d8fce9e0cd2ff2b"
+  },
+  "created_at": "2026-08-22T08:15:51",
+  "direct_batch": 1024,
+  "direct_plan_sha256": "7ffecbf208fdeec1d8124d00a1ab67c21bff34b19379da091dc127dc9df3d6e1",
+  "experiment": "FRESH-COND-FT",
+  "extra_depth_clip": 289,
+  "fine_tune_cfg": {
+    "betas": [
+      0.9,
+      0.98
+    ],
+    "clean_epochs": 1,
+    "conditional_head": "Linear(192,64)-GELU-Dropout(0.1)-Linear(64,1)",
+    "conditional_head_lr": 0.001,
+    "direct_head": "frozen; used for direct prediction only",
+    "encoder_lr": 3e-05,
+    "grad_clip": 1.0,
+    "lambda_cond": 0.25,
+    "optimizer": "AdamW",
+    "schedule": "same cosine multiplier formula as exp_043",
+    "warmup": 300,
+    "weight_decay": 0.01
+  },
+  "format": 1,
+  "fresh_semantics": "all EXTRA-positive group B; depth_clip=289; conditional loss only",
+  "kind": "pair",
+  "lr_sha256": {
+    "conditional": "c468652d3ebaa36f6a1ecd6aab365a76d00e9edca12da55b962b663a0ab2e536",
+    "encoder": "c8be47e8a45ffdea225f8fd9b6206669d2ff3eda41ea08752a355051feddc8ab"
+  },
+  "n_added_slots": 619776,
+  "n_common_slots": 619776,
+  "n_cutoffs": 24,
+  "n_examples": 4955174,
+  "n_extra_positive": 887996,
+  "n_steps": 4842,
+  "n_vol_donor_pool": 887996,
+  "plan_file_sha256": "3ef71ecdcd136e21538feadb477a1b5fb2b714c60660a788169d26f5fa29260f",
+  "plan_id": "3a8111f1b002e411b2c408e3ca2c57694e73281cf625eaf9ac6c38914e3dc3e1",
+  "seed": 43,
+  "snapshots": [
+    0,
+    1,
+    100,
+    1000,
+    2421,
+    4842
+  ],
+  "source_sha256": {
+    "config.py": "8dd82be5291da32971ac285b13e3eb02c5702bc0e5eaec9152e7002159dcf324",
+    "fresh_cond_ft.py": "283fb9ff985de5725a4540bc5dbb99fd80f69e2a7e3e5f57134ef69549d75517",
+    "seq.py": "d95e0101692169781ea1ca6c585629cbb2f06d340e39f8afeb5a8e8e164c88b5",
+    "seq_cond.py": "a2e499d17911d2c88a9581d54714902f50ba7b9b499c47e5a5770ab32053252e",
+    "validation.py": "69fe796af2ec03b870ad982df8aacaaeca445ef875a953c5b5ac1d999725956e"
+  },
+  "val": "2025-10-16",
+  "validation_order_sha256": "5e408053b344ceee25276d2f4dcff0ff4f3f5e13aea05710303278150a4db3bf",
+  "vol_semantics": "early CLEAN-positive group B; first third of CLEAN cutoffs; replacement"
+}

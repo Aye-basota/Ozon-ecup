@@ -1,0 +1,41 @@
+{
+  "experiment_id": "EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS",
+  "new_legitimate_out_of_span_signal_found": true,
+  "leaderboard_used_for_selection": false,
+  "best_individual": {
+    "name": "A1_TREE_TRAJ_365",
+    "weighted_clean_forward_rho": 0.032954478047978485,
+    "latest_rho": 0.03207559774213456,
+    "rho2": 0.0010859976234146957,
+    "nested_delta_MSE": -0.0033337506843427642,
+    "nested_delta_RMSLE": -0.0009496409394742351,
+    "test_perp_fraction": 0.7537343292698956,
+    "verdict": "STRONG_SIGNAL"
+  },
+  "best_joint": {
+    "name": "JOINT_A1_365_A2",
+    "weighted_clean_forward_rho": 0.03793981587308912,
+    "latest_rho": 0.03486444064559566,
+    "rho2": 0.001439429628483905,
+    "nested_delta_MSE": -0.004391912083295289,
+    "nested_delta_RMSLE": -0.0012506659296337948,
+    "rho_ci_95": [0.035062679514303224, 0.040716485849165464],
+    "t_rho": 25.98110584913368,
+    "delta_MSE_ci_95": [-0.0050506526522960385, -0.0037323969513098653],
+    "P_delta_MSE_lt_0": 1.0,
+    "test_perp_fraction": 0.6376386987559076,
+    "test_second_projection_max": 4.783078695965241e-15,
+    "test_corr_with_current_ORTH": 3.864490171981086e-09,
+    "verdict": "BREAKTHROUGH_JOINT"
+  },
+  "strong_individual_directions_at_or_above_rho_0_025": 2,
+  "strong_individual_names": ["A1_TREE_TRAJ_365", "A2_WEEKLY_RESIDUAL_CNN"],
+  "required_rho2_to_target": 0.0018316025548535963,
+  "fraction_of_required_rho2_from_new_joint": 0.7858853574262248,
+  "fraction_of_required_rho2_including_existing_ORTH_if_independent": 0.8944296480383829,
+  "remaining_equivalent_rho_if_existing_ORTH_is_independent": 0.013905499860475758,
+  "mathematically_sufficient_for_target_by_itself": false,
+  "B_verdict": "SKIP_DUPLICATE",
+  "C_verdict": "REJECT_MATCHED",
+  "automatic_submission_performed": false
+}

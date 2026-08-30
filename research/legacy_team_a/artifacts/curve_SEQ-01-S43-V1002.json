@@ -1,0 +1,28 @@
+{
+ "cfg": {
+  "hidden": 64,
+  "blocks": 8,
+  "kernel": 3,
+  "dropout": 0.1,
+  "batch": 1024,
+  "chunk": 256,
+  "lr": 0.003,
+  "wd": 0.01,
+  "epochs": 4,
+  "warmup": 300,
+  "seed": 43,
+  "workers": 3,
+  "compile": true
+ },
+ "val": "2025-10-02",
+ "hist": [
+  {
+   "epoch": 4,
+   "train_mse": 3.1274016533196014,
+   "rmsle": 1.755317091281751,
+   "rmsle_cal": 1.7524729957651493,
+   "bias": 0.09988229641945745,
+   "offset": 0.0998823811277589
+  }
+ ]
+}

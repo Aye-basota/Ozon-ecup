@@ -1,0 +1,20 @@
+{
+  "forbidden_paths": {
+    "leaderboard": false,
+    "submission": false,
+    "test_inference": false
+  },
+  "hashes": {
+    "artifacts\\BURST_GAP_EXP054\\baseline_manifest.json": "f43bbacc31578eef4fc449608a43714bd94a52b03ce22d11b84d5afa2ed546b1",
+    "artifacts\\BURST_GAP_EXP054\\cache_manifest.json": "fd99e704354bb78555d328a5b1cb62a38e297b6503bece259dd39e2403b58ae6",
+    "artifacts\\BURST_GAP_EXP054\\preflight_verdict.json": "34bf5908d2c490ac66bb28a5c6efdfd17edf3675641ef37a8f104d82a1fb0676",
+    "artifacts\\BURST_GAP_EXP054\\segmentation_config.json": "4bbc5b01a17c198c6972b0cca6e21617f766e977a40c922432b6a24df38403bb",
+    "artifacts\\BURST_GAP_EXP054\\structural_audit.json": "c2848eb4cb31899ca096c4eedfbd0440d7828db507565df422697e9e92beddcb",
+    "research\\strategies\\results\\BURST_GAP_EXP054\\novelty_correlations.csv": "c8204ebbd2a8735c58e5153d889353a5b451f6462f88f3407a9fd540aeafa72b",
+    "research\\strategies\\results\\BURST_GAP_EXP054\\recipient_half_metrics.csv": "588acb43387c7676e2d358360eee234969514316de6e33ca0e70af3bec5fcb9a",
+    "research\\strategies\\results\\BURST_GAP_EXP054\\residual_scale_selection.csv": "f4f5aa21706641f84fe34b6e19d6701035350f48a91856ca244ec24fe3b12b9a",
+    "research\\strategies\\results\\BURST_GAP_EXP054\\structural_statistics.csv": "4435fdc54ecfaa495ac2f9fb936568b3130c47dcaae2d2a01d127fd611608933",
+    "research\\strategies\\results\\BURST_GAP_EXP054\\within_stratum_diagnostics.csv": "38f442202f595ab236934718f6efc9406806fdf9786902624c5eadd9cf878e8c"
+  },
+  "status": "PASS"
+}

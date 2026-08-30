@@ -1,0 +1,155 @@
+{
+  "baseline_manifest": {
+    "components": [
+      {
+        "artifact": "S1-E03a",
+        "file_sha256": "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525",
+        "label": "CAP",
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E03a.npz",
+        "prediction_dtype": "float32",
+        "prediction_sha256": "0461e52abc4f50a7d4d950600475ff7949dc20b1ac5436fbf454bcc53c1af5f1",
+        "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+        "rows": 770616,
+        "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+        "weight": 0.1
+      },
+      {
+        "artifact": "S1-E02",
+        "file_sha256": "2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff",
+        "label": "UNC",
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E02.npz",
+        "prediction_dtype": "float32",
+        "prediction_sha256": "89a389580fa3b1f0c940b9a3c035a1246fe8d86e3e8af618ad332eb99b985504",
+        "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+        "rows": 770616,
+        "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+        "weight": 0.2
+      },
+      {
+        "artifact": "S1-DIST",
+        "file_sha256": "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+        "label": "DIST",
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-DIST.npz",
+        "prediction_dtype": "float32",
+        "prediction_sha256": "3ba241497c210edcabcdcf6cf62f716e2ffb03bb31cf7c19eef3ff44c786b169",
+        "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+        "rows": 770616,
+        "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+        "weight": 0.25
+      },
+      {
+        "artifact": "ETX-AVG3",
+        "file_sha256": "890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f",
+        "label": "ETX-AVG3",
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-AVG3.npz",
+        "prediction_dtype": "float32",
+        "prediction_sha256": "4ec361ad9216d9a72250c077f72e53964b7efb7485808a73307f4b85f7a0458f",
+        "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+        "rows": 770616,
+        "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+        "weight": 0.225
+      },
+      {
+        "artifact": "SEQ-AVG3",
+        "file_sha256": "8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c",
+        "label": "SEQ-AVG3",
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_SEQ-AVG3.npz",
+        "prediction_dtype": "float32",
+        "prediction_sha256": "0e6a0c5ed26b74fe3d5509d60a22a1aa598f9ca5606df6bc9bf7291a4a827667",
+        "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+        "rows": 770616,
+        "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+        "weight": 0.225
+      }
+    ],
+    "fold_cal": [
+      1.7668833567997195,
+      1.7605095767798136,
+      1.748629223964952,
+      1.7412785664479717
+    ],
+    "fold_offsets": [
+      -0.11734465876764338,
+      -0.07873621159214053,
+      -0.02097755276250928,
+      -0.035387154112119984
+    ],
+    "fold_sizes": [
+      188518,
+      191025,
+      193694,
+      197379
+    ],
+    "folds": [
+      "2025-09-04",
+      "2025-09-18",
+      "2025-10-02",
+      "2025-10-16"
+    ],
+    "prediction_semantics": "raw log1p-space",
+    "prediction_sha256": "8194f906f1bb82bea1180a0626e20d3541050133f1fd771e502de5a868d45d09",
+    "prefix": "SELMATCH_EXP048",
+    "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+    "rows": 770616,
+    "status": "PASS_EXACT",
+    "target_semantics": "GMV on (V,V+30]",
+    "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+    "wcv": 1.7475098625201952
+  },
+  "candidate": {
+    "bootstrap_p025": -0.0006724161889600923,
+    "bootstrap_p975": -0.00042646740831314147,
+    "bootstrap_p_lt0": 1.0,
+    "matched_delta": -0.0005513057581149537,
+    "matched_fold_deltas": [
+      -0.000605262202141077,
+      -0.0007362265461243744,
+      -0.0004453562531037125
+    ],
+    "matched_improved": 3,
+    "matched_signs": [
+      "-",
+      "-",
+      "-"
+    ],
+    "signal_shuffle_pass": true,
+    "standard_delta": -0.0005466676510642429,
+    "standard_fold_deltas": [
+      -0.0008351533867549943,
+      -0.0007037960169955504,
+      -0.0003959820341759013
+    ],
+    "standard_improved": 3,
+    "standard_signs": [
+      "-",
+      "-",
+      "-"
+    ]
+  },
+  "candidate_recipe": ".95*STRONGEST+.05*BTYD+fresh_processed_nested",
+  "experiment": "SELMATCH_EXP049",
+  "fold_weights": [
+    1.0,
+    2.0,
+    4.0
+  ],
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02"
+  ],
+  "methodological_error_exp048": "A used 4 folds/1:2:4:8 while C used 3 folds/1:2:4; reported penalty mixed selection reweighting with removal of 2025-10-16",
+  "no_training": true,
+  "pi_ref_k0": 0.004951197327512217,
+  "production_status": "FAIL_MISSING_EXACT_PRODUCTION_SUPPORT",
+  "reference_kpos": [
+    0.0,
+    0.01697106067820668,
+    0.06335649891174469,
+    0.9196724404100486
+  ],
+  "shuffle_reporting_error_exp048": "REPORT displayed matched candidate effect, while outside/interval were computed for the different estimand matched-minus-standard selection shift",
+  "submission": null,
+  "validation_gate": "PREFERRED",
+  "verdict": "REJECT"
+}

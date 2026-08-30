@@ -1,0 +1,20 @@
+{
+  "primary_report_rows": 124,
+  "machine_only_experiment_units": 1,
+  "artifact_derived_teammate_run_units": 13,
+  "central_registry_rows": 138,
+  "registry_rows_with_duplicate_or_rerun_link": 5,
+  "duplicate_rerun_or_reuse_clusters": 11,
+  "clusters_collapsed_for_unique_hypothesis_count": 3,
+  "novelty_level_units_after_collapsing_exact_doc_and_rerun_rows": 134,
+  "teammate_package_copies_linked_not_duplicated": 7,
+  "families": 12,
+  "baseline_references": 82,
+  "ancestry_edges": 232,
+  "contradictions": 128,
+  "cross_namespace_local_id_collisions": 33,
+  "machine_strategy_supplements": 51,
+  "repository_confirmed_lb_rows": 11,
+  "externally_platform_verified_lb_rows": 0,
+  "unverified_lb_claim_records": 19
+}

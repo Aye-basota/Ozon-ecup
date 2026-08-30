@@ -1,0 +1,2 @@
+exp,n_params,runtime_min,peak_vram_gb,epochs,batch,n_tok,tau_min,tau_max
+ETX-01-S42,1115433,116.0133673508962,4.118648529052734,4,512,192,0.966,4552.225

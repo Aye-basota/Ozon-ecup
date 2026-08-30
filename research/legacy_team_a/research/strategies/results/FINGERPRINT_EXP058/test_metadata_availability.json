@@ -1,0 +1,32 @@
+{
+  "all_finite": true,
+  "builder_accepts_target": false,
+  "forbidden_feature_names": [],
+  "history_filter_present": true,
+  "kept_fields": [
+    "fp_uid_rank_frac",
+    "fp_uid_bits_low16",
+    "fp_uid_bits_high16",
+    "fp_active_months",
+    "fp_month_mask_lo7",
+    "fp_month_mask_hi7",
+    "fp_rows_q0",
+    "fp_rows_q1",
+    "fp_rows_q2",
+    "fp_rows_q3",
+    "fp_rowgroup_count",
+    "fp_panel1_pass_count",
+    "fp_panel3_pass_count",
+    "fp_panel1_first_day",
+    "fp_panel3_first_day"
+  ],
+  "metadata_definition_available_at_test": true,
+  "physical_partitions": 1,
+  "raw_files": 1,
+  "rowgroups": 250,
+  "rows": 250000,
+  "schema_identical": true,
+  "status": "PASS",
+  "test_cutoff": "2026-02-13",
+  "unique_users": 250000
+}

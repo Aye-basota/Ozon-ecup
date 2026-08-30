@@ -1,0 +1,17 @@
+{
+  "verdict": "BLOCKED",
+  "statistical_verdict_core_subset": "FINAL_NO_EVIDENCE",
+  "blocker": "BLOCKED_RESIDUAL_FEATURE_FIDELITY: frozen EXP081 used 200 features; only 162 cutoff-reproducible columns are available on the requested folds",
+  "primary_candidate": "LightGBM_AB_mean",
+  "criteria": {
+    "weighted_rho_ge_0_020": false,
+    "latest_rho_ge_0_020": false,
+    "positive_all_three": false,
+    "P_gain_ge_0_95": false,
+    "nested_Delta_MSE_lt_0": false
+  },
+  "submission_created": false,
+  "residual_feature_fidelity_pass": false,
+  "submission_reason": "STRONG_GO gate not passed",
+  "runtime_seconds": 335.97526454925537
+}

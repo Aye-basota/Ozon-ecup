@@ -1,0 +1,87 @@
+{
+  "status": "REJECT_PILOT",
+  "fold": "2025-10-16",
+  "encoder_seed": 42,
+  "head_seed": 42,
+  "gate_scale": 1.0,
+  "metrics": {
+    "exp037": 1.7412785664162476,
+    "etx_real": 1.7413885973157768,
+    "etx_vol": 1.7411954693233225,
+    "seq_fresh": 1.7410251443249476,
+    "seq_plus_etx_orth": 1.7412377317952712,
+    "real_delta": 0.00011003089952921208,
+    "vol_delta": -8.309709292508849e-05,
+    "real_minus_vol": 0.00019312799245430057,
+    "orth_incremental_delta": 0.0002125874703235997
+  },
+  "gamma_target_free": 0.1400473075925162,
+  "preprocessing_real": {
+    "lo": -0.10954978108406067,
+    "hi": 0.03713053226470939,
+    "center": -0.028597478192636864,
+    "n_donor": 573237
+  },
+  "preprocessing_vol": {
+    "lo": -0.025160181522369384,
+    "hi": 0.028537931442260522,
+    "center": 6.348121308020186e-05,
+    "n_donor": 573237
+  },
+  "user_halves": [
+    {
+      "group": "A",
+      "n": 98707,
+      "real_score": 1.733614659605331,
+      "vol_score": 1.7334480710883424,
+      "real_minus_vol": 0.00016658851698858612
+    },
+    {
+      "group": "B",
+      "n": 98672,
+      "real_score": 1.7491307103880755,
+      "vol_score": 1.7489078892770358,
+      "real_minus_vol": 0.00022282111103977265
+    }
+  ],
+  "diagnostic_grid_not_used_for_gate": [
+    {
+      "alpha": 0.0,
+      "real_score": 1.7412785664162476,
+      "vol_score": 1.7412785664162476,
+      "combined_score": 1.7410251443249476
+    },
+    {
+      "alpha": 0.25,
+      "real_score": 1.7412647767666931,
+      "vol_score": 1.7412525151059441,
+      "combined_score": 1.7410390377652507
+    },
+    {
+      "alpha": 0.5,
+      "real_score": 1.7412785193523002,
+      "vol_score": 1.7412299817328563,
+      "combined_score": 1.7410791015580362
+    },
+    {
+      "alpha": 0.75,
+      "real_score": 1.7413197935212115,
+      "vol_score": 1.7412109664335618,
+      "combined_score": 1.7411453338967624
+    },
+    {
+      "alpha": 1.0,
+      "real_score": 1.7413885973157768,
+      "vol_score": 1.7411954693233225,
+      "combined_score": 1.7412377317952712
+    }
+  ],
+  "gates": {
+    "real_beats_vol_by_0.00010": false,
+    "real_improves_base_by_0.00010": false,
+    "orth_improves_seq_by_0.00005": false,
+    "both_halves_real_minus_vol_negative": false,
+    "encoder_parity": true
+  },
+  "pilot_runtime_seconds": 613.4752097129822
+}

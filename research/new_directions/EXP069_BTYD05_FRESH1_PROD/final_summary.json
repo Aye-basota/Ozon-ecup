@@ -1,0 +1,66 @@
+{
+  "verdict": "PASS_TYPE_A",
+  "recommendation": "ADD_TO_SUBMISSION_GEOMETRY",
+  "pass_type_a": true,
+  "pass_type_b": true,
+  "schema_pass": true,
+  "production_regime_pass": true,
+  "fixed_delta_wcv": -0.0004669397382224,
+  "test_span": {
+    "basis_source": "C:\\Users\\Admin\\Desktop\\submission_geometry_research\\submission_geometry\\cache\\Z.npz",
+    "basis_source_sha256": "443e80472f321e796faccfe0e9ea6954653397eb74311e7abef7471ea3064dfe",
+    "unique_source_vectors": 65,
+    "basis_rank": 57,
+    "rms_distance_from_affine_span": 0.010679245743308086,
+    "orthogonal_RMS": 0.010679245743308086,
+    "candidate_minus_affine_centroid_RMS": 0.08396016741627145,
+    "orthogonal_norm_fraction": 0.12719419305538987,
+    "orthogonal_fraction_denominator": "RMS(candidate_z - mean(existing_source_z)); invariant to source ordering",
+    "nearest_existing_source": "candidate_B_BTYD05_HEDGE.csv",
+    "nearest_existing_source_rms": 0.015509304981099018,
+    "orthogonal_fraction_of_nearest_source_distance": 0.6885702329229285,
+    "nearest_existing_aligned_candidate": "pred_btyd05_submission",
+    "nearest_existing_aligned_candidate_rms": 0.015509304969284687,
+    "existing_numerical_rank": 57,
+    "augmented_numerical_rank": 58,
+    "increases_numerical_rank": true,
+    "rank_tolerance": "eigenvalue > 1e-12 * largest eigenvalue",
+    "smallest_retained_basis_eigenvalue": 1.480216449270236e-08,
+    "target_or_lb_used": false,
+    "schema": {
+      "rows": 250000,
+      "columns": [
+        "user_id",
+        "predict"
+      ],
+      "unique_user_id": 250000,
+      "canonical_order": true,
+      "finite": true,
+      "nonnegative": true,
+      "missing_users": 0
+    },
+    "schema_pass": true
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP069_BTYD05_FRESH1_PROD\\fresh_conditional_TEST.parquet",
+      "bytes": 20899834,
+      "sha256": "f1b8c3b65c654630abd90425956490d9ad0f2b8d165d5f1fed0da0f8feeaad91"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP069_BTYD05_FRESH1_PROD\\btyd05_fresh1_OOF.parquet",
+      "bytes": 26547745,
+      "sha256": "472be8cad64c43ec2c2783fea6497b20fe02ffefa0d49344e3ddb78fbb81a07b"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP069_BTYD05_FRESH1_PROD\\btyd05_fresh1_TEST.parquet",
+      "bytes": 7846686,
+      "sha256": "68f5f9e86110e4b7a59776997521c33f7dc80c28b918fea59d9c223825ae19b0"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP069_BTYD05_FRESH1_PROD\\btyd05_fresh1_TEST.csv",
+      "bytes": 6362147,
+      "sha256": "5170617dd5c538691ee107ad2732342799c298e7beb2130e9760a5fa205b13b7"
+    }
+  ]
+}

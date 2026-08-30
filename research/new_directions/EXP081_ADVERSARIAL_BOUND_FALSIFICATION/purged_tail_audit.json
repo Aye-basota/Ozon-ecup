@@ -1,0 +1,19 @@
+{
+  "train_cutoff": "2025-09-04",
+  "train_target_end": "2025-10-04",
+  "validation_cutoff": "2025-10-16",
+  "label_available": true,
+  "ungated": {
+    "calibration": 0.400912871071772,
+    "rho": -0.00102201152983571,
+    "Delta_MSE": 0.0007520044740329545,
+    "bootstrap": {
+      "CI95": [
+        0.000327360881289959,
+        0.001151408661319731
+      ],
+      "P_Delta_MSE_lt_0": 0.0005,
+      "mean": 0.0007521129255443477
+    }
+  }
+}

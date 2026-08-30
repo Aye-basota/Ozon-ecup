@@ -1,0 +1,19 @@
+{
+  "task": "p07_mid",
+  "cutoff_a": "2025-09-18",
+  "cutoff_b": "2025-09-25",
+  "gap_days": 7,
+  "gap_group": "short",
+  "history_support": 180,
+  "panel_blocks": 3,
+  "n_per_class": 120000,
+  "n_features": 195,
+  "n": 240000,
+  "positive_rate": 0.5,
+  "roc_auc": 0.5276119635069444,
+  "pr_auc": 0.5234082596429828,
+  "logloss": 0.691884704233534,
+  "brier": 0.2493699264967276,
+  "ece10": 0.0001739655272414163,
+  "mean_probability": 0.49983864289907115
+}

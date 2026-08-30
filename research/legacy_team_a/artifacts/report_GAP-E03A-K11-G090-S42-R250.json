@@ -1,0 +1,69 @@
+{
+ "n": 197379,
+ "folds": [
+  "2025-10-16"
+ ],
+ "fold_sizes": [
+  197379
+ ],
+ "per_fold": [
+  {
+   "cutoff": "2025-10-16",
+   "n": 197379,
+   "rmsle": 1.7584324282046386,
+   "bias": -0.08396099441262805,
+   "offset": -0.08396117973554271,
+   "rmsle_cal": 1.7564268141338026,
+   "mean_z": 2.715480124213672,
+   "mean_ly": 2.631519129801044
+  }
+ ],
+ "fold_scores": [
+  1.7584324282046386
+ ],
+ "fold_cal": [
+  1.7564268141338026
+ ],
+ "fold_bias": [
+  -0.08396099441262805
+ ],
+ "fold_mean_z": [
+  2.715480124213672
+ ],
+ "wcv": null,
+ "wcv_raw": null,
+ "cv_mean": 1.7584324282046386,
+ "cv_std": 0.0,
+ "cv_cal_mean": 1.7564268141338026,
+ "oof_rmsle": 1.7584324282046386,
+ "oof_bias": -0.08396099441262805,
+ "oof_offset": -0.08396117973554271,
+ "oof_cal": 1.7564268141338026,
+ "mean_z": 2.715480124213672,
+ "mean_ly": 2.631519129801044,
+ "partial": true,
+ "description": "S_01 e03a, k=11, G=90, seed=42 [срез 250 раундов]",
+ "model": "direct",
+ "params": {
+  "L": 180,
+  "min_history": 90,
+  "step": 7,
+  "panel_blocks": 3,
+  "train_blocks": 1,
+  "model": "direct",
+  "rounds": 250,
+  "params": {
+   "seed": 42
+  },
+  "drop_groups": [],
+  "keep_only": null,
+  "calendar": false,
+  "weight_tau": null,
+  "cutoffs": "all",
+  "norm_long": false,
+  "min_gap": 90,
+  "n_cutoffs": 11
+ },
+ "n_features": 195,
+ "snapshot_rounds": 250
+}

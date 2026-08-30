@@ -1,0 +1,9 @@
+outputs/
+work/
+team-b-final/data/train.parquet
+team-b-final/data/processed/
+team-b-final/models/
+**/__pycache__/
+**/.pytest_cache/
+**/catboost_info/
+*.log

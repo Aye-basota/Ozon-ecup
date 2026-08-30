@@ -1,0 +1,78 @@
+{
+  "validation_cutoff": "2026-01-14",
+  "train_cutoffs": [
+    "2025-10-29",
+    "2025-11-12",
+    "2025-11-26",
+    "2025-12-10"
+  ],
+  "train_rows": 829602,
+  "validation_rows": 233152,
+  "baseline_crossfit_offset": -0.0016721427800383355,
+  "baseline_rmsle": 1.7065158098462327,
+  "feature_source_max_date": "2026-01-14",
+  "target_source_min_date": "2026-01-15",
+  "target_source_max_date": "2026-02-13",
+  "train_target_max_date": "2026-01-09",
+  "validation_inactive_fraction": 0.0,
+  "A1_TREE_TRAJ_365": {
+    "rho": 0.02812870121980044,
+    "b": 0.0032204186935427402,
+    "G": 0.004620539166562682,
+    "u_raw_rms": 0.07039815816820957,
+    "u_perp_rms": 0.06797454793202146,
+    "projection": {
+      "mean_removed": 0.013313411373572833,
+      "beta1": 0.007830539409943112,
+      "beta2": 1.264579870248617e-18,
+      "max_projection_after_second_pass": 5.79106669553105e-19
+    }
+  },
+  "A2_WEEKLY_RESIDUAL_CNN": {
+    "rho": 0.03185369222382854,
+    "b": 0.003025261351994915,
+    "G": 0.0031796079756691077,
+    "u_raw_rms": 0.06842950456310443,
+    "u_perp_rms": 0.05638801269480161,
+    "best_epoch": 1,
+    "curve": [
+      {
+        "epoch": 1,
+        "train_mse": 3.0689835985298073,
+        "internal_valid_mse": 3.030819257405031,
+        "seconds": 62.912463903427124
+      },
+      {
+        "epoch": 2,
+        "train_mse": 3.0642063691431405,
+        "internal_valid_mse": 3.031275366105813,
+        "seconds": 59.12205672264099
+      },
+      {
+        "epoch": 3,
+        "train_mse": 3.061834091059128,
+        "internal_valid_mse": 3.03334928807889,
+        "seconds": 60.36065888404846
+      }
+    ],
+    "projection": {
+      "mean_removed": 0.03125693678418644,
+      "beta1": 0.014282219566812082,
+      "beta2": -2.1155121193878733e-18,
+      "max_projection_after_second_pass": 6.145621799339073e-19
+    }
+  },
+  "JOINT_FROZEN": {
+    "coefficients": [
+      0.7462560853,
+      0.6466415685
+    ],
+    "rho": 0.03622305776205187,
+    "delta_MSE": -0.003613115640364404,
+    "delta_RMSLE": -0.0010589521055337503,
+    "baseline_RMSLE": 1.7065158098462327,
+    "rms_D": 0.07145570618032357,
+    "corr_A1_A2": 0.32525714059681354
+  },
+  "runtime_seconds": 796.7954254150391
+}

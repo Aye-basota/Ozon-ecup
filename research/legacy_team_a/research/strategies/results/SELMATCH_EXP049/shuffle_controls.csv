@@ -1,0 +1,3 @@
+control,estimand,real_value,permutations,p05,p50,p95,outside_central_90,passed_improving_direction,permutation,candidate_real_effect_reported_separately,root_cause_exp048
+SIGNAL_CORRECTION_SHUFFLE,matched candidate delta,-0.0005513057581149537,200,0.00021869908596952828,0.0003150709170854757,0.0003963876124190167,True,True,correction within fold x k x rec_buy_bin x w180_buy_bin,,
+SELECTION_K_SHUFFLE,selection reweighting shift C-A,-4.6381070507108034e-06,100,-4.969051489155385e-05,6.271912222910458e-08,5.390100176389919e-05,False,False,,-0.0005513057581149537,"REPORT displayed matched candidate effect, while outside/interval were computed for the different estimand matched-minus-standard selection shift"

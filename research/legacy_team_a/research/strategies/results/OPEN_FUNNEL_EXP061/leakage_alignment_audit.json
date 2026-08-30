@@ -1,0 +1,54 @@
+[
+  {
+    "cutoff": "2025-09-04",
+    "rows": 188518,
+    "unique_users": 188518,
+    "source_max_event_date": "2025-09-04",
+    "cache": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\OPEN_FUNNEL_EXP061\\features_20250904.parquet",
+    "cache_sha256": "92161603d4e9c4d563c201b1ec30e6f853b0f8a1a14bced661622e66e3933ff7",
+    "finite_or_null": true,
+    "shuffle_n_strata": 396,
+    "shuffle_singleton_share": 0.00014852693111533117,
+    "shuffle_moved_share": 0.9977084416342206,
+    "shuffle_max_abs_marginal_mean_diff": 0.0
+  },
+  {
+    "cutoff": "2025-09-18",
+    "rows": 191025,
+    "unique_users": 191025,
+    "source_max_event_date": "2025-09-18",
+    "cache": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\OPEN_FUNNEL_EXP061\\features_20250918.parquet",
+    "cache_sha256": "c9da04da7563eda19bdfb3df0380f6b52c28854c1ac6894a222a1ab8cf7f04b0",
+    "finite_or_null": true,
+    "shuffle_n_strata": 392,
+    "shuffle_singleton_share": 0.00011516817170527418,
+    "shuffle_moved_share": 0.9980421410810103,
+    "shuffle_max_abs_marginal_mean_diff": 0.0
+  },
+  {
+    "cutoff": "2025-10-02",
+    "rows": 193694,
+    "unique_users": 193694,
+    "source_max_event_date": "2025-10-02",
+    "cache": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\OPEN_FUNNEL_EXP061\\features_20251002.parquet",
+    "cache_sha256": "f5b07e3244fce8f7cc15be3386c3fb47261a3c3f5badc37c7c3d5bf4f3a7930a",
+    "finite_or_null": true,
+    "shuffle_n_strata": 395,
+    "shuffle_singleton_share": 0.00010325565066548267,
+    "shuffle_moved_share": 0.998058793767489,
+    "shuffle_max_abs_marginal_mean_diff": 0.0
+  },
+  {
+    "cutoff": "2025-10-16",
+    "rows": 197379,
+    "unique_users": 197379,
+    "source_max_event_date": "2025-10-16",
+    "cache": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\OPEN_FUNNEL_EXP061\\features_20251016.parquet",
+    "cache_sha256": "a2d62b454273cf8518ece8a10a6f162f715ce6169e4ce6d42ad790c4a5e488d1",
+    "finite_or_null": true,
+    "shuffle_n_strata": 396,
+    "shuffle_singleton_share": 0.00013679266791299987,
+    "shuffle_moved_share": 0.9980697034638943,
+    "shuffle_max_abs_marginal_mean_diff": 0.0
+  }
+]

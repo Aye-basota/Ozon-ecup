@@ -1,0 +1,11 @@
+{
+  "artifact_user_alignment_mismatches": 0,
+  "max_abs_feature_mean_after_float32_reload": 2.375984857358274e-09,
+  "max_abs_normalized_production_span_covariance_after_float32_reload": 1.5828603274913544e-08,
+  "max_oracle_gain_reproduction_error": 1.8285804728040977e-12,
+  "all_factor_artifacts_finite": true,
+  "all_fold_K_at_or_below_cap": true,
+  "forecast_authorized": false,
+  "leaderboard_used": false,
+  "gpu_used": false
+}

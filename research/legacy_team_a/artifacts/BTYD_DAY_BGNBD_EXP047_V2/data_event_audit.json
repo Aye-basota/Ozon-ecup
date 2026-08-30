@@ -1,0 +1,36 @@
+{
+  "date_max": "2026-02-13",
+  "date_min": "2025-01-01",
+  "duplicate_user_days": {
+    "extra_rows": 0,
+    "groups": 0
+  },
+  "event_unit": "one user-day; purchase_day = (gmv > 0)",
+  "mismatches": {
+    "any_disagreement": {
+      "count": 0,
+      "share_rows": 0.0
+    },
+    "gmv_vs_source_ord": {
+      "count": 0,
+      "share_rows": 0.0
+    },
+    "gmv_vs_to_ord": {
+      "count": 0,
+      "share_rows": 0.0
+    },
+    "to_ord_vs_source_ord": {
+      "count": 0,
+      "share_rows": 0.0
+    }
+  },
+  "positive_counts": {
+    "gmv_positive": 4736907,
+    "source_ord_positive": 4736907,
+    "to_ord_positive": 4736907
+  },
+  "primary_event_unchanged": true,
+  "rows": 30631006,
+  "to_ord_semantics": "audit-only purchased-item count; never transaction count",
+  "users": 250000
+}

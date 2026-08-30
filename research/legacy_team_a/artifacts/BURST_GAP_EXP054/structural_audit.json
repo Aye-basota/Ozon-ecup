@@ -1,0 +1,29 @@
+{
+  "best_mid_activity_p_positive_spread": 0.019984494365765326,
+  "cache_sha256": "e2346fc2a16f5880fbb865bc59788f9913948f57ca9b222c62862ef5de9decef",
+  "max_abs_novelty_correlations": [
+    0.3488178564464492,
+    0.8967553785481561,
+    0.46894803657392187,
+    0.34638253427783416,
+    1.0,
+    0.8462638551877579,
+    0.9769726212902136,
+    0.3488178564464492,
+    0.188932046220996
+  ],
+  "mid_activity_spreads": {
+    "current_gap_ratio": 0.019984494365765326,
+    "last_burst_intensity": 0.009546838840182592,
+    "last_to_historical_intensity": 0.015126962884252082,
+    "reactivation_count": 0.009612915368473085
+  },
+  "missing_requested_state_columns": [
+    "buygap_median",
+    "buygap_max"
+  ],
+  "novelty_pass": true,
+  "overflow_share": 0.0,
+  "singleton_burst_share": 0.3644445779809952,
+  "status": "PASS"
+}

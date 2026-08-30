@@ -1,0 +1,90 @@
+{
+  "experiment_id": "EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS",
+  "created": "2026-08-28",
+  "objective": "Find incremental residual directions outside the reproducible clean baseline and current TEST submission span.",
+  "public_lb_used_for_selection": false,
+  "current_score_reference_only": 1.6461597403364463,
+  "target_score_reference_only": 1.6446514942,
+  "raw_data": "C:/Users/Admin/Desktop/OZON-E-CUP/data/raw/train.parquet",
+  "sample_submission": "C:/Users/Admin/Desktop/OZON-E-CUP/data/raw/sample_submit.csv",
+  "dense_panel_source": "C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/seq_panel_v1.npy",
+  "dense_gmv_source": "C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/seq_gmv_v1.npy",
+  "dense_uid_source": "C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/seq_uid_v1.npy",
+  "dense_source_policy": "Inputs use the historical raw-derived mmap only after an experiment-local raw parity audit; eligibility and every target are rebuilt directly from raw parquet.",
+  "clean_validation_folds": ["2025-09-04", "2025-09-18", "2025-10-02", "2025-10-16"],
+  "fold_weights": [1.0, 2.0, 4.0, 8.0],
+  "validation_panel_blocks": 3,
+  "training_panel_blocks": 3,
+  "target_horizon_days": 30,
+  "training_cutoffs_per_fold": 4,
+  "training_cutoff_lags_days": [77, 63, 49, 35],
+  "baseline": {
+    "representation": "cutoff-safe RFM context: per-channel sums and active-day counts over 7/14/30/60/90/180/365 days plus per-channel recency",
+    "target": "log1p(y30)",
+    "cross_fit": "global user hash halves for residual targets",
+    "model": "LightGBM regression_l2",
+    "num_boost_round": 260,
+    "learning_rate": 0.035,
+    "num_leaves": 63,
+    "min_data_in_leaf": 800,
+    "feature_fraction": 0.8,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 20.0,
+    "max_bin": 63,
+    "seed": 42
+  },
+  "candidates": {
+    "A1_TREE_TRAJ_180": {
+      "history_days": 180,
+      "representation": "26 chronological weekly bins plus 28 daily bins for 11 raw channels, with limited RFM context",
+      "target": "cross-fitted baseline residual",
+      "num_boost_round": 300
+    },
+    "A1_TREE_TRAJ_365": {
+      "history_days": 365,
+      "representation": "53 chronological weekly bins plus 28 daily bins for 11 raw channels, with limited RFM context",
+      "target": "cross-fitted baseline residual",
+      "num_boost_round": 300
+    },
+    "A2_WEEKLY_RESIDUAL_CNN": {
+      "history_days": 365,
+      "representation": "53 chronological weekly bins for 11 raw channels through a width-32 residual dilated CNN (dilations 1/2/4), with limited RFM context",
+      "target": "cross-fitted baseline residual",
+      "optimizer": "AdamW",
+      "learning_rate": 0.001,
+      "batch_size": 2048,
+      "maximum_epochs": 8,
+      "early_stopping": "internal deterministic user-hash holdout; patience 2",
+      "seed": 42
+    },
+    "C_TEST_REGIME_MATCHED_A1_365": {
+      "base_model": "same fixed A1_TREE_TRAJ_365 configuration",
+      "construction": "target-free maximum-support subset matching by activity quartile and historical purchase-day class",
+      "selection_rule": "continue only for >=10% rho lift, no latest degradation, and better nested Delta MSE"
+    }
+  },
+  "candidate_model": {
+    "model": "LightGBM regression_l2",
+    "learning_rate": 0.03,
+    "num_leaves": 31,
+    "min_data_in_leaf": 1000,
+    "feature_fraction": 0.65,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 30.0,
+    "max_bin": 63,
+    "seed": 42
+  },
+  "projection_span": ["constant", "clean_baseline_z"],
+  "nested_amplitude": "fold 1 fixed at 1.0 without held-out fitting; every later fold uses b/G pooled from strictly earlier held-out folds",
+  "bootstrap": {"unit": "user_id cluster", "replicates": 1000, "seed": 20260828},
+  "gates": {
+    "reject_weighted_rho_below": 0.015,
+    "promising_rho": 0.02,
+    "strong_weighted_rho": 0.025,
+    "strong_latest_rho": 0.02,
+    "test_perp_fraction": 0.2
+  },
+  "leaderboard_upload": false
+}

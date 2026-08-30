@@ -1,0 +1,112 @@
+{
+  "components": [
+    {
+      "component": "S1-E03a",
+      "dtype": "float32",
+      "file_sha256": "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525",
+      "n": 770616,
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E03a.npz",
+      "prediction_sha256": "0461e52abc4f50a7d4d950600475ff7949dc20b1ac5436fbf454bcc53c1af5f1",
+      "row_keys_sha256": "3bfac84ca53d125d21beac831bee0364deb28e4c027ec2858d21b97e32fe1b91",
+      "target_sha256": "e3a609fad21657bef461738efafa145808f6a868f03e47d178400f1d0398234b"
+    },
+    {
+      "component": "S1-E02",
+      "dtype": "float32",
+      "file_sha256": "2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff",
+      "n": 770616,
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E02.npz",
+      "prediction_sha256": "89a389580fa3b1f0c940b9a3c035a1246fe8d86e3e8af618ad332eb99b985504",
+      "row_keys_sha256": "3bfac84ca53d125d21beac831bee0364deb28e4c027ec2858d21b97e32fe1b91",
+      "target_sha256": "e3a609fad21657bef461738efafa145808f6a868f03e47d178400f1d0398234b"
+    },
+    {
+      "component": "S1-DIST",
+      "dtype": "float32",
+      "file_sha256": "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+      "n": 770616,
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-DIST.npz",
+      "prediction_sha256": "3ba241497c210edcabcdcf6cf62f716e2ffb03bb31cf7c19eef3ff44c786b169",
+      "row_keys_sha256": "3bfac84ca53d125d21beac831bee0364deb28e4c027ec2858d21b97e32fe1b91",
+      "target_sha256": "e3a609fad21657bef461738efafa145808f6a868f03e47d178400f1d0398234b"
+    },
+    {
+      "component": "ETX-AVG3",
+      "dtype": "float32",
+      "file_sha256": "890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f",
+      "n": 770616,
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-AVG3.npz",
+      "prediction_sha256": "4ec361ad9216d9a72250c077f72e53964b7efb7485808a73307f4b85f7a0458f",
+      "row_keys_sha256": "3bfac84ca53d125d21beac831bee0364deb28e4c027ec2858d21b97e32fe1b91",
+      "target_sha256": "e3a609fad21657bef461738efafa145808f6a868f03e47d178400f1d0398234b"
+    },
+    {
+      "component": "SEQ-AVG3",
+      "dtype": "float32",
+      "file_sha256": "8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c",
+      "n": 770616,
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_SEQ-AVG3.npz",
+      "prediction_sha256": "0e6a0c5ed26b74fe3d5509d60a22a1aa598f9ca5606df6bc9bf7291a4a827667",
+      "row_keys_sha256": "3bfac84ca53d125d21beac831bee0364deb28e4c027ec2858d21b97e32fe1b91",
+      "target_sha256": "e3a609fad21657bef461738efafa145808f6a868f03e47d178400f1d0398234b"
+    }
+  ],
+  "experiment": "CHANNEL-SHAPLEY-SPLIT",
+  "fold_calibration": {
+    "2025-09-04": {
+      "n": 188518,
+      "offset": -0.11734465876764336,
+      "score": 1.7668833567997195
+    },
+    "2025-09-18": {
+      "n": 191025,
+      "offset": -0.07873621159214053,
+      "score": 1.7605095767798136
+    },
+    "2025-10-02": {
+      "n": 193694,
+      "offset": -0.02097755276250928,
+      "score": 1.748629223964952
+    },
+    "2025-10-16": {
+      "n": 197379,
+      "offset": -0.035387154112119984,
+      "score": 1.7412785664479717
+    }
+  },
+  "fold_scores_calibrated": [
+    1.7668833567997195,
+    1.7605095767798136,
+    1.748629223964952,
+    1.7412785664479717
+  ],
+  "fold_sizes": [
+    188518,
+    191025,
+    193694,
+    197379
+  ],
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "formula": {
+    "ETX-AVG3": 0.225,
+    "S1-DIST": 0.25,
+    "S1-E02": 0.2,
+    "S1-E03a": 0.1,
+    "SEQ-AVG3": 0.225
+  },
+  "log_space_assembly": true,
+  "prediction_sha256": "ffa81e2cd1d0e05402c6fcc376d414c20a67a6b514414e1dd42332b8da878f65",
+  "prefix": "CHANNEL_SHAPLEY_EXP052",
+  "row_keys_sha256": "3bfac84ca53d125d21beac831bee0364deb28e4c027ec2858d21b97e32fe1b91",
+  "status": "PASS_EXACT",
+  "target_sha256": "e3a609fad21657bef461738efafa145808f6a868f03e47d178400f1d0398234b",
+  "test_prediction_or_submission_paths_accessed": false,
+  "tolerance": 5e-10,
+  "wcv": 1.7475098625201952,
+  "weight_sum": 1.0
+}

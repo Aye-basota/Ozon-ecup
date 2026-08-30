@@ -1,0 +1,153 @@
+{
+  "classifier_excluded": [
+    "explicit cutoff date",
+    "query weekday",
+    "raw depth",
+    "user_id"
+  ],
+  "classifier_features": [
+    "token_count",
+    "event_density",
+    "recency",
+    "gap_mean",
+    "gap_std",
+    "gap_max",
+    "mix_search",
+    "mix_cart",
+    "mix_order",
+    "positive_gmv_day_rate",
+    "mean_present",
+    "mean_cat",
+    "mean_buy",
+    "mean_ponly",
+    "mean_searches",
+    "mean_search_to_cart",
+    "mean_search_to_ord",
+    "mean_cat_to_cart",
+    "mean_cat_to_ord",
+    "mean_to_cart",
+    "mean_to_ord",
+    "mean_gmv_search",
+    "mean_gmv_cat",
+    "mean_gmv"
+  ],
+  "experiment": "LATE_SSL_EXP056",
+  "frozen_embedding_file_sha256": "d1c6c80e43a0243f34c4b623fd6cfe934d5675a1b9d5f341c5d8319a08ac329b",
+  "frozen_etx_embedding_mmd": {
+    "A_vs_LATE": {
+      "mmd2": 0.003111317817211967,
+      "sigma2": 10.066655203460979
+    },
+    "A_vs_PRODUCTION": {
+      "mmd2": 0.011460269974352455,
+      "sigma2": 9.445676506708693
+    },
+    "CONTROL_vs_LATE": {
+      "mmd2": 0.0010977888892036436,
+      "sigma2": 9.403303618285811
+    }
+  },
+  "pairs": [
+    {
+      "adversarial_auc": 0.897177564049089,
+      "other": "LATE",
+      "psi": {
+        "event_density": 0.06678086140794827,
+        "gap_max": 0.13647040365553517,
+        "gap_mean": 0.044300685768508055,
+        "gap_std": 0.07204237388945636,
+        "mean_buy": 0.004808341855285484,
+        "mean_cat": 0.02577336851607849,
+        "mean_cat_to_cart": 0.017096863394602528,
+        "mean_cat_to_ord": 0.0033018975349200274,
+        "mean_gmv": 0.005123349490921596,
+        "mean_gmv_cat": 0.002516562074322421,
+        "mean_gmv_search": 0.0061635673596448235,
+        "mean_ponly": 0.024956479991215308,
+        "mean_present": 0.0,
+        "mean_search_to_cart": 0.007948358516351211,
+        "mean_search_to_ord": 0.005912219344817418,
+        "mean_searches": 0.008624227752655776,
+        "mean_to_cart": 0.008388147381224403,
+        "mean_to_ord": 0.005039092802453875,
+        "mix_cart": 0.00830787426573969,
+        "mix_order": 0.009622128888232297,
+        "mix_search": 0.009094680517663743,
+        "positive_gmv_day_rate": 0.004808341855285484,
+        "recency": 0.00026423551463946335,
+        "token_count": 0.06678086140794827
+      },
+      "psi_max": 0.13647040365553517,
+      "psi_mean": 0.022671871799393756,
+      "reference": "A"
+    },
+    {
+      "adversarial_auc": 0.901138034735475,
+      "other": "PRODUCTION",
+      "psi": {
+        "event_density": 0.38273735977634876,
+        "gap_max": 0.015775873755788886,
+        "gap_mean": 0.021565174998277026,
+        "gap_std": 0.005338656499956405,
+        "mean_buy": 0.019118680092405894,
+        "mean_cat": 0.04752096598489014,
+        "mean_cat_to_cart": 0.03987821774716917,
+        "mean_cat_to_ord": 0.009383135233416405,
+        "mean_gmv": 0.01585959872674845,
+        "mean_gmv_cat": 0.008593763218134341,
+        "mean_gmv_search": 0.019316212004996145,
+        "mean_ponly": 0.06395069085329587,
+        "mean_present": 0.0,
+        "mean_search_to_cart": 0.03181310664503066,
+        "mean_search_to_ord": 0.02470674731387542,
+        "mean_searches": 0.0022307604137955005,
+        "mean_to_cart": 0.02650843810600168,
+        "mean_to_ord": 0.02100023227105198,
+        "mix_cart": 0.034014664394651804,
+        "mix_order": 0.026450545386455585,
+        "mix_search": 0.03079731415920765,
+        "positive_gmv_day_rate": 0.019118680092405894,
+        "recency": 0.01195442001802607,
+        "token_count": 0.38273735977634876
+      },
+      "psi_max": 0.38273735977634876,
+      "psi_mean": 0.05251544156117827,
+      "reference": "A"
+    },
+    {
+      "adversarial_auc": 0.8656933290883829,
+      "other": "LATE",
+      "psi": {
+        "event_density": 0.00020528565896829284,
+        "gap_max": 0.09319363611178386,
+        "gap_mean": 0.05544687641378518,
+        "gap_std": 0.06743923569564916,
+        "mean_buy": 0.00011777445164475961,
+        "mean_cat": 0.01666595973862263,
+        "mean_cat_to_cart": 0.005734831878348407,
+        "mean_cat_to_ord": 0.0024430922160784472,
+        "mean_gmv": 7.647788903788722e-05,
+        "mean_gmv_cat": 0.0021366104686911273,
+        "mean_gmv_search": 4.9372946353016e-05,
+        "mean_ponly": 0.01259887987089554,
+        "mean_present": 0.0,
+        "mean_search_to_cart": 0.0027123028026391337,
+        "mean_search_to_ord": 0.00019691779774410955,
+        "mean_searches": 0.012008532766163905,
+        "mean_to_cart": 0.0035828098156383066,
+        "mean_to_ord": 0.00011249880539049729,
+        "mix_cart": 0.0014437698149357369,
+        "mix_order": 0.004018262928114392,
+        "mix_search": 0.001646047167673968,
+        "positive_gmv_day_rate": 0.00011777445164475961,
+        "recency": 0.0016007497798078598,
+        "token_count": 0.00020528565896829284
+      },
+      "psi_max": 0.09319363611178386,
+      "psi_mean": 0.011823041047024136,
+      "reference": "CONTROL"
+    }
+  ],
+  "plan_frozen_before_audit": true,
+  "target_free": true
+}

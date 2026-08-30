@@ -1,0 +1,92 @@
+{
+  "status": "PUBLIC_POSTERIOR_ESTIMATE_MEMBERSHIP_UNKNOWN",
+  "public_fraction": 0.2,
+  "public_rows_approx": 50000,
+  "sampling_model": "Gaussian finite-population approximation from exact row-wise quadratic covariance",
+  "draws_retained": 40000,
+  "seed": 89089,
+  "quadratic_term_order": [
+    "G11",
+    "G12",
+    "G22"
+  ],
+  "quadratic_term_full_mean": [
+    0.003375949467234866,
+    0.001582374901837439,
+    0.000902605926826355
+  ],
+  "quadratic_term_sampling_covariance": [
+    [
+      1.4647738210668828e-09,
+      6.880277074077564e-10,
+      3.254387680887321e-10
+    ],
+    [
+      6.880277074077564e-10,
+      3.3413063477397186e-10,
+      1.6306945804625674e-10
+    ],
+    [
+      3.254387680887321e-10,
+      1.6306945804625674e-10,
+      8.334900536927643e-11
+    ]
+  ],
+  "coefficients": {
+    "exp075_weight": {
+      "q2.5": 0.436305700853022,
+      "median": 0.4634464671592276,
+      "q97.5": 0.4902707626418523
+    },
+    "joint_v2_weight": {
+      "q2.5": 0.037462417518168506,
+      "median": 0.09508470380997022,
+      "q97.5": 0.15341439096875065
+    }
+  },
+  "predicted_public_optimum_RMSLE": {
+    "q2.5": 1.6458894362474887,
+    "median": 1.6458946961407674,
+    "q97.5": 1.6458996922434048
+  },
+  "gain_MSE_over_JOINT_V2": {
+    "q2.5": 0.00012052147247526568,
+    "median": 0.00013696761510129107,
+    "q97.5": 0.0001542820483337315
+  },
+  "approx_Delta_RMSLE_over_JOINT_V2": {
+    "q2.5": -4.686823072845292e-05,
+    "median": -4.1608337449816624e-05,
+    "q97.5": -3.661223481234987e-05
+  },
+  "P_gain_MSE_ge_0_0003": 0.0,
+  "P_gain_MSE_ge_0_0001": 1.0,
+  "P_gain_over_JOINT_V2_within_realized_span": 1.0,
+  "condition_number": {
+    "q2.5": 30.83800815955526,
+    "median": 31.66295193641151,
+    "q97.5": 32.48629232472226
+  },
+  "noise_inflation_kappa": 1.15,
+  "public_to_full_alignment_covariance": [
+    [
+      1.6832852288475586e-07,
+      7.889893864269441e-08
+    ],
+    [
+      7.889893864269441e-08,
+      4.500491606414574e-08
+    ]
+  ],
+  "coefficient_transfer_covariance_flat_prior": [
+    [
+      0.08284511061923457,
+      -0.14523727341870538
+    ],
+    [
+      -0.14523727341870535,
+      0.30985937356007515
+    ]
+  ],
+  "warning": "This is the realized [EXP075, JOINT_V2] span, not an identified A1/A2 plane; JOINT_V2 has a material out-of-plane component."
+}

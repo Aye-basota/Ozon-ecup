@@ -1,0 +1,106 @@
+{
+  "experiment": "EXACT_ANNIVERSARY_EXP058",
+  "primary_cutoff": "2026-01-14",
+  "production_cutoff": "2026-02-13",
+  "ordinary_temporal_cv": "unavailable",
+  "validation": "PSEUDO-PRODUCTION CROSS-FIT",
+  "transfer_risk": "one-month calendar extrapolation",
+  "year_shift": "calendar-year; Feb-29 clamps to Feb-28",
+  "shifted_control_days": 30,
+  "features": {
+    "annual": [
+      "gmv",
+      "orders",
+      "buy_days",
+      "carts",
+      "searches",
+      "catalog",
+      "active_days",
+      "raw_row_days",
+      "explicit_zero_days",
+      "gmv_search",
+      "gmv_catalog",
+      "buyer"
+    ],
+    "scale_metrics": [
+      "gmv",
+      "orders",
+      "buy_days",
+      "active_days"
+    ],
+    "scale_horizons": [
+      30,
+      60
+    ],
+    "n_model_features": 29
+  },
+  "ratio_recipe": {
+    "prior": 1.0,
+    "clip": [
+      0.1,
+      10.0
+    ],
+    "log_diff_clip": [
+      -4.0,
+      4.0
+    ]
+  },
+  "ridge": {
+    "normalized_lambda": 0.001,
+    "sklearn_alpha": "n_donor * normalized_lambda",
+    "alpha_sweep": false
+  },
+  "correction": {
+    "center": "donor prediction mean",
+    "clip": [
+      -1.5,
+      1.5
+    ],
+    "shrink_grid_donor_inner_only": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "base_components": {
+    "S1-CAP": 0.1,
+    "S1-UNC": 0.2,
+    "S1-DIST": 0.25,
+    "ETX-01-S42-DCW": 0.075,
+    "ETX-01-S43-DCW": 0.075,
+    "ETX-01-S44-DCW": 0.075,
+    "SEQ-01": 0.075,
+    "SEQ-C289-S43": 0.075,
+    "SEQ-C289-S44": 0.075
+  },
+  "strong_pass": {
+    "real_base_max": -0.001,
+    "halves_correct_sign": true,
+    "real_shuffled_max": -0.0007,
+    "real_shifted_max": -0.0005,
+    "annual_buyer_share_min": 0.1,
+    "annual_buyer_halves_correct_sign": true
+  },
+  "borderline": [
+    -0.001,
+    -0.0005
+  ],
+  "recipe_parity": {
+    "canonical_cutoff": "2026-02-13",
+    "corr_min": 0.996,
+    "var_delta_max": 0.018,
+    "abs_mean_delta_max": 0.02,
+    "note": "target-blind replay audit for an explicitly authorized retrain; limits are no looser than the observed production S42/S43/S44 pairwise seed envelope"
+  },
+  "production_support": {
+    "max_abs_smd": 1.0,
+    "correction_variance_ratio": [
+      0.5,
+      2.0
+    ],
+    "annual_buyer_share_abs_diff_max": 0.1,
+    "clipping_share_max": 0.05
+  },
+  "seed_source": "src.config.SEED"
+}

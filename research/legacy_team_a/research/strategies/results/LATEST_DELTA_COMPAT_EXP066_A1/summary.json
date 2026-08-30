@@ -1,0 +1,62 @@
+{
+  "experiment_id": 66,
+  "prefix": "LATEST_DELTA_COMPAT_EXP066_A1",
+  "date": "2026-08-25",
+  "experiment_type": "artifact-only prerequisite audit",
+  "training": "NONE",
+  "verdict": "BLOCKED_NO_CANONICAL_LATEST_OOF",
+  "primary_experiment_started": false,
+  "authoritative_latest_integration_result_present": false,
+  "canonical_latest_oof_present": false,
+  "required_columns": [
+    "z_latest",
+    "z_STRONGEST_CURRENT",
+    "target",
+    "user_id",
+    "fold"
+  ],
+  "inventory": {
+    "roots": ["artifacts", "research", "weights_archives"],
+    "performed_before_output_marker_creation": true,
+    "current_blocked_marker_excluded": true,
+    "npz_files_scanned": 627,
+    "parquet_files_scanned": 83,
+    "npz_with_z_latest": 0,
+    "parquet_with_z_latest": 0,
+    "objects_with_required_schema": 0
+  },
+  "previous_integration_audit": {
+    "experiment": "exp_065 / FINAL_INTEGRATION_EXP065",
+    "manifest_sha256": "442ba96c2ed536d8e0684d2a4daad4aed0b444ea63ff72abbb441aa63ceae5e9",
+    "contains_canonical_latest_oof": false,
+    "contains_canonical_strongest_oof": true
+  },
+  "documented_production_latest": {
+    "source": "пайплайн сокомандника/README_PIPELINE_RU.md",
+    "source_sha256": "1e1e846ca5bee9ae9866497af815f68e9feae68aa1e2d4d164eb9581beb1d925",
+    "recipe": "0.12*STRONGEST_CURRENT + 0.16*occ_meta_B + 0.72*occ_raw_X3",
+    "is_valid_oof_substitute": false,
+    "public_lb_used_for_decision": false
+  },
+  "family_status": {
+    "SAFE-ANCHOR": "BLOCKED_NOT_RUN",
+    "BTYD05": "BLOCKED_NOT_RUN",
+    "FRESH": "BLOCKED_NOT_RUN",
+    "SEQ65": "BLOCKED_NOT_RUN",
+    "NEGATIVE_CONTROL": "BLOCKED_NOT_RUN"
+  },
+  "cap_private_safety": {
+    "latest_effective_cap_lineage_established": false,
+    "production_candidate_considered": false,
+    "reason": "authoritative latest integration and canonical OOF are absent"
+  },
+  "native_second_line_diagnostic_run": false,
+  "test_regime_run": false,
+  "oof_candidates_marker": {
+    "rows": 0,
+    "status": "BLOCKED_NO_CANONICAL_LATEST_OOF",
+    "sha256": "042710ca601484fcf24b652552ce617cc6abb13e7002b66f900e9a8610051b58"
+  },
+  "submission_created": false,
+  "leaderboard_uploaded": false
+}

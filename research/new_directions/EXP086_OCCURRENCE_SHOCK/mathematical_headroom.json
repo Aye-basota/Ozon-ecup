@@ -1,0 +1,10 @@
+{
+  "required_gap_mse": 0.00490927359511,
+  "deployable_nested_delta_mse": 0.00024032249837313557,
+  "deployable_nested_gain": -0.00024032249837313557,
+  "deployable_fraction_of_gap_signed": -0.048952761282751604,
+  "deployable_fraction_of_gap_closeable": 0.0,
+  "pooled_same_fold_oracle_gain": 2.9837035432328127e-06,
+  "pooled_same_fold_oracle_fraction_of_gap": 0.000607768845110772,
+  "note": "Same-fold oracle is mathematical headroom only; it is not deployable evidence."
+}

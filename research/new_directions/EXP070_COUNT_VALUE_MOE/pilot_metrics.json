@@ -1,0 +1,45 @@
+{
+  "fold": "2025-10-16",
+  "gate_rule": "same real endpoint must improve EXP037 by >=0.00010 and beat matched shuffled by >=0.00010",
+  "probability_audit_pass": true,
+  "endpoints": [
+    {
+      "endpoint": "standalone",
+      "base_score": 1.7412785664162476,
+      "base_offset": -0.035387154098343816,
+      "real_score": 1.7433992400244631,
+      "real_offset": -0.051325007692053955,
+      "shuffled_score": 1.7437789557250887,
+      "shuffled_offset": 0.004240025229336843,
+      "real_delta_vs_exp037": 0.002120673608215551,
+      "real_minus_shuffled": -0.00037971570062556026,
+      "endpoint_pass": false
+    },
+    {
+      "endpoint": "replace_dist_fixed",
+      "base_score": 1.7412785664162476,
+      "base_offset": -0.035387154098343816,
+      "real_score": 1.7411640595104056,
+      "real_offset": -0.03638490908891107,
+      "shuffled_score": 1.741280484514287,
+      "shuffled_offset": -0.022493650858563374,
+      "real_delta_vs_exp037": -0.0001145069058419157,
+      "real_minus_shuffled": -0.00011642500388142629,
+      "endpoint_pass": true
+    },
+    {
+      "endpoint": "add10_fixed",
+      "base_score": 1.7412785664162476,
+      "base_offset": -0.035387154098343816,
+      "real_score": 1.7412591903424581,
+      "real_offset": -0.036980939457714905,
+      "shuffled_score": 1.741301632685407,
+      "shuffled_offset": -0.031424436165575824,
+      "real_delta_vs_exp037": -1.93760737894344e-05,
+      "real_minus_shuffled": -4.2442342948811884e-05,
+      "endpoint_pass": false
+    }
+  ],
+  "gate_endpoint": "replace_dist_fixed",
+  "pilot_pass": true
+}

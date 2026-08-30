@@ -1,0 +1,15 @@
+{
+  "submission": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_ZERO2D_SHRINK.csv",
+  "sha256": "9f1cf32671fb18291659b61da232244d370f7c9af2e0cf9d8aebf9eba406d461",
+  "rows": 250000,
+  "eta": 1.0,
+  "final_level": 2.3292999999999813,
+  "zero_fraction": 0.00178,
+  "min_prediction": 0.0,
+  "max_prediction": 2654.1543091912,
+  "regime_status": "PASS",
+  "forced_after_validation_reject": true,
+  "dist_reference_reproduced": false,
+  "dist_test_mean_abs_dz": 0.04453212574304636,
+  "dist_test_correlation_z": 0.9991905129400246
+}

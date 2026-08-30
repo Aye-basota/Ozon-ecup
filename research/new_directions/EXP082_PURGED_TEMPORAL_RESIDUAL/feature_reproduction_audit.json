@@ -1,0 +1,100 @@
+[
+  {
+    "cutoff": "2025-07-03",
+    "finite_before_fill": 0.9373478133528427,
+    "structural": {
+      "source": "exact EXP080 fixed Ridge replay",
+      "train_cutoffs": [
+        "2025-04-17",
+        "2025-05-01",
+        "2025-05-15",
+        "2025-05-29"
+      ],
+      "max_train_target_end": "2025-06-28",
+      "target_safe": true,
+      "diagnostics": {
+        "train_rows": 702051,
+        "train_positive_rows": 387880,
+        "validation_rows": 181338,
+        "validation_positive_rows": 104905,
+        "activity_AUC": 0.832962683906516,
+        "purchase_count_corr_all": 0.7054633292640166,
+        "event_count_corr_all": 0.7589898462398359,
+        "order_count_corr_all": 0.708994518907974,
+        "conditional_value_corr_positive": 0.382511856395365
+      }
+    },
+    "feature_count": 162,
+    "excluded_exp081_features": 38,
+    "reason": "35 non-production research-bank predictions and 3 unavailable auxiliary structural predictions were not imputed"
+  },
+  {
+    "cutoff": "2025-08-07",
+    "finite_before_fill": 0.9408729363432885,
+    "structural": {
+      "source": "exact EXP080 fixed Ridge replay",
+      "train_cutoffs": [
+        "2025-05-22",
+        "2025-06-05",
+        "2025-06-19",
+        "2025-07-03"
+      ],
+      "max_train_target_end": "2025-08-02",
+      "target_safe": true,
+      "diagnostics": {
+        "train_rows": 717494,
+        "train_positive_rows": 408236,
+        "validation_rows": 184617,
+        "validation_positive_rows": 112169,
+        "activity_AUC": 0.8334923495888469,
+        "purchase_count_corr_all": 0.7078132513417514,
+        "event_count_corr_all": 0.7598085412853469,
+        "order_count_corr_all": 0.7099191388617887,
+        "conditional_value_corr_positive": 0.38133935047102185
+      }
+    },
+    "feature_count": 162,
+    "excluded_exp081_features": 38,
+    "reason": "35 non-production research-bank predictions and 3 unavailable auxiliary structural predictions were not imputed"
+  },
+  {
+    "cutoff": "2025-09-11",
+    "finite_before_fill": 0.9437345914784473,
+    "structural": {
+      "source": "exact EXP080 fixed Ridge replay",
+      "train_cutoffs": [
+        "2025-06-26",
+        "2025-07-10",
+        "2025-07-24",
+        "2025-08-07"
+      ],
+      "max_train_target_end": "2025-09-06",
+      "target_safe": true,
+      "diagnostics": {
+        "train_rows": 730309,
+        "train_positive_rows": 431404,
+        "validation_rows": 189815,
+        "validation_positive_rows": 114713,
+        "activity_AUC": 0.8392451424037268,
+        "purchase_count_corr_all": 0.720077191462857,
+        "event_count_corr_all": 0.7706417767365892,
+        "order_count_corr_all": 0.7247941485319964,
+        "conditional_value_corr_positive": 0.392146660400633
+      }
+    },
+    "feature_count": 162,
+    "excluded_exp081_features": 38,
+    "reason": "35 non-production research-bank predictions and 3 unavailable auxiliary structural predictions were not imputed"
+  },
+  {
+    "cutoff": "2025-10-16",
+    "finite_before_fill": 0.9452902978721328,
+    "structural": {
+      "source": "frozen EXP080 observable_predictions.parquet",
+      "target_safe": true
+    },
+    "feature_count": 162,
+    "excluded_exp081_features": 38,
+    "reason": "35 non-production research-bank predictions and 3 unavailable auxiliary structural predictions were not imputed"
+  }
+]

@@ -1,0 +1,9 @@
+﻿combination,protocol,wcv,delta_vs_its_baseline,delta_vs_EXP037,better_folds,last_fold_delta,status,chosen_lambda,oof_gain,test_compound_correction_rms,test_corr_compound_with_latest_delta,test_projection_latest_on_compound,expected_robustness,notes
+A_EXP037+fallback_occ,"nested model cross-fit + analytic scalar on inner folds; lambda clipped [0,1.5]",1.7470523546725931,-0.00045750788091158213,-0.00045750788091147854,4,-0.00044108447917978744,measured_canonical,,,,,,,
+B_EXP037_SEQ65+fallback_occ,"nested model cross-fit + analytic scalar on inner folds; lambda clipped [0,1.5]",1.7468558240287846,-0.00041614095980790173,-0.0006540385247200131,4,-0.00040084897343883874,measured_canonical,,,,,,,
+C_EXP037_BTYD05+fallback_occ,"nested model cross-fit + analytic scalar on inner folds; lambda clipped [0,1.5]",1.7468090719901783,-0.0003798074053969221,-0.0007007905633262812,4,-0.00037682916527148613,measured_canonical,,,,,,,
+D_EXP037_SEQ65_BTYD05+fallback_occ,"nested model cross-fit + analytic scalar on inner folds; lambda clipped [0,1.5]",1.7466034047572798,-0.0003437591420981138,-0.00090645779622478,4,-0.00034216654656149537,measured_canonical,,,,,,,
+SEQ65+BTYD05 canonical compound,,1.7469471638993779,,-0.0005626986541267254,4,,measured_canonical,,,,,,,
+best two teammate occurrence sources,,,,,,,BLOCKED_ROW_LEVEL_OOF_MISSING,,,,,,,
+meta-occurrence exact,,,,,,,BLOCKED_ROW_LEVEL_OOF_MISSING,,,,,,,
+compound+latest,,,,,,,BLOCKED_LATEST_OOF_MISSING,nan,nan,0.03849474907764669,0.25148625849737627,0.24768998466848186,UNRESOLVED_WITHOUT_LATEST_OOF,TEST overlap measured; lambda cannot be selected against latest without canonical latest OOF.

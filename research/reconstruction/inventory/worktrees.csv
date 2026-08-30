@@ -1,0 +1,7 @@
+namespace,root,branch,head,local_file_count_excluding_data_junction,local_bytes_excluding_data_junction,git_status_before,data_link_target
+independent_anniversary,C:\Users\Admin\Desktop\exp058-exact-anniversary,exp/058-exact-anniversary,a28a71fb2d0194052014c542f36d180dfe74bcf9,271,47355812,?? experiments/exp_058_exact_anniversary.md | ?? src/exact_anniversary.py | ?? src/test_exact_anniversary.py |,C:\Users\Admin\Desktop\OZON-E-CUP\data
+independent_calendar,C:\Users\Admin\Desktop\OZON-E-CUP-calendar-placebo-01,codex/calendar-placebo-01,96271398780a33b5423a9971128d4bd946051f0f,327,13460262,clean,C:\Users\Admin\Desktop\OZON-E-CUP\data
+independent_domain,C:\Users\Admin\Desktop\OZON-E-CUP-domain-01,codex/domain-01,c219dabe316982bb9de23e15c4f24d3e9eb16ae0,2344,17723807055,clean,C:\Users\Admin\Desktop\OZON-E-CUP\data
+independent_global_regime,C:\Users\Admin\Desktop\OZON-E-CUP-exp057-global-regime-occ,exp/057-global-regime-occ,4003b6874f397fe48577b26118ae1d560a703419,266,28751747,clean,C:\Users\Admin\Desktop\OZON-E-CUP\data
+independent_renewal,C:\Users\Admin\Desktop\OZON-E-CUP-renewal-01,codex/renewal-01,bbae4b0c7a14f3aa42aedff05d8d02c2c8fffdba,245,125367838,clean,C:\Users\Admin\Desktop\OZON-E-CUP\data
+team_a_s2,C:\Users\Admin\Desktop\OZON-E-CUP-s2,team-a-strategy-2-impl,3c1d86d836c7b73519abe99f94686431852187cc,96,68898871,clean,C:\Users\Admin\Desktop\OZON-E-CUP\data

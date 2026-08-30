@@ -1,0 +1,139 @@
+{
+  "base_head": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "component_manifest": [
+    {
+      "file_sha256": "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525",
+      "n": 770616,
+      "name": "cap",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E03a.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "11ac2d49ef8ae198bbdc572766e69e407f7a5bd30b8d03bcd74f612c26bbbf54",
+      "row_key_sha256": "9e9c9de2d280e856eb1172830519fb044c346a319d99b9ed33d0834d04ab067a",
+      "target_sha256": "95e58e473544d3cc40ab064cb63a8e92ba57acb89a9b455b04d761c3e7dc9f98"
+    },
+    {
+      "file_sha256": "2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff",
+      "n": 770616,
+      "name": "unc",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E02.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "545bee09afec828b83f962ba3bf49144fbfe167e490b6c43699774389bbc9337",
+      "row_key_sha256": "9e9c9de2d280e856eb1172830519fb044c346a319d99b9ed33d0834d04ab067a",
+      "target_sha256": "95e58e473544d3cc40ab064cb63a8e92ba57acb89a9b455b04d761c3e7dc9f98"
+    },
+    {
+      "file_sha256": "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+      "n": 770616,
+      "name": "dist",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-DIST.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "4567228f3f0d6e8809277f9bc847640de5a556c70f482c59e475d4d6710470ef",
+      "row_key_sha256": "9e9c9de2d280e856eb1172830519fb044c346a319d99b9ed33d0834d04ab067a",
+      "target_sha256": "95e58e473544d3cc40ab064cb63a8e92ba57acb89a9b455b04d761c3e7dc9f98"
+    },
+    {
+      "file_sha256": "890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f",
+      "n": 770616,
+      "name": "etx",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-AVG3.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "d5b2d82b4a46a3e8bab347878f5b94affda6e441626dac85773ea2d0be52f773",
+      "row_key_sha256": "9e9c9de2d280e856eb1172830519fb044c346a319d99b9ed33d0834d04ab067a",
+      "target_sha256": "95e58e473544d3cc40ab064cb63a8e92ba57acb89a9b455b04d761c3e7dc9f98"
+    },
+    {
+      "file_sha256": "8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c",
+      "n": 770616,
+      "name": "seq",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_SEQ-AVG3.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "d2bd76e75047e092ecf0837d2a8e38d26a88e965069d8fd7b55370ce9d57c8a3",
+      "row_key_sha256": "9e9c9de2d280e856eb1172830519fb044c346a319d99b9ed33d0834d04ab067a",
+      "target_sha256": "95e58e473544d3cc40ab064cb63a8e92ba57acb89a9b455b04d761c3e7dc9f98"
+    }
+  ],
+  "current_head": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "etx_baseline": {
+    "checkpoint_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S42-V1016.pt",
+    "checkpoint_sha256": "a16f9c255b11825e112db8c69572f96ba64a72d70941041d90fba7968d8aa177",
+    "checkpoint_val": "2025-10-16",
+    "config": {
+      "batch": 512,
+      "blocks": 5,
+      "chunk": 128,
+      "compile": false,
+      "d_model": 128,
+      "dropout": 0.1,
+      "epochs": 4,
+      "ffn": 384,
+      "head_dim": 16,
+      "heads": 8,
+      "lr": 0.0015,
+      "n_tok": 192,
+      "seed": 42,
+      "tau_hi": 512.0,
+      "tau_lo": 4.0,
+      "warmup": 500,
+      "wd": 0.01,
+      "z0": 2.2882602214813232
+    },
+    "configured_n_tok": 192,
+    "depth_policy": 289,
+    "implemented_max_history_plus_query": 193,
+    "name": "ETX-01-S42-V1016",
+    "numeric_input_dimension": 22,
+    "oof_file_sha256": "18e35df4d7960818a9fa640ec3eafdf7fbb212c6cfa224ee426b4a126abd8b2f",
+    "oof_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-01-S42-V1016.npz",
+    "prediction_sha256": "fe84ecdc826a6b7c37fcfa30a3c4e7fbf1628ecfa7528f310f733bfd6d750b13",
+    "requested_description_said_including_query": true,
+    "row_key_sha256": "8fca70e026a5f126ddeb7d989266abd15354b7742f53436c24ad59d0544bd101",
+    "target": "direct log1p(GMV30)",
+    "target_sha256": "c22adf396b90e7b3ce0ca3305db9bf16af8d8a0076e5a007e0c11c621b8bd96f"
+  },
+  "experiment_id": 54,
+  "initial_git_status_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BURST_GAP_EXP054\\initial_git_status.txt",
+  "isolation": "current tree; EXP-054-only files because required latest baseline code is uncommitted",
+  "late_fold_expected": 1.741278566,
+  "late_fold_observed": 1.7412785664479717,
+  "parameter_audit": {
+    "baseline_params": 1115433,
+    "candidate_params": 1116073,
+    "extra_params": 640,
+    "extra_source": "5 x d_model learned token-type embedding",
+    "relative_delta": 0.0005737682137788644,
+    "within_2pct": true
+  },
+  "status": "PASS_EXACT",
+  "strongest_current": {
+    "expected_fold_scores": [
+      1.766883357,
+      1.760509577,
+      1.748629224,
+      1.741278566
+    ],
+    "expected_wcv": 1.747509863,
+    "fold_offsets": [
+      -0.11734465876764338,
+      -0.07873621159214053,
+      -0.02097755276250928,
+      -0.035387154112119984
+    ],
+    "fold_scores": [
+      1.7668833567997195,
+      1.7605095767798136,
+      1.748629223964952,
+      1.7412785664479717
+    ],
+    "max_abs_fold_mismatch": 4.479716597671768e-10,
+    "status": "PASS_EXACT",
+    "strongest_prediction_sha256": "b30008842ff0fb1d36682a13308c7847c5de3ae3853024187c7f93bee6a04b91",
+    "wcv": 1.7475098625201952
+  },
+  "weights": {
+    "cap": 0.1,
+    "dist": 0.25,
+    "etx": 0.225,
+    "seq": 0.225,
+    "unc": 0.2
+  }
+}

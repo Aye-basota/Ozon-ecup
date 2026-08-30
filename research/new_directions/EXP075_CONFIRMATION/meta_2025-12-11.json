@@ -1,0 +1,84 @@
+{
+  "validation_cutoff": "2025-12-11",
+  "train_cutoffs": [
+    "2025-09-25",
+    "2025-10-09",
+    "2025-10-23",
+    "2025-11-06"
+  ],
+  "train_rows": 790072,
+  "validation_rows": 215823,
+  "baseline_crossfit_offset": -0.001108748638014437,
+  "baseline_rmsle": 1.7611374925463559,
+  "feature_source_max_date": "2025-12-11",
+  "target_source_min_date": "2025-12-12",
+  "target_source_max_date": "2026-01-10",
+  "train_target_max_date": "2025-12-06",
+  "validation_inactive_fraction": 0.005527677772989904,
+  "A1_TREE_TRAJ_365": {
+    "rho": 0.03204274581744377,
+    "b": 0.002987150884444097,
+    "G": 0.002804270232053392,
+    "u_raw_rms": 0.053242354730709957,
+    "u_perp_rms": 0.052955360748968484,
+    "projection": {
+      "mean_removed": -0.0037553209618481293,
+      "beta1": 0.002527378915185609,
+      "beta2": -5.26523769478109e-19,
+      "max_projection_after_second_pass": 3.5957720842407446e-19
+    }
+  },
+  "A2_WEEKLY_RESIDUAL_CNN": {
+    "rho": 0.03502150728484468,
+    "b": 0.004339964753714465,
+    "G": 0.004955274633422945,
+    "u_raw_rms": 0.07916858596480829,
+    "u_perp_rms": 0.07039371160425444,
+    "best_epoch": 2,
+    "curve": [
+      {
+        "epoch": 1,
+        "train_mse": 3.0658898713211022,
+        "internal_valid_mse": 3.0305886153962764,
+        "seconds": 79.04688882827759
+      },
+      {
+        "epoch": 2,
+        "train_mse": 3.0613999213644947,
+        "internal_valid_mse": 3.0304887778852803,
+        "seconds": 78.61554193496704
+      },
+      {
+        "epoch": 3,
+        "train_mse": 3.0586236516225327,
+        "internal_valid_mse": 3.030570771262016,
+        "seconds": 79.02162384986877
+      },
+      {
+        "epoch": 4,
+        "train_mse": 3.0555363590551536,
+        "internal_valid_mse": 3.0309157033884446,
+        "seconds": 76.28256440162659
+      }
+    ],
+    "projection": {
+      "mean_removed": -0.03610062972281522,
+      "beta1": -0.0018876558299221087,
+      "beta2": -2.183147336860452e-19,
+      "max_projection_after_second_pass": 2.6968290631805583e-19
+    }
+  },
+  "JOINT_FROZEN": {
+    "coefficients": [
+      0.7462560853,
+      0.6466415685
+    ],
+    "rho": 0.040617905522423225,
+    "delta_MSE": -0.005111762276967871,
+    "delta_RMSLE": -0.0014518656869737523,
+    "baseline_RMSLE": 1.7611374925463559,
+    "rms_D": 0.07042300763697028,
+    "corr_A1_A2": 0.3684801843023524
+  },
+  "runtime_seconds": 996.2314600944519
+}

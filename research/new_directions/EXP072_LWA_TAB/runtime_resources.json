@@ -1,0 +1,10 @@
+{
+  "reconnaissance_seconds": null,
+  "pilot_seconds": 1067.1391925811768,
+  "pilot_budget_seconds": 3000,
+  "pilot_within_budget": true,
+  "peak_observed_rss_bytes": 4843343872,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+  "public_lb_used": false
+}

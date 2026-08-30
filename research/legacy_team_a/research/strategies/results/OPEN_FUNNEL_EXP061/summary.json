@@ -1,0 +1,106 @@
+{
+  "experiment_id": 61,
+  "prefix": "OPEN_FUNNEL_EXP061",
+  "development_reference": "STRONGEST-CURRENT / exp_037",
+  "baseline_wcv_expected": 1.7475098625201952,
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "seed": 42,
+  "feature_columns": [
+    "of90_search_days",
+    "of90_cart_days",
+    "of90_funnel_days",
+    "of90_search_no_order_days",
+    "of90_cart_no_order_days",
+    "of90_search_cart_days",
+    "of90_searches",
+    "of90_carts",
+    "of90_search_to_cart",
+    "of90_cat_to_cart",
+    "of90_oldest_search_age",
+    "of90_oldest_cart_age",
+    "of90_search_span",
+    "of90_cart_span"
+  ],
+  "control_columns": [
+    "z_strong_raw",
+    "p_act_dist",
+    "etx_minus_seq",
+    "rec_buy",
+    "w30_days_buy",
+    "w90_days_buy",
+    "w90_days_search",
+    "w90_days_cart",
+    "w90_days_present",
+    "w90_buyday_rate",
+    "w90_cart2ord"
+  ],
+  "source_aligned_sha256": "40aa9719d4fd903467eceb5f7be5e5d19ce6a67e12856f523946e5fdcda0ed0a",
+  "arms": {
+    "REAL": {
+      "fold_scores": [
+        1.7668833564632116,
+        1.7605095766063483,
+        1.7486292240244132,
+        1.741278566214246
+      ],
+      "fold_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wcv": 1.7475098623658354,
+      "delta_wcv": 0.0,
+      "improved_folds": 0,
+      "late_delta": 0.0
+    },
+    "SHUFFLED": {
+      "fold_scores": [
+        1.7668833564632116,
+        1.7605095766063483,
+        1.7486292240244132,
+        1.741278566214246
+      ],
+      "fold_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wcv": 1.7475098623658354,
+      "delta_wcv": 0.0,
+      "improved_folds": 0,
+      "late_delta": 0.0
+    },
+    "CONTROL_ONLY": {
+      "fold_scores": [
+        1.7668833564632116,
+        1.7605095766063483,
+        1.7486292240244132,
+        1.741278566214246
+      ],
+      "fold_deltas": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wcv": 1.7475098623658354,
+      "delta_wcv": 0.0,
+      "improved_folds": 0,
+      "late_delta": 0.0
+    }
+  },
+  "decision": {
+    "real_minus_shuffled_delta_wcv": 0.0,
+    "all_real_selected_scales_nonzero": false,
+    "success_gate_passed": false,
+    "verdict": "REJECT",
+    "next": "pivot to MONETARY-TAIL"
+  }
+}

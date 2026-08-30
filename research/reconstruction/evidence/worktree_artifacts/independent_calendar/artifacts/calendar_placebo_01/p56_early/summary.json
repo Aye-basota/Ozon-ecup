@@ -1,0 +1,19 @@
+{
+  "task": "p56_early",
+  "cutoff_a": "2025-07-03",
+  "cutoff_b": "2025-08-28",
+  "gap_days": 56,
+  "gap_group": "long",
+  "history_support": 180,
+  "panel_blocks": 3,
+  "n_per_class": 120000,
+  "n_features": 195,
+  "n": 240000,
+  "positive_rate": 0.5,
+  "roc_auc": 0.5833075397916667,
+  "pr_auc": 0.5761874789361466,
+  "logloss": 0.6827136699573494,
+  "brier": 0.24483081448677024,
+  "ece10": 0.014014600701257587,
+  "mean_probability": 0.49980912739150224
+}

@@ -1,0 +1,9 @@
+{
+  "uid_exact": true,
+  "cutoff_exact": true,
+  "target_max_abs": 0.0,
+  "z_current_max_abs": 0.0,
+  "residual_max_abs": 0.0,
+  "bank_columns": 40,
+  "bank_rows": 41
+}

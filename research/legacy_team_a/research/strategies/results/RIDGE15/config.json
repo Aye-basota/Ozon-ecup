@@ -1,0 +1,42 @@
+{
+ "seed": 42,
+ "features": "S1-E10",
+ "n_features": 227,
+ "train_blocks": 1,
+ "validation_blocks": 3,
+ "L": null,
+ "norm_long": true,
+ "target": "log1p(GMV30)",
+ "lambdas": [
+  1e-05,
+  0.0001,
+  0.001,
+  0.01,
+  0.1,
+  1.0
+ ],
+ "base_weights": {
+  "S1-E03a": 0.1,
+  "S1-E02": 0.2,
+  "S1-DIST": 0.25,
+  "ETX-AVG3": 0.225,
+  "SEQ-AVG3": 0.225
+ },
+ "main_weights": {
+  "S1-E03a": 0.1,
+  "S1-E02": 0.05,
+  "S1-DIST": 0.25,
+  "RIDGE15": 0.15,
+  "ETX-AVG3": 0.225,
+  "SEQ-AVG3": 0.225
+ },
+ "control_weights": {
+  "S1-E03a": 0.1,
+  "S1-E02": 0.125,
+  "S1-DIST": 0.175,
+  "RIDGE15": 0.15,
+  "ETX-AVG3": 0.225,
+  "SEQ-AVG3": 0.225
+ },
+ "level": 2.3293
+}

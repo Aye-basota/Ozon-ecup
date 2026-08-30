@@ -1,0 +1,2 @@
+comparison,var_prediction_delta,seed_floor,seed_floor_ratio,residual_corr_with_same_recipe_base,residual_corr_with_production
+DOMAIN-01-DIRECT vs S1-ROUNDS,0.006577818286753402,0.00712,0.9238508829709835,0.9989359694165288,0.9982874880784801

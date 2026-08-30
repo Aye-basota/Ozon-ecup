@@ -1,0 +1,70 @@
+{
+ "n": 197379,
+ "folds": [
+  "2025-10-16"
+ ],
+ "fold_sizes": [
+  197379
+ ],
+ "per_fold": [
+  {
+   "cutoff": "2025-10-16",
+   "n": 197379,
+   "rmsle": 1.74904263015147,
+   "bias": -0.016950669575828137,
+   "offset": -0.016950937574851166,
+   "rmsle_cal": 1.748960489119108,
+   "mean_z": 2.648469799376872,
+   "mean_ly": 2.631519129801044
+  }
+ ],
+ "fold_scores": [
+  1.74904263015147
+ ],
+ "fold_cal": [
+  1.748960489119108
+ ],
+ "fold_bias": [
+  -0.016950669575828137
+ ],
+ "fold_mean_z": [
+  2.648469799376872
+ ],
+ "wcv": null,
+ "wcv_raw": null,
+ "cv_mean": 1.74904263015147,
+ "cv_std": 0.0,
+ "cv_cal_mean": 1.748960489119108,
+ "oof_rmsle": 1.74904263015147,
+ "oof_bias": -0.016950669575828137,
+ "oof_offset": -0.016950937574851166,
+ "oof_cal": 1.748960489119108,
+ "mean_z": 2.648469799376872,
+ "mean_ly": 2.631519129801044,
+ "partial": true,
+ "description": "S_01 e10, k=11, G=120, seed=42",
+ "model": "direct",
+ "params": {
+  "L": null,
+  "min_history": 90,
+  "step": 7,
+  "panel_blocks": 3,
+  "train_blocks": 1,
+  "model": "direct",
+  "rounds": 300,
+  "params": {
+   "seed": 42
+  },
+  "drop_groups": [],
+  "keep_only": null,
+  "calendar": false,
+  "weight_tau": null,
+  "cutoffs": "all",
+  "norm_long": true,
+  "min_gap": 120,
+  "n_cutoffs": 11
+ },
+ "n_features": 227,
+ "ref": null,
+ "runtime_s": 606.5
+}

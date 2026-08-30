@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "cutoff": "2025-07-03",
+      "target_start": "2025-07-04",
+      "target_end": "2025-08-02",
+      "n": 181338,
+      "spacing_from_previous_days": null,
+      "previous_target_known": true,
+      "final_outside_survivorship_interval": true
+    },
+    {
+      "cutoff": "2025-08-07",
+      "target_start": "2025-08-08",
+      "target_end": "2025-09-06",
+      "n": 184617,
+      "spacing_from_previous_days": 35,
+      "previous_target_known": true,
+      "final_outside_survivorship_interval": true
+    },
+    {
+      "cutoff": "2025-09-11",
+      "target_start": "2025-09-12",
+      "target_end": "2025-10-11",
+      "n": 189815,
+      "spacing_from_previous_days": 35,
+      "previous_target_known": true,
+      "final_outside_survivorship_interval": true
+    },
+    {
+      "cutoff": "2025-10-16",
+      "target_start": "2025-10-17",
+      "target_end": "2025-11-15",
+      "n": 197379,
+      "spacing_from_previous_days": 35,
+      "previous_target_known": true,
+      "final_outside_survivorship_interval": true
+    }
+  ],
+  "rule": "target_end(previous_fold) <= current_cutoff",
+  "same_period_targets_used_as_temporal_evidence": false
+}

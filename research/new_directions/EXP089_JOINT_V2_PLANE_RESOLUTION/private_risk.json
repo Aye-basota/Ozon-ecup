@@ -1,0 +1,93 @@
+{
+  "status": "NO_OPTIMIZED_CANDIDATE_V2_OUT_OF_PLANE",
+  "historical_analogue": "Frozen EXP075 A1-365/A2 OOF directions; compare test-plane coefficients only",
+  "test_plane_coefficients": {
+    "EXP075": [
+      0.7462560853,
+      0.6466415685
+    ],
+    "JOINT_V2_plane_fit": [
+      0.332042324890222,
+      0.3127027647904132
+    ]
+  },
+  "full_historical": {
+    "rows": 770616,
+    "unique_user_id_clusters": 210212,
+    "delta_MSE_v2_plane_minus_exp075": 0.0013324667421557726,
+    "delta_RMSLE_v2_plane_minus_exp075": 0.0003779151228466837
+  },
+  "by_forward_fold": [
+    {
+      "cutoff": "2025-09-04",
+      "rows": 188518,
+      "delta_MSE_v2_plane_minus_exp075": 0.0011521839125806605,
+      "delta_RMSLE_v2_plane_minus_exp075": 0.00032323565544589705
+    },
+    {
+      "cutoff": "2025-09-18",
+      "rows": 191025,
+      "delta_MSE_v2_plane_minus_exp075": 0.001579707150807487,
+      "delta_RMSLE_v2_plane_minus_exp075": 0.00044648966977089977
+    },
+    {
+      "cutoff": "2025-10-02",
+      "rows": 193694,
+      "delta_MSE_v2_plane_minus_exp075": 0.0014733926431478542,
+      "delta_RMSLE_v2_plane_minus_exp075": 0.00042021500051658833
+    },
+    {
+      "cutoff": "2025-10-16",
+      "rows": 197379,
+      "delta_MSE_v2_plane_minus_exp075": 0.0011270799377661818,
+      "delta_RMSLE_v2_plane_minus_exp075": 0.0003224069126532836
+    }
+  ],
+  "pseudo_public_20_80": {
+    "seed": 8908901,
+    "splits": 1000,
+    "latest_cutoff": "2025-10-16",
+    "public_delta_RMSLE": {
+      "q2.5": 4.792416149172474e-05,
+      "median": 0.0003236553505668871,
+      "q97.5": 0.0005996878682348161
+    },
+    "private_delta_RMSLE": {
+      "q2.5": 0.0002531463884645313,
+      "median": 0.00032209568239371933,
+      "q97.5": 0.00039088403695086704
+    },
+    "P_private_improvement_for_plane_only_V2": 0.0,
+    "corr_public_private_delta": -0.9999926015107617
+  },
+  "user_cluster_poisson_bootstrap": {
+    "replicates": 1000,
+    "seed": 8908901,
+    "delta_MSE_v2_plane_minus_exp075": {
+      "q2.5": 0.0009803912494094481,
+      "median": 0.001334732934119213,
+      "q97.5": 0.0016823453707960066
+    },
+    "P_delta_MSE_lt_0": 0.0
+  },
+  "winner_curse": {
+    "scored_variants_considered": 81,
+    "simulation_draws": 20000,
+    "expected_private_RMSLE_penalty_best_public": 8.522857832437814e-05,
+    "penalty_RMSLE_q95": 0.0001307313587085024
+  },
+  "observed_public": {
+    "gain_RMSLE_JOINT_V2_over_EXP075": 0.0002070097473099164,
+    "gain_MSE_JOINT_V2_over_EXP075": 0.0006814925699920593
+  },
+  "public_expected_gain": "Observed only; dominated by the new out-of-plane component and not transport-identified",
+  "full_test_expected_gain": "Not identified for the out-of-plane component",
+  "private_expected_gain": "Not identified for the out-of-plane component",
+  "P_private_improvement": "Not identified; plane-only historical analogue is reported separately",
+  "private_risk_verdict": "HIGH_UNCERTAINTY_OUT_OF_PLANE_NOT_HISTORICALLY_VALIDATED",
+  "current_choice": {
+    "public_incumbent": "SUBMIT_JOINT_V2",
+    "private_safe_conclusion": "No new optimized candidate is justified; JOINT_V2's out-of-plane public gain is not a validated private gain.",
+    "old_EXP088_probes": "DO_NOT_SEND_INVALID_AFTER_SPAN_UPDATE"
+  }
+}

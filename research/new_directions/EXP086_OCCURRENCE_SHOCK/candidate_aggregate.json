@@ -1,0 +1,30 @@
+{
+  "raw_X3_intensity_shock": {
+    "weighted_rho_vs_weak_residual": 0.018154024225034104,
+    "weighted_rho_vs_strong_residual": 0.0029974805151300613,
+    "weighted_rho_post_span": 0.000913223860837979,
+    "latest_rho_post_span": 0.004210449913358629,
+    "positive_transitions": 1
+  },
+  "meta_B_intensity_shock": {
+    "weighted_rho_vs_weak_residual": 0.017907966722868922,
+    "weighted_rho_vs_strong_residual": 0.0021291373959954523,
+    "weighted_rho_post_span": 3.8911032770431314e-05,
+    "latest_rho_post_span": 0.004908182759234302,
+    "positive_transitions": 2
+  },
+  "raw_meta_disagreement": {
+    "weighted_rho_vs_weak_residual": 0.005082143576806473,
+    "weighted_rho_vs_strong_residual": -3.874287904478646e-05,
+    "weighted_rho_post_span": -0.0007203640032727364,
+    "latest_rho_post_span": 0.0015653680439874835,
+    "positive_transitions": 2
+  },
+  "meta_risk_weighted_shock": {
+    "weighted_rho_vs_weak_residual": 0.015432218419021527,
+    "weighted_rho_vs_strong_residual": 0.0006020481092055363,
+    "weighted_rho_post_span": -0.0012011148705897113,
+    "latest_rho_post_span": 0.002784039903853087,
+    "positive_transitions": 2
+  }
+}

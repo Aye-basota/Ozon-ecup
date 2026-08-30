@@ -1,0 +1,22 @@
+{
+  "required_MSE_gain": 0.004909273595109731,
+  "theoretical_structural_oracle_headroom": 2.975002268812609,
+  "identity_oracle_headroom": 3.0485883213517004,
+  "observable_joint_optimal_headroom": 0.0024120306885609035,
+  "observable_joint_optimal_rho": 0.028036969597091625,
+  "joint_nested_forward_Delta_MSE": -0.0005286899447907473,
+  "joint_nested_forward_headroom_point": 0.0005286899447907473,
+  "robust_forward_headroom_95pct_lower_bound": 3.524401322785001e-05,
+  "joint_nested_bootstrap": {
+    "replicates": 1000,
+    "seed": 20260838,
+    "unit": "user_id cluster across all folds",
+    "CI95": [
+      -0.0009956079674407268,
+      -3.524401322785001e-05
+    ],
+    "P_Delta_MSE_lt_0": 0.983,
+    "draw_mean": -0.000526252631376086
+  },
+  "attainability": "NO_EVIDENCE"
+}

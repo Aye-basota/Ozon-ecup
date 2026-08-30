@@ -1,0 +1,11 @@
+{
+  "canonical_hashes": {
+    "artifacts\\LANDMARK_MEMORY_EXP055\\baseline_manifest.json": "1b959646a3c8074ff9a93bab030537960d70354048365d718d8d760dabe974e8",
+    "artifacts\\LANDMARK_MEMORY_EXP055\\cpu_preflight_predictions.npz": "6ba0c9ec3141eb058536a067d0152be854e16d4ede08cbedca79e55dc2d6e624",
+    "artifacts\\LANDMARK_MEMORY_EXP055\\real_token_cache_manifest.json": "a88570a3e7f6abef1eab787f0fdb3573e6fdc42ffae8459b359fde5b35fe5fc6",
+    "research\\strategies\\results\\LANDMARK_MEMORY_EXP055\\memory_correlation_diagnostics.csv": "0791ab24992829a1cde0a12f47b9db168aaf230dc42a4775deb5304e55d324e2",
+    "research\\strategies\\results\\LANDMARK_MEMORY_EXP055\\preflight_direction_metrics.csv": "3257c107da06539109eaa84127e47b8314e180504ed9cf68e1ebdac5eec0be0e",
+    "research\\strategies\\results\\LANDMARK_MEMORY_EXP055\\preflight_verdict.json": "d4667f2cfc3259f6aa4bc6ddfe0c383753b368ad90e4e95b9f6541021411d66f"
+  },
+  "status": "BASELINE"
+}

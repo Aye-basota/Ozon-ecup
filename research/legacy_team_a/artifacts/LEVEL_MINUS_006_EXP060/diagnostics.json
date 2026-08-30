@@ -1,0 +1,102 @@
+{
+  "experiment": "LEVEL_MINUS_006",
+  "experiment_id": "exp_060",
+  "created_at": "2026-08-24T18:49:09.787Z",
+  "training": "NONE",
+  "base": "STRONGEST_CURRENT",
+  "only_change": "z - 0.06",
+  "purpose": "public production-level diagnostic",
+  "source": {
+    "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_STRONGEST_CURRENT.csv",
+    "sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+    "expected_sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+    "sha_verified": true,
+    "schema": [
+      "user_id",
+      "predict"
+    ],
+    "row_count": 250000,
+    "lf_only": true,
+    "final_newline": true,
+    "sample_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\data\\raw\\sample_submit.csv",
+    "sample_schema_match": true,
+    "sample_order_match": true,
+    "missing_users": 0,
+    "duplicate_users": 0
+  },
+  "transform": {
+    "shift_log_space": -0.06,
+    "formula": "maximum(expm1(log1p(pred_STRONGEST_CURRENT) - 0.06), 0)",
+    "normalization_after_shift": false,
+    "other_changes": false,
+    "clipped_rows": 1351,
+    "clipped_share": 0.005404,
+    "mean_z_requested_before_nonnegative_clip": 2.269321369900982,
+    "expected_mean_z_requested": 2.2693213699009913,
+    "requested_mean_z_shift_error": -9.325873406851315e-15
+  },
+  "diagnostics": {
+    "original": {
+      "mean_z": 2.3293213699009914,
+      "mean_prediction": 36.72712616493972,
+      "median": 7.390898,
+      "zero_share": 0.001092,
+      "quantiles": {
+        "p01": 0.09759695,
+        "p05": 0.2534067,
+        "p10": 0.4403891000000001,
+        "p50": 7.390898,
+        "p90": 96.1838514,
+        "p95": 165.87470899999983,
+        "p99": 423.51441561000075
+      },
+      "max": 2641.376346
+    },
+    "probe_serialized": {
+      "mean_z": 2.269498656095469,
+      "mean_prediction": 34.53024270673948,
+      "median": 6.90225,
+      "zero_share": 0.005404,
+      "quantiles": {
+        "p01": 0.03367795,
+        "p05": 0.18041374999999998,
+        "p10": 0.3565073,
+        "p50": 6.90225,
+        "p90": 90.5243043,
+        "p95": 156.15668249999982,
+        "p99": 398.7926202800007
+      },
+      "max": 2487.496327
+    },
+    "actual_mean_log1p_shift": -0.05982271380552229,
+    "deviation_from_minus_006_due_to_nonnegative_clip_and_csv_rounding": 0.00017728619447771043
+  },
+  "output": {
+    "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_LEVEL_MINUS_006.csv",
+    "sha256": "1b40f67d119d0dcc4798a4da5612707b8d44f1dfe3fa20b28c28b836c2c8c0f1",
+    "byte_count": 4100996,
+    "schema_match": true,
+    "row_order_match": true,
+    "row_count_match": true,
+    "row_count": 250000,
+    "missing_users": 0,
+    "duplicate_users": 0,
+    "nan_count": 0,
+    "inf_count": 0,
+    "negative_count": 0,
+    "lf_only": true,
+    "final_newline": true
+  },
+  "artifact_tool_verification": {
+    "performed_during_initial_creation": true,
+    "source_and_output_preview_rows": 100,
+    "visual_preview_rows": 15,
+    "result": "PASS"
+  },
+  "future_lb_interpretation": {
+    "noticeably_better_than_strongest": "Evidence that the production global GMV level is below the current CV-calibrated level.",
+    "worse_by_expected_quadratic_amount": "Global calibration is probably already close to correct.",
+    "improvement_around_0001_or_more": "Strong evidence of a fundamental CV-to-test level mismatch; analyze separately instead of tuning the offset immediately.",
+    "difference_near_public_noise": "Do not tune anything from this single score."
+  }
+}

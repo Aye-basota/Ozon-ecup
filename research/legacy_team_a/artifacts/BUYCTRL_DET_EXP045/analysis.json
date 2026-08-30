@@ -1,0 +1,181 @@
+{
+  "decision": "FAIL",
+  "decision_reasons": [
+    "mean BUYTRUE-BUYSHUF is above the preregistered -0.0003 FAIL boundary"
+  ],
+  "exact_config": {
+    "auxiliary_head": "Linear(192,1), training only",
+    "auxiliary_loss": "BCEWithLogits(1[y30>0])",
+    "d3a": false,
+    "depth_aug": 0.0,
+    "endpoint": "end epoch 4, no validation selection",
+    "epochs": 4,
+    "fresh": false,
+    "lambda_aux": 0.1,
+    "main_loss": "MSE(log1p(y30))",
+    "model": "plain SEQ-01",
+    "shuffle": "within each cutoff, exact prevalence preserved",
+    "validation": "standard full three-block panel"
+  },
+  "experiment": "BUYCTRL-DET",
+  "fold": "2025-10-16",
+  "mean_auxiliary_auc_true_minus_shuf": 0.30938565233595566,
+  "mean_auxiliary_bce_true_minus_shuf": -0.19852662968173215,
+  "mechanism_interpretation": "auxiliary task learns, but BUYTRUE approximately matches BUYSHUF on direct RMSLE: negative result for auxiliary supervision",
+  "per_seed": [
+    {
+      "activity_auc_base": 0.8426424012215215,
+      "activity_auc_buyshuf": 0.8430183717967487,
+      "activity_auc_buytrue": 0.8428938462305751,
+      "auxiliary_auc_buyshuf": 0.4718971093696489,
+      "auxiliary_auc_buytrue": 0.8460034977518652,
+      "auxiliary_bce_buyshuf": 0.6697629487817446,
+      "auxiliary_bce_buytrue": 0.4698941562743877,
+      "base_prediction_sha256": "699af4ca3f029568e908c7e7a6b1860867c6ea17542929ddcf81be9657e52c37",
+      "buyshuf_prediction_sha256": "be016501704d829a591c14a1a04c587a0b86c81883edbc6de0d30cee8a228bf5",
+      "buytrue_minus_base": -0.0006901202800768669,
+      "buytrue_minus_buyshuf": 0.00021999360382918276,
+      "buytrue_prediction_sha256": "6ebfb69c7712224c7d29afbaa51c4b897613212c710cfc709c2f689c6dd2f0ca",
+      "rmsle_cal_base": 1.7469774307598942,
+      "rmsle_cal_buyshuf": 1.7460673168759882,
+      "rmsle_cal_buytrue": 1.7462873104798173,
+      "seed": 42,
+      "true_base_correlation": 0.9951992917683198,
+      "true_base_mean_delta_z": -0.015855467500254163,
+      "true_base_offset_difference": 0.014805976478398666,
+      "true_base_var_delta_z": 0.023740248329593615,
+      "true_shuf_correlation": 0.9953687017340868,
+      "true_shuf_mean_delta_z": -0.03501019010788838,
+      "true_shuf_offset_difference": 0.03423592559945438,
+      "true_shuf_var_delta_z": 0.02278805113883142
+    },
+    {
+      "activity_auc_base": 0.8432433888505251,
+      "activity_auc_buyshuf": 0.8429378219972021,
+      "activity_auc_buytrue": 0.8431570197479378,
+      "auxiliary_auc_buyshuf": 0.6159301379495115,
+      "auxiliary_auc_buytrue": 0.8458516414757347,
+      "auxiliary_bce_buyshuf": 0.6670094595176946,
+      "auxiliary_bce_buytrue": 0.4698805318055314,
+      "base_prediction_sha256": "e8872e7c35ffbf94dfe5fd1d0816c59e4e796fbb0bf6cd360a7b61dfc9165a96",
+      "buyshuf_prediction_sha256": "7ad4851410a29b759139049232beb5b5e4bb4293793787f9cc03c036ea8a4860",
+      "buytrue_minus_base": -0.0004949945117884713,
+      "buytrue_minus_buyshuf": -0.00017566193037610311,
+      "buytrue_prediction_sha256": "75568c65517253c1369f2938cd8845f912ebc261a6b4cd028a97e8e2dc1613c2",
+      "rmsle_cal_base": 1.7458727837417722,
+      "rmsle_cal_buyshuf": 1.7455534511603599,
+      "rmsle_cal_buytrue": 1.7453777892299838,
+      "seed": 43,
+      "true_base_correlation": 0.9955368579820127,
+      "true_base_mean_delta_z": 0.08586537175617753,
+      "true_base_offset_difference": -0.0841561243276204,
+      "true_base_var_delta_z": 0.023398660255141993,
+      "true_shuf_correlation": 0.9957648488442727,
+      "true_shuf_mean_delta_z": 0.04925756160845918,
+      "true_shuf_offset_difference": -0.04926285430102581,
+      "true_shuf_var_delta_z": 0.021277896646745148
+    },
+    {
+      "activity_auc_base": 0.8427428513822278,
+      "activity_auc_buyshuf": 0.8428196832756896,
+      "activity_auc_buytrue": 0.8427098865288724,
+      "auxiliary_auc_buyshuf": 0.5216863892691607,
+      "auxiliary_auc_buytrue": 0.8458154543685882,
+      "auxiliary_bce_buyshuf": 0.6686806618270033,
+      "auxiliary_bce_buytrue": 0.47009849300132694,
+      "base_prediction_sha256": "79c7a9649ba6f155656b37c70e012bdea89617a57329f0e8cf6f3cc48c99a072",
+      "buyshuf_prediction_sha256": "136c7a828f1a42276be5bd08f5956f33bcb077753c8ce2991bddb15f3cbd3a21",
+      "buytrue_minus_base": 0.00130095903927252,
+      "buytrue_minus_buyshuf": 0.0012640082971573374,
+      "buytrue_prediction_sha256": "63618625a5bc42bd49a4475d85c36aac9cc720831a2d114cfc6cceaf04edb22c",
+      "rmsle_cal_base": 1.7468029581774747,
+      "rmsle_cal_buyshuf": 1.7468399089195898,
+      "rmsle_cal_buytrue": 1.7481039172167472,
+      "seed": 44,
+      "true_base_correlation": 0.9954341162480811,
+      "true_base_mean_delta_z": -0.06585226831233275,
+      "true_base_offset_difference": 0.06579108129799319,
+      "true_base_var_delta_z": 0.022627495542405954,
+      "true_shuf_correlation": 0.9947229588885803,
+      "true_shuf_mean_delta_z": -0.022560074482794484,
+      "true_shuf_offset_difference": 0.022640556316400447,
+      "true_shuf_var_delta_z": 0.025560187571662302
+    }
+  ],
+  "plans": [
+    {
+      "auxiliary_initialization_sha256": "30efa7f06575e194c65ef3c12c22f70a6afd83a6ee81cd60b8a5c2b8a1a92b39",
+      "baseline_plan_file_sha256": "3c840f28dde747154c44f874cc8428bfead02ee41145efbc022be2d28914fc2b",
+      "baseline_plan_id": "742cfb9e28936e490fcc51a723ff5afc4b2c37cb92d0f13c42b13026b84808b3",
+      "labels_shuf_sha256": "a2dd76a9e08784b443a599983ce5399e876be60f75154c7e8e6f6cd0920f09f4",
+      "labels_true_sha256": "d425369f130f9899a801400ed8e235c4347d738cc659ca6c334c8e6d9475369a",
+      "plan_file_sha256": "74061f801e3896b17af4393117de360e5febfd9db643a201b01a16d636c3dcde",
+      "plan_id": "01d1c5b1aa8a5e2d6be5caa67615d6d9e354ed165bd05e730599c03e0e9c3174",
+      "seed": 42,
+      "shuffle_mismatch_fraction": 0.49660657728669066
+    },
+    {
+      "auxiliary_initialization_sha256": "30efa7f06575e194c65ef3c12c22f70a6afd83a6ee81cd60b8a5c2b8a1a92b39",
+      "baseline_plan_file_sha256": "d90ab4c1c5c8f2925e796682f93a439ac401c8f324f6035a74ae1697d8dc89d0",
+      "baseline_plan_id": "e842c87c7a4d25b4f4cc9f05c9ed8d647e4107391abb33232c4776755bf9a063",
+      "labels_shuf_sha256": "edc5213d7c2e9c86c108e187c6a36ccc51c777ee0387ae0f7f3cc377cab37cb6",
+      "labels_true_sha256": "d425369f130f9899a801400ed8e235c4347d738cc659ca6c334c8e6d9475369a",
+      "plan_file_sha256": "93d82b0667dd07080021ea5e9debf25fb9e54d5a40e27920d173660be71ed541",
+      "plan_id": "6c4111a83357b2abeac73be1bc5cccef24cec27f3053aa54399f7be044de494d",
+      "seed": 43,
+      "shuffle_mismatch_fraction": 0.4965775167531957
+    },
+    {
+      "auxiliary_initialization_sha256": "30efa7f06575e194c65ef3c12c22f70a6afd83a6ee81cd60b8a5c2b8a1a92b39",
+      "baseline_plan_file_sha256": "61e576ed833b455bb7604f97f5994b74cfba1a9d8cd19b1ff595cb25a1088fbb",
+      "baseline_plan_id": "19a4bd9a80910db93a24992743fbb34479a949ae7c2ea1d67937deefd5b7f33d",
+      "labels_shuf_sha256": "8da782c53126f89bacc08f728c0faf02412528c49e6f76fd927caed1a1e2f479",
+      "labels_true_sha256": "d425369f130f9899a801400ed8e235c4347d738cc659ca6c334c8e6d9475369a",
+      "plan_file_sha256": "cc0a75e6c0cebcf05d3217ea3d9aaac0ced5838ea22ebbad5ced3dbaee3808ff",
+      "plan_id": "42b32c585bdd2dd43b79a2e4f736615e31548d61323227d0d4c05bf294c3ce17",
+      "seed": 44,
+      "shuffle_mismatch_fraction": 0.49692705039217594
+    }
+  ],
+  "pooled_primary_mean_delta_z": -0.002770900994074563,
+  "pooled_primary_var_delta_z": 0.024588026475984282,
+  "primary": {
+    "mean": 0.0004361133235368057,
+    "median": 0.00021999360382918276,
+    "negative_seeds": 1,
+    "sd": 0.0007437697163413037,
+    "values": [
+      0.00021999360382918276,
+      -0.00017566193037610311,
+      0.0012640082971573374
+    ]
+  },
+  "promote_other_folds": false,
+  "scope": {
+    "leaderboard_submission_created": false,
+    "not_proven": [
+      "other folds",
+      "historical SEQ-AVG3",
+      "STRONGEST_CURRENT",
+      "test/LB transfer",
+      "other lambda or epoch choices"
+    ],
+    "proven": "causal contrast BUYTRUE-BUYSHUF on deterministic plain SEQ-01, fold 2025-10-16, seeds 42/43/44"
+  },
+  "secondary": {
+    "mean": 3.86147491357273e-05,
+    "median": -0.0004949945117884713,
+    "negative_seeds": 2,
+    "sd": 0.0010975670123018716,
+    "values": [
+      -0.0006901202800768669,
+      -0.0004949945117884713,
+      0.00130095903927252
+    ]
+  },
+  "seeds": [
+    42,
+    43,
+    44
+  ]
+}

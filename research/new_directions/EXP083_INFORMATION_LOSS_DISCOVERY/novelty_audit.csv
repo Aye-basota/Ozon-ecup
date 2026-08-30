@@ -1,0 +1,9 @@
+candidate,closest_prior,novelty_verdict,reason
+Fine Y1/Y3/Y7/Y14 future shape,MHZ + EXP080,PARTIAL_NOVELTY,1/3-day shares are new; must survive EXP080 count/value and coarse timing conditioning
+Channel-specific conversion geometry,"exp_002, exp_025, EXP052",PARTIAL_NOVELTY,Generic total ratios and channel target split exist; fixed search-vs-cat conditional geometry is not in canonical 227
+Time since last burst / duration / density,EXP054,SKIP_DUPLICATE,Explicit threshold-3 burst/gap summaries failed preflight
+Inter-event gap compression/expansion,EXP054 + gap CV + EXP075,SKIP_DUPLICATE,Episode gap ratios and generic temporal residual representations already tested
+Channel transition imbalance,EXP064,SKIP_DUPLICATE,Fixed daily-state transition directions selected zero correction
+Purchase-after-search lag/open intent,EXP061,SKIP_DUPLICATE,Open funnel after last order selected zero correction
+Recent-vs-long activity phase,227 trends/BLOCK4/EXP080,SKIP_DUPLICATE,Generic slope/trend/acceleration and state bins are closed
+Within-day funnel coherence,No exact prior; SEQ/ETX implicit,NOVEL_EXPLICIT_INVARIANT,Mean-of-ratios/Jensen/dispersion not in canonical tabular construction

@@ -1,0 +1,347 @@
+[
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_180_TEST_PERP.npy",
+    "bytes": 1000128,
+    "sha256": "bef11095f53336518f9f42a8bc766b0aeb725b0e6e769164500fd537e44147b7"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_180_test_predictions.parquet",
+    "bytes": 5847904,
+    "sha256": "2d65bee250db3c6a45cf30440ec265cd84e8285abca3b1888c809a23bf8440e1"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_180_TEST_raw_correction.npy",
+    "bytes": 1000128,
+    "sha256": "6e242d23537e3e6f79301ea3b16e3683da0e65947f8080a2679572e775f70437"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_365_TEST_PERP.npy",
+    "bytes": 1000128,
+    "sha256": "9b4527057531f6981744c1f2369136ef4446623675a416c5c21b1195112d01ae"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_365_test_predictions.parquet",
+    "bytes": 5850116,
+    "sha256": "d536c7ae05ef2d8aff4d9f9c42761221d6e8d5f4021f88de369af9318d8e3e60"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_365_TEST_raw_correction.npy",
+    "bytes": 1000128,
+    "sha256": "69ac89571faa6ef66c3f931ed88379b7a923d870bf43adbd9dc851071d6150a4"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_bootstrap_draws.npz",
+    "bytes": 15196,
+    "sha256": "23ac356577cadf41e268dc228dac01f0b4031c29f659748e63b984dee3e39769"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_clean_forward_predictions.parquet",
+    "bytes": 49636803,
+    "sha256": "682189a3d6c32914a35d432a116023d3c796e12cf87d8e96ca5aa3cc5615d3bb"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_fold_metrics.csv",
+    "bytes": 1006,
+    "sha256": "b09d99db7329c42f5cc57019270ea2e5e06169eee12cd31e16662f49a45677cc"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_latest_pilot_model.pt",
+    "bytes": 141591,
+    "sha256": "4b0250071366d0f616350978423f8c59325bb4a77870f46dc58c9b60f5feb583"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_latest_pilot_predictions.parquet",
+    "bytes": 9548692,
+    "sha256": "5e5865c3df256a465429b9b73f83d886b0d22b3ba531029915aca6acc138da7c"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_pilot_metrics.json",
+    "bytes": 1330,
+    "sha256": "7cb89cd42492172c6fcf07654a2d8c83ffd90ea17dd99a307c4dfe8a44907c3a"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_rho_analysis.json",
+    "bytes": 2584,
+    "sha256": "ef0bbe59bcf05435884e9a05232dea73788901212b52a923659f9aecfd07af51"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_runtime.json",
+    "bytes": 178,
+    "sha256": "02db9634a13c071a29e2df9e95c138a3bd35d9200ab29206d86a1809c0ff99b2"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_training_meta.json",
+    "bytes": 5357,
+    "sha256": "fd93addeb925948f14f4171811ddb38a574d653d5bfd79264a83a79e7d249dce"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A2_WEEKLY_RESIDUAL_CNN_TEST_PERP.npy",
+    "bytes": 1000128,
+    "sha256": "2ffc2ef15138ad1a64e95dac6373c7449006d5cfb8cc24df4ef1bf20c3d44e58"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A2_WEEKLY_RESIDUAL_CNN_test_predictions.parquet",
+    "bytes": 5858895,
+    "sha256": "71aa0cbc75027bc72eec6c59e53f097cf6ba8b4034d6000ff1d0dab9d078371f"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A2_WEEKLY_RESIDUAL_CNN_TEST_raw_correction.npy",
+    "bytes": 1000128,
+    "sha256": "9a0533332ec9439ab02640fef46e63a90000ba5f45ecac9be75e79d1f3285281"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\analyze_joint.py",
+    "bytes": 5367,
+    "sha256": "a4f12047303d31e7b510575cfc8cf92b6c8fd2a6dd8a9922c087a33ec88af047"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\analyze_joint_all.py",
+    "bytes": 5963,
+    "sha256": "a8b189068937adb047be64d457e3e96b83123255687802121d0a6f86ecd12d14"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\analyze_joint_rho_bootstrap.py",
+    "bytes": 2950,
+    "sha256": "086edb012301872366b3405c3c2fb1755c7888fbb50c4352eb52da53a34a7a73"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\analyze_residual_correlations.py",
+    "bytes": 2403,
+    "sha256": "8c237c4638eecded0e7fbed1009ccdefeac335a616dffe733cd22528f541cfb2"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\bootstrap_draws.npz",
+    "bytes": 30432,
+    "sha256": "481697303bf544f6b08e24dacc5077f4de42f86ef9a8df2439617c254cdcc75f"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\c_matched_clean_forward_predictions.parquet",
+    "bytes": 40122989,
+    "sha256": "cb24a6ef03bca8c58a11b894e566d451acb427916487dfde3dcf31b9820fb1f8"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\c_matched_construction_audit.json",
+    "bytes": 9455,
+    "sha256": "d0ed70691eea5605d6f560e26250182d67406d5a2667756839a13683daf38e2a"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\c_matched_fold_metrics.csv",
+    "bytes": 725,
+    "sha256": "166efb82c1dd05f32a3782f52b482afa158d2d0d269abfa31e6ba0dcfc7d137d"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\c_matched_metrics.json",
+    "bytes": 2104,
+    "sha256": "5887594b20caf365cf49e584fad0a805bb4586bcc51fe127f06ed9fa0823c105"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\c_runtime.json",
+    "bytes": 63,
+    "sha256": "25651932056e02c3e705d00366ce93cd1fc3f8635fd06303e71465e0da1a71af"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\checksums.sha256",
+    "bytes": 1145,
+    "sha256": "bebf5124d1a9a18aa4be103e90c2cba92bac2b61b4671583cda6114bff9c1a85"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\clean_forward_predictions.parquet",
+    "bytes": 77010666,
+    "sha256": "d3e8893b83f3f30d2a47469bde646b81548dd04078e84689d394b50574206123"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\config.json",
+    "bytes": 3968,
+    "sha256": "606e88a3d6da7100c733ebce78bb27e97db2c8870aaaae4030527acc0d0d9f54"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\final_A1_TREE_TRAJ_180.txt",
+    "bytes": 975670,
+    "sha256": "e91a60544774e88da5262ce6c24e75d966eb40368fa15ddaf662976ae37b10c6"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\final_A1_TREE_TRAJ_365.txt",
+    "bytes": 987048,
+    "sha256": "5605e7128145ac959aace8d117bf221bd40b85c42008f90a5b75df696faabdfc"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\final_A2_WEEKLY_RESIDUAL_CNN.pt",
+    "bytes": 141985,
+    "sha256": "6c7fcc2d324477bdadc5ae81d7ed1c5ff3836a03c209aef929e311884e0236ef"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\final_artifact_manifest.json",
+    "bytes": 4187,
+    "sha256": "31d6bdad3fc402c3c1b5c834e9014d50b72470314f0e683c5e1f98b650b4f49b"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\finalize_artifacts.py",
+    "bytes": 1400,
+    "sha256": "d4b4c2388a9226f5bb55b2d12c6a63d80a5eeb839fce0b9325d4a367ba240b54"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\fold_20250904_meta.json",
+    "bytes": 1632,
+    "sha256": "f3c43230b07ba4c1f58d0d9470296d3f91198a74e36dae80ab1985aa6b106dc9"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\fold_20250918_meta.json",
+    "bytes": 1633,
+    "sha256": "ac4b54e70bb631718d3ef217c75fb96335105792b9b896cdcdf800a3c1d8ae12"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\fold_20251002_meta.json",
+    "bytes": 1639,
+    "sha256": "becea10245bdd6b9d362f4a521beda3b69da66474b829ddeda33676ca2448bbf"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\fold_20251016_meta.json",
+    "bytes": 1639,
+    "sha256": "fcb7f07857ded0f9542115fb83a92b186bd2c16d8d5e3bdb1f0b6c3bbcffe788"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\fold_metrics.csv",
+    "bytes": 1871,
+    "sha256": "4e9b0853c1995073187bf2671b08877db8a505c42a721ab63dca046bfc01ffa8"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\JOINT_A1_365_A2_TEST_PERP.npy",
+    "bytes": 1000128,
+    "sha256": "e3667884a661adf64a6ce5f231956bab18e45a7e6f017e453506f5e93d3045da"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\JOINT_A1_365_A2_test_predictions.parquet",
+    "bytes": 5860047,
+    "sha256": "636b84fea2e0288c74218f7c663c519b362eb51d98f350adc68946aebe94c4b4"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\JOINT_A1_365_A2_TEST_raw_correction.npy",
+    "bytes": 1000128,
+    "sha256": "36aab793c8d023e73b2c120ed4488d86461826fa7b090b489de6b15a8efb033b"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\joint_all_analysis.json",
+    "bytes": 8409,
+    "sha256": "83439c9529f5d4b2f8904e73fadd07ebfd0b774daf394b128855bdc4ad302824"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\joint_all_fold_metrics.csv",
+    "bytes": 2070,
+    "sha256": "2d39a7f45749ce1d9c2d4dd1197883cb2d68d54cb69619c7df683f8557246fc9"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\joint_analysis.json",
+    "bytes": 3016,
+    "sha256": "a80f6385d54961ff841ba38bc4788bbca27b9cf6f9da438dba22b6cfc5a66b91"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\joint_bootstrap_draws.npz",
+    "bytes": 7677,
+    "sha256": "2210b81cf8a0dd5eeaa00bc40716a65471a4d5dd5768f6ac967fa93d81dd8876"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\joint_fold_metrics.csv",
+    "bytes": 894,
+    "sha256": "8e0ad96d37ed8101fdbb9ed7066cbe66a36b8a5ed763b0cfc01fb432ad0cb4ef"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\joint_rho_bootstrap.json",
+    "bytes": 359,
+    "sha256": "2ff10f307f0a4a0c2b5f51398c0278b2b30b4b1bfb30486078aed7571d239687"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\joint_rho_bootstrap_draws.npz",
+    "bytes": 7522,
+    "sha256": "454aae226a9f23fb24e5dab5d12d05e0a1c081f53a7c8f8b364bebe12bf567b4"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\novelty_audit.csv",
+    "bytes": 4790,
+    "sha256": "e11b831f7986465dc4650c30567a37d64e28d7ae9af9df2122b23f12a7b22387"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\REPORT.md",
+    "bytes": 12404,
+    "sha256": "fdf7a7e9ab8a8165dffefb4c820d025e5b27223d52f956c3bfde752172c9a812"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\residual_correlation_analysis.json",
+    "bytes": 1238,
+    "sha256": "f1f82ed6298ef4b14f6939da1721be2e283a0e0d52b8ebd9a29019372ca869f7"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\rho_analysis.json",
+    "bytes": 5701,
+    "sha256": "45a429fff218b7ed2c77a98dac2a845bd05de052cbe383533c262ad8e1ffaaea"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\run_a1_clean_forward.py",
+    "bytes": 29170,
+    "sha256": "79967359420fc45a08d070434a95571ce9c30019e03a1b6e3077eccfc061bc2a"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\run_a2_cnn_pilot.py",
+    "bytes": 11669,
+    "sha256": "b2c07046cc6ae5ba6edcd9be6f951b3c9881c8deca81506e0752f26a6e663d69"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\run_a2_full.py",
+    "bytes": 10958,
+    "sha256": "d214a9cd6224aeb70d7d4464c857d8d61098416c4522edf6d12796b01e5ee71f"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\run_c_matched.py",
+    "bytes": 10920,
+    "sha256": "e1d7e164fd47b3459a9645edcb16452ea0755c1cd9d2179791b8143bf07b8348"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\runtime.json",
+    "bytes": 203,
+    "sha256": "4c1c122f0061324db2cb457d89013e3fec4db57b4223de9e4c77d715024e3259"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\test_span_projection.json",
+    "bytes": 14350,
+    "sha256": "39d24185b92e71f6d6712ab3bc6a17846888b6f449de4e1a0e38f26acd93da7b"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\train_final_a1_180.py",
+    "bytes": 4261,
+    "sha256": "a6fa20439be5bea7ce56f9ad1f7ed1d93fe6a61d21713859ca48f35af1f73492"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\train_final_and_test_gate.py",
+    "bytes": 12831,
+    "sha256": "8d4a9833f8c65e7cc95e8c28f8125b227fdb43f69a1a8a9f9b132c23f36820e5"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\validation_audit.json",
+    "bytes": 833,
+    "sha256": "04b16ce00304e8444b760bce40c5f126be853b3d3f003bb5e808e9c5acb3d5ff"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\verdict.json",
+    "bytes": 1789,
+    "sha256": "f8ead02e2df4612d524ab2b71f69b8e06868dec6051e5afd6ea0d947e684798d"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP075_A1_TREE_TRAJ_180.csv",
+    "bytes": 5357985,
+    "sha256": "cdc00a647746edb89e240f0a64a5177f2797f1149ca46f278308be813f398a32"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP075_A1_TREE_TRAJ_365.csv",
+    "bytes": 5358179,
+    "sha256": "46a2b4061c5bade5e376a3c9de824a9a324805ca2f49521613d23bf12764686f"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP075_A2_WEEKLY_RESIDUAL_CNN.csv",
+    "bytes": 5358080,
+    "sha256": "fe7897444b622b9e630e1355ece1c720a873e9d65912104f1b673fbf04a635da"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP075_JOINT_A1_365_A2.csv",
+    "bytes": 5358131,
+    "sha256": "d567d91d66e4d80e28998de6139c48c59f7a607b3f8165c88a1d05259c66c901"
+  }
+]

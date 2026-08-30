@@ -1,0 +1,22 @@
+{
+  "behavior_aggregation": "natural-domain sum -> log1p -> existing ETX inverse-RMS scale",
+  "burst_threshold_calendar_days": 3,
+  "day_fields": "log1p(days)/log1p(365), fixed and validation-independent",
+  "event_day": "daily-log row exists",
+  "final_open_gap_length": "cutoff_day - last_event_day",
+  "history_token_cap": 191,
+  "internal_gap_length": "next_event_day - previous_event_day - 1",
+  "no_event_history": "one GAP spanning available history",
+  "numeric_dimension": 22,
+  "overflow_policy": "SUMMARY of prefix + latest 190 tokens",
+  "seed": 42,
+  "slope": "calendar-day least squares; signed log1p then existing GMV scale",
+  "token_types": {
+    "0": "PAD",
+    "1": "SUMMARY",
+    "2": "BURST",
+    "3": "GAP",
+    "4": "QUERY"
+  },
+  "zero_gmv_search_share": 0.5
+}

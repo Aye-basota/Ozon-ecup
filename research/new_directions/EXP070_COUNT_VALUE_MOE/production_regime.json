@@ -1,0 +1,5 @@
+{
+  "status": "not_run_no_pass",
+  "test_prediction_constructed": false,
+  "reason": "runtime hard stop left 2025-10-02 untrained; no PASS TYPE A/B can be declared"
+}

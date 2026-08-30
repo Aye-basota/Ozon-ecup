@@ -1,0 +1,155 @@
+{
+  "model": "dRMSLE = (-2*A + Q)/(2*S0); A = tau * a_oof * basis * mean(dz_eff*d); a_oof from canonical OOF vs pred_exp037 only",
+  "S0": 1.6466079084,
+  "a_oof": 0.024628032267341806,
+  "a_oof_boot_sd": 0.0022027886623508957,
+  "tau_prior": {
+    "mean": 0.2,
+    "sd": 0.3,
+    "justification": "channel B (5 exact CV->LB pairs) OLS -0.344 but confounded by winner's curse on the anchor and all in-span; after a 1-sigma anchor correction the 5 cases are 2 up / 2 down, i.e. tau~0. channel C (47 out-of-span residuals) gives an empirical James-Stein shrinkage 0.356 for an external gain estimate. Mechanistic prior is positive: the FRESH contrast is trained on 13 EXTRA cutoffs running to 2026-01-14 and its OOF orthogonal gain increases monotonically with fold recency."
+  },
+  "basis_relative_sd": 0.14,
+  "effective_step": [
+    {
+      "alpha": 0.25,
+      "rms_effective": 0.00266876983007505,
+      "Q_eff": 7.1223324059188115e-06,
+      "mean_shift": 4.857752201279005e-07,
+      "lin_coeff": 2.848934256469132e-05,
+      "second_order": 2.162728713248907e-06,
+      "public_noise_sd": 1.06750793203002e-05
+    },
+    {
+      "alpha": 0.5,
+      "rms_effective": 0.005337536481416561,
+      "Q_eff": 2.8489295690452678e-05,
+      "mean_shift": 9.879774664401648e-07,
+      "lin_coeff": 5.697862844542177e-05,
+      "second_order": 8.650904549017857e-06,
+      "public_noise_sd": 2.1350145925666242e-05
+    },
+    {
+      "alpha": 0.75,
+      "rms_effective": 0.008006300751928609,
+      "Q_eff": 6.410085173033261e-05,
+      "mean_shift": 1.502790484835018e-06,
+      "lin_coeff": 8.546787491699421e-05,
+      "second_order": 1.9464515931002377e-05,
+      "public_noise_sd": 3.202520300771444e-05
+    },
+    {
+      "alpha": 1.0,
+      "rms_effective": 0.010675062368471603,
+      "Q_eff": 0.00011395695657075853,
+      "mean_shift": 2.0288760921046436e-06,
+      "lin_coeff": 0.00011395707859671167,
+      "second_order": 3.460354951212699e-05,
+      "public_noise_sd": 4.2700249473886415e-05
+    }
+  ],
+  "per_alpha": {
+    "0.25": {
+      "expected_gain": -5.76587339876447e-06,
+      "sd": 1.6204638020185782e-05,
+      "expected_lb": 1.6466021425266013,
+      "p50": [
+        1.646591401878566,
+        1.6466130221430857
+      ],
+      "p80": [
+        1.6465813896534804,
+        1.646622675221341
+      ],
+      "p_beat": 0.63842,
+      "p_gain_ge_1e4": 0.0,
+      "p_loss_ge_1e4": 0.0,
+      "second_order_floor": 2.162728713248907e-06,
+      "public_noise_sd": 1.06750793203002e-05,
+      "deterministic_if_tau": {
+        "tau_minus_0344": 1.589394724374509e-05,
+        "tau_0": 2.162728713248907e-06,
+        "tau_0_20": -5.820537874248876e-06,
+        "tau_0_356": -1.2047485812497142e-05,
+        "tau_1": -3.775360422424e-05
+      }
+    },
+    "0.5": {
+      "expected_gain": -7.362750045313441e-06,
+      "sd": 3.244703209553958e-05,
+      "expected_lb": 1.6466005456499546,
+      "p50": [
+        1.6465789982990746,
+        1.646622352993327
+      ],
+      "p80": [
+        1.646559072163979,
+        1.6466416966786848
+      ],
+      "p_beat": 0.588085,
+      "p_gain_ge_1e4": 0.00299,
+      "p_loss_ge_1e4": 0.0005775,
+      "second_order_floor": 8.650904549017857e-06,
+      "public_noise_sd": 2.1350145925666242e-05,
+      "deterministic_if_tau": {
+        "tau_minus_0344": 3.6113325254952405e-05,
+        "tau_0": 8.650904549017857e-06,
+        "tau_0_20": -7.3156191172231615e-06,
+        "tau_0_356": -1.9769507576891152e-05,
+        "tau_1": -7.118171378218723e-05
+      }
+    },
+    "0.75": {
+      "expected_gain": -4.552307094904472e-06,
+      "sd": 4.862967599133421e-05,
+      "expected_lb": 1.6466033560929052,
+      "p50": [
+        1.6465711031657935,
+        1.646635967754815
+      ],
+      "p80": [
+        1.6465410129930005,
+        1.6466651124352043
+      ],
+      "p_beat": 0.53523,
+      "p_gain_ge_1e4": 0.0265,
+      "p_loss_ge_1e4": 0.01526,
+      "second_order_floor": 1.9464515931002377e-05,
+      "public_noise_sd": 3.202520300771444e-05,
+      "deterministic_if_tau": {
+        "tau_minus_0344": 6.065812656265287e-05,
+        "tau_0": 1.9464515931002377e-05,
+        "tau_0_20": -4.485257692050232e-06,
+        "tau_0_356": -2.3166081118031266e-05,
+        "tau_1": -0.00010028435218426067
+      }
+    },
+    "1.0": {
+      "expected_gain": 2.605961989667529e-06,
+      "sd": 6.483323467816737e-05,
+      "expected_lb": 1.64661051436199,
+      "p50": [
+        1.6465674072062537,
+        1.6466540882530067
+      ],
+      "p80": [
+        1.6465277096922317,
+        1.6466927296726843
+      ],
+      "p_beat": 0.480365,
+      "p_gain_ge_1e4": 0.0576825,
+      "p_loss_ge_1e4": 0.0645675,
+      "second_order_floor": 3.460354951212699e-05,
+      "public_noise_sd": 4.2700249473886415e-05,
+      "deterministic_if_tau": {
+        "tau_minus_0344": 8.952833641442708e-05,
+        "tau_0": 3.460354951212699e-05,
+        "tau_0_20": 2.6705338712548373e-06,
+        "tau_0_356": -2.2237218328625433e-05,
+        "tau_1": -0.00012506152869223375
+      }
+    }
+  },
+  "anchor_invariance_term": 1.9090497700183194e-07,
+  "k1": 0.00015966507820436074,
+  "k2": 3.460354951212699e-05
+}

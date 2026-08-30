@@ -1,0 +1,38 @@
+{
+  "architecture": {
+    "batch": 512,
+    "blocks": 5,
+    "d_model": 128,
+    "dropout": 0.1,
+    "epochs": 4,
+    "ffn": 384,
+    "head_dim": 16,
+    "heads": 8,
+    "lr": 0.0015,
+    "warmup": 500,
+    "wd": 0.01
+  },
+  "arms": [
+    {
+      "model": "b4775608292b62ddb41155fbd5574446851715511045e1ed3b0f35d278864aa6",
+      "optimizer": "1655171ccc6418988ee3d7bec1b4d6b188b44582baf1d57ec7ae68d51324957e"
+    },
+    {
+      "model": "b4775608292b62ddb41155fbd5574446851715511045e1ed3b0f35d278864aa6",
+      "optimizer": "1655171ccc6418988ee3d7bec1b4d6b188b44582baf1d57ec7ae68d51324957e"
+    }
+  ],
+  "batch_plan_sha256": [
+    "fd6caa4096f3b22dd8f1588bdc10dd6836b473c5dd17bc4692cedc13549cd98a",
+    "fd6caa4096f3b22dd8f1588bdc10dd6836b473c5dd17bc4692cedc13549cd98a"
+  ],
+  "dropout_rng_policy": "separate deterministic processes, torch/numpy seed reset to config.SEED",
+  "lr_plan_sha256": [
+    "e03b17b284a0e26a40ec0124c8065d53583571a75cc14f5e04605f4037e0eb34",
+    "e03b17b284a0e26a40ec0124c8065d53583571a75cc14f5e04605f4037e0eb34"
+  ],
+  "same_batch_plan": true,
+  "same_initial_model": true,
+  "same_initial_optimizer": true,
+  "same_lr_plan": true
+}

@@ -1,0 +1,21 @@
+{
+  "output": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\reproducibility\\SUBMIT_STRONGEST55_TEAMB45\\work\\tabular\\team_b\\final_classic_ml_RETRAINED.csv",
+  "sha256": "4ed2916baca85c13d51dcfc4f99877b5d06c03abce90ea0c1aae8c0506d44aba",
+  "rows": 250000,
+  "train_seconds": 1809.6313351999997,
+  "total_seconds": 1917.2061974000026,
+  "current_weight": 0.55,
+  "team_weight": 0.45,
+  "current_log_scale": 1.12,
+  "mean_log1p": 2.4512064373460527,
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "pyarrow": "25.0.1",
+    "duckdb": "1.5.5",
+    "scikit-learn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10",
+    "xgboost": "3.2.0"
+  }
+}

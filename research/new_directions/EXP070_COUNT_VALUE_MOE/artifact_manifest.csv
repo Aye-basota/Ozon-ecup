@@ -1,0 +1,66 @@
+path,bytes,sha256,role,stage,status
+C:/Users/Admin/Desktop/OZON-E-CUP/src/features.py,33646.0,c457b726bc01265853621a06bd04d1d4418a606fe0eb067222038925aec4612c,canonical target panel and feature builder,reconnaissance,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/models.py,7625.0,c0dd7b75dc15d72a12b2f2c672ca6f7050f02034e0763fc8057d1e7b9db0ada4,deterministic LightGBM lineage,reconnaissance,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/validation.py,8146.0,69fe796af2ec03b870ad982df8aacaaeca445ef875a953c5b5ac1d999725956e,canonical fold offset and wCV,reconnaissance,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-E10.npz,5996560.0,b4e4327772c53c2b3efcac77d3c0d80c48d2e4bcd1ddb6326d1b319e4f230f5c,S1-E10 OOF,validation,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-DIST.npz,5996730.0,7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e,DIST OOF,validation,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-E11.npz,5996518.0,39f566b449f44c085181b7be2ac4cf3f978c5fce8ce300bb27c39a16dbf50c44,E11 OOF,validation,exact
+C:/Users/Admin/Desktop/submission_geometry_research/gpt_pro_research_packet/07_ALIGNED_TEST.parquet,41131499.0,d466eed2f649d51fc37a93e63d19f8f0c7a72d3e373d43c77085d8f55c112e2c,current 65-source TEST bank,production,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/feats_S1-E10.txt,3423.0,bfc340662ae46276a909edbcc215fa4c6ed7df6f6ca5edd12360f6a870afc46a,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250403_LnormNone.parquet,100682580.0,82362fbb86c2d675e9db4a5da4f77373331ba9ad05650206348061ae8b95aac0,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250410_LnormNone.parquet,102356839.0,72b071eacbfd9f69effac778bf59473ad6813b0dcdd80988b3d2127857bf0715,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250417_LnormNone.parquet,104015359.0,9ce7de851937b019619183f57f0bd96b1018dd1cba804c1e2723af3984195547,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250424_LnormNone.parquet,105319288.0,8a90575cb8a52ae445b43d0015e837549db3adbe9c8ff1021356d5ec365977a9,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250501_LnormNone.parquet,106681062.0,ed38ebd49fd3d2550c86bcbf23e6feb6a4e58080c6913aabb3492427cee03ae6,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250508_LnormNone.parquet,107806688.0,5c6525ced1873654eecca72ea660f78f12fc6d97d36e9c4c449824a2bd0dcfe4,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250515_LnormNone.parquet,108686080.0,86a65af48e3e9bef96867193938620a0b2aa92686cd92be97fa79ed2aa77c40b,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250522_LnormNone.parquet,110049781.0,ebd6aab589f177b2e3b4cf578ad2cf9d8f35a662f8392d7b245e67971d2ac137,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250529_LnormNone.parquet,111249190.0,a4dd5c496e34e5a401177094ab489a725b49343609e7db49afc9664587bfbbf0,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250605_LnormNone.parquet,112259601.0,8555063cbb3e5873e4a8dd1b83b3dcdcfe6731bcf9a3e92ad3dd7b1322724725,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250612_LnormNone.parquet,113744338.0,190d89eb086bc0aa37a358ac6bfe33c6ba5edb9e6801bc8106d7f2b389ba8204,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250619_LnormNone.parquet,115032379.0,a0e51069e3efeccfb7a8c97c3696a86d988ac344243d1b3db9ad8e3af25d0e2e,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250626_LnormNone.parquet,115994901.0,06c690bf925990dfe7677ceca6c13481f109f3cc240789d9825ffffdca333315,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250703_LnormNone.parquet,117338440.0,23d4f08aec47a8e010d61276385557da1f1cb750cc50ec7d996f82f3053475ec,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250710_LnormNone.parquet,118122408.0,24d24e0c04f88ec3ff1c06b33a178e004ae7f3596ede78230dbd6603d56724a3,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250717_LnormNone.parquet,119378836.0,e4134fbf1f248fe5dfd04b28369142e15ff4d224425be80581bf6f8ff8556d67,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250724_LnormNone.parquet,120495508.0,69aba48cff37ee479cdab8ffe46a1fc18a20300f5592efe7480ba51fe33c1fba,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250731_LnormNone.parquet,121504777.0,fe3e6545e40a8cc73187ce35ad05f126916087813be1a250ef684ddd4700f345,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250807_LnormNone.parquet,123073963.0,2ed0da9a3e0a6acd7d7f9eb11d76f55ec8e9d17b1f39e1c0fe23d21b02f960c6,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250814_LnormNone.parquet,124074862.0,af6766c4f872d1a5c126b5b2de3e97ca14316a8a1da3acb753166e3b7b135b08,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250821_LnormNone.parquet,125779468.0,e1b41abe9ddda9e19553d6896989f1ccbd0f39f34857571e73f6486f94e6079a,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250828_LnormNone.parquet,128045638.0,79155d8b57515217caa0678234b68fb4650a27aee4b548af0e9612afa5cda747,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250904_LnormNone.parquet,128254063.0,75b995b67db101cc2f09dc97735d12276f4d88cd1627e210c1a7c47a244dbd6d,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250911_LnormNone.parquet,128724731.0,985fa990213a97356a359d16f6be90ebf8b5bdc9f79c6ebccff134b3adb9c5b1,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20250918_LnormNone.parquet,129942763.0,556f57d0026c37e6072937de1d811ca7ec49f8ebbb8c599eca9be6edc34a83e3,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20251002_LnormNone.parquet,132104158.0,870d82263e6ad8d2fd515b16de6f78d1d586711fb21a82e8cd3ad9bfea2eb9f4,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/feat_20251016_LnormNone.parquet,134950543.0,8bae4afd5b4e65aa5917173072b5cff44a9c05d0a4a9df97e7cc5c92ddf1bbf4,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250403_b1.parquet,211979.0,6f4f22a867f6ee69980e0674ef7844f5d2b946592d703c2023e55e54056cd9d9,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250410_b1.parquet,212692.0,a20f240238688f93399f9613a14a003ff2a77ee823ff8c6a323d2a658b272776,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250417_b1.parquet,213377.0,6d44197173afbc99d8cdb67397cf073ce85bd8cec5399f8224bcef1a5b4569ce,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250424_b1.parquet,214047.0,2c0dbef22f021bd629a590822dd0ab9dfbe042690b9133ed25e3f9cb4db3f9b8,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250501_b1.parquet,228140.0,3566d9e56d90a8c8b841c774ba755e96d406b4f2a9b2cdc737f985f4f6d95aa5,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250508_b1.parquet,215670.0,863aa5d6432a75d406e8345faa7b5d584a179bc1c9885edbb727f4ddda9213e6,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250515_b1.parquet,216350.0,bcdb860bd9fdb484437ad8580bc856c47a5dbdab1cff3f5c93f2ea1467a86c6b,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250522_b1.parquet,217055.0,515d84a27cfc01dd8c0ed18e54fd8dcefcea899f1934262c0fa03e0d569c046f,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250529_b1.parquet,217810.0,149013b18ad72cbd1db4a9eaf35a28161a00d73182cfacd53a9436ffac4b2e4f,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250605_b1.parquet,218428.0,af449296583ee65007bdccdf9c35bd17b161fb61d4c94f03004603b3139dba09,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250612_b1.parquet,219557.0,06f25838e17925e2a2f03c28581bb61ce9269b7e3f56a28f0e56d512f31c34e5,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250619_b1.parquet,220412.0,349bdb9654d78fbe060e17961e0522e0e29305a12ec261ee4a24d85a332eb91d,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250626_b1.parquet,221379.0,9a5f9b1cf6158886b906c47f896c9908c5f87dfba0226ca82e75209ca63b9537,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250703_b1.parquet,221596.0,69ece12a1dfe69030ade92baa098e613ed698be28c03eddbfc20648627c1106e,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250710_b1.parquet,222212.0,2c99c8ead4dc63299b8d38ded0d1bc7724b0082b87b7c2d8367d21903b120267,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250717_b1.parquet,222769.0,b65d9139243415b871935e4f3f9e176d9069e7c31b7ccc3ce8ae03282f16cb2c,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250724_b1.parquet,223642.0,ef13f649f763e70435ec8366bc027ccafc209717833c9bfd72a6ba042812fb98,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250731_b1.parquet,224720.0,8883fedf7241d1a03be855eff87298b10308e91845e1aa757a33fef4bd822d39,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250807_b1.parquet,225679.0,9696ecd70a5a79e7998266efa423addcd831f80a154aa8047ddad5327459417d,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250814_b1.parquet,227166.0,062e02a2f187c6f8f70f69609377ba2c590af93c19b5bf9bec999661e062f70b,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250821_b1.parquet,241514.0,0d5d7460b0697705df9807087fb1038362adf405973fc1a0c4c242b2ed61abff,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250828_b1.parquet,229987.0,56579db2b22feb840dfc42e1b7276a0bd1345a74d7a397313454a0a0f099b695,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250904_b1.parquet,231354.0,6d7b6c1e6613b22943ab57f1407e12cebc18b814085768913a582f440a1cfd41,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250904_b3.parquet,202411.0,073490210893e762a19ea35f8ec2944f9c5e6e15f5cc059333da57a0f22dbd26,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250911_b1.parquet,232923.0,c6334450e39e808f473b6a6e077022dd4f0654831ac63f0e53a52046d9e0ff47,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20250918_b3.parquet,205005.0,ebf2ca6d69bc5a2c7531cb18e7aaea9ecd1dd77289be53ce2cf7d9cf30eb1491,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20251002_b3.parquet,208100.0,de29925f9f3b43bb3bc8d6dc465ca6a6fbe465b7335d52805358cab06e8e964e,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/panel_20251016_b3.parquet,211674.0,2d0e325b674c15981c4d268d68261a3877d2fa9fc722f9fd47eda19ba0c712f1,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/raw/train.parquet,180148911.0,5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0,consumed canonical cache,run,exact
+C:/Users/Admin/Desktop/submission_geometry_research/gpt_pro_research_packet/06_ALIGNED_OOF.parquet,48652121.0,7e64510b4c019ddcded125ba356517eeb2e31c32ecc11c856581f0c632c2de3f,consumed canonical cache,run,exact

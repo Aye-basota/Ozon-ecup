@@ -1,0 +1,17 @@
+{
+  "sample_users": 4012,
+  "sample_raw_rows": 491194,
+  "input_fp16_bitwise_equal": true,
+  "gmv_max_abs_error": 0.0,
+  "raw_min_date": "2025-01-01",
+  "raw_max_date": "2026-02-13",
+  "raw_sha256": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0",
+  "panel_sha256": "2ff92d6b3890a8aa66347f4063c99cdd312973f1ed6e7b69d1faa1240854e0bd",
+  "gmv_sha256": "b184c7351d279fe2a9a51493503b7b9b67c64552d18182d12f07d4e6d5af1e2b",
+  "uid_sha256": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+  "raw_global_min_date": "2025-01-01",
+  "raw_global_max_date": "2026-02-13",
+  "clean_corridor_end": "2025-10-16",
+  "excluded_target_based_cutoffs_after": "2025-10-16",
+  "reason_excluded": "Historical panel contamination begins when target overlaps the organizer's final eligibility window."
+}

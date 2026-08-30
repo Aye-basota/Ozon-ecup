@@ -1,0 +1,110 @@
+{
+  "experiment": "CALENDAR-PLACEBO-01",
+  "seed": 42,
+  "protocol": {
+    "history_support": 180,
+    "panel_blocks": 3,
+    "group_folds": 5,
+    "rounds": 80,
+    "state_cap_per_class": 120000,
+    "forbidden_identifiers": [
+      "date",
+      "cutoff",
+      "fold",
+      "source",
+      "user_id"
+    ]
+  },
+  "n_placebo_pairs": 9,
+  "real_test_auc": 0.6443466778819444,
+  "real_test_pr_auc": 0.6317734601617155,
+  "gap_auc_summary": [
+    {
+      "gap_group": "long",
+      "gap_days": 56,
+      "n_pairs": 2,
+      "roc_auc_mean": 0.5818614890104167,
+      "roc_auc_min": 0.5804154382291666,
+      "roc_auc_max": 0.5833075397916667,
+      "pr_auc_mean": 0.5744777210145267
+    },
+    {
+      "gap_group": "max",
+      "gap_days": 105,
+      "n_pairs": 1,
+      "roc_auc_mean": 0.623386683298611,
+      "roc_auc_min": 0.623386683298611,
+      "roc_auc_max": 0.623386683298611,
+      "pr_auc_mean": 0.6161508463681633
+    },
+    {
+      "gap_group": "medium",
+      "gap_days": 28,
+      "n_pairs": 3,
+      "roc_auc_mean": 0.5529433890046297,
+      "roc_auc_min": 0.5481763322222222,
+      "roc_auc_max": 0.5583899970833333,
+      "pr_auc_mean": 0.547328266918719
+    },
+    {
+      "gap_group": "short",
+      "gap_days": 7,
+      "n_pairs": 3,
+      "roc_auc_mean": 0.5221904253703703,
+      "roc_auc_min": 0.5153795948958333,
+      "roc_auc_max": 0.5276119635069444,
+      "pr_auc_mean": 0.519304359750897
+    }
+  ],
+  "gap_curve_diagnostic": {
+    "linear_auc_per_day": 0.0010513884732958705,
+    "linear_intercept": 0.5193293351159083,
+    "expected_auc_at_real_gap": 0.6454959519114127,
+    "real_auc_minus_gap_curve": -0.0011492740294682946
+  },
+  "drift_similarity": {
+    "real_vs_mean_placebo_cosine": -0.5011010440294646,
+    "real_vs_mean_placebo_signed_rank_spearman": -0.31373651761358623,
+    "n_placebo_tasks": 9
+  },
+  "calendar_alignment": {
+    "exact_yoy_eligible": false,
+    "exact_yoy_reason": "only 44 calendar days available; 1-block panel, not fixed-L180/3-block",
+    "nearest_chronological": {
+      "cutoff": "2025-10-16",
+      "eligible_fixed_l180": true,
+      "chronological_gap_days": 120,
+      "calendar_gap_days": 120,
+      "rms_smd_to_test": 0.08309330520302972,
+      "median_abs_smd_to_test": 0.06702529857273971,
+      "cosine_to_latest_test_direction": 0.9961227420334875,
+      "limitation": ""
+    },
+    "nearest_calendar_available": {
+      "cutoff": "2025-10-16",
+      "eligible_fixed_l180": true,
+      "chronological_gap_days": 120,
+      "calendar_gap_days": 120,
+      "rms_smd_to_test": 0.08309330520302972,
+      "median_abs_smd_to_test": 0.06702529857273971,
+      "cosine_to_latest_test_direction": 0.9961227420334875,
+      "limitation": ""
+    },
+    "independent_calendar_contrast_available": false
+  },
+  "error_relationship": {
+    "production_model": "SEQ-01-MIX",
+    "production_q1_rmsle": 1.538634419162886,
+    "production_q5_rmsle": 1.5725539337312369,
+    "production_q5_minus_q1": 0.03391951456835085,
+    "best_high_score_model": "SEQ-01-MIX",
+    "best_high_score_rmsle": 1.5725539337312369,
+    "high_score_delta_best_vs_production": 0.0,
+    "mean_abs_error_spearman": 0.04642212968667809,
+    "mean_signed_residual_spearman": -0.07985067190400005
+  },
+  "verdict": "STOP-CALENDAR",
+  "verdict_reason": "real direction differs from summer/autumn placebos, but exact YoY fixed-L180 comparison is ineligible and the direction score has no monotonic production-error or component-win evidence",
+  "next_experiment": "SEQ-DEPTH-AUG-01",
+  "runtime_s": 34.70727777481079
+}

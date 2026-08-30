@@ -1,0 +1,102 @@
+[
+  {
+    "cutoff": "2025-09-04",
+    "rows": 188518,
+    "real": {
+      "source": "real",
+      "cache": "artifacts\\EVENT_ORDER_EXP064\\features_real_20250904.parquet",
+      "cache_sha256": "899e44d126c1ea927b5235868bc753ed830d33ffd47109755b70461067b43972",
+      "rows": 235279,
+      "unique_users": 235279,
+      "finite_or_null": true,
+      "source_max_event_date": "2025-09-04"
+    },
+    "shuffled": {
+      "source": "shuffled",
+      "cache": "artifacts\\EVENT_ORDER_EXP064\\features_shuffled_20250904.parquet",
+      "cache_sha256": "a4783838c4c70bd9aff013d985cf6c0a85e24c98ba737549c615ef4163a3874b",
+      "rows": 235279,
+      "unique_users": 235279,
+      "finite_or_null": true,
+      "source_max_event_date": "2025-09-04"
+    },
+    "transition_count_exact_parity": true,
+    "changed_feature_row_share": 0.9762091683552764,
+    "movement_pass": true
+  },
+  {
+    "cutoff": "2025-09-18",
+    "rows": 191025,
+    "real": {
+      "source": "real",
+      "cache": "artifacts\\EVENT_ORDER_EXP064\\features_real_20250918.parquet",
+      "cache_sha256": "b48e1348290f685ab4ee54f4e807926bd61873db69e4a89ed7877ba7c2e34a14",
+      "rows": 236957,
+      "unique_users": 236957,
+      "finite_or_null": true,
+      "source_max_event_date": "2025-09-18"
+    },
+    "shuffled": {
+      "source": "shuffled",
+      "cache": "artifacts\\EVENT_ORDER_EXP064\\features_shuffled_20250918.parquet",
+      "cache_sha256": "5e9b48bb543541b498fc4db1b5a8a798958d77a75beb70900d0821ebedfc6617",
+      "rows": 236957,
+      "unique_users": 236957,
+      "finite_or_null": true,
+      "source_max_event_date": "2025-09-18"
+    },
+    "transition_count_exact_parity": true,
+    "changed_feature_row_share": 0.9771495877502945,
+    "movement_pass": true
+  },
+  {
+    "cutoff": "2025-10-02",
+    "rows": 193694,
+    "real": {
+      "source": "real",
+      "cache": "artifacts\\EVENT_ORDER_EXP064\\features_real_20251002.parquet",
+      "cache_sha256": "7ac7f2a45a0c7dc54393574efd8848ca8b1525f6880fb8d43c71daef1409eaf1",
+      "rows": 238847,
+      "unique_users": 238847,
+      "finite_or_null": true,
+      "source_max_event_date": "2025-10-02"
+    },
+    "shuffled": {
+      "source": "shuffled",
+      "cache": "artifacts\\EVENT_ORDER_EXP064\\features_shuffled_20251002.parquet",
+      "cache_sha256": "d529977444479e9116a132ad39236b110d344428622773a89d3e2aac705fdf48",
+      "rows": 238847,
+      "unique_users": 238847,
+      "finite_or_null": true,
+      "source_max_event_date": "2025-10-02"
+    },
+    "transition_count_exact_parity": true,
+    "changed_feature_row_share": 0.9776193377182566,
+    "movement_pass": true
+  },
+  {
+    "cutoff": "2025-10-16",
+    "rows": 197379,
+    "real": {
+      "source": "real",
+      "cache": "artifacts\\EVENT_ORDER_EXP064\\features_real_20251016.parquet",
+      "cache_sha256": "e7c19208350fd328f1a1fcdab85ecc8e8662709e5e00d370a4ca460bfc069a04",
+      "rows": 240700,
+      "unique_users": 240700,
+      "finite_or_null": true,
+      "source_max_event_date": "2025-10-16"
+    },
+    "shuffled": {
+      "source": "shuffled",
+      "cache": "artifacts\\EVENT_ORDER_EXP064\\features_shuffled_20251016.parquet",
+      "cache_sha256": "6c1578fd4f060c73c371b8068aad1a7957d34175e48922a4dc5699ac70d4969b",
+      "rows": 240700,
+      "unique_users": 240700,
+      "finite_or_null": true,
+      "source_max_event_date": "2025-10-16"
+    },
+    "transition_count_exact_parity": true,
+    "changed_feature_row_share": 0.9776926623399652,
+    "movement_pass": true
+  }
+]

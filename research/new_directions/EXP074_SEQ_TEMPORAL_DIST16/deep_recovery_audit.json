@@ -1,0 +1,64 @@
+{
+  "scope": "C:/Users/Admin/Desktop/OZON-E-CUP",
+  "audit_date": "2026-08-26",
+  "purpose": "Recover an exact historical plain SEQ-01 seed-42 state dict even if it was archived or stored under a misleading filename.",
+  "filesystem_scan": {
+    "zip_archives_opened_recursively": 9,
+    "torch_like_files_loaded": 203,
+    "tcn_compatible_files": 169,
+    "unique_tcn_tensor_states": 134,
+    "checkpoint_load_errors": 0
+  },
+  "archive_findings": {
+    "deliverable_archive": "deliverables/submission_STRONGEST_CURRENT_artifacts_2026-08-20.zip",
+    "deliverable_seq_models": [
+      "production seed 43",
+      "production seed 44"
+    ],
+    "deliverable_seed42_payload": "scalar ztest_SEQ-01.npy prediction and user IDs only; no state dict",
+    "authoritative_seq_archive_seed42_payload": "compiled SEQ-01C fold 2025-09-04 only; not the historical SEQ-01 encoder",
+    "nested_checkpoint_hits": []
+  },
+  "git_object_scan": {
+    "all_refs_reflogs_and_stashes_checked": true,
+    "stash_entries": 0,
+    "reachable_model_payloads": [
+      "weights_archives/TCN_DETSEQ01_weights.zip",
+      "weights_archives/TCN_SEQ-01_weights.zip",
+      "weights_archives/TCN_SEQ-D3A_weights.zip"
+    ],
+    "unreachable_blobs_checked": 264,
+    "unreachable_trees_checked": 105,
+    "unreachable_checkpoint_or_weight_archive_hits": 0,
+    "large_unreachable_blobs": "three CSV payloads; none is ZIP or Torch"
+  },
+  "functional_parity_search": {
+    "method": "Load every exact-key-compatible TCN state, deduplicate by tensor-content SHA256, then run the historical SEQ-01 architecture on fixed canonical probes and compare against retained historical predictions independently of path and metadata.",
+    "probe_rows_per_context": 256,
+    "parity_threshold": 0.000001,
+    "contexts": {
+      "2025-09-04": {
+        "exact_matches": 0,
+        "best_max_abs_log_error": 0.46875
+      },
+      "2025-09-18": {
+        "exact_matches": 0,
+        "best_max_abs_log_error": 0.43359375
+      },
+      "2025-10-02": {
+        "exact_matches": 0,
+        "best_max_abs_log_error": 0.4375
+      },
+      "2025-10-16": {
+        "exact_matches": 0,
+        "best_max_abs_log_error": 0.5
+      },
+      "TEST_clip289": {
+        "exact_matches": 0,
+        "best_max_abs_log_error": 0.40625
+      }
+    },
+    "exact_matches": []
+  },
+  "conclusion": "No recoverable exact historical plain SEQ-01 seed-42 fold or production state exists anywhere in this repository, including archives, hidden Git objects, and compatible checkpoints stored under other names."
+}

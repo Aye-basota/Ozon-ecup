@@ -1,0 +1,16 @@
+{
+  "mode": "canonical frozen artifact reuse",
+  "family": "etx",
+  "cutoff": "2025-10-16",
+  "source_name": "ETX-01-S42",
+  "source_paths": [
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-01-S42.npz"
+  ],
+  "source_sha256": [
+    "679aa17bfadbb376552c28494de625b29feebe8b4cf09b4a1c18f1e41de819fa"
+  ],
+  "runtime_seconds": 0.0,
+  "config_changed": false,
+  "artifact": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP082_PURGED_TEMPORAL_RESIDUAL\\production_components\\etx_2025-10-16.npz",
+  "sha256": "8d94e3dc1d64c4f0bf6ee22853b82db8bcef7d5bcd5e15575f695ce6a1b0f454"
+}

@@ -1,0 +1,145 @@
+{
+  "artifact": "SUBMIT_NEXT_AFTER_EXP069.csv",
+  "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_NEXT_AFTER_EXP069.csv",
+  "sha256": "714ec6eb5873389cc0586e4883d206f2a0ade3b4c41ff7e76eff56d1ef783d75",
+  "bytes": 5356875,
+  "builder": {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submission_geometry\\build_NEXT_AFTER_EXP069.py",
+    "sha256": "408d1ea3e8a8b4098e90c6aaba73a99dbabc4add1d4ae32572fb64125bfc1c7b"
+  },
+  "upload_status": "DO_NOT_UPLOAD_WITHOUT_USER_ACTION; not uploaded by this task",
+  "formula": "z_inc = log1p(SUBMIT_NEXT_BEST.predict); d_fresh = fresh_conditional_TEST.correction; Phi = mean_N orthonormal basis of span{z_i - z_ref} over the 65 unique scored submissions (rank 57, eigenvalue tol 1e-12); d_perp = d_fresh - (Phi @ d_fresh / N) @ Phi (applied twice for re-orthogonalisation); z = z_inc + ALPHA * d_perp ; predict = max(expm1(z), 0)",
+  "projection_definition": "linear projection of the correction DIRECTION onto the row space of Phi in the mean_N inner product; the constant vector lies inside that space (residual RMS 7.89e-09) so d_perp is level-neutral and the affine residual is orthogonal to the intercept direction",
+  "alpha": 0.5,
+  "alpha_selection": "conservative synthesis of (1) honest LOFO OOF nested alpha on canonical OOF against pred_exp037, (2) a historical CV->LB transfer study over the exactly reproducible scored submissions, (3) an external-direction geometry backtest. No public leaderboard score of this candidate was used, produced or assumed.",
+  "inputs": {
+    "C:\\Users\\Admin\\Desktop\\submission_geometry_research\\submission_geometry\\SUBMIT_NEXT_BEST.csv": {
+      "sha256": "95f3fa982d8173e5382b199888748f57601b86fe8d0dcaa692984dde67d34677",
+      "bytes": 5356865
+    },
+    "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP069_BTYD05_FRESH1_PROD\\fresh_conditional_TEST.parquet": {
+      "sha256": "f1b8c3b65c654630abd90425956490d9ad0f2b8d165d5f1fed0da0f8feeaad91",
+      "bytes": 20899834
+    },
+    "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP069_BTYD05_FRESH1_PROD\\btyd05_fresh1_TEST.parquet": {
+      "sha256": "68f5f9e86110e4b7a59776997521c33f7dc80c28b918fea59d9c223825ae19b0",
+      "bytes": 7846686
+    },
+    "C:\\Users\\Admin\\Desktop\\submission_geometry_research\\submission_geometry\\cache\\Z.npz": {
+      "sha256": "443e80472f321e796faccfe0e9ea6954653397eb74311e7abef7471ea3064dfe",
+      "bytes": 123040252
+    },
+    "C:\\Users\\Admin\\Desktop\\submission_geometry_research\\gpt_pro_research_packet\\07_ALIGNED_TEST.parquet": {
+      "sha256": "d466eed2f649d51fc37a93e63d19f8f0c7a72d3e373d43c77085d8f55c112e2c",
+      "bytes": 41131499
+    },
+    "C:\\Users\\Admin\\Desktop\\submission_geometry_research\\gpt_pro_research_packet\\06_ALIGNED_OOF.parquet": {
+      "sha256": "7e64510b4c019ddcded125ba356517eeb2e31c32ecc11c856581f0c632c2de3f",
+      "bytes": 48652121
+    }
+  },
+  "row_count": 250000,
+  "prediction_statistics": {
+    "rows": 250000,
+    "unique_user_id": 250000,
+    "columns": [
+      "user_id",
+      "predict"
+    ],
+    "canonical_sample_order": true,
+    "missing_users": 0,
+    "duplicate_users": 0,
+    "nan": 0,
+    "inf": 0,
+    "negative": 0,
+    "zeros": 319,
+    "min": 0.0,
+    "max": 3420.7531674904,
+    "mean": 39.692600473112655,
+    "mean_log1p": 2.326868864672842,
+    "incumbent_mean_log1p": 2.3268678766954145,
+    "quantiles": {
+      "0": 0.0,
+      "0.001": 0.0,
+      "0.01": 0.046462958061,
+      "0.05": 0.21788437647,
+      "0.25": 1.5377502581,
+      "0.5": 7.15847399285,
+      "0.75": 33.473733272025,
+      "0.95": 176.29863398425988,
+      "0.99": 471.09118682363857,
+      "0.999": 1262.0864310377322,
+      "1": 3420.7531674904
+    },
+    "effective_step_rms": 0.005337536481408558,
+    "effective_step_mean": 9.879774270750601e-07,
+    "effective_step_max_abs": 0.07132701301804412,
+    "rms_vs_incumbent_prediction_space": 1.2521896645352655,
+    "corr_log_with_incumbent": 0.9999945234136175,
+    "second_order_lb_penalty": 8.650904548991918e-06,
+    "public_sampling_noise_sd": 2.1350145925634234e-05,
+    "all_ok": true
+  },
+  "reference_distances_log_space": {
+    "pred_current_1_6466079084": 0.005337536565681041,
+    "pred_previous_1_6467120249": 0.017551466131618017,
+    "pred_latest_1_6492175622": 0.07397327939181858,
+    "pred_strongest_1_6496571902": 0.08279394523811022,
+    "pred_btyd05_submission": 0.08662280749778059,
+    "exp069_absolute_candidate": 0.0878161181068952,
+    "corr_log_with_exp069_absolute": 0.9988098821913902
+  },
+  "nearest_geometry_source": {
+    "name": "last (1).csv",
+    "rms": 0.07397327950515985
+  },
+  "geometry": {
+    "unique_sources": 65,
+    "basis_rank": 57,
+    "smallest_retained_eigenvalue": 1.480216449270236e-08,
+    "basis_orthonormality_max_error": 9.33970656369354e-08,
+    "residual_span_coordinate_max_abs": 2.471911564327911e-18,
+    "constant_direction_residual_rms": 7.891486249301012e-09,
+    "d_fresh_rms": 0.012199561961003707,
+    "d_fresh_parallel_rms": 0.005904820265359124,
+    "d_fresh_orthogonal_rms": 0.010675317778603727,
+    "d_fresh_orthogonal_fraction": 0.8750574662211418,
+    "d_btyd_orthogonal_rms": 0.0002680860266581836,
+    "d_combined_orthogonal_rms": 0.010679245843731193,
+    "cos_fresh_perp_vs_combined_perp": 0.999684859865459,
+    "identity_max_abs_error": 1.186550857568136e-15
+  },
+  "expected_public_lb": {
+    "expected_gain": -7.362750045313441e-06,
+    "sd": 3.244703209553958e-05,
+    "expected_lb": 1.6466005456499546,
+    "p50": [
+      1.6465789982990746,
+      1.646622352993327
+    ],
+    "p80": [
+      1.646559072163979,
+      1.6466416966786848
+    ],
+    "p_beat": 0.588085,
+    "p_gain_ge_1e4": 0.00299,
+    "p_loss_ge_1e4": 0.0005775,
+    "second_order_floor": 8.650904549017857e-06,
+    "public_noise_sd": 2.1350145925666242e-05,
+    "deterministic_if_tau": {
+      "tau_minus_0344": 3.6113325254952405e-05,
+      "tau_0": 8.650904549017857e-06,
+      "tau_0_20": -7.3156191172231615e-06,
+      "tau_0_356": -1.9769507576891152e-05,
+      "tau_1": -7.118171378218723e-05
+    }
+  },
+  "code_state": {
+    "git_head": "80e911f6b3dae0bac66e6351af5b40b5e8132dc9",
+    "git_status_porcelain": [
+      "?? research/",
+      "?? submission_geometry/",
+      "?? submissions/"
+    ]
+  }
+}

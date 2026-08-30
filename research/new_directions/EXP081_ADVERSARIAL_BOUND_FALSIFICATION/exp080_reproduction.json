@@ -1,0 +1,95 @@
+{
+  "gap": {
+    "current_RMSLE": 1.646143314225527,
+    "target_RMSLE": 1.6446514942,
+    "required_Delta_MSE": 0.004909273595109731,
+    "required_independent_rho": 0.04256385701551551,
+    "reported_required_Delta_MSE": 0.004909273595109731
+  },
+  "observable": {
+    "candidate": "EXP080_joint_38_reproduction",
+    "protocol": "earlier-clean-fold coefficients on fixed target-free basis (EXP080-comparable)",
+    "columns": 38,
+    "folds": [
+      {
+        "cutoff": "2025-09-04",
+        "Delta_MSE": 0.0,
+        "rho": 0.0,
+        "optimistic_gain": 0.001789951256754472,
+        "rank": 38,
+        "correction_rms": 0.0,
+        "coefficient_l2": 0.0
+      },
+      {
+        "cutoff": "2025-09-18",
+        "Delta_MSE": -0.001294062070724028,
+        "rho": 0.02077560179396817,
+        "optimistic_gain": 0.0030344627237610306,
+        "rank": 38,
+        "correction_rms": 0.043220345114724064,
+        "coefficient_l2": 0.7929244971504246
+      },
+      {
+        "cutoff": "2025-10-02",
+        "Delta_MSE": -0.0006121308853577103,
+        "rho": 0.01726771018347322,
+        "optimistic_gain": 0.0025870040538743372,
+        "rank": 38,
+        "correction_rms": 0.04752278689191436,
+        "coefficient_l2": 0.9934292710946226
+      },
+      {
+        "cutoff": "2025-10-16",
+        "Delta_MSE": -0.0003617126861227889,
+        "rho": 0.015127273480394585,
+        "optimistic_gain": 0.0022466959260799588,
+        "rank": 38,
+        "correction_rms": 0.04457379484338453,
+        "coefficient_l2": 1.0632654873442466
+      }
+    ],
+    "weighted_Delta_MSE": -0.0005286899447907473,
+    "strict_forward_headroom": 0.0005286899447907473,
+    "optimistic_headroom": 0.002412030688560904,
+    "latest_clean_post_projection_rho": 0.015127273480394585,
+    "positive_sign_folds": 3,
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20260838,
+      "CI95_Delta_MSE": [
+        -0.0010203289605331001,
+        -3.403509948348199e-05
+      ],
+      "P_Delta_MSE_lt_0": 0.9835,
+      "draw_mean_Delta_MSE": -0.0005272024997126552
+    },
+    "passes_gate": false,
+    "reported": {
+      "required_MSE_gain": 0.004909273595109731,
+      "theoretical_structural_oracle_headroom": 2.975002268812609,
+      "identity_oracle_headroom": 3.0485883213517004,
+      "observable_joint_optimal_headroom": 0.0024120306885609035,
+      "observable_joint_optimal_rho": 0.028036969597091625,
+      "joint_nested_forward_Delta_MSE": -0.0005286899447907473,
+      "joint_nested_forward_headroom_point": 0.0005286899447907473,
+      "robust_forward_headroom_95pct_lower_bound": 3.524401322785001e-05,
+      "joint_nested_bootstrap": {
+        "replicates": 1000,
+        "seed": 20260838,
+        "unit": "user_id cluster across all folds",
+        "CI95": [
+          -0.0009956079674407268,
+          -3.524401322785001e-05
+        ],
+        "P_Delta_MSE_lt_0": 0.983,
+        "draw_mean": -0.000526252631376086
+      },
+      "attainability": "NO_EVIDENCE"
+    },
+    "absolute_differences": {
+      "optimistic_headroom": 4.336808689942018e-19,
+      "strict_forward_point": 0.0,
+      "robust_lower": 1.2089137443680242e-06
+    }
+  }
+}

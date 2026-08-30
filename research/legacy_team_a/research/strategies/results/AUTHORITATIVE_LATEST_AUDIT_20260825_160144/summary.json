@@ -1,0 +1,33 @@
+{
+  "CANONICAL_OOF": "MISSING",
+  "CAP_LINEAGE": "UNKNOWN",
+  "PRIVATE_SAFE_STATUS": "UNRESOLVED",
+  "best_exactly_reproducible": {
+    "lb_public": 1.6496571902,
+    "object": "STRONGEST_CURRENT / exp_037",
+    "reason": "end-to-end package, internal LB journal entry, canonical four-fold OOF"
+  },
+  "best_public_observed": {
+    "evidence_present_by": "2026-08-24",
+    "lb_event_date": "UNKNOWN",
+    "lb_public": 1.64921756224069,
+    "object": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\latest.csv",
+    "status": "EXTERNALLY_REPORTED"
+  },
+  "created_at_utc": "2026-08-25T13:05:42.732862+00:00",
+  "latest_can_be_cv_lofo_anchor": false,
+  "latest_end_to_end_training_reproducible": false,
+  "latest_test_assembly_reproducible": true,
+  "prefix": "AUTHORITATIVE_LATEST_AUDIT_20260825_160144",
+  "research_private_safe_anchor": {
+    "object": "STRONGEST_CURRENT / exp_037",
+    "status": "RETAINED"
+  },
+  "verdict": "CONTINUE_PROVENANCE",
+  "verdict_reasons": [
+    "test submission reconstruction passes the project serialization floor",
+    "latest public LB is only EXTERNALLY_REPORTED, not present in a reliable manifest/score registry",
+    "CAP total effective lineage is not reducible to a proven scalar",
+    "canonical row-level OOF is missing for occ_meta_B and occ_raw_X3"
+  ]
+}

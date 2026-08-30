@@ -1,0 +1,10 @@
+{
+  "method": "Poisson user-cluster bootstrap of weighted oracle joint rho; all rows for a user share one count",
+  "replicates": 1000,
+  "unique_users": 210212,
+  "rho_point": 0.03793981587308912,
+  "rho_ci_2_5": 0.035062679514303224,
+  "rho_ci_97_5": 0.040716485849165464,
+  "rho_bootstrap_se": 0.0014602848736846277,
+  "t_rho": 25.98110584913368
+}

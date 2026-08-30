@@ -1,0 +1,23 @@
+{
+  "A1_TREE_TRAJ_180": {
+    "corr_candidate_corrected_residual_vs_existing_baseline_residual": 0.9995093460699108,
+    "corr_candidate_correction_vs_existing_baseline_residual": 0.030482611155758496,
+    "test_corr_perp_correction_vs_current_ORTH_correction": -1.8458518757493052e-09
+  },
+  "A1_TREE_TRAJ_365": {
+    "corr_candidate_corrected_residual_vs_existing_baseline_residual": 0.999462984753912,
+    "corr_candidate_correction_vs_existing_baseline_residual": 0.032925808439052344,
+    "test_corr_perp_correction_vs_current_ORTH_correction": 3.948641497509898e-09
+  },
+  "A2_WEEKLY_RESIDUAL_CNN": {
+    "corr_candidate_corrected_residual_vs_existing_baseline_residual": 0.9995541685312672,
+    "corr_candidate_correction_vs_existing_baseline_residual": 0.03076900598795937,
+    "test_corr_perp_correction_vs_current_ORTH_correction": 2.2363466093914784e-09
+  },
+  "JOINT_A1_365_A2": {
+    "corr_candidate_corrected_residual_vs_existing_baseline_residual": 0.9993546294247639,
+    "corr_candidate_correction_vs_existing_baseline_residual": 0.03783997189432539,
+    "test_corr_perp_correction_vs_current_ORTH_correction": 3.864490171981086e-09
+  },
+  "A1_365_vs_A2_correction_correlation": 0.4188019134884347
+}

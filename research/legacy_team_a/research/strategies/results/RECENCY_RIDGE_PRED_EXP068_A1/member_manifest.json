@@ -1,0 +1,204 @@
+{
+  "historical_members": [
+    {
+      "position": 0,
+      "name": "cap",
+      "definition": "fixed capped direct component; also carries meta_raw on OOF",
+      "historical_oof_available": false,
+      "historical_test_available": true,
+      "included_in_historical_winner": true
+    },
+    {
+      "position": 1,
+      "name": "unc",
+      "definition": "fixed uncapped direct component",
+      "historical_oof_available": false,
+      "historical_test_available": true,
+      "included_in_historical_winner": true
+    },
+    {
+      "position": 2,
+      "name": "dist",
+      "definition": "fixed distribution-head component",
+      "historical_oof_available": false,
+      "historical_test_available": true,
+      "included_in_historical_winner": true
+    },
+    {
+      "position": 3,
+      "name": "hurdle",
+      "definition": "two-part p*mu helper; supplies p and mu",
+      "historical_oof_available": false,
+      "historical_test_available": false,
+      "included_in_historical_winner": true
+    },
+    {
+      "position": 4,
+      "name": "multiscale_direct",
+      "definition": "L=180 multiscale direct, 650 rounds",
+      "historical_oof_available": false,
+      "historical_test_available": false,
+      "included_in_historical_winner": true
+    },
+    {
+      "position": 5,
+      "name": "recent_direct",
+      "definition": "L=0 norm_long direct, tau=105, 650 rounds",
+      "historical_oof_available": false,
+      "historical_test_available": false,
+      "included_in_historical_winner": true
+    },
+    {
+      "position": 6,
+      "name": "recent_dist",
+      "definition": "L=0 norm_long dist, tau=120, 330 rounds",
+      "historical_oof_available": false,
+      "historical_test_available": false,
+      "included_in_historical_winner": true
+    },
+    {
+      "position": 7,
+      "name": "recent_hurdle_fast12",
+      "definition": "last 12 eligible cutoffs, tau=70, two-part, 430 rounds",
+      "historical_oof_available": false,
+      "historical_test_available": false,
+      "included_in_historical_winner": true
+    }
+  ],
+  "excluded_despite_name": {
+    "recent_hurdle_stable18": "explicitly dropped by winning subset"
+  },
+  "raw_meta_columns": {
+    "included": true,
+    "maximum_count": 72,
+    "exact_names_available": false,
+    "implication": "Historical public-associated winner is not prediction-only."
+  },
+  "lineage": {
+    "friend": "does not include historical winner; byte-identical STRONGEST_CURRENT",
+    "occ_meta_B": "does not directly include ridge_drop_recent_hurdle_stable18_s075; descends from distinct blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85",
+    "occ_raw_X3": "does not directly include ridge_drop_recent_hurdle_stable18_s075; descends from distinct blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85",
+    "latest": "no direct historical-winner input; indirect later Ridge/greedy ancestry through B and X3",
+    "late_anchor_difference": "later anchor uses all 9 finalizable members including stable18, fold weights^(1.7), then adaptive blend with greedy35 (prior .85, lambda .12)"
+  },
+  "test_only_redundancy": {
+    "historical_vs": {
+      "friend": {
+        "corr": 0.9997312220661128,
+        "var_diff": 0.0014729675154166839,
+        "std_diff": 0.038379258922192384,
+        "mean_abs_diff": 0.028930432937613885,
+        "max_abs_diff": 0.8541956866423783
+      },
+      "occ_meta_B": {
+        "corr": 0.999948024799602,
+        "var_diff": 0.00026779850250763037,
+        "std_diff": 0.01636455017736908,
+        "mean_abs_diff": 0.011641404010899498,
+        "max_abs_diff": 0.3270904464077744
+      },
+      "occ_raw_X3": {
+        "corr": 0.999956581013229,
+        "var_diff": 0.00021815177299313847,
+        "std_diff": 0.014769961848059678,
+        "mean_abs_diff": 0.010934324077424682,
+        "max_abs_diff": 0.22125096450809845
+      },
+      "latest": {
+        "corr": 0.999968243561061,
+        "var_diff": 0.000159636752561801,
+        "std_diff": 0.01263474386609404,
+        "mean_abs_diff": 0.009473147752104422,
+        "max_abs_diff": 0.2576803448370728
+      },
+      "late_ridge_anchor": {
+        "corr": 0.9999898176086854,
+        "var_diff": 5.5333132485314935e-05,
+        "std_diff": 0.007438624367805847,
+        "mean_abs_diff": 0.005510078651069749,
+        "max_abs_diff": 0.18735719154946207
+      }
+    },
+    "late_anchor_vs": {
+      "occ_meta_B": {
+        "corr": 0.9999601144663934,
+        "var_diff": 0.00022188049532242797,
+        "std_diff": 0.014895653571509642,
+        "mean_abs_diff": 0.010882274132021277,
+        "max_abs_diff": 0.3715489651749211
+      },
+      "occ_raw_X3": {
+        "corr": 0.9999727252487373,
+        "var_diff": 0.00014357359302175218,
+        "std_diff": 0.011982219870364264,
+        "mean_abs_diff": 0.008907175541621971,
+        "max_abs_diff": 0.15855912185090437
+      },
+      "latest": {
+        "corr": 0.9999807283878492,
+        "var_diff": 9.854446069143262e-05,
+        "std_diff": 0.009926956265212042,
+        "mean_abs_diff": 0.0072179399634475965,
+        "max_abs_diff": 0.13679244670732915
+      }
+    },
+    "latest_rebuild_max_abs_log_error": 8.881784197001252e-16,
+    "oof_residual_metrics_available": false
+  },
+  "submission_hashes": {
+    "historical": {
+      "path": "пайплайн сокомандника\\review_bundles\\fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted\\submissions\\submission_combo10h_candidate_1_ridge_drop_recent_hurdle_stable18_s075.csv",
+      "sha256": "95965c33bfe32378227e39ec1e0a792fed19cc29dc73d84b8b83bc0cda447959",
+      "rows": 250000,
+      "mean_z": 2.3293,
+      "min_z": 0.02919568649305401,
+      "max_z": 8.733629608968325,
+      "zero_predictions": 0
+    },
+    "friend": {
+      "path": "пайплайн сокомандника\\latest\\components\\friend.csv",
+      "sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+      "rows": 250000,
+      "mean_z": 2.3293213699010047,
+      "min_z": 0.0,
+      "max_z": 7.879433922325947,
+      "zero_predictions": 273
+    },
+    "occ_meta_B": {
+      "path": "пайплайн сокомандника\\latest\\components\\occ_meta_B.csv",
+      "sha256": "8d90a0bb1afdfe48cb6181cf1869eb30095da729e36dbea81e2051730e7989d8",
+      "rows": 250000,
+      "mean_z": 2.3293,
+      "min_z": 0.034835386096252384,
+      "max_z": 8.642406342704838,
+      "zero_predictions": 0
+    },
+    "occ_raw_X3": {
+      "path": "пайплайн сокомандника\\latest\\components\\occ_raw_X3.csv",
+      "sha256": "0ac3f241685d6562c1f5b54993065475845464a0b217a56dbb5d79b42dd27356",
+      "rows": 250000,
+      "mean_z": 2.3293,
+      "min_z": 0.032429355736136124,
+      "max_z": 8.637182628748864,
+      "zero_predictions": 0
+    },
+    "latest": {
+      "path": "пайплайн сокомандника\\latest\\latest.csv",
+      "sha256": "7ef5b2c58925bd28c5bc7eb83b9cfd4785c608a0c8b2a6d7a3277730cba8e722",
+      "rows": 250000,
+      "mean_z": 2.32930256438812,
+      "min_z": 0.02892279790541832,
+      "max_z": 8.547088578211069,
+      "zero_predictions": 0
+    },
+    "late_ridge_anchor": {
+      "path": "пайплайн сокомандника\\review_bundles\\final6h_REVIEW_BUNDLE_20260823_204823_extracted\\submissions\\submission_final6h_A_blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85.csv",
+      "sha256": "c2efd7f100e0c3fabc6399d75cddfcede0fa463a8a94cd4633720125f7ee5e15",
+      "rows": 250000,
+      "mean_z": 2.3293000000000004,
+      "min_z": 0.025934428248266046,
+      "max_z": 8.632258979785515,
+      "zero_predictions": 0
+    }
+  }
+}

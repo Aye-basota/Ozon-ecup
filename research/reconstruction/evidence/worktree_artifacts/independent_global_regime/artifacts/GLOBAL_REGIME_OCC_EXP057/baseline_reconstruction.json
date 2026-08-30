@@ -1,0 +1,67 @@
+{
+  "sha256": {
+    "friend": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+    "occ_meta_B": "8d90a0bb1afdfe48cb6181cf1869eb30095da729e36dbea81e2051730e7989d8",
+    "occ_raw_X3": "0ac3f241685d6562c1f5b54993065475845464a0b217a56dbb5d79b42dd27356",
+    "latest": "7ef5b2c58925bd28c5bc7eb83b9cfd4785c608a0c8b2a6d7a3277730cba8e722",
+    "A_extra90_1": "c2efd7f100e0c3fabc6399d75cddfcede0fa463a8a94cd4633720125f7ee5e15",
+    "X3_extra90_3": "0ac3f241685d6562c1f5b54993065475845464a0b217a56dbb5d79b42dd27356",
+    "B_final6h": "8d90a0bb1afdfe48cb6181cf1869eb30095da729e36dbea81e2051730e7989d8",
+    "repo_STRONGEST": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda"
+  },
+  "checks": {
+    "friend_n": 250000,
+    "friend_mean_z": 2.3293213699010047,
+    "occ_meta_B_n": 250000,
+    "occ_meta_B_mean_z": 2.3293,
+    "occ_raw_X3_n": 250000,
+    "occ_raw_X3_mean_z": 2.3293,
+    "latest_n": 250000,
+    "latest_mean_z": 2.32930256438812,
+    "A_extra90_1_n": 250000,
+    "A_extra90_1_mean_z": 2.3293000000000004,
+    "X3_extra90_3_n": 250000,
+    "X3_extra90_3_mean_z": 2.3293,
+    "B_final6h_n": 250000,
+    "B_final6h_mean_z": 2.3293,
+    "repo_STRONGEST_n": 250000,
+    "repo_STRONGEST_mean_z": 2.3293213699010047,
+    "all_uid_aligned": true,
+    "friend_vs_repo_STRONGEST": {
+      "max": 0.0,
+      "mean": 0.0
+    },
+    "X3_component_vs_extra90_3": {
+      "max": 0.0,
+      "mean": 0.0
+    },
+    "B_component_vs_final6h_B": {
+      "max": 0.0,
+      "mean": 0.0
+    },
+    "latest_reconstruction_121672": {
+      "max": 8.881784197001252e-16,
+      "mean": 1.7025408860504853e-17
+    },
+    "X3_minus_A_test": {
+      "mean": -5.188205420836311e-16,
+      "std": 0.011982219870364264,
+      "min": -0.15855912185090437,
+      "max": 0.03917471034414177,
+      "frac_nonzero": 1.0,
+      "frac_positive": 0.666828,
+      "frac_negative": 0.333172,
+      "q": {
+        "0.001": -0.06844216547636058,
+        "0.01": -0.04310933295996492,
+        "0.05": -0.025143469839956255,
+        "0.25": -0.004269503919471118,
+        "0.5": 0.005873400580668542,
+        "0.75": 0.007431147418842654,
+        "0.95": 0.009586060123874885,
+        "0.99": 0.011567131991133359,
+        "0.999": 0.015434114434536754
+      }
+    }
+  }
+}

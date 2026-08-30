@@ -1,0 +1,50 @@
+{
+  "component_names": [
+    "SEQ-01",
+    "SEQ-C289-S43",
+    "SEQ-C289-S44",
+    "SEQ-D3A-BASE-S42",
+    "ETX-01-S42-DCW",
+    "ETX-01-S43-DCW",
+    "ETX-01-S44-DCW",
+    "S1-CAP",
+    "S1-UNC",
+    "S1-DIST",
+    "S1-E11",
+    "RIDGE15",
+    "HOLIDAY-YOY-FAST",
+    "TIER-A-DIRECT-AVG3-R300",
+    "L180_norm0_tb1",
+    "LNone_norm0_tb1",
+    "L90_norm0_tb1",
+    "S1-NORM",
+    "S04-A",
+    "S04-B",
+    "BTYD_z"
+  ],
+  "R2": 0.9973174493363005,
+  "alpha_unexplained_rms": 0.08403130699810563,
+  "alpha_centered_rms": 1.6224344225239562,
+  "total_slope": 1.0353274956765133,
+  "family_raw": {
+    "SEQ": 0.13281356156738355,
+    "ETX": 0.20312502424893977,
+    "TABULAR": 0.7116813820134099,
+    "BTYD_OTHER": -0.012292472153220059
+  },
+  "family_shares": {
+    "SEQ": 0.12828169069401493,
+    "ETX": 0.19619398219131806,
+    "TABULAR": 0.6873973549291053,
+    "BTYD_OTHER": -0.011873027814438365
+  },
+  "intercept": -0.0361489020998117,
+  "ridge_alpha": 1e-06,
+  "corr_D_test_r_alpha_unexplained": -0.7087593048532289,
+  "projection_coefficient_D_onto_r_alpha": -1.0011704852069643,
+  "RMS_projection_D_onto_r_alpha": 0.08412966439986878,
+  "projection_RMS_over_r_alpha_RMS": 1.0011704852069643,
+  "corr_stack_minus_component_proxy_with_r_alpha": -0.0011745997105396752,
+  "material_conflict": true,
+  "interpretation": "D_test contains -r_alpha exactly when the standalone stack lies in the reconstructed component span"
+}

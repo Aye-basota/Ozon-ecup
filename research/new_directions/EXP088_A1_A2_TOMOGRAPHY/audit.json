@@ -1,0 +1,373 @@
+{
+  "status": "PRE_LB_PROBES_READY_NOT_SUBMITTED",
+  "models_trained": false,
+  "leaderboard_used_for_direction_or_scale": false,
+  "frozen_parameters": {
+    "joint_base_amplitude": 0.5,
+    "probe_RMS": 0.025,
+    "intended_G": 0.0006250000000000001,
+    "heavy_tail_threshold": 20.0,
+    "winsor_clip_multiple_RMS": 10.0
+  },
+  "source_artifacts": {
+    "A1_saved_scaled_PERP": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_365_TEST_PERP.npy",
+      "sha256": "9b4527057531f6981744c1f2369136ef4446623675a416c5c21b1195112d01ae",
+      "standalone_amplitude_removed": 1.012306043162683
+    },
+    "A2_saved_scaled_PERP": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A2_WEEKLY_RESIDUAL_CNN_TEST_PERP.npy",
+      "sha256": "2ffc2ef15138ad1a64e95dac6373c7449006d5cfb8cc24df4ef1bf20c3d44e58",
+      "standalone_amplitude_removed": 0.9642014960450844
+    },
+    "joint_saved_PERP": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\JOINT_A1_365_A2_TEST_PERP.npy",
+      "sha256": "e3667884a661adf64a6ce5f231956bab18e45a7e6f017e453506f5e93d3045da"
+    },
+    "anchor": {
+      "path": "C:\\Users\\Admin\\Downloads\\SUBMIT_ORTH_ALPHA.csv",
+      "sha256": "9a8adb83e7b34bb6c12b7eb51584d1bf9a93825945d285258d4e1dd991f4b838"
+    }
+  },
+  "joint_reconstruction": {
+    "formula": "d_joint ~= 0.7462560853*d_A1 + 0.6466415685*d_A2",
+    "max_abs_error": 5.148324044856878e-08,
+    "RMS_error": 1.9770832252922484e-09,
+    "mean_error": -5.096383053142421e-12,
+    "correlation": 0.9999999999999993,
+    "tolerance": 1e-07,
+    "passes_tolerance": true
+  },
+  "basis": {
+    "constant_included_by_centering": true,
+    "input_vectors_excluding_constant": 80,
+    "canonical_vectors": 67,
+    "sent_extra_vectors": 12,
+    "explicit_joint_vectors": 1,
+    "centered_rank": 71,
+    "rank_including_constant": 72,
+    "svd_relative_tolerance": 1e-10,
+    "smallest_retained_singular_ratio": 6.570694619747367e-10,
+    "largest_rejected_singular_ratio": 5.627235520588542e-13,
+    "orthonormality_max_error": 1.2678746941219288e-13,
+    "sources": [
+      {
+        "name": "canonical_scored_bank",
+        "path": "C:\\Users\\Admin\\Desktop\\submission_geometry_research\\submission_geometry\\cache\\Z.npz",
+        "sha256": "443e80472f321e796faccfe0e9ea6954653397eb74311e7abef7471ea3064dfe",
+        "vectors": 67,
+        "members": [
+          "A_naive30.csv",
+          "B_naive90.csv",
+          "C_lgbm (1).csv",
+          "C_lgbm.csv",
+          "C_lgbm_delta_fold2_m0_10.csv",
+          "C_lgbm_exp015_regen.csv",
+          "E_hurdle_variance_exp029.csv",
+          "F_hurdle_variance_exp029_season_yoy_1_168.csv",
+          "baseline_hgbr.csv",
+          "candidate_B_BTYD05_HEDGE.csv",
+          "exp_008_recency_lightgbm_scale064.csv",
+          "exp_009_recency_long_buy_lgbm_logens.csv",
+          "exp_010_logens_wrec055_scale100.csv",
+          "exp_010_logens_wrec055_scale101.csv",
+          "exp_011_dense8_logens_scale100.csv",
+          "exp_011_dense8_logens_scale120.csv",
+          "exp_011_dense8_logens_scale140.csv",
+          "exp_013_dense8_logens_scale127.csv",
+          "exp_013_dense8_logens_scale130.csv",
+          "exp_015_dense8_logens_wrec0525_scale120.csv",
+          "exp_016_post_order_wrec050_scale120.csv",
+          "exp_017_dist_post_order_wrec050_scale120.csv",
+          "exp_019_behavior_v1_dist_wrec050_scale120.csv",
+          "exp_020_behavior_v1_slim_dist_wrec050_scale120.csv",
+          "experimental_submission_1.csv",
+          "experimental_submission_2.csv",
+          "last (1).csv",
+          "p15_d.csv",
+          "submission_BLEND_20_v1_catboost_ridge_80_STRONGEST_CURRENT.csv",
+          "submission_BTYD05.csv",
+          "submission_HOLIDAY-YOY.csv",
+          "submission_LEVEL_MINUS_006.csv",
+          "submission_RIDGE15.csv",
+          "submission_SEQ01_mix (1).csv",
+          "submission_SEQ65_TEMPORAL_HEAVY.csv",
+          "submission_SEQAVG3_clip289_mix.csv",
+          "submission_SEQAVG3_mix.csv",
+          "submission_STRONGEST_CURRENT.csv",
+          "submission_ZERO2D_SHRINK.csv",
+          "submission_best_overall.csv",
+          "submission_blend_80_first_20_second (1).csv",
+          "submission_candidate_e11mix.csv",
+          "submission_combo_candidate_1_ridge_drop_recent_hurdle_stable18_s075.csv",
+          "submission_continue12h_1_safe_ranker_safe.csv",
+          "submission_continue12h_2_class1_class1_occ.csv",
+          "submission_dist_head.csv",
+          "submission_dl_best (1).csv",
+          "submission_dl_extended_best.csv",
+          "submission_dl_phase5_interim.csv",
+          "submission_experimental_f4.csv",
+          "submission_experimental_f4_mix.csv",
+          "submission_extra90_2.csv",
+          "submission_extra90_3.csv",
+          "submission_final6h_B.csv",
+          "submission_phase11_fresh_production_v2 (1).csv",
+          "submission_phase11_team_blend_80seq_14classic_06fresh (1).csv",
+          "submission_recency_only.csv",
+          "submission_s04_a.csv",
+          "submission_s04_b.csv",
+          "submission_strategy_1.csv",
+          "submission_strategy_1_level_high.csv",
+          "submission_strategy_1_level_low.csv",
+          "submission_strategy_2.csv",
+          "submission_tier_a_checkpoint.csv",
+          "submission_v1.csv",
+          "submission_v1_top_v2_catboost_ridge (3).csv",
+          "submission_v2.csv"
+        ]
+      },
+      {
+        "name": "SUBMIT_ORTH_ALPHA",
+        "path": "C:\\Users\\Admin\\Downloads\\SUBMIT_ORTH_ALPHA.csv",
+        "sha256": "9a8adb83e7b34bb6c12b7eb51584d1bf9a93825945d285258d4e1dd991f4b838",
+        "vectors": 1
+      },
+      {
+        "name": "SUBMIT_ORTH_FINAL",
+        "path": "C:\\Users\\Admin\\Downloads\\SUBMIT_ORTH_FINAL.csv",
+        "sha256": "102496bdfbec6f959b88339a11c6c8b669d088b81277df103ffd72e39ec4cbdb",
+        "vectors": 1
+      },
+      {
+        "name": "SUBMIT_PUBLIC_EB",
+        "path": "C:\\Users\\Admin\\Downloads\\SUBMIT_PUBLIC_EB.csv",
+        "sha256": "66d1f4df2af22d41a0a59276e2818127114ea26dc27b782c6fabf83beff9c778",
+        "vectors": 1
+      },
+      {
+        "name": "SUBMIT_PRIVATE_OPTIMAL",
+        "path": "C:\\Users\\Admin\\Downloads\\SUBMIT_PRIVATE_OPTIMAL.csv",
+        "sha256": "899c5ae7072db952ef08418553e3d0a07c95a85bee9e42c226db32213544dad2",
+        "vectors": 1
+      },
+      {
+        "name": "SUBMIT_v2_shrunk",
+        "path": "C:\\Users\\Admin\\Desktop\\submission_geometry_research\\current_best\\SUBMIT_v2_shrunk.csv",
+        "sha256": "50f8d11dca25c782d42f66ebd46ba50a71a533188ca5f20bad4178cb005b74aa",
+        "vectors": 1
+      },
+      {
+        "name": "SUBMIT_NEXT_BEST",
+        "path": "C:\\Users\\Admin\\Desktop\\submission_geometry_research\\submission_geometry\\SUBMIT_NEXT_BEST.csv",
+        "sha256": "95f3fa982d8173e5382b199888748f57601b86fe8d0dcaa692984dde67d34677",
+        "vectors": 1
+      },
+      {
+        "name": "BEST_EXISTING_SUBMISSION",
+        "path": "C:\\Users\\Admin\\Desktop\\research_clean\\analysis\\BEST_EXISTING_SUBMISSION.csv",
+        "sha256": "4001d212aab708a5caef500fa7c6edf119d24969888fe45a0be2330347ba949f",
+        "vectors": 1
+      },
+      {
+        "name": "my_submit",
+        "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\my_submit.csv",
+        "sha256": "806c4f3ec015c63a9870aaae910e5cf1d3888bbc2de6d6c1c626ce2a7ae61ab0",
+        "vectors": 1
+      },
+      {
+        "name": "SUBMIT_v7_newmodel",
+        "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_v7_newmodel.csv",
+        "sha256": "056f0d168d80ccefca5c1ad8d044d314629096d5efe23b0d89a61b6cab1108b0",
+        "vectors": 1
+      },
+      {
+        "name": "PROBE_scale097",
+        "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\PROBE_scale097.csv",
+        "sha256": "33c32b32534dcd2f01bc27e1fe45ba06df775b6353b62984356b53d58630ce97",
+        "vectors": 1
+      },
+      {
+        "name": "anchor_diverse",
+        "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\anchor_diverse_A_combo_mlp_hurdle_w065.csv",
+        "sha256": "176a00cf9a679a7fc4353fc4093245aa40e0f58c22e375ff1917ec1369c999ce",
+        "vectors": 1
+      },
+      {
+        "name": "SUBMIT_EXP075_JOINT_A1_365_A2",
+        "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP075_JOINT_A1_365_A2.csv",
+        "sha256": "d567d91d66e4d80e28998de6139c48c59f7a607b3f8165c88a1d05259c66c901",
+        "vectors": 1
+      },
+      {
+        "name": "EXP075_d_joint_pre_submit",
+        "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\JOINT_A1_365_A2_TEST_PERP.npy",
+        "sha256": "e3667884a661adf64a6ce5f231956bab18e45a7e6f017e453506f5e93d3045da",
+        "vectors": 1
+      }
+    ]
+  },
+  "axis": {
+    "corr_w1_w2": -0.9999999999999959,
+    "abs_corr_w1_w2": 0.9999999999999959,
+    "w2_on_w1_coefficient": -1.1540490462686246,
+    "expected_w2_on_w1_from_joint": -1.154049046106135,
+    "collinearity_residual_RMS": 3.0565672736697673e-09,
+    "w1_RMS_after_first_projection": 0.029430706054941275,
+    "w2_RMS_after_first_projection": 0.03396447825371735,
+    "d_A1_RMS": 0.04876961295858335,
+    "new_axis_RMS_over_d_A1_RMS": 0.6034640069818625,
+    "canonical_sign_flipped": false,
+    "corr_w_d_A1": 0.6031908143280144,
+    "initial_double_projection_pass_RMS": [
+      5.840286327860597e-17,
+      5.757336542114008e-19
+    ],
+    "winsorization_applied": true,
+    "winsor_threshold_max_abs_over_RMS": 20.0,
+    "winsor_clip_multiple_RMS": 10.0,
+    "winsor_clip_abs": 0.29430706054941275,
+    "post_winsor_double_projection_pass_RMS": [
+      6.549164135733242e-05,
+      1.3283874853532989e-18
+    ],
+    "distribution_before_robustification": {
+      "min": -0.4131117318967211,
+      "max": 0.6659797859561243,
+      "p0.01": -0.18951935880926504,
+      "p0.1": -0.11334198327625347,
+      "p1": -0.07101890906199325,
+      "p50": -0.0013131481795983285,
+      "p99": 0.08433015442327921,
+      "p99.9": 0.14556742660988148,
+      "p99.99": 0.24123927934972733,
+      "RMS": 0.029430706054941275,
+      "max_abs_over_RMS": 22.628739681367904
+    },
+    "distribution_after_robustification": {
+      "min": -0.29566403747744474,
+      "max": 0.29556782135582715,
+      "p0.01": -0.19061439197330993,
+      "p0.1": -0.11334232249792069,
+      "p1": -0.07097892332500672,
+      "p50": -0.0013132392189297913,
+      "p99": 0.08432934974235234,
+      "p99.9": 0.1455885384617522,
+      "p99.99": 0.2415953588950147,
+      "RMS": 0.02937664566335512,
+      "max_abs_over_RMS": 10.064594878041525
+    },
+    "final_mean": 1.900701818158268e-19,
+    "final_corr_d_joint": -1.8367980107024134e-17,
+    "final_projection_RMS": 4.540863259696291e-19,
+    "final_projection_RMS_over_axis_RMS": 1.5457391942336813e-17,
+    "max_abs_orthonormal_basis_coefficient": 1.487525380650112e-16
+  },
+  "normalization": {
+    "RMS_w_final": 0.02937664566335512,
+    "RMS_u": 1.0,
+    "RMS_d_probe": 0.025,
+    "G_mean_d_probe_squared": 0.0006250000000000001
+  },
+  "base": {
+    "negative_rows_before_probe": 874,
+    "min": -0.17332565983892978,
+    "max": 8.52790298203006
+  },
+  "clipping": {
+    "plus": {
+      "rows_unclipped_z_lt_0": 915,
+      "RMS_clipped_minus_unclipped": 0.002835366858204795,
+      "max_clipping_difference": 0.23121463561765354,
+      "clipping_RMS_over_probe_RMS": 0.1134146743281918
+    },
+    "minus": {
+      "rows_unclipped_z_lt_0": 1009,
+      "RMS_clipped_minus_unclipped": 0.002876569993635138,
+      "max_clipping_difference": 0.2721554434056622,
+      "clipping_RMS_over_probe_RMS": 0.11506279974540551
+    },
+    "materially_nonzero": true,
+    "affine_closed_form_exact": false,
+    "exact_vectors_saved": true
+  },
+  "clipping_aware_effective_pair": {
+    "definition": "z_mid=(z_plus+z_minus)/2; d_eff=(z_plus-z_minus)/2",
+    "RMS_d_effective": 0.024930207761303152,
+    "G_effective": 0.0006215152590217399,
+    "RMS_z_mid_minus_z_base": 0.0024656910196435397,
+    "max_abs_z_mid_minus_z_base": 0.17332565983892978,
+    "rows_z_mid_differs_from_z_base": 1476,
+    "RMS_d_effective_minus_d_probe": 0.0014413007562938745,
+    "corr_d_effective_d_probe": 0.9983373899777038,
+    "decode": {
+      "b_effective": "(S_minus^2-S_plus^2)/4",
+      "R_mid_squared": "(S_plus^2+S_minus^2)/2-G_effective",
+      "a_star_effective": "b_effective/G_effective",
+      "gain_MSE_effective": "b_effective^2/G_effective"
+    }
+  },
+  "saved_vectors": {
+    "d_A1_TEST.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP088_A1_A2_TOMOGRAPHY\\d_A1_TEST.npy",
+      "sha256": "052cd46640a119628bc2127cf90c71007aceb8bacff5d3154992e9c6606e6f61",
+      "bytes": 2000128
+    },
+    "d_A2_TEST.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP088_A1_A2_TOMOGRAPHY\\d_A2_TEST.npy",
+      "sha256": "f216c30bebd77cc3e45a6d3a352d217cfc1b9c99b715010a6e14e3d8aa7c63cd",
+      "bytes": 2000128
+    },
+    "d_joint_TEST.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP088_A1_A2_TOMOGRAPHY\\d_joint_TEST.npy",
+      "sha256": "781cd1af72e55d6a411707dc04d47c3c47829a1c88ab74f0f3ba8b14213d1248",
+      "bytes": 2000128
+    },
+    "w_robust_TEST.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP088_A1_A2_TOMOGRAPHY\\w_robust_TEST.npy",
+      "sha256": "ad1f9297621f9b781aacae479c86fd7897ffcd38fa0c24ea633462b85d8a8995",
+      "bytes": 2000128
+    },
+    "d_probe_TEST.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP088_A1_A2_TOMOGRAPHY\\d_probe_TEST.npy",
+      "sha256": "db230c1cdd233949d439829db9c17ef6391a6401f54296a6f9a7f15dc6011b0f",
+      "bytes": 2000128
+    },
+    "tomography_vectors.npz": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP088_A1_A2_TOMOGRAPHY\\tomography_vectors.npz",
+      "sha256": "d9f8d35a2f69b5a393a2a2ceb08d185d7a3b10e8b59be0905442b447b41f1706",
+      "bytes": 24383450
+    }
+  },
+  "outputs": {
+    "plus": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP088_TOMO_PLUS.csv",
+      "sha256": "25bc4973a333bd5e428b1448c673d6eaae112a32953abd8f0f611272375ef7bc",
+      "rows": 250000,
+      "unique_user_id": 250000,
+      "columns": [
+        "user_id",
+        "predict"
+      ],
+      "same_order": true,
+      "finite": true,
+      "nonnegative": true,
+      "zero_count": 915,
+      "max_abs_serialized_log_error": 4.9662421744423035e-11
+    },
+    "minus": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP088_TOMO_MINUS.csv",
+      "sha256": "ce4ea2521f56b4302fc58a3d06d05aeb3a76421fb0cf0075ae9fd72258f85e75",
+      "rows": 250000,
+      "unique_user_id": 250000,
+      "columns": [
+        "user_id",
+        "predict"
+      ],
+      "same_order": true,
+      "finite": true,
+      "nonnegative": true,
+      "zero_count": 1009,
+      "max_abs_serialized_log_error": 4.93944407944924e-11
+    }
+  }
+}

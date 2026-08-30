@@ -1,0 +1,522 @@
+{
+  "LightGBM_A": {
+    "candidate": "LightGBM_A",
+    "configs": [
+      "A_depth3"
+    ],
+    "folds": [
+      {
+        "candidate": "LightGBM_A",
+        "cutoff": "2025-08-07",
+        "train_folds": [
+          "2025-07-03"
+        ],
+        "max_train_target_end": "2025-08-02",
+        "label_available": true,
+        "rho_raw": -0.19901520126462932,
+        "rho_vs_strong_residual": 0.026880175338300498,
+        "rho_post_projection": 0.015602724746150888,
+        "rho_deployed_correction": 0.015602724746150886,
+        "b": 0.0016008811716204962,
+        "G": 0.0032367216844362045,
+        "oracle_amplitude": 0.4945995756503696,
+        "deployable_amplitude": 0.7242958908375547,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.0028114531231798524,
+            "G": 0.0038816361638180355,
+            "oracle_amplitude": 0.7242958908375547,
+            "weight": 1.0
+          }
+        ],
+        "Delta_MSE": -0.0006210244264192462,
+        "Delta_RMSLE": -0.0001719844423671013,
+        "baseline_RMSLE": 1.8055528643169727,
+        "RMS_u_raw": 0.0731483177619736,
+        "RMS_u_centered": 0.07219652228305017,
+        "RMS_u_perp": 0.05689219352807733,
+        "perp_fraction": 0.7880184769153917,
+        "second_pass_projection_error_RMS": 2.461067646195959e-14,
+        "second_pass_relative_error": 4.3258441863054156e-13
+      },
+      {
+        "candidate": "LightGBM_A",
+        "cutoff": "2025-09-11",
+        "train_folds": [
+          "2025-07-03",
+          "2025-08-07"
+        ],
+        "max_train_target_end": "2025-09-06",
+        "label_available": true,
+        "rho_raw": -0.08121319033788639,
+        "rho_vs_strong_residual": -0.013074138332015976,
+        "rho_post_projection": -0.022811082104408603,
+        "rho_deployed_correction": -0.022811082104408614,
+        "b": -0.0018259793837437993,
+        "G": 0.002059477084859172,
+        "oracle_amplitude": -0.8866228214763849,
+        "deployable_amplitude": 0.7313305393259814,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.0022438300238167954,
+            "G": 0.002380310946503808,
+            "oracle_amplitude": 0.9426625656251023,
+            "weight": 1.0
+          },
+          {
+            "cutoff": "2025-08-07",
+            "b": 0.0016187437496706391,
+            "G": 0.0025573411978223265,
+            "oracle_amplitude": 0.6329791859799784,
+            "weight": 2.0
+          }
+        ],
+        "Delta_MSE": 0.003772288673777009,
+        "Delta_RMSLE": 0.0010666397082264023,
+        "baseline_RMSLE": 1.76777168730214,
+        "RMS_u_raw": 0.0969033083627841,
+        "RMS_u_centered": 0.06371567163926298,
+        "RMS_u_perp": 0.045381461907470236,
+        "perp_fraction": 0.7122496042167622,
+        "second_pass_projection_error_RMS": 5.452344432841177e-13,
+        "second_pass_relative_error": 1.2014475082266284e-11
+      },
+      {
+        "candidate": "LightGBM_A",
+        "cutoff": "2025-10-16",
+        "train_folds": [
+          "2025-07-03",
+          "2025-08-07",
+          "2025-09-11"
+        ],
+        "max_train_target_end": "2025-10-11",
+        "label_available": true,
+        "rho_raw": 0.04821175194612699,
+        "rho_vs_strong_residual": 0.01053288155836206,
+        "rho_post_projection": 0.0027434412780390047,
+        "rho_deployed_correction": 0.002743441278039005,
+        "b": 0.0002504200139931736,
+        "G": 0.0027471695990217396,
+        "oracle_amplitude": 0.09115564400623374,
+        "deployable_amplitude": 0.6683699632979684,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.0007962423451899651,
+            "G": 0.0013903072998258177,
+            "oracle_amplitude": 0.5727096054877371,
+            "weight": 1.0
+          },
+          {
+            "cutoff": "2025-08-07",
+            "b": 0.0008364082111336173,
+            "G": 0.0019815351939496623,
+            "oracle_amplitude": 0.42210111316088234,
+            "weight": 2.0
+          },
+          {
+            "cutoff": "2025-09-11",
+            "b": 0.0019248870610275035,
+            "G": 0.0024651654490807934,
+            "oracle_amplitude": 0.7808348367632899,
+            "weight": 4.0
+          }
+        ],
+        "Delta_MSE": 0.0008924647982151081,
+        "Delta_RMSLE": 0.000256184893122402,
+        "baseline_RMSLE": 1.7417091941672558,
+        "RMS_u_raw": 0.06766968688319763,
+        "RMS_u_centered": 0.05677776513297946,
+        "RMS_u_perp": 0.05241344864652334,
+        "perp_fraction": 0.9231333520043553,
+        "second_pass_projection_error_RMS": 3.11333653609891e-16,
+        "second_pass_relative_error": 5.939957427902279e-15
+      }
+    ],
+    "weighted_purged_post_projection_rho": -0.0027208106215014715,
+    "latest_purged_post_projection_rho": 0.0027434412780390047,
+    "positive_rho_transitions": 2,
+    "nested_Delta_MSE": 0.0014990588734278864,
+    "nested_Delta_RMSLE": 0.00042657636379647305,
+    "leave_one_transition_out": [
+      {
+        "omitted_transition": "2025-08-07",
+        "weighted_rho": -0.005774733182776865,
+        "weighted_Delta_MSE": 0.0018524060900690753,
+        "weighted_Delta_RMSLE": 0.0005263364981570687
+      },
+      {
+        "omitted_transition": "2025-09-11",
+        "weighted_rho": 0.005315297971661382,
+        "weighted_Delta_MSE": 0.0005897669532882372,
+        "weighted_Delta_RMSLE": 0.00017055102602450133
+      },
+      {
+        "omitted_transition": "2025-10-16",
+        "weighted_rho": -0.010006479820888772,
+        "weighted_Delta_MSE": 0.0023078509737115907,
+        "weighted_Delta_RMSLE": 0.0006537649913619011
+      }
+    ],
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20270900,
+      "unit": "user_id cluster across transitions",
+      "CI95_Delta_MSE": [
+        0.0011377316753513247,
+        0.0018818977910614295
+      ],
+      "P_Delta_MSE_lt_0": 0.0,
+      "draw_mean": 0.0015003300627709382
+    }
+  },
+  "LightGBM_B": {
+    "candidate": "LightGBM_B",
+    "configs": [
+      "B_depth5"
+    ],
+    "folds": [
+      {
+        "candidate": "LightGBM_B",
+        "cutoff": "2025-08-07",
+        "train_folds": [
+          "2025-07-03"
+        ],
+        "max_train_target_end": "2025-08-02",
+        "label_available": true,
+        "rho_raw": -0.15718297706188775,
+        "rho_vs_strong_residual": 0.027652449289405547,
+        "rho_post_projection": 0.017737141506988855,
+        "rho_deployed_correction": 0.01773714150698886,
+        "b": 0.0022829363131968276,
+        "G": 0.005093407089959408,
+        "oracle_amplitude": 0.44821398974709115,
+        "deployable_amplitude": 0.6226591213550156,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.003903026596037871,
+            "G": 0.0062683199557796564,
+            "oracle_amplitude": 0.6226591213550156,
+            "weight": 1.0
+          }
+        ],
+        "Delta_MSE": -0.0008682459927044911,
+        "Delta_RMSLE": -0.0002404537213660518,
+        "baseline_RMSLE": 1.8055528643169727,
+        "RMS_u_raw": 0.08578123741076477,
+        "RMS_u_centered": 0.08486311385987726,
+        "RMS_u_perp": 0.07136810975470352,
+        "perp_fraction": 0.8409791546483179,
+        "second_pass_projection_error_RMS": 4.1586919378115545e-12,
+        "second_pass_relative_error": 5.827101140979114e-11
+      },
+      {
+        "candidate": "LightGBM_B",
+        "cutoff": "2025-09-11",
+        "train_folds": [
+          "2025-07-03",
+          "2025-08-07"
+        ],
+        "max_train_target_end": "2025-09-06",
+        "label_available": true,
+        "rho_raw": -0.09732478223989742,
+        "rho_vs_strong_residual": -0.011577505278222,
+        "rho_post_projection": -0.018763911545995174,
+        "rho_deployed_correction": -0.01876391154599517,
+        "b": -0.001851385343722176,
+        "G": 0.003128987934799332,
+        "oracle_amplitude": -0.5916882334801681,
+        "deployable_amplitude": 0.5646930304562535,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.002600801492266301,
+            "G": 0.00400948456758598,
+            "oracle_amplitude": 0.648662302703957,
+            "weight": 1.0
+          },
+          {
+            "cutoff": "2025-08-07",
+            "b": 0.002179542510655597,
+            "G": 0.004157797484011594,
+            "oracle_amplitude": 0.524206029523279,
+            "weight": 2.0
+          }
+        ],
+        "Delta_MSE": 0.003088694899390759,
+        "Delta_RMSLE": 0.0008733967456591163,
+        "baseline_RMSLE": 1.76777168730214,
+        "RMS_u_raw": 0.10298285382751848,
+        "RMS_u_centered": 0.0738109775494726,
+        "RMS_u_perp": 0.05593735723824761,
+        "perp_fraction": 0.7578460426263152,
+        "second_pass_projection_error_RMS": 2.584333318899775e-13,
+        "second_pass_relative_error": 4.6200490092741036e-12
+      },
+      {
+        "candidate": "LightGBM_B",
+        "cutoff": "2025-10-16",
+        "train_folds": [
+          "2025-07-03",
+          "2025-08-07",
+          "2025-09-11"
+        ],
+        "max_train_target_end": "2025-10-11",
+        "label_available": true,
+        "rho_raw": 0.055651241564648644,
+        "rho_vs_strong_residual": 0.013401321335855143,
+        "rho_post_projection": 0.00486857315593982,
+        "rho_deployed_correction": 0.004868573155939814,
+        "b": 0.0005139884044900092,
+        "G": 0.0036748700058398436,
+        "oracle_amplitude": 0.13986573774669994,
+        "deployable_amplitude": 0.6675797418345244,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.0013126090025382179,
+            "G": 0.002342274055316719,
+            "oracle_amplitude": 0.5603994116566896,
+            "weight": 1.0
+          },
+          {
+            "cutoff": "2025-08-07",
+            "b": 0.0013568172620928712,
+            "G": 0.0028568554317272427,
+            "oracle_amplitude": 0.47493381955017067,
+            "weight": 2.0
+          },
+          {
+            "cutoff": "2025-09-11",
+            "b": 0.002893369320549143,
+            "G": 0.0038278979409017647,
+            "oracle_amplitude": 0.7558637573988014,
+            "weight": 4.0
+          }
+        ],
+        "Delta_MSE": 0.0009514960392256698,
+        "Delta_RMSLE": 0.0002731286724388937,
+        "baseline_RMSLE": 1.7417091941672558,
+        "RMS_u_raw": 0.07788713963412694,
+        "RMS_u_centered": 0.0671502719125571,
+        "RMS_u_perp": 0.06062070608166688,
+        "perp_fraction": 0.9027618854709479,
+        "second_pass_projection_error_RMS": 4.0336055458284104e-16,
+        "second_pass_relative_error": 6.653841247567169e-15
+      }
+    ],
+    "weighted_purged_post_projection_rho": -4.5198423034601655e-05,
+    "latest_purged_post_projection_rho": 0.00486857315593982,
+    "positive_rho_transitions": 2,
+    "nested_Delta_MSE": 0.0013021611375685295,
+    "nested_Delta_RMSLE": 0.00037126492281539365,
+    "leave_one_transition_out": [
+      {
+        "omitted_transition": "2025-08-07",
+        "weighted_rho": -0.0030089217447051776,
+        "weighted_Delta_MSE": 0.0016638956592806996,
+        "weighted_Delta_RMSLE": 0.0004732180301789679
+      },
+      {
+        "omitted_transition": "2025-09-11",
+        "weighted_rho": 0.007442286826149627,
+        "weighted_Delta_MSE": 0.0005875476328396376,
+        "weighted_Delta_RMSLE": 0.0001704121936779046
+      },
+      {
+        "omitted_transition": "2025-10-16",
+        "weighted_rho": -0.006596893861667164,
+        "weighted_Delta_MSE": 0.0017697146020256755,
+        "weighted_Delta_RMSLE": 0.0005021132566507269
+      }
+    ],
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20280900,
+      "unit": "user_id cluster across transitions",
+      "CI95_Delta_MSE": [
+        0.0009052490879539979,
+        0.0017218388606466673
+      ],
+      "P_Delta_MSE_lt_0": 0.0,
+      "draw_mean": 0.0013046073513138495
+    }
+  },
+  "LightGBM_AB_mean": {
+    "candidate": "LightGBM_AB_mean",
+    "configs": [
+      "A_depth3",
+      "B_depth5"
+    ],
+    "folds": [
+      {
+        "candidate": "LightGBM_AB_mean",
+        "cutoff": "2025-08-07",
+        "train_folds": [
+          "2025-07-03"
+        ],
+        "max_train_target_end": "2025-08-02",
+        "label_available": true,
+        "rho_raw": -0.18410620378803408,
+        "rho_vs_strong_residual": 0.02698842925953022,
+        "rho_post_projection": 0.016327256937129875,
+        "rho_deployed_correction": 0.01632725693712988,
+        "b": 0.0018567140693985904,
+        "G": 0.0039760483792168014,
+        "oracle_amplitude": 0.46697471768799864,
+        "deployable_amplitude": 0.6732688914655441,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.0032532779366011033,
+            "G": 0.004832063352161573,
+            "oracle_amplitude": 0.6732688914655441,
+            "weight": 1.0
+          }
+        ],
+        "Delta_MSE": -0.0006978286998255593,
+        "Delta_RMSLE": -0.000193255501211409,
+        "baseline_RMSLE": 1.8055528643169727,
+        "RMS_u_raw": 0.0785566718126498,
+        "RMS_u_centered": 0.07764741643158077,
+        "RMS_u_perp": 0.06305591470446528,
+        "perp_fraction": 0.812080009899971,
+        "second_pass_projection_error_RMS": 5.720251838548417e-13,
+        "second_pass_relative_error": 9.071713360052708e-12
+      },
+      {
+        "candidate": "LightGBM_AB_mean",
+        "cutoff": "2025-09-11",
+        "train_folds": [
+          "2025-07-03",
+          "2025-08-07"
+        ],
+        "max_train_target_end": "2025-09-06",
+        "label_available": true,
+        "rho_raw": -0.08118315122193841,
+        "rho_vs_strong_residual": -0.012552935569773384,
+        "rho_post_projection": -0.02130337668897055,
+        "rho_deployed_correction": -0.02130337668897055,
+        "b": -0.0018564927503611321,
+        "G": 0.002440881083598204,
+        "oracle_amplitude": -0.7605830381643989,
+        "deployable_amplitude": 0.6363169865099799,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.002339150564653315,
+            "G": 0.0029790740922626567,
+            "oracle_amplitude": 0.7851938193577088,
+            "weight": 1.0
+          },
+          {
+            "cutoff": "2025-08-07",
+            "b": 0.0017627432049841854,
+            "G": 0.0031187298231750956,
+            "oracle_amplitude": 0.5652118987304849,
+            "weight": 2.0
+          }
+        ],
+        "Delta_MSE": 0.003350946804777032,
+        "Delta_RMSLE": 0.0009475344037339628,
+        "baseline_RMSLE": 1.76777168730214,
+        "RMS_u_raw": 0.09987533810349827,
+        "RMS_u_centered": 0.06776476795004223,
+        "RMS_u_perp": 0.049405273843975445,
+        "perp_fraction": 0.7290702136012355,
+        "second_pass_projection_error_RMS": 1.8727236670856896e-13,
+        "second_pass_relative_error": 3.790533927612371e-12
+      },
+      {
+        "candidate": "LightGBM_AB_mean",
+        "cutoff": "2025-10-16",
+        "train_folds": [
+          "2025-07-03",
+          "2025-08-07",
+          "2025-09-11"
+        ],
+        "max_train_target_end": "2025-10-11",
+        "label_available": true,
+        "rho_raw": 0.05755510709479832,
+        "rho_vs_strong_residual": 0.01175264407512964,
+        "rho_post_projection": 0.003537781697847413,
+        "rho_deployed_correction": 0.0035377816978474155,
+        "b": 0.0003398816765822062,
+        "G": 0.0030432118088973316,
+        "oracle_amplitude": 0.1116851858909413,
+        "deployable_amplitude": 0.7280202658211072,
+        "amplitude_training": [
+          {
+            "cutoff": "2025-07-03",
+            "b": 0.0010441251893825204,
+            "G": 0.001700312264841498,
+            "oracle_amplitude": 0.6140784907411423,
+            "weight": 1.0
+          },
+          {
+            "cutoff": "2025-08-07",
+            "b": 0.001198331296070739,
+            "G": 0.0022754408994058828,
+            "oracle_amplitude": 0.5266369679755792,
+            "weight": 2.0
+          },
+          {
+            "cutoff": "2025-09-11",
+            "b": 0.002417317999971489,
+            "G": 0.0029391571290382714,
+            "oracle_amplitude": 0.8224527964459203,
+            "weight": 4.0
+          }
+        ],
+        "Delta_MSE": 0.0011180618676692752,
+        "Delta_RMSLE": 0.00032093729270865623,
+        "baseline_RMSLE": 1.7417091941672558,
+        "RMS_u_raw": 0.07135076450065148,
+        "RMS_u_centered": 0.060418896917183204,
+        "RMS_u_perp": 0.055165313457800014,
+        "perp_fraction": 0.913047345657695,
+        "second_pass_projection_error_RMS": 4.666927299717205e-16,
+        "second_pass_relative_error": 8.459894464820325e-15
+      }
+    ],
+    "weighted_purged_post_projection_rho": -0.0017326242356316532,
+    "latest_purged_post_projection_rho": 0.003537781697847413,
+    "positive_rho_transitions": 2,
+    "nested_Delta_MSE": 0.0014966160543436577,
+    "nested_Delta_RMSLE": 0.00042650892529873453,
+    "leave_one_transition_out": [
+      {
+        "omitted_transition": "2025-08-07",
+        "weighted_rho": -0.004742604431091908,
+        "weighted_Delta_MSE": 0.001862356846705194,
+        "weighted_Delta_RMSLE": 0.0005298029963837584
+      },
+      {
+        "omitted_transition": "2025-09-11",
+        "weighted_rho": 0.006095676745703905,
+        "weighted_Delta_MSE": 0.0007548837541703084,
+        "weighted_Delta_RMSLE": 0.00021809873392464318
+      },
+      {
+        "omitted_transition": "2025-10-16",
+        "weighted_rho": -0.008759832146937074,
+        "weighted_Delta_MSE": 0.0020013549699095016,
+        "weighted_Delta_RMSLE": 0.0005672711020855056
+      }
+    ],
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20290900,
+      "unit": "user_id cluster across transitions",
+      "CI95_Delta_MSE": [
+        0.0010791619705553218,
+        0.0019211612130116556
+      ],
+      "P_Delta_MSE_lt_0": 0.0,
+      "draw_mean": 0.0014977446355218277
+    }
+  }
+}

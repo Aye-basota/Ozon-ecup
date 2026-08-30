@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "reason": null,
+  "checkpoints": [
+    {
+      "component": "ETX seed42",
+      "filename": "model_ETX-01-S42-TEST.pt",
+      "found": true,
+      "location": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S42-TEST.pt"
+    },
+    {
+      "component": "ETX seed43",
+      "filename": "model_ETX-01-S43-TEST.pt",
+      "found": true,
+      "location": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S43-TEST.pt"
+    },
+    {
+      "component": "ETX seed44",
+      "filename": "model_ETX-01-S44-TEST.pt",
+      "found": true,
+      "location": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S44-TEST.pt"
+    },
+    {
+      "component": "TCN seed42",
+      "filename": "model_SEQ-01-TEST.pt",
+      "found": true,
+      "location": "C:\\Users\\Admin\\Desktop\\exp058-exact-anniversary\\artifacts\\model_SEQ-01-TEST.pt"
+    },
+    {
+      "component": "TCN seed43",
+      "filename": "model_SEQ-C289-S43-TEST.pt",
+      "found": true,
+      "location": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-C289-S43-TEST.pt"
+    },
+    {
+      "component": "TCN seed44",
+      "filename": "model_SEQ-C289-S44-TEST.pt",
+      "found": true,
+      "location": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-C289-S44-TEST.pt"
+    }
+  ],
+  "support": {
+    "raw": true,
+    "sample": true,
+    "strongest_submission": true,
+    "feature_code": true,
+    "sequence_code": true,
+    "etx_code": true
+  },
+  "missing_checkpoints": [],
+  "missing_support": [],
+  "forbidden_fallbacks": [
+    "replace seed-42 by seed-43/44 average",
+    "reuse 2026-02-13 prediction at 2026-01-14 (post-cutoff leakage)",
+    "change STRONGEST_CURRENT weights or baseline family"
+  ],
+  "retrained_seed42_audit": {
+    "status": "PASS_RETRAINED_RECIPE_PARITY",
+    "canonical_reference": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\ztest_SEQ-01.npy",
+    "retrained_prediction": "C:\\Users\\Admin\\Desktop\\exp058-exact-anniversary\\artifacts\\ztest_SEQ-01.npy",
+    "metrics": {
+      "corr": 0.9968828807191482,
+      "var_delta": 0.015951401650718722,
+      "mean_delta": 0.018391402191162108,
+      "max_abs_delta": 1.52734375
+    },
+    "limits": {
+      "canonical_cutoff": "2026-02-13",
+      "corr_min": 0.996,
+      "var_delta_max": 0.018,
+      "abs_mean_delta_max": 0.02,
+      "note": "target-blind replay audit for an explicitly authorized retrain; limits are no looser than the observed production S42/S43/S44 pairwise seed envelope"
+    },
+    "bitwise_equal": false
+  }
+}

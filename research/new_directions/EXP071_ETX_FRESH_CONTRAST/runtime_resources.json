@@ -1,0 +1,11 @@
+{
+  "finalize_process_seconds": 0.008026838302612305,
+  "experiment_elapsed_seconds": 859.3315832614899,
+  "pilot_runtime_seconds": 613.4752097129822,
+  "persistent_bytes": 1671536,
+  "persistent_gb": 0.001671536,
+  "disk_limit_gb": 6,
+  "within_disk_limit": true,
+  "removed_cache_bytes": 1419739163,
+  "platform": "Windows-11-10.0.26200-SP0"
+}

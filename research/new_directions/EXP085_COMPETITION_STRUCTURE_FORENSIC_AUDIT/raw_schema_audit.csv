@@ -1,0 +1,19 @@
+raw_field,dtype,already_used,how,potential_missed_information
+event_date,date32[day],YES,cutoff/window alignment,calendar position and missing-day geometry
+user_id,int64,ALIGNMENT_ONLY,"row key, cross-fit/bootstrap",ID rank/density if assignment is structured
+search,int64,YES,presence/search-day sequence,none: exact searches>0 identity
+cat,int64,YES,catalog-day activity,catalog browsing state not reducible to downstream counts
+has_search_to_cart,int64,YES_REDUNDANT,sequence/raw channel variants,none: exact count>0 identity
+has_search_to_ord,int64,YES_REDUNDANT,sequence/raw channel variants,none: exact count>0 identity
+has_cat_to_cart,int64,YES_REDUNDANT,sequence/raw channel variants,none: exact count>0 identity
+has_cat_to_ord,int64,YES_REDUNDANT,sequence/raw channel variants,none: exact count>0 identity
+search_to_cart,int64,YES,window sums and raw sequences,conditional channel geometry already gated
+search_to_ord,int64,YES,window sums and raw sequences,conditional channel geometry already gated
+cat_to_cart,int64,YES,window sums and raw sequences,conditional channel geometry already gated
+cat_to_ord,int64,YES,window sums and raw sequences,conditional channel geometry already gated
+gmv_search,double,YES,channel GMV windows/sequences,component reconciliation only if separate heads add signal
+gmv_cat,double,YES,channel GMV windows/sequences,component reconciliation only if separate heads add signal
+to_cart,int64,YES_REDUNDANT,total cart windows/sequences,none: exact channel sum
+to_ord,int64,YES_REDUNDANT,total order windows/sequences,none: exact channel sum
+gmv,double,YES_REDUNDANT_TARGET,window GMV and target sum,none: exact channel sum
+searches,int64,YES,window sums and sequences,within-day distribution tested in EXP083

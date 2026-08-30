@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "audits": [
+    {
+      "checkpoint": "ETX-01-S42-V1016",
+      "checkpoint_sha256": "a16f9c255b11825e112db8c69572f96ba64a72d70941041d90fba7968d8aa177",
+      "cutoff": "2025-10-16",
+      "rows": 197379,
+      "embedding_shape": [
+        197379,
+        128
+      ],
+      "embedding_dtype": "float16",
+      "embedding_finite": true,
+      "hook_vs_original_max_abs_log_error": 0.0,
+      "hook_vs_saved_max_abs_log_error": 0.0,
+      "deterministic_replay_prediction_max_abs": 0.0,
+      "deterministic_replay_embedding_max_abs": 0.0,
+      "user_order_exact": true,
+      "mode": "oof"
+    },
+    {
+      "checkpoint": "ETX-01-S42-TEST",
+      "checkpoint_sha256": "bc8af886d1a4b5c81124211c8bac1d237b9987ec535faf009442526184b0937a",
+      "cutoff": "2026-02-13",
+      "rows": 250000,
+      "embedding_shape": [
+        250000,
+        128
+      ],
+      "embedding_dtype": "float16",
+      "embedding_finite": true,
+      "hook_vs_original_max_abs_log_error": 0.0,
+      "hook_vs_saved_max_abs_log_error": 0.0625,
+      "deterministic_replay_prediction_max_abs": 0.0,
+      "deterministic_replay_embedding_max_abs": 0.0,
+      "user_order_exact": true,
+      "mode": "test"
+    }
+  ],
+  "archived_prediction_reference": "OOF_EXACT_TEST_BF16_RUNTIME_DRIFT_RECORDED",
+  "archived_test_runtime_drift": {
+    "max_abs_log_error": 0.0625,
+    "rms_log_error": 0.0026638149030353765,
+    "mean_log_error": 3.4046630859375e-06,
+    "exact_fraction": 0.975388,
+    "interpretation": "hook vs current original forward is exact; prior saved DCW bf16/SDPA reductions are not byte-identical under the current runtime"
+  },
+  "static_context": [
+    {
+      "cutoff": "2025-10-16",
+      "mode": "oof",
+      "calendar_depth": 289,
+      "event_depth_clip": null,
+      "query_depth": 289,
+      "actual_weekday": 3,
+      "cdow_shift": 0.0,
+      "query_weekday": 3
+    },
+    {
+      "cutoff": "2025-10-22",
+      "mode": "extra",
+      "calendar_depth": 295,
+      "event_depth_clip": 289,
+      "query_depth": 289,
+      "actual_weekday": 2,
+      "cdow_shift": 0.0,
+      "query_weekday": 2
+    },
+    {
+      "cutoff": "2026-01-14",
+      "mode": "extra",
+      "calendar_depth": 379,
+      "event_depth_clip": 289,
+      "query_depth": 289,
+      "actual_weekday": 2,
+      "cdow_shift": 0.0,
+      "query_weekday": 2
+    },
+    {
+      "cutoff": "2026-02-13",
+      "mode": "test",
+      "calendar_depth": 409,
+      "event_depth_clip": 289,
+      "query_depth": 289,
+      "actual_weekday": 4,
+      "cdow_shift": -1.0,
+      "query_weekday": 3
+    }
+  ],
+  "oof_test_policy_audit": {
+    "clean_oof_actual_calendar": true,
+    "extra_actual_weekday": true,
+    "extra_depth_clip_query_cap_match": true,
+    "test_uses_registered_DCW_checkpoint_support": true,
+    "test_only_feature_schema_mismatch": false
+  }
+}

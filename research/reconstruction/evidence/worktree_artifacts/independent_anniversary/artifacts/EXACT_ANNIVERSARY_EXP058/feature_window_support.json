@@ -1,0 +1,56 @@
+{
+  "raw_start": "2025-01-01",
+  "raw_end": "2026-02-13",
+  "cutoff": "2026-01-14",
+  "windows": [
+    {
+      "name": "REAL_anniversary",
+      "start": "2025-01-15",
+      "end": "2025-02-13",
+      "expected_days": 30,
+      "observable_calendar_days": 30,
+      "complete": true
+    },
+    {
+      "name": "REAL_pre30",
+      "start": "2024-12-16",
+      "end": "2025-01-14",
+      "expected_days": 30,
+      "observable_calendar_days": 14,
+      "complete": false
+    },
+    {
+      "name": "REAL_pre60",
+      "start": "2024-11-16",
+      "end": "2025-01-14",
+      "expected_days": 60,
+      "observable_calendar_days": 14,
+      "complete": false
+    },
+    {
+      "name": "SHIFTED_anniversary",
+      "start": "2025-02-14",
+      "end": "2025-03-15",
+      "expected_days": 30,
+      "observable_calendar_days": 30,
+      "complete": true
+    },
+    {
+      "name": "SHIFTED_pre30",
+      "start": "2025-01-15",
+      "end": "2025-02-13",
+      "expected_days": 30,
+      "observable_calendar_days": 30,
+      "complete": true
+    },
+    {
+      "name": "SHIFTED_pre60",
+      "start": "2024-12-16",
+      "end": "2025-02-13",
+      "expected_days": 60,
+      "observable_calendar_days": 44,
+      "complete": false
+    }
+  ],
+  "note": "Exact anniversary windows are fully observed. Pre-window scale denominators are intentionally raw observable sums; the primary REAL pre-windows are left-truncated by the 2025-01-01 data boundary, so scale features are interpreted conservatively and are not normalized."
+}

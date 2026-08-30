@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "source": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP069_BTYD05_FRESH1_PROD\\fresh_conditional_OOF.parquet",
+  "source_sha256": "38939f438713f4869b3b1108f73d71df79cce83a202b1814cca8dbc6fab9d1d8",
+  "rows": 770616,
+  "historical_saved_chain": [
+    "raw_correction = z_cond_fresh - z_cond_clean",
+    "raw already equals p_dist * (mu_fresh - mu_clean)",
+    "fit q0.005/q0.995 on the other three folds",
+    "clip held-fold raw correction",
+    "GLOBAL variant (no HIGH16 gate)",
+    "subtract the held fold's clipped mean",
+    "alpha = 1"
+  ],
+  "new_exp072_chain": [
+    "raw_correction = mu_arm - mu_clean",
+    "fit q0.005/q0.995 and clipped mean on donor folds",
+    "clip held-fold raw correction and subtract donor clipped mean",
+    "multiply by frozen p_dist"
+  ],
+  "max_abs_error_saved_correction": 0.0,
+  "max_abs_error_raw_vs_z_cond_difference": 0.0,
+  "splitmix_side_mismatches": 0,
+  "folds": [
+    {
+      "fold": "2025-09-04",
+      "q005_from_other_folds": -0.08166744947433471,
+      "q995_from_other_folds": 0.13089673757553139,
+      "saved_historical_center_from_held_clipped_mean": -0.029110825389446898,
+      "new_protocol_donor_center": 0.002133098220391467,
+      "max_abs_error_historical_reproduction": 0.0,
+      "rms_difference_donor_center_bridge_vs_saved": 0.031243923609838367
+    },
+    {
+      "fold": "2025-09-18",
+      "q005_from_other_folds": -0.12532310485839843,
+      "q995_from_other_folds": 0.13099954128265512,
+      "saved_historical_center_from_held_clipped_mean": -0.005954101156508201,
+      "new_protocol_donor_center": -0.005952245515320981,
+      "max_abs_error_historical_reproduction": 0.0,
+      "rms_difference_donor_center_bridge_vs_saved": 1.8556411872196105e-06
+    },
+    {
+      "fold": "2025-10-02",
+      "q005_from_other_folds": -0.12684428691864014,
+      "q995_from_other_folds": 0.12994913339614889,
+      "saved_historical_center_from_held_clipped_mean": 0.007984358260219811,
+      "new_protocol_donor_center": -0.010645531017127246,
+      "max_abs_error_historical_reproduction": 0.0,
+      "rms_difference_donor_center_bridge_vs_saved": 0.018629889277347052
+    },
+    {
+      "fold": "2025-10-16",
+      "q005_from_other_folds": -0.12833185195922853,
+      "q995_from_other_folds": 0.07998384475707998,
+      "saved_historical_center_from_held_clipped_mean": 0.002397774011048423,
+      "new_protocol_donor_center": -0.009442259725321056,
+      "max_abs_error_historical_reproduction": 0.0,
+      "rms_difference_donor_center_bridge_vs_saved": 0.01184003373636948
+    }
+  ],
+  "important_distinction": "The saved EXP069 OOF vector centered each held fold on itself. EXP072 follows the newly specified donor-derived center. The difference is foldwise constant before p_dist only in the historical already-multiplied representation."
+}

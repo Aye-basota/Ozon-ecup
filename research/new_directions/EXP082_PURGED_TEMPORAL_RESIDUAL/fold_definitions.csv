@@ -1,0 +1,5 @@
+cutoff,target_start,target_end,n,spacing_from_previous_days,previous_target_known,final_outside_survivorship_interval
+2025-07-03,2025-07-04,2025-08-02,181338,,True,True
+2025-08-07,2025-08-08,2025-09-06,184617,35.0,True,True
+2025-09-11,2025-09-12,2025-10-11,189815,35.0,True,True
+2025-10-16,2025-10-17,2025-11-15,197379,35.0,True,True

@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "scope": "unit tests plus bounded checkpoint inference; no full SEQ/ETX training",
+  "rows_per_checkpoint": 512,
+  "unit_test_seconds": 19.46265239999775,
+  "checkpoint_inference_seconds": 1.952467200000683,
+  "total_wall_seconds_charged_to_budget": 21.415119599998434,
+  "budget_minutes": 30.0,
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.4",
+    "torch": "2.11.0+cu126",
+    "polars": "1.43.2",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 4060 Ti"
+  },
+  "checks": {
+    "ETX-01-S42-DCW": {
+      "checkpoint_sha256": "bc8af886d1a4b5c81124211c8bac1d237b9987ec535faf009442526184b0937a",
+      "rows_checked": 512,
+      "checkpoint_val": "2026-02-13",
+      "device": "cuda",
+      "max_abs_log_error": 0.03125,
+      "rms_log_error": 0.002807036630066351,
+      "allclose_atol_5e-2": true
+    },
+    "ETX-01-S43-DCW": {
+      "checkpoint_sha256": "685c228b4089a4c2d7292bdd1ad17ee6a402366fd6c557d37d31f6a278c4b4b2",
+      "rows_checked": 512,
+      "checkpoint_val": "2026-02-13",
+      "device": "cuda",
+      "max_abs_log_error": 0.03125,
+      "rms_log_error": 0.001991958792030911,
+      "allclose_atol_5e-2": true
+    },
+    "ETX-01-S44-DCW": {
+      "checkpoint_sha256": "1a5b31e0687ac6cdbbbd4910f6924080f61f05b64b465b77fab7283e8479d7c4",
+      "rows_checked": 512,
+      "checkpoint_val": "2026-02-13",
+      "device": "cuda",
+      "max_abs_log_error": 0.03125,
+      "rms_log_error": 0.0026524849462216805,
+      "allclose_atol_5e-2": true
+    },
+    "SEQ-C289-S43": {
+      "checkpoint_sha256": "b1383e13aee626ed93fcaa420b3a96bb03b929ed162e39c889b3524e9678ff2f",
+      "rows_checked": 512,
+      "checkpoint_val": "2026-02-13",
+      "device": "cuda",
+      "max_abs_log_error": 0.0,
+      "rms_log_error": 0.0,
+      "bitwise_equal": true
+    },
+    "SEQ-C289-S44": {
+      "checkpoint_sha256": "06b10e5469d4a9832726c905ce7e35ae4e3fcf7f5f9682ae283a6d7234a94051",
+      "rows_checked": 512,
+      "checkpoint_val": "2026-02-13",
+      "device": "cuda",
+      "max_abs_log_error": 0.0,
+      "rms_log_error": 0.0,
+      "bitwise_equal": true
+    },
+    "SEQ-01": {
+      "checkpoint_available": false,
+      "frozen_prediction_available": true,
+      "note": "Historical seed-42 checkpoint was not saved; full retraining code is included."
+    }
+  }
+}

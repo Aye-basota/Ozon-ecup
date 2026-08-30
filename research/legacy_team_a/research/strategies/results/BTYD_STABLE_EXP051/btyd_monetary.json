@@ -1,0 +1,26 @@
+[
+  {
+    "K": 3.0,
+    "donor_group": 0,
+    "donor_only": true,
+    "fold": "2026-02-13",
+    "input_sha256": "1e026bfdbf689f81ec0778557f12552b7d0c1a460453e5112140ab76b164a95b",
+    "mu_population": 3.2611644733003815,
+    "n_positive_purchase_days": 2366964,
+    "n_users": 124787,
+    "recipient_group": 1,
+    "sigma_population": 1.160022049239836
+  },
+  {
+    "K": 3.0,
+    "donor_group": 1,
+    "donor_only": true,
+    "fold": "2026-02-13",
+    "input_sha256": "9081353c2d170b8958bb7ddec5c257046018dc242b4e79a4bbff909414690c8f",
+    "mu_population": 3.2593845004101496,
+    "n_positive_purchase_days": 2369943,
+    "n_users": 125213,
+    "recipient_group": 0,
+    "sigma_population": 1.1601290539845999
+  }
+]

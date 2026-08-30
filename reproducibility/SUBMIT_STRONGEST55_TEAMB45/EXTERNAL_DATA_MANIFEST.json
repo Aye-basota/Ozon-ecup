@@ -1,0 +1,188 @@
+{
+  "raw": {
+    "train.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\raw\\train.parquet",
+      "bytes": 180148911,
+      "sha256": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0"
+    },
+    "sample_submit.csv": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\raw\\sample_submit.csv",
+      "bytes": 4566914,
+      "sha256": "06a433b0ac32f7c0292ce3cb994c1684b4156b392f30fe537ea6a44d0bc4c1b1"
+    }
+  },
+  "strongest_dl_cache": {
+    "seq_panel_v1.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\processed\\seq_panel_v1.npy",
+      "bytes": 2863000128,
+      "sha256": "2ff92d6b3890a8aa66347f4063c99cdd312973f1ed6e7b69d1faa1240854e0bd"
+    },
+    "seq_gmv_v1.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\processed\\seq_gmv_v1.npy",
+      "bytes": 818000128,
+      "sha256": "b184c7351d279fe2a9a51493503b7b9b67c64552d18182d12f07d4e6d5af1e2b"
+    },
+    "seq_uid_v1.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\processed\\seq_uid_v1.npy",
+      "bytes": 2000128,
+      "sha256": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a"
+    },
+    "seq_scale_v1.json": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\processed\\seq_scale_v1.json",
+      "bytes": 506,
+      "sha256": "dfda617c951756e15eb484418a340253c1db1f40e13c4a22e77d2aa79d15f6d6"
+    },
+    "etx_ev_x_v1.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\processed\\etx_ev_x_v1.npy",
+      "bytes": 857668296,
+      "sha256": "5047a8bee9a38c99354164bbe83171fbb32eeb42a33ee84668ad5d22344a05fd"
+    },
+    "etx_ev_day_v1.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\processed\\etx_ev_day_v1.npy",
+      "bytes": 61262140,
+      "sha256": "c35e5b176c042a5ecc190399775e499825ab6f47b24997961f947a2215ca9fe6"
+    },
+    "etx_ev_ptr_v1.npy": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\processed\\etx_ev_ptr_v1.npy",
+      "bytes": 2000136,
+      "sha256": "2a8b1f92ec4e6d872edc2bc800d9c0d8d2e95665007352f5af4a77df106f08c3"
+    }
+  },
+  "team_b_feature_cache": {
+    "features_recency_2025-08-28.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2025-08-28.parquet",
+      "bytes": 60072210,
+      "sha256": "85cc8c3935696d8fe63864cde1739fd5caf75724dad9d102e9fc7bfc999fc0bc"
+    },
+    "features_recency_2025-09-04.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2025-09-04.parquet",
+      "bytes": 60446053,
+      "sha256": "edfc251c9dd7c89a1041442cde579c2c1a712b5d545a516d823771c1311da1e7"
+    },
+    "features_recency_2025-09-11.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2025-09-11.parquet",
+      "bytes": 60602620,
+      "sha256": "186481d5ae80d682456481ce05177e727d1f81fc15a4c9353d801da8b38e339c"
+    },
+    "features_recency_2025-09-18.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2025-09-18.parquet",
+      "bytes": 61355501,
+      "sha256": "f3a69f48d984a0a53475dcc4e62c7592b539e1355d9af562776d8fd2dadc3579"
+    },
+    "features_recency_2025-09-25.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2025-09-25.parquet",
+      "bytes": 61898156,
+      "sha256": "7ef056c9e1d4976f5992c68293eb7d64ce82b7acb439bf0bef3d451705775281"
+    },
+    "features_recency_2025-10-02.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2025-10-02.parquet",
+      "bytes": 62276980,
+      "sha256": "9d6277234f7f0f6b4874c1ec6d0330ec637184ac3abc623b7c619358aadcd6aa"
+    },
+    "features_recency_2025-10-09.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2025-10-09.parquet",
+      "bytes": 62721567,
+      "sha256": "5eb0ee24a60a4ea2d2573ee87d4b665e4bd360eca6ced6d963478c3c6e5fdaaa"
+    },
+    "features_recency_2025-10-16.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2025-10-16.parquet",
+      "bytes": 63534919,
+      "sha256": "c8ef675a923e25d93667524495d18017aed8d436dd5acec56a06b6d753c2159e"
+    },
+    "features_recency_2026-02-14.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_recency_2026-02-14.parquet",
+      "bytes": 69121658,
+      "sha256": "b1c717cb49b5b798ad3095a19e6439433f86761f75766c46ada131a167c580f6"
+    },
+    "features_long_buy_post_order_2025-08-28.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2025-08-28.parquet",
+      "bytes": 106922159,
+      "sha256": "93fb9b884c216cbf8fb9dac171cacc290633ba88588fea9184e4f3c08e7f1701"
+    },
+    "features_long_buy_post_order_2025-09-04.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2025-09-04.parquet",
+      "bytes": 107611083,
+      "sha256": "9a0fd295ce82ae311bd9e5f4ac48a325947e4aab8bf436b4916c3015f4fa3ee4"
+    },
+    "features_long_buy_post_order_2025-09-11.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2025-09-11.parquet",
+      "bytes": 108046901,
+      "sha256": "ca231d2415dc0ed2492a40b7776b3acc0480e2e58c86035c87f53f615a1aac1a"
+    },
+    "features_long_buy_post_order_2025-09-18.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2025-09-18.parquet",
+      "bytes": 109174849,
+      "sha256": "f6b00f012d236bcbfe83cba48a7ae3ff70e3f26ca4dd008c68cd640d599bb1dc"
+    },
+    "features_long_buy_post_order_2025-09-25.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2025-09-25.parquet",
+      "bytes": 110021862,
+      "sha256": "dbcadc3327384c9fec8c4db3f336f8816ee23f907bbe84a97756c15a9fa38567"
+    },
+    "features_long_buy_post_order_2025-10-02.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2025-10-02.parquet",
+      "bytes": 110711609,
+      "sha256": "69b3c15f7435594d5ed53b089e2adc230305a2ea5893626330f52f7406a609d8"
+    },
+    "features_long_buy_post_order_2025-10-09.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2025-10-09.parquet",
+      "bytes": 111477970,
+      "sha256": "f84a88d280e9c6fa398ba781f82348c4341ed6b88a769bfb78deff9124a28b99"
+    },
+    "features_long_buy_post_order_2025-10-16.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2025-10-16.parquet",
+      "bytes": 112619250,
+      "sha256": "78356b7318b50c7656de522de8647caff824dce7043a2bb13fe8cbdd1a1b7beb"
+    },
+    "features_long_buy_post_order_2026-02-14.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_long_buy_post_order_2026-02-14.parquet",
+      "bytes": 122569997,
+      "sha256": "e69aa7592d853ea398168c94b0bf8200c9b4859f57718fb749721e942c41302c"
+    },
+    "features_behavior_v1_2025-08-28.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2025-08-28.parquet",
+      "bytes": 178122863,
+      "sha256": "26a544bd9d9d923e2cfd0c9b0e00b69f82d4114e41cdb58893dc638eece0e5f0"
+    },
+    "features_behavior_v1_2025-09-04.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2025-09-04.parquet",
+      "bytes": 179413713,
+      "sha256": "2b95c546c8236cbc980046778f20fcf905293db29ea0fe331428a90972437064"
+    },
+    "features_behavior_v1_2025-09-11.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2025-09-11.parquet",
+      "bytes": 180423178,
+      "sha256": "3e88a44f68abed45c6a22490f774d58de60b0b67d6c9fcd22c610cc2467ff488"
+    },
+    "features_behavior_v1_2025-09-18.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2025-09-18.parquet",
+      "bytes": 182154717,
+      "sha256": "4e14d506e13c6fbdb6ecd519781fa56ed5118f7663339e75bc062414bf4f6948"
+    },
+    "features_behavior_v1_2025-09-25.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2025-09-25.parquet",
+      "bytes": 183607462,
+      "sha256": "99e181734c27ef4371dfae2837992775a11836a5b3ced180ae0f198a35cad1fa"
+    },
+    "features_behavior_v1_2025-10-02.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2025-10-02.parquet",
+      "bytes": 184914855,
+      "sha256": "1d3c0161889d3bfe6eb13a1b2fb8a59b48ec5466690c2b12451d460782751d1f"
+    },
+    "features_behavior_v1_2025-10-09.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2025-10-09.parquet",
+      "bytes": 186303870,
+      "sha256": "18aff35abf13a1fac831d1b55e7863a597cd22072dad82ffa05e74fff3d26e51"
+    },
+    "features_behavior_v1_2025-10-16.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2025-10-16.parquet",
+      "bytes": 188088056,
+      "sha256": "26493526ba7788b4eeda43aeb22e701afdf4c62056678e6f69f0820d6a85f7fa"
+    },
+    "features_behavior_v1_2026-02-14.parquet": {
+      "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\processed\\features_behavior_v1_2026-02-14.parquet",
+      "bytes": 206014195,
+      "sha256": "3f02f9ecb66d5d3974f357164b9cb68521bfbbb70a8fb30fbdbd19480bdeea42"
+    }
+  }
+}

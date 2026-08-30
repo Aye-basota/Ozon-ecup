@@ -1,0 +1,61 @@
+path,size,sha256,semantic_role,artifact_kind,recovery_status
+C:/Users/Admin/Desktop/submission_geometry_research/gpt_pro_research_packet/06_ALIGNED_OOF.parquet,48652121,7e64510b4c019ddcded125ba356517eeb2e31c32ecc11c856581f0c632c2de3f,canonical aligned OOF bank,OOF,exact
+C:/Users/Admin/Desktop/submission_geometry_research/gpt_pro_research_packet/07_ALIGNED_TEST.parquet,41131499,d466eed2f649d51fc37a93e63d19f8f0c7a72d3e373d43c77085d8f55c112e2c,canonical aligned TEST bank,TEST,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_FRESH_CONTRAST_MOE.npz,26380153,1fb3b8a2d0d77afd06bc529d69e32e07bd5f01060a775a7fc02fb65f6cb03cda,saved FRESH raw and nested corrections,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/FRESH_CONTRAST_MOE_fold_20250904.npz,5982010,aa67ae5967c315e17e0cfe8ba78e24d56a10d8f8ca97772496a97ff238b7b02d,FRESH fold source 2025-09-04,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/FRESH_CONTRAST_MOE_fold_20250918.npz,6081210,84abf5754bb0b7f2d2ce1f7ed9b4bea653e44937515a60f9b940d726c2f33c3a,FRESH fold source 2025-09-18,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/FRESH_CONTRAST_MOE_fold_20251002.npz,6177815,700afe9641e8cee4934bf8d3da7abf18117febbeb798c1b9457bdd6fb45853cf,FRESH fold source 2025-10-02,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/FRESH_CONTRAST_MOE_fold_20251016.npz,6290693,f3899f1e47325fbeb6ad84e444a0afda7b3160edd488c12236cf0757677fc089,FRESH fold source 2025-10-16,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/S04PROD_S42-V0904_z.npz,28918871,028e977273565c99de1257860e5009a253112beed2e63c62d304868bd3264bb2,EXP-032B conditional predictions 2025-09-04,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/S04PROD_S42-V0918_z.npz,29325493,68452e17500f112eee1c374f3da9d02d5e8888e84f94b09d6dd7070c64fde762,EXP-032B conditional predictions 2025-09-18,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/S04PROD_S42-V1002_z.npz,29748857,b5a26ffdfe1292ac3b004fbf947b9d9070065cb76bce5eee2edc3abbd3646434,EXP-032B conditional predictions 2025-10-02,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/S04PROD_S42-V1016_z.npz,30314984,9011d97e644b215dfe646bec2e94a3a3417333f8dc2cd764e33b989668a55aba,EXP-032B conditional predictions 2025-10-16,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/model_SEQ-D3A-BASE-S42-V0904.pt,1003729,cc63eb41a893f8cd24b77b6b7b129a503f1e37001c1eae42b09c7398b1704dd6,frozen clean encoder fold 2025-09-04,checkpoint,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/model_SEQ-D3A-BASE-S42-V0918.pt,1003729,19147af98a944c2d403b68e0383c0f857cab0e5d08564a7ce918d058f9ee85bb,frozen clean encoder fold 2025-09-18,checkpoint,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/model_SEQ-D3A-BASE-S42-V1002.pt,1003729,d6c29829bad07e5998627fd6882c96e4efa49012cabe7100aa81a3bf7aad48b3,frozen clean encoder fold 2025-10-02,checkpoint,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/model_SEQ-D3A-BASE-S42-V1016.pt,1003665,e5493a0f704944fdbc00551ddd38a3009e7cf93ac14dc86c6e9ad50d2c198a66,frozen clean encoder fold 2025-10-16,checkpoint,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/model_SEQ-D3A-BASE-S42-TEST.pt,1003667,e8b1807f05b1b9d151bd34f10b0b269e0217f41167d227138ad4b9aaba1cf30f,exactly-once production SEQ-D3A-BASE-S42 encoder,checkpoint,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/BTYD_STABLE_EXP051/oof_raw.npz,29401536,093358cc2da37fd5aa545ec3c68f693e5de1d13889bcc5006d62a5ed131f87c7,stable BTYD direction,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/BTYD_STABLE_EXP051/test_raw.npz,14936376,5222d26166c600ba201958937d7226ba535a49a1c7aeb2a8dc3b328b437e5a43,stable BTYD direction,TEST,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/BTYD_STABLE_EXP051/config.json,1883,9b22fe14bb9733478f5302eeb048d25b6de5ae65ec2999217d4558c67a00c77b,stable BTYD production config,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-E03a.npz,5996981,38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525,EXP-037 CAP component,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-E02.npz,5996760,2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff,EXP-037 UNC component,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_S1-DIST.npz,5996730,7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e,EXP-037 DIST component,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_SEQ-AVG3.npz,4765259,8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c,EXP-037 SEQ-AVG3 component,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/oof_ETX-AVG3.npz,4741153,890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f,EXP-037 ETX-AVG3 component,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/fresh_contrast.py,33440,e04dbf4cf9e3053533c2b68ff279a9c8f6f2d99f83cf50ef4581dcdb30b4cdf4,EXP-040 preprocessing and symmetric assembly,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/seq_cond.py,54317,a2e499d17911d2c88a9581d54714902f50ba7b9b499c47e5a5770ab32053252e,EXP-032 conditional heads and splitmix64,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/seq.py,77813,d95e0101692169781ea1ca6c585629cbb2f06d340e39f8afeb5a8e8e164c88b5,SEQ-D3A encoder and data construction,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/selection_mismatch_followup.py,31661,cfe5a971972bdb8871ae0d28229b01860291f383889dd3cc3d057c84f8802651,EXP-049 same-fold combined audit,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/btyd05_production.py,22575,4be1d59b0bd9293bfa92f8c366783ac56a47cd2ca9757d8ea8fbeba8449a62ed,EXP-050 production audit,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/btyd_exp051.py,16298,a24d4e49843f584871d8e94bdbbc3ce0e601d653c1ff379b32c7edce81a6d767,EXP-051 stable BTYD orchestration,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/src/block4_saf.py,41305,65f6a441987e2e0099233076429c67ee068e8a628c3b2a5dc248290427afe1ff,EXP-037 builder and strongest TEST construction,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/experiments/exp_032_s04_cond_fresh_pilot.md,22176,b797ecd44a7a7af51be03f6833d9339550a37f494aae4f7f0f450f095cbb3f3b,EXP-032 historical report,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/experiments/exp_032b_prod_extensive.md,24324,687c30cdde2ecd1d360375cfaa476c24fb09ee88754e2f32eb69734fde6be097,EXP-032B historical report,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/experiments/exp_040_fresh_contrast_moe.md,9522,842c00add1aba8c35ff10c6d671a7ea965b3a7c56732eca93ac2f0fdcdbe4f86,EXP-040 registered report,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/experiments/exp_049_selection_mismatch_production_followup.md,8690,089cbc6584846b800d1bc089b82eb79a27a5411aacc2d22d4123de449a6eb2ad,EXP-049 combined audit report,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/experiments/exp_050_btyd05_production_resolution.md,5422,9a4a528b0ce103054032d997c04c539373f3e0a8ad38afc597bb1d946be572e9,EXP-050 production blocker report,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/experiments/exp_051_btyd_stable_production.md,6435,d59e4a2c84e492701f325b8d098f857d9d285b444fd8b276e54295ade408bfa5,EXP-051 stable BTYD report,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/research/strategies/results/FRESH_CONTRAST/config.json,676,f8f377ae6e4ecaf541547dd7ed7d61deaa6e8e117f2fb8fe90b3258119d0941f,EXP-040 registered configuration,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/research/strategies/results/FRESH_CONTRAST/summary.json,684,b9beba9f3cf0468a008a76eb52413d081e1e78501b760090b5f84cb14960d528,EXP-040 registered summary,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/research/strategies/results/FRESH_CONTRAST/nested_lofo.csv,4205,2cbd11e9307b299e07d4b83f3ca0a953865c2fe8138763465908f85c4fae10b8,EXP-040 nested selections,OOF,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/research/strategies/results/BTYD_STABLE_EXP051/fresh_parity_audit.json,4768,496b445462314ca33f512d89438816d78079bcd4775b572e33eef7bf3c6c92ce,missing TEST checkpoint audit,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/research/strategies/results/BTYD_STABLE_EXP051/fresh_retrain_audit.json,2733,9096356e93957f02aa5ce0e30f90c8d0f5b8f23758289dec757ec01c8650507a,registered exact retrain scope,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/raw/sample_submit.csv,4566914,06a433b0ac32f7c0292ce3cb994c1684b4156b392f30fe537ea6a44d0bc4c1b1,canonical TEST user order,TEST,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/data/processed/seq_scale_v1.json,506,dfda617c951756e15eb484418a340253c1db1f40e13c4a22e77d2aa79d15f6d6,CLEAN-only sequence normalization,config,exact
+C:/Users/Admin/Desktop/submission_geometry_research/submission_geometry/manifest.csv,16398,29a0c3e6c829ddd555e146eafa4d7b9e3570525e39d3e6890740ff80b94f5cec,65-source geometry manifest,config,exact
+C:/Users/Admin/Desktop/submission_geometry_research/submission_geometry/cache/Z.npz,123040252,443e80472f321e796faccfe0e9ea6954653397eb74311e7abef7471ea3064dfe,65 unique aligned log TEST vectors,TEST,exact
+C:/Users/Admin/Desktop/submission_geometry_research/submission_geometry/core.py,1592,1f2fd32409f3a4da98ecea3225f782d7d72cdc1c5698465e63a9ec133ff0d34a,geometry unique-vector loader,config,exact
+C:/Users/Admin/Desktop/submission_geometry_research/submission_geometry/geomlib.py,3270,009e6b52a0e562cb5df1022773098229120862b14178b496ccad297d2d9612bc,geometry alignment cache builder,config,exact
+C:/Users/Admin/Desktop/submission_geometry_research/submission_geometry/directions.py,4517,3317551f88c4cc06ef3664400a6d303cd50a8441bdd4352c8547068d407127ce,rank-57 QR/SVD basis builder,config,exact
+C:/Users/Admin/Desktop/submission_geometry_research/submission_geometry/build_SUBMIT_NEXT_BEST.py,3639,38d10775ec9ed1ffee5dc1509f4fb54b3cb0d00ce8b3a1d7c7ea35408a4e5a3b,current TEST geometry candidate builder,config,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/ZERO2D_DIST_test.npz,7985288,ef3e528caa84a20c3a820a3fe4cbaccd455cbfc7e6175981d2d512538fd83e85,CLEAN-only S1-DIST TEST probability with documented historical mismatch,TEST,reconstructed
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/ztest_SEQ-D3A-BASE-S42.npy,2000128,e6a4c70f9bc48f705543be80329e6c0e3986a6f69c8211bfebfe8be0afaacb5f,production encoder D289 TEST inference,TEST,exact
+C:/Users/Admin/Desktop/OZON-E-CUP/artifacts/ztest_SEQ-D3A-BASE-S42-FULL.npy,2000128,e74cc90a271be2f59cded5fb83601012bdf0ddf1f152e8922a18511706dec369,production encoder FULL TEST diagnostic,TEST,exact
+C:/Users/Admin/Desktop/e-cup-research-clean/research/new_directions/EXP069_BTYD05_FRESH1_PROD/fresh_production_raw.npz,23029490,3c747dcbcd4b1e9e2b8186c092ef2fba05ac3d63c2ecf31758404207e7ba8e77,two-sided raw FRESH and VOL TEST corrections,TEST,reconstructed
+C:/Users/Admin/Desktop/e-cup-research-clean/research/new_directions/EXP069_BTYD05_FRESH1_PROD/fresh_production_heads.pt,917213,9c14a654d3bce49b0680cc925f7bf382c2eb5d58813f2ec3f4233eacc8fc1b94,two-sided conditional head states,checkpoint,exact
+C:/Users/Admin/Desktop/e-cup-research-clean/research/new_directions/EXP069_BTYD05_FRESH1_PROD/fresh_conditional_OOF.parquet,41213707,38939f438713f4869b3b1108f73d71df79cce83a202b1814cca8dbc6fab9d1d8,historical processed FRESH diagnostic vector,OOF,exact
+C:/Users/Admin/Desktop/e-cup-research-clean/research/new_directions/EXP069_BTYD05_FRESH1_PROD/fresh_conditional_TEST.parquet,20899834,f1b8c3b65c654630abd90425956490d9ad0f2b8d165d5f1fed0da0f8feeaad91,production processed FRESH diagnostic vector,TEST,reconstructed
+C:/Users/Admin/Desktop/e-cup-research-clean/research/new_directions/EXP069_BTYD05_FRESH1_PROD/btyd05_fresh1_OOF.parquet,26547745,472be8cad64c43ec2c2783fea6497b20fe02ffefa0d49344e3ddb78fbb81a07b,standardized BTYD05_FRESH1 endpoint,OOF,exact
+C:/Users/Admin/Desktop/e-cup-research-clean/research/new_directions/EXP069_BTYD05_FRESH1_PROD/btyd05_fresh1_TEST.parquet,7846686,68f5f9e86110e4b7a59776997521c33f7dc80c28b918fea59d9c223825ae19b0,standardized BTYD05_FRESH1 geometry vector,TEST,reconstructed
+C:/Users/Admin/Desktop/e-cup-research-clean/research/new_directions/EXP069_BTYD05_FRESH1_PROD/btyd05_fresh1_TEST.csv,6362147,5170617dd5c538691ee107ad2732342799c298e7beb2130e9760a5fa205b13b7,canonical submission-schema geometry input,TEST,reconstructed

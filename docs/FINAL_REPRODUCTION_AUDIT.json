@@ -1,0 +1,79 @@
+{
+  "date": "2026-08-31",
+  "environment": {
+    "status": "PASS",
+    "python": "3.13",
+    "numpy": "2.3.4",
+    "pandas": "2.3.3",
+    "polars": "1.43.2",
+    "pyarrow": "21.0.0",
+    "scikit_learn": "1.7.2",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10",
+    "raw_rows": 30631006,
+    "raw_columns": 18
+  },
+  "feature_builder_sanity": {
+    "status": "PASS",
+    "cutoff": "2025-04-03",
+    "history_days": 90,
+    "rows": 213167,
+    "columns": 167,
+    "user_id_sorted": true,
+    "duplicate_user_id": false,
+    "infinite_cells": 0,
+    "nan_or_null_cells_before_model_fill": 2669328,
+    "finite_after_standard_fill": true
+  },
+  "canonical_oof": {
+    "status": "PASS",
+    "sha256": "8ac8aebea5dd875a34f5ccfbcedbd6dc12be39147e29c9a5efae236d895b5c9d",
+    "rows": 770616,
+    "unique_row_keys": 770616,
+    "wCV": 1.7475098625201952,
+    "absolute_error_vs_expected": 0.0
+  },
+  "final_submissions": {
+    "SUBMIT_STRONGEST55_TEAMB45": {
+      "EXPECTED_SHA256": "1ce85203e3069363e3d2ba425078213d1a723a895e3c684573a6c1b998a14fb4",
+      "REPRODUCED_SHA256": "1ce85203e3069363e3d2ba425078213d1a723a895e3c684573a6c1b998a14fb4",
+      "BYTE_IDENTICAL": "YES",
+      "max_abs_prediction_difference": 0.0,
+      "RMS_log_space_difference": 0.0,
+      "rows": 250000,
+      "unique_user_id": 250000,
+      "finite_predictions": true,
+      "nonnegative_predictions": true
+    },
+    "SUBMIT_JOINT86_TEAMB14": {
+      "EXPECTED_SHA256": "85d9cd645e14a7895da9ad8cc89065714606266be588c762d37487d2b4edac02",
+      "REPRODUCED_SHA256": "85d9cd645e14a7895da9ad8cc89065714606266be588c762d37487d2b4edac02",
+      "BYTE_IDENTICAL": "YES",
+      "max_abs_prediction_difference": 0.0,
+      "RMS_log_space_difference": 0.0,
+      "rows": 250000,
+      "unique_user_id": 250000,
+      "finite_predictions": true,
+      "nonnegative_predictions": true
+    }
+  },
+  "compileall": "PASS",
+  "strongest_package_manifest_verify": "PASS (77 files)",
+  "bounded_dl_smoke": {
+    "status": "PASS",
+    "unit_tests_passed": 114,
+    "unit_tests_skipped": 1,
+    "checkpoints_checked": 5,
+    "cuda_device": "NVIDIA GeForce RTX 4060 Ti",
+    "seq_bitwise_equal": true,
+    "etx_max_abs_log_error": 0.03125,
+    "etx_tolerance": 0.05,
+    "seq01_checkpoint_available": false,
+    "seq01_frozen_prediction_available": true
+  },
+  "known_non_exact_raw_retrain": {
+    "strongest_component_reason": "historical boosters/exact feature matrices and SEQ-01 seed-42 checkpoint missing",
+    "strongest_final_RMS_log_difference": 0.014985184671379773,
+    "team_b_byte_identical": true
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "raw_data": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\delivery\\submission_STRONGEST_CURRENT_training_bundle_v2\\pipeline\\data\\raw\\train.parquet",
+  "raw_data_sha256": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0",
+  "started_at_epoch": 1788111145.6871405,
+  "strongest_components": {
+    "S1-UNC": {
+      "bitwise_equal": false,
+      "max_abs_log_error": 0.9423141474799563,
+      "mean_abs_log_error": 0.07350855308411137,
+      "rms_log_error": 0.10403427923908955,
+      "correlation": 0.9977887236884886
+    },
+    "S1-CAP": {
+      "bitwise_equal": false,
+      "max_abs_log_error": 0.9699620858933544,
+      "mean_abs_log_error": 0.055433285011984273,
+      "rms_log_error": 0.08087993042528197,
+      "correlation": 0.9986944574409943
+    },
+    "S1-DIST": {
+      "bitwise_equal": false,
+      "max_abs_log_error": 0.7333596312700936,
+      "mean_abs_log_error": 0.04453212574304636,
+      "rms_log_error": 0.06226433276681451,
+      "correlation": 0.9991905129400246
+    }
+  },
+  "strongest_train_seconds": 2470.2071698,
+  "strongest_submission": {
+    "actual_sha256": "8db2ed004aafa1d19a2a7892148de436070691f5c0fabc729e3d319bb5533f69",
+    "expected_sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+    "byte_equal": false,
+    "max_abs_log_error": 0.3049944277935248,
+    "mean_abs_log_error": 0.01943159443214581,
+    "rms_log_error": 0.027245790286202557,
+    "correlation": 0.999849800459044
+  },
+  "team_b_train_seconds": 1921.8566361000012,
+  "team_b_submission": {
+    "actual_sha256": "4ed2916baca85c13d51dcfc4f99877b5d06c03abce90ea0c1aae8c0506d44aba",
+    "expected_sha256": "4ed2916baca85c13d51dcfc4f99877b5d06c03abce90ea0c1aae8c0506d44aba",
+    "byte_equal": true,
+    "max_abs_log_error": 0.0,
+    "mean_abs_log_error": 0.0,
+    "rms_log_error": 0.0,
+    "correlation": 1.0
+  },
+  "final_submission": {
+    "actual_sha256": "8a95029db325e41b403e96f33e5a09275826810010cac70dd79a18e0987b6fb0",
+    "expected_sha256": "1ce85203e3069363e3d2ba425078213d1a723a895e3c684573a6c1b998a14fb4",
+    "byte_equal": false,
+    "max_abs_log_error": 0.167746586544534,
+    "mean_abs_log_error": 0.010687373239549292,
+    "rms_log_error": 0.014985184671379773,
+    "correlation": 0.9999560523570664
+  },
+  "total_seconds": 4395.146306276321
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_365_TEST_PERP.npy",
+    "bytes": 1000128,
+    "sha256": "9b4527057531f6981744c1f2369136ef4446623675a416c5c21b1195112d01ae"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_365_test_predictions.parquet",
+    "bytes": 5850116,
+    "sha256": "d536c7ae05ef2d8aff4d9f9c42761221d6e8d5f4021f88de369af9318d8e3e60"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A1_TREE_TRAJ_365_TEST_raw_correction.npy",
+    "bytes": 1000128,
+    "sha256": "69ac89571faa6ef66c3f931ed88379b7a923d870bf43adbd9dc851071d6150a4"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_latest_pilot_model.pt",
+    "bytes": 141591,
+    "sha256": "4b0250071366d0f616350978423f8c59325bb4a77870f46dc58c9b60f5feb583"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\a2_latest_pilot_predictions.parquet",
+    "bytes": 9548692,
+    "sha256": "5e5865c3df256a465429b9b73f83d886b0d22b3ba531029915aca6acc138da7c"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A2_WEEKLY_RESIDUAL_CNN_TEST_PERP.npy",
+    "bytes": 1000128,
+    "sha256": "2ffc2ef15138ad1a64e95dac6373c7449006d5cfb8cc24df4ef1bf20c3d44e58"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A2_WEEKLY_RESIDUAL_CNN_test_predictions.parquet",
+    "bytes": 5858895,
+    "sha256": "71aa0cbc75027bc72eec6c59e53f097cf6ba8b4034d6000ff1d0dab9d078371f"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\A2_WEEKLY_RESIDUAL_CNN_TEST_raw_correction.npy",
+    "bytes": 1000128,
+    "sha256": "9a0533332ec9439ab02640fef46e63a90000ba5f45ecac9be75e79d1f3285281"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\final_A1_TREE_TRAJ_365.txt",
+    "bytes": 987048,
+    "sha256": "5605e7128145ac959aace8d117bf221bd40b85c42008f90a5b75df696faabdfc"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\final_A2_WEEKLY_RESIDUAL_CNN.pt",
+    "bytes": 141985,
+    "sha256": "6c7fcc2d324477bdadc5ae81d7ed1c5ff3836a03c209aef929e311884e0236ef"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\JOINT_A1_365_A2_TEST_PERP.npy",
+    "bytes": 1000128,
+    "sha256": "e3667884a661adf64a6ce5f231956bab18e45a7e6f017e453506f5e93d3045da"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\JOINT_A1_365_A2_test_predictions.parquet",
+    "bytes": 5860047,
+    "sha256": "636b84fea2e0288c74218f7c663c519b362eb51d98f350adc68946aebe94c4b4"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\JOINT_A1_365_A2_TEST_raw_correction.npy",
+    "bytes": 1000128,
+    "sha256": "36aab793c8d023e73b2c120ed4488d86461826fa7b090b489de6b15a8efb033b"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\test_span_projection.json",
+    "bytes": 8055,
+    "sha256": "18ea9c7f6abf0b2c0c1a3340557866827572e8802bccb0c4c510b84a687caa68"
+  },
+  {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\\train_final_and_test_gate.py",
+    "bytes": 12831,
+    "sha256": "8d4a9833f8c65e7cc95e8c28f8125b227fdb43f69a1a8a9f9b132c23f36820e5"
+  }
+]

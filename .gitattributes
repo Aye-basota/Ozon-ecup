@@ -3,3 +3,9 @@
 *.npy binary
 *.npz binary
 *.pt binary
+submissions/*.csv binary
+reproducibility/**/*.csv binary
+# Reproducibility manifests hash the preserved source/report bytes.  These
+# files stay diffable, but Git must not rewrite their historical line endings.
+reproducibility/**/*.py -text
+reproducibility/**/*.json -text

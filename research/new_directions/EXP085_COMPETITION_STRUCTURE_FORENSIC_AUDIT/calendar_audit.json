@@ -1,0 +1,106 @@
+{
+  "test_window": [
+    "2026-02-14",
+    "2026-03-15"
+  ],
+  "days": 30,
+  "weekday_counts": {
+    "Monday": 4,
+    "Tuesday": 4,
+    "Wednesday": 4,
+    "Thursday": 4,
+    "Friday": 4,
+    "Saturday": 5,
+    "Sunday": 5
+  },
+  "weekend_days": 10,
+  "special_dates_requested": {
+    "2026-02-23": "Monday",
+    "2026-03-08": "Sunday"
+  },
+  "training_fold_target_composition": "all four canonical cutoffs are Thursday; their targets start Friday and contain five Fridays plus five Saturdays",
+  "test_composition_difference": "test cutoff is Friday; target starts Saturday and replaces the fifth Friday by a fifth Sunday",
+  "folds": [
+    {
+      "cutoff": "2025-09-04",
+      "original_target_start": "2025-09-05",
+      "shifted_target_start": "2025-09-06",
+      "actual_delta_mean": 0.00596400614909627,
+      "actual_delta_rms": 0.4406730886621638,
+      "actual_delta_corr_original_residual": -0.11520279481923142,
+      "calendar_oracle_after_span": 0.05570902972240121,
+      "calendar_oracle_debiased": 0.05569228824238725,
+      "observable_proxy_rho": 0.0035180292476864384,
+      "observable_proxy_headroom": 3.888814287043751e-05,
+      "observable_proxy_debiased": 2.2146662856478837e-05,
+      "mean_sunday_minus_friday_gmv": 0.1648456873708097,
+      "aggregate_shifted_vs_original_gmv_ratio": 1.0036093400466624
+    },
+    {
+      "cutoff": "2025-09-18",
+      "original_target_start": "2025-09-19",
+      "shifted_target_start": "2025-09-20",
+      "actual_delta_mean": 0.0065705873319035985,
+      "actual_delta_rms": 0.44882623193109034,
+      "actual_delta_corr_original_residual": -0.11635817915330858,
+      "calendar_oracle_after_span": 0.05902139874498753,
+      "calendar_oracle_debiased": 0.059004931331750936,
+      "observable_proxy_rho": 0.001062810112084857,
+      "observable_proxy_headroom": 3.521715454222542e-06,
+      "observable_proxy_debiased": 0.0,
+      "mean_sunday_minus_friday_gmv": 0.15083920161343345,
+      "aggregate_shifted_vs_original_gmv_ratio": 1.0058114038189279
+    },
+    {
+      "cutoff": "2025-10-02",
+      "original_target_start": "2025-10-03",
+      "shifted_target_start": "2025-10-04",
+      "actual_delta_mean": 0.0039034963792001663,
+      "actual_delta_rms": 0.42988249275682017,
+      "actual_delta_corr_original_residual": -0.1137970103914143,
+      "calendar_oracle_after_span": 0.05296986801763996,
+      "calendar_oracle_debiased": 0.05295394839329801,
+      "observable_proxy_rho": 0.0005311446098711565,
+      "observable_proxy_headroom": 8.668768025315881e-07,
+      "observable_proxy_debiased": 0.0,
+      "mean_sunday_minus_friday_gmv": 0.15532300524456477,
+      "aggregate_shifted_vs_original_gmv_ratio": 1.0013530433549294
+    },
+    {
+      "cutoff": "2025-10-16",
+      "original_target_start": "2025-10-17",
+      "shifted_target_start": "2025-10-18",
+      "actual_delta_mean": 0.010995588387510349,
+      "actual_delta_rms": 0.462090611463665,
+      "actual_delta_corr_original_residual": -0.12611853696888256,
+      "calendar_oracle_after_span": 0.058623134325051125,
+      "calendar_oracle_debiased": 0.05860770423563153,
+      "observable_proxy_rho": 0.004466153030197625,
+      "observable_proxy_headroom": 6.0704255621198044e-05,
+      "observable_proxy_debiased": 4.527416620160754e-05,
+      "mean_sunday_minus_friday_gmv": 0.15989153216950844,
+      "aggregate_shifted_vs_original_gmv_ratio": 1.008064909076093
+    },
+    {
+      "cutoff": "weighted_1_2_4_8",
+      "actual_delta_mean": 0.008178924895319128,
+      "actual_delta_rms": 0.4503053610173963,
+      "actual_delta_corr_original_residual": -0.12080369936283776,
+      "calendar_oracle_after_span": 0.05697442492555635,
+      "calendar_oracle_debiased": 0.056958638557608895,
+      "observable_proxy_rho": 0.0028998301435281186,
+      "observable_proxy_headroom": 3.5668875063906215e-05,
+      "observable_proxy_debiased": 2.5622666164622606e-05,
+      "mean_sunday_minus_friday_gmv": 0.1577965579288002,
+      "aggregate_shifted_vs_original_gmv_ratio": 1.0056775729141987
+    }
+  ],
+  "purged_proxy_transfer": {
+    "source": "2025-09-04",
+    "source_target_end": "2025-10-04",
+    "recipient": "2025-10-16",
+    "rho": 0.004466153030197629,
+    "correction_rms": 0.006339852905562367,
+    "Delta_MSE": -5.859757559510469e-05
+  }
+}

@@ -1,0 +1,16 @@
+component,check,classification,evidence
+all feature sets,feature dates,CLEAN,Every parquet scan first restricts event_date < cutoff.
+post_order,same-period leakage,CLEAN,Later-than-last-order events remain inside the pre-cutoff base CTE.
+behavior_v1,target-derived activity,CLEAN,All 114 b1_ features use only the pre-cutoff base; no future target/activity join.
+target,30-day definition,CLEAN,"SQL uses [cutoff, cutoff+30d); all validation targets are fully observed by 2026-02-13."
+two OOT folds,label overlap,CLEAN,Training target ends at validation cutoff exclusive; validation features end before cutoff.
+two OOT folds,out-of-sample prediction,CLEAN,"Validation models are fit on earlier cutoff panels; user_id is index, not a feature."
+exp024 weight grid,nested selection,QUESTIONABLE,"2,835 weight vectors are selected and reported on the same two folds; no outer fold."
+global scale 1.20,leaderboard use,QUESTIONABLE,Lineage explicitly compared scale grids to public LB; later validation was aligned after that evidence.
+level 2.370966,leaderboard geometry,QUESTIONABLE,"Level is copied from scored exp019 TEST vector; no label leakage, but not independent supervised evidence."
+behavior_v1/full vs slim,public feature selection,QUESTIONABLE,"Both CV and LB favored full, but public LB was used in the experiment lineage."
+row-level OOF,artifact availability,UNKNOWN,No OOF prediction vector or saved component predictions exist; only aggregate fold/grid tables.
+model objects,artifact availability,UNKNOWN,No LightGBM/XGBoost/CatBoost model files or training environment lockfile are supplied.
+feature cache,cache invalidation,QUESTIONABLE,Cache key is only feature_set+cutoff; raw hash/code version is not embedded.
+validation.py/config.py,canonical validation contract,QUESTIONABLE,validation.py is NotImplemented and config cutoffs are None; actual scripts hard-code fold dates.
+exp024 TEST inference,test target access,CLEAN,TEST features use history through 2026-02-13 with cutoff 2026-02-14; no TEST target is read.

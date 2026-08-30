@@ -1,0 +1,12 @@
+{
+  "n": 250000,
+  "rms_D_rebuilt": 0.07317768323135419,
+  "rms_D_stored": 0.0731775105876263,
+  "max_abs_diff_joint_vs_stored_fp32": 4.018403377095692e-05,
+  "corr_joint_vs_stored": 0.9999999968871117,
+  "A1_rebuilt_vs_stored_max_abs": 2.766451567826067e-08,
+  "A1_corr": 1.0000000000000002,
+  "A2_rebuilt_vs_stored_max_abs": 5.992334913160202e-05,
+  "A2_corr": 0.9999999914280588,
+  "corr_u1_u2_test": 0.42203243649137084
+}

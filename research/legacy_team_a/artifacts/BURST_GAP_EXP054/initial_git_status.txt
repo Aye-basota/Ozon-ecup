@@ -1,0 +1,101 @@
+## team-a-strategy-1-impl...origin/team-a-strategy-1-impl [ahead 9]
+ M HISTORY.md
+ M STATE.md
+ M experiments/log.csv
+ M experiments/submissions.csv
+ M research/strategies/STRATEGIES_INDEX.md
+ M research/strategies/STRATEGY_13_etx_event_transformer.md
+ M src/features.py
+ M src/seq.py
+ M src/test_seq.py
+?? PROBABLY_EXP.md
+?? deliverables/
+?? docs/superpowers/plans/
+?? experiments/EXP_032_S04_conditional_fresh_seq.md
+?? experiments/README.md
+?? experiments/exp_030_seq_depth_curriculum.md
+?? experiments/exp_030b_seq_d3a_seed43.md
+?? experiments/exp_030c_seq_d3a_multiseed.md
+?? experiments/exp_032_s04_cond_fresh_pilot.md
+?? experiments/exp_032b_prod_extensive.md
+?? experiments/exp_035_mix9_seq_slot.md
+?? experiments/exp_036_etx_sparse_event_transformer.md
+?? experiments/exp_037_etx_avg3_strongest.md
+?? experiments/exp_038_fnl_future_funnel.md
+?? experiments/exp_039_block4_saf.md
+?? experiments/exp_040_fresh_contrast_moe.md
+?? experiments/exp_041_ridge15.md
+?? experiments/exp_042_zero2d_shrink.md
+?? experiments/exp_043_det_pair.md
+?? experiments/exp_044_fresh_conditional_ft.md
+?? experiments/exp_045_buyctrl_det.md
+?? experiments/exp_046_tabular_backbone_refresh.md
+?? experiments/exp_047_btyd_day_bgnbd_residual.md
+?? experiments/exp_048_selection_mismatch_cv.md
+?? experiments/exp_049_selection_mismatch_production_followup.md
+?? experiments/exp_050_btyd05_production_resolution.md
+?? experiments/exp_051_btyd_stable_production.md
+?? experiments/exp_052_channel_shapley_split.md
+?? experiments/exp_053_residual_signal_discovery.md
+?? research/README.md
+?? research/strategies/results/BLOCK4_SAF/
+?? research/strategies/results/BTYD05_PROD_EXP050/
+?? research/strategies/results/BTYD_DAY_BGNBD/
+?? research/strategies/results/BTYD_STABLE_EXP051/
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/
+?? research/strategies/results/ETX1/
+?? research/strategies/results/ETX2/
+?? research/strategies/results/FNL1/
+?? research/strategies/results/FRESH_CONTRAST/
+?? research/strategies/results/MIX9/
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/
+?? research/strategies/results/RIDGE15/
+?? research/strategies/results/SELMATCH_EXP048/
+?? research/strategies/results/SELMATCH_EXP049/
+?? research/strategies/results/SEQ5/
+?? research/strategies/results/SEQ6/
+?? research/strategies/results/SEQ7/
+?? research/strategies/results/SEQ8/
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/
+?? research/strategies/results/ZERO2D_SHRINK/
+?? src/block4_saf.py
+?? src/btyd05_production.py
+?? src/btyd_day_bgnbd.py
+?? src/btyd_exp051.py
+?? src/btyd_stable_fit.py
+?? src/buyctrl_det.py
+?? src/channel_shapley_split.py
+?? src/det_pair.py
+?? src/dist_pact.py
+?? src/etx.py
+?? src/fnl.py
+?? src/fresh_cond_ft.py
+?? src/fresh_contrast.py
+?? src/residual_signal_discovery.py
+?? src/ridge15.py
+?? src/selection_mismatch_cv.py
+?? src/selection_mismatch_followup.py
+?? src/seq_cond.py
+?? src/tabular_backbone_refresh.py
+?? src/test_block4_saf.py
+?? src/test_btyd_day_bgnbd.py
+?? src/test_btyd_stable_fit.py
+?? src/test_buyctrl_det.py
+?? src/test_channel_shapley_split.py
+?? src/test_det_pair.py
+?? src/test_etx.py
+?? src/test_fnl.py
+?? src/test_fresh_cond_ft.py
+?? src/test_fresh_contrast.py
+?? src/test_residual_signal_discovery.py
+?? src/test_ridge15.py
+?? src/test_selection_mismatch_cv.py
+?? src/test_seq_cond.py
+?? src/test_tabular_backbone_refresh.py
+?? src/test_zero2d_shrink.py
+?? src/zero2d_shrink.py
+?? weights_archives/
+
+BASE_HEAD=a28a71fb2d0194052014c542f36d180dfe74bcf9
+Isolation decision: current tree, new EXP-054-only files. Latest ETX/EXP-053 inputs are uncommitted,
+so creating a clean worktree at BASE_HEAD would omit required baseline artifacts/code.

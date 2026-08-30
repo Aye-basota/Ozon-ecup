@@ -1,0 +1,7 @@
+{
+  "linked_worktree_files": 3549,
+  "linked_worktree_files_unique_vs_main": 1293,
+  "cross_namespace_duplicate_sha_groups": 2152,
+  "cross_namespace_duplicate_occurrences": 5370,
+  "unique_artifact_or_prediction_files": 362
+}

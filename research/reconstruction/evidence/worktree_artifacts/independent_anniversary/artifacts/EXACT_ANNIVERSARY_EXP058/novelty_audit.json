@@ -1,0 +1,18 @@
+{
+  "exact_user_target_window_anniversary_previously_tested": false,
+  "matched_control_previously_tested": false,
+  "closest_prior": "exp_023 HOLIDAY-YOY",
+  "exp_023_simultaneous_changes": [
+    "holiday response (within-year before/after contrast), not target-window GMV lookup",
+    "2025->2026 response slope minus a separate placebo slope",
+    "six behavior groups averaged with reliability shrinkage",
+    "zero-mean post-processing over S1-DIST-MIX, not STRONGEST_CURRENT",
+    "holiday-history eligibility and one-year New-Year-to-Feb/Mar transfer"
+  ],
+  "why_not_equivalent": {
+    "180d_365d_all_history": "aggregate different dates and cannot identify exact calendar alignment",
+    "holiday_correction": "models response around a holiday proxy, not the same user's exact target dates",
+    "long_history_capacity": "adds old-history capacity without the SHIFTED architecture-matched control"
+  },
+  "decision": "NOVEL; continue to baseline-parity preflight"
+}

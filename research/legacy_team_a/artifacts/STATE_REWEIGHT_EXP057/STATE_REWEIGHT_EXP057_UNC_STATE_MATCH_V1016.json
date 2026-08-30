@@ -1,0 +1,31 @@
+{
+  "arm": "STATE_MATCH",
+  "early_stopping": false,
+  "gpu_used": false,
+  "model_sha256": "8f479effa46fef0b82d96eef9565165b03dc32a67263204fbb8468dd55b2a03d",
+  "n_features": 236,
+  "n_train": 4955174,
+  "params": {
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "feature_fraction": 0.7,
+    "force_row_wise": true,
+    "lambda_l2": 5.0,
+    "learning_rate": 0.05,
+    "max_bin": 63,
+    "metric": "rmse",
+    "min_data_in_leaf": 200,
+    "num_leaves": 127,
+    "num_threads": 4,
+    "objective": "regression",
+    "seed": 42,
+    "verbose": -1
+  },
+  "prediction_sha256": "a961d4d4d1b4c382c6f1955bdd83af8f125bff69c8fb42095b7af4716d795976",
+  "rounds": 600,
+  "rows_and_matrix": "same materialized float32 Xtr for SHUFFLED and STATE_MATCH",
+  "seed": 42,
+  "weight_mean": 1.0,
+  "weight_sha256": "a5dccb755ad0712fb73ecbf6999616535e919affc7b68c8ec152aee5ddae45e2",
+  "weight_sum": 4955174.0
+}

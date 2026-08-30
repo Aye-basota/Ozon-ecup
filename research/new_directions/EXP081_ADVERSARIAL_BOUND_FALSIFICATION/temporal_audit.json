@@ -1,0 +1,56 @@
+{
+  "EXP080_comparable_ordered": [
+    {
+      "cutoff": "2025-09-04",
+      "train_folds": [],
+      "target_available": true
+    },
+    {
+      "cutoff": "2025-09-18",
+      "train_folds": [
+        "2025-09-04"
+      ],
+      "max_train_target_end": "2025-10-04",
+      "target_available": false
+    },
+    {
+      "cutoff": "2025-10-02",
+      "train_folds": [
+        "2025-09-04",
+        "2025-09-18"
+      ],
+      "max_train_target_end": "2025-10-18",
+      "target_available": false
+    },
+    {
+      "cutoff": "2025-10-16",
+      "train_folds": [
+        "2025-09-04",
+        "2025-09-18",
+        "2025-10-02"
+      ],
+      "max_train_target_end": "2025-11-01",
+      "target_available": false
+    }
+  ],
+  "purged_latest_LGBM": {
+    "train_cutoff": "2025-09-04",
+    "train_target_end": "2025-10-04",
+    "validation_cutoff": "2025-10-16",
+    "label_available_at_validation": true,
+    "rho": 0.0004849871620123584,
+    "Delta_MSE": 0.0041698985890392115,
+    "raw_prediction_rms": 0.18779144832341474,
+    "post_projection_rms": 0.06542488716607282
+  },
+  "purged_latest_prototype": {
+    "train_cutoff": "2025-09-04",
+    "train_target_end": "2025-10-04",
+    "validation_cutoff": "2025-10-16",
+    "label_available_at_validation": true,
+    "rho": 0.000109698962691302,
+    "Delta_MSE": 0.0051892045937147096,
+    "post_projection_rms": 0.07222742953320706
+  },
+  "note": "Adjacent 14-day fold labels are not available at the next cutoff; only 2025-09-04 is available by 2025-10-16."
+}

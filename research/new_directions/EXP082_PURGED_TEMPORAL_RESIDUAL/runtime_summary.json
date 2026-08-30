@@ -1,0 +1,166 @@
+{
+  "component_runs": [
+    {
+      "family": "cap",
+      "cutoff": "2025-07-03",
+      "runtime_seconds": 98.19440793991089,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/cap_2025-07-03.json"
+    },
+    {
+      "family": "cap",
+      "cutoff": "2025-08-07",
+      "runtime_seconds": 109.80922150611877,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/cap_2025-08-07.json"
+    },
+    {
+      "family": "cap",
+      "cutoff": "2025-09-11",
+      "runtime_seconds": 155.4704611301422,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/cap_2025-09-11.json"
+    },
+    {
+      "family": "cap",
+      "cutoff": "2025-10-16",
+      "runtime_seconds": 0.0,
+      "mode": "canonical frozen artifact reuse",
+      "config_changed": false,
+      "metadata_file": "production_components/cap_2025-10-16.json"
+    },
+    {
+      "family": "dist",
+      "cutoff": "2025-07-03",
+      "runtime_seconds": 674.4890418052673,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/dist_2025-07-03.json"
+    },
+    {
+      "family": "dist",
+      "cutoff": "2025-08-07",
+      "runtime_seconds": 995.6566081047058,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/dist_2025-08-07.json"
+    },
+    {
+      "family": "dist",
+      "cutoff": "2025-09-11",
+      "runtime_seconds": 1300.4960260391235,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/dist_2025-09-11.json"
+    },
+    {
+      "family": "dist",
+      "cutoff": "2025-10-16",
+      "runtime_seconds": 0.0,
+      "mode": "canonical frozen artifact reuse",
+      "config_changed": false,
+      "metadata_file": "production_components/dist_2025-10-16.json"
+    },
+    {
+      "family": "ETX",
+      "cutoff": "2025-07-03",
+      "runtime_seconds": 2467.9036197662354,
+      "mode": "frozen single-seed production approximation",
+      "config_changed": false,
+      "metadata_file": "production_components/etx_2025-07-03.json"
+    },
+    {
+      "family": "ETX",
+      "cutoff": "2025-08-07",
+      "runtime_seconds": 4176.019729137421,
+      "mode": "frozen single-seed production approximation",
+      "config_changed": false,
+      "metadata_file": "production_components/etx_2025-08-07.json"
+    },
+    {
+      "family": "ETX",
+      "cutoff": "2025-09-11",
+      "runtime_seconds": 6500.331848859787,
+      "mode": "frozen single-seed production approximation",
+      "config_changed": false,
+      "metadata_file": "production_components/etx_2025-09-11.json"
+    },
+    {
+      "family": "etx",
+      "cutoff": "2025-10-16",
+      "runtime_seconds": 0.0,
+      "mode": "canonical frozen artifact reuse",
+      "config_changed": false,
+      "metadata_file": "production_components/etx_2025-10-16.json"
+    },
+    {
+      "family": "SEQ",
+      "cutoff": "2025-07-03",
+      "runtime_seconds": 1949.712501525879,
+      "mode": "frozen single-seed production approximation",
+      "config_changed": false,
+      "metadata_file": "production_components/seq_2025-07-03.json"
+    },
+    {
+      "family": "SEQ",
+      "cutoff": "2025-08-07",
+      "runtime_seconds": 2807.354533433914,
+      "mode": "frozen single-seed production approximation",
+      "config_changed": false,
+      "metadata_file": "production_components/seq_2025-08-07.json"
+    },
+    {
+      "family": "SEQ",
+      "cutoff": "2025-09-11",
+      "runtime_seconds": 3684.566763162613,
+      "mode": "frozen single-seed production approximation",
+      "config_changed": false,
+      "metadata_file": "production_components/seq_2025-09-11.json"
+    },
+    {
+      "family": "seq",
+      "cutoff": "2025-10-16",
+      "runtime_seconds": 0.0,
+      "mode": "canonical frozen artifact reuse",
+      "config_changed": false,
+      "metadata_file": "production_components/seq_2025-10-16.json"
+    },
+    {
+      "family": "unc",
+      "cutoff": "2025-07-03",
+      "runtime_seconds": 167.81949996948242,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/unc_2025-07-03.json"
+    },
+    {
+      "family": "unc",
+      "cutoff": "2025-08-07",
+      "runtime_seconds": 134.02637672424316,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/unc_2025-08-07.json"
+    },
+    {
+      "family": "unc",
+      "cutoff": "2025-09-11",
+      "runtime_seconds": 193.92088413238525,
+      "mode": "exact frozen pipeline replay",
+      "config_changed": false,
+      "metadata_file": "production_components/unc_2025-09-11.json"
+    },
+    {
+      "family": "unc",
+      "cutoff": "2025-10-16",
+      "runtime_seconds": 0.0,
+      "mode": "canonical frozen artifact reuse",
+      "config_changed": false,
+      "metadata_file": "production_components/unc_2025-10-16.json"
+    }
+  ],
+  "component_runtime_seconds_sum": 25415.77152323723,
+  "note": "Canonical reused components retain their recorded replay/copy runtime; wall clock is not inferred from this sum."
+}

@@ -1,0 +1,25 @@
+{
+  "exact_yoy_eligible": false,
+  "exact_yoy_reason": "only 44 calendar days available; 1-block panel, not fixed-L180/3-block",
+  "nearest_chronological": {
+    "cutoff": "2025-10-16",
+    "eligible_fixed_l180": true,
+    "chronological_gap_days": 120,
+    "calendar_gap_days": 120,
+    "rms_smd_to_test": 0.08309330520302972,
+    "median_abs_smd_to_test": 0.06702529857273971,
+    "cosine_to_latest_test_direction": 0.9961227420334875,
+    "limitation": ""
+  },
+  "nearest_calendar_available": {
+    "cutoff": "2025-10-16",
+    "eligible_fixed_l180": true,
+    "chronological_gap_days": 120,
+    "calendar_gap_days": 120,
+    "rms_smd_to_test": 0.08309330520302972,
+    "median_abs_smd_to_test": 0.06702529857273971,
+    "cosine_to_latest_test_direction": 0.9961227420334875,
+    "limitation": ""
+  },
+  "independent_calendar_contrast_available": false
+}

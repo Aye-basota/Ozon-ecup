@@ -1,0 +1,3 @@
+path,arm,heldout_fold,donor_folds,grid,selected_value,selection_wcv,donor_scores,heldout_score,heldout_baseline_score,heldout_delta,status
+replacement,real_and_shuffled,2025-10-02,,"[0.0, 0.25, 0.5, 0.75, 1.0]",,,,,,,NOT_RUN_RUNTIME_STOP; canonical LOFO requires all four held-out folds and three donors
+add_one,real_and_shuffled,2025-10-02,,"[0.0, 0.025, 0.05, 0.1, 0.15, 0.2]",,,,,,,NOT_RUN_RUNTIME_STOP; canonical LOFO requires all four held-out folds and three donors

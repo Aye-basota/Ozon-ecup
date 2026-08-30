@@ -1,0 +1,13 @@
+segment,status,n,base_metric,candidate_metric,delta,reason
+zero,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+positive,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+AUC(y>0),BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+rec_buy:never,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+rec_buy:0-15,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+rec_buy:15-60,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+rec_buy:60+,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+w180_days_buy:0-1,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+w180_days_buy:2-15,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+w180_days_buy:16+,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+user_hash_half:0,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF
+user_hash_half:1,BLOCKED_NOT_RUN,,,,,Phase A exact replay gate failed; no canonical latest OOF

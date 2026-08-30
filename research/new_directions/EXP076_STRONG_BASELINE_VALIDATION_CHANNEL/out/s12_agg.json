@@ -1,0 +1,10 @@
+{
+ "rho_weak": 0.0378212816050481,
+ "rho_strong": 0.013397831298316143,
+ "rho_strong_postproj": 0.00709189291028531,
+ "rho_weak_latest": 0.03502661008375134,
+ "rho_strong_latest": 0.012494012891550735,
+ "rho_strong_postproj_latest": 0.004969566026979862,
+ "decay_strong_over_weak_wavg": 0.3542405420901417,
+ "decay_postproj_over_weak_wavg": 0.18751064504748927
+}

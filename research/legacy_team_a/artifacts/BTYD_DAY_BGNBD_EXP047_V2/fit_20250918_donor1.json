@@ -1,0 +1,136 @@
+{
+  "T": 261,
+  "best_start_index": 0,
+  "donor_group": 1,
+  "fold": "2025-09-18",
+  "input_summary_sha256": "0f65afae3b29c619e5d06859a24988a5d328efc1dd7add0229e8d1be84b306bc",
+  "log_likelihood": -4748557.294620322,
+  "log_parameter_spread": {
+    "a": 0.05220472663636677,
+    "alpha": 0.0004465746895929712,
+    "b": 0.06124501299130891,
+    "r": 0.00035171580658543977
+  },
+  "max_log_parameter_spread": 0.06124501299130891,
+  "mean_nll_spread": 1.7191943157968126e-07,
+  "n_unique_summaries": 4995,
+  "n_users": 125213,
+  "parameters": {
+    "a": 0.04635221658555982,
+    "alpha": 11.910241169272087,
+    "b": 63.565522668896,
+    "r": 0.4829973725466523
+  },
+  "recipient_group": 0,
+  "stability_thresholds": {
+    "gradient_norm": 0.001,
+    "max_log_parameter_spread": 0.1,
+    "mean_nll_spread": 1e-06
+  },
+  "stable": true,
+  "starts": [
+    {
+      "gradient_norm": 3.4823843736580747e-05,
+      "hit_bound": false,
+      "initial": [
+        0.5,
+        20.0,
+        1.5,
+        3.0
+      ],
+      "log_likelihood": -4748557.294620322,
+      "log_parameters": [
+        -0.7277440652063639,
+        2.4773986324713535,
+        -3.0714861653400707,
+        4.152071226957693
+      ],
+      "mean_nll": 37.92383614017971,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "nfev": 205,
+      "nit": 21,
+      "parameters": {
+        "a": 0.04635221658555982,
+        "alpha": 11.910241169272087,
+        "b": 63.565522668896,
+        "r": 0.4829973725466523
+      },
+      "status": 0,
+      "success": true
+    },
+    {
+      "gradient_norm": 9.78693625818707e-05,
+      "hit_bound": false,
+      "initial": [
+        1.0,
+        50.0,
+        2.0,
+        5.0
+      ],
+      "log_likelihood": -4748557.31614687,
+      "log_parameters": [
+        -0.7280115090589382,
+        2.477128655149748,
+        -3.1236908919764375,
+        4.090826213966384
+      ],
+      "mean_nll": 37.92383631209914,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "nfev": 225,
+      "nit": 25,
+      "parameters": {
+        "a": 0.04399448948094224,
+        "alpha": 11.907026108277835,
+        "b": 59.789270032744874,
+        "r": 0.4828682151405022
+      },
+      "status": 0,
+      "success": true
+    },
+    {
+      "gradient_norm": 2.7793031514662787e-05,
+      "hit_bound": false,
+      "initial": [
+        2.0,
+        100.0,
+        3.0,
+        8.0
+      ],
+      "log_likelihood": -4748557.29771041,
+      "log_parameters": [
+        -0.7276597932523527,
+        2.4775752298393408,
+        -3.0878067394483026,
+        4.133420712477719
+      ],
+      "mean_nll": 37.923836164858365,
+      "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "nfev": 230,
+      "nit": 28,
+      "parameters": {
+        "a": 0.045601861567412465,
+        "alpha": 11.912344672245752,
+        "b": 62.39097992718545,
+        "r": 0.4830380773941335
+      },
+      "status": 0,
+      "success": true
+    }
+  ],
+  "x_distribution": {
+    "max": 206.0,
+    "mean": 10.511256818381478,
+    "min": 0.0,
+    "q": {
+      "0": 0.0,
+      "0.25": 1.0,
+      "0.5": 5.0,
+      "0.75": 14.0,
+      "0.9": 29.0,
+      "0.99": 70.0,
+      "1": 206.0
+    },
+    "std": 15.136672043873952,
+    "zero_share": 0.23171715396963574
+  }
+}

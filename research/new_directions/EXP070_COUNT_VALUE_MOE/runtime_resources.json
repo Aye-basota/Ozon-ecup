@@ -1,0 +1,13 @@
+{
+  "model_runtime_seconds": 6984.0,
+  "hard_stop_seconds": 7200,
+  "stop_reason": "projected matched 2025-10-02 fold completion exceeded hard stop",
+  "completed_folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-16"
+  ],
+  "missing_fold": "2025-10-02",
+  "persistent_bytes_before_checksums": 100937128,
+  "lightgbm_threads": 6
+}

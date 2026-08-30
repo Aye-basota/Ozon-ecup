@@ -1,0 +1,42 @@
+{
+  "experiment": "EXP080_ORACLE_GAP_ATTRIBUTION",
+  "current_submission": "SUBMIT_EXP075_JOINT_A1_365_A2.csv",
+  "current_lb_rmsle": 1.646143314225527,
+  "anchor_submission": "SUBMIT_ORTH_ALPHA.csv",
+  "anchor_lb_rmsle": 1.6461597403364463,
+  "target_rmsle": 1.6446514942,
+  "clean_folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_weights": [1.0, 2.0, 4.0, 8.0],
+  "production_bank_columns": 40,
+  "oracle_gate_mse": 0.001,
+  "predictability_fraction_gate": 0.25,
+  "direct_rho_gate": 0.02,
+  "cheap_model": {
+    "type": "Ridge",
+    "alpha": 100.0,
+    "features": 108,
+    "targets": [
+      "future activity indicator",
+      "log1p future purchase days",
+      "log1p future event days",
+      "log1p future purchased-item count",
+      "log1p conditional average GMV per purchase day"
+    ]
+  },
+  "forbidden": {
+    "contaminated_teammate_oof": true,
+    "oof_BLOCK4_SAF.activity": true,
+    "target_derived_eligibility_features": true,
+    "leaderboard_model_selection": true,
+    "scale_search_EXP075": true,
+    "ensemble_reweighting": true,
+    "global_intercept_experiment": true,
+    "generic_temporal_encoder": true,
+    "generic_direct_target_lightgbm": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "verdict": "REJECT",
+  "real_minus_base_halves": [
+    -0.0009260530595023297,
+    -0.0013528910221110024
+  ],
+  "real_minus_base_mean": -0.001139472040806666,
+  "real_minus_shuffled_halves": [
+    -0.0004644238322757399,
+    -0.0008828506698130845
+  ],
+  "real_minus_shuffled_mean": -0.0006736372510444122,
+  "real_minus_shifted_halves": [
+    0.00036072517594076814,
+    0.00041985780000453055
+  ],
+  "real_minus_shifted_mean": 0.00039029148797264934,
+  "correction_residual_alignment": [
+    0.03491056315633517,
+    0.04214999513512383
+  ],
+  "annual_buyer_share": 0.367276,
+  "annual_buyer_delta_halves": [
+    -0.001044183157836498,
+    -0.0018484637761535527
+  ]
+}

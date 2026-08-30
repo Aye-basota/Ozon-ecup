@@ -1,0 +1,5 @@
+id,date,author,description,fold_scores,cv_mean,cv_std,bias_mean,verdict
+S2-E00,2026-08-11,A2,Hybrid QMC n<=4 plus FW n>=5,"max verification error 0.00549",,,,KEEP
+S2-E01,2026-08-11,A2,Offset Poisson plus hurdle on 2025-10-16,"1.75749",1.75749,0.00000,-0.0165,KEEP
+S2-E02,2026-08-11,A2,K grid and train-only sigma calibration,"1.77351|1.75612",1.76481,0.00870,-0.0451,KEEP K=5
+S2-BEST,2026-08-11,A2,Full structural CV,"1.78113|1.77351|1.76246|1.75612",1.76831,0.00967,-0.0442,ACCEPT standalone; LB 1.6619325

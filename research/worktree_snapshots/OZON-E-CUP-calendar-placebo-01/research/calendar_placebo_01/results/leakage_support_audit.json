@@ -1,0 +1,13 @@
+{
+  "feature_path": "make_xy(cutoff, L=180, n_blocks=3) -> build_features(cutoff)",
+  "source_upper_bound": "event_date <= cutoff (enforced by build_features)",
+  "all_task_endpoints_not_after_dataset_end": true,
+  "all_task_endpoints_have_full_l180": true,
+  "same_history_support": 180,
+  "same_panel_blocks": 3,
+  "balanced_rows_per_class": true,
+  "grouped_split": "deterministic user hash; disjoint users asserted in every fold/task",
+  "forbidden_columns_present": [],
+  "user_id_used_as_feature": false,
+  "explicit_date_cutoff_fold_source_feature": false
+}

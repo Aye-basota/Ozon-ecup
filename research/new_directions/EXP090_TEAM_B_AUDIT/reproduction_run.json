@@ -1,0 +1,82 @@
+{
+  "status": "FRESH_CODE_REPRODUCTION_ORIGINAL_EXP024_MISSING",
+  "original_submission_present": false,
+  "byte_exact_parity_test_possible": false,
+  "missing_artifact": "team-b/submissions/exp_024_cat_xgb_blend_rec025_post010_beh020_xgb025_cat020_level_e19.csv",
+  "raw_train": {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\raw\\train.parquet",
+    "sha256": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0"
+  },
+  "sample_submit": {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\team-b\\data\\raw\\sample_submit.csv",
+    "sha256": "06a433b0ac32f7c0292ce3cb994c1684b4156b392f30fe537ea6a44d0bc4c1b1"
+  },
+  "train_cutoffs": [
+    "2025-08-28",
+    "2025-09-04",
+    "2025-09-11",
+    "2025-09-18",
+    "2025-09-25",
+    "2025-10-02",
+    "2025-10-09",
+    "2025-10-16"
+  ],
+  "test_cutoff": "2026-02-14",
+  "weights": {
+    "recency": 0.25,
+    "post_order_dist": 0.1,
+    "behavior_dist": 0.2,
+    "xgb_behavior": 0.25,
+    "cat_behavior": 0.2
+  },
+  "component_scales": {
+    "recency": 0.64,
+    "post_order_dist": 0.62,
+    "behavior_dist": 0.62,
+    "xgb_behavior": 0.62,
+    "cat_behavior": 0.62
+  },
+  "component_feature_sets": {
+    "recency": "recency",
+    "post_order_dist": "long_buy_post_order",
+    "behavior_dist": "behavior_v1",
+    "xgb_behavior": "behavior_v1",
+    "cat_behavior": "behavior_v1"
+  },
+  "component_kinds": {
+    "recency": "regressor",
+    "post_order_dist": "dist",
+    "behavior_dist": "dist",
+    "xgb_behavior": "regressor",
+    "cat_behavior": "regressor"
+  },
+  "component_feature_counts": {
+    "recency": 152,
+    "post_order_dist": 215,
+    "behavior_dist": 329,
+    "xgb_behavior": 329,
+    "cat_behavior": 329
+  },
+  "level": 2.370966,
+  "formula": "z_i=log1p(clip(expm1(model_i_z)*component_scale,0,inf)); z=sum(w_i*z_i); z=max(z+(2.370966-mean(z)),0)",
+  "rows": 250000,
+  "unique_user_id": 250000,
+  "sample_order_exact": true,
+  "finite": true,
+  "nonnegative": true,
+  "fraction_clipped_final_z": 0.0,
+  "mean_z_unleveled": 2.1965882521433895,
+  "mean_z_final": 2.370966,
+  "level_shift_before_clipping": 0.17437774785661064,
+  "rms_level_realized_correction": 0.17437774785661064,
+  "formula_api_max_abs": 0.0,
+  "runtime_seconds": 3199.6233394145966,
+  "predictions_parquet": {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP090_TEAM_B_AUDIT\\team_b_reproduction_predictions.parquet",
+    "sha256": "16d8bd3cdc702797a4561ec004e51526ff2784594388d20720f3aad0d1e875c4"
+  },
+  "vectors_npz": {
+    "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP090_TEAM_B_AUDIT\\team_b_reproduced_vectors.npz",
+    "sha256": "55fef8e75c364ca530722e21451e7f313de40280e307e76363abf170ff15fe35"
+  }
+}

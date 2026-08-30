@@ -1,0 +1,30 @@
+{
+ "1": {
+  "auc": 0.9999935229552244,
+  "drivers": [
+   "tenure_frac",
+   "w365_days_cat",
+   "trend_gmv_90_365",
+   "w365_days_presence_only",
+   "gap_max_frac",
+   "w365_days_buy",
+   "trend_pres_30_60",
+   "gap_cv"
+  ],
+  "n": 225431
+ },
+ "0": {
+  "auc": 0.9999966595370318,
+  "drivers": [
+   "tenure_frac",
+   "w365_days_cat",
+   "trend_gmv_90_365",
+   "w365_days_presence_only",
+   "w365_days_buy",
+   "gap_max_frac",
+   "gap_std",
+   "gap_cv"
+  ],
+  "n": 240700
+ }
+}

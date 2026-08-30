@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "verdict": "REJECT_HEADROOM",
+  "stage0_vector": {
+    "rows": 197379,
+    "unique_users": 197379,
+    "canonical_user_order": true,
+    "target_max_abs_error_vs_aligned_oof": 0.0,
+    "finite_numeric": true,
+    "recipient_side_counts": {
+      "0": 98707,
+      "1": 98672
+    },
+    "d_arm_identity_max_abs_error": 0.0,
+    "sha256": "e837b51ddee3bf99af9d71166f9117cd87391c2e603f4db5b1865129d2c6d2d5"
+  },
+  "diagnostic_correlations": {
+    "corr_mu_fresh_mu_vol": 0.9868079940814302,
+    "corr_raw_mu_fresh_minus_clean_mu_vol_minus_clean": 0.4469588453626584,
+    "corr_processed_d_fresh_d_vol": 0.46068164590741184,
+    "interpretation": "The model levels are highly correlated, but the retraining corrections are not; the failed control-variate correlation gate is not caused by winsorization."
+  },
+  "source_integrity": {
+    "exp072_config_sha256": "8e2c1509cee02959cc0667131209154f59c13192b456594724a58326ada9c6c1",
+    "exp072_pilot_metrics_sha256": "095d768bd344274c9f04e7b9bbefabc734e58bfc708acc5ee3d7d54ccf555185",
+    "original_artifacts_written": false
+  },
+  "downstream_absence": {
+    "confirmation_run": false,
+    "full_canonical_oof_run": false,
+    "test_inference_run": false,
+    "submission_builder_exists": false,
+    "submission_exists": false
+  },
+  "public_lb_used": false,
+  "reconstructed_incumbent_oof_used": false
+}

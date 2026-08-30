@@ -1,0 +1,8 @@
+{
+  "analysis_only": true,
+  "prediction_artifact_sha256": "20bf1a001e98e931f6be5ef6fe614ef103afb6ad24bf9162a7ac1f3f0554d02a",
+  "sha256": "6386c3352e170993637437cfb5dba8fbfe44a6163ab225116b46023c6c0545c1",
+  "status": "PASS",
+  "test_or_public_paths_read": false,
+  "weights_artifact_sha256": "eec66d5d66a8cb41c886b821177e1ba953d93759605833556198e9fbe9573398"
+}

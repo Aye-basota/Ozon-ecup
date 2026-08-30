@@ -1,0 +1,11 @@
+{
+  "production_model": "SEQ-01-MIX",
+  "production_q1_rmsle": 1.538634419162886,
+  "production_q5_rmsle": 1.5725539337312369,
+  "production_q5_minus_q1": 0.03391951456835085,
+  "best_high_score_model": "SEQ-01-MIX",
+  "best_high_score_rmsle": 1.5725539337312369,
+  "high_score_delta_best_vs_production": 0.0,
+  "mean_abs_error_spearman": 0.04642212968667809,
+  "mean_signed_residual_spearman": -0.07985067190400005
+}

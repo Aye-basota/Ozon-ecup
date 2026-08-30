@@ -1,0 +1,10 @@
+{
+  "status": "not_run_runtime_stop",
+  "completed_folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-16"
+  ],
+  "missing_fold": "2025-10-02",
+  "reason": "donor-fold ridge projection and unexplained variance require canonical four-fold OOF"
+}

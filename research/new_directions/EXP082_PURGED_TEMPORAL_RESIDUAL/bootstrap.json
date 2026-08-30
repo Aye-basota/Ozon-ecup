@@ -1,0 +1,101 @@
+{
+  "LightGBM_A": {
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20270900,
+      "unit": "user_id cluster across transitions",
+      "CI95_Delta_MSE": [
+        0.0011377316753513247,
+        0.0018818977910614295
+      ],
+      "P_Delta_MSE_lt_0": 0.0,
+      "draw_mean": 0.0015003300627709382
+    },
+    "leave_one_transition_out": [
+      {
+        "omitted_transition": "2025-08-07",
+        "weighted_rho": -0.005774733182776865,
+        "weighted_Delta_MSE": 0.0018524060900690753,
+        "weighted_Delta_RMSLE": 0.0005263364981570687
+      },
+      {
+        "omitted_transition": "2025-09-11",
+        "weighted_rho": 0.005315297971661382,
+        "weighted_Delta_MSE": 0.0005897669532882372,
+        "weighted_Delta_RMSLE": 0.00017055102602450133
+      },
+      {
+        "omitted_transition": "2025-10-16",
+        "weighted_rho": -0.010006479820888772,
+        "weighted_Delta_MSE": 0.0023078509737115907,
+        "weighted_Delta_RMSLE": 0.0006537649913619011
+      }
+    ]
+  },
+  "LightGBM_B": {
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20280900,
+      "unit": "user_id cluster across transitions",
+      "CI95_Delta_MSE": [
+        0.0009052490879539979,
+        0.0017218388606466673
+      ],
+      "P_Delta_MSE_lt_0": 0.0,
+      "draw_mean": 0.0013046073513138495
+    },
+    "leave_one_transition_out": [
+      {
+        "omitted_transition": "2025-08-07",
+        "weighted_rho": -0.0030089217447051776,
+        "weighted_Delta_MSE": 0.0016638956592806996,
+        "weighted_Delta_RMSLE": 0.0004732180301789679
+      },
+      {
+        "omitted_transition": "2025-09-11",
+        "weighted_rho": 0.007442286826149627,
+        "weighted_Delta_MSE": 0.0005875476328396376,
+        "weighted_Delta_RMSLE": 0.0001704121936779046
+      },
+      {
+        "omitted_transition": "2025-10-16",
+        "weighted_rho": -0.006596893861667164,
+        "weighted_Delta_MSE": 0.0017697146020256755,
+        "weighted_Delta_RMSLE": 0.0005021132566507269
+      }
+    ]
+  },
+  "LightGBM_AB_mean": {
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20290900,
+      "unit": "user_id cluster across transitions",
+      "CI95_Delta_MSE": [
+        0.0010791619705553218,
+        0.0019211612130116556
+      ],
+      "P_Delta_MSE_lt_0": 0.0,
+      "draw_mean": 0.0014977446355218277
+    },
+    "leave_one_transition_out": [
+      {
+        "omitted_transition": "2025-08-07",
+        "weighted_rho": -0.004742604431091908,
+        "weighted_Delta_MSE": 0.001862356846705194,
+        "weighted_Delta_RMSLE": 0.0005298029963837584
+      },
+      {
+        "omitted_transition": "2025-09-11",
+        "weighted_rho": 0.006095676745703905,
+        "weighted_Delta_MSE": 0.0007548837541703084,
+        "weighted_Delta_RMSLE": 0.00021809873392464318
+      },
+      {
+        "omitted_transition": "2025-10-16",
+        "weighted_rho": -0.008759832146937074,
+        "weighted_Delta_MSE": 0.0020013549699095016,
+        "weighted_Delta_RMSLE": 0.0005672711020855056
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "depth_cap": 212,
+  "direct_head_called": false,
+  "experiment": "LATE_SSL_EXP056",
+  "file_sha256": "0eb6ff35624c145edf383fa3bbe74d2cc855f3b55afb304764c1b2187f44a629",
+  "input_only": true,
+  "model": "CONTROL",
+  "model_state_sha256": "ee74a4cccc15bcc0aa1f861132e8f12271aa9247d9fe9fe2ad2a55d015d28f53",
+  "query_weekday": "Thursday",
+  "sources": {
+    "A": {
+      "mean_norm": 4.64494524491254,
+      "n": 20000,
+      "trace_cov": 8.808628294250003
+    },
+    "CONTROL": {
+      "mean_norm": 4.599193157052106,
+      "n": 20000,
+      "trace_cov": 8.582389769636652
+    },
+    "LATE": {
+      "mean_norm": 4.640140055533228,
+      "n": 20000,
+      "trace_cov": 8.265417478682473
+    },
+    "PRODUCTION": {
+      "mean_norm": 4.558088873114808,
+      "n": 20000,
+      "trace_cov": 8.211450605097184
+    }
+  }
+}

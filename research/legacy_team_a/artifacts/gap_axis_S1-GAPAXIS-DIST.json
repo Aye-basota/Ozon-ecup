@@ -1,0 +1,143 @@
+{
+ "n_cutoffs": 5,
+ "capacity_rule": "argmin weighted calibrated fold score per probe and gap",
+ "rows": 8,
+ "selected": [
+  {
+   "exp_id": "GAP-DIST-K5-G030-S42-R100",
+   "probe": "dist",
+   "requested_gap": 30,
+   "actual_gap": 35,
+   "n_cutoffs": 5,
+   "seed": 42,
+   "rounds": 100,
+   "wcv": 1.7508454678608978,
+   "fold_cal": [
+    1.771745659186194,
+    1.765459895556093,
+    1.7521937407062427,
+    1.7439052005987645
+   ],
+   "fold_bias": [
+    -0.08093373312447971,
+    -0.0600320544563413,
+    -0.042002061051573225,
+    -0.03130974587116153
+   ],
+   "fold_scores": [
+    1.7735932312688234,
+    1.7664802547379859,
+    1.752697086807277,
+    1.744186242596224
+   ],
+   "mean_z": 2.678884259531626
+  },
+  {
+   "exp_id": "GAP-DIST-K5-G120-S42-R100",
+   "probe": "dist",
+   "requested_gap": 120,
+   "actual_gap": 126,
+   "n_cutoffs": 5,
+   "seed": 42,
+   "rounds": 100,
+   "wcv": 1.7548279523818846,
+   "fold_cal": [
+    1.774039747440154,
+    1.7674895870356715,
+    1.755760427930052,
+    1.7487948315620705
+   ],
+   "fold_bias": [
+    0.03582140362534503,
+    0.0014557931774992205,
+    -0.011842079628274327,
+    -0.01683714628257249
+   ],
+   "fold_scores": [
+    1.774401363405477,
+    1.7674901865677513,
+    1.7558003631207741,
+    1.748875882500857
+   ],
+   "mean_z": 2.623792546356636
+  }
+ ],
+ "bias_slopes": {
+  "dist": {
+   "mean_bias_per_gap": [
+    -0.05356939862588894,
+    0.0021494927229993577
+   ],
+   "weighted_bias_per_gap": [
+    -0.04129893688084983,
+    -0.009555499919555585
+   ],
+   "actual_gaps": [
+    35,
+    126
+   ],
+   "mean_slope": 0.0006122955093284431,
+   "weighted_slope": 0.00034882897759664017,
+   "fold_slopes": [
+    0.0012830234807673054,
+    0.0006756906333389071,
+    0.0003314283672889991,
+    0.00015903955591856097
+   ]
+  }
+ },
+ "bias_slopes_fixed_round": {
+  "dist": {}
+ },
+ "e03a_vs_e10": [],
+ "gcv": [
+  {
+   "probe": "dist",
+   "rounds": 100,
+   "gcv": 1.7548279523818846,
+   "fold_cal": [
+    1.774039747440154,
+    1.7674895870356715,
+    1.755760427930052,
+    1.7487948315620705
+   ],
+   "fold_std": 0.009842289142625358,
+   "reference_exp": null,
+   "reference_wcv": null,
+   "gcv_minus_wcv": null
+  }
+ ],
+ "rank_correlation": {
+  "probes": [
+   "dist"
+  ],
+  "gap30": [
+   1.7508454678608978
+  ],
+  "gap120": [
+   1.7548279523818846
+  ],
+  "spearman": null
+ },
+ "variant_c_cutoff_identity": [
+  {
+   "requested_gap": 30,
+   "full_n": 24,
+   "f4_n": 24,
+   "identical": true,
+   "latest": "2025-09-11"
+  },
+  {
+   "requested_gap": 60,
+   "full_n": 20,
+   "f4_n": 20,
+   "identical": true,
+   "latest": "2025-08-14"
+  }
+ ],
+ "notes": [
+  "requested G values map to actual gaps imposed by the 7-day grid",
+  "gCV is a secondary criterion: every G=120 arm uses only five cutoffs",
+  "gCV-wCV references use the registered production-capacity experiment for each probe"
+ ]
+}

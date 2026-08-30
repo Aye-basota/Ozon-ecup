@@ -1,0 +1,70 @@
+{
+  "experiment_id": "EXP074",
+  "name": "SEQ Temporal DIST16 Head",
+  "verdict": "TECHNICAL_BLOCK",
+  "registry_status": "FREE",
+  "blocked_at": "encoder_checkpoint_precondition",
+  "stop_reason": "Exact fold-specific historical plain SEQ-01 seed-42 checkpoints corresponding to current SEQ-AVG3 do not exist in the artifact directory or the authoritative TCN_SEQ-01 weight archive.",
+  "exact_seed42_fold_checkpoints": {
+    "model_SEQ-01-S42-V0904.pt": false,
+    "model_SEQ-01-S42-V0918.pt": false,
+    "model_SEQ-01-S42-V1002.pt": false,
+    "model_SEQ-01-S42-V1016.pt": false
+  },
+  "additional_checkpoint_gaps": {
+    "model_SEQ-01-S43-V1016.pt": false,
+    "exact_historical_SEQ-01_seed42_production_checkpoint": false
+  },
+  "archive": {
+    "path": "C:/Users/Admin/Desktop/OZON-E-CUP/weights_archives/TCN_SEQ-01_weights.zip",
+    "sha256": "686932a06cbf2f44835a41eec6fff4722c58464e344583da6727d6e818c757f3"
+  },
+  "deep_recovery_audit": {
+    "scope": "C:/Users/Admin/Desktop/OZON-E-CUP",
+    "zip_archives_opened": 9,
+    "torch_like_files_loaded": 203,
+    "tcn_compatible_files": 169,
+    "unique_tcn_tensor_states_tested": 134,
+    "git_unreachable_blobs_checked": 264,
+    "git_unreachable_trees_checked": 105,
+    "functional_contexts_tested": 5,
+    "exact_parity_matches": 0,
+    "evidence": "deep_recovery_audit.json"
+  },
+  "non_equivalent_substitutes": [
+    {
+      "name": "SEQ-D3A-BASE-S42-V1016",
+      "rows": 197379,
+      "max_abs_log_error_vs_historical_SEQ-01-S42": 1.703125,
+      "rms_log_error_vs_historical_SEQ-01-S42": 0.16483117894195393
+    },
+    {
+      "name": "SEQ-03A-BASE-S42-V1016",
+      "rows": 197379,
+      "max_abs_log_error_vs_historical_SEQ-01-S42": 1.703125,
+      "rms_log_error_vs_historical_SEQ-01-S42": 0.16483117894195393
+    },
+    {
+      "name": "SEQ-01C-S42-V0904",
+      "rows": 188518,
+      "max_abs_log_error_vs_historical_SEQ-01-S42": 1.509765625,
+      "rms_log_error_vs_historical_SEQ-01-S42": 0.1443271465784162
+    }
+  ],
+  "parity_threshold": 0.000001,
+  "parity_status": "NOT_RUN_MISSING_EXACT_CHECKPOINT",
+  "pilot_status": "NOT_RUN_STOP_RULE",
+  "full_validation_status": "NOT_RUN_STOP_RULE",
+  "test_status": "NOT_RUN_STOP_RULE",
+  "submission_status": "NOT_CREATED",
+  "inputs_verified": {
+    "06_ALIGNED_OOF_rows": 770616,
+    "06_ALIGNED_OOF_sha256": "7e64510b4c019ddcded125ba356517eeb2e31c32ecc11c856581f0c632c2de3f",
+    "07_ALIGNED_TEST_rows": 250000,
+    "07_ALIGNED_TEST_sha256": "d466eed2f649d51fc37a93e63d19f8f0c7a72d3e373d43c77085d8f55c112e2c",
+    "sample_order_matches": true,
+    "geometry_unique_sources": 65,
+    "geometry_rank": 57,
+    "geometry_basis_sha256": "443e80472f321e796faccfe0e9ea6954653397eb74311e7abef7471ea3064dfe"
+  }
+}

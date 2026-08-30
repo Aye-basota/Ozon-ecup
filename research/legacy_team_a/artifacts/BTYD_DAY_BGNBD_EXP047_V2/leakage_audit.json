@@ -1,0 +1,61 @@
+{
+  "folds": [
+    {
+      "donor_recipient_disjoint": true,
+      "event_date_max": "2025-09-04",
+      "fit_users_intersection_scored_users_within_side": 0,
+      "fold": "2025-09-04",
+      "future_rows_do_not_change_summary": true,
+      "group0": 94238,
+      "group1": 94280,
+      "rfm_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\rfm_20250904.npz",
+      "rfm_sha256": "1ec1998c62db14c8ed16052bdbb0fa5de0e32cea8bc8a59a7b93059f9ccf6fa2",
+      "summary_sha256": "1aaddadb4c09e1bb4ff2b2ad6d25abba9688fd8fa6e19436895411d6ecfc0805",
+      "target_columns_passed_to_mle": []
+    },
+    {
+      "donor_recipient_disjoint": true,
+      "event_date_max": "2025-09-18",
+      "fit_users_intersection_scored_users_within_side": 0,
+      "fold": "2025-09-18",
+      "future_rows_do_not_change_summary": true,
+      "group0": 95497,
+      "group1": 95528,
+      "rfm_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\rfm_20250918.npz",
+      "rfm_sha256": "c8e3953ca1199408482a711942bd145b763e86040d684e308387cdce4047b865",
+      "summary_sha256": "1e89ad17bcea3dd65124b7fd2f6646392ffc6d6304df9cc8d553d7d5fff434fe",
+      "target_columns_passed_to_mle": []
+    },
+    {
+      "donor_recipient_disjoint": true,
+      "event_date_max": "2025-10-02",
+      "fit_users_intersection_scored_users_within_side": 0,
+      "fold": "2025-10-02",
+      "future_rows_do_not_change_summary": true,
+      "group0": 96810,
+      "group1": 96884,
+      "rfm_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\rfm_20251002.npz",
+      "rfm_sha256": "872907e9b04dc72bfcfdb350f357dbca83197a6635b584a4b145ddf4b8832f13",
+      "summary_sha256": "9f3d6e65658f43dd909a347853f0b868a6298594932b56a09da201f4e7a8941a",
+      "target_columns_passed_to_mle": []
+    },
+    {
+      "donor_recipient_disjoint": true,
+      "event_date_max": "2025-10-16",
+      "fit_users_intersection_scored_users_within_side": 0,
+      "fold": "2025-10-16",
+      "future_rows_do_not_change_summary": true,
+      "group0": 98707,
+      "group1": 98672,
+      "rfm_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\rfm_20251016.npz",
+      "rfm_sha256": "dbebc9818dad65bf434c68e3cf4961516527690ff08797b1b7acd377a46e9193",
+      "summary_sha256": "9d85816cc7bd256cab1c423a8fc11e10025d1313bfc1120a9037fdce00bddd21",
+      "target_columns_passed_to_mle": []
+    }
+  ],
+  "no_rows_after_cutoff": true,
+  "origin": "2024-12-31",
+  "stable_user_group_across_folds": true,
+  "target_used_for_fitting": false,
+  "test_or_submission_paths_touched": false
+}

@@ -1,0 +1,7 @@
+{
+  "status": "SKIPPED",
+  "reason": "REJECT_PILOT",
+  "rule": "production inference is authorized only after provisional PASS TYPE A/B",
+  "public_lb_used": false,
+  "submission_uploaded": false
+}

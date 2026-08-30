@@ -1,0 +1,40 @@
+{
+  "prefix": "FRESH_CONTRAST_MOE",
+  "alphas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "variants": [
+    "GLOBAL",
+    "HIGH16"
+  ],
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_weights": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "head_seed": 42,
+  "head_epochs": 4,
+  "head_batch": 8192,
+  "head_lr": 0.001,
+  "head_wd": 0.01,
+  "extra_depth_clip": 289,
+  "preprocessing": "bounds on donor folds; clip d at 0.5/99.5%; HIGH16 gate; center",
+  "base_oof": {
+    "S1-E03a": 0.1,
+    "S1-E02": 0.2,
+    "S1-DIST": 0.25,
+    "ETX-AVG3": 0.225,
+    "SEQ-AVG3": 0.225
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "array_sha256": {
+    "batch_seed": "564362afcccaa32c9dc52900b811e6ee66462787ffc9a23284ea14d876cae89e",
+    "chunk_cutoff": "3bde54f7e7e7f81fc52e42cb8a432ff24041c6ee6006bf690ee1b611a6a29f9b",
+    "chunk_sample_offsets": "444abf1e25dd5ba2ebb05de6f9c4c30c51897b0e60505ebf13d59735364ddf37",
+    "cuts": "1b3af5c6117a14375cda89444230a59754f64696845625e45557db116b80e1aa",
+    "epoch_step_offsets": "1513034811df61d76f842d84d0f74f0e83a9d331082cb6d637f59a72ef56dde0",
+    "group_chunk_offsets": "57bab1e35cd01d75c78681d86e94a3291685641045dacad336ac067505f31c68",
+    "lr_plan": "6c20dcebfaed616b2dd33f55b3018e6c02d5531e30bc8e9d84d96624e6f28cd7",
+    "sample_indices": "c414a34a569748c35b186149f3c705a7b51f84ccb901f06814f34c6039d98bc0",
+    "snapshot_steps": "7779849b858156ee0856ee343f8235cee16d4df9dc4e417e824cd3e25f32568e",
+    "val_rows": "d5d30c46269c8fd083665b2d3dd08d5de10a1b2be8986ae8111839bd8fbd47e1",
+    "val_user_id": "5e408053b344ceee25276d2f4dcff0ff4f3f5e13aea05710303278150a4db3bf",
+    "val_y": "afe74b95d369bf349375f75c309f33e4133db82745d4b9287fe5a4d2bc8348c7"
+  },
+  "cfg": {
+    "aug": "none",
+    "aug_full": 0.0,
+    "aug_p": 0.0,
+    "batch": 1024,
+    "blocks": 8,
+    "chunk": 256,
+    "compile": false,
+    "depth_aug": 0.0,
+    "depth_grid": [
+      90,
+      120,
+      150,
+      180,
+      220,
+      254,
+      289
+    ],
+    "dropout": 0.1,
+    "epochs": 4,
+    "hidden": 64,
+    "kernel": 3,
+    "lr": 0.003,
+    "seed": 43,
+    "warmup": 300,
+    "wd": 0.01,
+    "workers": 1,
+    "z0": 2.2882602214813232
+  },
+  "clean_data_sha256": {
+    "ci": "35e77c32e7b7ae1bfcec56fb73789fccdd752e271819bbaea02fe46ab74b5def",
+    "cuts": "1b3af5c6117a14375cda89444230a59754f64696845625e45557db116b80e1aa",
+    "ri": "3f70c6d950f4115dbe63b1154cb5de2ee45c6d469608e5275fb7f48bd84a96f9",
+    "zy": "41c9ac1daaf4a74ec126f848ae7d41f59cc91a88b50860f6449bce98c7de9a51"
+  },
+  "created_at": "2026-08-22T03:40:21",
+  "epoch_plan_sha256": [
+    "694ee18ffff4c642d13ad65f295d6750b54596cef6771742c33cafccc1b355e7",
+    "66e7c08a13ebc13ee1f18466488ea5bbe4a950f9fcdfd3f7975b01f86d1b9a0e",
+    "be571554f87ac3961d6c756d3902b8746aff56f2469962f14c98dcaabc105272",
+    "fa784ea7481fc9610ba24981d7c56dbdcffda4338b32a63eaaa4476019635f39"
+  ],
+  "epoch_step_offsets": [
+    0,
+    4842,
+    9684,
+    14526,
+    19368
+  ],
+  "execution_policy": {
+    "bf16": true,
+    "compile": false,
+    "cublas_workspace_config": ":4096:8",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic_algorithms": true,
+    "materialized_plans": true,
+    "pythonhashseed": 43,
+    "rng": "Python/NumPy/Torch/CUDA fixed",
+    "separate_process": true,
+    "tf32": true,
+    "workers": 1
+  },
+  "experiment": "FRESH-COND-FT",
+  "format": 1,
+  "kind": "baseline",
+  "n_cutoffs": 24,
+  "n_examples": 4955174,
+  "n_steps": 19368,
+  "name": "DETSEQ01-S43-V1016",
+  "plan_file_sha256": "d90ab4c1c5c8f2925e796682f93a439ac401c8f324f6035a74ae1697d8dc89d0",
+  "plan_id": "e842c87c7a4d25b4f4cc9f05c9ed8d647e4107391abb33232c4776755bf9a063",
+  "seed": 43,
+  "source_sha256": {
+    "config.py": "8dd82be5291da32971ac285b13e3eb02c5702bc0e5eaec9152e7002159dcf324",
+    "fresh_cond_ft.py": "283fb9ff985de5725a4540bc5dbb99fd80f69e2a7e3e5f57134ef69549d75517",
+    "seq.py": "d95e0101692169781ea1ca6c585629cbb2f06d340e39f8afeb5a8e8e164c88b5",
+    "seq_cond.py": "a2e499d17911d2c88a9581d54714902f50ba7b9b499c47e5a5770ab32053252e",
+    "validation.py": "69fe796af2ec03b870ad982df8aacaaeca445ef875a953c5b5ac1d999725956e"
+  },
+  "steps_per_epoch": 4842,
+  "val": "2025-10-16",
+  "validation_order_sha256": "5e408053b344ceee25276d2f4dcff0ff4f3f5e13aea05710303278150a4db3bf"
+}

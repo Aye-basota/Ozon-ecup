@@ -1,0 +1,28 @@
+{
+  "literal_after_span_shape_oracle": 2.586056101081699,
+  "after_count_value_activity_shape_oracle": 0.001695281404834024,
+  "distinct_from_EXP080_coarse_timing_oracle": 0.0013607576271108558,
+  "gate_threshold": 0.001,
+  "passes_literal_after_span": true,
+  "passes_novelty_conditioned_gate": true,
+  "models_authorized": true,
+  "old_MHZ_relation": "MHZ used 7/14/21/30/45/60 hazard/count heads; this oracle adds 1/3-day and fine increment shares but conditions on EXP080's coarse timing block.",
+  "fold_target_audit": [
+    {
+      "cutoff": "2025-09-04",
+      "target_parity_max": 2.1827872842550278e-11
+    },
+    {
+      "cutoff": "2025-09-18",
+      "target_parity_max": 2.1827872842550278e-11
+    },
+    {
+      "cutoff": "2025-10-02",
+      "target_parity_max": 1.2732925824820995e-11
+    },
+    {
+      "cutoff": "2025-10-16",
+      "target_parity_max": 1.4551915228366852e-11
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "components": [
+    {
+      "file_sha256": "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525",
+      "name": "S1-E03a",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E03a.npz",
+      "prediction_sha256": "0461e52abc4f50a7d4d950600475ff7949dc20b1ac5436fbf454bcc53c1af5f1",
+      "row_keys_sha256": "0a0ff2fc3180b9c4f87bdff73b91e14f2bd46233d26cf503b8b63f2d347366e6",
+      "rows": 770616,
+      "target_sha256": "da7df9cfa8ba957c7de513a0752d8881dabfc80ccdbc3164e430233490b0a1bc"
+    },
+    {
+      "file_sha256": "2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff",
+      "name": "S1-E02",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E02.npz",
+      "prediction_sha256": "89a389580fa3b1f0c940b9a3c035a1246fe8d86e3e8af618ad332eb99b985504",
+      "row_keys_sha256": "0a0ff2fc3180b9c4f87bdff73b91e14f2bd46233d26cf503b8b63f2d347366e6",
+      "rows": 770616,
+      "target_sha256": "da7df9cfa8ba957c7de513a0752d8881dabfc80ccdbc3164e430233490b0a1bc"
+    },
+    {
+      "file_sha256": "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+      "name": "S1-DIST",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-DIST.npz",
+      "prediction_sha256": "3ba241497c210edcabcdcf6cf62f716e2ffb03bb31cf7c19eef3ff44c786b169",
+      "row_keys_sha256": "f7e127465fe3241aad1764bb2e8dec57e3342e5e7c322752c756691cb20d24c9",
+      "rows": 770616,
+      "target_sha256": "c67173b47db099cf8123e2c7855a222c95d0d91b2bcec25c5450ce4448a5d644"
+    },
+    {
+      "file_sha256": "890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f",
+      "name": "ETX-AVG3",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-AVG3.npz",
+      "prediction_sha256": "4ec361ad9216d9a72250c077f72e53964b7efb7485808a73307f4b85f7a0458f",
+      "row_keys_sha256": "0a0ff2fc3180b9c4f87bdff73b91e14f2bd46233d26cf503b8b63f2d347366e6",
+      "rows": 770616,
+      "target_sha256": "da7df9cfa8ba957c7de513a0752d8881dabfc80ccdbc3164e430233490b0a1bc"
+    },
+    {
+      "file_sha256": "8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c",
+      "name": "SEQ-AVG3",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_SEQ-AVG3.npz",
+      "prediction_sha256": "0e6a0c5ed26b74fe3d5509d60a22a1aa598f9ca5606df6bc9bf7291a4a827667",
+      "row_keys_sha256": "0a0ff2fc3180b9c4f87bdff73b91e14f2bd46233d26cf503b8b63f2d347366e6",
+      "rows": 770616,
+      "target_sha256": "da7df9cfa8ba957c7de513a0752d8881dabfc80ccdbc3164e430233490b0a1bc"
+    }
+  ],
+  "fold_cal": [
+    1.7668833567997195,
+    1.7605095767798136,
+    1.748629223964952,
+    1.7412785664479717
+  ],
+  "fold_sizes": [
+    188518,
+    191025,
+    193694,
+    197379
+  ],
+  "prediction_sha256": "866b7199e0864f5674d0be0f5c539c9c3820f281e936a8e526326706fb93a79f",
+  "row_keys_sha256": "3bfac84ca53d125d21beac831bee0364deb28e4c027ec2858d21b97e32fe1b91",
+  "status": "PASS_EXACT",
+  "target_sha256": "61cc2bf67e840e5c0e14a444773ab1a6a971714db03cdec629ab719f065dae86",
+  "tolerance": 5e-10,
+  "wcv": 1.7475098625201952,
+  "weights": {
+    "ETX-AVG3": 0.225,
+    "S1-DIST": 0.25,
+    "S1-E02": 0.2,
+    "S1-E03a": 0.1,
+    "SEQ-AVG3": 0.225
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "phase": "gate_authorized_short_horizon_Ridge_pilot",
+  "model": "multi-output Ridge on 108 cutoff-safe RFM/channel features",
+  "ridge_alpha": 100.0,
+  "targets": [
+    "log1p(Y1)",
+    "log1p(Y3)",
+    "log1p(Y7)",
+    "log1p(Y14)"
+  ],
+  "forbidden_targets": [
+    "Y30",
+    "production residual"
+  ],
+  "train_lags_days": [
+    63,
+    49,
+    35,
+    21
+  ],
+  "training_audit": [
+    {
+      "cutoff": "2025-09-04",
+      "train_cutoffs": [
+        "2025-07-03",
+        "2025-07-17",
+        "2025-07-31",
+        "2025-08-14"
+      ],
+      "max_training_target_end": "2025-08-28",
+      "validation_cutoff": "2025-09-04",
+      "embargo_days": 7,
+      "train_rows": 733030,
+      "validation_rows": 188518,
+      "finite_validation_features_before_fill": 0.943779364029685
+    },
+    {
+      "cutoff": "2025-09-18",
+      "train_cutoffs": [
+        "2025-07-17",
+        "2025-07-31",
+        "2025-08-14",
+        "2025-08-28"
+      ],
+      "max_training_target_end": "2025-09-11",
+      "validation_cutoff": "2025-09-18",
+      "embargo_days": 7,
+      "train_rows": 739148,
+      "validation_rows": 191025,
+      "finite_validation_features_before_fill": 0.9440931718264528
+    },
+    {
+      "cutoff": "2025-10-02",
+      "train_cutoffs": [
+        "2025-07-31",
+        "2025-08-14",
+        "2025-08-28",
+        "2025-09-11"
+      ],
+      "max_training_target_end": "2025-09-25",
+      "validation_cutoff": "2025-10-02",
+      "embargo_days": 7,
+      "train_rows": 746631,
+      "validation_rows": 193694,
+      "finite_validation_features_before_fill": 0.9444085439844214
+    },
+    {
+      "cutoff": "2025-10-16",
+      "train_cutoffs": [
+        "2025-08-14",
+        "2025-08-28",
+        "2025-09-11",
+        "2025-09-25"
+      ],
+      "max_training_target_end": "2025-10-09",
+      "validation_cutoff": "2025-10-16",
+      "embargo_days": 7,
+      "train_rows": 755228,
+      "validation_rows": 197379,
+      "finite_validation_features_before_fill": 0.9452902978721328
+    }
+  ],
+  "target_values_used_in_observable_features": false,
+  "same_period_cross_sectional_training": false,
+  "test_inference": false,
+  "submission_created": false,
+  "runtime_seconds": 155.07495522499084
+}

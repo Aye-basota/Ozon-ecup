@@ -1,0 +1,223 @@
+{
+  "experiment": "EXP071_ETX_FRESH_CONTRAST",
+  "hypothesis": "Frozen ETX final query embeddings yield a more useful and orthogonal FRESH-minus-CLEAN conditional-positive residual direction than the historical frozen TCN/D3A representation.",
+  "public_incumbent_reference_only": 1.6466079084,
+  "baseline": "z_base=log1p(06_ALIGNED_OOF.pred_exp037); weights are not retuned",
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_weights": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "encoder": "ETX-01 seed 42, frozen",
+  "encoder_inference_precision": "bf16 autocast on CUDA",
+  "checkpoint_metadata": [
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S42-V0904.pt",
+      "bytes": 4488973,
+      "sha256": "558fd1554076ec03ea976aa31808697003e98591c03b7ddb9403a2a9fbc1ad53",
+      "val": "2025-09-04",
+      "cfg": {
+        "d_model": 128,
+        "blocks": 5,
+        "heads": 8,
+        "head_dim": 16,
+        "ffn": 384,
+        "dropout": 0.1,
+        "n_tok": 192,
+        "tau_lo": 4.0,
+        "tau_hi": 512.0,
+        "batch": 512,
+        "chunk": 128,
+        "lr": 0.0015,
+        "wd": 0.01,
+        "epochs": 4,
+        "warmup": 500,
+        "seed": 42,
+        "compile": false,
+        "z0": 2.241637706756592
+      },
+      "state_tensors": 76,
+      "config_assertion": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S42-V0918.pt",
+      "bytes": 4488973,
+      "sha256": "a7ad59fbdf0dee5ff02d2aed2fc1e7043de98a6f627d54e9b5815d585116eda5",
+      "val": "2025-09-18",
+      "cfg": {
+        "d_model": 128,
+        "blocks": 5,
+        "heads": 8,
+        "head_dim": 16,
+        "ffn": 384,
+        "dropout": 0.1,
+        "n_tok": 192,
+        "tau_lo": 4.0,
+        "tau_hi": 512.0,
+        "batch": 512,
+        "chunk": 128,
+        "lr": 0.0015,
+        "wd": 0.01,
+        "epochs": 4,
+        "warmup": 500,
+        "seed": 42,
+        "compile": false,
+        "z0": 2.2634661197662354
+      },
+      "state_tensors": 76,
+      "config_assertion": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S42-V1002.pt",
+      "bytes": 4488973,
+      "sha256": "419e4060887fdcbc596d3147f6cb11d9ff7c5af746e01a21ea1edb2e0c9a591f",
+      "val": "2025-10-02",
+      "cfg": {
+        "d_model": 128,
+        "blocks": 5,
+        "heads": 8,
+        "head_dim": 16,
+        "ffn": 384,
+        "dropout": 0.1,
+        "n_tok": 192,
+        "tau_lo": 4.0,
+        "tau_hi": 512.0,
+        "batch": 512,
+        "chunk": 128,
+        "lr": 0.0015,
+        "wd": 0.01,
+        "epochs": 4,
+        "warmup": 500,
+        "seed": 42,
+        "compile": false,
+        "z0": 2.2772934436798096
+      },
+      "state_tensors": 76,
+      "config_assertion": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S42-V1016.pt",
+      "bytes": 4488973,
+      "sha256": "a16f9c255b11825e112db8c69572f96ba64a72d70941041d90fba7968d8aa177",
+      "val": "2025-10-16",
+      "cfg": {
+        "d_model": 128,
+        "blocks": 5,
+        "heads": 8,
+        "head_dim": 16,
+        "ffn": 384,
+        "dropout": 0.1,
+        "n_tok": 192,
+        "tau_lo": 4.0,
+        "tau_hi": 512.0,
+        "batch": 512,
+        "chunk": 128,
+        "lr": 0.0015,
+        "wd": 0.01,
+        "epochs": 4,
+        "warmup": 500,
+        "seed": 42,
+        "compile": false,
+        "z0": 2.2882602214813232
+      },
+      "state_tensors": 76,
+      "config_assertion": "PASS"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_ETX-01-S42-TEST.pt",
+      "bytes": 4488827,
+      "sha256": "bc8af886d1a4b5c81124211c8bac1d237b9987ec535faf009442526184b0937a",
+      "val": "2026-02-13",
+      "cfg": {
+        "d_model": 128,
+        "blocks": 5,
+        "heads": 8,
+        "head_dim": 16,
+        "ffn": 384,
+        "dropout": 0.1,
+        "n_tok": 192,
+        "tau_lo": 4.0,
+        "tau_hi": 512.0,
+        "batch": 512,
+        "chunk": 128,
+        "lr": 0.0015,
+        "wd": 0.01,
+        "epochs": 4,
+        "warmup": 500,
+        "seed": 42,
+        "compile": false,
+        "z0": 2.31630802154541
+      },
+      "state_tensors": 76,
+      "config_assertion": "PASS"
+    }
+  ],
+  "query_embedding": "final normalized query token zq, dimension 128",
+  "head": {
+    "input_dim": 128,
+    "hidden": 64,
+    "dropout": 0.1,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "batch_size": 8192,
+    "epochs": 4,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.98
+    ],
+    "warmup_steps": 200
+  },
+  "head_seeds": [
+    42,
+    43,
+    44
+  ],
+  "extra_cutoffs": [
+    "2025-10-22",
+    "2025-10-29",
+    "2025-11-05",
+    "2025-11-12",
+    "2025-11-19",
+    "2025-11-26",
+    "2025-12-03",
+    "2025-12-10",
+    "2025-12-17",
+    "2025-12-24",
+    "2025-12-31",
+    "2026-01-07",
+    "2026-01-14"
+  ],
+  "crossfit": "splitmix64(user_id)&1; EXTRA donor side predicts opposite recipient side",
+  "volume_control": "CLEAN positives plus with-replacement draws from earliest third of CLEAN positive cutoffs; canonical RNG seed 42; count matched separately to each EXTRA donor side",
+  "preprocessing": {
+    "winsor_quantiles": [
+      0.005,
+      0.995
+    ],
+    "scope": "GLOBAL",
+    "center": "donor clipped mean",
+    "alpha_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "test_distribution_matching": false
+  },
+  "static_policy": {
+    "clean_and_oof": "actual calendar, actual available history, no clip/cap",
+    "extra": "event depth_clip=289, query depth_cap=289, actual cutoff weekday",
+    "test": "registered ETX DCW compatibility: event depth_clip=289, query depth_cap=289, cdow_shift=-1 to the checkpoint's trained Thursday support"
+  },
+  "no_public_lb_tuning": true,
+  "no_upload": true
+}

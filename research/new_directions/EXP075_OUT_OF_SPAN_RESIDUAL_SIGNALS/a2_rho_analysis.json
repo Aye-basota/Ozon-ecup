@@ -1,0 +1,73 @@
+{
+  "experiment": "A2_WEEKLY_RESIDUAL_CNN",
+  "fold_rows": [
+    {
+      "cutoff": "2025-09-04",
+      "rho": 0.03331853934956558,
+      "b": 0.004203772582474643,
+      "G": 0.005060488837619705,
+      "deployable_amplitude": 1.0,
+      "amplitude_source": "fixed_residual_objective",
+      "delta_MSE": -0.0033470563273295824,
+      "baseline_RMSLE": 1.783465787129073,
+      "corrected_RMSLE": 1.7825271828313292,
+      "delta_RMSLE": -0.0009386042977439502,
+      "corr_with_A1_365": 0.38443544252896944
+    },
+    {
+      "cutoff": "2025-09-18",
+      "rho": 0.03609840835456108,
+      "b": 0.004112884170434104,
+      "G": 0.004161054601394885,
+      "deployable_amplitude": 0.830704842430196,
+      "amplitude_source": "strictly_earlier_heldout_folds",
+      "delta_MSE": -0.003961764417533364,
+      "baseline_RMSLE": 1.770323486872621,
+      "corrected_RMSLE": 1.769204195042308,
+      "delta_RMSLE": -0.0011192918303128963,
+      "corr_with_A1_365": 0.4324181790483797
+    },
+    {
+      "cutoff": "2025-10-02",
+      "rho": 0.036537944394501254,
+      "b": 0.004151009209437494,
+      "G": 0.004195479020643085,
+      "deployable_amplitude": 0.9287838494297732,
+      "amplitude_source": "strictly_earlier_heldout_folds",
+      "delta_MSE": -0.00409159495657693,
+      "baseline_RMSLE": 1.7544181218191863,
+      "corrected_RMSLE": 1.7532516508507798,
+      "delta_RMSLE": -0.0011664709684064967,
+      "corr_with_A1_365": 0.4780741654307492
+    },
+    {
+      "cutoff": "2025-10-16",
+      "rho": 0.02559537056626528,
+      "b": 0.00206727855778596,
+      "G": 0.0021374080840667778,
+      "deployable_amplitude": 0.9625077215804597,
+      "amplitude_source": "strictly_earlier_heldout_folds",
+      "delta_MSE": -0.0019994031705216227,
+      "baseline_RMSLE": 1.7488246991674166,
+      "corrected_RMSLE": 1.7482529637462318,
+      "delta_RMSLE": -0.0005717354211847159,
+      "corr_with_A1_365": 0.3898567490855916
+    }
+  ],
+  "weighted_clean_forward_rho": 0.030863934759224387,
+  "latest_rho": 0.02559537056626528,
+  "nested_delta_MSE": -0.002908812690191801,
+  "nested_delta_RMSLE": -0.0008277970134315637,
+  "bootstrap": {
+    "replicates": 1000,
+    "unique_users": 210212,
+    "rho_ci_2_5": 0.028151087866120993,
+    "rho_ci_97_5": 0.03346519483552593,
+    "rho_bootstrap_se": 0.0013744513195463144,
+    "t_rho": 22.455458640333735,
+    "delta_MSE_ci_2_5": -0.0033805026247283143,
+    "delta_MSE_ci_97_5": -0.0023995194477525296,
+    "P_delta_MSE_lt_0": 1.0
+  },
+  "verdict": "STRONG_SIGNAL"
+}

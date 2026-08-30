@@ -1,0 +1,67 @@
+[
+  {
+    "cutoff": "2025-09-04",
+    "rows": 188518,
+    "unique_users": 188518,
+    "panel_matches_aligned": true,
+    "real_cache_sha256": "4c97e6e26ec9cb19f647ee9333ed64957afd67fc065144fef81ef059f4460f7f",
+    "shuffled_cache_sha256": "07720aa90408f11f1ce8616511ffac3b5a5ed193c66e305676cc9c08ad202bc1",
+    "finite_or_null": true,
+    "days": 90,
+    "panel_rows": 188518,
+    "factor_marginal_max_abs_diff": 6.661338147750939e-16,
+    "date_alignment_changed_share": 0.9555555555555556,
+    "source_max_event_date": "2025-09-04"
+  },
+  {
+    "cutoff": "2025-09-18",
+    "rows": 191025,
+    "unique_users": 191025,
+    "panel_matches_aligned": true,
+    "real_cache_sha256": "381abe5db9676171beae9dcaa2f0f5fa8318b528b7158480fa6c69728bad071a",
+    "shuffled_cache_sha256": "b9008978e6d8fb5b5a601f494427e9f1dd8c53c440463ec83032c6dd36382993",
+    "finite_or_null": true,
+    "days": 90,
+    "panel_rows": 191025,
+    "factor_marginal_max_abs_diff": 1.1102230246251565e-15,
+    "date_alignment_changed_share": 0.9555555555555556,
+    "source_max_event_date": "2025-09-18"
+  },
+  {
+    "cutoff": "2025-10-02",
+    "rows": 193694,
+    "unique_users": 193694,
+    "panel_matches_aligned": true,
+    "real_cache_sha256": "472b2a1cb9473aba9fa32bf241e6a45900f863055945f3a00debb0e55c5765c3",
+    "shuffled_cache_sha256": "a6b9829c8247155f40e605da20c90706fb50df79714adcf588af5f8dced94178",
+    "finite_or_null": true,
+    "days": 90,
+    "panel_rows": 193694,
+    "factor_marginal_max_abs_diff": 1.1102230246251565e-15,
+    "date_alignment_changed_share": 0.9555555555555556,
+    "source_max_event_date": "2025-10-02"
+  },
+  {
+    "cutoff": "2025-10-16",
+    "rows": 197379,
+    "unique_users": 197379,
+    "panel_matches_aligned": true,
+    "real_cache_sha256": "9b965c0254ea730532345e760d03b4aa6edc2c6b6e3a10b3e20ae574993b9cc6",
+    "shuffled_cache_sha256": "a8eb248259589afd52cb853d27d27bfecfed451d99881fad2db1256756289cc7",
+    "finite_or_null": true,
+    "days": 90,
+    "panel_rows": 197379,
+    "factor_marginal_max_abs_diff": 1.3322676295501878e-15,
+    "date_alignment_changed_share": 0.9555555555555556,
+    "source_max_event_date": "2025-10-16"
+  },
+  {
+    "scope": "test_input_only",
+    "cutoff": "2026-02-13",
+    "days": 90,
+    "panel_rows": 250000,
+    "factor_marginal_max_abs_diff": 1.1102230246251565e-15,
+    "date_alignment_changed_share": 0.9555555555555556,
+    "source_max_event_date": "2026-02-13"
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "experiment": "EXP083_INFORMATION_LOSS_DISCOVERY",
+  "phase": "final_oracle_plus_gate_authorized_short_horizon_observable_pilot",
+  "runtime_seconds": 455.4843530654907,
+  "raw_sha256": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0",
+  "canonical_oof_sha256": "d3e8893b83f3f30d2a47469bde646b81548dd04078e84689d394b50574206123",
+  "rows": 770616,
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_weights": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "production_basis": "[1,z_current,z_match,40 clean OOF components,EXP075_postspan] per fold",
+  "production_bank_columns": 40,
+  "production_residual_RMSLE_weighted": 1.7501040483045136,
+  "purged_transition": {
+    "source": "2025-09-04",
+    "source_target_end": "2025-10-04",
+    "validation": "2025-10-16",
+    "label_available": true
+  },
+  "decode_audit": [
+    {
+      "cutoff": "2025-09-04",
+      "rows": 188518,
+      "w30_searches_max_abs_decode_error": 0.9531138420989009,
+      "finite_funnel": 1.0,
+      "finite_coherence": 1.0
+    },
+    {
+      "cutoff": "2025-09-18",
+      "rows": 191025,
+      "w30_searches_max_abs_decode_error": 1.1977584792120979,
+      "finite_funnel": 1.0,
+      "finite_coherence": 1.0
+    },
+    {
+      "cutoff": "2025-10-02",
+      "rows": 193694,
+      "w30_searches_max_abs_decode_error": 1.2086797619488152,
+      "finite_funnel": 1.0,
+      "finite_coherence": 1.0
+    },
+    {
+      "cutoff": "2025-10-16",
+      "rows": 197379,
+      "w30_searches_max_abs_decode_error": 0.7400438995330205,
+      "finite_funnel": 1.0,
+      "finite_coherence": 1.0
+    }
+  ],
+  "target_derived_values_used_as_features": false,
+  "target_derived_values_used_for_oracle_only": true,
+  "models_trained": 4,
+  "trained_models": "four fold-specific multi-output Ridge pilots for Y1/Y3/Y7/Y14; no Y30 or residual model",
+  "oracle_authorized_short_horizon_pilot": true,
+  "full_experiment_authorized": false,
+  "full_experiment_rejection_reason": "purged rho 0.0008047 < 0.015 and purged Delta MSE +0.0010509 with P(gain)=0",
+  "test_inference_run": false,
+  "submission_created": false,
+  "leaderboard_used_for_selection": false
+}

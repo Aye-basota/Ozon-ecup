@@ -1,0 +1,11 @@
+task,cutoff_a,cutoff_b,gap_days,gap_group,history_support,panel_blocks,class_sampling
+p07_early,2025-07-03,2025-07-10,7,short,180,3,equal cap 120000
+p07_mid,2025-09-18,2025-09-25,7,short,180,3,equal cap 120000
+p07_late,2025-10-09,2025-10-16,7,short,180,3,equal cap 120000
+p28_early,2025-07-03,2025-07-31,28,medium,180,3,equal cap 120000
+p28_mid,2025-08-21,2025-09-18,28,medium,180,3,equal cap 120000
+p28_late,2025-09-18,2025-10-16,28,medium,180,3,equal cap 120000
+p56_early,2025-07-03,2025-08-28,56,long,180,3,equal cap 120000
+p56_late,2025-08-21,2025-10-16,56,long,180,3,equal cap 120000
+p105_max,2025-07-03,2025-10-16,105,max,180,3,equal cap 120000
+real_20251016_to_20260213,2025-10-16,2026-02-13,120,real-test,180,3,equal cap 120000

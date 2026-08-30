@@ -1,0 +1,10 @@
+{
+  "recipe": "0.95*SEQ65 + 0.05*BTYD; one global shift to 2.3293; floor z; expm1",
+  "output": "analysis\\BEST_EXISTING_SUBMISSION.csv",
+  "sha256": "4001d212aab708a5caef500fa7c6edf119d24969888fe45a0be2330347ba949f",
+  "rows": 250000,
+  "raw_mean_z": 2.439040343612687,
+  "shift": -0.10974034361268714,
+  "disk_mean_log1p": 2.329308779038292,
+  "zeros": 135
+}

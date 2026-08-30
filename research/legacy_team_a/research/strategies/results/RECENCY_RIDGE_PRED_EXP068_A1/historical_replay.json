@@ -1,0 +1,160 @@
+{
+  "status": "BLOCKED_HISTORICAL_REPLAY",
+  "reference_submission": {
+    "path": "пайплайн сокомандника\\review_bundles\\fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted\\submissions\\submission_combo10h_candidate_1_ridge_drop_recent_hurdle_stable18_s075.csv",
+    "sha256": "95965c33bfe32378227e39ec1e0a792fed19cc29dc73d84b8b83bc0cda447959",
+    "rows": 250000,
+    "mean_z": 2.3293,
+    "min_z": 0.02919568649305401,
+    "max_z": 8.733629608968325,
+    "zero_predictions": 0
+  },
+  "required_floor": 5e-07,
+  "formula_reconstructed": false,
+  "formula_replay_max_abs_log_error": null,
+  "reference_self_roundtrip_max_abs_log_error": 1.1102230246251565e-16,
+  "reference_self_roundtrip_is_not_replay": true,
+  "blocking_reason": "The supplied bundle contains the final CSV and aggregate validation rows, but omits the exact row-level OOF/test prediction bank and meta_raw matrices used to fit and apply Ridge. Reusing the final CSV or algebraically inverting it would be circular, so no reconstructed_z is claimed.",
+  "missing_original_oof_checkpoints": [
+    "cap__2025-09-04.npz",
+    "unc__2025-09-04.npz",
+    "dist__2025-09-04.npz",
+    "hurdle__2025-09-04.npz",
+    "multiscale_direct__2025-09-04.npz",
+    "recent_direct__2025-09-04.npz",
+    "recent_dist__2025-09-04.npz",
+    "recent_hurdle_fast12__2025-09-04.npz",
+    "cap__2025-09-18.npz",
+    "unc__2025-09-18.npz",
+    "dist__2025-09-18.npz",
+    "hurdle__2025-09-18.npz",
+    "multiscale_direct__2025-09-18.npz",
+    "recent_direct__2025-09-18.npz",
+    "recent_dist__2025-09-18.npz",
+    "recent_hurdle_fast12__2025-09-18.npz",
+    "cap__2025-10-02.npz",
+    "unc__2025-10-02.npz",
+    "dist__2025-10-02.npz",
+    "hurdle__2025-10-02.npz",
+    "multiscale_direct__2025-10-02.npz",
+    "recent_direct__2025-10-02.npz",
+    "recent_dist__2025-10-02.npz",
+    "recent_hurdle_fast12__2025-10-02.npz",
+    "cap__2025-10-16.npz",
+    "unc__2025-10-16.npz",
+    "dist__2025-10-16.npz",
+    "hurdle__2025-10-16.npz",
+    "multiscale_direct__2025-10-16.npz",
+    "recent_direct__2025-10-16.npz",
+    "recent_dist__2025-10-16.npz",
+    "recent_hurdle_fast12__2025-10-16.npz"
+  ],
+  "missing_original_test_checkpoints": [
+    "hurdle_test.npz",
+    "meta_raw_test.npz",
+    "multiscale_direct_test.npz",
+    "recent_direct_test.npz",
+    "recent_dist_test.npz",
+    "recent_hurdle_fast12_test.npz"
+  ],
+  "found_original_oof_checkpoints": {},
+  "found_original_test_checkpoints": {},
+  "all_npz_scanned": 629,
+  "historical_recipe": {
+    "fold_scheme": "expanding walk-forward over four folds; fold 0 is table_core passthrough",
+    "folds": [
+      "2025-09-04",
+      "2025-09-18",
+      "2025-10-02",
+      "2025-10-16"
+    ],
+    "train_validation_alignment": "each member aligned by exact user_id set to cap checkpoint order",
+    "target": "log1p(y) - table_core",
+    "members_in_exact_order": [
+      "cap",
+      "unc",
+      "dist",
+      "hurdle",
+      "multiscale_direct",
+      "recent_direct",
+      "recent_dist",
+      "recent_hurdle_fast12"
+    ],
+    "meta_raw": "enabled; up to 72 raw activity/recency columns from cap checkpoint",
+    "prediction_derived_columns": [
+      "table_core",
+      "p",
+      "mu",
+      "log1p(mu)",
+      "p*(1-p)",
+      "member_mean",
+      "member_std",
+      "member_min",
+      "member_max",
+      "member_range",
+      "member_i-table_core for each of 8 members"
+    ],
+    "standardization": "StandardScaler(copy=False), unweighted fit on stacked donor rows",
+    "ridge": {
+      "alpha": 150.0,
+      "solver": "lsqr",
+      "tol": 0.0001,
+      "fit_intercept": true,
+      "sample_weight": "fold weight passed only to Ridge step"
+    },
+    "recency_weights": {
+      "2025-09-04": 1.0,
+      "2025-09-18": 2.0,
+      "2025-10-02": 4.0,
+      "2025-10-16": 8.0
+    },
+    "correction_clip": [
+      -2.0,
+      2.0
+    ],
+    "historical_scale": 0.75,
+    "table_clip": [
+      0.0,
+      20.0
+    ],
+    "friend_transform": "friend + 0.55*(candidate_table-table_core)",
+    "global_level": 2.3293,
+    "global_level_policy": "clip [0,20], add level-mean(z), clip [0,20] once",
+    "csv_policy": "predict=max(expm1(clip(z,0,20)),0); pandas to_csv(index=False)"
+  },
+  "validation_record": {
+    "wcv": 1.7482567583377555,
+    "base_wcv": 1.749803702558191,
+    "delta": -0.0015469442204357,
+    "wins": 3,
+    "wins_recent": 3,
+    "latest_delta": -0.0016618744898704,
+    "fold_scores": [
+      1.7692437685920095,
+      1.7608868133724076,
+      1.7494315618773606,
+      1.7418884665275078
+    ],
+    "fold_deltas": [
+      0.0,
+      -0.00183820692291925,
+      -0.0015581883854334233,
+      -0.0016618744898704296
+    ],
+    "warning": "This historical walk-forward record is not canonical outer LOFO against latest."
+  },
+  "public_lb": {
+    "value": 1.6492897556391737,
+    "status": "RECORDED_BUT_NOT_SHA_BOUND",
+    "evidence": "final6h RUN_MANIFEST known_ridge_submission_public and provenance text",
+    "assigned_to_exact_csv": false
+  },
+  "source_hashes": {
+    "пайплайн сокомандника\\research_scripts\\continue_fixedstack_combo_10h.py": "37d35e4fe41e6683bf23ad55fddc579bcd84476ee1df2a438a656cbd84e391b7",
+    "пайплайн сокомандника\\research_scripts\\run_best_bas_fixedstack_14h_v2.py": "5974a40d61a8320da91191875cc4c4cf1984f4216bda9814dfdb53227fed3dbd",
+    "пайплайн сокомандника\\research_scripts\\run_best_bas_research_23h.py": "e2bae63fe11a039af54f648c29a2402d52341de46606eaa6d8407ad85af38957",
+    "пайплайн сокомандника\\research_scripts\\continue_best_bas_final6h.py": "2b0fb5b26ef4fad10a1604c7abf13a9db23b9cf7051ed61f44e54d95c7a7e041",
+    "пайплайн сокомандника\\review_bundles\\fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted\\results\\RUN_MANIFEST.json": "22b6333bfafb4c9e8942a13c25714ec32a5a8592866f2bd2945214ad59a39894",
+    "пайплайн сокомандника\\review_bundles\\fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654.zip": "f6921f298acfb540190f2d7d0ce36ad9473fa7c6161b949e809d2916a3e9f791"
+  }
+}

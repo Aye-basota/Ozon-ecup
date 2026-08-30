@@ -1,0 +1,83 @@
+{
+  "blend_space": "log1p",
+  "byte_identical": false,
+  "component_negative_policy": "reject negatives; original rebuild used clip(pred, 0, None)",
+  "csv_precision": {
+    "reader_dtype": "float64",
+    "roundtrip_checked": true,
+    "writer": "pandas.DataFrame.to_csv(index=False), default float formatting"
+  },
+  "final_floor_policy": "z = maximum(z, 0)",
+  "global_level_policy": "NONE_AFTER_BLEND; components were already fixed-level submissions",
+  "max_abs_log1p_source_csv_vs_reconstructed_full_policy": 8.881784197001252e-16,
+  "max_abs_log1p_written_csv_vs_reconstructed_full_policy": 4.440892098500626e-16,
+  "max_abs_predict_source_csv_vs_reconstructed": 4.547473508864641e-13,
+  "mean_z_after_floor": 2.32930256438812,
+  "mean_z_before_floor": 2.32930256438812,
+  "post_floor_zero_rows": 0,
+  "pre_floor_negative_rows": 0,
+  "recipe": {
+    "friend": 0.12,
+    "occ_meta_B": 0.16,
+    "occ_raw_X3": 0.72
+  },
+  "reconstructed_csv": {
+    "columns": [
+      "user_id",
+      "predict"
+    ],
+    "duplicate_user_id": 0,
+    "inf_predictions": 0,
+    "max_predict": 5150.733702201751,
+    "mean_log1p": 2.32930256438812,
+    "mean_predict": 37.710375198854685,
+    "min_predict": 0.0293451238079139,
+    "missing_values": 0,
+    "nan_predictions": 0,
+    "negative_predictions": 0,
+    "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\AUTHORITATIVE_LATEST_AUDIT_20260825_160144_V2\\latest_reconstructed.csv",
+    "rows": 250000,
+    "sample_order_exact": true,
+    "sha256": "a9dc2dabdc693cd510c0428c501154898ec11f1e15b0694261471757cae274a1",
+    "unique_user_id": 250000,
+    "zero_predictions": 0
+  },
+  "serialization_floor": 5e-07,
+  "serialization_floor_pass": true,
+  "sha_manifest": {
+    "bad_entries": [
+      {
+        "actual_sha256": "a9dc2dabdc693cd510c0428c501154898ec11f1e15b0694261471757cae274a1",
+        "expected_sha256": "7ef5b2c58925bd28c5bc7eb83b9cfd4785c608a0c8b2a6d7a3277730cba8e722",
+        "relative_path": "latest/latest_rebuilt.csv",
+        "status": "MISMATCH"
+      }
+    ],
+    "entries": 91,
+    "matches": 90,
+    "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\MANIFEST.sha256",
+    "sha256": "94e885a0b3073a513178451cff003555077e69892db6248ea7ba734393180206"
+  },
+  "source_latest": {
+    "columns": [
+      "user_id",
+      "predict"
+    ],
+    "duplicate_user_id": 0,
+    "inf_predictions": 0,
+    "max_predict": 5150.733702201751,
+    "mean_log1p": 2.32930256438812,
+    "mean_predict": 37.710375198854685,
+    "min_predict": 0.0293451238079139,
+    "missing_values": 0,
+    "nan_predictions": 0,
+    "negative_predictions": 0,
+    "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\latest.csv",
+    "rows": 250000,
+    "sample_order_exact": true,
+    "sha256": "7ef5b2c58925bd28c5bc7eb83b9cfd4785c608a0c8b2a6d7a3277730cba8e722",
+    "unique_user_id": 250000,
+    "zero_predictions": 0
+  },
+  "status": "PASS"
+}

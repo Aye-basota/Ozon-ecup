@@ -1,0 +1,624 @@
+ M HISTORY.md
+ M STATE.md
+ M experiments/log.csv
+ M experiments/submissions.csv
+ M research/strategies/STRATEGIES_INDEX.md
+ M research/strategies/STRATEGY_13_etx_event_transformer.md
+ M src/features.py
+ M src/seq.py
+ M src/test_seq.py
+?? PROBABLY_EXP.md
+?? deliverables/lb_public_comparison_2026-08-20.md
+?? deliverables/ozon_e_cup_base_data.zip
+?? deliverables/submission_STRONGEST_CURRENT_artifacts_2026-08-20.zip
+?? docs/superpowers/plans/2026-08-20-future-funnel-supervision.md
+?? experiments/DISCRIPTION.md
+?? experiments/EXP_032_S04_conditional_fresh_seq.md
+?? experiments/INDEPENDENT_STAGE1_FINDINGS.md
+?? experiments/README.md
+?? experiments/adjacent_target_correlations.csv
+?? experiments/daily_global.csv
+?? experiments/daily_structural_rows.csv
+?? experiments/day_of_week_effects.csv
+?? experiments/deeper_summary.json
+?? experiments/diagnostics_summary.json
+?? experiments/domain_model_importance.csv
+?? experiments/domain_shift_features.csv
+?? experiments/exp_030_seq_depth_curriculum.md
+?? experiments/exp_030b_seq_d3a_seed43.md
+?? experiments/exp_030c_seq_d3a_multiseed.md
+?? experiments/exp_032_s04_cond_fresh_pilot.md
+?? experiments/exp_032b_prod_extensive.md
+?? experiments/exp_035_mix9_seq_slot.md
+?? experiments/exp_036_etx_sparse_event_transformer.md
+?? experiments/exp_037_etx_avg3_strongest.md
+?? experiments/exp_038_fnl_future_funnel.md
+?? experiments/exp_039_block4_saf.md
+?? experiments/exp_040_fresh_contrast_moe.md
+?? experiments/exp_041_ridge15.md
+?? experiments/exp_042_zero2d_shrink.md
+?? experiments/exp_043_det_pair.md
+?? experiments/exp_044_fresh_conditional_ft.md
+?? experiments/exp_045_buyctrl_det.md
+?? experiments/exp_046_tabular_backbone_refresh.md
+?? experiments/exp_047_btyd_day_bgnbd_residual.md
+?? experiments/exp_048_selection_mismatch_cv.md
+?? experiments/exp_049_selection_mismatch_production_followup.md
+?? experiments/exp_050_btyd05_production_resolution.md
+?? experiments/exp_051_btyd_stable_production.md
+?? experiments/exp_052_channel_shapley_split.md
+?? experiments/exp_053_residual_signal_discovery.md
+?? experiments/exp_054_burst_gap_etx.md
+?? experiments/exp_055_landmark_memory_etx.md
+?? experiments/exp_056_late_unlabeled_etx.md
+?? experiments/exp_057_production_state_reweight.md
+?? experiments/exp_058_dataset_fingerprint.md
+?? experiments/exp_059_seq65_temporal_heavy.md
+?? experiments/exp_060_level_minus_006.md
+?? experiments/exp_061_open_funnel.md
+?? experiments/exp_062_platform_detrend.md
+?? experiments/exp_063_occurrence_revisit.md
+?? experiments/exp_064_event_order.md
+?? experiments/exp_065_final_integration.md
+?? experiments/exp_066_latest_delta_compatibility.md
+?? experiments/exp_067_authoritative_latest_integration.md
+?? experiments/exp_068_recency_ridge_predictions.md
+?? experiments/funnel_state_targets.csv
+?? experiments/global_30d_blocks.csv
+?? experiments/purchase_cycle_targets.csv
+?? experiments/raw_audit_summary.json
+?? experiments/row_group_metadata.csv
+?? research/README.md
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144/REPORT.md
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144/SUPERSEDED.md
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144/component_manifest.json
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144/level_audit.csv
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144/oof_status.json
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144/reconstruction.json
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144/summary.json
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144_V2/REPORT.md
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144_V2/component_manifest.json
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144_V2/level_audit.csv
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144_V2/oof_status.json
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144_V2/reconstruction.json
+?? research/strategies/results/AUTHORITATIVE_LATEST_AUDIT_20260825_160144_V2/summary.json
+?? research/strategies/results/BLOCK4_SAF/alpha_curve.csv
+?? research/strategies/results/BLOCK4_SAF/audit.json
+?? research/strategies/results/BLOCK4_SAF/config.json
+?? research/strategies/results/BLOCK4_SAF/fold_20250904_train.json
+?? research/strategies/results/BLOCK4_SAF/fold_20250918_train.json
+?? research/strategies/results/BLOCK4_SAF/fold_20251002_train.json
+?? research/strategies/results/BLOCK4_SAF/fold_20251016_train.json
+?? research/strategies/results/BLOCK4_SAF/fold_diagnostics.csv
+?? research/strategies/results/BLOCK4_SAF/production_train.json
+?? research/strategies/results/BLOCK4_SAF/q_metrics.csv
+?? research/strategies/results/BLOCK4_SAF/seed_control.csv
+?? research/strategies/results/BLOCK4_SAF/segments.csv
+?? research/strategies/results/BLOCK4_SAF/summary.json
+?? research/strategies/results/BLOCK4_SAF/test_delta_segments.csv
+?? research/strategies/results/BLOCK4_SAF/test_regime.json
+?? research/strategies/results/BLOCK4_SAF/validation.json
+?? research/strategies/results/BTYD05_PROD_EXP050/fresh_parity_audit.json
+?? research/strategies/results/BTYD05_PROD_EXP050/production_support.json
+?? research/strategies/results/BTYD05_PROD_EXP050/summary.json
+?? research/strategies/results/BTYD_DAY_BGNBD/artifact_manifest.json
+?? research/strategies/results/BTYD_DAY_BGNBD/count_calibration.csv
+?? research/strategies/results/BTYD_DAY_BGNBD/count_metrics.csv
+?? research/strategies/results/BTYD_DAY_BGNBD/fit_parameters.csv
+?? research/strategies/results/BTYD_DAY_BGNBD/fixed_weight_curve.csv
+?? research/strategies/results/BTYD_DAY_BGNBD/monetary_parameters.csv
+?? research/strategies/results/BTYD_DAY_BGNBD/nested_lofo.csv
+?? research/strategies/results/BTYD_DAY_BGNBD/prediction_diagnostics.csv
+?? research/strategies/results/BTYD_DAY_BGNBD/prediction_diagnostics.json
+?? research/strategies/results/BTYD_DAY_BGNBD/segments.csv
+?? research/strategies/results/BTYD_DAY_BGNBD/standalone_metrics.json
+?? research/strategies/results/BTYD_DAY_BGNBD/summary.json
+?? research/strategies/results/BTYD_STABLE_EXP051/artifact_manifest.json
+?? research/strategies/results/BTYD_STABLE_EXP051/btyd_fit_details.json
+?? research/strategies/results/BTYD_STABLE_EXP051/btyd_monetary.json
+?? research/strategies/results/BTYD_STABLE_EXP051/count_calibration.csv
+?? research/strategies/results/BTYD_STABLE_EXP051/count_metrics.csv
+?? research/strategies/results/BTYD_STABLE_EXP051/fit_parameters.csv
+?? research/strategies/results/BTYD_STABLE_EXP051/fixed_weight_curve.csv
+?? research/strategies/results/BTYD_STABLE_EXP051/fresh_parity_audit.json
+?? research/strategies/results/BTYD_STABLE_EXP051/fresh_retrain_audit.json
+?? research/strategies/results/BTYD_STABLE_EXP051/monetary_parameters.csv
+?? research/strategies/results/BTYD_STABLE_EXP051/nested_lofo.csv
+?? research/strategies/results/BTYD_STABLE_EXP051/oof_predictive_stability.json
+?? research/strategies/results/BTYD_STABLE_EXP051/prediction_diagnostics.csv
+?? research/strategies/results/BTYD_STABLE_EXP051/prediction_diagnostics.json
+?? research/strategies/results/BTYD_STABLE_EXP051/production_support.json
+?? research/strategies/results/BTYD_STABLE_EXP051/segments.csv
+?? research/strategies/results/BTYD_STABLE_EXP051/source_hashes.json
+?? research/strategies/results/BTYD_STABLE_EXP051/standalone_metrics.json
+?? research/strategies/results/BTYD_STABLE_EXP051/submission_verification.json
+?? research/strategies/results/BTYD_STABLE_EXP051/summary.json
+?? research/strategies/results/BTYD_STABLE_EXP051/summary_oof.json
+?? research/strategies/results/BTYD_STABLE_EXP051/test_predictive_stability.json
+?? research/strategies/results/BURST_GAP_EXP054/REPORT.md
+?? research/strategies/results/BURST_GAP_EXP054/novelty_correlations.csv
+?? research/strategies/results/BURST_GAP_EXP054/recipient_half_metrics.csv
+?? research/strategies/results/BURST_GAP_EXP054/residual_scale_selection.csv
+?? research/strategies/results/BURST_GAP_EXP054/structural_statistics.csv
+?? research/strategies/results/BURST_GAP_EXP054/within_stratum_diagnostics.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_baseline_manifest.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_channel_data_audit.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_drift_segments.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_fold_channel_statistics.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_oracle_lofo.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_oracle_lofo_cells.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_pilot_model_manifest.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_pilot_segments.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_predictability.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_preflight_verdict.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_regime_confusion.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_residual_bins.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_residual_correlations.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_residual_segments.csv
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_standalone_and_residual.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_summary.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_target_identity_audit.json
+?? research/strategies/results/CHANNEL_SHAPLEY_SPLIT/CHANNEL_SHAPLEY_EXP052_two_sided_halves.csv
+?? research/strategies/results/ETX1/README.md
+?? research/strategies/results/ETX1/check_test_etx.py
+?? research/strategies/results/ETX1/cost_V1016.csv
+?? research/strategies/results/ETX1/diag.py
+?? research/strategies/results/ETX1/fold_V1016.csv
+?? research/strategies/results/ETX1/lofo_etx.py
+?? research/strategies/results/ETX1/make_submission.sh
+?? research/strategies/results/ETX1/register.py
+?? research/strategies/results/ETX1/run.sh
+?? research/strategies/results/ETX1/segments_V1016.csv
+?? research/strategies/results/ETX1/test_regime_by_activity.csv
+?? research/strategies/results/ETX1/test_regime_check.csv
+?? research/strategies/results/ETX2/README.md
+?? research/strategies/results/ETX2/REPORT_STRONGEST_CURRENT.md
+?? research/strategies/results/ETX2/build_etx_avg.py
+?? research/strategies/results/ETX2/check_test_etx2.py
+?? research/strategies/results/ETX2/common.py
+?? research/strategies/results/ETX2/depth_dow_evidence.md
+?? research/strategies/results/ETX2/depth_fix.py
+?? research/strategies/results/ETX2/depth_static_ETX-01-S42-V0918.csv
+?? research/strategies/results/ETX2/depth_static_ETX-01-S42-V1002.csv
+?? research/strategies/results/ETX2/depth_static_ETX-01-S42-V1016.csv
+?? research/strategies/results/ETX2/lofo2.py
+?? research/strategies/results/ETX2/lofo_slot.csv
+?? research/strategies/results/ETX2/make_submission.sh
+?? research/strategies/results/ETX2/pull_a10.sh
+?? research/strategies/results/ETX2/regime.py
+?? research/strategies/results/ETX2/regime_pairs.csv
+?? research/strategies/results/ETX2/run_a10.sh
+?? research/strategies/results/ETX2/run_all.sh
+?? research/strategies/results/ETX2/run_local.sh
+?? research/strategies/results/ETX2/segblend.py
+?? research/strategies/results/ETX2/summary.csv
+?? research/strategies/results/ETX2/summary.py
+?? research/strategies/results/EVENT_ORDER_EXP064/HYPOTHESIS_CARD.md
+?? research/strategies/results/EVENT_ORDER_EXP064/feature_correlations.csv
+?? research/strategies/results/EVENT_ORDER_EXP064/fold_metrics.csv
+?? research/strategies/results/EVENT_ORDER_EXP064/leakage_alignment_shuffle_audit.json
+?? research/strategies/results/EVENT_ORDER_EXP064/scale_curves.csv
+?? research/strategies/results/EVENT_ORDER_EXP064/segment_metrics.csv
+?? research/strategies/results/EVENT_ORDER_EXP064/summary.json
+?? research/strategies/results/FINAL_INTEGRATION_EXP065/HYPOTHESIS_CARD.md
+?? research/strategies/results/FINAL_INTEGRATION_EXP065/component_pairwise_regime.csv
+?? research/strategies/results/FINAL_INTEGRATION_EXP065/manifest.json
+?? research/strategies/results/FINGERPRINT_EXP058/REPORT.md
+?? research/strategies/results/FINGERPRINT_EXP058/base_exact_replay.json
+?? research/strategies/results/FINGERPRINT_EXP058/cohort_diagnostics.csv
+?? research/strategies/results/FINGERPRINT_EXP058/config.json
+?? research/strategies/results/FINGERPRINT_EXP058/feature_importance.json
+?? research/strategies/results/FINGERPRINT_EXP058/fingerprint_manifest.json
+?? research/strategies/results/FINGERPRINT_EXP058/integrity_full.json
+?? research/strategies/results/FINGERPRINT_EXP058/integrity_sample.json
+?? research/strategies/results/FINGERPRINT_EXP058/integrity_summary.json
+?? research/strategies/results/FINGERPRINT_EXP058/model_manifest.json
+?? research/strategies/results/FINGERPRINT_EXP058/novelty_audit.csv
+?? research/strategies/results/FINGERPRINT_EXP058/permutation_marginals.csv
+?? research/strategies/results/FINGERPRINT_EXP058/summary.json
+?? research/strategies/results/FINGERPRINT_EXP058/test_metadata_availability.json
+?? research/strategies/results/FINGERPRINT_EXP058/treatment_field_audit.csv
+?? research/strategies/results/FNL1/README.md
+?? research/strategies/results/FNL1/analyze.py
+?? research/strategies/results/FNL1/aux_auc.csv
+?? research/strategies/results/FNL1/curves.csv
+?? research/strategies/results/FNL1/diversity.csv
+?? research/strategies/results/FNL1/folds.csv
+?? research/strategies/results/FNL1/run.sh
+?? research/strategies/results/FNL1/run_ctrl.sh
+?? research/strategies/results/FNL1/run_makeup.sh
+?? research/strategies/results/FNL1/segments.csv
+?? research/strategies/results/FRESH_CONTRAST/README.md
+?? research/strategies/results/FRESH_CONTRAST/config.json
+?? research/strategies/results/FRESH_CONTRAST/fixed_curves.csv
+?? research/strategies/results/FRESH_CONTRAST/fixed_summary.csv
+?? research/strategies/results/FRESH_CONTRAST/fold_diagnostics.csv
+?? research/strategies/results/FRESH_CONTRAST/hash_groups.csv
+?? research/strategies/results/FRESH_CONTRAST/nested_lofo.csv
+?? research/strategies/results/FRESH_CONTRAST/segments.csv
+?? research/strategies/results/FRESH_CONTRAST/summary.json
+?? research/strategies/results/FRESH_CONTRAST/validation.json
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/landmark_schedule_config.json
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/memory_correlation_diagnostics.csv
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/memory_summary_manifest.json
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/preflight_direction_metrics.csv
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/preflight_pooled_metrics.csv
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/preflight_verdict.json
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/reproducibility.json
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/safe_window_audit.json
+?? research/strategies/results/LANDMARK_MEMORY_EXP055/summary.json
+?? research/strategies/results/LATEST_DELTA_COMPAT_EXP066_A1/REPORT.md
+?? research/strategies/results/LATEST_DELTA_COMPAT_EXP066_A1/fixed_curves.csv
+?? research/strategies/results/LATEST_DELTA_COMPAT_EXP066_A1/hash_halves.csv
+?? research/strategies/results/LATEST_DELTA_COMPAT_EXP066_A1/nested_lofo.csv
+?? research/strategies/results/LATEST_DELTA_COMPAT_EXP066_A1/residual_diagnostics.csv
+?? research/strategies/results/LATEST_DELTA_COMPAT_EXP066_A1/segments.csv
+?? research/strategies/results/LATEST_DELTA_COMPAT_EXP066_A1/summary.json
+?? research/strategies/results/LATEST_DELTA_COMPAT_EXP066_A1/test_regime.json
+?? research/strategies/results/LATE_SSL_EXP056/REPORT.md
+?? research/strategies/results/LATE_SSL_EXP056/deterministic_replay.json
+?? research/strategies/results/LATE_SSL_EXP056/deterministic_replay_v2.json
+?? research/strategies/results/LATE_SSL_EXP056/domain_audit_cpu.json
+?? research/strategies/results/LATE_SSL_EXP056/domain_shift_summary.json
+?? research/strategies/results/LATE_SSL_EXP056/embedding_BASE.json
+?? research/strategies/results/LATE_SSL_EXP056/embedding_CONTROL.json
+?? research/strategies/results/LATE_SSL_EXP056/embedding_LATE.json
+?? research/strategies/results/LATE_SSL_EXP056/embedding_mmd.csv
+?? research/strategies/results/LATE_SSL_EXP056/fixed_slot_metrics.csv
+?? research/strategies/results/LATE_SSL_EXP056/segments.csv
+?? research/strategies/results/LATE_SSL_EXP056/standalone_metrics.csv
+?? research/strategies/results/LATE_SSL_EXP056/summary.json
+?? research/strategies/results/LATE_SSL_EXP056/user_half_metrics.csv
+?? research/strategies/results/LEVEL_MINUS_006_EXP060/build_level_minus_006.mjs
+?? research/strategies/results/MIX9/README.md
+?? research/strategies/results/MIX9/build_d3a_avg3.py
+?? research/strategies/results/MIX9/check_test_seeds.py
+?? research/strategies/results/MIX9/lofo_mix.py
+?? research/strategies/results/MIX9/make_submission.sh
+?? research/strategies/results/MIX9/push_pull.sh
+?? research/strategies/results/MIX9/run_test_models.sh
+?? research/strategies/results/MIX9/seed_noise.py
+?? research/strategies/results/MIX9/setup_server.sh
+?? research/strategies/results/MIX9/verify_submission.py
+?? research/strategies/results/OCCURRENCE_REVISIT_EXP063/HYPOTHESIS_CARD.md
+?? research/strategies/results/OCCURRENCE_REVISIT_EXP063/fixed_and_nested_curves.csv
+?? research/strategies/results/OCCURRENCE_REVISIT_EXP063/provenance_audit.json
+?? research/strategies/results/OCCURRENCE_REVISIT_EXP063/summary.json
+?? research/strategies/results/OPEN_FUNNEL_EXP061/HYPOTHESIS_CARD.md
+?? research/strategies/results/OPEN_FUNNEL_EXP061/feature_correlations.csv
+?? research/strategies/results/OPEN_FUNNEL_EXP061/fold_metrics.csv
+?? research/strategies/results/OPEN_FUNNEL_EXP061/leakage_alignment_audit.json
+?? research/strategies/results/OPEN_FUNNEL_EXP061/scale_curves.csv
+?? research/strategies/results/OPEN_FUNNEL_EXP061/segment_metrics.csv
+?? research/strategies/results/OPEN_FUNNEL_EXP061/summary.json
+?? research/strategies/results/PLATFORM_DETREND_EXP062/HYPOTHESIS_CARD.md
+?? research/strategies/results/PLATFORM_DETREND_EXP062/factor_support.csv
+?? research/strategies/results/PLATFORM_DETREND_EXP062/feature_correlations.csv
+?? research/strategies/results/PLATFORM_DETREND_EXP062/fold_metrics.csv
+?? research/strategies/results/PLATFORM_DETREND_EXP062/leakage_selection_regime_audit.json
+?? research/strategies/results/PLATFORM_DETREND_EXP062/scale_curves.csv
+?? research/strategies/results/PLATFORM_DETREND_EXP062/segment_metrics.csv
+?? research/strategies/results/PLATFORM_DETREND_EXP062/summary.json
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/REPORT.md
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/coefficients.csv
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/controls.csv
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/historical_replay.json
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/member_manifest.json
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/nested_lofo.csv
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/segments.csv
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/summary.json
+?? research/strategies/results/RECENCY_RIDGE_PRED_EXP068_A1/test_regime.json
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/advantage_probe_metrics.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/best_existing_oracle.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/calibration_audit.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/disagreement_summary.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/experiment_card.md
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/full_lofo_status.json
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/input_manifest.json
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/late_fold_candidates.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/oracle_etx_seq.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/oracle_segments.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/oracle_weight_grid.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/probe_config.json
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/recipient_half_metrics.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/recipient_split_audit.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/reproducibility.json
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/residual_map.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/residual_map_bins.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/residual_scale_selection.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/seed_null_oracle.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/seed_winner_probe_metrics.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/segment_candidate_metrics.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/segment_residual_map.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/segment_thresholds.json
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/summary.json
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/winner_probe_calibration.csv
+?? research/strategies/results/RESIDUAL_SIGNAL_DISCOVERY/winner_probe_metrics.csv
+?? research/strategies/results/RIDGE15/blend_summary.csv
+?? research/strategies/results/RIDGE15/config.json
+?? research/strategies/results/RIDGE15/diversity.csv
+?? research/strategies/results/RIDGE15/folds.csv
+?? research/strategies/results/RIDGE15/lambda_curve.csv
+?? research/strategies/results/RIDGE15/segment_summary.csv
+?? research/strategies/results/RIDGE15/segments.csv
+?? research/strategies/results/RIDGE15/summary.json
+?? research/strategies/results/SELMATCH_EXP048/REPORT.md
+?? research/strategies/results/SELMATCH_EXP048/audit_manifest.json
+?? research/strategies/results/SELMATCH_EXP048/bootstrap.csv
+?? research/strategies/results/SELMATCH_EXP048/level_shape_summary.csv
+?? research/strategies/results/SELMATCH_EXP048/matched_support.csv
+?? research/strategies/results/SELMATCH_EXP048/pairwise_deltas.csv
+?? research/strategies/results/SELMATCH_EXP048/rank_correlations.csv
+?? research/strategies/results/SELMATCH_EXP048/rankings.csv
+?? research/strategies/results/SELMATCH_EXP048/reference_distribution.csv
+?? research/strategies/results/SELMATCH_EXP048/reference_landmarks.csv
+?? research/strategies/results/SELMATCH_EXP048/selection_penalties.csv
+?? research/strategies/results/SELMATCH_EXP048/selection_prevalence.csv
+?? research/strategies/results/SELMATCH_EXP048/selection_rows.npz
+?? research/strategies/results/SELMATCH_EXP048/shuffle_controls.csv
+?? research/strategies/results/SELMATCH_EXP048/slice_diagnostics.csv
+?? research/strategies/results/SELMATCH_EXP048/summary.json
+?? research/strategies/results/SELMATCH_EXP049/REPORT.md
+?? research/strategies/results/SELMATCH_EXP049/bootstrap.csv
+?? research/strategies/results/SELMATCH_EXP049/diagnostic_distributions.npz
+?? research/strategies/results/SELMATCH_EXP049/interaction.csv
+?? research/strategies/results/SELMATCH_EXP049/matched_support.csv
+?? research/strategies/results/SELMATCH_EXP049/missing_k0_fold_inputs.csv
+?? research/strategies/results/SELMATCH_EXP049/missing_k0_sensitivity.csv
+?? research/strategies/results/SELMATCH_EXP049/production_audit.json
+?? research/strategies/results/SELMATCH_EXP049/residual_alignment.csv
+?? research/strategies/results/SELMATCH_EXP049/same_fold_results.csv
+?? research/strategies/results/SELMATCH_EXP049/shuffle_controls.csv
+?? research/strategies/results/SELMATCH_EXP049/summary.json
+?? research/strategies/results/SEQ5/README.md
+?? research/strategies/results/SEQ5/VALIDATION_MAIN_AUDIT.md
+?? research/strategies/results/SEQ5/analyze.py
+?? research/strategies/results/SEQ5/availprobe.csv
+?? research/strategies/results/SEQ5/crossdepth.csv
+?? research/strategies/results/SEQ5/depth.csv
+?? research/strategies/results/SEQ5/depth_table.py
+?? research/strategies/results/SEQ5/diag.sh
+?? research/strategies/results/SEQ5/folds.csv
+?? research/strategies/results/SEQ5/run.sh
+?? research/strategies/results/SEQ5/segments.csv
+?? research/strategies/results/SEQ6/README.md
+?? research/strategies/results/SEQ6/contrasts.csv
+?? research/strategies/results/SEQ6/diag.sh
+?? research/strategies/results/SEQ6/run.sh
+?? research/strategies/results/SEQ6/runs.csv
+?? research/strategies/results/SEQ6/seed_pair.py
+?? research/strategies/results/SEQ6/seg_contrasts.csv
+?? research/strategies/results/SEQ6/truncation_noise.csv
+?? research/strategies/results/SEQ6/truncation_noise.py
+?? research/strategies/results/SEQ65_TEMPORAL_HEAVY/build_submission.py
+?? research/strategies/results/SEQ65_TEMPORAL_HEAVY/diagnostics.json
+?? research/strategies/results/SEQ7/README.md
+?? research/strategies/results/SEQ7/diag_g1.sh
+?? research/strategies/results/SEQ7/diag_g2.sh
+?? research/strategies/results/SEQ7/fold_avg.csv
+?? research/strategies/results/SEQ7/multiseed.py
+?? research/strategies/results/SEQ7/run_g1.sh
+?? research/strategies/results/SEQ7/run_g2.sh
+?? research/strategies/results/SEQ7/s04_folds.csv
+?? research/strategies/results/SEQ7/s04_folds.py
+?? research/strategies/results/SEQ7/seed_folds.csv
+?? research/strategies/results/SEQ8/README.md
+?? research/strategies/results/SEQ8/mix_diversity.csv
+?? research/strategies/results/SEQ8/mix_diversity.py
+?? research/strategies/results/SEQ8/mix_diversity_folds.csv
+?? research/strategies/results/SEQ8/prod_contrasts.csv
+?? research/strategies/results/SEQ8/prod_folds.csv
+?? research/strategies/results/SEQ8/prod_folds.py
+?? research/strategies/results/SESSION_20260825_A1/session_state.md
+?? research/strategies/results/STATE_REWEIGHT_EXP057/analysis_replay.json
+?? research/strategies/results/STATE_REWEIGHT_EXP057/arm_shuffled_manifest.json
+?? research/strategies/results/STATE_REWEIGHT_EXP057/arm_state_match_manifest.json
+?? research/strategies/results/STATE_REWEIGHT_EXP057/arms_manifest.json
+?? research/strategies/results/STATE_REWEIGHT_EXP057/contrasts.csv
+?? research/strategies/results/STATE_REWEIGHT_EXP057/cutoff_weight_totals.csv
+?? research/strategies/results/STATE_REWEIGHT_EXP057/phase0_audit.json
+?? research/strategies/results/STATE_REWEIGHT_EXP057/prediction_metrics.csv
+?? research/strategies/results/STATE_REWEIGHT_EXP057/repeated_rows_per_user.csv
+?? research/strategies/results/STATE_REWEIGHT_EXP057/segment_metrics.csv
+?? research/strategies/results/STATE_REWEIGHT_EXP057/shuffle_strata.csv
+?? research/strategies/results/STATE_REWEIGHT_EXP057/summary.json
+?? research/strategies/results/STATE_REWEIGHT_EXP057/train_state_distance.csv
+?? research/strategies/results/STATE_REWEIGHT_EXP057/user_weight_totals.csv
+?? research/strategies/results/STATE_REWEIGHT_EXP057/weights_manifest.json
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/baseline_manifest.json
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/component_attribution.csv
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/ensemble_folds.csv
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/factorial_contrasts.csv
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/prediction_diagnostics.csv
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/reconstructed_baseline_metrics.json
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/replay_audit.csv
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/replay_audit.json
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/rounds_diagnostics.csv
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/seed_variance_diagnostics.csv
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/standalone_metrics.csv
+?? research/strategies/results/TABULAR_BACKBONE_REFRESH/summary.json
+?? research/strategies/results/ZERO2D_SHRINK/amount_diagnostics.csv
+?? research/strategies/results/ZERO2D_SHRINK/audit.json
+?? research/strategies/results/ZERO2D_SHRINK/controls.csv
+?? research/strategies/results/ZERO2D_SHRINK/error_decomposition.csv
+?? research/strategies/results/ZERO2D_SHRINK/hard_zero.csv
+?? research/strategies/results/ZERO2D_SHRINK/nested_lofo.csv
+?? research/strategies/results/ZERO2D_SHRINK/production_cells.csv
+?? research/strategies/results/ZERO2D_SHRINK/production_summary.json
+?? research/strategies/results/ZERO2D_SHRINK/residual_by_amount_and_p0.png
+?? research/strategies/results/ZERO2D_SHRINK/segments.csv
+?? research/strategies/results/ZERO2D_SHRINK/summary.json
+?? research/strategies/results/ZERO2D_SHRINK/test_regime.json
+?? research/strategies/results/ZERO2D_SHRINK/zero2d_cells.csv
+?? research/strategies/results/ZERO2D_SHRINK/zero_error_by_amount.csv
+?? research/strategies/results/ZERO2D_SHRINK/zero_error_share_by_amount.png
+?? research/strategies/results/ZERO2D_SHRINK/zero_rate_by_amount.png
+?? src/authoritative_latest_audit.py
+?? src/block4_saf.py
+?? src/btyd05_production.py
+?? src/btyd_day_bgnbd.py
+?? src/btyd_exp051.py
+?? src/btyd_stable_fit.py
+?? src/burst_gap_etx.py
+?? src/buyctrl_det.py
+?? src/channel_shapley_split.py
+?? src/dataset_fingerprint.py
+?? src/det_pair.py
+?? src/dist_pact.py
+?? src/etx.py
+?? src/event_order.py
+?? src/final_integration.py
+?? src/fnl.py
+?? src/fresh_cond_ft.py
+?? src/fresh_contrast.py
+?? src/landmark_memory_etx.py
+?? src/late_unlabeled_etx.py
+?? src/occurrence_revisit.py
+?? src/open_funnel.py
+?? src/platform_detrend.py
+?? src/production_state_reweight.py
+?? src/recency_ridge_predictions.py
+?? src/residual_signal_discovery.py
+?? src/ridge15.py
+?? src/selection_mismatch_cv.py
+?? src/selection_mismatch_followup.py
+?? src/seq_cond.py
+?? src/tabular_backbone_refresh.py
+?? src/test_authoritative_latest_audit.py
+?? src/test_block4_saf.py
+?? src/test_btyd_day_bgnbd.py
+?? src/test_btyd_stable_fit.py
+?? src/test_burst_gap_etx.py
+?? src/test_buyctrl_det.py
+?? src/test_channel_shapley_split.py
+?? src/test_dataset_fingerprint.py
+?? src/test_det_pair.py
+?? src/test_etx.py
+?? src/test_event_order.py
+?? src/test_fnl.py
+?? src/test_fresh_cond_ft.py
+?? src/test_fresh_contrast.py
+?? src/test_landmark_memory_etx.py
+?? src/test_late_unlabeled_etx.py
+?? src/test_occurrence_revisit.py
+?? src/test_open_funnel.py
+?? src/test_platform_detrend.py
+?? src/test_production_state_reweight.py
+?? src/test_residual_signal_discovery.py
+?? src/test_ridge15.py
+?? src/test_selection_mismatch_cv.py
+?? src/test_seq_cond.py
+?? src/test_tabular_backbone_refresh.py
+?? src/test_zero2d_shrink.py
+?? src/zero2d_shrink.py
+?? weights_archives/ETX-01_weights.zip
+?? weights_archives/TCN_DETSEQ01_weights.zip
+?? weights_archives/TCN_SEQ-01_weights.zip
+?? weights_archives/TCN_SEQ-D3A_weights.zip
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/MANIFEST.sha256"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/README_PIPELINE_RU.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/forensics/audit_stats.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/MANIFEST.sha256"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/README.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/STATE_SNAPSHOT.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/experiments/exp_006_s1_best_submission.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/experiments/exp_014_s1_dist_head.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/experiments/exp_025_sequence_encoder.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/experiments/exp_027_depth_support.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/experiments/exp_035_mix9_seq_slot.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/experiments/exp_036_etx_sparse_event_transformer.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/experiments/exp_037_etx_avg3_strongest.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/results/REPORT_STRONGEST_CURRENT.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/results/depth_dow_evidence.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/results/lofo_slot.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/results/regime_pairs.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/docs/results/summary.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/TRAINING_HISTORY.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/build_submission.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/original/ETX2/check_test_etx2.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/original/ETX2/common.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/original/ETX2/depth_fix.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/original/ETX2/make_submission.sh"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/original/ETX2/run_a10.sh"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/original/ETX2/run_local.sh"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/original/MIX9/run_test_models.sh"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/original/MIX9/verify_submission.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/__init__.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/config.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/data.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/etx.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/features.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/models.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/predict.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/report.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/seq.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/submit.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/test_etx.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/test_seq.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/tracking.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/train.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/src/validation.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/pipeline/verify_package.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/requirements-rebuild.txt"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/requirements-training.txt"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/submission/submission_STRONGEST_CURRENT.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/friend_original/submission_STRONGEST_CURRENT/submission/submission_STRONGEST_CURRENT_rebuilt.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/latest/components/friend.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/latest/components/occ_meta_B.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/latest/components/occ_raw_X3.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/latest/latest.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/latest/latest_rebuilt.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/latest/rebuild_latest.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/provenance/PROJECT_STATE_AFTER_PHASE11.md"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/research_scripts/continue_best_bas_12h_v2.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/research_scripts/continue_best_bas_final6h.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/research_scripts/continue_fixedstack_combo_10h.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/research_scripts/make_last20.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/research_scripts/materialize_final6h_extra90m.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/research_scripts/run_best_bas_fixedstack_14h_v2.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/research_scripts/run_best_bas_research_23h.py"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555.zip"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/FINAL_FOUR.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/MATERIALIZED_CANDIDATES.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/REPORT_RU.txt"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/RUN_MANIFEST.json"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/SELECTED_PAIR_DIVERSITY.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/STABLE_BRANCH_VALIDATION.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/combo_validation_extra90.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/primitive_validation_extra90.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823.zip"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/ALL_FINAL6H_VALIDATION.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/FAMILY_BEST.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/FINAL_SUBMISSIONS.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/FINAL_TWO_METRICS.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/OCCURRENCE_BRANCH_VALIDATION.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/PAIR_DIVERSITY.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/REPORT_RU.txt"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/RUN_MANIFEST.json"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/RUN_START.json"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/STABLE_BRANCH_VALIDATION.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/combo_validation_final6h_base.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/primitive_validation_final6h_base.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/runtime.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654.zip"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/ALL_VALIDATION.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/DIVERSITY.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/FINAL_CANDIDATE_METRICS.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/FINAL_SELECTION.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/ORACLE_DIAGNOSTICS.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/REPORT_RU.txt"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/RUN_MANIFEST.json"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/RUN_START.json"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/SHORTLIST_VALIDATION.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_after_recent_hurdle_fast12.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_after_recent_hurdle_stable18.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_existing.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_final.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_final_reload.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/primitive_validation_after_recent_hurdle_fast12.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/primitive_validation_after_recent_hurdle_stable18.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/primitive_validation_existing.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/primitive_validation_final.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/primitive_validation_final_reload.csv"
+?? "\320\277\320\260\320\271\320\277\320\273\320\260\320\271\320\275 \321\201\320\276\320\272\320\276\320\274\320\260\320\275\320\264\320\275\320\270\320\272\320\260/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/runtime.csv"

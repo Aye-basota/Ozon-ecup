@@ -1,0 +1,30 @@
+{
+  "current_RMSLE": 1.646143314225527,
+  "target_RMSLE": 1.6446514942,
+  "Delta_RMSLE": -0.0014918200255271685,
+  "current_MSE": 2.7097878109694022,
+  "target_MSE": 2.7048785373742925,
+  "Delta_MSE": -0.004909273595109731,
+  "required_MSE_gain": 0.004909273595109731,
+  "required_independent_rho": 0.04256385701551551,
+  "required_explained_residual_variance": 0.0018116819240372487,
+  "optimal_total_correction_rms": 0.07006620865374215,
+  "required_total_covariance_at_optimum": 0.004909273595109731,
+  "scenarios": {
+    "one_direction": {
+      "rho_each": 0.04256385701551551,
+      "norm_each": 0.07006620865374215,
+      "covariance_each": 0.004909273595109731
+    },
+    "two_independent_equal": {
+      "rho_each": 0.03009719192912562,
+      "norm_each": 0.04954429127109263,
+      "covariance_each": 0.0024546367975548655
+    },
+    "three_independent_equal": {
+      "rho_each": 0.024574254305656622,
+      "norm_each": 0.04045274442733452,
+      "covariance_each": 0.0016364245317032438
+    }
+  }
+}

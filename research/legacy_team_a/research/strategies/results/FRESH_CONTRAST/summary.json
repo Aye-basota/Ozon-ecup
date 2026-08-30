@@ -1,0 +1,22 @@
+{
+  "experiment": "FRESH-CONTRAST-MOE",
+  "two_sided_crossfit": true,
+  "baseline_wcv": 1.747509862433663,
+  "fresh_nested_lofo_delta": -0.00022495613042393297,
+  "vol_nested_lofo_delta": 8.067021325889694e-06,
+  "fresh_minus_vol": -0.00023302315174982268,
+  "fresh_improved_folds": 4,
+  "fold_20251016_delta": -0.00025342188488219897,
+  "hash_group_delta": {
+    "A": -0.00024890420516349523,
+    "B": -0.00020058396969068563
+  },
+  "hash_same_negative_sign": true,
+  "validation_decision": "REJECT",
+  "reasons": [
+    "nested LOFO -0.000225 is above the -0.0005 floor"
+  ],
+  "production_choice_if_eligible": null,
+  "test_regime": null,
+  "submission": null
+}

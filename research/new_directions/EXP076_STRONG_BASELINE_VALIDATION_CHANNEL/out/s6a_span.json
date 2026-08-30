@@ -1,0 +1,9 @@
+{
+ "vectors": 78,
+ "rank": 67,
+ "eig_tol": 1e-12,
+ "perp_fraction_centered": 0.6768063586235966,
+ "perp_fraction_uncentered_stored": 0.6376386986323535,
+ "maxabs_vs_stored": 7.413532965294678e-08,
+ "note": "tol=1e-12 reproduces EXP075 centered rank 67; maxabs equals float32 storage resolution"
+}

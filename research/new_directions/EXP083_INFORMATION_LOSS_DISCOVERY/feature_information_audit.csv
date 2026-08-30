@@ -1,0 +1,11 @@
+raw_information,existing_transformations_features,model_families_using_it,potentially_lost_information
+Daily presence vs absent day,present/buy/ponly masks; days_present/presence_only; sequence mask,"TABULAR, SEQ, ETX, DIST/CAP",None material; absent and zero row kept distinct
+Total activity levels,"7/14/30/60/90/180/365 sums, days, recencies, trends","TABULAR, DIST/CAP/UNC, SEQ/ETX",Fine within-window distribution lost in tabular but available to sequence models
+Search and catalog funnel counts,Only total carts/orders ratios; raw channel levels in SEQ/ETX,TABULAR + SEQ/ETX,Channel-specific normalized conversion and cross-channel disagreement absent from canonical 227
+GMV search/catalog composition,gmv_cat share by window; channel raw sequence; EXP052 Shapley heads,"TABULAR, SEQ/ETX, CHANNEL-SHAPLEY",Channel AOV/conditional conversion geometry not explicit; future contribution supervision already rejected
+Daily event order,"A1/A2, SEQ/ETX; explicit OPEN-FUNNEL and EVENT-ORDER",SEQ/ETX/A1/A2,Requested transition/lag phase descriptors already tested: SKIP_DUPLICATE
+Bursts and gaps,"recency, gap mean/std/CV; explicit threshold-3 episode summaries",TABULAR/BTYD + EXP054,Burst duration/density/open gap already tested: SKIP_DUPLICATE
+Multi-horizon future state,MHZ 7/14/21/30/45/60 hazard/count heads; EXP080 coarse 7/14/30 timing oracle,"MHZ, DIST, EXP080",Y1/Y3 and fine early-share oracle not previously isolated after count/value/coarse timing
+Calendar/platform phase,"DOW sequence channels, Holiday-YoY, platform detrend",SEQ/ETX/HOLIDAY-YOY,No new external exposure/promo/inventory channel in raw schema
+Relational identity,user_id alignment only; behavioral prototypes,EXP081,No item/category/order/session identifiers: relation cannot be recovered
+Within-day conversion distribution,Raw daily channel counts available; aggregate ratios and binary transition states only,SEQ/ETX implicit,"Mean-of-ratios, dispersion and Jensen gap absent explicitly; tested as one other mechanism"

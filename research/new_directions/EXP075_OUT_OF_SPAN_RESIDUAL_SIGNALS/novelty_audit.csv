@@ -1,0 +1,25 @@
+mechanism,experiment/file,representation,target,validation,result,reason_rejected_or_accepted
+generic incumbent blend,EXP_037_STRONGEST_CURRENT,tabular plus SEQ plus ETX,direct log GMV,canonical four folds,wCV 1.747509863 accepted,canonical offline baseline but not a new residual direction
+submission-span blending,research/SUBMIT_ORTH_FINAL_reasoning.md,77 TEST submission vectors,public geometry,public equations,span exhausted near 1.6463,SKIP_DUPLICATE for ordinary blending or stacking
+ORTH residual GBM,research/SUBMIT_ORTH_FINAL_reasoning.md,RFM and ensemble statistics,span residual,windows 303/333/364 plus contaminated 371,public implied rho 0.0141 accepted,current direction already scale-optimized
+dense temporal supervision,old exp_022,dense cutoff grid with same aggregate features,direct log GMV,canonical four folds,delta wCV +0.001263 rejected,not a time-axis representation
+dense daily TCN,old exp_025 and exp_026,17 by 365 daily sequence,direct log GMV,canonical four folds,complementary ensemble member accepted,A2 only novel if trained on clean residual rather than direct GMV
+sparse event transformer,old exp_036 and EXP071,ordered event tokens,direct log GMV or FRESH contrast,canonical folds or pilot,useful ensemble member then weak residual variants,do not repeat ETX representation
+temporal-heavy blend,old exp_059,larger existing SEQ/ETX weight,direct log GMV,fixed OOF replay,delta -0.000238 weak,SKIP_DUPLICATE as in-span reweighting
+multi-horizon hazard count,old exp_024,aggregate features plus cross-fitted auxiliary heads,hazard count any-purchase conditional value,canonical four folds,FULL equals SELF and is 0/4,SKIP_DUPLICATE for B auxiliary structure
+count-value mixture,EXP070_COUNT_VALUE_MOE,aggregate features plus count classes,count and conditional value,three completed clean folds,diagnostic delta -0.000086647 rejected,SKIP_DUPLICATE for B count/value decomposition
+late-window conditional amount,EXP072_LWA_TAB,aggregate features and matched late positives,conditional amount,latest clean pilot,delta +0.000704492 rejected,SKIP_DUPLICATE for B conditional-value branch
+future funnel auxiliary,old exp_038,dense sequence with future event heads,multi-task funnel,latest pilot and controls,no target gain rejected,SKIP_DUPLICATE for alternative event auxiliary targets
+channel monetary split,old exp_052,two channel contribution heads,future monetary composition,latest pilot,REAL worse SHUF by +0.001266 rejected,SKIP_DUPLICATE for channel decomposition
+trend acceleration change point,SUBMIT_ORTH_FINAL reasoning and old experiments,hand-crafted aggregates,residual or direct,multiple clean windows,no improvement,SKIP_DUPLICATE
+Hawkes decay,SUBMIT_ORTH_FINAL reasoning,decayed recency,residual,multiple windows,stable but redundant with rec_any,SKIP_DUPLICATE
+GAM spline calibration,SUBMIT_ORTH_FINAL reasoning,splines on existing aggregates,residual,multiple windows,worse than residual GBM,SKIP_DUPLICATE
+BTYD BG-NBD,old exp_047/051 and EXP069,purchase process residual,residual,canonical folds,small weak direction or rejected family,SKIP_DUPLICATE
+FRESH contrast,old exp_040/044 and EXP069/071,conditional sequence residual,residual,nested LOFO or pilot,weak below materiality,SKIP_DUPLICATE
+event order open funnel occurrence,old exp_061/063/064,ordered funnel and occurrence,residual,canonical folds,zero-scale or rejected,SKIP_DUPLICATE
+scalar density ratio,old exp_057,target-free state weights,direct log GMV,latest pilot,REJECT,SKIP_DUPLICATE
+test-regime example construction,old exp_048/049,pseudo-selection by future blocks,residual,overlap-biased historical panels,conditional result invalid,only a new target-free cohort construction is eligible for C
+A1 residual trajectory,EXP075,chronological weekly plus daily tensor flattened for trees,clean baseline residual,four raw-rebuilt forward folds,rho 0.03295 latest 0.03208 STRONG_SIGNAL,NEW mechanism because time axis is retained and target is residual
+A2 residual temporal encoder,EXP075,53 weekly bins through compact dilated CNN plus limited context,clean baseline residual,four raw-rebuilt forward folds,rho 0.03086 latest 0.02560 STRONG_SIGNAL,NEW objective relative to old direct-GMV SEQ and complementary to A1 at corr 0.419
+B multi-task decomposition,EXP075 audit only,any-purchase count horizon and conditional-value auxiliary heads,residual structure,prior clean or canonical experiments,SKIP_DUPLICATE,exp_024 plus EXP070 plus EXP072 plus exp_038 already cover the proposed mechanism
+C target-free matched cohorts,EXP075,activity-quartile by purchase-day-class maximum-support subset,clean baseline residual,same four raw-rebuilt forward folds,rho worsened 6.30 percent and latest worsened REJECT_MATCHED,new construction was run but failed all continuation gates

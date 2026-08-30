@@ -1,0 +1,25 @@
+{
+  "n_rows": 1020616,
+  "n_users": 250000,
+  "n_historical": 770616,
+  "n_test": 250000,
+  "positive_rate": 0.24495010856188812,
+  "n_features": 227,
+  "group_folds": 5,
+  "group_fold_sizes": [
+    205011,
+    203909,
+    204569,
+    204621,
+    202506
+  ],
+  "forbidden_columns_present": [],
+  "feature_path": "make_xy -> build_features",
+  "production_representation": {
+    "L": null,
+    "norm_long": true,
+    "panel_blocks": 3
+  },
+  "explicit_cutoff_or_fold_feature": false,
+  "user_id_used_as_feature": false
+}

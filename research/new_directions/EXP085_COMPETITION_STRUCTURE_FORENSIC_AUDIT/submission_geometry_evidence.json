@@ -1,0 +1,30 @@
+{
+  "scores": {
+    "best_pre_geometry_single": 1.64921756224069,
+    "geometry_v2": 1.6467120249048954,
+    "geometry_next_best": 1.646607908393441,
+    "public_EB": 1.6463246740442117,
+    "ORTH_ALPHA_anchor": 1.6461597403364463,
+    "EXP075_joint_current": 1.646143314225527,
+    "forensic_target": 1.6446514942
+  },
+  "EXP075_observed_Delta_RMSLE": -1.6426110919232073e-05,
+  "EXP075_observed_MSE_gain": 5.4079735154033415e-05,
+  "EXP075_expected_nested_MSE_gain": 0.00439191,
+  "EXP075_observed_fraction_of_expected": 0.012313488927148649,
+  "geometry_evidence": {
+    "broad_directions_net_signal_MSE": 0.00167,
+    "intermediate_directions_net_signal_MSE": 0.004854,
+    "narrow_seed_scale_directions_net_signal_MSE": -0.002167,
+    "public_to_full_transfer_ratio_v2_estimate": 0.47,
+    "public_direction_noise_sd": 0.0066,
+    "loo_unexpected_positive_alignment": [
+      "HOLIDAY-YOY (-2.28 sd)",
+      "baseline_hgbr (-1.91 sd)",
+      "S04-A (-1.76 sd)",
+      "candidate_e11mix (-1.70 sd)",
+      "submission_v2 (-1.52 sd)"
+    ]
+  },
+  "no_new_probes_created": true
+}

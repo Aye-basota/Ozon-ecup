@@ -1,0 +1,16 @@
+{
+  "experiment": "LATE_SSL_EXP056",
+  "hashes_equal": {
+    "final_combined_state_sha256": true,
+    "final_model_sha256": true,
+    "final_optimizer_sha256": true,
+    "final_reconstruction_sha256": true,
+    "final_rng_sha256": true,
+    "probe_prediction_sha256": true
+  },
+  "pass_replay": true,
+  "run1": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\LATE_SSL_EXP056\\replay\\run1",
+  "run2": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\LATE_SSL_EXP056\\replay\\run2",
+  "snapshots_equal": true,
+  "steps": 100
+}

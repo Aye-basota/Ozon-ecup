@@ -1,0 +1,23 @@
+role,path,exists,bytes,sha256,notes
+source,C:\Users\Admin\Desktop\e-cup-research-clean\team-b\src\features.py,True,40919,4c8b1e8dfeddc4efd6d455e99c5b1b3e82dd82828f2fab7e013c958c557dbebc,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\team-b\src\train.py,True,11496,31441c3096fc97dd8fbf4e808e81c9374f35b333c05b2a204b7bbbe12b71b102,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\team-b\src\predict.py,True,5106,91bc9f47c69381b094e2303eae0667338704d6fa6c3afb907fb09248ec177e19,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\team-b\src\cat_xgb_blend.py,True,10481,65ecf7157bf1d49a6323165ed984bb30a12d8948834eef58cd0c28a7f8407820,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\team-b\artifacts\exp024_cat_xgb_blend_grid.csv,True,337065,9736ea89b2160b14c4e5f16e5f231d27517f5d8bf29760d41b96c0e50434ced9,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\submissions\SUBMIT_JOINT_V2.csv,True,5108321,211879cb1c79bbbde93d451fca5b61c521b523f989ce42bab62cd3ab87233cba,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\submissions\exp_019_behavior_v1_dist_wrec050_scale120.csv,True,6603813,854925cf9a78a937a503b75e9c9d0c2e043ff7e62a351b445c4fbadad8e83837,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP089_JOINT_V2_PLANE_RESOLUTION\scored_span_manifest.csv,True,23796,24a9a8321d3f4aa7378a7a8d8c427f9bdcbaac896e7c231dc0db305e84fa6890,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\A1_TREE_TRAJ_365_TEST_PERP.npy,True,1000128,9b4527057531f6981744c1f2369136ef4446623675a416c5c21b1195112d01ae,primary evidence
+source,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS\A2_WEEKLY_RESIDUAL_CNN_TEST_PERP.npy,True,1000128,2ffc2ef15138ad1a64e95dac6373c7449006d5cfb8cc24df4ef1bf20c3d44e58,primary evidence
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\team_b_inventory.csv,True,36496,0803517b1ff14db3110a3075f09a68037f63bcc52eccb9ec6d37a7cf93f59439,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\reproduction_audit.json,True,4530,90eb70c85eeab5bba72bf720690c4c3e13e206281c688c79155e4942b5dfb251,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\leakage_audit.csv,True,2047,92f9cbe010311937a7683123b8a538306fdfa69b2b693a2df3680545e76fd79a,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\team_b_geometry.csv,True,6899,f53e2c028167c95d837c8af767e22ac6ee49d69035f7b6e91c418fb5fa14e370,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\oof_residual_metrics.csv,True,1986,ee2e2a38bd9193f6a473324d26963932c3b624ed3ac5a62f80cf116f58c6198a,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\leaderboard_decoding.csv,True,5936,06f8c5c112dbc57cddd449d230aad8ff0a32ff597e3ddb48cecfd08b2815dda4,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\signal_decomposition.json,True,2976,b4bffb8068babebfaef3cc2b91a5840ea8a53fcae1874edb4470f5591106b6e8,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\joint_with_v2.json,True,2045,cccd0bebcd41f3986c744889dca1cda95067619b021e7d22f35c696fb00d1b07,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\REPORT.md,True,9235,3167f96068bfb7779e160f6d4cec799c640bc74da0b9739c3cff22e1b56384f0,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\team_b_signal_vector.npz,True,18656131,fb0b7545afd2b7ccf000805356102fbcb7eba9403571ae027e6ad4ba66aeba37,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\team_b_reproduction_predictions.parquet,True,23489729,2259174f416f148aefaef580b4bc90cab3f603714d2dba7bc5e06d878e86ea37,EXP090 generated artifact
+output,C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP090_TEAM_B_AUDIT\team_b_reproduced_vectors.npz,True,14827645,55fef8e75c364ca530722e21451e7f313de40280e307e76363abf170ff15fe35,EXP090 generated artifact

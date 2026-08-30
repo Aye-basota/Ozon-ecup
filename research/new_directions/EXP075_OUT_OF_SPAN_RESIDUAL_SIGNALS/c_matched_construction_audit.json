@@ -1,0 +1,294 @@
+[
+  {
+    "cutoff": "2025-09-04",
+    "rho_matched": 0.027245582878721065,
+    "rho_normal": 0.03230667136243182,
+    "b": 0.003018956602915937,
+    "G": 0.0039030802993396054,
+    "oracle_amplitude": 0.7734805259903926,
+    "corr_matched_normal": 0.8648962712200225,
+    "match_diagnostics": {
+      "activity_edges": [
+        0.0,
+        3.044522523880005,
+        3.6888794898986816,
+        4.219507694244385,
+        5.828945636749268
+      ],
+      "validation_proportions": [
+        0.13688348062254002,
+        0.09948652118100128,
+        0.021255264749254713,
+        0.04355021801631674,
+        0.08939199439841289,
+        0.12034925046945119,
+        0.015048960841935518,
+        0.03744470024082581,
+        0.18710680147253844,
+        0.0043231946021069605,
+        0.009516332657889433,
+        0.235643280747727
+      ],
+      "cutoffs": [
+        {
+          "cutoff_index": 0,
+          "rows_before": 180117,
+          "rows_after": 158978,
+          "retained_fraction": 0.8826373968031891,
+          "TV_before_vs_validation": 0.05269828515306829,
+          "TV_after_vs_validation": 9.38585204398202e-06
+        },
+        {
+          "cutoff_index": 1,
+          "rows_before": 181338,
+          "rows_after": 161936,
+          "retained_fraction": 0.8930064299815813,
+          "TV_before_vs_validation": 0.04502053618319485,
+          "TV_after_vs_validation": 7.944024661529075e-06
+        },
+        {
+          "cutoff_index": 2,
+          "rows_before": 182332,
+          "rows_after": 170550,
+          "retained_fraction": 0.9353816115657153,
+          "TV_before_vs_validation": 0.03526480519186168,
+          "TV_after_vs_validation": 9.259466350147044e-06
+        },
+        {
+          "cutoff_index": 3,
+          "rows_before": 183769,
+          "rows_after": 173933,
+          "retained_fraction": 0.9464762827245073,
+          "TV_before_vs_validation": 0.028208675112572433,
+          "TV_after_vs_validation": 6.456548335469214e-06
+        }
+      ]
+    },
+    "projection": {
+      "mean_removed": 0.013508550544799764,
+      "baseline_beta_first": 0.008417775348361542,
+      "baseline_beta_second": -1.9832157850934557e-21,
+      "max_projection_after_second_pass": 9.717757346957932e-20
+    },
+    "baseline_replay_max_abs_error": 0.0
+  },
+  {
+    "cutoff": "2025-09-18",
+    "rho_matched": 0.03456850017006603,
+    "rho_normal": 0.03416840706850358,
+    "b": 0.003554778173616284,
+    "G": 0.0033896159888866916,
+    "oracle_amplitude": 1.0487259280316998,
+    "corr_matched_normal": 0.8412576339769149,
+    "match_diagnostics": {
+      "activity_edges": [
+        0.0,
+        3.044522523880005,
+        3.6888794898986816,
+        4.234106540679932,
+        5.82304573059082
+      ],
+      "validation_proportions": [
+        0.13528072241853162,
+        0.09868865331762858,
+        0.021138594424813507,
+        0.04315665488810365,
+        0.08843868603585918,
+        0.11934040047114253,
+        0.015626226933647427,
+        0.03804214108101034,
+        0.19330454129040703,
+        0.004245517602408062,
+        0.0090616411464468,
+        0.2336762203900013
+      ],
+      "cutoffs": [
+        {
+          "cutoff_index": 0,
+          "rows_before": 181338,
+          "rows_after": 162830,
+          "retained_fraction": 0.8979364501648854,
+          "TV_before_vs_validation": 0.04812569532058786,
+          "TV_after_vs_validation": 1.2189193587376721e-05
+        },
+        {
+          "cutoff_index": 1,
+          "rows_before": 182332,
+          "rows_after": 167796,
+          "retained_fraction": 0.9202772963604853,
+          "TV_before_vs_validation": 0.0383699643292547,
+          "TV_after_vs_validation": 1.0367067240006807e-05
+        },
+        {
+          "cutoff_index": 2,
+          "rows_before": 183769,
+          "rows_after": 171301,
+          "retained_fraction": 0.9321539541489587,
+          "TV_before_vs_validation": 0.031313834249965436,
+          "TV_after_vs_validation": 8.453745517298782e-06
+        },
+        {
+          "cutoff_index": 3,
+          "rows_before": 185591,
+          "rows_after": 176804,
+          "retained_fraction": 0.9526539541249306,
+          "TV_before_vs_validation": 0.01987355820116574,
+          "TV_after_vs_validation": 7.334580346436172e-06
+        }
+      ]
+    },
+    "projection": {
+      "mean_removed": -0.0038213641587767737,
+      "baseline_beta_first": 0.005762036709803668,
+      "baseline_beta_second": 1.495468790058465e-18,
+      "max_projection_after_second_pass": 4.933505286790813e-19
+    },
+    "baseline_replay_max_abs_error": 0.0
+  },
+  {
+    "cutoff": "2025-10-02",
+    "rho_matched": 0.03181997741854252,
+    "rho_normal": 0.03427524338959888,
+    "b": 0.0032319645282772726,
+    "G": 0.003353480752517258,
+    "oracle_amplitude": 0.963764150383517,
+    "corr_matched_normal": 0.8463622416509654,
+    "match_diagnostics": {
+      "activity_edges": [
+        0.0,
+        3.0910425186157227,
+        3.7135720252990723,
+        4.248495101928711,
+        5.82304573059082
+      ],
+      "validation_proportions": [
+        0.13723192251695973,
+        0.10262062841388996,
+        0.02484330955011513,
+        0.04067240079713362,
+        0.08361642590890786,
+        0.12072650675808233,
+        0.01510113890982684,
+        0.035752269042923376,
+        0.19234462605966113,
+        0.004161202721818952,
+        0.00916910177909486,
+        0.23376046754158622
+      ],
+      "cutoffs": [
+        {
+          "cutoff_index": 0,
+          "rows_before": 182332,
+          "rows_after": 163723,
+          "retained_fraction": 0.897938924599083,
+          "TV_before_vs_validation": 0.04261100678039833,
+          "TV_after_vs_validation": 9.20514321873199e-06
+        },
+        {
+          "cutoff_index": 1,
+          "rows_before": 183769,
+          "rows_after": 167102,
+          "retained_fraction": 0.9093046161213262,
+          "TV_before_vs_validation": 0.03580009565516859,
+          "TV_after_vs_validation": 1.1234957779309579e-05
+        },
+        {
+          "cutoff_index": 2,
+          "rows_before": 185591,
+          "rows_after": 172394,
+          "retained_fraction": 0.9288920260141925,
+          "TV_before_vs_validation": 0.025128608371802086,
+          "TV_after_vs_validation": 8.28841111083587e-06
+        },
+        {
+          "cutoff_index": 3,
+          "rows_before": 187456,
+          "rows_after": 170354,
+          "retained_fraction": 0.9087679242062138,
+          "TV_before_vs_validation": 0.015218966829265004,
+          "TV_after_vs_validation": 8.042902021326327e-06
+        }
+      ]
+    },
+    "projection": {
+      "mean_removed": -0.006464053926753566,
+      "baseline_beta_first": 0.0017232521511558727,
+      "baseline_beta_second": -2.6328230644813165e-19,
+      "max_projection_after_second_pass": 3.3850582257616923e-19
+    },
+    "baseline_replay_max_abs_error": 0.0
+  },
+  {
+    "cutoff": "2025-10-16",
+    "rho_matched": 0.029936585993402886,
+    "rho_normal": 0.03207559774213456,
+    "b": 0.0030252935591622183,
+    "G": 0.00334612987581761,
+    "oracle_amplitude": 0.9041171955177033,
+    "corr_matched_normal": 0.8365262911394437,
+    "match_diagnostics": {
+      "activity_edges": [
+        0.0,
+        3.0910425186157227,
+        3.7135720252990723,
+        4.2626800537109375,
+        5.817111015319824
+      ],
+      "validation_proportions": [
+        0.1349434336986204,
+        0.10048688056986813,
+        0.023847521772832975,
+        0.04169643173792551,
+        0.08333713312966425,
+        0.11878669969956276,
+        0.015558899376326762,
+        0.03686815720010741,
+        0.19678891878062002,
+        0.004210174334655662,
+        0.008729398770892547,
+        0.23474635092892354
+      ],
+      "cutoffs": [
+        {
+          "cutoff_index": 0,
+          "rows_before": 183769,
+          "rows_after": 162366,
+          "retained_fraction": 0.8835331312680593,
+          "TV_before_vs_validation": 0.03928439391771051,
+          "TV_after_vs_validation": 7.274295684639789e-06
+        },
+        {
+          "cutoff_index": 1,
+          "rows_before": 185591,
+          "rows_after": 167419,
+          "retained_fraction": 0.902085769245276,
+          "TV_before_vs_validation": 0.03026074673366467,
+          "TV_after_vs_validation": 9.029778996681639e-06
+        },
+        {
+          "cutoff_index": 2,
+          "rows_before": 187456,
+          "rows_after": 163413,
+          "retained_fraction": 0.8717405684533971,
+          "TV_before_vs_validation": 0.02222565020110916,
+          "TV_after_vs_validation": 1.0222359683728817e-05
+        },
+        {
+          "cutoff_index": 3,
+          "rows_before": 189815,
+          "rows_after": 169589,
+          "retained_fraction": 0.8934436161525696,
+          "TV_before_vs_validation": 0.018360204532501808,
+          "TV_after_vs_validation": 9.667284973265567e-06
+        }
+      ]
+    },
+    "projection": {
+      "mean_removed": -0.00823033850571619,
+      "baseline_beta_first": 0.0022194331799872194,
+      "baseline_beta_second": 1.517728618373986e-19,
+      "max_projection_after_second_pass": 1.7345469924274123e-19
+    },
+    "baseline_replay_max_abs_error": 0.0
+  }
+]

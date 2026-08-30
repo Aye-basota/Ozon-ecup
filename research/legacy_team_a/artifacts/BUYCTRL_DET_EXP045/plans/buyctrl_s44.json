@@ -1,0 +1,243 @@
+{
+  "arms": [
+    "BASE",
+    "BUYTRUE",
+    "BUYSHUF"
+  ],
+  "array_sha256": {
+    "labels_shuf": "8da782c53126f89bacc08f728c0faf02412528c49e6f76fd927caed1a1e2f479",
+    "labels_true": "d425369f130f9899a801400ed8e235c4347d738cc659ca6c334c8e6d9475369a",
+    "val_rows": "c4ecf865619e3e2d49ba80eee7642b268348572a61b837b23d59d7f4a38a2960",
+    "val_user_id": "848bb71de56c4ceecc8282254591547643c39622efdd4fc66af5563eeba70731",
+    "val_y": "181b2a077917fa25fa0fcee9ce9fcf70b038095811be5e3a5ecfd7798c10dfcc"
+  },
+  "aux_head": "Linear(3*hidden, 1), zero weight, global-prevalence logit bias",
+  "auxiliary_initialization": {
+    "file_sha256": "090f4d9554bfc39d053c76008af6fad8a72f3b08d20816697a4ba1c7db679ebd",
+    "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BUYCTRL_DET_EXP045\\plans\\buyctrl_s44_aux_init.pt",
+    "state_sha256": "30efa7f06575e194c65ef3c12c22f70a6afd83a6ee81cd60b8a5c2b8a1a92b39"
+  },
+  "baseline_artifact": "DETSEQ01-S44-V1016",
+  "baseline_checkpoint": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_DETSEQ01-S44-V1016.pt",
+  "baseline_checkpoint_sha256": "66de739d198eda6b2cfeebcee16b225140877173512ef9ac3936fc105f9f0afd",
+  "baseline_final_model_sha256": "e899798b5601e6848844e8cf037fcf0fa63e6957ad1f57a6e87f8bdd4c941b83",
+  "baseline_initial_model_sha256": "bc6bb974c5166f1f642ae882798307b4c3fc84045b59c6b82786919b8fe978fd",
+  "baseline_initial_optimizer_sha256": "f5ae7ceca7c23db4c908c1cfdf1787fa0bedfad43f34f02bbe1cf75c4bc276fc",
+  "baseline_plan_file_sha256": "61e576ed833b455bb7604f97f5994b74cfba1a9d8cd19b1ff595cb25a1088fbb",
+  "baseline_plan_id": "19a4bd9a80910db93a24992743fbb34479a949ae7c2ea1d67937deefd5b7f33d",
+  "baseline_plan_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\plans\\baseline_s44.npz",
+  "baseline_result": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\baselines\\DETSEQ01-S44-V1016\\result.json",
+  "batch_index_arrays": {
+    "batch_seed": "b3670d7a903c31d875cb10bf2a3c97cee644d2a6a5e837a0f05bf5da608f62fa",
+    "chunk_cutoff": "6eb8605dd7a47b3f1e0957ce0e0caca58fa4def3efee65a34d9ad101b677ed03",
+    "chunk_sample_offsets": "83934880ab63abe700408b4ae25b8b2f401ca04a47b9ce12a5f5575fb684e87c",
+    "epoch_step_offsets": "1513034811df61d76f842d84d0f74f0e83a9d331082cb6d637f59a72ef56dde0",
+    "group_chunk_offsets": "57bab1e35cd01d75c78681d86e94a3291685641045dacad336ac067505f31c68",
+    "lr_plan": "6c20dcebfaed616b2dd33f55b3018e6c02d5531e30bc8e9d84d96624e6f28cd7",
+    "sample_indices": "ad6a64c9957deba5868b07d99f71a59ccede38f33544e460af042e6752d8f66c"
+  },
+  "cfg": {
+    "aug": "none",
+    "aug_full": 0.0,
+    "aug_p": 0.0,
+    "batch": 1024,
+    "blocks": 8,
+    "chunk": 256,
+    "compile": false,
+    "depth_aug": 0.0,
+    "depth_grid": [
+      90,
+      120,
+      150,
+      180,
+      220,
+      254,
+      289
+    ],
+    "dropout": 0.1,
+    "epochs": 4,
+    "hidden": 64,
+    "kernel": 3,
+    "lr": 0.003,
+    "seed": 44,
+    "warmup": 300,
+    "wd": 0.01,
+    "workers": 1,
+    "z0": 2.2882602214813232
+  },
+  "clean_data_sha256": {
+    "ci": "35e77c32e7b7ae1bfcec56fb73789fccdd752e271819bbaea02fe46ab74b5def",
+    "cuts": "1b3af5c6117a14375cda89444230a59754f64696845625e45557db116b80e1aa",
+    "ri": "3f70c6d950f4115dbe63b1154cb5de2ee45c6d469608e5275fb7f48bd84a96f9",
+    "zy": "41c9ac1daaf4a74ec126f848ae7d41f59cc91a88b50860f6449bce98c7de9a51"
+  },
+  "created_at": "2026-08-22T18:09:10",
+  "cutoff_prevalence": [
+    {
+      "cutoff": "2025-04-03",
+      "n": 197912,
+      "prevalence": 0.5003587453009418
+    },
+    {
+      "cutoff": "2025-04-10",
+      "n": 198671,
+      "prevalence": 0.4999169481202591
+    },
+    {
+      "cutoff": "2025-04-17",
+      "n": 199382,
+      "prevalence": 0.500411270826855
+    },
+    {
+      "cutoff": "2025-04-24",
+      "n": 199994,
+      "prevalence": 0.5026450793523806
+    },
+    {
+      "cutoff": "2025-05-01",
+      "n": 200639,
+      "prevalence": 0.504393462886079
+    },
+    {
+      "cutoff": "2025-05-08",
+      "n": 201274,
+      "prevalence": 0.508083508053698
+    },
+    {
+      "cutoff": "2025-05-15",
+      "n": 201556,
+      "prevalence": 0.5157623687709619
+    },
+    {
+      "cutoff": "2025-05-22",
+      "n": 202557,
+      "prevalence": 0.5174889043577857
+    },
+    {
+      "cutoff": "2025-05-29",
+      "n": 203292,
+      "prevalence": 0.5208124274442674
+    },
+    {
+      "cutoff": "2025-06-05",
+      "n": 203992,
+      "prevalence": 0.5247705792384015
+    },
+    {
+      "cutoff": "2025-06-12",
+      "n": 205122,
+      "prevalence": 0.525545772759626
+    },
+    {
+      "cutoff": "2025-06-19",
+      "n": 205683,
+      "prevalence": 0.5309529713199438
+    },
+    {
+      "cutoff": "2025-06-26",
+      "n": 206429,
+      "prevalence": 0.5339559848664674
+    },
+    {
+      "cutoff": "2025-07-03",
+      "n": 207093,
+      "prevalence": 0.5377680558975919
+    },
+    {
+      "cutoff": "2025-07-10",
+      "n": 207577,
+      "prevalence": 0.542680547459497
+    },
+    {
+      "cutoff": "2025-07-17",
+      "n": 208274,
+      "prevalence": 0.5481193043778868
+    },
+    {
+      "cutoff": "2025-07-24",
+      "n": 209056,
+      "prevalence": 0.5560854507883055
+    },
+    {
+      "cutoff": "2025-07-31",
+      "n": 209914,
+      "prevalence": 0.5646645769219776
+    },
+    {
+      "cutoff": "2025-08-07",
+      "n": 211018,
+      "prevalence": 0.5670321963055285
+    },
+    {
+      "cutoff": "2025-08-14",
+      "n": 212368,
+      "prevalence": 0.5645954192722067
+    },
+    {
+      "cutoff": "2025-08-21",
+      "n": 213792,
+      "prevalence": 0.5622614503816794
+    },
+    {
+      "cutoff": "2025-08-28",
+      "n": 215249,
+      "prevalence": 0.5575775032636621
+    },
+    {
+      "cutoff": "2025-09-04",
+      "n": 216510,
+      "prevalence": 0.5571105260726987
+    },
+    {
+      "cutoff": "2025-09-11",
+      "n": 217820,
+      "prevalence": 0.5619548250849326
+    }
+  ],
+  "epoch_plan_sha256": [
+    "e8286962eab83fce7253cbddb2c7ca9d994d3f7ca6ed6389815aa7af7b59e1d3",
+    "b8ab5536e914edb88d14fd027c2d139d0887d253908af3a79bd94888e2468fe4",
+    "14d2e1eff02072f35202ca38e498d119f12fcba0667d0fda0bbf222c1070aa6d",
+    "19de942e9d6a6cdaf5a595aeb748b5d058c34d7aa191d2df18b20c088042d922"
+  ],
+  "epochs": 4,
+  "execution_policy": {
+    "bf16": true,
+    "compile": false,
+    "cublas_workspace_config": ":4096:8",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic_algorithms": true,
+    "endpoint": "fixed end of epoch 4; no validation selection",
+    "materialized_index_batch_lr_and_label_plans": true,
+    "python_numpy_torch_cuda_rng": "fixed per seed",
+    "separate_process": true,
+    "tf32": true,
+    "workers": 1
+  },
+  "experiment": "BUYCTRL-DET",
+  "format": 1,
+  "labels_shuf": "labels_true permuted independently inside every train cutoff",
+  "labels_true": "1[y30 > 0]",
+  "lambda_aux": 0.1,
+  "loss": "MSE(z30) + 0.1 * BCEWithLogits(buy30)",
+  "n_cutoffs": 24,
+  "n_examples": 4955174,
+  "n_steps": 19368,
+  "plan_file_sha256": "cc0a75e6c0cebcf05d3217ea3d9aaac0ced5838ea22ebbad5ced3dbaee3808ff",
+  "plan_id": "42b32c585bdd2dd43b79a2e4f736615e31548d61323227d0d4c05bf294c3ce17",
+  "prevalence": 0.5341507684694826,
+  "seed": 44,
+  "shuffle_mismatch_fraction": 0.49692705039217594,
+  "source_sha256": {
+    "buyctrl_det.py": "505e5997ee4d3e1f62e36edc5c12cc8323ec6a6a69e293b1711bc28077958582",
+    "config.py": "8dd82be5291da32971ac285b13e3eb02c5702bc0e5eaec9152e7002159dcf324",
+    "fresh_cond_ft.py": "283fb9ff985de5725a4540bc5dbb99fd80f69e2a7e3e5f57134ef69549d75517",
+    "seq.py": "d95e0101692169781ea1ca6c585629cbb2f06d340e39f8afeb5a8e8e164c88b5",
+    "seq_cond.py": "a2e499d17911d2c88a9581d54714902f50ba7b9b499c47e5a5770ab32053252e",
+    "validation.py": "69fe796af2ec03b870ad982df8aacaaeca445ef875a953c5b5ac1d999725956e"
+  },
+  "val": "2025-10-16",
+  "validation_order_sha256": "848bb71de56c4ceecc8282254591547643c39622efdd4fc66af5563eeba70731",
+  "validation_rows_sha256": "c4ecf865619e3e2d49ba80eee7642b268348572a61b837b23d59d7f4a38a2960"
+}

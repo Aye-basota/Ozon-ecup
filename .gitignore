@@ -13,6 +13,7 @@ __pycache__/
 .coverage
 htmlcov/
 .venv/
+.venv*/
 venv/
 
 # External or generated data
@@ -23,6 +24,9 @@ checkpoints/
 *.pt
 *.pth
 *.bin
+*.npy
+*.npz
+*.parquet
 
 # Prediction artifacts are external by default. The frozen canonical OOF is the
 # only reviewed binary artifact intentionally versioned in this repository.
@@ -38,3 +42,39 @@ artifacts/submissions/*
 tmp/
 scratch/
 reports/rendered/
+
+# Forensic source locations retained on this workstation but not packaged.
+delivery/
+scores/
+submission_geometry/
+team-b/
+team-b-final/
+
+# Generated research candidates and text-serialized worktree models are fully
+# checksummed in the inventory; reports/manifests stay versioned.
+research/new_directions/**/SUBMIT*.csv
+research/new_directions/**/PROBE*.csv
+research/new_directions/**/*_TEST.csv
+research/worktree_snapshots/**/artifacts/model*.txt
+research/old_experiments/
+
+# Historical submission banks are inventoried by SHA; only the final lineage is
+# kept as live repository files.
+submissions/*.csv
+!submissions/submission_STRONGEST_CURRENT.csv
+!submissions/SUBMIT_EXP075_JOINT_A1_365_A2.csv
+!submissions/SUBMIT_JOINT_V2.csv
+!submissions/SUBMIT_STRONGEST55_TEAMB45.csv
+!submissions/SUBMIT_JOINT86_TEAMB14.csv
+
+# Small frozen artifacts required for exact final reconstruction and bounded
+# checkpoint audits are reviewed exceptions to the binary-artifact rule.
+!reproducibility/SUBMIT_STRONGEST55_TEAMB45/frozen/strongest/predictions/*.npy
+!reproducibility/SUBMIT_STRONGEST55_TEAMB45/strongest/artifacts/*.pt
+!reproducibility/SUBMIT_STRONGEST55_TEAMB45/strongest/artifacts/oof_SEQ-D3A-S42-V1016.npz
+
+# The JOINT package contains its reviewed Team-B implementation, validation
+# metadata, sample order and exact frozen 14% component.  Keep those files even
+# though historical top-level Team-B workspaces remain external.
+!reproducibility/SUBMIT_JOINT86_TEAMB14/team-b-final/
+!reproducibility/SUBMIT_JOINT86_TEAMB14/team-b-final/**

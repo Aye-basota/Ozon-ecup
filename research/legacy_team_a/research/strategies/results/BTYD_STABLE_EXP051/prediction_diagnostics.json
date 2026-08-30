@@ -1,0 +1,69 @@
+{
+  "corr_centered_correction_vs_calibrated_base_residual": 0.0248583664800584,
+  "correction_quantiles_raw": {
+    "0": -5.976243756727939,
+    "0.01": -1.6492667124906673,
+    "0.05": -1.138382837519087,
+    "0.25": -0.5748271894174266,
+    "0.5": -0.2869880558894913,
+    "0.75": -0.03929777253105349,
+    "0.95": 0.4128663943785831,
+    "0.99": 0.8037217096256783,
+    "1": 2.8858093893648644
+  },
+  "fold_rows": [
+    {
+      "fold": "2025-09-04",
+      "mean_correction": -0.34074211692281176,
+      "n": 188518,
+      "pearson_predictions": 0.9557704786510781,
+      "residual_alignment": 0.033944315608641945,
+      "residual_correlation": 0.9640397590428448,
+      "spearman_predictions": 0.953257270624355,
+      "var_correction": 0.23313355189793297
+    },
+    {
+      "fold": "2025-09-18",
+      "mean_correction": -0.34834370938841513,
+      "n": 191025,
+      "pearson_predictions": 0.956991694087221,
+      "residual_alignment": 0.03072046448374158,
+      "residual_correlation": 0.9647240185370697,
+      "spearman_predictions": 0.9546012943381801,
+      "var_correction": 0.22719910685457906
+    },
+    {
+      "fold": "2025-10-02",
+      "mean_correction": -0.28557649538669333,
+      "n": 193694,
+      "pearson_predictions": 0.9593490909404397,
+      "residual_alignment": 0.017053755845398446,
+      "residual_correlation": 0.9661809994786343,
+      "spearman_predictions": 0.956815868665916,
+      "var_correction": 0.2158957482725098
+    },
+    {
+      "fold": "2025-10-16",
+      "mean_correction": -0.2959556878627032,
+      "n": 197379,
+      "pearson_predictions": 0.9580449060531214,
+      "residual_alignment": 0.01763641924247705,
+      "residual_correlation": 0.9648438876075296,
+      "spearman_predictions": 0.9555624639761398,
+      "var_correction": 0.22290659115123315
+    }
+  ],
+  "folds_positive_residual_alignment": 4,
+  "mean_correction_fold_centered": 3.3470238495037263e-18,
+  "mean_correction_raw": -0.31728937745395797,
+  "n": 770616,
+  "outer_selected_weights": [
+    0.05,
+    0.05,
+    0.1,
+    0.1
+  ],
+  "pearson_predictions": 0.9574060254959803,
+  "spearman_predictions": 0.9550070009745057,
+  "var_z_btyd_minus_strongest": 0.22545329064608863
+}

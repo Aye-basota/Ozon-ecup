@@ -1,0 +1,82 @@
+[
+  {
+    "mechanism": "funnel_channel_geometry",
+    "feature_count": 16,
+    "binned_design_columns": 80,
+    "raw_oracle_headroom": 0.00994676088346899,
+    "raw_oracle_rho": 0.026134067833218845,
+    "after_strong_level_oracle_headroom": 0.0009463830398040856,
+    "after_strong_level_oracle_rho": 0.017564918388923833,
+    "after_production_span_oracle_headroom": 0.0014084016260085843,
+    "after_production_span_oracle_rho": 0.021444803721586074,
+    "after_span_plus_levels_oracle_headroom": 0.0006435782749219861,
+    "after_span_plus_levels_oracle_rho": 0.014472719733164127,
+    "purged_train_fold": "2025-09-04",
+    "purged_validation_fold": "2025-10-16",
+    "source_target_end": "2025-10-04",
+    "source_label_available_at_validation": true,
+    "purged_rho": 0.0012802361599173577,
+    "purged_Delta_MSE": 0.018947497122422857,
+    "purged_Delta_RMSLE": 0.005430312248332569,
+    "purged_correction_RMS": 0.1398975119200111,
+    "purged_P_gain": 0.0,
+    "purged_CI95_Delta_MSE": [
+      0.016724933965348368,
+      0.021216096321820043
+    ],
+    "oracle_gate_pass": false,
+    "observable_gate_pass": false,
+    "full_model_authorized": false,
+    "bootstrap": {
+      "reps": 1000,
+      "seed": 20260829,
+      "method": "user-level Poisson bootstrap (one row per user in the purged fold)",
+      "P_gain": 0.0,
+      "CI95_Delta_MSE": [
+        0.016724933965348368,
+        0.021216096321820043
+      ],
+      "mean_Delta_MSE": 0.018937108932576194
+    }
+  },
+  {
+    "mechanism": "within_day_funnel_coherence",
+    "feature_count": 8,
+    "binned_design_columns": 40,
+    "raw_oracle_headroom": 0.008916579903850372,
+    "raw_oracle_rho": 0.018093196814264266,
+    "after_strong_level_oracle_headroom": 0.00026965239047093613,
+    "after_strong_level_oracle_rho": 0.00933114094387424,
+    "after_production_span_oracle_headroom": 0.0007151652905048957,
+    "after_production_span_oracle_rho": 0.01503394515358906,
+    "after_span_plus_levels_oracle_headroom": 0.00021203855736422696,
+    "after_span_plus_levels_oracle_rho": 0.008182434710844797,
+    "purged_train_fold": "2025-09-04",
+    "purged_validation_fold": "2025-10-16",
+    "source_target_end": "2025-10-04",
+    "source_label_available_at_validation": true,
+    "purged_rho": -0.000676750838463343,
+    "purged_Delta_MSE": 0.0014442106292117357,
+    "purged_Delta_RMSLE": 0.0004145035420828336,
+    "purged_correction_RMS": 0.036842471352509794,
+    "purged_P_gain": 0.0,
+    "purged_CI95_Delta_MSE": [
+      0.0008662609040942433,
+      0.002010132678372875
+    ],
+    "oracle_gate_pass": false,
+    "observable_gate_pass": false,
+    "full_model_authorized": false,
+    "bootstrap": {
+      "reps": 1000,
+      "seed": 20260830,
+      "method": "user-level Poisson bootstrap (one row per user in the purged fold)",
+      "P_gain": 0.0,
+      "CI95_Delta_MSE": [
+        0.0008662609040942433,
+        0.002010132678372875
+      ],
+      "mean_Delta_MSE": 0.0014228626478948677
+    }
+  }
+]

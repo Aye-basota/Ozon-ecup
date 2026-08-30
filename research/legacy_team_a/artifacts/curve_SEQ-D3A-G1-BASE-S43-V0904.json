@@ -1,0 +1,41 @@
+{
+ "cfg": {
+  "hidden": 64,
+  "blocks": 8,
+  "kernel": 3,
+  "dropout": 0.1,
+  "batch": 1024,
+  "chunk": 256,
+  "lr": 0.003,
+  "wd": 0.01,
+  "epochs": 4,
+  "warmup": 300,
+  "seed": 43,
+  "workers": 3,
+  "compile": true,
+  "aug": "none",
+  "aug_p": 0.5,
+  "aug_full": 0.5,
+  "depth_aug": 0.0,
+  "depth_grid": [
+   90,
+   120,
+   150,
+   180,
+   220,
+   254,
+   289
+  ]
+ },
+ "val": "2025-09-04",
+ "hist": [
+  {
+   "epoch": 4,
+   "train_mse": 3.123382919662623,
+   "rmsle": 1.7712416911846496,
+   "rmsle_cal": 1.7699319325432286,
+   "bias": -0.06810254388113757,
+   "offset": -0.06810515772690993
+  }
+ ]
+}

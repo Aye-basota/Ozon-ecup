@@ -1,0 +1,41 @@
+{
+  "aligned_oof_sha256": "40aa9719d4fd903467eceb5f7be5e5d19ce6a67e12856f523946e5fdcda0ed0a",
+  "rows": 770616,
+  "sources": {
+    "S1-E11": {
+      "path": "artifacts\\oof_S1-E11.npz",
+      "sha256": "39f566b449f44c085181b7be2ac4cf3f978c5fce8ce300bb27c39a16dbf50c44",
+      "target_max_abs_diff": 0.0,
+      "finite": true
+    },
+    "S1-E10": {
+      "path": "artifacts\\oof_S1-E10.npz",
+      "sha256": "b4e4327772c53c2b3efcac77d3c0d80c48d2e4bcd1ddb6326d1b319e4f230f5c",
+      "target_max_abs_diff": 0.0,
+      "finite": true
+    }
+  },
+  "unique_keys": true,
+  "finite_base": true,
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_sizes": [
+    188518,
+    191025,
+    193694,
+    197379
+  ],
+  "base_fold_scores": [
+    1.766883359278252,
+    1.7605095766063483,
+    1.748629224024413,
+    1.741278566214246
+  ],
+  "base_wcv": 1.7475098625535046,
+  "base_replay_abs_error": 5.350453413655032e-11,
+  "pass": true
+}

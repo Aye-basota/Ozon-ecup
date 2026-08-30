@@ -1,0 +1,137 @@
+{
+  "checks": [
+    {
+      "check": "required_paths_present",
+      "passed": true,
+      "detail": "all present"
+    },
+    {
+      "check": "experiment_csv_jsonl_row_parity",
+      "passed": true,
+      "detail": {
+        "csv": 138,
+        "jsonl": 138
+      }
+    },
+    {
+      "check": "global_experiment_ids_unique",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "required_registry_fields_nonblank",
+      "passed": true,
+      "detail": {
+        "experiment_id": 0,
+        "canonical_name": 0,
+        "family": 0,
+        "date": 0,
+        "parent_baseline": 0,
+        "change": 0,
+        "model_family": 0,
+        "validation_protocol": 0,
+        "cv_score": 0,
+        "delta_cv": 0,
+        "folds_positive": 0,
+        "folds_total": 0,
+        "lb_score": 0,
+        "runtime": 0,
+        "status": 0,
+        "evidence_strength": 0,
+        "artifacts": 0,
+        "duplicate_of": 0,
+        "compatible_tags": 0,
+        "notes": 0
+      }
+    },
+    {
+      "check": "unknown_is_explicit",
+      "passed": true,
+      "detail": "no blank CSV cells"
+    },
+    {
+      "check": "report_catalog_registry_parity",
+      "passed": true,
+      "detail": {
+        "catalog": 124,
+        "registry": 124
+      }
+    },
+    {
+      "check": "one_design_evidence_record_per_primary_report",
+      "passed": true,
+      "detail": {
+        "design_rows": 124,
+        "unique_ids": 124,
+        "matched_report_ids": 124,
+        "schema_valid": true
+      }
+    },
+    {
+      "check": "one_normalized_card_per_registry_row",
+      "passed": true,
+      "detail": {
+        "cards": 138,
+        "registry": 138
+      }
+    },
+    {
+      "check": "one_family_page_per_family",
+      "passed": true,
+      "detail": {
+        "pages": 12,
+        "families": 12
+      }
+    },
+    {
+      "check": "confirmed_lb_artifacts_in_submission_registry",
+      "passed": true,
+      "detail": "11 links matched"
+    },
+    {
+      "check": "confirmed_lb_has_no_platform_overclaim",
+      "passed": true,
+      "detail": "all marked repository-internal only"
+    },
+    {
+      "check": "all_existing_submissions_have_forensic_recipe",
+      "passed": true,
+      "detail": "36 recipes present"
+    },
+    {
+      "check": "excluded_interpretive_sources_not_used",
+      "passed": true,
+      "detail": "zero rows"
+    },
+    {
+      "check": "secondary_summaries_are_conflict_objects_not_fact_sources",
+      "passed": true,
+      "detail": {
+        "secondary_audit_rows": 22,
+        "contradiction_registry_rows": 22,
+        "all_marked_used_for_facts_no": true
+      }
+    },
+    {
+      "check": "derived_json_and_jsonl_parse",
+      "passed": true,
+      "detail": "all parsed"
+    },
+    {
+      "check": "source_and_linked_worktrees_untouched",
+      "passed": true,
+      "detail": {
+        "source_untouched_verified": true,
+        "main_files": 3599,
+        "linked_worktrees": 6
+      }
+    },
+    {
+      "check": "no_unnecessary_large_artifacts_copied",
+      "passed": true,
+      "detail": "no file above 50 MiB"
+    }
+  ],
+  "passed": true,
+  "failed_checks": 0
+}

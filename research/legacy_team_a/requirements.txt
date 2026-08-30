@@ -1,0 +1,8 @@
+pandas
+polars
+numpy
+scikit-learn
+lightgbm
+catboost
+xgboost
+pyarrow

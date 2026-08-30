@@ -1,0 +1,34 @@
+{
+  "solution": "SUBMIT_JOINT86_TEAMB14",
+  "blend_space": "log1p",
+  "formula": "z_team=clip(log1p(team_b)+shift,0); mean(z_team)=mean(log1p(joint_v2)); predict=clip(expm1(0.86*log1p(joint_v2)+0.14*z_team),0)",
+  "weights": {"SUBMIT_JOINT_V2": 0.86, "team_b_final": 0.14},
+  "clipping": {"team_b_after_level_shift": "z>=0", "final_prediction": "predict>=0"},
+  "team_b_level_shift_realized": -0.1214326530964569,
+  "team_b_internal_current_log_scale": 1.12,
+  "components": {
+    "team_a_86pct": {
+      "name": "SUBMIT_JOINT_V2.csv",
+      "file": "inputs/SUBMIT_JOINT_V2.csv",
+      "sha256": "211879cb1c79bbbde93d451fca5b61c521b523f989ce42bab62cd3ab87233cba",
+      "public_lb": 1.6459363044782171,
+      "public_lb_provenance": "research/provenance/downloads/TEAMMATE_REPRO_REQUEST.md and research/OPTIMIZED_PAIR_BLENDS.json",
+      "upstream_status": "PROVENANCE_INCOMPLETE: final upstream generation script was not found; frozen bytes and extensive EXP075/ORTH/geometry audits are retained"
+    },
+    "team_b_14pct": {
+      "name": "final_classic_ml.csv",
+      "file": "team-b-final/submissions/final_classic_ml.csv",
+      "sha256": "4ed2916baca85c13d51dcfc4f99877b5d06c03abce90ea0c1aae8c0506d44aba",
+      "training_code": "team-b-final/src",
+      "retrain_status": "BYTE_IDENTICAL in the pinned Team-B environment"
+    }
+  },
+  "sample": {"file": "team-b-final/data/sample_submit.csv", "sha256": "06a433b0ac32f7c0292ce3cb994c1684b4156b392f30fe537ea6a44d0bc4c1b1"},
+  "result": {
+    "file": "reference/SUBMIT_JOINT86_TEAMB14.csv",
+    "sha256": "85d9cd645e14a7895da9ad8cc89065714606266be588c762d37487d2b4edac02",
+    "public_lb": 1.6458200196207617,
+    "public_lb_provenance": "research/provenance/downloads/TEAMMATE_REPRO_REQUEST.md"
+  },
+  "raw_data_sha256": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0"
+}

@@ -1,0 +1,20 @@
+{
+  "verdict": "NO_GO",
+  "breakthrough": false,
+  "weighted_purged_post_span_rho": -0.00554104770116457,
+  "latest_post_span_rho": -0.005480804642876037,
+  "positive_transitions": 1,
+  "nested_delta_mse": 0.00024032249837313557,
+  "nested_delta_rmsle": 6.833349946533396e-05,
+  "bootstrap_ci95_delta_mse": [
+    0.00013558535393563546,
+    0.0003479812874840294
+  ],
+  "p_gain": 0.0,
+  "required_gap_mse": 0.00490927359511,
+  "occurrence_nested_gain": -0.00024032249837313557,
+  "fraction_of_gap_signed": -0.048952761282751604,
+  "fraction_of_gap": 0.0,
+  "test_inference_authorized": false,
+  "leaderboard_used": false
+}

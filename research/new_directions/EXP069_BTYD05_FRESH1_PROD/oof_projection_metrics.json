@@ -1,0 +1,85 @@
+{
+  "ridge_alpha_fixed": 1.0,
+  "features": [
+    "pred_cap",
+    "pred_unc",
+    "pred_dist",
+    "pred_etx_avg3",
+    "pred_seq_avg3",
+    "pred_seq_d3a_avg3",
+    "pred_ridge15",
+    "pred_hurdle_e11",
+    "pred_mhz_full",
+    "pred_holiday_yoy",
+    "pred_block4_saf",
+    "pred_btyd",
+    "pred_btyd05"
+  ],
+  "targets": {
+    "FRESH_CORRECTION": {
+      "folds": [
+        {
+          "fold": "2025-09-04",
+          "n": 188518,
+          "unexplained_variance_ratio": 0.9573363284957473,
+          "unexplained_RMS": 0.025229204082647637
+        },
+        {
+          "fold": "2025-09-18",
+          "n": 191025,
+          "unexplained_variance_ratio": 0.9972575417032659,
+          "unexplained_RMS": 0.023028885241419658
+        },
+        {
+          "fold": "2025-10-02",
+          "n": 193694,
+          "unexplained_variance_ratio": 0.9713810685915695,
+          "unexplained_RMS": 0.024368568079552372
+        },
+        {
+          "fold": "2025-10-16",
+          "n": 197379,
+          "unexplained_variance_ratio": 0.9511412508775735,
+          "unexplained_RMS": 0.028946006155614632
+        }
+      ],
+      "pooled_unexplained_variance_ratio": 0.9700399461173839,
+      "pooled_unexplained_RMS": 0.025515419717395342,
+      "weighted_unexplained_variance_ratio": 0.9631003795526095,
+      "weighted_unexplained_RMS": 0.026688619741907563
+    },
+    "BTYD05_FRESH1_CORRECTION": {
+      "folds": [
+        {
+          "fold": "2025-09-04",
+          "n": 188518,
+          "unexplained_variance_ratio": 0.4332405041165599,
+          "unexplained_RMS": 0.025229205017771927
+        },
+        {
+          "fold": "2025-09-18",
+          "n": 191025,
+          "unexplained_variance_ratio": 0.43707834347663,
+          "unexplained_RMS": 0.02302888307858334
+        },
+        {
+          "fold": "2025-10-02",
+          "n": 193694,
+          "unexplained_variance_ratio": 0.4579680518166187,
+          "unexplained_RMS": 0.024368565949084278
+        },
+        {
+          "fold": "2025-10-16",
+          "n": 197379,
+          "unexplained_variance_ratio": 0.45735354656465005,
+          "unexplained_RMS": 0.02894600945094778
+        }
+      ],
+      "pooled_unexplained_variance_ratio": 0.4485219690018108,
+      "pooled_unexplained_RMS": 0.025515419905799617,
+      "weighted_unexplained_variance_ratio": 0.45320651805689965,
+      "weighted_unexplained_RMS": 0.026688620705257196
+    }
+  },
+  "exclusion_note": "pred_fresh_contrast is the new historical OOF direction itself and is excluded; BTYD/BTYD05 and every other aligned source are included."
+}

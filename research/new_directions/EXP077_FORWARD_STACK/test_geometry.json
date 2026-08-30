@@ -1,0 +1,15 @@
+{
+  "vectors": 78,
+  "rank": 67,
+  "RMS_D_test": 0.14965991271666151,
+  "RMS_D_test_centered": 0.11869990816881125,
+  "RMS_D_perp": 0.005331123175367908,
+  "perp_fraction_centered": 0.0020171429098939766,
+  "perp_fraction_raw": 0.0012688972576648078,
+  "second_pass_max_projection": 6.430309637544224e-12,
+  "mean_D_perp": -3.286260152890463e-20,
+  "corr_D_perp_ORTH_correction": -1.808036779104415e-08,
+  "finite": true,
+  "sample_rows": 250000,
+  "sample_user_id_unique": true
+}

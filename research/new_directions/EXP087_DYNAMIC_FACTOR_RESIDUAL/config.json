@@ -1,0 +1,49 @@
+{
+  "experiment": "EXP087_DYNAMIC_FACTOR_RESIDUAL",
+  "folds": [
+    "2025-07-03",
+    "2025-08-07",
+    "2025-09-11",
+    "2025-10-16"
+  ],
+  "fold_weights": [1, 2, 4, 8],
+  "history_days": 180,
+  "oracle_days": 30,
+  "channels": [
+    "searches",
+    "cat",
+    "search_to_cart",
+    "search_to_ord",
+    "cat_to_cart",
+    "cat_to_ord",
+    "present",
+    "buy"
+  ],
+  "gmv_channels_used": false,
+  "normalization": [
+    "log1p count channels",
+    "remove historical per-user/channel mean",
+    "remove cohort-day/channel mean",
+    "divide by historical per-channel robust IQR scale"
+  ],
+  "factorization": "day-mode SVD followed by per-mode rank-1 user-channel decomposition and joint least-squares factor projection",
+  "parallel_analysis": {
+    "sample_users": 1024,
+    "null_repetitions": 100,
+    "null_operation": "independent circular user permutation within every day/channel",
+    "percentile": 99,
+    "hard_cap": 16
+  },
+  "production_weights": {
+    "cap": 0.1,
+    "unc": 0.2,
+    "dist": 0.25,
+    "seq": 0.225,
+    "etx": 0.225
+  },
+  "projection": "remove constant; project out [constant, cap, unc, dist, seq, etx, production blend]; repeat",
+  "oracle_gate_mse": 0.001,
+  "seed": 870029,
+  "gpu_used": false,
+  "leaderboard_used": false
+}

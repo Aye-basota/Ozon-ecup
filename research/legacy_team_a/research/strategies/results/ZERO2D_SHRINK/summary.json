@@ -1,0 +1,321 @@
+{
+  "baseline": {
+    "fold_scores": [
+      1.7668833567997195,
+      1.7605095767798136,
+      1.748629223964952,
+      1.7412785664479717
+    ],
+    "wcv": 1.7475098625201952
+  },
+  "zero2d": {
+    "heldout_scores": [
+      1.7669191743415928,
+      1.7605145128134958,
+      1.7485844594677786,
+      1.7412488203618983
+    ],
+    "heldout_delta": [
+      3.581754187331754e-05,
+      4.9360336822346085e-06,
+      -4.476449717327746e-05,
+      -2.9746086073423328e-05
+    ],
+    "heldout_eta": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "candidate_wcv": 1.747485106715659,
+    "delta_wcv": -2.4755804536180646e-05,
+    "improved_folds": 2
+  },
+  "amount_only": {
+    "heldout_scores": [
+      1.766825966720664,
+      1.7604400474292563,
+      1.7485532378736017,
+      1.7412767641471263
+    ],
+    "heldout_delta": [
+      -5.7390079055474885e-05,
+      -6.95293505572625e-05,
+      -7.598609135017753e-05,
+      -1.8023008454548517e-06
+    ],
+    "heldout_eta": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "candidate_wcv": 1.7474755417500394,
+    "delta_wcv": -3.432077015562325e-05,
+    "improved_folds": 4
+  },
+  "shuffled_p0": {
+    "heldout_scores": [
+      1.7669180332928967,
+      1.7605071567446986,
+      1.7485829647858695,
+      1.7412485634178874
+    ],
+    "heldout_delta": [
+      3.4676493177121515e-05,
+      -2.4200351149694654e-06,
+      -4.625917908240851e-05,
+      -3.00030300843801e-05
+    ],
+    "heldout_eta": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "candidate_wcv": 1.7474835142179248,
+    "delta_wcv": -2.6348302270499482e-05,
+    "improved_folds": 3
+  },
+  "gate": {
+    "status": "REJECT",
+    "checks": {
+      "delta_wcv_le_minus_0.0005": false,
+      "at_least_3_of_4_folds": false,
+      "fold_2025_10_16_improves": true,
+      "beats_amount_only_by_0.0002": false,
+      "shuffled_p0_not_better_than_minus_0.0001": true,
+      "zero_gain_not_cancelled_by_positive_loss": false,
+      "not_only_global_level": true
+    },
+    "failed_checks": [
+      "delta_wcv_le_minus_0.0005",
+      "at_least_3_of_4_folds",
+      "beats_amount_only_by_0.0002",
+      "zero_gain_not_cancelled_by_positive_loss"
+    ],
+    "zero_mse_gain": -2.3787192654278755e-05,
+    "positive_mse_loss": -0.00011002750040556286,
+    "positive_loss_over_zero_gain": null
+  },
+  "test_regime": {
+    "status": "PASS",
+    "eta": 1.0,
+    "amount_bin_share_oof": [
+      0.17275919524120964,
+      0.14812176233039542,
+      0.2211218038556168,
+      0.20314787131333895,
+      0.08240420650492593,
+      0.08765844467283317,
+      0.0847867160816801
+    ],
+    "amount_bin_share_test": [
+      0.184444,
+      0.159212,
+      0.2099,
+      0.18504,
+      0.077332,
+      0.088076,
+      0.095996
+    ],
+    "p0_bin_share_oof": [
+      0.19999974046736638,
+      0.19999974046736638,
+      0.19999974046736638,
+      0.19999974046736638,
+      0.20000103813053452
+    ],
+    "p0_bin_share_test": [
+      0.19168,
+      0.177024,
+      0.177388,
+      0.198312,
+      0.255596
+    ],
+    "cell_share_oof": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0015299448752686164,
+        0.17122925036594103
+      ],
+      [
+        0.0,
+        0.0,
+        0.0006034133731975459,
+        0.11877251445596769,
+        0.028745834501230184
+      ],
+      [
+        3.892989504500296e-06,
+        0.003604908281167274,
+        0.13805968212443032,
+        0.07942866486031953,
+        2.465560019516854e-05
+      ],
+      [
+        0.004615787889169184,
+        0.13750428228845496,
+        0.06075788719673612,
+        0.0002686162758105204,
+        1.2976631681667652e-06
+      ],
+      [
+        0.03470470376945197,
+        0.04716875849969375,
+        0.000530744235780207,
+        0.0,
+        0.0
+      ],
+      [
+        0.07656861523767998,
+        0.011041815897931006,
+        4.8013537222170316e-05,
+        0.0,
+        0.0
+      ],
+      [
+        0.08410674058156073,
+        0.000679975500119385,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "cell_share_test": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.000388,
+        0.184056
+      ],
+      [
+        0.0,
+        0.0,
+        0.000236,
+        0.087728,
+        0.071248
+      ],
+      [
+        4e-06,
+        0.00168,
+        0.098776,
+        0.109148,
+        0.000292
+      ],
+      [
+        0.002172,
+        0.104948,
+        0.076876,
+        0.001044,
+        0.0
+      ],
+      [
+        0.023948,
+        0.05208,
+        0.001304,
+        0.0,
+        0.0
+      ],
+      [
+        0.07104,
+        0.01684,
+        0.000192,
+        4e-06,
+        0.0
+      ],
+      [
+        0.094516,
+        0.001476,
+        4e-06,
+        0.0,
+        0.0
+      ]
+    ],
+    "max_abs_cell_share_shift": 0.042502165498769826,
+    "fraction_empty_cell": 8e-06,
+    "fraction_unsupported_lt500": 0.00308,
+    "fraction_p0_outside_oof_minmax": 4e-05,
+    "variance_correction_oof": 5.30796937351116e-05,
+    "variance_correction_test": 5.540331934011095e-05,
+    "variance_test_over_oof": 1.0437761682762368,
+    "correction_test_quantiles": {
+      "p01": -0.01921686451653943,
+      "p05": -0.01921686451653943,
+      "p50": 0.0,
+      "p95": 0.0,
+      "p99": 0.0
+    },
+    "fraction_nonzero_correction_test": 0.343032,
+    "fraction_nonzero_correction_oof": 0.3187475993231389,
+    "validation_status": "REJECT_OVERRIDDEN_BY_EXPLICIT_USER_REQUEST",
+    "dist_test_max_abs_dz": 0.7333596312700936,
+    "dist_test_mean_abs_dz": 0.04453212574304636,
+    "dist_test_rmse_dz": 0.06226433276681451,
+    "dist_test_correlation_z": 0.9991905129400246,
+    "dist_test_mean_z_rebuild": 2.4777025134915394,
+    "dist_test_mean_z_reference": 2.4758249968733206,
+    "dist_reference_reproduced": false,
+    "mean_z_strongest_raw": 2.464661871972273,
+    "mean_z_before_correction_after_level": 2.3292999999999995,
+    "mean_z_after_correction_before_relevel": 2.3244338330881,
+    "mean_z_final": 2.3292999999999995,
+    "full_oof_eta_curve": {
+      "0.25": 1.747498377710472,
+      "0.50": 1.747488794523058,
+      "0.75": 1.7474811129855656,
+      "1.00": 1.7474753331189055
+    },
+    "submission_forced_after_reject": true
+  },
+  "config": {
+    "amount_edges": [
+      1.0,
+      3.0,
+      10.0,
+      30.0,
+      50.0,
+      100.0
+    ],
+    "p0_quantiles": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+    ],
+    "eta_grid": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "strength": 20000,
+    "min_cell_rows": 500,
+    "fold_weights": [
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "shuffle_seed_from_config": 42,
+    "level": 2.3293
+  },
+  "production": {
+    "submission": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_ZERO2D_SHRINK.csv",
+    "sha256": "9f1cf32671fb18291659b61da232244d370f7c9af2e0cf9d8aebf9eba406d461",
+    "rows": 250000,
+    "eta": 1.0,
+    "final_level": 2.3292999999999813,
+    "zero_fraction": 0.00178,
+    "min_prediction": 0.0,
+    "max_prediction": 2654.1543091912,
+    "regime_status": "PASS",
+    "forced_after_validation_reject": true,
+    "dist_reference_reproduced": false,
+    "dist_test_mean_abs_dz": 0.04453212574304636,
+    "dist_test_correlation_z": 0.9991905129400246
+  }
+}

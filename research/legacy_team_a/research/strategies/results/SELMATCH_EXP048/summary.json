@@ -1,0 +1,19 @@
+{
+  "baseline_wcv": 1.7475098625201952,
+  "bootstrap_note": "cluster user_id; point-estimate offsets held fixed",
+  "bootstrap_replicates": 500,
+  "decision_gates": [],
+  "experiment": "SELMATCH_EXP048",
+  "git_commit": "a28a71f",
+  "min_ess_fraction": 0.5695995602968521,
+  "pi_ref": [
+    0.004951197327512217,
+    0.016887033607931697,
+    0.06304280838365232,
+    0.9151189606809037
+  ],
+  "promote_to_production_audit": false,
+  "reference_limitation": "inside globally selected 250k universe; not unbiased platform population",
+  "shuffle_permutations": 100,
+  "verdict": "TECHNICAL_INCONCLUSIVE"
+}

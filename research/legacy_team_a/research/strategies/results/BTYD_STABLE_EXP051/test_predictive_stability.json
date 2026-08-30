@@ -1,0 +1,30 @@
+{
+  "centered_fixed_005_correction": {
+    "max_pairwise_abs_delta_z": 3.903368136715102e-06,
+    "max_pairwise_var_z": 6.833970254727724e-16
+  },
+  "maxima": {
+    "max_pairwise_abs_delta_z": 7.809423960658535e-05,
+    "max_pairwise_var_z": 5.415580874783416e-13
+  },
+  "policy_id": "analytic-jac-lbfgsb-bfgs-v1",
+  "rows": [
+    {
+      "donor_group": 0,
+      "max_gradient_norm": 9.725000048334256e-08,
+      "max_log_parameter_spread": 0.000286926894657924,
+      "max_pairwise_abs_delta_z": 7.809423960658535e-05,
+      "max_pairwise_var_z": 5.415580874783416e-13,
+      "mean_nll_spread": 1.3073986337985843e-12
+    },
+    {
+      "donor_group": 1,
+      "max_gradient_norm": 1.2044422465514804e-07,
+      "max_log_parameter_spread": 4.390677208587768e-05,
+      "max_pairwise_abs_delta_z": 1.2363508705703907e-05,
+      "max_pairwise_var_z": 2.790268065291118e-14,
+      "mean_nll_spread": 7.531752999057062e-13
+    }
+  ],
+  "status": "PASS"
+}

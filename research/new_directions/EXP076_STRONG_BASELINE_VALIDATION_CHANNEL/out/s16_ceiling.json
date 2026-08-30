@@ -1,0 +1,27 @@
+{
+ "EXP075_temporal_all": {
+  "k": 3,
+  "rho_heldout_fold4": 0.004743880393813048,
+  "rho_insample_fold123": 0.011651019330487022
+ },
+ "BTYD_RFM_features": {
+  "k": 8,
+  "rho_heldout_fold4": 0.008798312332739188,
+  "rho_insample_fold123": 0.0154257359857883
+ },
+ "BLOCK4_conditional_heads": {
+  "k": 4,
+  "rho_heldout_fold4": 0.002419347380878709,
+  "rho_insample_fold123": 0.014059732584790758
+ },
+ "nonlinear_recalibration": {
+  "k": 6,
+  "rho_heldout_fold4": 0.011095317136501644,
+  "rho_insample_fold123": 0.01168301897636784
+ },
+ "ALL_available": {
+  "k": 23,
+  "rho_heldout_fold4": 0.014979635151352116,
+  "rho_insample_fold123": 0.022607759678976984
+ }
+}

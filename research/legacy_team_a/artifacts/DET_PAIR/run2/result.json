@@ -1,0 +1,83 @@
+{
+  "checkpoint_file_sha256": "dc48c442a593139c1c3078dff66b66c84267062706b98552ac40944c6f6adc92",
+  "duration_seconds": 1386.3764572143555,
+  "environment": {
+    "cublas_workspace_config": ":4096:8",
+    "cudnn": 91002,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cudnn_tf32": true,
+    "deterministic_algorithms": true,
+    "deterministic_debug_mode": "2",
+    "device": "NVIDIA GeForce RTX 4060 Ti",
+    "float32_matmul_precision": "high",
+    "matmul_tf32": true,
+    "pythonhashseed": "42",
+    "torch": "2.11.0+cu126",
+    "torch_cuda": "12.6"
+  },
+  "examples": 4955174,
+  "experiment": "DET-PAIR",
+  "plan_file_sha256": "24c37f06cb783854911b9ee65be07c1d1982261cd95b64e7de10a4b35dad0748",
+  "plan_id": "a47dedac5cb002641c8d5ffc96b2a778561fba94dacfbc2c4d7a3996d5a43dbb",
+  "prediction": {
+    "calibration_offset": 0.047954582897358225,
+    "dtype": "float32",
+    "file": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\DET_PAIR\\run2\\z_raw.npy",
+    "file_sha256": "3dfc264c78cdc905253f6a322dc3cf778228021fcf5b6192703b54e387ae60d5",
+    "mean_z": 2.5835626125335693,
+    "n": 197379,
+    "rmsle": 1.7464883140285596,
+    "rmsle_cal": 1.7458298678102477,
+    "sha256": "ec1a0773f46965176e2f2a3748db9604a3d15d58b6b02b062057a6a1b9963f89",
+    "std_z": 1.5538040399551392
+  },
+  "run": 2,
+  "snapshots": [
+    {
+      "file_sha256": "f2eecfb4836e90eb0c676272c72293109aecddd246b841a614d66d65456c702f",
+      "model_sha256": "cce84601c5df3048d98e14d85e88f111cfe3eb2cf91d43dbf70d5547631efb55",
+      "optimizer_sha256": "4d18202a9a066a49b55298890d38de0281669a56fe214d8ff07004c0a3497f5e",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\DET_PAIR\\run2\\snapshot_step_00000.pt",
+      "rng_sha256": "e5a3918e98ddf8b21107db83ae35dcdf8dda9f17d3d729472fdb3a4d8490328e",
+      "step": 0
+    },
+    {
+      "file_sha256": "7c03595ad050c423f77164e88b9dc389875c0c88fb5cdfcdbdf1cb5ed1a68015",
+      "model_sha256": "bf50720eba9005596154160366116838c07541d6f2d3821d4e8ef26e3c259360",
+      "optimizer_sha256": "a6c02a15ce218d6a5a9b1ec83af9821fb2be252bc6bd05f321eb64da53d414ba",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\DET_PAIR\\run2\\snapshot_step_00001.pt",
+      "rng_sha256": "347b288a78a70f47310b24175b0e33aafc9137f017860b6c99a03b635abde154",
+      "step": 1
+    },
+    {
+      "file_sha256": "f965dc3bff80d4a6ddda51a749baa135553401a65df7141a4fc0d1ed7388813c",
+      "model_sha256": "b0fcfbadb263d53e7883b212d5657a3d3542834f8a7387e7482b28aaf64d5695",
+      "optimizer_sha256": "17bb83cb82d03b5ed779a0bb279bef435fda08db4a8836d54bc8f3498d08e995",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\DET_PAIR\\run2\\snapshot_step_00100.pt",
+      "rng_sha256": "97d87d86fca7deda03595125231fa7e048472fa5b31f464ea61f7914f73b4b3a",
+      "step": 100
+    },
+    {
+      "file_sha256": "754f948508eb8ed81a911e930e5e85946a734b44cd282641ce58db1a2aa9313a",
+      "model_sha256": "05350cc872924935569c968a5172e258e1040c8bfeb91a8eb1dc41ecc0ecbdf4",
+      "optimizer_sha256": "8c7346df0d6293aef36924e286485d18d125cbfcde2ab6f0663cf073d2fde264",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\DET_PAIR\\run2\\snapshot_step_01000.pt",
+      "rng_sha256": "12b96e29f8f767f48733bccbf01072d0c3d3d654333cefcef2e426cc7e2b4cb3",
+      "step": 1000
+    },
+    {
+      "file_sha256": "808853ab6f658b25be4eefe3e2af19a41ff7eecbb46826457eb912b67bf14ed7",
+      "model_sha256": "cdce6627ec476c6c8f9ae90402f9dc0a7344391bf6f06549523748cba897c81b",
+      "optimizer_sha256": "6006fef91173661b19b0a7cdf70759bc7b21ef427448069490fe5eb08b1e6ab6",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\DET_PAIR\\run2\\snapshot_step_04842.pt",
+      "rng_sha256": "6e822dde24780edc9159b9254d2a278407def8bb08f6173bac92699de4f81609",
+      "step": 4842
+    }
+  ],
+  "start_model_sha256": "cce84601c5df3048d98e14d85e88f111cfe3eb2cf91d43dbf70d5547631efb55",
+  "start_optimizer_sha256": "4d18202a9a066a49b55298890d38de0281669a56fe214d8ff07004c0a3497f5e",
+  "starting_artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-S42-V1016.pt",
+  "steps": 4842,
+  "train_mse": 3.151584586131587
+}

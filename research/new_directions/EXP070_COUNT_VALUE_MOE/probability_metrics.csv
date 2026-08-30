@@ -1,0 +1,175 @@
+fold,arm,metric,class_index,value,n,note
+2025-09-04,real,multiclass_log_loss,all,1.0979407716151732,188518,real_validation_count_labels
+2025-09-04,real,brier,all,0.5883933246637384,188518,real_validation_count_labels
+2025-09-04,real,probability_row_sum_max_error,all,5.157198756933212e-08,188518,audit
+2025-09-04,real,expected_calibration_error_top_class_10bin,all,0.014221532709064158,188518,real_validation_count_labels
+2025-09-04,real,ovr_auc,0,0.8416869933010236,188518,real_validation_count_labels
+2025-09-04,real,observed_incidence,0,0.3998185849627091,188518,real_validation_count_labels
+2025-09-04,real,predicted_incidence,0,0.38970126525138243,188518,real_validation_count_labels
+2025-09-04,real,ovr_auc,1,0.6553373913550176,188518,real_validation_count_labels
+2025-09-04,real,observed_incidence,1,0.19852746156865658,188518,real_validation_count_labels
+2025-09-04,real,predicted_incidence,1,0.1995343506107551,188518,real_validation_count_labels
+2025-09-04,real,ovr_auc,2,0.7146691306728531,188518,real_validation_count_labels
+2025-09-04,real,observed_incidence,2,0.21248368856024358,188518,real_validation_count_labels
+2025-09-04,real,predicted_incidence,2,0.21732170135171094,188518,real_validation_count_labels
+2025-09-04,real,ovr_auc,3,0.8376214062389904,188518,real_validation_count_labels
+2025-09-04,real,observed_incidence,3,0.14423556371274893,188518,real_validation_count_labels
+2025-09-04,real,predicted_incidence,3,0.14679051629371487,188518,real_validation_count_labels
+2025-09-04,real,ovr_auc,4,0.9434239477299824,188518,real_validation_count_labels
+2025-09-04,real,observed_incidence,4,0.044934701195641795,188518,real_validation_count_labels
+2025-09-04,real,predicted_incidence,4,0.04665216641301999,188518,real_validation_count_labels
+2025-09-04,real,p0_calibration_decile,0,0.01784692210420376,18852,decile=0; observed_zero=0.0136855506
+2025-09-04,real,p0_calibration_decile,0,0.07088647706328609,18852,decile=1; observed_zero=0.0667303204
+2025-09-04,real,p0_calibration_decile,0,0.14066410506428326,18852,decile=2; observed_zero=0.1389242521
+2025-09-04,real,p0_calibration_decile,0,0.22070198045376,18852,decile=3; observed_zero=0.2225758540
+2025-09-04,real,p0_calibration_decile,0,0.3106527230188288,18851,decile=4; observed_zero=0.3252877831
+2025-09-04,real,p0_calibration_decile,0,0.4065935790946649,18852,decile=5; observed_zero=0.4185232336
+2025-09-04,real,p0_calibration_decile,0,0.5102671256350935,18852,decile=6; observed_zero=0.5266815192
+2025-09-04,real,p0_calibration_decile,0,0.620126522035703,18852,decile=7; observed_zero=0.6328771483
+2025-09-04,real,p0_calibration_decile,0,0.7368884452956764,18852,decile=8; observed_zero=0.7619350732
+2025-09-04,real,p0_calibration_decile,0,0.8624056541320848,18851,decile=9; observed_zero=0.8909872155
+2025-09-04,shuffled,multiclass_log_loss,all,1.1533579413609303,188518,real_validation_count_labels
+2025-09-04,shuffled,brier,all,0.6084433898995162,188518,real_validation_count_labels
+2025-09-04,shuffled,probability_row_sum_max_error,all,4.842877388000488e-08,188518,audit
+2025-09-04,shuffled,expected_calibration_error_top_class_10bin,all,0.02559913364234541,188518,real_validation_count_labels
+2025-09-04,shuffled,ovr_auc,0,0.8417221389688999,188518,real_validation_count_labels
+2025-09-04,shuffled,observed_incidence,0,0.3998185849627091,188518,real_validation_count_labels
+2025-09-04,shuffled,predicted_incidence,0,0.3953004956123678,188518,real_validation_count_labels
+2025-09-04,shuffled,ovr_auc,1,0.6102448344632632,188518,real_validation_count_labels
+2025-09-04,shuffled,observed_incidence,1,0.19852746156865658,188518,real_validation_count_labels
+2025-09-04,shuffled,predicted_incidence,1,0.20248551174610496,188518,real_validation_count_labels
+2025-09-04,shuffled,ovr_auc,2,0.6860583891346833,188518,real_validation_count_labels
+2025-09-04,shuffled,observed_incidence,2,0.21248368856024358,188518,real_validation_count_labels
+2025-09-04,shuffled,predicted_incidence,2,0.21745769648393257,188518,real_validation_count_labels
+2025-09-04,shuffled,ovr_auc,3,0.822274859270574,188518,real_validation_count_labels
+2025-09-04,shuffled,observed_incidence,3,0.14423556371274893,188518,real_validation_count_labels
+2025-09-04,shuffled,predicted_incidence,3,0.14229704109544394,188518,real_validation_count_labels
+2025-09-04,shuffled,ovr_auc,4,0.9278669292254614,188518,real_validation_count_labels
+2025-09-04,shuffled,observed_incidence,4,0.044934701195641795,188518,real_validation_count_labels
+2025-09-04,shuffled,predicted_incidence,4,0.04245925504695463,188518,real_validation_count_labels
+2025-09-04,shuffled,p0_calibration_decile,0,0.02222032484057459,18852,decile=0; observed_zero=0.0134203268
+2025-09-04,shuffled,p0_calibration_decile,0,0.08434351996229968,18852,decile=1; observed_zero=0.0657224698
+2025-09-04,shuffled,p0_calibration_decile,0,0.15931756524442237,18852,decile=2; observed_zero=0.1420008487
+2025-09-04,shuffled,p0_calibration_decile,0,0.24316917073219516,18852,decile=3; observed_zero=0.2190218544
+2025-09-04,shuffled,p0_calibration_decile,0,0.3317124223694562,18851,decile=4; observed_zero=0.3244390218
+2025-09-04,shuffled,p0_calibration_decile,0,0.4227165138531131,18852,decile=5; observed_zero=0.4210693826
+2025-09-04,shuffled,p0_calibration_decile,0,0.5176915788543647,18852,decile=6; observed_zero=0.5276363251
+2025-09-04,shuffled,p0_calibration_decile,0,0.6151312166418261,18852,decile=7; observed_zero=0.6342563123
+2025-09-04,shuffled,p0_calibration_decile,0,0.7204323914743851,18852,decile=8; observed_zero=0.7611394017
+2025-09-04,shuffled,p0_calibration_decile,0,0.8362902713374657,18851,decile=9; observed_zero=0.8895018832
+2025-09-18,real,multiclass_log_loss,all,1.1033756107942703,191025,real_validation_count_labels
+2025-09-18,real,brier,all,0.5911710428537656,191025,real_validation_count_labels
+2025-09-18,real,probability_row_sum_max_error,all,5.098991096019745e-08,191025,audit
+2025-09-18,real,expected_calibration_error_top_class_10bin,all,0.01188843956559667,191025,real_validation_count_labels
+2025-09-18,real,ovr_auc,0,0.8437763184734833,191025,real_validation_count_labels
+2025-09-18,real,observed_incidence,0,0.38964009946342104,191025,real_validation_count_labels
+2025-09-18,real,predicted_incidence,0,0.38557879033822223,191025,real_validation_count_labels
+2025-09-18,real,ovr_auc,1,0.6589959216460577,191025,real_validation_count_labels
+2025-09-18,real,observed_incidence,1,0.1968852244470619,191025,real_validation_count_labels
+2025-09-18,real,predicted_incidence,1,0.19940926937163314,191025,real_validation_count_labels
+2025-09-18,real,ovr_auc,2,0.7133876755612891,191025,real_validation_count_labels
+2025-09-18,real,observed_incidence,2,0.2149247480696244,191025,real_validation_count_labels
+2025-09-18,real,predicted_incidence,2,0.2191384798532566,191025,real_validation_count_labels
+2025-09-18,real,ovr_auc,3,0.8377650654599035,191025,real_validation_count_labels
+2025-09-18,real,observed_incidence,3,0.150770841512891,191025,real_validation_count_labels
+2025-09-18,real,predicted_incidence,3,0.14849133982192328,191025,real_validation_count_labels
+2025-09-18,real,ovr_auc,4,0.9395363172501642,191025,real_validation_count_labels
+2025-09-18,real,observed_incidence,4,0.0477790865070017,191025,real_validation_count_labels
+2025-09-18,real,predicted_incidence,4,0.04738212063170884,191025,real_validation_count_labels
+2025-09-18,real,p0_calibration_decile,0,0.017371875011431826,19103,decile=0; observed_zero=0.0125111239
+2025-09-18,real,p0_calibration_decile,0,0.06844596800179541,19102,decile=1; observed_zero=0.0578473458
+2025-09-18,real,p0_calibration_decile,0,0.13734764796520088,19103,decile=2; observed_zero=0.1289326284
+2025-09-18,real,p0_calibration_decile,0,0.21604844347873467,19102,decile=3; observed_zero=0.2129619935
+2025-09-18,real,p0_calibration_decile,0,0.3065739832176923,19103,decile=4; observed_zero=0.3052400147
+2025-09-18,real,p0_calibration_decile,0,0.4022463400889262,19102,decile=5; observed_zero=0.4049837713
+2025-09-18,real,p0_calibration_decile,0,0.5033219131769163,19103,decile=6; observed_zero=0.5121185154
+2025-09-18,real,p0_calibration_decile,0,0.6133222606884549,19102,decile=7; observed_zero=0.6237566747
+2025-09-18,real,p0_calibration_decile,0,0.7315251667643194,19103,decile=8; observed_zero=0.7512956080
+2025-09-18,real,p0_calibration_decile,0,0.8595964374024011,19102,decile=9; observed_zero=0.8867657837
+2025-09-18,shuffled,multiclass_log_loss,all,1.1641774398033533,191025,real_validation_count_labels
+2025-09-18,shuffled,brier,all,0.6139697053440205,191025,real_validation_count_labels
+2025-09-18,shuffled,probability_row_sum_max_error,all,4.842877388000488e-08,191025,audit
+2025-09-18,shuffled,expected_calibration_error_top_class_10bin,all,0.02231125749798753,191025,real_validation_count_labels
+2025-09-18,shuffled,ovr_auc,0,0.8437707708419999,191025,real_validation_count_labels
+2025-09-18,shuffled,observed_incidence,0,0.38964009946342104,191025,real_validation_count_labels
+2025-09-18,shuffled,predicted_incidence,0,0.39091112435361214,191025,real_validation_count_labels
+2025-09-18,shuffled,ovr_auc,1,0.6045082786545988,191025,real_validation_count_labels
+2025-09-18,shuffled,observed_incidence,1,0.1968852244470619,191025,real_validation_count_labels
+2025-09-18,shuffled,predicted_incidence,1,0.2028287891865736,191025,real_validation_count_labels
+2025-09-18,shuffled,ovr_auc,2,0.6793542085700828,191025,real_validation_count_labels
+2025-09-18,shuffled,observed_incidence,2,0.2149247480696244,191025,real_validation_count_labels
+2025-09-18,shuffled,predicted_incidence,2,0.21871142724407266,191025,real_validation_count_labels
+2025-09-18,shuffled,ovr_auc,3,0.8200854568881526,191025,real_validation_count_labels
+2025-09-18,shuffled,observed_incidence,3,0.150770841512891,191025,real_validation_count_labels
+2025-09-18,shuffled,predicted_incidence,3,0.14395618800682067,191025,real_validation_count_labels
+2025-09-18,shuffled,ovr_auc,4,0.9221190324093936,191025,real_validation_count_labels
+2025-09-18,shuffled,observed_incidence,4,0.0477790865070017,191025,real_validation_count_labels
+2025-09-18,shuffled,predicted_incidence,4,0.043592471143032975,191025,real_validation_count_labels
+2025-09-18,shuffled,p0_calibration_decile,0,0.021419290952410897,19103,decile=0; observed_zero=0.0120923415
+2025-09-18,shuffled,p0_calibration_decile,0,0.08189055578922204,19102,decile=1; observed_zero=0.0572714899
+2025-09-18,shuffled,p0_calibration_decile,0,0.15634409796940135,19103,decile=2; observed_zero=0.1310788881
+2025-09-18,shuffled,p0_calibration_decile,0,0.23853825170317816,19102,decile=3; observed_zero=0.2114438279
+2025-09-18,shuffled,p0_calibration_decile,0,0.32764049353246594,19103,decile=4; observed_zero=0.3065487096
+2025-09-18,shuffled,p0_calibration_decile,0,0.4179051656624295,19102,decile=5; observed_zero=0.4041985132
+2025-09-18,shuffled,p0_calibration_decile,0,0.5106852006794913,19103,decile=6; observed_zero=0.5134272104
+2025-09-18,shuffled,p0_calibration_decile,0,0.6081469327464127,19102,decile=7; observed_zero=0.6228143650
+2025-09-18,shuffled,p0_calibration_decile,0,0.714210680437445,19103,decile=8; observed_zero=0.7505103910
+2025-09-18,shuffled,p0_calibration_decile,0,0.8323423139787621,19102,decile=9; observed_zero=0.8870275364
+2025-10-16,real,multiclass_log_loss,all,1.1000220447336804,197379,real_validation_count_labels
+2025-10-16,real,brier,all,0.5898386239498984,197379,real_validation_count_labels
+2025-10-16,real,probability_row_sum_max_error,all,4.98257577419281e-08,197379,audit
+2025-10-16,real,expected_calibration_error_top_class_10bin,all,0.010364062383266107,197379,real_validation_count_labels
+2025-10-16,real,ovr_auc,0,0.8473559105401381,197379,real_validation_count_labels
+2025-10-16,real,observed_incidence,0,0.3871384493791133,197379,real_validation_count_labels
+2025-10-16,real,predicted_incidence,0,0.3835704476277038,197379,real_validation_count_labels
+2025-10-16,real,ovr_auc,1,0.6592367183058934,197379,real_validation_count_labels
+2025-10-16,real,observed_incidence,1,0.1942101236707046,197379,real_validation_count_labels
+2025-10-16,real,predicted_incidence,1,0.19823932037042488,197379,real_validation_count_labels
+2025-10-16,real,ovr_auc,2,0.7114995475691703,197379,real_validation_count_labels
+2025-10-16,real,observed_incidence,2,0.21786512242943779,197379,real_validation_count_labels
+2025-10-16,real,predicted_incidence,2,0.2176929874581212,197379,real_validation_count_labels
+2025-10-16,real,ovr_auc,3,0.8374123735443171,197379,real_validation_count_labels
+2025-10-16,real,observed_incidence,3,0.15095830863465717,197379,real_validation_count_labels
+2025-10-16,real,predicted_incidence,3,0.15097232314415315,197379,real_validation_count_labels
+2025-10-16,real,ovr_auc,4,0.9428610322681017,197379,real_validation_count_labels
+2025-10-16,real,observed_incidence,4,0.049827995886087176,197379,real_validation_count_labels
+2025-10-16,real,predicted_incidence,4,0.0495249214435588,197379,real_validation_count_labels
+2025-10-16,real,p0_calibration_decile,0,0.01581495515379818,19738,decile=0; observed_zero=0.0110446854
+2025-10-16,real,p0_calibration_decile,0,0.06369867991821776,19738,decile=1; observed_zero=0.0563380282
+2025-10-16,real,p0_calibration_decile,0,0.13038187954045982,19738,decile=2; observed_zero=0.1195663188
+2025-10-16,real,p0_calibration_decile,0,0.2095958949628663,19738,decile=3; observed_zero=0.2083291114
+2025-10-16,real,p0_calibration_decile,0,0.3008722282175308,19738,decile=4; observed_zero=0.2960279664
+2025-10-16,real,p0_calibration_decile,0,0.40014106245863,19738,decile=5; observed_zero=0.4053095552
+2025-10-16,real,p0_calibration_decile,0,0.5042579650368562,19738,decile=6; observed_zero=0.5071435809
+2025-10-16,real,p0_calibration_decile,0,0.6148784749684743,19738,decile=7; observed_zero=0.6181477353
+2025-10-16,real,p0_calibration_decile,0,0.7342363929649486,19738,decile=8; observed_zero=0.7588408147
+2025-10-16,real,p0_calibration_decile,0,0.8618511745238392,19737,decile=9; observed_zero=0.8906622080
+2025-10-16,shuffled,multiclass_log_loss,all,1.1634455782817668,197379,real_validation_count_labels
+2025-10-16,shuffled,brier,all,0.6135412783736086,197379,real_validation_count_labels
+2025-10-16,shuffled,probability_row_sum_max_error,all,4.889443516731262e-08,197379,audit
+2025-10-16,shuffled,expected_calibration_error_top_class_10bin,all,0.02243159157332076,197379,real_validation_count_labels
+2025-10-16,shuffled,ovr_auc,0,0.8471157807704288,197379,real_validation_count_labels
+2025-10-16,shuffled,observed_incidence,0,0.3871384493791133,197379,real_validation_count_labels
+2025-10-16,shuffled,predicted_incidence,0,0.3889046999830154,197379,real_validation_count_labels
+2025-10-16,shuffled,ovr_auc,1,0.6082125047096587,197379,real_validation_count_labels
+2025-10-16,shuffled,observed_incidence,1,0.1942101236707046,197379,real_validation_count_labels
+2025-10-16,shuffled,predicted_incidence,1,0.2023760345568855,197379,real_validation_count_labels
+2025-10-16,shuffled,ovr_auc,2,0.6773744215780186,197379,real_validation_count_labels
+2025-10-16,shuffled,observed_incidence,2,0.21786512242943779,197379,real_validation_count_labels
+2025-10-16,shuffled,predicted_incidence,2,0.21823681513943044,197379,real_validation_count_labels
+2025-10-16,shuffled,ovr_auc,3,0.8173124480775058,197379,real_validation_count_labels
+2025-10-16,shuffled,observed_incidence,3,0.15095830863465717,197379,real_validation_count_labels
+2025-10-16,shuffled,predicted_incidence,3,0.14539928844043243,197379,real_validation_count_labels
+2025-10-16,shuffled,ovr_auc,4,0.923897710898945,197379,real_validation_count_labels
+2025-10-16,shuffled,observed_incidence,4,0.049827995886087176,197379,real_validation_count_labels
+2025-10-16,shuffled,predicted_incidence,4,0.045083161859339416,197379,real_validation_count_labels
+2025-10-16,shuffled,p0_calibration_decile,0,0.01971444539727998,19738,decile=0; observed_zero=0.0111460128
+2025-10-16,shuffled,p0_calibration_decile,0,0.07668779402546987,19738,decile=1; observed_zero=0.0561860371
+2025-10-16,shuffled,p0_calibration_decile,0,0.1498577334598267,19738,decile=2; observed_zero=0.1220995035
+2025-10-16,shuffled,p0_calibration_decile,0,0.2329670265868075,19738,decile=3; observed_zero=0.2065558821
+2025-10-16,shuffled,p0_calibration_decile,0,0.3231630568093521,19738,decile=4; observed_zero=0.2987638059
+2025-10-16,shuffled,p0_calibration_decile,0,0.41715427200075994,19738,decile=5; observed_zero=0.4008511501
+2025-10-16,shuffled,p0_calibration_decile,0,0.5125360772993587,19738,decile=6; observed_zero=0.5102340663
+2025-10-16,shuffled,p0_calibration_decile,0,0.610414775258104,19738,decile=7; observed_zero=0.6180464079
+2025-10-16,shuffled,p0_calibration_decile,0,0.7152874563219628,19738,decile=8; observed_zero=0.7553450198
+2025-10-16,shuffled,p0_calibration_decile,0,0.831286775381507,19737,decile=9; observed_zero=0.8921821959

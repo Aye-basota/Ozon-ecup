@@ -1,0 +1,86 @@
+{
+  "verdict": "V2_OUT_OF_PLANE",
+  "definitions": {
+    "d_exp075": "log1p(EXP075)-log1p(ORTH_ALPHA), realized clipped correction",
+    "d_v2": "log1p(JOINT_V2)-log1p(ORTH_ALPHA), realized clipped correction",
+    "old_sent_span": "canonical bank + 11 previously scored extras; EXP075 axis excluded; level probe handled relative to EXP075"
+  },
+  "RMS_centered_d_v2": 0.03004312421067665,
+  "mean_d_v2": 0.00012889720016488878,
+  "RMS_centered_d_exp075": 0.058102396788499364,
+  "mean_d_exp075": 0.000246889989113863,
+  "components": {
+    "old_sent_span_excluding_unique_EXP075_joint": {
+      "RMS": 0.002380714703953508,
+      "energy_fraction": 0.006279492150132016
+    },
+    "unique_EXP075_joint_axis": {
+      "RMS": 0.027132332948913485,
+      "energy_fraction": 0.8156129052134184
+    },
+    "old_EXP088_tomography_axis_w": {
+      "RMS": 0.0008052771486766362,
+      "energy_fraction": 0.0007184566417044283
+    },
+    "residual_e": {
+      "RMS": 0.012653440136960702,
+      "energy_fraction": 0.1773891459947453
+    }
+  },
+  "coefficients": {
+    "c_joint_unique": 0.4686358589502117,
+    "c_w_old": -0.027412154468035514
+  },
+  "reconstruction_error_RMS": 2.1074802395667053e-18,
+  "R2_decomposition": 0.8226108540052547,
+  "old_span_basis": {
+    "input_rows": 78,
+    "nonconstant_centered_rows": 78,
+    "centered_rank": 69,
+    "rank_including_constant": 70,
+    "svd_relative_tolerance": 1e-10,
+    "smallest_retained_ratio": 6.738752879542747e-10,
+    "largest_rejected_ratio": 5.663802625999776e-13,
+    "orthonormality_max_error": 1.2656542480726785e-13
+  },
+  "level_probe_centered_increment_RMS": 1.8108658249141613e-16,
+  "pre_submit_A1_A2_fit": {
+    "c_A1": 0.332042324890222,
+    "c_A2": 0.3127027647904132,
+    "G_full_population_centered": [
+      [
+        0.002365677872789711,
+        0.0007540660942467973
+      ],
+      [
+        0.0007540660942467973,
+        0.003206027707376864
+      ]
+    ],
+    "condition_number": 1.8979682891251621,
+    "A1_A2_plane_only_energy_fraction": 0.8097882660381774,
+    "sent_plus_A1_A2_explained_fraction": 0.8160677581883096,
+    "RMS_e": 0.012884691523417514,
+    "residual_energy_fraction": 0.18393224181169043
+  },
+  "fixed_threshold_tests": {
+    "w_component_RMS_ratio": 0.026804041518107453,
+    "coefficient_matrix_unit_RMS_basis": [
+      [
+        0.05789640811885896,
+        -1.4210854715202005e-19
+      ],
+      [
+        0.027132332948913478,
+        -0.0008052771486766362
+      ]
+    ],
+    "condition_number": 87.68857971525216,
+    "normalized_determinant": 0.0296665498059945,
+    "w_contribution_significant": false,
+    "plane_practical": false,
+    "out_of_plane_significant": true,
+    "measured_second_axis": false,
+    "plane_identifiable": false
+  }
+}

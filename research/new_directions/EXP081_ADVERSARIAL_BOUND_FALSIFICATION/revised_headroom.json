@@ -1,0 +1,16 @@
+{
+  "required_Delta_MSE": 0.004909273595109731,
+  "EXP080_robust_headroom": 3.524401322785001e-05,
+  "EXP080_optimistic_headroom": 0.0024120306885609035,
+  "EXP080_comparable_forward_point": 0.0005286899447907473,
+  "new_cross_sectional_full_span_optimistic_max": 0.0015643394094092,
+  "revised_optimistic_headroom": 0.0024120306885609035,
+  "new_nonpurged_full_span_forward_diagnostic_max": 0.001468849304138,
+  "revised_EXP080_comparable_forward_headroom": 0.0005286899447907473,
+  "purged_latest_best_point_headroom": 4.893691597160944e-06,
+  "purged_latest_robust_95pct_headroom": 0.0,
+  "full_4fold_purged_bound_identifiable": false,
+  "why_not_identifiable": "Canonical folds are 14 days apart but targets last 30 days; only 2025-09-04 labels are available by the latest clean cutoff 2025-10-16.",
+  "authorized_candidates": [],
+  "verdict": "NO_EVIDENCE_CONFIRMED"
+}

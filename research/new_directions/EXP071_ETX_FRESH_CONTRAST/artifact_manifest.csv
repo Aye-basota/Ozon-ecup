@@ -1,0 +1,29 @@
+path,bytes,sha256,kind,purpose,status
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\model_ETX-01-S42-V0904.pt,4488973,558fd1554076ec03ea976aa31808697003e98591c03b7ddb9403a2a9fbc1ad53,checkpoint,ETX-01-S42 fold checkpoint,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\oof_ETX-01-S42-V0904.npz,1104412,c60a9f92ff58a64c65724e07e04ead4ac6ce078e5b0f172377243fb5339adc4c,prediction,saved ETX seed-42 fold prediction,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\model_ETX-01-S42-V0918.pt,4488973,a7ad59fbdf0dee5ff02d2aed2fc1e7043de98a6f627d54e9b5815d585116eda5,checkpoint,ETX-01-S42 fold checkpoint,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\oof_ETX-01-S42-V0918.npz,1125418,afec28e0124c5422c1b38cd52d2d9da87e4535dbebf13f8c83faa0f2bffdfc9f,prediction,saved ETX seed-42 fold prediction,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\model_ETX-01-S42-V1002.pt,4488973,419e4060887fdcbc596d3147f6cb11d9ff7c5af746e01a21ea1edb2e0c9a591f,checkpoint,ETX-01-S42 fold checkpoint,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\oof_ETX-01-S42-V1002.npz,1143774,def5d02ffe8f3d4d7f9b87929b30f6a18ffbdf882a7e9edcc401f4bb26f84e5e,prediction,saved ETX seed-42 fold prediction,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\model_ETX-01-S42-V1016.pt,4488973,a16f9c255b11825e112db8c69572f96ba64a72d70941041d90fba7968d8aa177,checkpoint,ETX-01-S42 fold checkpoint,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\oof_ETX-01-S42-V1016.npz,1167951,18e35df4d7960818a9fa640ec3eafdf7fbb212c6cfa224ee426b4a126abd8b2f,prediction,saved ETX seed-42 fold prediction,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\model_ETX-01-S42-TEST.pt,4488827,bc8af886d1a4b5c81124211c8bac1d237b9987ec535faf009442526184b0937a,checkpoint,ETX-01-S42 TEST checkpoint,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\ztest_ETX-01-S42-DCW.npy,2000128,2a9f9955503578fb48b959c7253f1d8a7de0c1ffb85704dfb2ff85253fea1c39,prediction,ETX seed-42 corrected TEST prediction,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\uid_ETX-01-S42-DCW.npy,2000128,50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a,keys,ETX seed-42 corrected TEST keys,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\weights_archives\ETX-01_weights.zip,41539806,4d1a0763dd793049016b97883f02a29353280d42bfdc43779fa60b68898c03a1,archive,ETX checkpoint archive,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\src\etx.py,48541,163f63b03eb309e88a1a0fa63d9db41bf3bb4a46cb8ffdb5fa485a4572fb9d10,code,ETX implementation,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\research\strategies\results\ETX2\depth_fix.py,8816,3d67a973e24234106e293178490bb24b6357ec2cdaf8dfe3fa5da53755f0a3af,code,DCW/static-context production fix,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\src\seq_cond.py,54317,a2e499d17911d2c88a9581d54714902f50ba7b9b499c47e5a5770ab32053252e,code,EXP-032 CLEAN/FRESH/VOL construction,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\src\fresh_contrast.py,33440,e04dbf4cf9e3053533c2b68ff279a9c8f6f2d99f83cf50ef4581dcdb30b4cdf4,code,EXP-040 nested preprocessing/evaluator,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\oof_FRESH_CONTRAST_MOE.npz,26380153,1fb3b8a2d0d77afd06bc529d69e32e07bd5f01060a775a7fc02fb65f6cb03cda,prediction,existing SEQ-FRESH correction,FOUND
+C:\Users\Admin\Desktop\e-cup-research-clean\artifacts\oof\EXP_037_STRONGEST_CURRENT.parquet,9518701,8ac8aebea5dd875a34f5ccfbcedbd6dc12be39147e29c9a5efae236d895b5c9d,prediction,canonical EXP-037 OOF,FOUND
+C:\Users\Admin\Desktop\submission_geometry_research\gpt_pro_research_packet\06_ALIGNED_OOF.parquet,48652121,7e64510b4c019ddcded125ba356517eeb2e31c32ecc11c856581f0c632c2de3f,prediction_bank,aligned canonical OOF bank,FOUND
+C:\Users\Admin\Desktop\submission_geometry_research\gpt_pro_research_packet\07_ALIGNED_TEST.parquet,41131499,d466eed2f649d51fc37a93e63d19f8f0c7a72d3e373d43c77085d8f55c112e2c,prediction_bank,aligned TEST bank,FOUND
+C:\Users\Admin\Desktop\submission_geometry_research\submission_geometry\directions.py,4517,3317551f88c4cc06ef3664400a6d303cd50a8441bdd4352c8547068d407127ce,code,geometry basis builder,FOUND
+C:\Users\Admin\Desktop\submission_geometry_research\submission_geometry\cache\Z.npz,123040252,443e80472f321e796faccfe0e9ea6954653397eb74311e7abef7471ea3064dfe,geometry,65-source geometry matrix cache,FOUND
+C:\Users\Admin\Desktop\submission_geometry_research\submission_geometry\cache\Z_meta.json,23229,238cf6a1d7b2f5625de1fa06faa6ef7a35906d256cdfc72da1f967a12570d80d,geometry,geometry source metadata,FOUND
+C:\Users\Admin\Desktop\submission_geometry_research\submission_geometry\families.py,3664,7f17644adf78e8f6401c6954cbd41b20431d2a99182298438f6b1fbcc2042d6a,code,geometry family map,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\experiments\exp_032_s04_cond_fresh_pilot.md,22176,b797ecd44a7a7af51be03f6833d9339550a37f494aae4f7f0f450f095cbb3f3b,documentation,EXP-032 evidence,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\experiments\EXP_032_S04_conditional_fresh_seq.md,10795,0c855b117afc727704f5d3199a23e60067638204c20af85a3649b7f09cf6a6f1,documentation,EXP-032 design,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\experiments\exp_037_etx_avg3_strongest.md,20439,a5c46e38cf23da6c98e6f33fae819fe97542d75f524961e734e40897656c42b5,documentation,EXP-037 builder/fix,FOUND
+C:\Users\Admin\Desktop\OZON-E-CUP\experiments\exp_040_fresh_contrast_moe.md,9522,842c00add1aba8c35ff10c6d671a7ea965b3a7c56732eca93ac2f0fdcdbe4f86,documentation,EXP-040 evidence,FOUND

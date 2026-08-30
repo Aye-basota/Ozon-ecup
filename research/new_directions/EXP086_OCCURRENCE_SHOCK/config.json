@@ -1,0 +1,48 @@
+{
+  "experiment": "EXP086_OCCURRENCE_SHOCK",
+  "folds": [
+    "2025-07-03",
+    "2025-08-07",
+    "2025-09-11",
+    "2025-10-16"
+  ],
+  "purged_transitions": [
+    "2025-08-07",
+    "2025-09-11",
+    "2025-10-16"
+  ],
+  "fold_weights": {
+    "2025-07-03": 1.0,
+    "2025-08-07": 2.0,
+    "2025-09-11": 4.0,
+    "2025-10-16": 8.0
+  },
+  "production_weights": {
+    "cap": 0.1,
+    "unc": 0.2,
+    "dist": 0.25,
+    "seq": 0.225,
+    "etx": 0.225
+  },
+  "occurrence_heads": [
+    "occ_r10_fast",
+    "occ_r16_bal",
+    "occ_r22_stable",
+    "occ_r14_multiscale",
+    "occ_r18_wide",
+    "occ_r24_multiscale",
+    "occ_r12_wide",
+    "occ_r20_shallow"
+  ],
+  "meta": {
+    "power": 1.7,
+    "leaves": 31
+  },
+  "projection": "remove mean; least-squares project out [1, cap, unc, dist, seq, etx, production blend]; repeat projection",
+  "bootstrap": {
+    "method": "Poisson cluster by user_id",
+    "reps": 2000,
+    "seed": 20260829
+  },
+  "leaderboard_used": false
+}

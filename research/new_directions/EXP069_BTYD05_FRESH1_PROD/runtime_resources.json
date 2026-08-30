@@ -1,0 +1,13 @@
+{
+  "oof_analysis_seconds": 60.25733804702759,
+  "production_encoder_seconds": 5729.853937,
+  "conditional_embedding_and_head_seconds": 570.306657075882,
+  "new_persistent_experiment_bytes": 126958034,
+  "new_persistent_external_encoder_bytes": 9004179,
+  "new_persistent_total_bytes": 135962213,
+  "peak_new_persistent_disk_bytes": 135962213,
+  "peak_disk_basis": "No temporary embedding/cache files were written; the final persistent total is the persistent peak.",
+  "disk_budget_bytes": 5000000000,
+  "disk_budget_pass": true,
+  "temporary_embedding_caches_deleted_or_never_written": true
+}

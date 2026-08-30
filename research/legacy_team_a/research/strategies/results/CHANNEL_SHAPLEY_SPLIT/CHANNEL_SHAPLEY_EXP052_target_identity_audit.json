@@ -1,0 +1,11 @@
+{
+  "max_abs_phi_identity": 8.881784197001252e-16,
+  "min_phi_c": 0.0,
+  "min_phi_s": 0.0,
+  "n": 770616,
+  "status": "PASS",
+  "symmetry_max_abs": 0.0,
+  "targets_sha256": "2668b4465493536c5879214339382a1dfd621b6e50b04560e7b37449c35492f9",
+  "zero_rows": 301289,
+  "zero_rows_nonzero_contribution": 0
+}

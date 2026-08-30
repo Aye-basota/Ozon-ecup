@@ -1,0 +1,156 @@
+{
+  "A1_TREE_TRAJ_180": {
+    "history": 180,
+    "fold_rows": [
+      {
+        "cutoff": "2025-09-04",
+        "rho": 0.029035095028631337,
+        "b": 0.0029034032163074756,
+        "G": 0.0031787337750669607,
+        "deployable_amplitude": 1.0,
+        "amplitude_source": "fixed_residual_objective",
+        "delta_MSE": -0.0026280726575479895,
+        "baseline_RMSLE": 1.783465787129073,
+        "corrected_RMSLE": 1.7827288467970603,
+        "delta_RMSLE": -0.0007369403320127699
+      },
+      {
+        "cutoff": "2025-09-18",
+        "rho": 0.034303186031901904,
+        "b": 0.0033654583578015718,
+        "G": 0.0030853617365422335,
+        "deployable_amplitude": 0.9133835740133083,
+        "amplitude_source": "strictly_earlier_heldout_folds",
+        "delta_MSE": -0.0035738854084394764,
+        "baseline_RMSLE": 1.770323486872621,
+        "corrected_RMSLE": 1.7693138112738493,
+        "delta_RMSLE": -0.001009675598771631
+      },
+      {
+        "cutoff": "2025-10-02",
+        "rho": 0.032405120826897525,
+        "b": 0.0030905308743670447,
+        "G": 0.0029566591693170273,
+        "deployable_amplitude": 1.0304683658311304,
+        "amplitude_source": "strictly_earlier_heldout_folds",
+        "delta_MSE": -0.0032298155538526,
+        "baseline_RMSLE": 1.7544181218191863,
+        "corrected_RMSLE": 1.7534973996598082,
+        "delta_RMSLE": -0.0009207221593781068
+      },
+      {
+        "cutoff": "2025-10-16",
+        "rho": 0.0288469091080418,
+        "b": 0.0026777066900934496,
+        "G": 0.0028231875208596336,
+        "deployable_amplitude": 1.03873941562823,
+        "amplitude_source": "strictly_earlier_heldout_folds",
+        "delta_MSE": -0.0025167172975903524,
+        "baseline_RMSLE": 1.7488246991674166,
+        "corrected_RMSLE": 1.7481050057477712,
+        "delta_RMSLE": -0.0007196934196453952
+      }
+    ],
+    "weighted_clean_forward_rho": 0.030559306058915943,
+    "latest_rho": 0.0288469091080418,
+    "nested_delta_MSE": -0.0028552562713706773,
+    "nested_delta_RMSLE": -0.0008131151682821081,
+    "amplitudes": {
+      "2025-09-04": 1.0,
+      "2025-09-18": 0.9133835740133083,
+      "2025-10-02": 1.0304683658311304,
+      "2025-10-16": 1.03873941562823
+    },
+    "bootstrap": {
+      "method": "Poisson user-cluster bootstrap; all rows for a user share one resampling count",
+      "replicates": 1000,
+      "unique_users": 210212,
+      "rho_point": 0.030559306058915943,
+      "rho_ci_2_5": 0.027681940334401307,
+      "rho_ci_97_5": 0.033544296430564675,
+      "rho_bootstrap_se": 0.0015350869033735244,
+      "t_rho": 19.90721567082519,
+      "delta_MSE_ci_2_5": -0.003437146406782933,
+      "delta_MSE_ci_97_5": -0.0023014584464715123,
+      "P_delta_MSE_lt_0": 1.0
+    },
+    "verdict": "STRONG_SIGNAL"
+  },
+  "A1_TREE_TRAJ_365": {
+    "history": 365,
+    "fold_rows": [
+      {
+        "cutoff": "2025-09-04",
+        "rho": 0.03230667136243182,
+        "b": 0.0035039758960838086,
+        "G": 0.0037395878927612243,
+        "deployable_amplitude": 1.0,
+        "amplitude_source": "fixed_residual_objective",
+        "delta_MSE": -0.003268363899406393,
+        "baseline_RMSLE": 1.783465787129073,
+        "corrected_RMSLE": 1.7825492559703695,
+        "delta_RMSLE": -0.000916531158703604
+      },
+      {
+        "cutoff": "2025-09-18",
+        "rho": 0.03416840706850358,
+        "b": 0.003515942977371087,
+        "G": 0.0033940696084198843,
+        "deployable_amplitude": 0.9369951974832592,
+        "amplitude_source": "strictly_earlier_heldout_folds",
+        "delta_MSE": -0.0036089860150729583,
+        "baseline_RMSLE": 1.770323486872621,
+        "corrected_RMSLE": 1.769303891974966,
+        "delta_RMSLE": -0.0010195948976550184
+      },
+      {
+        "cutoff": "2025-10-02",
+        "rho": 0.03427524338959888,
+        "b": 0.003440189862559619,
+        "G": 0.003274659206416248,
+        "deployable_amplitude": 1.0007726968167299,
+        "amplitude_source": "strictly_earlier_heldout_folds",
+        "delta_MSE": -0.003605974373555899,
+        "baseline_RMSLE": 1.7544181218191863,
+        "corrected_RMSLE": 1.753390136790442,
+        "delta_RMSLE": -0.0010279850287442382
+      },
+      {
+        "cutoff": "2025-10-16",
+        "rho": 0.03207559774213456,
+        "b": 0.003148617544824397,
+        "G": 0.003157203649371084,
+        "deployable_amplitude": 1.0283690443284,
+        "amplitude_source": "strictly_earlier_heldout_folds",
+        "delta_MSE": -0.0031370033551706947,
+        "baseline_RMSLE": 1.7488246991674166,
+        "corrected_RMSLE": 1.7479275800395262,
+        "delta_RMSLE": -0.0008971191278903667
+      }
+    ],
+    "weighted_clean_forward_rho": 0.032954478047978485,
+    "latest_rho": 0.03207559774213456,
+    "nested_delta_MSE": -0.0033337506843427642,
+    "nested_delta_RMSLE": -0.0009496409394742351,
+    "amplitudes": {
+      "2025-09-04": 1.0,
+      "2025-09-18": 0.9369951974832592,
+      "2025-10-02": 1.0007726968167299,
+      "2025-10-16": 1.0283690443284
+    },
+    "bootstrap": {
+      "method": "Poisson user-cluster bootstrap; all rows for a user share one resampling count",
+      "replicates": 1000,
+      "unique_users": 210212,
+      "rho_point": 0.032954478047978485,
+      "rho_ci_2_5": 0.029973517971563862,
+      "rho_ci_97_5": 0.03602702232229544,
+      "rho_bootstrap_se": 0.0015636417815367194,
+      "t_rho": 21.07546526135379,
+      "delta_MSE_ci_2_5": -0.003956070000840282,
+      "delta_MSE_ci_97_5": -0.00273406993159121,
+      "P_delta_MSE_lt_0": 1.0
+    },
+    "verdict": "STRONG_SIGNAL"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "verdict": "EXP024_HAS_A_FRESH_TEST_DIRECTION_BUT_POST_SPAN_VALUE_IS_UNVALIDATED",
+  "best_scored_team_b": "exp019 behavior_v1 dist-head",
+  "declared_local_champion": "exp024 five-family blend",
+  "architecture": {
+    "weights": {
+      "recency": 0.25,
+      "post_order_dist": 0.1,
+      "behavior_dist": 0.2,
+      "xgb_behavior": 0.25,
+      "cat_behavior": 0.2
+    },
+    "representation": "component predictions and final blend in log1p space",
+    "targets": {
+      "direct_models": "log1p(y30)",
+      "distribution_heads": "16 quantile bins of log1p(y30)"
+    },
+    "feature_sets": {
+      "recency": 152,
+      "long_buy_post_order": 215,
+      "behavior_v1": 329
+    }
+  },
+  "test_geometry_exp024_vs_joint_v2": {
+    "RMS_centered_correction": 0.1591315826229801,
+    "RMS_outside_current_scored_span": 0.028760795284441004,
+    "perp_fraction_RMS": 0.1807359344410094,
+    "perp_fraction_energy": 0.03266547799826485,
+    "corr_perp_A1_365": -0.00999339454440649,
+    "corr_perp_A2": 0.011196736252763153,
+    "corr_perp_v2_out_of_plane": -0.0007995753956694082
+  },
+  "scored_exp019_post_span": {
+    "RMS_outside_current_scored_span": 4.529447240436464e-08,
+    "perp_fraction_RMS": 2.764964033597934e-07,
+    "interpretation": "numerical zero because exp019 is already a row of the current scored span"
+  },
+  "incremental_evidence": {
+    "post_order_LB_Delta_MSE": -0.00043305125243442433,
+    "dist_head_LB_Delta_MSE": -0.0004866381537644848,
+    "behavior_v1_LB_Delta_MSE": -0.000428418852699064,
+    "xgboost_CV_Delta_RMSLE_vs_exp019": -0.0005798991221734884,
+    "catboost_conditional_CV_Delta_RMSLE_vs_exp023": -0.0001641964068317403,
+    "full_exp024_CV_Delta_RMSLE_vs_exp019": -0.0007440955290052287,
+    "full_exp024_fold_deltas_vs_exp019": [
+      -0.0007377070318139722,
+      -0.0007504840261964851
+    ],
+    "caveat": "CV weights selected on these same two folds; no post-span residual OOF vector"
+  },
+  "source_of_gain": {
+    "confirmed_by_LB": "post-order features, distribution head, and full behavior_v1 each improved the Team-B ladder; behavior_v1 is the last positive scored increment",
+    "largest_new_unscored_CV_increment": "XGBoost model-family diversity; CatBoost adds a smaller conditional increment and hits its 0.20 search boundary",
+    "why_not_in_current_scored_span": "exp024 XGBoost/CatBoost TEST predictions were never scored or included; all scored Team-B siblings including exp019 already are in the span",
+    "siblings": [
+      "exp022 three-LightGBM blend",
+      "exp023 +XGBoost",
+      "exp024 +CatBoost",
+      "exp020 behavior_v1_slim ablation"
+    ]
+  },
+  "formula_disagreement_RMS": 0.04584709624739707,
+  "vector_artifact": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP090_TEAM_B_AUDIT\\team_b_signal_vector.npz",
+  "vector_sha256": "fb0b7545afd2b7ccf000805356102fbcb7eba9403571ae027e6ad4ba66aeba37"
+}

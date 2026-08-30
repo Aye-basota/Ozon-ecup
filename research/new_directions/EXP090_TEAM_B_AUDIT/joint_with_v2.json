@@ -1,0 +1,55 @@
+{
+  "status": "EXP019_PUBLIC_PLANE_DECODED_EXP024_CONDITIONAL_GAIN_NOT_IDENTIFIED",
+  "basis": [
+    "ORTH_FINAL_to_JOINT_V2",
+    "ORTH_FINAL_to_scored_exp019"
+  ],
+  "G_full_population": [
+    [
+      0.0012406011501095479,
+      0.0007843948963705446
+    ],
+    [
+      0.0007843948963705446,
+      0.02716379654836599
+    ]
+  ],
+  "b_from_public_scores_full_Gram": [
+    0.0011674478320060633,
+    -6.814187458736853e-06
+  ],
+  "coefficients": [
+    0.9586962037242941,
+    -0.027934629663375763
+  ],
+  "condition_number": 22.34182840351034,
+  "correlation_corrections": 0.13512118181147909,
+  "individual_gain_MSE_V2_axis": 0.0010986080742673074,
+  "individual_gain_MSE_exp019_axis": 1.7093763252176823e-09,
+  "joint_gain_MSE_vs_ORTH_FINAL": 0.0011194181563934868,
+  "conditional_gain_exp019_given_V2_MSE": 2.081008212617935e-05,
+  "conditional_gain_V2_given_exp019_MSE": 0.0011194164470171616,
+  "warning": "public membership unknown; both directions are already in the scored span",
+  "exp024": {
+    "test_corr_perp_with_V2_correction": 6.6260893326924535e-06,
+    "test_perp_RMS": 0.028760795284441004,
+    "condition_after_addition": {
+      "input_rows": 82,
+      "rank": 67,
+      "condition_design": 48649.91134505342,
+      "condition_gram": 2366813873.8815575,
+      "smallest_retained_relative_eigenvalue": 4.225089311142187e-10
+    },
+    "b": null,
+    "conditional_gain_MSE": null,
+    "expected_Delta_RMSLE": null,
+    "reason": "no scored exp024 vector and no row-level post-span OOF residual alignment"
+  },
+  "candidate_created": false,
+  "candidate_gate": {
+    "clean_post_span_OOF_rho_ge_0_015": false,
+    "LB_implied_out_of_span_headroom_ge_0_0003": false,
+    "confirmed_better_LB_reproducible_component": false
+  },
+  "next_measurement": "Build a symmetric +/- fixed-RMS probe from team_b_signal_vector.npz:d_perp on top of JOINT_V2; score both to identify sign/amplitude, then shrink for public noise. Do not use raw exp024 weight sweep as the measurement."
+}

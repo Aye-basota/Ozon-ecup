@@ -1,0 +1,293 @@
+{
+  "current_feature_audit": {
+    "CAP": {
+      "feature_order_sha256": "3f2f8d3ecb879a58f5c3fd5e81ae7d976194228d818e7d6dbb91ad15bbde48dc",
+      "matches_production": true,
+      "n_features": 195,
+      "target_dtype": "float64",
+      "validation_feature_dtype": "float32"
+    },
+    "UNC": {
+      "feature_order_sha256": "47d91fbae17fce48232f8cfe226d2ed63f078fd5022fd8bb19e1af1228db5d44",
+      "matches_production": true,
+      "n_features": 236,
+      "target_dtype": "float64",
+      "validation_feature_dtype": "float32"
+    }
+  },
+  "cutoff_policy": {
+    "fold_weights": [
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "test_data_or_predictions_read": false,
+    "train_grid_step_days": 7,
+    "train_panel_blocks": 1,
+    "train_rule": "T+30<=V",
+    "validation_folds": [
+      "2025-09-04",
+      "2025-09-18",
+      "2025-10-02",
+      "2025-10-16"
+    ],
+    "validation_panel_blocks": 3
+  },
+  "environment": {
+    "lgb_threads": 12,
+    "lightgbm": "4.7.0",
+    "numpy": "2.3.4",
+    "pandas": "2.3.3",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "polars": "1.43.2",
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "source_sha256": {
+      "blend.py": "de0c325c07425ef23e107675816f4ee7fca0bbfc2ca88193d15cbfb18197d739",
+      "config.py": "8dd82be5291da32971ac285b13e3eb02c5702bc0e5eaec9152e7002159dcf324",
+      "features.py": "28cdef7a544b29dfb5fb2e2bbb79fa7ba1df53b4752017cb77e1db974465d186",
+      "models.py": "c0dd7b75dc15d72a12b2f2c672ca6f7050f02034e0763fc8057d1e7b9db0ada4",
+      "report.py": "651a606beda74bcfe0fc16dc8ffc6bed336ddb5ee13d8ebb5b8cdb176f295da3",
+      "tabular_backbone_refresh.py": "4e640a34b3e59738b847807b3e8f399e62b4451502f9fc353f6a3d38ace76dca",
+      "train.py": "15f088a12e6870873d50993c2757652f1d69c8178f0338c40c687a157356ae68",
+      "validation.py": "69fe796af2ec03b870ad982df8aacaaeca445ef875a953c5b5ac1d999725956e"
+    }
+  },
+  "experiment": "TABULAR-BACKBONE-REFRESH",
+  "experiment_number": 46,
+  "historical_baseline": {
+    "fold_cal": [
+      1.7668833567997195,
+      1.7605095767798136,
+      1.748629223964952,
+      1.7412785664479717
+    ],
+    "fold_sizes": [
+      188518,
+      191025,
+      193694,
+      197379
+    ],
+    "folds": [
+      "2025-09-04",
+      "2025-09-18",
+      "2025-10-02",
+      "2025-10-16"
+    ],
+    "mean_z": 2.6881878500404097,
+    "n": 770616,
+    "prediction_sha256": "ffa81e2cd1d0e05402c6fcc376d414c20a67a6b514414e1dd42332b8da878f65",
+    "reconstruction_tolerance": 5e-10,
+    "row_keys_sha256": "3bfac84ca53d125d21beac831bee0364deb28e4c027ec2858d21b97e32fe1b91",
+    "status": "PASS_EXACT",
+    "target_sha256": "e3a609fad21657bef461738efafa145808f6a868f03e47d178400f1d0398234b",
+    "wcv": 1.7475098625201952
+  },
+  "historical_components": [
+    {
+      "file_sha256": "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525",
+      "n": 770616,
+      "name": "S1-E03a",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E03a.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "0461e52abc4f50a7d4d950600475ff7949dc20b1ac5436fbf454bcc53c1af5f1",
+      "row_keys_sha256": "0a0ff2fc3180b9c4f87bdff73b91e14f2bd46233d26cf503b8b63f2d347366e6",
+      "target_sha256": "da7df9cfa8ba957c7de513a0752d8881dabfc80ccdbc3164e430233490b0a1bc"
+    },
+    {
+      "file_sha256": "2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff",
+      "n": 770616,
+      "name": "S1-E02",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E02.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "89a389580fa3b1f0c940b9a3c035a1246fe8d86e3e8af618ad332eb99b985504",
+      "row_keys_sha256": "0a0ff2fc3180b9c4f87bdff73b91e14f2bd46233d26cf503b8b63f2d347366e6",
+      "target_sha256": "da7df9cfa8ba957c7de513a0752d8881dabfc80ccdbc3164e430233490b0a1bc"
+    },
+    {
+      "file_sha256": "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+      "n": 770616,
+      "name": "S1-DIST",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-DIST.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "3ba241497c210edcabcdcf6cf62f716e2ffb03bb31cf7c19eef3ff44c786b169",
+      "row_keys_sha256": "f7e127465fe3241aad1764bb2e8dec57e3342e5e7c322752c756691cb20d24c9",
+      "target_sha256": "c67173b47db099cf8123e2c7855a222c95d0d91b2bcec25c5450ce4448a5d644"
+    },
+    {
+      "file_sha256": "890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f",
+      "n": 770616,
+      "name": "ETX-AVG3",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-AVG3.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "4ec361ad9216d9a72250c077f72e53964b7efb7485808a73307f4b85f7a0458f",
+      "row_keys_sha256": "0a0ff2fc3180b9c4f87bdff73b91e14f2bd46233d26cf503b8b63f2d347366e6",
+      "target_sha256": "da7df9cfa8ba957c7de513a0752d8881dabfc80ccdbc3164e430233490b0a1bc"
+    },
+    {
+      "file_sha256": "8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c",
+      "n": 770616,
+      "name": "SEQ-AVG3",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_SEQ-AVG3.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "0e6a0c5ed26b74fe3d5509d60a22a1aa598f9ca5606df6bc9bf7291a4a827667",
+      "row_keys_sha256": "0a0ff2fc3180b9c4f87bdff73b91e14f2bd46233d26cf503b8b63f2d347366e6",
+      "target_sha256": "da7df9cfa8ba957c7de513a0752d8881dabfc80ccdbc3164e430233490b0a1bc"
+    }
+  ],
+  "prefix": "TBR_EXP046",
+  "prefix_prediction_smoke": {
+    "historical_experiment": "exp_017",
+    "independent_artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-ROUNDSL-R300.npz",
+    "independent_sha256": "572757bdc0b489cb213bb2f01fe993ff36b0dc72503fdaf003a291a39860e6d1",
+    "prediction_sha256": "b2464d46cdad358912130d1e1437bb074580dc990831742882b5a69c18e645c3",
+    "prefix_artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-ROUNDS-R300.npz",
+    "prefix_sha256": "572757bdc0b489cb213bb2f01fe993ff36b0dc72503fdaf003a291a39860e6d1",
+    "rounds": 300,
+    "status": "PASS_BITWISE"
+  },
+  "recipes": {
+    "CAP": {
+      "component": "CAP",
+      "dtype": {
+        "features": "float32",
+        "saved_prediction": "float32"
+      },
+      "early_stopping": false,
+      "feature_count": 195,
+      "feature_file": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\feats_S1-E03a.txt",
+      "feature_file_sha256": "30f3d7e77fd62c740d6d0b3260fbe82c90ac9563b1833e39ca484106bfd61fb9",
+      "feature_order_sha256": "3f2f8d3ecb879a58f5c3fd5e81ae7d976194228d818e7d6dbb91ad15bbde48dc",
+      "historical_artifact": "S1-E03a",
+      "lightgbm_params": {
+        "bagging_fraction": 0.8,
+        "bagging_freq": 1,
+        "feature_fraction": 0.7,
+        "force_row_wise": true,
+        "lambda_l2": 5.0,
+        "learning_rate": 0.05,
+        "max_bin": 63,
+        "metric": "rmse",
+        "min_data_in_leaf": 200,
+        "num_leaves": 127,
+        "num_threads": 12,
+        "objective": "regression",
+        "seed": 42,
+        "verbose": -1
+      },
+      "model_type": "LightGBM direct regression on log1p(y)",
+      "prediction_semantics": "max(booster.predict(X, num_iteration=k), 0), raw log1p-space",
+      "row_order": "cutoff chronological, user_id ascending within fold",
+      "seed_policy": {
+        "master_seed": 42,
+        "reason": "literal historical recipe required by replay gate",
+        "subordinate_streams": "LightGBM-derived from master seed; no explicit child override"
+      },
+      "setup": {
+        "L": 180,
+        "calendar": false,
+        "cutoffs": "all",
+        "drop_groups": [],
+        "keep_only": null,
+        "min_gap": 30,
+        "min_history": 90,
+        "model": "direct",
+        "n_cutoffs": null,
+        "norm_long": false,
+        "panel_blocks": 3,
+        "params": {
+          "seed": 42
+        },
+        "ptime": null,
+        "ptime_source": "real",
+        "rounds": 600,
+        "row_frac": 1.0,
+        "step": 7,
+        "train_blocks": 1,
+        "weight_tau": null
+      },
+      "snapshots": [
+        200,
+        250,
+        300,
+        600
+      ],
+      "target_semantics": "GMV sum on (cutoff, cutoff+30], trained as log1p(y)"
+    },
+    "UNC": {
+      "component": "UNC",
+      "dtype": {
+        "features": "float32",
+        "saved_prediction": "float32"
+      },
+      "early_stopping": false,
+      "feature_count": 236,
+      "feature_file": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\feats_S1-E02.txt",
+      "feature_file_sha256": "57f425cb5dab5654d137709dd74d5277f4272df1828b431f7b00afe7fed74683",
+      "feature_order_sha256": "47d91fbae17fce48232f8cfe226d2ed63f078fd5022fd8bb19e1af1228db5d44",
+      "historical_artifact": "S1-E02",
+      "lightgbm_params": {
+        "bagging_fraction": 0.8,
+        "bagging_freq": 1,
+        "feature_fraction": 0.7,
+        "force_row_wise": true,
+        "lambda_l2": 5.0,
+        "learning_rate": 0.05,
+        "max_bin": 63,
+        "metric": "rmse",
+        "min_data_in_leaf": 200,
+        "num_leaves": 127,
+        "num_threads": 12,
+        "objective": "regression",
+        "seed": 42,
+        "verbose": -1
+      },
+      "model_type": "LightGBM direct regression on log1p(y)",
+      "prediction_semantics": "max(booster.predict(X, num_iteration=k), 0), raw log1p-space",
+      "row_order": "cutoff chronological, user_id ascending within fold",
+      "seed_policy": {
+        "master_seed": 42,
+        "reason": "literal historical recipe required by replay gate",
+        "subordinate_streams": "LightGBM-derived from master seed; no explicit child override"
+      },
+      "setup": {
+        "L": null,
+        "calendar": false,
+        "cutoffs": "all",
+        "drop_groups": [],
+        "keep_only": null,
+        "min_gap": 30,
+        "min_history": 90,
+        "model": "direct",
+        "n_cutoffs": null,
+        "norm_long": false,
+        "panel_blocks": 3,
+        "params": {
+          "seed": 42
+        },
+        "ptime": null,
+        "ptime_source": "real",
+        "rounds": 600,
+        "row_frac": 1.0,
+        "step": 7,
+        "train_blocks": 1,
+        "weight_tau": null
+      },
+      "snapshots": [
+        200,
+        250,
+        300,
+        600
+      ],
+      "target_semantics": "GMV sum on (cutoff, cutoff+30], trained as log1p(y)"
+    }
+  },
+  "weight_sum": 1.0,
+  "weights": {
+    "CAP": 0.1,
+    "ETX-AVG3": 0.225,
+    "S1-DIST": 0.25,
+    "SEQ-AVG3": 0.225,
+    "UNC": 0.2
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "post_projection": {
+    "replicates": 1000,
+    "seed": 20260828,
+    "unit": "user_id cluster",
+    "method": "degenerate algebraic-zero bootstrap",
+    "point_Delta_MSE": 0.0,
+    "CI95": [
+      0.0,
+      0.0
+    ],
+    "P_Delta_MSE_lt_0": 0.0
+  },
+  "min_projection": {
+    "replicates": 1000,
+    "seed": 20260828,
+    "unit": "user_id cluster",
+    "method": "ordinary cluster bootstrap; nested amplitudes frozen",
+    "point_Delta_MSE": 0.00246084541080265,
+    "CI95": [
+      0.0016284306847359363,
+      0.0033387539581553713
+    ],
+    "P_Delta_MSE_lt_0": 0.0
+  }
+}

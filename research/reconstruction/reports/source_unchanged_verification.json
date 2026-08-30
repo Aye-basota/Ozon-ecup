@@ -1,0 +1,102 @@
+{
+  "source_root": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP",
+  "main": {
+    "expected_files": 3599,
+    "current_files": 3599,
+    "missing": [],
+    "unexpected": [],
+    "size_changed": [],
+    "hash_changed": [],
+    "content_unchanged": true,
+    "git_status_before_lines": 624,
+    "git_status_after_lines": 624,
+    "git_status_unchanged": true,
+    "git_status_added_lines": [],
+    "git_status_removed_lines": []
+  },
+  "linked_worktrees": {
+    "independent_anniversary": {
+      "expected_files": 271,
+      "current_files": 271,
+      "missing": [],
+      "unexpected": [],
+      "size_changed": [],
+      "hash_changed": [],
+      "content_unchanged": true,
+      "git_status_before": [
+        "?? experiments/exp_058_exact_anniversary.md",
+        "?? src/exact_anniversary.py",
+        "?? src/test_exact_anniversary.py"
+      ],
+      "git_status_after": [
+        "?? experiments/exp_058_exact_anniversary.md",
+        "?? src/exact_anniversary.py",
+        "?? src/test_exact_anniversary.py"
+      ],
+      "git_status_unchanged": true
+    },
+    "independent_calendar": {
+      "expected_files": 327,
+      "current_files": 327,
+      "missing": [],
+      "unexpected": [],
+      "size_changed": [],
+      "hash_changed": [],
+      "content_unchanged": true,
+      "git_status_before": [],
+      "git_status_after": [],
+      "git_status_unchanged": true
+    },
+    "independent_domain": {
+      "expected_files": 2344,
+      "current_files": 2344,
+      "missing": [],
+      "unexpected": [],
+      "size_changed": [],
+      "hash_changed": [],
+      "content_unchanged": true,
+      "git_status_before": [],
+      "git_status_after": [],
+      "git_status_unchanged": true
+    },
+    "independent_global_regime": {
+      "expected_files": 266,
+      "current_files": 266,
+      "missing": [],
+      "unexpected": [],
+      "size_changed": [],
+      "hash_changed": [],
+      "content_unchanged": true,
+      "git_status_before": [],
+      "git_status_after": [],
+      "git_status_unchanged": true
+    },
+    "independent_renewal": {
+      "expected_files": 245,
+      "current_files": 245,
+      "missing": [],
+      "unexpected": [],
+      "size_changed": [],
+      "hash_changed": [],
+      "content_unchanged": true,
+      "git_status_before": [],
+      "git_status_after": [],
+      "git_status_unchanged": true
+    },
+    "team_a_s2": {
+      "expected_files": 96,
+      "current_files": 96,
+      "missing": [],
+      "unexpected": [],
+      "size_changed": [],
+      "hash_changed": [],
+      "content_unchanged": true,
+      "git_status_before": [],
+      "git_status_after": [],
+      "git_status_unchanged": true
+    }
+  },
+  "all_content_unchanged": true,
+  "all_git_statuses_unchanged": true,
+  "source_untouched_verified": true
+}

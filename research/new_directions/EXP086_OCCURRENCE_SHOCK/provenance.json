@@ -1,0 +1,23 @@
+{
+  "source_files": {
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\research_scripts\\continue_best_bas_final6h.py": "2b0fb5b26ef4fad10a1604c7abf13a9db23b9cf7051ed61f44e54d95c7a7e041",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\research_scripts\\materialize_final6h_extra90m.py": "1d7d436ecc95edcbf5adf489695e5380c4b2174c29e9f7fcbf19ebf8e8655d83",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\rebuild_latest.py": "f106bfc95ee6696f6b162aa59723eae218a68f05cf67d9db2c16416f776167e1"
+  },
+  "test_artifacts": {
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\components\\occ_raw_X3.csv": "0ac3f241685d6562c1f5b54993065475845464a0b217a56dbb5d79b42dd27356",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\components\\occ_meta_B.csv": "8d90a0bb1afdfe48cb6181cf1869eb30095da729e36dbea81e2051730e7989d8",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\latest.csv": "7ef5b2c58925bd28c5bc7eb83b9cfd4785c608a0c8b2a6d7a3277730cba8e722"
+  },
+  "review_evidence": [
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\review_bundles\\final6h_REVIEW_BUNDLE_20260823_204823_extracted\\results\\RUN_MANIFEST.json",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\review_bundles\\final6h_REVIEW_BUNDLE_20260823_204823_extracted\\results\\OCCURRENCE_BRANCH_VALIDATION.csv",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\review_bundles\\extra90_REVIEW_BUNDLE_20260823_222555_extracted\\results\\RUN_MANIFEST.json",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\review_bundles\\extra90_REVIEW_BUNDLE_20260823_222555_extracted\\results\\ALL_EXTRA90_VALIDATION.csv"
+  ],
+  "relation": {
+    "occ_raw_X3": "raw occ_r10_fast adaptive overlay over the frozen Ridge/greedy anchor",
+    "occ_meta_B": "all8 walk-forward meta-occurrence leaves31 plus risk gate over the same anchor",
+    "latest": "0.12 friend + 0.16 occ_meta_B + 0.72 occ_raw_X3 in log1p space"
+  }
+}

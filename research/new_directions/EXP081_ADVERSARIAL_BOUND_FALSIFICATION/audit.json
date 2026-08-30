@@ -1,0 +1,23 @@
+{
+  "runtime_seconds": 448.4621376991272,
+  "raw_sha256": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0",
+  "canonical_oof_sha256": "d3e8893b83f3f30d2a47469bde646b81548dd04078e84689d394b50574206123",
+  "EXP080_working_arrays_sha256": "d7eb7c3a61f870ea92ca52c362b8158770a4bd7b27774c77f28f9a55331cb687",
+  "observable_predictions_sha256": "798febbbde1ab04b44ea90c97af6e6285f5669276f66fe1f0440854614a06818",
+  "rows": 770616,
+  "feature_rows_by_fold": {
+    "2025-09-04": 188518,
+    "2025-09-18": 191025,
+    "2025-10-02": 193694,
+    "2025-10-16": 197379
+  },
+  "finite_fraction_before_EXP080_fill": {
+    "2025-09-04": 0.943779364029685,
+    "2025-09-18": 0.9440931718264528,
+    "2025-10-02": 0.9444085439844214,
+    "2025-10-16": 0.9452902978721328
+  },
+  "forbidden_activity_feature_loaded": false,
+  "target_or_user_id_as_feature": false,
+  "TEST_target_or_leaderboard_used": false
+}

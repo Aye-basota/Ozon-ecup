@@ -1,0 +1,190 @@
+[
+  {
+    "cutoff": "2025-09-04",
+    "train_cutoffs": [
+      "2025-06-19",
+      "2025-07-03",
+      "2025-07-17",
+      "2025-07-31"
+    ],
+    "train_rows": 727556,
+    "validation_rows": 188518,
+    "best_epoch": 2,
+    "curve": [
+      {
+        "epoch": 1,
+        "train_mse": 3.267848097783944,
+        "internal_valid_mse": 3.293665964103072
+      },
+      {
+        "epoch": 2,
+        "train_mse": 3.2636631611826266,
+        "internal_valid_mse": 3.2931423775526896
+      },
+      {
+        "epoch": 3,
+        "train_mse": 3.260395968949453,
+        "internal_valid_mse": 3.2946813294756008
+      },
+      {
+        "epoch": 4,
+        "train_mse": 3.2563382773955643,
+        "internal_valid_mse": 3.2968578585334303
+      }
+    ],
+    "rho": 0.03331853934956558,
+    "b": 0.004203772582474643,
+    "G": 0.005060488837619705,
+    "oracle_amplitude": 0.830704842430196,
+    "oracle_MSE_gain": -0.003492094240736976,
+    "corr_with_A1_365": 0.38443544252896944,
+    "projection": {
+      "mean_removed": 0.002800209592380373,
+      "baseline_beta_first": -0.0039695227315859295,
+      "baseline_beta_second": -3.6887813602738275e-19,
+      "max_projection_after_second_pass": 2.3401946264102773e-19
+    },
+    "baseline_replay_max_abs_error": 0.0
+  },
+  {
+    "cutoff": "2025-09-18",
+    "train_cutoffs": [
+      "2025-07-03",
+      "2025-07-17",
+      "2025-07-31",
+      "2025-08-14"
+    ],
+    "train_rows": 733030,
+    "validation_rows": 191025,
+    "best_epoch": 2,
+    "curve": [
+      {
+        "epoch": 1,
+        "train_mse": 3.271789035195487,
+        "internal_valid_mse": 3.2868076512954554
+      },
+      {
+        "epoch": 2,
+        "train_mse": 3.267540375335288,
+        "internal_valid_mse": 3.2867377507115205
+      },
+      {
+        "epoch": 3,
+        "train_mse": 3.26440992513153,
+        "internal_valid_mse": 3.2877264201317105
+      },
+      {
+        "epoch": 4,
+        "train_mse": 3.260843182893395,
+        "internal_valid_mse": 3.2941171291514637
+      }
+    ],
+    "rho": 0.03609840835456108,
+    "b": 0.004112884170434104,
+    "G": 0.004161054601394885,
+    "oracle_amplitude": 0.9884235042374514,
+    "oracle_MSE_gain": -0.004065271384263221,
+    "corr_with_A1_365": 0.4324181790483797,
+    "projection": {
+      "mean_removed": -0.009235373306512432,
+      "baseline_beta_first": -0.0014003282640886485,
+      "baseline_beta_second": -1.772978462440448e-19,
+      "max_projection_after_second_pass": 1.6188064222282353e-19
+    },
+    "baseline_replay_max_abs_error": 0.0
+  },
+  {
+    "cutoff": "2025-10-02",
+    "train_cutoffs": [
+      "2025-07-17",
+      "2025-07-31",
+      "2025-08-14",
+      "2025-08-28"
+    ],
+    "train_rows": 739148,
+    "validation_rows": 193694,
+    "best_epoch": 2,
+    "curve": [
+      {
+        "epoch": 1,
+        "train_mse": 3.2530334644952092,
+        "internal_valid_mse": 3.248249468945233
+      },
+      {
+        "epoch": 2,
+        "train_mse": 3.2483333452757166,
+        "internal_valid_mse": 3.245751044602234
+      },
+      {
+        "epoch": 3,
+        "train_mse": 3.2454752934166793,
+        "internal_valid_mse": 3.2478817294347584
+      },
+      {
+        "epoch": 4,
+        "train_mse": 3.2414599019722727,
+        "internal_valid_mse": 3.2513764915689087
+      }
+    ],
+    "rho": 0.036537944394501254,
+    "b": 0.004151009209437494,
+    "G": 0.004195479020643085,
+    "oracle_amplitude": 0.9894005402036847,
+    "oracle_MSE_gain": -0.0041070107542079265,
+    "corr_with_A1_365": 0.4780741654307492,
+    "projection": {
+      "mean_removed": 0.011322827322010303,
+      "baseline_beta_first": -0.006513176025335035,
+      "baseline_beta_second": 7.898469193443949e-19,
+      "max_projection_after_second_pass": 5.115199096706557e-19
+    },
+    "baseline_replay_max_abs_error": 0.0
+  },
+  {
+    "experiment": "A2_WEEKLY_RESIDUAL_CNN_PILOT",
+    "validation_cutoff": "2025-10-16",
+    "train_cutoffs": [
+      "2025-07-31",
+      "2025-08-14",
+      "2025-08-28",
+      "2025-09-11"
+    ],
+    "train_rows": 746631,
+    "validation_rows": 197379,
+    "device": "NVIDIA GeForce RTX 4060 Ti",
+    "best_epoch_internal": 1,
+    "curve": [
+      {
+        "epoch": 1,
+        "train_mse": 3.2127885729573062,
+        "internal_valid_mse": 3.2114717028216275
+      },
+      {
+        "epoch": 2,
+        "train_mse": 3.2078257343060472,
+        "internal_valid_mse": 3.2134442437296
+      },
+      {
+        "epoch": 3,
+        "train_mse": 3.2055311364933066,
+        "internal_valid_mse": 3.2121284409385726
+      }
+    ],
+    "rho_latest": 0.02559537056626528,
+    "b": 0.00206727855778596,
+    "G": 0.0021374080840667778,
+    "oracle_amplitude": 0.9671894539916848,
+    "oracle_MSE_gain": -0.00199945001955372,
+    "u_raw_rms": 0.04967245802874687,
+    "u_perp_rms": 0.04623211096269321,
+    "corr_with_A1_365_latest": 0.3898567490855916,
+    "projection": {
+      "mean_removed": -0.01809919619990803,
+      "baseline_beta_first": -0.0009742954065576067,
+      "baseline_beta_second": 1.9875017621564101e-19,
+      "max_projection_after_second_pass": 1.8068197837785545e-19
+    },
+    "runtime_seconds": 180.24946093559265,
+    "verdict": "PROMOTE_TO_FULL_FOLDS"
+  }
+]

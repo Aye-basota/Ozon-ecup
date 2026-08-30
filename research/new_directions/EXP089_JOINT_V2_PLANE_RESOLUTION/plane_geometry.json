@@ -1,0 +1,163 @@
+{
+  "verdict": "V2_OUT_OF_PLANE",
+  "plane_identifiable": false,
+  "full_population_realized_span_diagnostic": {
+    "status": "FULL_POPULATION_GRAM_SANITY_NOT_PUBLIC_EXACT",
+    "basis": [
+      "realized_d_exp075",
+      "realized_d_v2"
+    ],
+    "G_full": [
+      [
+        0.003375949467234949,
+        0.0015823749018374419
+      ],
+      [
+        0.0015823749018374419,
+        0.0009026059268263553
+      ]
+    ],
+    "b_using_full_G": [
+      0.0017150146011943868,
+      0.0008190891159862712
+    ],
+    "coefficients": [
+      0.46365420593415246,
+      0.09463081821878165
+    ],
+    "condition_number": 31.66619699610493,
+    "predicted_optimal_RMSLE": 1.645894652126385,
+    "gain_MSE_vs_ORTH_ALPHA": 0.0008726848063220771,
+    "gain_MSE_vs_JOINT_V2": 0.0001371125011759844,
+    "approx_Delta_RMSLE_vs_JOINT_V2": -4.1652351832066614e-05
+  },
+  "coefficient_matrix_unit_RMS_basis": [
+    [
+      0.05789640811885896,
+      -1.4210854715202005e-19
+    ],
+    [
+      0.027132332948913478,
+      -0.0008052771486766362
+    ]
+  ],
+  "matrix_condition_number": 87.68857971525216,
+  "normalized_determinant": 0.0296665498059945,
+  "clipping_aware_diagnostic": {
+    "status": "DIAGNOSTIC_ONLY_NO_CANDIDATE",
+    "posterior_median_linear_coefficients": [
+      0.4634464671592276,
+      0.09508470380997022
+    ],
+    "rows_unclipped_z_lt_0": 0,
+    "RMS_clipped_minus_unclipped_correction": 1.359512751213762e-16,
+    "realized_plane_coefficients": [
+      0.4634464671592231,
+      0.09508470380997867
+    ],
+    "RMS_realized_outside_realized_scored_span": 1.7603176794794675e-16,
+    "clipping_out_of_plane_energy_fraction": 3.550661290258724e-29,
+    "score_claim_exact": false
+  },
+  "updated_tomography": {
+    "verdict": "V2_OUT_OF_PLANE",
+    "updated_axis_RMS": 0.029316898183161088,
+    "axis_gate_RMS_ge_0_010": true,
+    "basis": {
+      "input_rows": 82,
+      "nonconstant_centered_rows": 82,
+      "centered_rank": 72,
+      "rank_including_constant": 73,
+      "svd_relative_tolerance": 1e-10,
+      "smallest_retained_ratio": 6.487955265087204e-10,
+      "largest_rejected_ratio": 5.55644218744296e-13,
+      "orthonormality_max_error": 1.2589929099249275e-13
+    },
+    "robustification": {
+      "initial_projection_pass_RMS": [
+        0.03893319942375123,
+        4.302824847327128e-16
+      ],
+      "winsorization_applied": true,
+      "heavy_tail_threshold": 20.0,
+      "winsor_clip_multiple_RMS": 10.0,
+      "winsor_clip_abs": 0.2937143392414594,
+      "post_winsor_projection_pass_RMS": [
+        6.569664282342321e-05,
+        1.1399175393912714e-18
+      ],
+      "distribution_before": {
+        "min": -0.4119461910208392,
+        "max": 0.6661812103822735,
+        "p0.01": -0.1890655940236765,
+        "p0.1": -0.11243166823235988,
+        "p1": -0.07039828357368876,
+        "p50": -0.0013686252605974421,
+        "p99": 0.08436963314454758,
+        "p99.9": 0.14619689356375876,
+        "p99.99": 0.24171282664479735,
+        "RMS": 0.029371433924145943,
+        "max_abs_over_RMS": 22.681262756961043
+      },
+      "distribution_after": {
+        "min": -0.29506620019030194,
+        "max": 0.2949819076459402,
+        "p0.01": -0.19015753356976156,
+        "p0.1": -0.11246092312859829,
+        "p1": -0.07037181047357594,
+        "p50": -0.0013708839790536045,
+        "p99": 0.08437196299522773,
+        "p99.9": 0.1462900676394923,
+        "p99.99": 0.24193354184309032,
+        "RMS": 0.029316898183161088,
+        "max_abs_over_RMS": 10.064714157235802
+      },
+      "final_mean": 2.5934809855243656e-19,
+      "final_projection_RMS": 4.340850533292162e-19
+    },
+    "corr_w_new_d_A1": 0.6019741366591417,
+    "corr_w_new_d_joint": 2.0608878861500028e-17,
+    "corr_w_new_w_old": 0.9979800799853447,
+    "probes": {
+      "created": true,
+      "probe_RMS": 0.025,
+      "plus": {
+        "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP089_TOMO_PLUS.csv",
+        "sha256": "ae07caad5b0a4120cb08b6f0c3c0df566d5a6f5feef2edaeea1dbf8bea48fdae",
+        "rows": 250000,
+        "unique_user_id": 250000,
+        "same_order": true,
+        "finite": true,
+        "nonnegative": true,
+        "zero_count": 537,
+        "columns": "user_id,predict",
+        "max_abs_serialized_log_error": 4.955464077277538e-11
+      },
+      "minus": {
+        "path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_EXP089_TOMO_MINUS.csv",
+        "sha256": "ab976162e0495db3300dcdd14c96f889228139c41adf2d090a7b9518981cf59b",
+        "rows": 250000,
+        "unique_user_id": 250000,
+        "same_order": true,
+        "finite": true,
+        "nonnegative": true,
+        "zero_count": 625,
+        "columns": "user_id,predict",
+        "max_abs_serialized_log_error": 4.960992380786955e-11
+      },
+      "clipping": {
+        "plus_rows": 537,
+        "minus_rows": 625,
+        "plus_RMS": 0.0009847509538662585,
+        "minus_RMS": 0.0010533092947664733,
+        "RMS_effective_axis": 0.024957607627607757,
+        "G_effective": 0.0006228821784936249,
+        "RMS_midpoint_shift_from_JOINT_V2": 0.0007209706844910463,
+        "RMS_effective_minus_nominal_probe": 0.0007209706844910463,
+        "corr_effective_nominal": 0.999584896420773
+      }
+    },
+    "vectors_path": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP089_JOINT_V2_PLANE_RESOLUTION\\updated_tomography_vectors.npz",
+    "vectors_sha256": "c7a1e8bda295c0bd53fd2de379c8eb112ed77312d4aac79d63ce9af0767b8880"
+  }
+}

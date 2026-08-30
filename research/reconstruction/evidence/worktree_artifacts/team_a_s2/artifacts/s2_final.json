@@ -1,0 +1,31 @@
+{
+  "count_mode": "offset",
+  "hurdle": true,
+  "k": 5.0,
+  "sigma_scale": 0.9,
+  "mu_shift_train_only": -0.10000000000000012,
+  "calendar_alpha": 0.5,
+  "calendar_lambda_factor": 1.0783320453366858,
+  "calendar_mu_shift": 0.0402,
+  "structural_weight": 1.0,
+  "raw_structural_level": 2.487458682018753,
+  "raw_blend_level": 2.487458682018753,
+  "level_target": 2.3293,
+  "level_delta": -0.15822365801263394,
+  "submission": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP-s2\\submissions\\submission_strategy_2.csv",
+  "checks": {
+    "rows": 250000,
+    "columns": [
+      "user_id",
+      "predict"
+    ],
+    "order_matches_sample": true,
+    "unique_users": 250000,
+    "nan": 0,
+    "inf": 0,
+    "negative": 0,
+    "min": 0.0,
+    "max": 9194.725373454492,
+    "mean_log1p": 2.3292999999999995
+  }
+}

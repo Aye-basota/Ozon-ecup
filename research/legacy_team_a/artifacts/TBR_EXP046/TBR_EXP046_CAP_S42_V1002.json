@@ -1,0 +1,162 @@
+{
+  "artifacts": {
+    "model": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S42_V1002.txt",
+    "model_sha256": "a22ad16d688cf0dd37873395986ef6aac2405ed771c876a4c84b0615e2c6b206",
+    "npz": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S42_V1002.npz",
+    "npz_sha256": "68207c4988b4216e740c2977c7428fee34444ed449c242718983fc2a7eec324b"
+  },
+  "component": "CAP",
+  "early_stopping": false,
+  "experiment": "TABULAR-BACKBONE-REFRESH",
+  "fold": "2025-10-02",
+  "lightgbm_params": {
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "feature_fraction": 0.7,
+    "force_row_wise": true,
+    "lambda_l2": 5.0,
+    "learning_rate": 0.05,
+    "max_bin": 63,
+    "metric": "rmse",
+    "min_data_in_leaf": 200,
+    "num_leaves": 127,
+    "num_threads": 12,
+    "objective": "regression",
+    "seed": 42,
+    "verbose": -1
+  },
+  "n_train": 4520844,
+  "n_validation": 193694,
+  "only_config_difference_across_seeds": "master seed; child streams deterministically derived",
+  "prefix": "TBR_EXP046",
+  "recipe": {
+    "component": "CAP",
+    "dtype": {
+      "features": "float32",
+      "saved_prediction": "float32"
+    },
+    "early_stopping": false,
+    "feature_count": 195,
+    "feature_file": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\feats_S1-E03a.txt",
+    "feature_file_sha256": "30f3d7e77fd62c740d6d0b3260fbe82c90ac9563b1833e39ca484106bfd61fb9",
+    "feature_order_sha256": "3f2f8d3ecb879a58f5c3fd5e81ae7d976194228d818e7d6dbb91ad15bbde48dc",
+    "historical_artifact": "S1-E03a",
+    "lightgbm_params": {
+      "bagging_fraction": 0.8,
+      "bagging_freq": 1,
+      "feature_fraction": 0.7,
+      "force_row_wise": true,
+      "lambda_l2": 5.0,
+      "learning_rate": 0.05,
+      "max_bin": 63,
+      "metric": "rmse",
+      "min_data_in_leaf": 200,
+      "num_leaves": 127,
+      "num_threads": 12,
+      "objective": "regression",
+      "seed": 42,
+      "verbose": -1
+    },
+    "model_type": "LightGBM direct regression on log1p(y)",
+    "prediction_semantics": "max(booster.predict(X, num_iteration=k), 0), raw log1p-space",
+    "row_order": "cutoff chronological, user_id ascending within fold",
+    "seed_policy": {
+      "master_seed": 42,
+      "reason": "literal historical recipe required by replay gate",
+      "subordinate_streams": "LightGBM-derived from master seed; no explicit child override"
+    },
+    "setup": {
+      "L": 180,
+      "calendar": false,
+      "cutoffs": "all",
+      "drop_groups": [],
+      "keep_only": null,
+      "min_gap": 30,
+      "min_history": 90,
+      "model": "direct",
+      "n_cutoffs": null,
+      "norm_long": false,
+      "panel_blocks": 3,
+      "params": {
+        "seed": 42
+      },
+      "ptime": null,
+      "ptime_source": "real",
+      "rounds": 600,
+      "row_frac": 1.0,
+      "step": 7,
+      "train_blocks": 1,
+      "weight_tau": null
+    },
+    "snapshots": [
+      200,
+      250,
+      300,
+      600
+    ],
+    "target_semantics": "GMV sum on (cutoff, cutoff+30], trained as log1p(y)"
+  },
+  "recipe_sha256": "e2c695c22827d606b07a8ac203e45dce41b419b63a6d7c3679f8d39a49981597",
+  "resolved_lightgbm_seeds": {
+    "bagging_seed": 400,
+    "data_random_seed": 175,
+    "feature_fraction_seed": 30056,
+    "seed": 42
+  },
+  "runtime_s": 183.91694474220276,
+  "seed": 42,
+  "snapshots": {
+    "200": {
+      "mean_z": 2.6998921229269515,
+      "offset": -0.06231232342689031,
+      "prediction_sha256": "b452051a20f5a472e982d57ee3e5c8254827e972fd6cd624e47b08f0abce9ead",
+      "rmsle_cal": 1.7613393803046697
+    },
+    "250": {
+      "mean_z": 2.6998196720786605,
+      "offset": -0.0622576363706726,
+      "prediction_sha256": "64507ef4c4bfcb848fb03786a92778bfdb3c85de88db2a539d73e30499ca017c",
+      "rmsle_cal": 1.7613014521517283
+    },
+    "300": {
+      "mean_z": 2.699313864799523,
+      "offset": -0.061752052480767504,
+      "prediction_sha256": "3562c68554f4c37c434f1c313bf1f37b587fedbdde7d28bf7c443210a175816a",
+      "rmsle_cal": 1.7612242568388434
+    },
+    "600": {
+      "mean_z": 2.699893179131568,
+      "offset": -0.06234947720770449,
+      "prediction_sha256": "4e368f76b56d3ebae3ba9d29c98c976570e449960a6b2adb2de69e08fbb5ec62",
+      "rmsle_cal": 1.7614534516578586
+    }
+  },
+  "target_dtype_before_cast": "float64",
+  "train_cutoffs": [
+    "2025-04-03",
+    "2025-04-10",
+    "2025-04-17",
+    "2025-04-24",
+    "2025-05-01",
+    "2025-05-08",
+    "2025-05-15",
+    "2025-05-22",
+    "2025-05-29",
+    "2025-06-05",
+    "2025-06-12",
+    "2025-06-19",
+    "2025-06-26",
+    "2025-07-03",
+    "2025-07-10",
+    "2025-07-17",
+    "2025-07-24",
+    "2025-07-31",
+    "2025-08-07",
+    "2025-08-14",
+    "2025-08-21",
+    "2025-08-28"
+  ],
+  "train_target_sha256": "75f06be7e770b64646f6f78b5928c11895410b261afa4adf3c221ab565ebc884",
+  "validation_row_keys_sha256": "23c7aa8993c698f6365a139f8442a90c7cbc5d3a48c4a65bf572bb108f5037bb",
+  "validation_target_sha256": "f310136ea9c1edeca724ac60bd33ac3294016c4c264771577ecb4c90eaf7fe0e"
+}

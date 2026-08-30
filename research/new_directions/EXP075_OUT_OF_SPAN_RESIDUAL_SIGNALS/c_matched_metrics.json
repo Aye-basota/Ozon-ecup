@@ -1,0 +1,55 @@
+{
+  "experiment": "C_TEST_REGIME_MATCHED_A1_365",
+  "construction": "per-cutoff without-replacement maximum-support subset matching held-out target-free activity-quartile x purchase-day class proportions",
+  "fold_rows": [
+    {
+      "cutoff": "2025-09-04",
+      "rho_matched": 0.027245582878721065,
+      "rho_normal": 0.03230667136243182,
+      "rho_relative_change": -0.1566576892720709,
+      "deployable_amplitude": 1.0,
+      "delta_MSE": -0.0021348329064922694,
+      "delta_RMSLE": -0.000598607288288644,
+      "corr_matched_normal": 0.8648962712200225
+    },
+    {
+      "cutoff": "2025-09-18",
+      "rho_matched": 0.03456850017006603,
+      "rho_normal": 0.03416840706850358,
+      "rho_relative_change": 0.011709445534300533,
+      "deployable_amplitude": 0.7734805259903926,
+      "delta_MSE": -0.003471190625507402,
+      "delta_RMSLE": -0.000980654760277977,
+      "corr_matched_normal": 0.8412576339769149
+    },
+    {
+      "cutoff": "2025-10-02",
+      "rho_matched": 0.03181997741854252,
+      "rho_normal": 0.03427524338959888,
+      "rho_relative_change": -0.07163380120012308,
+      "deployable_amplitude": 0.9481573546439935,
+      "delta_MSE": -0.0031140347334052986,
+      "delta_RMSLE": -0.0008877082152034532,
+      "corr_matched_normal": 0.8463622416509654
+    },
+    {
+      "cutoff": "2025-10-16",
+      "rho_matched": 0.029936585993402886,
+      "rho_normal": 0.03207559774213456,
+      "rho_relative_change": -0.06668657482014329,
+      "deployable_amplitude": 0.9568453656128773,
+      "delta_MSE": -0.0027259168175413624,
+      "delta_RMSLE": -0.0007795305288988974,
+      "corr_matched_normal": 0.8365262911394437
+    }
+  ],
+  "weighted_rho_matched": 0.03087701205601642,
+  "weighted_rho_normal": 0.032954478047978485,
+  "rho_relative_change": -0.06304047628785014,
+  "latest_not_worse": false,
+  "nested_delta_MSE_matched": -0.002889379175430611,
+  "nested_delta_MSE_normal": -0.0033337506843427642,
+  "nested_delta_RMSLE_matched": -0.000823132926723306,
+  "nested_better": false,
+  "verdict": "REJECT_MATCHED"
+}

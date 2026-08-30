@@ -1,0 +1,37 @@
+{
+  "raw_rows": 30631006,
+  "raw_users": 250000,
+  "columns": {
+    "event_date": "object",
+    "user_id": "int64",
+    "search": "int64",
+    "cat": "int64",
+    "has_search_to_cart": "int64",
+    "has_search_to_ord": "int64",
+    "has_cat_to_cart": "int64",
+    "has_cat_to_ord": "int64",
+    "search_to_cart": "int64",
+    "search_to_ord": "int64",
+    "cat_to_cart": "int64",
+    "cat_to_ord": "int64",
+    "gmv_search": "float64",
+    "gmv_cat": "float64",
+    "to_cart": "int64",
+    "to_ord": "int64",
+    "gmv": "float64",
+    "searches": "int64"
+  },
+  "legitimate_entity_or_category_identifier_present": false,
+  "available_relational_channel": "behavioral-fingerprint cohorts only",
+  "user_id_used_as_model_feature": false,
+  "user_id_use": "alignment, user-disjoint cross-fitting, and clustered bootstrap only",
+  "purged_prototype_latest": {
+    "train_cutoff": "2025-09-04",
+    "train_target_end": "2025-10-04",
+    "validation_cutoff": "2025-10-16",
+    "label_available_at_validation": true,
+    "rho": 0.000109698962691302,
+    "Delta_MSE": 0.0051892045937147096,
+    "post_projection_rms": 0.07222742953320706
+  }
+}

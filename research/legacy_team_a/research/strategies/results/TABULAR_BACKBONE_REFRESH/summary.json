@@ -1,0 +1,2286 @@
+{
+  "component_attribution": [
+    {
+      "both_delta_wcv": -5.255978406704109e-05,
+      "both_fold_delta": [
+        -3.116957767068662e-05,
+        -9.624905662275474e-05,
+        -3.8906929223925246e-05,
+        -5.1137669148770826e-05
+      ],
+      "cap_only_delta_wcv": -8.59594623059401e-06,
+      "cap_only_fold_delta": [
+        6.864470403211698e-07,
+        -1.4164467057486974e-05,
+        -4.526419763450917e-06,
+        -1.0398878416362223e-05
+      ],
+      "replacement_interaction_wcv": 4.147050858271939e-07,
+      "unc_only_delta_wcv": -4.437854292227428e-05,
+      "unc_only_fold_delta": [
+        -3.224556831549208e-05,
+        -8.245433124765e-05,
+        -3.496181326489989e-05,
+        -4.108458249518776e-05
+      ],
+      "variant": "B"
+    },
+    {
+      "both_delta_wcv": 3.3136066023287114e-05,
+      "both_fold_delta": [
+        -3.132539934669332e-05,
+        1.6116709939506535e-05,
+        8.244768567378102e-05,
+        2.0792778390177347e-05
+      ],
+      "cap_only_delta_wcv": 1.1337737977568096e-05,
+      "cap_only_fold_delta": [
+        2.377275197584794e-06,
+        -1.0045121354718134e-06,
+        3.1203025984805066e-05,
+        5.6107143497907686e-06
+      ],
+      "replacement_interaction_wcv": 5.171790875557747e-06,
+      "unc_only_delta_wcv": 1.662653717016127e-05,
+      "unc_only_fold_delta": [
+        -4.020733125797982e-05,
+        1.1345160911391261e-05,
+        4.60083324442806e-05,
+        1.036021715128399e-05
+      ],
+      "variant": "C"
+    },
+    {
+      "both_delta_wcv": -2.446564666636064e-06,
+      "both_fold_delta": [
+        -5.501476911229375e-05,
+        -2.9728044724341984e-05,
+        2.900490386581467e-05,
+        -4.78090336297754e-06
+      ],
+      "cap_only_delta_wcv": -3.876063972008126e-07,
+      "cap_only_fold_delta": [
+        5.1606426771932945e-06,
+        -5.896568401331237e-06,
+        1.923508869383639e-05,
+        -9.515244575819537e-06
+      ],
+      "replacement_interaction_wcv": 5.570950288413812e-06,
+      "unc_only_delta_wcv": -7.629908557849063e-06,
+      "unc_only_fold_delta": [
+        -6.683890115777302e-05,
+        -2.9831842151217813e-05,
+        4.025376138416803e-06,
+        -5.059434329268697e-07
+      ],
+      "variant": "D"
+    }
+  ],
+  "component_avg3_metrics": [
+    {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_AVG3_R200.npz",
+      "artifact_sha256": "41717fed71976ecd11519019b481c13d2b47b60a90a2896b5c20838d718cf446",
+      "auc_positive": 0.8415131456115066,
+      "component": "UNC",
+      "fold_cal": [
+        1.7695891879723349,
+        1.762750110498274,
+        1.7515423163358779,
+        1.7440165107270353
+      ],
+      "fold_offsets": [
+        -0.16605060139663347,
+        -0.11207451681945377,
+        -0.03552548331240967,
+        -0.06087523869910575
+      ],
+      "mean_z": 2.7185489880575155,
+      "name": "UNC_AVG3_R200",
+      "prediction_sha256": "c5d6e7c65bec8c525589bda8d3c257043aa1311948311e46adf66b1e2336a998",
+      "rounds": 200,
+      "seed": "AVG3",
+      "wcv": 1.750226050675245
+    },
+    {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_AVG3_R250.npz",
+      "artifact_sha256": "f24a915dcaeb1351462c091362b6524cc96fe971fa30aec33de6fb59b799a5f4",
+      "auc_positive": 0.8414575275798968,
+      "component": "UNC",
+      "fold_cal": [
+        1.7696182715336721,
+        1.7626505519171223,
+        1.7514608715400377,
+        1.7439050524668085
+      ],
+      "fold_offsets": [
+        -0.16899144373286573,
+        -0.11054092678910174,
+        -0.03290611171854525,
+        -0.05974364709075999
+      ],
+      "mean_z": 2.717935103237508,
+      "name": "UNC_AVG3_R250",
+      "prediction_sha256": "80e0906c6e1513181ff42682af1252803630135282a21ed6576fbd0c746fc69d",
+      "rounds": 250,
+      "seed": "AVG3",
+      "wcv": 1.750133552084169
+    },
+    {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_AVG3_R300.npz",
+      "artifact_sha256": "114cd196094110890732ec8e8f757f31cb922a4f2b39a2ee9b1cf0b060a16c88",
+      "auc_positive": 0.8414138775139737,
+      "component": "UNC",
+      "fold_cal": [
+        1.769660806694433,
+        1.7626258952937173,
+        1.751459193272411,
+        1.7438456627153507
+      ],
+      "fold_offsets": [
+        -0.17163979366416462,
+        -0.10913726478015379,
+        -0.03227641316310216,
+        -0.059987773075391444
+      ],
+      "mean_z": 2.7181346676721927,
+      "name": "UNC_AVG3_R300",
+      "prediction_sha256": "6f5d9cd3460924d77716ad7f40f26040c8dd6b244a3f231dbcabf7a08084adbe",
+      "rounds": 300,
+      "seed": "AVG3",
+      "wcv": 1.750100978139621
+    },
+    {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_AVG3_R600.npz",
+      "artifact_sha256": "445f1712390b2a832da4f199cd6b14abbf31c35b2143c22f0e3cd185407af1ae",
+      "auc_positive": 0.8411641113287522,
+      "component": "UNC",
+      "fold_cal": [
+        1.7703745209132011,
+        1.762891744552289,
+        1.7517526858365247,
+        1.744040411958807
+      ],
+      "fold_offsets": [
+        -0.17885504202959418,
+        -0.10834127838006659,
+        -0.03158062434602159,
+        -0.06442585617814367
+      ],
+      "mean_z": 2.720622492678517,
+      "name": "UNC_AVG3_R600",
+      "prediction_sha256": "645649bee64fe73494aa1d555a8673ec812e39b3f53c849a996655a3a272a737",
+      "rounds": 600,
+      "seed": "AVG3",
+      "wcv": 1.750366136602289
+    },
+    {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_AVG3_R200.npz",
+      "artifact_sha256": "763dd22324a968388f643811c5ceca969f689ddc5b860d62846b2ce179423459",
+      "auc_positive": 0.8396742756401119,
+      "component": "CAP",
+      "fold_cal": [
+        1.7758856979874573,
+        1.7709805896710953,
+        1.7608781078593643,
+        1.7544352616780594
+      ],
+      "fold_offsets": [
+        -0.08124305172468814,
+        -0.047106938823193674,
+        -0.06226021998099722,
+        -0.08466627805686394
+      ],
+      "mean_z": 2.6945121579435556,
+      "name": "CAP_AVG3_R200",
+      "prediction_sha256": "606383bf0e8aac8586283b296c050db9b3b5978c337bef8f505c97a5f9d2c3d6",
+      "rounds": 200,
+      "seed": "AVG3",
+      "wcv": 1.7597894268127723
+    },
+    {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_AVG3_R250.npz",
+      "artifact_sha256": "0173ef2c486d89cfb5a869e0620bd16d318cfad7596fdf3e4c79fbed3bdacc95",
+      "auc_positive": 0.8396676407095567,
+      "component": "CAP",
+      "fold_cal": [
+        1.7758556011042428,
+        1.7708891754454537,
+        1.7607575575419683,
+        1.754372227457062
+      ],
+      "fold_offsets": [
+        -0.08097189415198594,
+        -0.04687030616440851,
+        -0.062062507599374664,
+        -0.08433825751635647
+      ],
+      "mean_z": 2.6942508012018136,
+      "name": "CAP_AVG3_R250",
+      "prediction_sha256": "f0a248edea889fa4ad9e498a417a8384a7b812fe23688c737aa3e57c08a96723",
+      "rounds": 250,
+      "seed": "AVG3",
+      "wcv": 1.7597094667879678
+    },
+    {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_AVG3_R300.npz",
+      "artifact_sha256": "8f1ec6b3616f84f02146825fa43d0abab8e78837f33a270d5845a6bf07b1c1cb",
+      "auc_positive": 0.8396525058605504,
+      "component": "CAP",
+      "fold_cal": [
+        1.7757972382917286,
+        1.7708845068496817,
+        1.760671334854706,
+        1.754379223615933
+      ],
+      "fold_offsets": [
+        -0.08080247025922282,
+        -0.04664018158122222,
+        -0.06189023880362653,
+        -0.08422081470400843
+      ],
+      "mean_z": 2.694078794352256,
+      "name": "CAP_AVG3_R300",
+      "prediction_sha256": "dc8a752ed38bf55664f52ad1853df44f66c9960c9cc7adfd96ba9989cc681c9f",
+      "rounds": 300,
+      "seed": "AVG3",
+      "wcv": 1.7596856920224921
+    },
+    {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_AVG3_R600.npz",
+      "artifact_sha256": "781a54aec12699bbaa0b87367b6341635bba9941fe996168f7e83f9e0d0629ba",
+      "auc_positive": 0.8395468752063369,
+      "component": "CAP",
+      "fold_cal": [
+        1.7760983832124364,
+        1.771094141556781,
+        1.7606897439074853,
+        1.7545684872771476
+      ],
+      "fold_offsets": [
+        -0.08152908382803357,
+        -0.04748332977276913,
+        -0.06237744196354227,
+        -0.08453628894713988
+      ],
+      "mean_z": 2.6946681259603253,
+      "name": "CAP_AVG3_R600",
+      "prediction_sha256": "64cd59b1c186f6816d9a2c84a2fb60f8abc3f7fc2a09740b19297105aeb9992b",
+      "rounds": 600,
+      "seed": "AVG3",
+      "wcv": 1.7598395693448745
+    }
+  ],
+  "decision_detail": {
+    "best_fixed_delta_to_h": -5.255978406704109e-05
+  },
+  "diagnostic_rounds_not_eligible": [
+    200,
+    250
+  ],
+  "dist_avg3_next_experiment_basis": false,
+  "ensemble_metrics": {
+    "A": {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_ENSEMBLE_A.npz",
+      "artifact_sha256": "3972d549547373e7cf68080422115447437cfdfb1ba5d9ff8ade6b6100452eb4",
+      "auc_positive": 0.8423478067702598,
+      "fold_cal": [
+        1.7668833567997195,
+        1.7605095767798136,
+        1.748629223964952,
+        1.7412785664479717
+      ],
+      "fold_offsets": [
+        -0.11734465876764336,
+        -0.07873621159214053,
+        -0.02097755276250928,
+        -0.035387154112119984
+      ],
+      "mean_z": 2.6881878500404097,
+      "name": "A",
+      "prediction_sha256": "73b08d05e71ba422aad8b6710325588db8a9dd30fbd5a1670ca4c5e8a6b6bd97",
+      "wcv": 1.7475098625201952
+    },
+    "B": {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_ENSEMBLE_B.npz",
+      "artifact_sha256": "bd1346c929f3cd968b8d00273a91c59660df5fa98b983cc0ada6d1eada39bde3",
+      "auc_positive": 0.8423712451346156,
+      "fold_cal": [
+        1.7668521872220488,
+        1.7604133277231908,
+        1.748590317035728,
+        1.741227428778823
+      ],
+      "fold_offsets": [
+        -0.11792956664499277,
+        -0.07869429081835139,
+        -0.020925040576504832,
+        -0.03548479750072937
+      ],
+      "mean_z": 2.6883323627862845,
+      "name": "B",
+      "prediction_sha256": "2a4472908bf42ee42fdcae35e664284ebc7cb3a5260c41891b86888860fe7ce2",
+      "wcv": 1.7474573027361282
+    },
+    "C": {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_ENSEMBLE_C.npz",
+      "artifact_sha256": "de78d4521f1f16fede414a79bcfb18d995eb6e3155cb77536d4c1a55f7bd9784",
+      "auc_positive": 0.8423739814579538,
+      "fold_cal": [
+        1.7668520314003728,
+        1.760525693489753,
+        1.7487116716506257,
+        1.741299359226362
+      ],
+      "fold_offsets": [
+        -0.11611363264934739,
+        -0.07911795264001259,
+        -0.02097496706429862,
+        -0.03424895488879485
+      ],
+      "mean_z": 2.687689173217383,
+      "name": "C",
+      "prediction_sha256": "89fe3470777d65ee559d3a59bbf7b2656efc7b2fb35cfdadc2384fb07d9cf594",
+      "wcv": 1.7475429985862185
+    },
+    "D": {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_ENSEMBLE_D.npz",
+      "artifact_sha256": "c5eeff5e0e6ec7a352d65cc30e86b475dcc7353567fe7ce3751bbe58f8a22a55",
+      "auc_positive": 0.8423899439340136,
+      "fold_cal": [
+        1.7668283420306072,
+        1.7604798487350892,
+        1.7486582288688177,
+        1.7412737855446088
+      ],
+      "fold_offsets": [
+        -0.11643737491201286,
+        -0.07877043304331532,
+        -0.021015601171629428,
+        -0.034574669026025365
+      ],
+      "mean_z": 2.6877758646242125,
+      "name": "D",
+      "prediction_sha256": "eaac69626629db16decfa109693fbc2eb7f38e8051c12859f5c7566aa1ba87b8",
+      "wcv": 1.7475074159555286
+    },
+    "H": {
+      "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_ENSEMBLE_H.npz",
+      "artifact_sha256": "3972d549547373e7cf68080422115447437cfdfb1ba5d9ff8ade6b6100452eb4",
+      "auc_positive": 0.8423478067702598,
+      "fold_cal": [
+        1.7668833567997195,
+        1.7605095767798136,
+        1.748629223964952,
+        1.7412785664479717
+      ],
+      "fold_offsets": [
+        -0.11734465876764336,
+        -0.07873621159214053,
+        -0.02097755276250928,
+        -0.035387154112119984
+      ],
+      "mean_z": 2.6881878500404097,
+      "name": "H",
+      "prediction_sha256": "73b08d05e71ba422aad8b6710325588db8a9dd30fbd5a1670ca4c5e8a6b6bd97",
+      "wcv": 1.7475098625201952
+    }
+  },
+  "experiment": "TABULAR-BACKBONE-REFRESH",
+  "experiment_number": 46,
+  "factorial_contrasts": [
+    {
+      "contrast": "B-A",
+      "delta_2025_10_16": -5.1137669148770826e-05,
+      "delta_wcv": -5.255978406704109e-05,
+      "effect": "AVG3_only_at_600",
+      "fold_delta": [
+        -3.116957767068662e-05,
+        -9.624905662275474e-05,
+        -3.8906929223925246e-05,
+        -5.1137669148770826e-05
+      ],
+      "improved_folds": 4,
+      "raw_corr_delta_with_baseline_residual": 0.007566127787213931,
+      "raw_max_abs_delta_z": 0.15866988897323608,
+      "raw_mean_delta_z": 0.00014451274587459003,
+      "raw_pearson_prediction": 0.9999581462094412,
+      "raw_residual_correlation": 0.9999678777276374,
+      "raw_var_delta_z": 0.00019777944210462844
+    },
+    {
+      "contrast": "C-A",
+      "delta_2025_10_16": 2.0792778390177347e-05,
+      "delta_wcv": 3.3136066023287114e-05,
+      "effect": "rounds_only_seed42",
+      "fold_delta": [
+        -3.132539934669332e-05,
+        1.6116709939506535e-05,
+        8.244768567378102e-05,
+        2.0792778390177347e-05
+      ],
+      "improved_folds": 1,
+      "raw_corr_delta_with_baseline_residual": 0.002437431895185009,
+      "raw_max_abs_delta_z": 0.14158740043640128,
+      "raw_mean_delta_z": -0.0004986768230268464,
+      "raw_pearson_prediction": 0.999962175237192,
+      "raw_residual_correlation": 0.9999709522136008,
+      "raw_var_delta_z": 0.0001788546286169647
+    },
+    {
+      "contrast": "D-B",
+      "delta_2025_10_16": 4.6356765785793286e-05,
+      "delta_wcv": 5.011321940040503e-05,
+      "effect": "rounds_after_AVG3",
+      "fold_delta": [
+        -2.3845191441607128e-05,
+        6.652101189841275e-05,
+        6.791183308973991e-05,
+        4.6356765785793286e-05
+      ],
+      "improved_folds": 1,
+      "raw_corr_delta_with_baseline_residual": -0.00042549537955181377,
+      "raw_max_abs_delta_z": 0.11962721745173122,
+      "raw_mean_delta_z": -0.000556498162071803,
+      "raw_pearson_prediction": 0.9999798261433174,
+      "raw_residual_correlation": 0.9999845003722733,
+      "raw_var_delta_z": 9.543122553576488e-05
+    },
+    {
+      "contrast": "D-C",
+      "delta_2025_10_16": -2.5573681753154887e-05,
+      "delta_wcv": -3.558263068992318e-05,
+      "effect": "AVG3_at_300",
+      "fold_delta": [
+        -2.3689369765600432e-05,
+        -4.584475466384852e-05,
+        -5.3442781807966355e-05,
+        -2.5573681753154887e-05
+      ],
+      "improved_folds": 4,
+      "raw_corr_delta_with_baseline_residual": 0.006505703766438829,
+      "raw_max_abs_delta_z": 0.11552132765452061,
+      "raw_mean_delta_z": 8.669140682963344e-05,
+      "raw_pearson_prediction": 0.9999747184139055,
+      "raw_residual_correlation": 0.9999806048687228,
+      "raw_var_delta_z": 0.00011942064550734296
+    },
+    {
+      "contrast": "D-A",
+      "delta_2025_10_16": -4.78090336297754e-06,
+      "delta_wcv": -2.446564666636064e-06,
+      "effect": "combined",
+      "fold_delta": [
+        -5.501476911229375e-05,
+        -2.9728044724341984e-05,
+        2.900490386581467e-05,
+        -4.78090336297754e-06
+      ],
+      "improved_folds": 3,
+      "raw_corr_delta_with_baseline_residual": 0.005985997029689072,
+      "raw_max_abs_delta_z": 0.21479824384053536,
+      "raw_mean_delta_z": -0.000411985416197213,
+      "raw_pearson_prediction": 0.999937473409107,
+      "raw_residual_correlation": 0.9999520089227858,
+      "raw_var_delta_z": 0.00029548685106678326
+    },
+    {
+      "contrast": "D-B-C+A",
+      "delta_wcv": 1.6977153376777445e-05,
+      "effect": "factor_interaction",
+      "fold_delta": [
+        7.480207905086189e-06,
+        5.040430195890622e-05,
+        -1.4535852584041109e-05,
+        2.556398739561594e-05
+      ],
+      "raw_corr_with_a_residual": -0.003983258418026533,
+      "raw_max_abs_delta_z": 0.08890031178792324,
+      "raw_mean_delta_z": -5.78213390449566e-05,
+      "raw_var_delta_z": 8.216055607137943e-05
+    }
+  ],
+  "historical_artifacts_unchanged": [
+    {
+      "name": "S1-E03a",
+      "sha256": "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525",
+      "unchanged": true
+    },
+    {
+      "name": "S1-E02",
+      "sha256": "2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff",
+      "unchanged": true
+    },
+    {
+      "name": "S1-DIST",
+      "sha256": "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+      "unchanged": true
+    },
+    {
+      "name": "ETX-AVG3",
+      "sha256": "890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f",
+      "unchanged": true
+    },
+    {
+      "name": "SEQ-AVG3",
+      "sha256": "8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c",
+      "unchanged": true
+    }
+  ],
+  "historical_baseline": {
+    "artifact": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_ENSEMBLE_H.npz",
+    "artifact_sha256": "3972d549547373e7cf68080422115447437cfdfb1ba5d9ff8ade6b6100452eb4",
+    "auc_positive": 0.8423478067702598,
+    "fold_cal": [
+      1.7668833567997195,
+      1.7605095767798136,
+      1.748629223964952,
+      1.7412785664479717
+    ],
+    "fold_offsets": [
+      -0.11734465876764336,
+      -0.07873621159214053,
+      -0.02097755276250928,
+      -0.035387154112119984
+    ],
+    "mean_z": 2.6881878500404097,
+    "name": "H",
+    "prediction_sha256": "73b08d05e71ba422aad8b6710325588db8a9dd30fbd5a1670ca4c5e8a6b6bd97",
+    "wcv": 1.7475098625201952
+  },
+  "merged_oof_artifacts": [
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S42_R200.npz",
+      "rounds": 200,
+      "seed": 42,
+      "sha256": "f36cab1501cad740ece31a71bcf9d54206db9528614c01b08242d8058c1bdd79"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S42_R250.npz",
+      "rounds": 250,
+      "seed": 42,
+      "sha256": "7b1ea0a908e57f12b9238a821f3acf5c6212e8a5b55b14fa72cecf7c91c78c3d"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S42_R300.npz",
+      "rounds": 300,
+      "seed": 42,
+      "sha256": "d64b7c3b7b5fd6133e5ceebd20831b0d6a6e545c3a629794a6c9bca83d82516c"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S42_R600.npz",
+      "rounds": 600,
+      "seed": 42,
+      "sha256": "d888c4550a95554bb7b7225cd20cb9d8310e4ad685155341309f10f54c0efcca"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S43_R200.npz",
+      "rounds": 200,
+      "seed": 43,
+      "sha256": "3f4a750456cbbc2c8f9796e2d9fb1c1d826d6dbbe552197a0efe50f6bca406ed"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S43_R250.npz",
+      "rounds": 250,
+      "seed": 43,
+      "sha256": "c380ca7280971008b77b507680573547c7337ff2e63cb799d8861dc7062fc214"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S43_R300.npz",
+      "rounds": 300,
+      "seed": 43,
+      "sha256": "38f0e44b60b005bc5b2eda0cf4d9c17c35316e3f4cdd5094150a55ea31e6317d"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S43_R600.npz",
+      "rounds": 600,
+      "seed": 43,
+      "sha256": "ead091636dc4a982d0bbe6948dfa9eed8326038adea56b7bb5bfad699c7d77bd"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S44_R200.npz",
+      "rounds": 200,
+      "seed": 44,
+      "sha256": "2e660f5b3cb75f49e342736114a1d1e99cd9a1fc6fb6c6237240cd01af6c5a10"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S44_R250.npz",
+      "rounds": 250,
+      "seed": 44,
+      "sha256": "1f5535ea5625a45b1d1eb9f1affbc699b8ad5312a37612f8d8a1ff6c85b53cca"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S44_R300.npz",
+      "rounds": 300,
+      "seed": 44,
+      "sha256": "80eb9fefb35548b7d92b508ea7a3fe197dfe425fda05531fd82116f5590e8397"
+    },
+    {
+      "component": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S44_R600.npz",
+      "rounds": 600,
+      "seed": 44,
+      "sha256": "42f8ddb7164366f828288ba5cf629ab336012353ffacfe19b93d93cb121c1e1b"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S42_R200.npz",
+      "rounds": 200,
+      "seed": 42,
+      "sha256": "f055551afcaeb9c180213d423c10695a1eedacbc568b62c1207a5277e3832509"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S42_R250.npz",
+      "rounds": 250,
+      "seed": 42,
+      "sha256": "00f1aa28c77c3d4d703d5a3ab2d5753798c3bfae05239af2ff06e3c81e51f4ef"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S42_R300.npz",
+      "rounds": 300,
+      "seed": 42,
+      "sha256": "af1fa2df88373b1ace8c62ed05f6b16545d9512e4ae63adc87dc2a4007bcf15e"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S42_R600.npz",
+      "rounds": 600,
+      "seed": 42,
+      "sha256": "9339523c849e9f6f22eec66756eae97bfee23876de1a1aea691c2ac3be853d37"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S43_R200.npz",
+      "rounds": 200,
+      "seed": 43,
+      "sha256": "b85da12d62215c67c13b61207d330c8cc42e7704c0de2698db6b8acbff9d4cd9"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S43_R250.npz",
+      "rounds": 250,
+      "seed": 43,
+      "sha256": "1ff42fda9201aeac3b03b0084cea5a3790af7a7610f6594ae195e1c073695719"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S43_R300.npz",
+      "rounds": 300,
+      "seed": 43,
+      "sha256": "32f0ac127c875d267f3e606204d210d2a328b2176c7ec235fb6925697a7af191"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S43_R600.npz",
+      "rounds": 600,
+      "seed": 43,
+      "sha256": "fd9c7091ee25650028c28994549425829b7dbc4b0f45f3b28bb43df4f5802c4b"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S44_R200.npz",
+      "rounds": 200,
+      "seed": 44,
+      "sha256": "eb94a1080da2fae9fb0551d131e2b24a358d8ee921d8e783f3502a142b274a6e"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S44_R250.npz",
+      "rounds": 250,
+      "seed": 44,
+      "sha256": "d15ec9ee914a0b32bcf54973074b1a70f7711d3fcc8faa9df72b9fb38efffac3"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S44_R300.npz",
+      "rounds": 300,
+      "seed": 44,
+      "sha256": "ebe03fc56d66edac6fbccea028bc2c8909f20987371b89f80fbd70e88bdd9a3d"
+    },
+    {
+      "component": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_CAP_S44_R600.npz",
+      "rounds": 600,
+      "seed": 44,
+      "sha256": "e162437c22cd27c99cded9905c1337ad58151d652e3fc4d9b9ca50c5fa50f8b2"
+    }
+  ],
+  "prediction_diagnostics": [
+    {
+      "baseline": "H",
+      "candidate": "A",
+      "corr_delta_with_baseline_residual": null,
+      "max_abs_delta_z": 0.0,
+      "mean_delta_z": 0.0,
+      "pearson_prediction": 0.9999999999999999,
+      "residual_correlation": 1.0,
+      "spearman_prediction": 0.9999999999999999,
+      "var_delta_z": 0.0
+    },
+    {
+      "baseline": "H",
+      "candidate": "B",
+      "corr_delta_with_baseline_residual": 0.007566127787213931,
+      "max_abs_delta_z": 0.15866988897323608,
+      "mean_delta_z": 0.00014451274587459003,
+      "pearson_prediction": 0.9999581462094412,
+      "residual_correlation": 0.9999678777276374,
+      "spearman_prediction": 0.9999532835630587,
+      "var_delta_z": 0.00019777944210462844
+    },
+    {
+      "baseline": "A",
+      "candidate": "B",
+      "corr_delta_with_baseline_residual": 0.007566127787213931,
+      "max_abs_delta_z": 0.15866988897323608,
+      "mean_delta_z": 0.00014451274587459003,
+      "pearson_prediction": 0.9999581462094412,
+      "residual_correlation": 0.9999678777276374,
+      "spearman_prediction": 0.9999532835630587,
+      "var_delta_z": 0.00019777944210462844
+    },
+    {
+      "baseline": "H",
+      "candidate": "C",
+      "corr_delta_with_baseline_residual": 0.002437431895185009,
+      "max_abs_delta_z": 0.14158740043640128,
+      "mean_delta_z": -0.0004986768230268464,
+      "pearson_prediction": 0.999962175237192,
+      "residual_correlation": 0.9999709522136008,
+      "spearman_prediction": 0.9999570538517868,
+      "var_delta_z": 0.0001788546286169647
+    },
+    {
+      "baseline": "A",
+      "candidate": "C",
+      "corr_delta_with_baseline_residual": 0.002437431895185009,
+      "max_abs_delta_z": 0.14158740043640128,
+      "mean_delta_z": -0.0004986768230268464,
+      "pearson_prediction": 0.999962175237192,
+      "residual_correlation": 0.9999709522136008,
+      "spearman_prediction": 0.9999570538517868,
+      "var_delta_z": 0.0001788546286169647
+    },
+    {
+      "baseline": "H",
+      "candidate": "D",
+      "corr_delta_with_baseline_residual": 0.005985997029689072,
+      "max_abs_delta_z": 0.21479824384053536,
+      "mean_delta_z": -0.000411985416197213,
+      "pearson_prediction": 0.999937473409107,
+      "residual_correlation": 0.9999520089227858,
+      "spearman_prediction": 0.9999302370583477,
+      "var_delta_z": 0.00029548685106678326
+    },
+    {
+      "baseline": "A",
+      "candidate": "D",
+      "corr_delta_with_baseline_residual": 0.005985997029689072,
+      "max_abs_delta_z": 0.21479824384053536,
+      "mean_delta_z": -0.000411985416197213,
+      "pearson_prediction": 0.999937473409107,
+      "residual_correlation": 0.9999520089227858,
+      "spearman_prediction": 0.9999302370583477,
+      "var_delta_z": 0.00029548685106678326
+    }
+  ],
+  "prefix": "TBR_EXP046",
+  "primary_round": 300,
+  "production_experiment_allowed": false,
+  "replay": {
+    "components": [
+      {
+        "component": "UNC",
+        "delta_rmsle_cal": 0.0,
+        "exact_prediction_match": true,
+        "fold": "2025-10-16",
+        "mae_delta_z": 0.0,
+        "max_abs_delta_z": 0.0,
+        "old_prediction_sha256": "76193afe9c48768184bbb617777237a465d5c5d35a36cab266677cf452ab9c7f",
+        "old_rmsle_cal": 1.7451316740083374,
+        "pearson": 1.0,
+        "replay_prediction_sha256": "76193afe9c48768184bbb617777237a465d5c5d35a36cab266677cf452ab9c7f",
+        "replay_rmsle_cal": 1.7451316740083374,
+        "status": "PASS_BITWISE",
+        "var_delta_z": 0.0
+      },
+      {
+        "component": "CAP",
+        "delta_rmsle_cal": 0.0,
+        "exact_prediction_match": true,
+        "fold": "2025-10-16",
+        "mae_delta_z": 0.0,
+        "max_abs_delta_z": 0.0,
+        "old_prediction_sha256": "c4bfc7e474d53ec2cab48a06acd9c48a4165d5c4b468bd1d6a1e2b35caa99ea2",
+        "old_rmsle_cal": 1.7553448642465437,
+        "pearson": 0.9999999999999999,
+        "replay_prediction_sha256": "c4bfc7e474d53ec2cab48a06acd9c48a4165d5c4b468bd1d6a1e2b35caa99ea2",
+        "replay_rmsle_cal": 1.7553448642465437,
+        "status": "PASS_BITWISE",
+        "var_delta_z": 0.0
+      }
+    ],
+    "status": "REPLAY_PASS",
+    "thresholds": {
+      "abs_delta_rmsle_cal": 1e-05,
+      "max_abs_delta_z": 1e-05,
+      "pearson": 0.999999999,
+      "var_delta_z": 1e-10
+    }
+  },
+  "rounds_diagnostics": [
+    {
+      "auc_positive": 0.8423990095262103,
+      "delta_2025_10_16": 6.367112564897859e-05,
+      "delta_wcv": 6.505618155472348e-05,
+      "fold_cal": [
+        1.766857836237166,
+        1.7605495026675682,
+        1.7487326467804714,
+        1.7413374566702577
+      ],
+      "fold_delta": [
+        2.9494206558844382e-05,
+        6.965393247893026e-05,
+        7.441791165363476e-05,
+        6.367112564897859e-05
+      ],
+      "fold_offsets": [
+        -0.11536955438024674,
+        -0.07940476181554541,
+        -0.021703481763846143,
+        -0.034798283599232496
+      ],
+      "improved_folds": 0,
+      "mean_z": 2.687902065060407,
+      "name": "AVG3_R200",
+      "prediction_sha256": "3cc6374db340e8c16683d3f8fbdf4c35ef696c76b5d3b9279ad0af7a7f9d1358",
+      "rounds": 200,
+      "wcv": 1.7475724721370833
+    },
+    {
+      "auc_positive": 0.8423932604251256,
+      "delta_2025_10_16": 2.5290819074763604e-05,
+      "delta_wcv": 2.5852679741200646e-05,
+      "fold_cal": [
+        1.7668451502223597,
+        1.7605062950600276,
+        1.748687169569291,
+        1.7412990763636835
+      ],
+      "fold_delta": [
+        1.6808191752426538e-05,
+        2.6446324938422805e-05,
+        2.894070047321229e-05,
+        2.5290819074763604e-05
+      ],
+      "fold_offsets": [
+        -0.11592822129275135,
+        -0.07907427243200747,
+        -0.021158808476816095,
+        -0.034537687299314196
+      ],
+      "improved_folds": 0,
+      "mean_z": 2.687753152422231,
+      "name": "AVG3_R250",
+      "prediction_sha256": "6bb4031b63b3008e13aded83481752ba2509359c123dd1a4f6edb4fabfe1bfd8",
+      "rounds": 250,
+      "wcv": 1.7475332686352698
+    },
+    {
+      "auc_positive": 0.8423899439340136,
+      "delta_2025_10_16": 0.0,
+      "delta_wcv": 0.0,
+      "fold_cal": [
+        1.7668283420306072,
+        1.7604798487350892,
+        1.7486582288688177,
+        1.7412737855446088
+      ],
+      "fold_delta": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fold_offsets": [
+        -0.11643737491201286,
+        -0.07877043304331532,
+        -0.021015601171629428,
+        -0.034574669026025365
+      ],
+      "improved_folds": 0,
+      "mean_z": 2.6877758646242125,
+      "name": "AVG3_R300",
+      "prediction_sha256": "eaac69626629db16decfa109693fbc2eb7f38e8051c12859f5c7566aa1ba87b8",
+      "rounds": 300,
+      "wcv": 1.7475074159555286
+    },
+    {
+      "auc_positive": 0.8423712451346156,
+      "delta_2025_10_16": -4.6356765785793286e-05,
+      "delta_wcv": -5.011321940040503e-05,
+      "fold_cal": [
+        1.7668521872220488,
+        1.7604133277231908,
+        1.748590317035728,
+        1.741227428778823
+      ],
+      "fold_delta": [
+        2.3845191441607128e-05,
+        -6.652101189841275e-05,
+        -6.791183308973991e-05,
+        -4.6356765785793286e-05
+      ],
+      "fold_offsets": [
+        -0.11792956664499277,
+        -0.07869429081835139,
+        -0.020925040576504832,
+        -0.03548479750072937
+      ],
+      "improved_folds": 3,
+      "mean_z": 2.6883323627862845,
+      "name": "AVG3_R600",
+      "prediction_sha256": "2a4472908bf42ee42fdcae35e664284ebc7cb3a5260c41891b86888860fe7ce2",
+      "rounds": 600,
+      "wcv": 1.7474573027361282
+    }
+  ],
+  "seed_diagnostics": [
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9988201831556224,
+      "rounds": 200,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 6.274405083250834e-05,
+      "standalone_seed_spread_std": 3.3842911170438544e-05,
+      "var_delta_z": 0.005590404578930408
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9988180294213598,
+      "rounds": 200,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 6.274405083250834e-05,
+      "standalone_seed_spread_std": 3.3842911170438544e-05,
+      "var_delta_z": 0.005589591369264888
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9988263875117345,
+      "rounds": 200,
+      "scope": "ALL",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 6.274405083250834e-05,
+      "standalone_seed_spread_std": 3.3842911170438544e-05,
+      "var_delta_z": 0.005560973167196528
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987426352500732,
+      "rounds": 200,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00010709982315337818,
+      "standalone_seed_spread_std": 5.968129764864799e-05,
+      "var_delta_z": 0.005876439598049588
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987065796065457,
+      "rounds": 200,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00010709982315337818,
+      "standalone_seed_spread_std": 5.968129764864799e-05,
+      "var_delta_z": 0.006026706860189262
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987212128103039,
+      "rounds": 200,
+      "scope": "2025-09-04",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00010709982315337818,
+      "standalone_seed_spread_std": 5.968129764864799e-05,
+      "var_delta_z": 0.005988625430140219
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987822091637254,
+      "rounds": 200,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0001260393556881123,
+      "standalone_seed_spread_std": 6.454002228043881e-05,
+      "var_delta_z": 0.0057155926324456785
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987846544436721,
+      "rounds": 200,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001260393556881123,
+      "standalone_seed_spread_std": 6.454002228043881e-05,
+      "var_delta_z": 0.005701930434827089
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987840748538976,
+      "rounds": 200,
+      "scope": "2025-09-18",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001260393556881123,
+      "standalone_seed_spread_std": 6.454002228043881e-05,
+      "var_delta_z": 0.005708532137404054
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9988230648356706,
+      "rounds": 200,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00012356953159931017,
+      "standalone_seed_spread_std": 6.325912833434215e-05,
+      "var_delta_z": 0.005603166130657187
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9988445339051553,
+      "rounds": 200,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00012356953159931017,
+      "standalone_seed_spread_std": 6.325912833434215e-05,
+      "var_delta_z": 0.005491790646217958
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9988747373062999,
+      "rounds": 200,
+      "scope": "2025-10-02",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00012356953159931017,
+      "standalone_seed_spread_std": 6.325912833434215e-05,
+      "var_delta_z": 0.005357303048415633
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9989233138537608,
+      "rounds": 200,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00019433129323886966,
+      "standalone_seed_spread_std": 0.0001091807781327,
+      "var_delta_z": 0.00518123287988053
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9989292067870066,
+      "rounds": 200,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00019433129323886966,
+      "standalone_seed_spread_std": 0.0001091807781327,
+      "var_delta_z": 0.005150967096473641
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9989192623850311,
+      "rounds": 200,
+      "scope": "2025-10-16",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00019433129323886966,
+      "standalone_seed_spread_std": 0.0001091807781327,
+      "var_delta_z": 0.005202285486552484
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9986260028929003,
+      "rounds": 250,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 5.45983367019609e-05,
+      "standalone_seed_spread_std": 2.730573342467639e-05,
+      "var_delta_z": 0.006518139416017877
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9986226636112611,
+      "rounds": 250,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.45983367019609e-05,
+      "standalone_seed_spread_std": 2.730573342467639e-05,
+      "var_delta_z": 0.006523372780848085
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9986346057239404,
+      "rounds": 250,
+      "scope": "ALL",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.45983367019609e-05,
+      "standalone_seed_spread_std": 2.730573342467639e-05,
+      "var_delta_z": 0.006477580572995573
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9985093647707949,
+      "rounds": 250,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 6.893347118963611e-05,
+      "standalone_seed_spread_std": 3.769124949336125e-05,
+      "var_delta_z": 0.006976388818403062
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9984495143502735,
+      "rounds": 250,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 6.893347118963611e-05,
+      "standalone_seed_spread_std": 3.769124949336125e-05,
+      "var_delta_z": 0.007223269196260334
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9984925092881979,
+      "rounds": 250,
+      "scope": "2025-09-04",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 6.893347118963611e-05,
+      "standalone_seed_spread_std": 3.769124949336125e-05,
+      "var_delta_z": 0.007061698547083911
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9985672764866443,
+      "rounds": 250,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 8.884258995678351e-05,
+      "standalone_seed_spread_std": 4.66499429185755e-05,
+      "var_delta_z": 0.006733953401912069
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9985776565659801,
+      "rounds": 250,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 8.884258995678351e-05,
+      "standalone_seed_spread_std": 4.66499429185755e-05,
+      "var_delta_z": 0.006683765115644697
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9985749531223979,
+      "rounds": 250,
+      "scope": "2025-09-18",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 8.884258995678351e-05,
+      "standalone_seed_spread_std": 4.66499429185755e-05,
+      "var_delta_z": 0.006701869410918045
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9986582521506008,
+      "rounds": 250,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0002593791178358007,
+      "standalone_seed_spread_std": 0.00013315319902347823,
+      "var_delta_z": 0.006393760819048053
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9986824962759554,
+      "rounds": 250,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0002593791178358007,
+      "standalone_seed_spread_std": 0.00013315319902347823,
+      "var_delta_z": 0.0062712668756093725
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9986994979084309,
+      "rounds": 250,
+      "scope": "2025-10-02",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0002593791178358007,
+      "standalone_seed_spread_std": 0.00013315319902347823,
+      "var_delta_z": 0.006197712105778436
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987602686175648,
+      "rounds": 250,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.000118783260693478,
+      "standalone_seed_spread_std": 6.416261870107385e-05,
+      "var_delta_z": 0.00597291345255893
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987661012290173,
+      "rounds": 250,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.000118783260693478,
+      "standalone_seed_spread_std": 6.416261870107385e-05,
+      "var_delta_z": 0.005943101120119682
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9987635488144867,
+      "rounds": 250,
+      "scope": "2025-10-16",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.000118783260693478,
+      "standalone_seed_spread_std": 6.416261870107385e-05,
+      "var_delta_z": 0.005958119015498536
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9984371583815221,
+      "rounds": 300,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0001054898841847951,
+      "standalone_seed_spread_std": 5.2757521459806396e-05,
+      "var_delta_z": 0.007421151966266068
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9984307162221593,
+      "rounds": 300,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001054898841847951,
+      "standalone_seed_spread_std": 5.2757521459806396e-05,
+      "var_delta_z": 0.00744004184975987
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9984456995384136,
+      "rounds": 300,
+      "scope": "ALL",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001054898841847951,
+      "standalone_seed_spread_std": 5.2757521459806396e-05,
+      "var_delta_z": 0.007381197198140684
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9983154886798831,
+      "rounds": 300,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00011599919081195509,
+      "standalone_seed_spread_std": 6.466005090278228e-05,
+      "var_delta_z": 0.007880183226954739
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9982717354102408,
+      "rounds": 300,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00011599919081195509,
+      "standalone_seed_spread_std": 6.466005090278228e-05,
+      "var_delta_z": 0.008052730166768574
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.99829299527888,
+      "rounds": 300,
+      "scope": "2025-09-04",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00011599919081195509,
+      "standalone_seed_spread_std": 6.466005090278228e-05,
+      "var_delta_z": 0.007988226590666616
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9983527234040148,
+      "rounds": 300,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 8.89929597174266e-05,
+      "standalone_seed_spread_std": 4.664336426187957e-05,
+      "var_delta_z": 0.007757613942797291
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9983692504454927,
+      "rounds": 300,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 8.89929597174266e-05,
+      "standalone_seed_spread_std": 4.664336426187957e-05,
+      "var_delta_z": 0.00767328973589785
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9983568681523254,
+      "rounds": 300,
+      "scope": "2025-09-18",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 8.89929597174266e-05,
+      "standalone_seed_spread_std": 4.664336426187957e-05,
+      "var_delta_z": 0.007741382766406928
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9984768072084735,
+      "rounds": 300,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00018060968146049738,
+      "standalone_seed_spread_std": 0.00010245323948196193,
+      "var_delta_z": 0.0072650235015233565
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9984800216971932,
+      "rounds": 300,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00018060968146049738,
+      "standalone_seed_spread_std": 0.00010245323948196193,
+      "var_delta_z": 0.007243238096449693
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9985164790001574,
+      "rounds": 300,
+      "scope": "2025-10-02",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00018060968146049738,
+      "standalone_seed_spread_std": 0.00010245323948196193,
+      "var_delta_z": 0.0070764944757529275
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9985898803743593,
+      "rounds": 300,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0001019231990113667,
+      "standalone_seed_spread_std": 5.82292432303052e-05,
+      "var_delta_z": 0.00680170970472145
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9985906975031904,
+      "rounds": 300,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001019231990113667,
+      "standalone_seed_spread_std": 5.82292432303052e-05,
+      "var_delta_z": 0.006795193057056603
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9986029432978202,
+      "rounds": 300,
+      "scope": "2025-10-16",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001019231990113667,
+      "standalone_seed_spread_std": 5.82292432303052e-05,
+      "var_delta_z": 0.006740057398829193
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9973857744213098,
+      "rounds": 600,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00013956874024989574,
+      "standalone_seed_spread_std": 7.32081559270199e-05,
+      "var_delta_z": 0.012453177352038177
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.997397496677016,
+      "rounds": 600,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00013956874024989574,
+      "standalone_seed_spread_std": 7.32081559270199e-05,
+      "var_delta_z": 0.012385597439793327
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9974095568290161,
+      "rounds": 600,
+      "scope": "ALL",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00013956874024989574,
+      "standalone_seed_spread_std": 7.32081559270199e-05,
+      "var_delta_z": 0.01234149745370867
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.997133174585654,
+      "rounds": 600,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00029840732541974724,
+      "standalone_seed_spread_std": 0.00015095287975422185,
+      "var_delta_z": 0.01341574787662192
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9970448836715173,
+      "rounds": 600,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00029840732541974724,
+      "standalone_seed_spread_std": 0.00015095287975422185,
+      "var_delta_z": 0.013812262659188283
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9970712530473892,
+      "rounds": 600,
+      "scope": "2025-09-04",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00029840732541974724,
+      "standalone_seed_spread_std": 0.00015095287975422185,
+      "var_delta_z": 0.013711006468494819
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9972301660471411,
+      "rounds": 600,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0002672728807184832,
+      "standalone_seed_spread_std": 0.00013543240581042132,
+      "var_delta_z": 0.013110670181884759
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9972741846899843,
+      "rounds": 600,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0002672728807184832,
+      "standalone_seed_spread_std": 0.00013543240581042132,
+      "var_delta_z": 0.012880639535797147
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9972493102774715,
+      "rounds": 600,
+      "scope": "2025-09-18",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0002672728807184832,
+      "standalone_seed_spread_std": 0.00013543240581042132,
+      "var_delta_z": 0.013019972043146755
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9974491195733972,
+      "rounds": 600,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 5.388101074776941e-05,
+      "standalone_seed_spread_std": 3.027509173914033e-05,
+      "var_delta_z": 0.012201527830369194
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9975125869810697,
+      "rounds": 600,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.388101074776941e-05,
+      "standalone_seed_spread_std": 3.027509173914033e-05,
+      "var_delta_z": 0.011876940269870854
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9975403450310827,
+      "rounds": 600,
+      "scope": "2025-10-02",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.388101074776941e-05,
+      "standalone_seed_spread_std": 3.027509173914033e-05,
+      "var_delta_z": 0.011765231449326263
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9977012847421454,
+      "rounds": 600,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00028740268297799965,
+      "standalone_seed_spread_std": 0.00014738335595751683,
+      "var_delta_z": 0.011133008641355243
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.9977254943217234,
+      "rounds": 600,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00028740268297799965,
+      "standalone_seed_spread_std": 0.00014738335595751683,
+      "var_delta_z": 0.011020414520630992
+    },
+    {
+      "component": "UNC",
+      "pearson_prediction": 0.997742004768669,
+      "rounds": 600,
+      "scope": "2025-10-16",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00028740268297799965,
+      "standalone_seed_spread_std": 0.00014738335595751683,
+      "var_delta_z": 0.010936462034106186
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.999055812351484,
+      "rounds": 200,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 5.068252203566104e-05,
+      "standalone_seed_spread_std": 2.6508162626024857e-05,
+      "var_delta_z": 0.004521550021551218
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9990582992073267,
+      "rounds": 200,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.068252203566104e-05,
+      "standalone_seed_spread_std": 2.6508162626024857e-05,
+      "var_delta_z": 0.00450916454646127
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9990672565181649,
+      "rounds": 200,
+      "scope": "ALL",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.068252203566104e-05,
+      "standalone_seed_spread_std": 2.6508162626024857e-05,
+      "var_delta_z": 0.004466033168711792
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989528609200161,
+      "rounds": 200,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0003490422865961573,
+      "standalone_seed_spread_std": 0.00019981638689737767,
+      "var_delta_z": 0.004979514462628572
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989453909389254,
+      "rounds": 200,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0003490422865961573,
+      "standalone_seed_spread_std": 0.00019981638689737767,
+      "var_delta_z": 0.005013790169251376
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989370036382341,
+      "rounds": 200,
+      "scope": "2025-09-04",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0003490422865961573,
+      "standalone_seed_spread_std": 0.00019981638689737767,
+      "var_delta_z": 0.005054905397994937
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9990319315123479,
+      "rounds": 200,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 4.510281456915344e-05,
+      "standalone_seed_spread_std": 2.2875685503734686e-05,
+      "var_delta_z": 0.004620822583640387
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9990311052576135,
+      "rounds": 200,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 4.510281456915344e-05,
+      "standalone_seed_spread_std": 2.2875685503734686e-05,
+      "var_delta_z": 0.004624211700543222
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9990478685490239,
+      "rounds": 200,
+      "scope": "2025-09-18",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 4.510281456915344e-05,
+      "standalone_seed_spread_std": 2.2875685503734686e-05,
+      "var_delta_z": 0.00454264857138863
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9990843096924358,
+      "rounds": 200,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00019584372081293822,
+      "standalone_seed_spread_std": 0.00010835427937462491,
+      "var_delta_z": 0.00438678545798707
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.999113661499148,
+      "rounds": 200,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00019584372081293822,
+      "standalone_seed_spread_std": 0.00010835427937462491,
+      "var_delta_z": 0.004246729574920004
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9991039017448059,
+      "rounds": 200,
+      "scope": "2025-10-02",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00019584372081293822,
+      "standalone_seed_spread_std": 0.00010835427937462491,
+      "var_delta_z": 0.004292644956482966
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9991474772951547,
+      "rounds": 200,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 5.350075271315369e-05,
+      "standalone_seed_spread_std": 2.678224830114201e-05,
+      "var_delta_z": 0.004119793859006566
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9991362288210537,
+      "rounds": 200,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.350075271315369e-05,
+      "standalone_seed_spread_std": 2.678224830114201e-05,
+      "var_delta_z": 0.004173271427022587
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9991724578062409,
+      "rounds": 200,
+      "scope": "2025-10-16",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.350075271315369e-05,
+      "standalone_seed_spread_std": 2.678224830114201e-05,
+      "var_delta_z": 0.003998542696057596
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989270324713034,
+      "rounds": 250,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 9.597469834909944e-05,
+      "standalone_seed_spread_std": 4.8937108878668806e-05,
+      "var_delta_z": 0.005140830952314121
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989302674298822,
+      "rounds": 250,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 9.597469834909944e-05,
+      "standalone_seed_spread_std": 4.8937108878668806e-05,
+      "var_delta_z": 0.005124725790466018
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989389857605939,
+      "rounds": 250,
+      "scope": "ALL",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 9.597469834909944e-05,
+      "standalone_seed_spread_std": 4.8937108878668806e-05,
+      "var_delta_z": 0.005082500134151593
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9987974538834625,
+      "rounds": 250,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00032311153193864683,
+      "standalone_seed_spread_std": 0.00017892152357158658,
+      "var_delta_z": 0.0057217890233819246
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9988000612364715,
+      "rounds": 250,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00032311153193864683,
+      "standalone_seed_spread_std": 0.00017892152357158658,
+      "var_delta_z": 0.005708221564027651
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9987843260289877,
+      "rounds": 250,
+      "scope": "2025-09-04",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00032311153193864683,
+      "standalone_seed_spread_std": 0.00017892152357158658,
+      "var_delta_z": 0.005783564158517022
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9988943832384407,
+      "rounds": 250,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 2.4769708266703105e-05,
+      "standalone_seed_spread_std": 1.3457966238236964e-05,
+      "var_delta_z": 0.005278828384969555
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9988962208750796,
+      "rounds": 250,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 2.4769708266703105e-05,
+      "standalone_seed_spread_std": 1.3457966238236964e-05,
+      "var_delta_z": 0.005270000958880409
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.998909262448772,
+      "rounds": 250,
+      "scope": "2025-09-18",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 2.4769708266703105e-05,
+      "standalone_seed_spread_std": 1.3457966238236964e-05,
+      "var_delta_z": 0.00520658674568861
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989662122579678,
+      "rounds": 250,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00024698026786285077,
+      "standalone_seed_spread_std": 0.0001424560261835241,
+      "var_delta_z": 0.00495538574150052
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989955371199659,
+      "rounds": 250,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00024698026786285077,
+      "standalone_seed_spread_std": 0.0001424560261835241,
+      "var_delta_z": 0.004814515092933427
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989864386782289,
+      "rounds": 250,
+      "scope": "2025-10-02",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00024698026786285077,
+      "standalone_seed_spread_std": 0.0001424560261835241,
+      "var_delta_z": 0.0048576303892137185
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.999041603350467,
+      "rounds": 250,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00011197286910791249,
+      "standalone_seed_spread_std": 6.015998463934433e-05,
+      "var_delta_z": 0.004633866340380462
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9990213116944763,
+      "rounds": 250,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00011197286910791249,
+      "standalone_seed_spread_std": 6.015998463934433e-05,
+      "var_delta_z": 0.004731039186114536
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9990663161433581,
+      "rounds": 250,
+      "scope": "2025-10-16",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00011197286910791249,
+      "standalone_seed_spread_std": 6.015998463934433e-05,
+      "var_delta_z": 0.004512953166146042
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9988048329595265,
+      "rounds": 300,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0001042469820693448,
+      "standalone_seed_spread_std": 5.4216112366992105e-05,
+      "var_delta_z": 0.005727379403818116
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.99880814903906,
+      "rounds": 300,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001042469820693448,
+      "standalone_seed_spread_std": 5.4216112366992105e-05,
+      "var_delta_z": 0.0057111679836529
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9988159206931547,
+      "rounds": 300,
+      "scope": "ALL",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001042469820693448,
+      "standalone_seed_spread_std": 5.4216112366992105e-05,
+      "var_delta_z": 0.005673107443419424
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9986543178771621,
+      "rounds": 300,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00040087966249058304,
+      "standalone_seed_spread_std": 0.00021148437059276363,
+      "var_delta_z": 0.0064035252074933465
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9986537514051319,
+      "rounds": 300,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00040087966249058304,
+      "standalone_seed_spread_std": 0.00021148437059276363,
+      "var_delta_z": 0.006405091698706536
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9986350766503863,
+      "rounds": 300,
+      "scope": "2025-09-04",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00040087966249058304,
+      "standalone_seed_spread_std": 0.00021148437059276363,
+      "var_delta_z": 0.006493306781153593
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9987692447246426,
+      "rounds": 300,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0001056965298620316,
+      "standalone_seed_spread_std": 5.433987341537106e-05,
+      "var_delta_z": 0.005877287897171827
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9987682553751039,
+      "rounds": 300,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001056965298620316,
+      "standalone_seed_spread_std": 5.433987341537106e-05,
+      "var_delta_z": 0.005882253648070463
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9987834143515496,
+      "rounds": 300,
+      "scope": "2025-09-18",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001056965298620316,
+      "standalone_seed_spread_std": 5.433987341537106e-05,
+      "var_delta_z": 0.005808229035547394
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9988471725837679,
+      "rounds": 300,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0002316240305837436,
+      "standalone_seed_spread_std": 0.00012058526588702476,
+      "var_delta_z": 0.005526080895892752
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9988825542710436,
+      "rounds": 300,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0002316240305837436,
+      "standalone_seed_spread_std": 0.00012058526588702476,
+      "var_delta_z": 0.005357034556856003
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9988704767778597,
+      "rounds": 300,
+      "scope": "2025-10-02",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0002316240305837436,
+      "standalone_seed_spread_std": 0.00012058526588702476,
+      "var_delta_z": 0.0054144844624420384
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989387187956886,
+      "rounds": 300,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00019513918348779136,
+      "standalone_seed_spread_std": 9.770803365066963e-05,
+      "var_delta_z": 0.005133549171541733
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9989186797106812,
+      "rounds": 300,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00019513918348779136,
+      "standalone_seed_spread_std": 9.770803365066963e-05,
+      "var_delta_z": 0.005229564551991814
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.998963495577723,
+      "rounds": 300,
+      "scope": "2025-10-16",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00019513918348779136,
+      "standalone_seed_spread_std": 9.770803365066963e-05,
+      "var_delta_z": 0.005012234127120802
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9981047821133703,
+      "rounds": 600,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 1.4009218661792389e-05,
+      "standalone_seed_spread_std": 7.168009807193031e-06,
+      "var_delta_z": 0.009091860189437325
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9981118820071587,
+      "rounds": 600,
+      "scope": "ALL",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 1.4009218661792389e-05,
+      "standalone_seed_spread_std": 7.168009807193031e-06,
+      "var_delta_z": 0.009056758079291195
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9981304619939836,
+      "rounds": 600,
+      "scope": "ALL",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 1.4009218661792389e-05,
+      "standalone_seed_spread_std": 7.168009807193031e-06,
+      "var_delta_z": 0.0089675561800454
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9978125088406647,
+      "rounds": 600,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00027916240935077496,
+      "standalone_seed_spread_std": 0.00015760069220726905,
+      "var_delta_z": 0.010422932448693554
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9978090644968182,
+      "rounds": 600,
+      "scope": "2025-09-04",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00027916240935077496,
+      "standalone_seed_spread_std": 0.00015760069220726905,
+      "var_delta_z": 0.010435923066114516
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9978175967316368,
+      "rounds": 600,
+      "scope": "2025-09-04",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00027916240935077496,
+      "standalone_seed_spread_std": 0.00015760069220726905,
+      "var_delta_z": 0.010393692609642846
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9980345431052459,
+      "rounds": 600,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.00021772531759545188,
+      "standalone_seed_spread_std": 0.00012199670802290871,
+      "var_delta_z": 0.00939512800065002
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9980477004642867,
+      "rounds": 600,
+      "scope": "2025-09-18",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00021772531759545188,
+      "standalone_seed_spread_std": 0.00012199670802290871,
+      "var_delta_z": 0.009330966362355872
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9980738076147756,
+      "rounds": 600,
+      "scope": "2025-09-18",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.00021772531759545188,
+      "standalone_seed_spread_std": 0.00012199670802290871,
+      "var_delta_z": 0.009207259282466948
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9982084768035794,
+      "rounds": 600,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 0.0001205583961498835,
+      "standalone_seed_spread_std": 6.853666597843613e-05,
+      "var_delta_z": 0.00859729808351933
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9982402252116813,
+      "rounds": 600,
+      "scope": "2025-10-02",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001205583961498835,
+      "standalone_seed_spread_std": 6.853666597843613e-05,
+      "var_delta_z": 0.008445275307701812
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9982323898377071,
+      "rounds": 600,
+      "scope": "2025-10-02",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 0.0001205583961498835,
+      "standalone_seed_spread_std": 6.853666597843613e-05,
+      "var_delta_z": 0.008482264895503836
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9983450508165581,
+      "rounds": 600,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 43,
+      "standalone_seed_spread_range": 5.720950023269111e-05,
+      "standalone_seed_spread_std": 3.286497090658552e-05,
+      "var_delta_z": 0.008012315324644711
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9983323046286415,
+      "rounds": 600,
+      "scope": "2025-10-16",
+      "seed_a": 42,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.720950023269111e-05,
+      "standalone_seed_spread_std": 3.286497090658552e-05,
+      "var_delta_z": 0.008073874266901449
+    },
+    {
+      "component": "CAP",
+      "pearson_prediction": 0.9983787512248549,
+      "rounds": 600,
+      "scope": "2025-10-16",
+      "seed_a": 43,
+      "seed_b": 44,
+      "standalone_seed_spread_range": 5.720950023269111e-05,
+      "standalone_seed_spread_std": 3.286497090658552e-05,
+      "var_delta_z": 0.007849391958048253
+    }
+  ],
+  "submission_created": false,
+  "test_data_or_predictions_read": false,
+  "verdict": "REJECT"
+}

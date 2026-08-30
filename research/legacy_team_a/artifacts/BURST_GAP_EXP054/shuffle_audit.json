@@ -1,0 +1,8 @@
+{
+  "joint_rows": true,
+  "permutation_sha256": "bd285dd88e3682d947289f3d8d582c9a143b4dad59f42449bb2ee8050daf5792",
+  "recipient_labels_in_training": false,
+  "strata_preserved": true,
+  "strata_sha256": "d82dcf04257417e3b1426e64d70d07ba157607232fa2f479bbab9eb709257abc",
+  "user_halves": "splitmix64(user_id)&1"
+}

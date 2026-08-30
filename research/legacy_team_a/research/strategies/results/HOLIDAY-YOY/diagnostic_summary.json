@@ -1,0 +1,28 @@
+{
+  "method": "14-day focal response versus adjacent 14-day neighbor",
+  "yoy_window": "Jan01-Jan14 vs Jan15-Jan28, 2025->2026",
+  "placebo_window": "Jan15-Jan28 vs Jan29-Feb11, 2025->2026",
+  "yoy": {
+    "median_pearson_history": 0.03996178823110417,
+    "median_spearman_history": 0.03833305145473321,
+    "median_r2_oos": 0.0016825824688866398,
+    "median_auc_positive": 0.5182233976219507
+  },
+  "placebo": {
+    "median_pearson_history": 0.012811408822293629,
+    "median_spearman_history": 0.012247882649913017,
+    "median_r2_oos": 7.720154967516546e-05,
+    "median_auc_positive": 0.5054755718853513
+  },
+  "signal_pass": true,
+  "leakage_audit": {
+    "early_cutoff": "2025-04-03",
+    "early_nbr_all_nan": true,
+    "late_cutoff": "2025-04-17",
+    "late_nbr_has_finite": true,
+    "max_source_pre": "2025-03-15",
+    "max_source_full": "2025-04-14",
+    "test_cutoff": "2026-02-13",
+    "passed": true
+  }
+}

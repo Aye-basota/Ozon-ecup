@@ -1,0 +1,9 @@
+prior_experiment,prior_mechanism,incremental_information,verdict
+EXP063 occurrence revisit,single S1-E11 two-part GMV member,eight incidence-only heads and their relative disagreement with p_base; no direct GMV donor blend,NOVEL
+EVENT-ORDER,ordered daily funnel-state transitions,"bagged temporal incidence estimators over aggregate state, not event-order tokens",NOVEL
+OPEN-FUNNEL,Search/Cart after last purchase,broad 227-feature incidence ensemble; no unresolved-funnel handcrafted state,NOVEL
+BURST/GAP,fixed episode/gap summaries,recency/capacity disagreement across independently trained incidence heads,NOVEL
+BTYD,parametric common-origin repeat-purchase process,nonparametric LightGBM incidence with recent cutoff cap and meta disagreement,NOVEL
+MHZ hazard,multi-horizon hazard/count heads,"only exact 30d incidence; novelty is ensemble disagreement versus own hurdle state, not extra horizons",NOVEL
+generic count/value,future count bins and conditional value,"no future count/value target; occurrence probability only, mu is frozen state scaling",NOVEL
+EXP075 temporal trajectory,position-specific daily/weekly path shape,same aggregate feature universe but a different supervised object: relative next-30d incidence shock,PARTIALLY_OVERLAPPING_FEATURES_NEW_TARGET_GEOMETRY

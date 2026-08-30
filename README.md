@@ -1,81 +1,122 @@
-# Ozon E-Cup clean research workspace
+# Ozon eCup 2026 — Team A solution
 
-This repository is the minimal reproducible environment for new model research.
-The task is to predict each eligible user's next-30-day GMV. The competition
-metric is RMSLE; models and blends operate in `z = log1p(prediction)` space.
+## Overview
 
-## Ground truth and validation
+This branch is the reproducible Team-A research and delivery package for the
+30-day user GMV prediction task. The competition metric is RMSLE, so model
+ensembles are assembled in `log1p` space. The repository preserves the actual
+research history, runners, reports and manifests while keeping large raw/cache
+artifacts outside Git.
 
-- Raw events: 30,631,006 daily rows, 250,000 users, `2025-01-01..2026-02-13`.
-- Test cutoff: `2026-02-13`.
-- Eligibility: at least one observed day in each of the three latest 30-day blocks.
-- Target: GMV sum in `(cutoff, cutoff + 30 days]`.
-- Validation folds: `2025-09-04`, `2025-09-18`, `2025-10-02`, `2025-10-16`.
-- A train cutoff is legal only when `train_cutoff + 30 days <= validation_cutoff`.
-- wCV: per-fold RMSLE after an optimal global log offset, weighted `1:2:4:8`.
-- Row key: `(cutoff, user_id)` for OOF and `user_id` for TEST.
+## Final solutions
 
-Feature code must enter through `src.features.build_features(cutoff_date)`.
-That function reads only rows with `event_date <= cutoff_date`.
+| Solution | Formula | Expected SHA256 | Public LB evidence |
+|---|---|---|---|
+| `SUBMIT_STRONGEST55_TEAMB45` | 55% `STRONGEST_CURRENT` + 45% level-aligned Team-B | `1ce85203…a14fb4` | No confirmed score found; geometry report forecast 1.64823 (estimate, not fact) |
+| `SUBMIT_JOINT86_TEAMB14` | 86% `SUBMIT_JOINT_V2` + 14% level-aligned Team-B | `85d9cd64…dac02` | 1.6458200196207617, recorded in the teammate reproduction request |
 
-## Two baselines that must not be conflated
+Both final CSV files reproduce byte-for-byte from committed frozen component
+predictions. The upstream generation script for the 86% `SUBMIT_JOINT_V2`
+anchor was not found; that boundary is explicitly marked
+`PROVENANCE_INCOMPLETE`, while its bytes, SHA, audits and public score are
+preserved.
 
-**Public incumbent:** `1.6466079084`. It is a TEST-only submission-geometry
-result. No correct fold-safe OOF equivalent is available, so it is not an
-offline comparison baseline.
+## Repository structure
 
-**Canonical offline baseline:** `EXP_037_STRONGEST_CURRENT`, frozen wCV
-`1.7475098625201952` on 770,616 aligned OOF rows. Its log-space recipe is
-`0.10 CAP + 0.20 UNC + 0.25 DIST + 0.225 SEQ-AVG3 + 0.225 ETX-AVG3`.
-The compact canonical artifact is
-`artifacts/oof/EXP_037_STRONGEST_CURRENT.parquet`.
+- `src/` — clean baseline feature/model/validation utilities;
+- `scripts/reproduce_final.py` — common final reproduction entry point;
+- `experiments/` — 95-entry unified index and preserved `exp_001…exp_071` reports;
+- `research/new_directions/` — later EXP069–EXP090 research, runners and reports;
+- `research/legacy_team_a/` — exact source/report snapshot from the active Team-A worktree;
+- `research/submission_geometry/` — geometry code, reports and two historical champions;
+- `reproducibility/` — standalone packages for the two final submissions;
+- `submissions/` — selected final and direct-parent CSV files only;
+- `docs/TEAM_A_SOURCE_INVENTORY.csv` — 8,022-file SHA256 forensic inventory.
 
-## Setup and validation
+## Data
 
-1. Copy `config/paths.example.yaml` to `config/paths.local.yaml` and set absolute
-   external paths. The local file is ignored by Git.
-2. Install the unchanged minimal dependency set: `python -m pip install -r requirements.txt`.
-3. Run:
-
-```text
-python scripts/validate_environment.py
-python scripts/validate_baseline.py
-```
-
-Neither command trains a model.
-
-## New experiment
-
-1. Copy `experiments/TEMPLATE` to `experiments/EXP_XXX_name`.
-2. Fill its hypothesis, exact change, validation, and success gate before running.
-3. Run a tabular challenger with:
+Place the competition data at:
 
 ```text
-python scripts/run_tabular_experiment.py --config experiments/EXP_XXX_name/config.yaml
+data/raw/train.parquet
+data/raw/sample_submit.csv
 ```
 
-Add `--test` only after the experiment's OOF decision permits TEST inference.
-The runner writes:
+Expected `train.parquet` SHA256:
 
-- `artifacts/oof/EXP_XXX_NAME.parquet`;
-- `artifacts/test/EXP_XXX_NAME.parquet` when requested;
-- experiment-local `metrics.json` and `report.md`.
+```text
+5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0
+```
 
-Allowed experiment verdicts are `PASS`, `WEAK_SIGNAL`, `REJECT`, and `INVALID`.
-After review, update `registry/experiments.csv` explicitly.
+The feature builders enforce the family-specific cutoff boundary (`<` or `<=`)
+and never read events after cutoff; targets use
+`[cutoff, cutoff + 30 days)`. Raw data, generated panels, caches and large
+research artifacts are ignored by Git and remain traceable through the source
+inventory.
 
-## Layout
+## Environment setup
 
-- `config/`: competition truth and external path template.
-- `src/`: reusable data, features, models, validation, metrics, blending, and artifact APIs.
-- `baselines/`: canonical baseline definition and provenance.
-- `artifacts/`: standardized predictions; only the compact canonical OOF is versioned.
-- `experiments/`: new experiment folders and template.
-- `registry/`: curated experiment, model, submission, and source provenance tables.
-- `research_packets/`: references to separate research lines.
-- `reports/`: repository-level reports only.
+The exact frozen rebuild uses Python 3.13:
 
-Raw data, historical caches, checkpoints, old experiment reports, and submission
-dumps remain external. The separate geometry workspace is
-`C:/Users/Admin/Desktop/submission_geometry_research`; see
-`research_packets/submission_geometry_reference.md` for the PASS handoff.
+```powershell
+py -3.13 -m venv .venv-rebuild
+.\.venv-rebuild\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+Historical full training used two incompatible pinned environments. Install
+`reproducibility/SUBMIT_STRONGEST55_TEAMB45/requirements-strongest.txt` with
+Python 3.13/CUDA 12.6, and `requirements-team-b.txt` with Python 3.11. The
+Team-B requirements are also stored in the JOINT package.
+
+## Reproduce from precomputed predictions
+
+```powershell
+python scripts/reproduce_final.py --solution SUBMIT_STRONGEST55_TEAMB45 --from-precomputed
+python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-precomputed
+```
+
+Each command validates columns, 250,000 unique users, order, finite/nonnegative
+predictions, expected SHA256, byte identity, maximum absolute prediction
+difference and RMS log-space difference.
+
+## Reproduce from raw data
+
+```powershell
+python scripts/reproduce_final.py --solution SUBMIT_STRONGEST55_TEAMB45 --from-raw `
+  --raw-data data/raw/train.parquet `
+  --strongest-python .venv-strongest/Scripts/python.exe `
+  --team-b-python .venv-team-b/Scripts/python.exe
+
+python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-raw `
+  --raw-data data/raw/train.parquet `
+  --team-b-python .venv-team-b/Scripts/python.exe
+```
+
+For STRONGEST this runs raw → features → three tabular models → frozen
+SEQ/ETX predictions → STRONGEST → retrained Team-B → final blend. Full neural
+retraining commands are preserved in its package README but are intentionally
+not the default multi-hour audit. For JOINT, raw mode retrains Team-B and blends
+it with frozen `SUBMIT_JOINT_V2`; a fully raw JOINT rebuild is impossible until
+the missing upstream anchor generator is recovered.
+
+## Main model families and ensemble
+
+`STRONGEST_CURRENT` combines CAP, UNC and DIST tabular LightGBM families with a
+TCN-like SEQ ensemble and the sparse-event ETX transformer. The external
+Team-B vector combines LightGBM regression/classification, a 16-bin
+distribution head, XGBoost and CatBoost over recency, post-order and behavior
+features. Submission-geometry, ORTH and A1/A2 research operate on prediction
+vectors and are historical ancestors of the JOINT anchor.
+
+See [solution architecture](docs/SOLUTION_ARCHITECTURE.md),
+[experiment index](experiments/README.md) and
+[reproducibility guide](docs/REPRODUCIBILITY.md) for details.
+
+## Final submissions
+
+- `submissions/SUBMIT_STRONGEST55_TEAMB45.csv`
+- `submissions/SUBMIT_JOINT86_TEAMB14.csv`
+
+Do not treat geometry forecasts as measured leaderboard scores. The exact LB
+provenance and remaining gaps are recorded in each package manifest and in the
+packaging report.

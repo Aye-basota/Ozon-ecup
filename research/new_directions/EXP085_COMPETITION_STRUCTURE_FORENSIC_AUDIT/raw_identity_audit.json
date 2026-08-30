@@ -1,0 +1,17 @@
+{
+  "rows": 30631006,
+  "gmv_sum_mismatch": 0,
+  "to_ord_sum_mismatch": 0,
+  "to_cart_sum_mismatch": 0,
+  "search_indicator_mismatch": 0,
+  "has_search_to_cart_mismatch": 0,
+  "has_search_to_ord_mismatch": 0,
+  "has_cat_to_cart_mismatch": 0,
+  "has_cat_to_ord_mismatch": 0,
+  "gmv_positive_without_order": 0,
+  "order_without_positive_gmv": 0,
+  "all_informational_fields_zero": 4549734,
+  "negative_count_rows": 0,
+  "negative_gmv_rows": 0,
+  "max_abs_gmv_identity_error": 5.275069270282984e-11
+}

@@ -1,0 +1,12 @@
+{
+  "required_Delta_MSE_gain": 0.004909273595109731,
+  "weighted_purged_rho": -0.0017326242356316532,
+  "achieved_purged_rho_squared": 3.0019867418981703e-06,
+  "weighted_production_residual_MSE": 3.0920368986977635,
+  "correlation_only_MSE_headroom": 9.282253775350621e-06,
+  "correlation_only_fraction_of_gap": 0.0018907591103899653,
+  "nested_point_MSE_gain": 0.0,
+  "nested_point_fraction_of_gap": 0.0,
+  "robust_95pct_MSE_headroom": 0.0,
+  "robust_95pct_fraction_of_gap": 0.0
+}

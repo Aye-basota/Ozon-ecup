@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "conditional_head": true,
+    "model_state": true,
+    "optimizer_state": true,
+    "predictions": true,
+    "python_numpy_torch_cuda_rng": true
+  },
+  "max_abs_delta_z": 0.0,
+  "mean_delta_z": 0.0,
+  "prediction_sha256": [
+    "67ee85d8dda768611ace5799dc56fff3f4663da455bbdfab35d234a44c5c3798",
+    "67ee85d8dda768611ace5799dc56fff3f4663da455bbdfab35d234a44c5c3798"
+  ],
+  "snapshot_checks": [
+    {
+      "conditional": true,
+      "direct_head": true,
+      "model": true,
+      "optimizer": true,
+      "rng": true,
+      "step": 0
+    },
+    {
+      "conditional": true,
+      "direct_head": true,
+      "model": true,
+      "optimizer": true,
+      "rng": true,
+      "step": 1
+    },
+    {
+      "conditional": true,
+      "direct_head": true,
+      "model": true,
+      "optimizer": true,
+      "rng": true,
+      "step": 100
+    }
+  ],
+  "technical_pass": true,
+  "var_delta_z": 0.0
+}

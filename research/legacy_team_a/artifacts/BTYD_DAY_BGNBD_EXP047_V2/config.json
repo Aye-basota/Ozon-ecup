@@ -1,0 +1,89 @@
+{
+  "aggregation": "exact S2 hybrid: QMC n<=4; FW+GH11 n>=5",
+  "bgnbd": "basic common-origin; r,alpha,a,b positive; no covariates",
+  "blend_grid": [
+    0.0,
+    0.025,
+    0.05,
+    0.1,
+    0.15
+  ],
+  "count_cap": 30,
+  "crossfit": "two-sided user cross-fit",
+  "event": "purchase_day = (gmv > 0)",
+  "experiment_id": "BTYD-DAY-BGNBD-RESIDUAL",
+  "experiment_number": 47,
+  "first_day_event_time": 1,
+  "fold_weights": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "forbidden": [
+    "test inference",
+    "submission",
+    "LightGBM training",
+    "neural training",
+    "penalizer/model grid",
+    "segment gate"
+  ],
+  "horizon_days": 30,
+  "monetary": "donor-only log(gmv_day), K=3 mean shrinkage, population sigma",
+  "optimizer": "L-BFGS-B in log-space",
+  "optimizer_bounds_log": [
+    [
+      -9.21034,
+      9.21034
+    ],
+    [
+      -6.90776,
+      13.81551
+    ],
+    [
+      -9.21034,
+      9.21034
+    ],
+    [
+      -9.21034,
+      9.21034
+    ]
+  ],
+  "optimizer_starts": [
+    [
+      0.5,
+      20.0,
+      1.5,
+      3.0
+    ],
+    [
+      1.0,
+      50.0,
+      2.0,
+      5.0
+    ],
+    [
+      2.0,
+      100.0,
+      3.0,
+      8.0
+    ]
+  ],
+  "origin": "2024-12-31",
+  "prefix": "BTYD_DAY_BGNBD_EXP047_V2",
+  "seed": 42,
+  "seed_source": "src/config.py",
+  "split": "splitmix64(user_id)&1",
+  "stability_gates": {
+    "gradient_norm": 0.001,
+    "log_parameter_spread": 0.1,
+    "nll_spread": 1e-06
+  },
+  "tie_tolerance": 1e-05
+}

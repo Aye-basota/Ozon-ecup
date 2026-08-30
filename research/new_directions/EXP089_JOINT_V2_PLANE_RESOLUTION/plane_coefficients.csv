@@ -1,0 +1,9 @@
+analysis,target,basis_vector,coefficient,axis_RMS,component_RMS,energy_fraction,notes
+realized_sequential,d_v2,old_sent_span,,,0.002380714703953508,0.006279492150132016,orthogonal projection aggregate
+realized_sequential,d_v2,joint_unique,0.4686358589502117,0.057896408118858975,0.027132332948913485,0.8156129052134184,realized clipped EXP075 unique axis
+realized_sequential,d_v2,w_old,-0.027412154468035514,0.02937664566335512,0.0008052771486766362,0.0007184566417044283,EXP088 robust axis after sequential residualization
+realized_sequential,d_v2,residual_e,1.0,0.012653440136960702,0.012653440136960702,0.1773891459947453,"outside old span, joint_unique and w"
+pre_submit_A1_A2,d_v2_minus_old_span,d_A1,0.332042324890222,0.048638234680030396,,0.8097882660381774,joint two-vector least squares
+pre_submit_A1_A2,d_v2_minus_old_span,d_A2,0.3127027647904132,0.05662179533869324,0.027035277586570063,0.8097882660381774,joint two-vector least squares
+full_population_diagnostic,public_optimum,realized_d_exp075,0.46365420593415246,0.05810292133133192,,,not an identified A1/A2 candidate
+full_population_diagnostic,public_optimum,realized_d_v2,0.09463081821878165,0.030043400720064225,,,not an identified A1/A2 candidate

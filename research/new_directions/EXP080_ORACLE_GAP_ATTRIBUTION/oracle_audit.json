@@ -1,0 +1,78 @@
+{
+  "phase": "oracle_only_no_training",
+  "models_trained": 0,
+  "forbidden_activity_feature_loaded": false,
+  "raw_sha256": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0",
+  "canonical_oof_sha256": "d3e8893b83f3f30d2a47469bde646b81548dd04078e84689d394b50574206123",
+  "a2_oof_sha256": "682189a3d6c32914a35d432a116023d3c796e12cf87d8e96ca5aa3cc5615d3bb",
+  "current_submission_sha256": "d567d91d66e4d80e28998de6139c48c59f7a607b3f8165c88a1d05259c66c901",
+  "orth_alpha_sha256": "9a8adb83e7b34bb6c12b7eb51584d1bf9a93825945d285258d4e1dd991f4b838",
+  "production_bank_columns": 40,
+  "canonical_rows": 770616,
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_weights": {
+    "2025-09-04": 1.0,
+    "2025-09-18": 2.0,
+    "2025-10-02": 4.0,
+    "2025-10-16": 8.0
+  },
+  "target_parity": [
+    {
+      "cutoff": "2025-09-04",
+      "max_y30_error": 1.8189894035458565e-12,
+      "max_target_log_error": 1.7763568394002505e-15
+    },
+    {
+      "cutoff": "2025-09-18",
+      "max_y30_error": 1.8189894035458565e-12,
+      "max_target_log_error": 1.7763568394002505e-15
+    },
+    {
+      "cutoff": "2025-10-02",
+      "max_y30_error": 3.637978807091713e-12,
+      "max_target_log_error": 1.7763568394002505e-15
+    },
+    {
+      "cutoff": "2025-10-16",
+      "max_y30_error": 3.637978807091713e-12,
+      "max_target_log_error": 1.7763568394002505e-15
+    }
+  ],
+  "EXP076_b_G_max_abs_parity_error": 1.3834419720915037e-16,
+  "weighted_production_like_current_RMSLE": 1.7501040483045136,
+  "weighted_production_like_current_MSE": 3.062978386390088,
+  "production_baseline_definition": "composition-matched SUBMIT_ORTH_ALPHA proxy + foldwise EXP075 joint raw correction projected out of [1,z_match,40-component OOF bank], unit deployed amplitude, z>=0 clip",
+  "projection_basis": "[1,z_current,z_match,40 clean OOF components,EXP075_postspan] per fold",
+  "oracle_gate": {
+    "zero_positive": {
+      "oracle_incremental_Delta_MSE": 2.19821064903003,
+      "passes_oracle_0_001_gate": true
+    },
+    "purchase_days_count": {
+      "oracle_incremental_Delta_MSE": 0.2799196864536229,
+      "passes_oracle_0_001_gate": true
+    },
+    "event_days_count": {
+      "oracle_incremental_Delta_MSE": 0.015180353371619194,
+      "passes_oracle_0_001_gate": true
+    },
+    "order_items_count": {
+      "oracle_incremental_Delta_MSE": 0.3211495269052321,
+      "passes_oracle_0_001_gate": true
+    },
+    "conditional_monetary_value": {
+      "oracle_incremental_Delta_MSE": 0.4394435539197392,
+      "passes_oracle_0_001_gate": true
+    },
+    "horizon_distribution": {
+      "oracle_incremental_Delta_MSE": 2.4001122530283587,
+      "passes_oracle_0_001_gate": true
+    }
+  },
+  "bank_audit_rows": 41
+}

@@ -1,0 +1,229 @@
+{
+  "added_slot_plan_sha256": "385737f95cc9de19efc07c31a5c2009b8cd80f3e23b5e97abc9e73dbd8bac3c6",
+  "arm": "VOL",
+  "baseline_checkpoint_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_DETSEQ01-S42-V1016.pt",
+  "baseline_checkpoint_sha256": "d0c2e5e6e25a54af01db29885e848b56c68e3f8ed327fe33cefdecaf816027e4",
+  "baseline_prediction_sha256": "e14e7fb3b5b4fa3d85c2862884d716acf843201b9f6ac039d5a786031c7c91b0",
+  "common_plan_sha256": "4a7220c2ca7701378566686385d5d01f5ec279f7ae9f0afb40c8722bb8444529",
+  "conditional_batch_shape": [
+    256,
+    365,
+    17
+  ],
+  "conditional_train_loss": 1.2776139080893743,
+  "direct_head_frozen": true,
+  "direct_head_received_gradients": false,
+  "direct_plan_sha256": "5fa6bc06485ff7cb66da16e1cecda8a239ebcacbb1b79a4463698d63affd6738",
+  "direct_train_loss": 3.11775973961762,
+  "duration_seconds": 1742.845556974411,
+  "environment": {
+    "cublas_workspace_config": ":4096:8",
+    "cudnn": 91002,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cudnn_tf32": true,
+    "deterministic_algorithms": true,
+    "deterministic_debug_mode": "2",
+    "device": "NVIDIA GeForce RTX 4060 Ti",
+    "matmul_tf32": true,
+    "numpy": "2.3.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "pythonhashseed": "42",
+    "torch": "2.11.0+cu126",
+    "torch_cuda": "12.6"
+  },
+  "experiment": "FRESH-COND-FT",
+  "extra_depth_clip": 289,
+  "extra_donor_group": "B",
+  "extra_in_direct_loss": false,
+  "extra_positive_only": true,
+  "final": {
+    "conditional_head_sha256": "b419328df961f558f793e796087b6357fd891c3820984d9a2884f349868c20f0",
+    "direct_head_sha256": "d0c9c0f71b873c4d11efd0285c883f95f1b3f23290020d24f1410e8def04a8ad",
+    "model_sha256": "402b2203734266227e66053e8a45adfce4d10935ee16c13c0737bcf8c0075997",
+    "optimizer_sha256": "16165ec1b3af357a220d52e61fa21aef78fea263052ec0f0a3a10a55d344a2a3",
+    "rng_sha256": "023314af1f9f8528fa2f9585c4cacb7b3e4757ffc3bffe8e9fde3efe3a14c291"
+  },
+  "full_plan_steps": 4842,
+  "gradients": {
+    "1": {
+      "encoder_from_conditional": 0.0,
+      "encoder_from_direct": 0.3398805856704712,
+      "encoder_from_weighted_conditional": 0.0
+    },
+    "100": {
+      "encoder_from_conditional": 0.174142524600029,
+      "encoder_from_direct": 0.30682530999183655,
+      "encoder_from_weighted_conditional": 0.04353563115000725
+    },
+    "1000": {
+      "encoder_from_conditional": 0.373913437128067,
+      "encoder_from_direct": 0.5163748264312744,
+      "encoder_from_weighted_conditional": 0.09347835928201675
+    },
+    "2421": {
+      "encoder_from_conditional": 0.22421160340309143,
+      "encoder_from_direct": 0.4082339107990265,
+      "encoder_from_weighted_conditional": 0.05605290085077286
+    },
+    "4842": {
+      "encoder_from_conditional": 0.4578191041946411,
+      "encoder_from_direct": 0.353890061378479,
+      "encoder_from_weighted_conditional": 0.11445477604866028
+    }
+  },
+  "inference_uses_conditional_head": false,
+  "initial": {
+    "conditional_head_sha256": "af61fbe282a983d671093dc2429f0d26a792186a58c8fefbbb7db24c7b774b3d",
+    "direct_head_sha256": "d0c9c0f71b873c4d11efd0285c883f95f1b3f23290020d24f1410e8def04a8ad",
+    "model_sha256": "a7dc44ef552f64278f6975fef1ac6d33867c09f609104b92e3add5619d097149",
+    "optimizer_sha256": "18f7205d972d0ac8d7bf038bb081f8dada0b5c344470d802c7531e487716ce61",
+    "rng_sha256": "8e97611e4c451a871729e91fcc8ce4ee84708f5cc288aa0743cf7ed463a04b05"
+  },
+  "kind": "arm",
+  "lr_sha256": {
+    "conditional": "c468652d3ebaa36f6a1ecd6aab365a76d00e9edca12da55b962b663a0ab2e536",
+    "encoder": "c8be47e8a45ffdea225f8fd9b6206669d2ff3eda41ea08752a355051feddc8ab"
+  },
+  "n_added_slots": 619776,
+  "n_common_slots": 619776,
+  "n_conditional_examples": 1239552,
+  "n_direct_examples": 4955174,
+  "n_steps": 4842,
+  "name": "FT-VOL-S42-V1016",
+  "paired_plan_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\plans\\pair_s42.npz",
+  "paired_plan_sha256": "a6a9e515681ae918bce33808b6139e26c67da439a8aebabc3d60248b812cf07a",
+  "plan_id": "c3bc0cc54ba63b12f15b066e6e73d71da43726af0cf4d11b59cd93b08b2c4756",
+  "predictions": {
+    "2421": {
+      "auc": 0.8440970526814067,
+      "auxiliary_conditional_rmse": 1.1179100227961085,
+      "bias": 0.05948629698455887,
+      "conditional_file": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\conditional_raw_step_02421.npy",
+      "conditional_file_sha256": "d92845030243fbde2f468923b79d3a08f06c30c1f78df4d840a9b5defcd0d6a1",
+      "dtype": "float32",
+      "file": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\z_raw_step_02421.npy",
+      "file_sha256": "d47977d51dd7bf9c88f795acc9dec40333e68fa9e59b326a21743e66c4f9d0b4",
+      "inference_uses_conditional_head": false,
+      "mean_z": 2.5704078674316406,
+      "n": 98707,
+      "offset": 0.059483722065064915,
+      "positive_only_error": 1.6723726542038493,
+      "rmsle_cal": 1.7394805432518887,
+      "rmsle_raw": 1.7404972267377035,
+      "sha256": "d60179b321fb8926e7af32ea5ef8f0885c5134c3c5998d3a59877d8c7a0a637f",
+      "std_z": 1.550668478012085
+    },
+    "4842": {
+      "auc": 0.8440972665457293,
+      "auxiliary_conditional_rmse": 1.1189450313237685,
+      "bias": 0.05965986571014481,
+      "conditional_file": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\conditional_raw_step_04842.npy",
+      "conditional_file_sha256": "96d74e1dc9f7672145c1eb2dd7dac4fd42abc430dfa93bbe651f8205ee43d1b8",
+      "dtype": "float32",
+      "file": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\z_raw_step_04842.npy",
+      "file_sha256": "02210cf383c2b4342ae882f3c08402af9558c8effb6312cb8e8e16ac026750cd",
+      "inference_uses_conditional_head": false,
+      "mean_z": 2.5702342987060547,
+      "n": 98707,
+      "offset": 0.059657487813710254,
+      "positive_only_error": 1.67175288759064,
+      "rmsle_cal": 1.7394597032685275,
+      "rmsle_raw": 1.7404823469939046,
+      "sha256": "97d24e0b3cf8739e1bddb511bb36ecc09394f13d6cce39a6c0709a1853d3b6a2",
+      "std_z": 1.549208402633667
+    }
+  },
+  "seed": 42,
+  "snapshots": [
+    {
+      "conditional_head_sha256": "af61fbe282a983d671093dc2429f0d26a792186a58c8fefbbb7db24c7b774b3d",
+      "direct_head_sha256": "d0c9c0f71b873c4d11efd0285c883f95f1b3f23290020d24f1410e8def04a8ad",
+      "file_sha256": "76b9c5b7a24acd276e460845f127388b5d16f2a29f39e7da15c621d560431ee4",
+      "gradient_norms": null,
+      "model_sha256": "a7dc44ef552f64278f6975fef1ac6d33867c09f609104b92e3add5619d097149",
+      "optimizer_sha256": "18f7205d972d0ac8d7bf038bb081f8dada0b5c344470d802c7531e487716ce61",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\snapshot_step_00000.pt",
+      "rng_sha256": "8e97611e4c451a871729e91fcc8ce4ee84708f5cc288aa0743cf7ed463a04b05",
+      "step": 0
+    },
+    {
+      "conditional_head_sha256": "e1cff840a69e1be823c889fbfac6a189ebffccb503ded8120806e39f4f236196",
+      "direct_head_sha256": "d0c9c0f71b873c4d11efd0285c883f95f1b3f23290020d24f1410e8def04a8ad",
+      "file_sha256": "adf1ee961a11c2974ca92715f4079adfe0cf3c7b1dc130ab5a5cc93afd813972",
+      "gradient_norms": {
+        "encoder_from_conditional": 0.0,
+        "encoder_from_direct": 0.3398805856704712,
+        "encoder_from_weighted_conditional": 0.0
+      },
+      "model_sha256": "a9f3a6b0bdb0854787e10180b0fc8b6de89de8b2d091470babd860f03a88ad5f",
+      "optimizer_sha256": "4e16f951aeebad8d421f7c8dc14d31726049736600877950e3f828da4ee35016",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\snapshot_step_00001.pt",
+      "rng_sha256": "e9641e8ff915dcf9f240d5ace23b8ed89672b41b94512406afc2ba7c1f1be7cc",
+      "step": 1
+    },
+    {
+      "conditional_head_sha256": "54d1dd8c8dcb9507889d28d346a6540e2edcce9b93c6b17420d88bf87bd5d2f4",
+      "direct_head_sha256": "d0c9c0f71b873c4d11efd0285c883f95f1b3f23290020d24f1410e8def04a8ad",
+      "file_sha256": "43531ebd8493db42bfd34d55e82ebe982ed0febd48969c310cdfe319773165ec",
+      "gradient_norms": {
+        "encoder_from_conditional": 0.174142524600029,
+        "encoder_from_direct": 0.30682530999183655,
+        "encoder_from_weighted_conditional": 0.04353563115000725
+      },
+      "model_sha256": "4c4a92dfa4921fdd8ab3244bda0f6d1e6998e9cce32d6b0f7c67f8741b4a8c73",
+      "optimizer_sha256": "ca03c1804a8a54828090646ff9f5470d5cdbec095ab7f881e5e7294a75f82114",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\snapshot_step_00100.pt",
+      "rng_sha256": "c02e81492a1c23d0fe56b8de441bb020a394fe8271dcc72f15d53e47f7433b33",
+      "step": 100
+    },
+    {
+      "conditional_head_sha256": "00c5d2f8cf8e229a6a7d6f1276e9245b463945cd8b811378e1b56e2fbd2e3680",
+      "direct_head_sha256": "d0c9c0f71b873c4d11efd0285c883f95f1b3f23290020d24f1410e8def04a8ad",
+      "file_sha256": "434dd78cada058d55b4265aaac4961ad49aea4ba571d8f8b914155649dc6c2d3",
+      "gradient_norms": {
+        "encoder_from_conditional": 0.373913437128067,
+        "encoder_from_direct": 0.5163748264312744,
+        "encoder_from_weighted_conditional": 0.09347835928201675
+      },
+      "model_sha256": "301da8a7a48d77211f88a826a8055e73af7f05d045ef0d956ef5464a6c23d253",
+      "optimizer_sha256": "054499c35c89926a3ae5436c595f3613516392b8077ab9d979b4f18a19f5c95f",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\snapshot_step_01000.pt",
+      "rng_sha256": "590cbd6d52064aad719e5965d55154bb848dfcb7d4af852127524556b0a930be",
+      "step": 1000
+    },
+    {
+      "conditional_head_sha256": "88aef899808b776843e7778aea0020fa34134e462e3ddc45ff9112c6b0e749b6",
+      "direct_head_sha256": "d0c9c0f71b873c4d11efd0285c883f95f1b3f23290020d24f1410e8def04a8ad",
+      "file_sha256": "7bb887313f44503a498fe1637609b623c54083b49dea5cde42786e083f0ac6cc",
+      "gradient_norms": {
+        "encoder_from_conditional": 0.22421160340309143,
+        "encoder_from_direct": 0.4082339107990265,
+        "encoder_from_weighted_conditional": 0.05605290085077286
+      },
+      "model_sha256": "c8c49c8758736aa2e680f4564b68d911041989ce31d009193e3981165325d88f",
+      "optimizer_sha256": "41946f81a5f715d2df1e9804831188384dc4d3368ee9423b44b0ee2efbc7e214",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\snapshot_step_02421.pt",
+      "rng_sha256": "0af580b1b8b1c9fc0d71b142f16201ca3cc6940c60207303c3c39d435e38031f",
+      "step": 2421
+    },
+    {
+      "conditional_head_sha256": "b419328df961f558f793e796087b6357fd891c3820984d9a2884f349868c20f0",
+      "direct_head_sha256": "d0c9c0f71b873c4d11efd0285c883f95f1b3f23290020d24f1410e8def04a8ad",
+      "file_sha256": "197e13178a9fece50915a6364f738c1d5cd8f600a12d782f37ef1448cafa99b5",
+      "gradient_norms": {
+        "encoder_from_conditional": 0.4578191041946411,
+        "encoder_from_direct": 0.353890061378479,
+        "encoder_from_weighted_conditional": 0.11445477604866028
+      },
+      "model_sha256": "402b2203734266227e66053e8a45adfce4d10935ee16c13c0737bcf8c0075997",
+      "optimizer_sha256": "16165ec1b3af357a220d52e61fa21aef78fea263052ec0f0a3a10a55d344a2a3",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\FRESH_COND_FT_EXP044\\arms\\FT-VOL-S42-V1016\\snapshot_step_04842.pt",
+      "rng_sha256": "023314af1f9f8528fa2f9585c4cacb7b3e4757ffc3bffe8e9fde3efe3a14c291",
+      "step": 4842
+    }
+  ],
+  "val": "2025-10-16",
+  "validation_order_sha256": "5e408053b344ceee25276d2f4dcff0ff4f3f5e13aea05710303278150a4db3bf"
+}

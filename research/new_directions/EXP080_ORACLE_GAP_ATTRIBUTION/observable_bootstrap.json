@@ -1,0 +1,57 @@
+{
+  "activity": {
+    "replicates": 1000,
+    "seed": 20260828,
+    "unit": "user_id cluster across all folds",
+    "CI95": [
+      -0.0005338184045988118,
+      7.602944059375519e-06
+    ],
+    "P_Delta_MSE_lt_0": 0.973,
+    "draw_mean": -0.0002520436987514575
+  },
+  "count": {
+    "replicates": 1000,
+    "seed": 20260829,
+    "unit": "user_id cluster across all folds",
+    "CI95": [
+      -0.00021721457221952778,
+      0.0002654063466490931
+    ],
+    "P_Delta_MSE_lt_0": 0.46,
+    "draw_mean": 1.4584741826635748e-05
+  },
+  "monetary": {
+    "replicates": 1000,
+    "seed": 20260830,
+    "unit": "user_id cluster across all folds",
+    "CI95": [
+      -9.288445257914374e-05,
+      1.2246355070250453e-05
+    ],
+    "P_Delta_MSE_lt_0": 0.94,
+    "draw_mean": -4.111636597122607e-05
+  },
+  "user_state_segments": {
+    "replicates": 1000,
+    "seed": 20260831,
+    "unit": "user_id cluster across all folds",
+    "CI95": [
+      -0.0005593941509742124,
+      9.887756038037936e-05
+    ],
+    "P_Delta_MSE_lt_0": 0.927,
+    "draw_mean": -0.00024031807170201165
+  },
+  "joint_all": {
+    "replicates": 1000,
+    "seed": 20260838,
+    "unit": "user_id cluster across all folds",
+    "CI95": [
+      -0.0009956079674407268,
+      -3.524401322785001e-05
+    ],
+    "P_Delta_MSE_lt_0": 0.983,
+    "draw_mean": -0.000526252631376086
+  }
+}

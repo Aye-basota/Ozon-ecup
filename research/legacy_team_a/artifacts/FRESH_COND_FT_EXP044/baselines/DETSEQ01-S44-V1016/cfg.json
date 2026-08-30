@@ -1,0 +1,29 @@
+{
+  "aug": "none",
+  "aug_full": 0.0,
+  "aug_p": 0.0,
+  "batch": 1024,
+  "blocks": 8,
+  "chunk": 256,
+  "compile": false,
+  "depth_aug": 0.0,
+  "depth_grid": [
+    90,
+    120,
+    150,
+    180,
+    220,
+    254,
+    289
+  ],
+  "dropout": 0.1,
+  "epochs": 4,
+  "hidden": 64,
+  "kernel": 3,
+  "lr": 0.003,
+  "seed": 44,
+  "warmup": 300,
+  "wd": 0.01,
+  "workers": 1,
+  "z0": 2.2882602214813232
+}

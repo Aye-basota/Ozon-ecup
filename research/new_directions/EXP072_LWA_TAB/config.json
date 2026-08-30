@@ -1,0 +1,92 @@
+{
+  "experiment": "EXP072_LWA_TAB",
+  "hypothesis": "Replacing the frozen-encoder conditional-positive head with full-capacity tabular LightGBM on the frozen 227 LnormNone features scales the legal late-window amount channel.",
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_weights": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "pilot_fold": "2025-10-16",
+  "clean_cutoff_counts": {
+    "2025-09-04": 18,
+    "2025-09-18": 20,
+    "2025-10-02": 22,
+    "2025-10-16": 24
+  },
+  "extra_cutoffs": [
+    "2025-10-22",
+    "2025-10-29",
+    "2025-11-05",
+    "2025-11-12",
+    "2025-11-19",
+    "2025-11-26",
+    "2025-12-03",
+    "2025-12-10",
+    "2025-12-17",
+    "2025-12-24",
+    "2025-12-31",
+    "2026-01-07",
+    "2026-01-14"
+  ],
+  "noov_cutoff_counts": {
+    "2025-09-04": 13,
+    "2025-09-18": 13,
+    "2025-10-02": 12,
+    "2025-10-16": 9
+  },
+  "arms": [
+    "CLEAN",
+    "FRESH",
+    "FRESH_NOOV",
+    "VOL"
+  ],
+  "target": "z_pos=log1p(y30), restricted to y30>0; no per-cutoff target centering",
+  "features": "227 frozen feat_{T}_LnormNone columns, unchanged order/dtype, cast to float32 only for LightGBM matrix input",
+  "crossfit": "splitmix64(user_id)&1; donor side s predicts recipient side 1-s",
+  "vol_control": "same number of rows as EXTRA; replacement sampling from earliest floor(n_clean_cutoffs/3) cutoff slots; RNG seed 42",
+  "correction": "winsor raw mu difference with donor-fold q0.005/q0.995; subtract donor clipped mean; multiply frozen EXP069 p_dist",
+  "estimator_provenance": {
+    "source": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\experiments\\exp_013_s1_e11_two_part.md",
+    "parameter_source": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\src\\config.py",
+    "description": "historical S1-E11 positive-part LightGBM regressor, recovered verbatim"
+  },
+  "lightgbm": {
+    "num_boost_round": 600,
+    "objective": "regression",
+    "metric": "rmse",
+    "learning_rate": 0.05,
+    "num_leaves": 127,
+    "min_data_in_leaf": 200,
+    "feature_fraction": 0.7,
+    "bagging_fraction": 0.8,
+    "bagging_freq": 1,
+    "lambda_l2": 5.0,
+    "verbose": -1,
+    "seed": 42,
+    "num_threads": 12,
+    "max_bin": 63,
+    "force_row_wise": true,
+    "deterministic": true
+  },
+  "alpha_grid_nested": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5
+  ],
+  "bootstrap_user_clusters": 1000,
+  "panel_cache_adaptation": "13 EXTRA b3 cache files claimed by the review packet are absent. Exact canonical b3 eligibility is reconstructed in memory from raw events; no external cache is written.",
+  "noov_membership_note": "The stated interval formula would retain 11 EXTRA cutoffs for V=2025-10-02, but the protocol explicitly fixes 12 and drops only 2025-10-22. The explicit 13/13/12/9 membership controls.",
+  "public_lb_used": false,
+  "test_inference_authorized": false
+}

@@ -1,0 +1,65 @@
+{
+ "span_{1,z_alpha}": {
+  "rank": 1,
+  "perp_centered": 0.997407090046157,
+  "perp_uncentered": 0.9975571451012126
+ },
+ "nested_sweep_best_first": [
+  {
+   "k": 1,
+   "perp_centered": 0.9970231847193313
+  },
+  {
+   "k": 2,
+   "perp_centered": 0.9968350020841994
+  },
+  {
+   "k": 3,
+   "perp_centered": 0.9954844142494025
+  },
+  {
+   "k": 5,
+   "perp_centered": 0.9941109201112739
+  },
+  {
+   "k": 8,
+   "perp_centered": 0.9923286690899289
+  },
+  {
+   "k": 12,
+   "perp_centered": 0.9797173708111775
+  },
+  {
+   "k": 20,
+   "perp_centered": 0.8613453964092409
+  },
+  {
+   "k": 30,
+   "perp_centered": 0.8458230462990756
+  },
+  {
+   "k": 45,
+   "perp_centered": 0.7580173910278013
+  },
+  {
+   "k": 60,
+   "perp_centered": 0.7343140931713965
+  },
+  {
+   "k": 67,
+   "perp_centered": 0.7039412993713918
+  },
+  {
+   "k": 78,
+   "perp_centered": 0.6768063586244694
+  }
+ ],
+ "full_span": {
+  "perp_centered": 0.6768063586181639
+ },
+ "stored": {
+  "RMS_Draw": 0.07317751058762631,
+  "RMS_Dperp": 0.05843391232448452,
+  "perp_fraction_uncentered": 0.6376386986323535
+ }
+}

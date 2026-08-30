@@ -1,0 +1,14 @@
+{
+  "current_RMSLE": 1.646143314225527,
+  "target_RMSLE": 1.6446514942,
+  "required_Delta_RMSLE_improvement": 0.0014918200255271685,
+  "current_MSE": 2.7097878109694022,
+  "target_MSE": 2.7048785373742925,
+  "required_Delta_MSE_gain": 0.004909273595109731,
+  "required_independent_rho": 0.04256385701551551,
+  "required_explained_residual_variance_rho2": 0.0018116819240372487,
+  "equivalent_global_intercept_abs_log_error": 0.07006620865374215,
+  "required_MSE_reduction_per_user": 0.004909273595109731,
+  "required_total_SSE_reduction_for_250k_users": 1227.3183987774328,
+  "fraction_current_residual_MSE_to_explain": 0.0018116819240372487
+}

@@ -1,0 +1,182 @@
+{
+  "count": 35,
+  "experiment": "BTYD-DAY-BGNBD-RESIDUAL",
+  "files": [
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\aggregation_mc_audit.json",
+      "sha256": "ea06e6c544aeaf4f2bcd1de4e96ebd57dc7cf0f19b562d1acdbb40460dcca1b3",
+      "size": 10236
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\baseline_manifest.json",
+      "sha256": "39262e15bbbae8af39c5d62b9db080f6e51223830388ee0f6e4b816e53ed7ae2",
+      "size": 3305
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\config.json",
+      "sha256": "2db1f7d549ad74879f62b6c6f31b7c11c5cc6bbe2de1d6399be2e7a232fad64a",
+      "size": 1637
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\data_event_audit.json",
+      "sha256": "51158531ea73131dbaa5dfa56b5f1fbf790556f44300bd4123ea1cb65bfa3f6e",
+      "size": 826
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\fit_20250904_donor0.json",
+      "sha256": "aac6139706d41b54f9cfca055ee6b3f3bd9bf08c66d2966f5447841319b468fd",
+      "size": 3423
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\fit_20250904_donor1.json",
+      "sha256": "b3b8f9014e6ead717a36c46a2ee1a273931d9c7bd7e9c3e4cfa8be75cccd78df",
+      "size": 3435
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\fit_20250918_donor0.json",
+      "sha256": "3ef254f7820a868068d45b2a269fc937e56d0eb2ffad3e07b2531dea2cfa738f",
+      "size": 3433
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\fit_20250918_donor1.json",
+      "sha256": "83eeb9939bdcdbc800735948a6948c04e84126ecadd3d9a0e504fd3f8507e79d",
+      "size": 3425
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\fit_20251002_donor0.json",
+      "sha256": "a624de383d53938a27e7f4b11ecf8e480b56d6c8bfab9a2e8538c75666865327",
+      "size": 3431
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\fit_20251002_donor1.json",
+      "sha256": "5072f8e3517f5f4484007c2a7d9c4a36bbb96d941bf8807da9dddfdbf72c878f",
+      "size": 3427
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\fit_20251016_donor0.json",
+      "sha256": "7789579e4b8f4d75aa720876d936a73c264cd96e316a14e004cffd8aa488793d",
+      "size": 3420
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\fit_20251016_donor1.json",
+      "sha256": "b48e60ed4639e6e07120e79ad5ff70ed6033a644839871e741f7d7225724be8a",
+      "size": 3425
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\leakage_audit.json",
+      "sha256": "5660a21493a2d0679771b4befddce0d90b5fd9d7ba61d806cdd783dc15ee0423",
+      "size": 2698
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\leakage_audit_final.json",
+      "sha256": "d1db53a0d9a83184363f01b1862037b0a64e71893940fd8f95a2a9208ed98e9c",
+      "size": 3759
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\oof_raw.npz",
+      "sha256": "754d930b2347beb400b947c416cf56cc036f0b80c35ea039402432263b89d6af",
+      "size": 29401312
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\pmf_20250904.npz",
+      "sha256": "a7cabd330520e507255ef9dc759ab43c963f6f1d6ce7d7041d8d6755a5381a6a",
+      "size": 18966087
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\pmf_20250918.npz",
+      "sha256": "d9dc5203cb8e18fa6bd3593005ba284078bf714c1118c7e5addbbd51f95adf9e",
+      "size": 19378069
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\pmf_20251002.npz",
+      "sha256": "e748bd87e5f5ab10a04bfff27ba5d32d9bad4a65bc3a2dbdcc59841fa12a0025",
+      "size": 19809123
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\pmf_20251016.npz",
+      "sha256": "0cdee2a5dd925a786418a055d689720e8b86435e2901cc9754e9f18e7e72222b",
+      "size": 20228821
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\reanalysis_audit.json",
+      "sha256": "ebe07685f3d15cb41a6031b83bfd621b3960cc0d35cd653f083a23ff3b09147e",
+      "size": 346
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\rfm_20250904.npz",
+      "sha256": "1ec1998c62db14c8ed16052bdbb0fa5de0e32cea8bc8a59a7b93059f9ccf6fa2",
+      "size": 3954513
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\rfm_20250918.npz",
+      "sha256": "c8e3953ca1199408482a711942bd145b763e86040d684e308387cdce4047b865",
+      "size": 4003503
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\rfm_20251002.npz",
+      "sha256": "872907e9b04dc72bfcfdb350f357dbca83197a6635b584a4b145ddf4b8832f13",
+      "size": 4049688
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\rfm_20251016.npz",
+      "sha256": "dbebc9818dad65bf434c68e3cf4961516527690ff08797b1b7acd377a46e9193",
+      "size": 4096981
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\count_calibration.csv",
+      "sha256": "b1d6acbc13ad79a16d631de4cc6edfd3916b8e45b4239275c8c2be1b5c363a91",
+      "size": 20131
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\count_metrics.csv",
+      "sha256": "e82f008e9c28fc7b464eb83da5ee07e6f489321f6be23e2b11a593a2d4347069",
+      "size": 1007
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\fit_parameters.csv",
+      "sha256": "19f134484ad5f96adb9292561ef6c1856072dd6348f98462f1b97b3c27e412e3",
+      "size": 1599
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\fixed_weight_curve.csv",
+      "sha256": "c907c3263d53c05045a4bccc57552b1638142481a44d56f5aa7dff4497d40b2e",
+      "size": 1207
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\monetary_parameters.csv",
+      "sha256": "d8563f44fb0cbb3988f2f21388a363a35a516ab827ac48c557c084135fb700b3",
+      "size": 1252
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\nested_lofo.csv",
+      "sha256": "03612a7d40a279192cc702d69cb405247c3fbae85fb80ed95d3a7791dfb09416",
+      "size": 503
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\prediction_diagnostics.csv",
+      "sha256": "d9accd27bc292383876d0fa84120566d9a8ca1cef57590dfde807df79bf2d244",
+      "size": 657
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\prediction_diagnostics.json",
+      "sha256": "2a2c70cd31332ad7abe0673da2003df7df814d30c7218e827b91897903dadb71",
+      "size": 2265
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\segments.csv",
+      "sha256": "a0c08624d394da4265b4731e799252776636bb6457bbd61b462467389056a824",
+      "size": 4587
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\standalone_metrics.json",
+      "sha256": "b215184bf9b0a4728bd20f1a926e85c01bf6025154df9b151d30c2348dc982d0",
+      "size": 4937
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\strategies\\results\\BTYD_DAY_BGNBD\\summary.json",
+      "sha256": "884e4f423716e21a2923bc36091ac82b513c431274e2cfd3c8fa8cec58ff5468",
+      "size": 12776
+    }
+  ],
+  "prefix": "BTYD_DAY_BGNBD_EXP047_V2"
+}

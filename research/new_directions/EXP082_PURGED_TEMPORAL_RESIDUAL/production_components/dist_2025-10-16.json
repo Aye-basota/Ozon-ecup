@@ -1,0 +1,18 @@
+{
+  "mode": "canonical frozen artifact reuse",
+  "family": "dist",
+  "cutoff": "2025-10-16",
+  "source_name": "S1-DIST",
+  "source_paths": [
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-DIST.npz",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\PACT_dist_2025-10-16.npz"
+  ],
+  "source_sha256": [
+    "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+    "09b0bf07368356d2869874757880c3b2f812254c5dd0982d6a9da87ebfd5cb99"
+  ],
+  "runtime_seconds": 0.0,
+  "config_changed": false,
+  "artifact": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP082_PURGED_TEMPORAL_RESIDUAL\\production_components\\dist_2025-10-16.npz",
+  "sha256": "471446f7a07e2306f902a14bf681ae00b64afddc34ac0c3c98dbed12368b974c"
+}

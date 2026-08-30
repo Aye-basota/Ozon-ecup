@@ -1,0 +1,2 @@
+a,b,corr,std,mae,pct02,pct05,pct10
+blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85,metaocc_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85,0.9999601144663942,0.01489565357150964,0.010882274132021277,0.113852,0.010504,0.000596

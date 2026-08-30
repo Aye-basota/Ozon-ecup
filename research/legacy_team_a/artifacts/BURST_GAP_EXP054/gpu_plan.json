@@ -1,0 +1,32 @@
+{
+  "backbone_config": {
+    "batch": 512,
+    "blocks": 5,
+    "chunk": 128,
+    "compile": false,
+    "d_model": 128,
+    "dropout": 0.1,
+    "epochs": 4,
+    "ffn": 384,
+    "head_dim": 16,
+    "heads": 8,
+    "lr": 0.0015,
+    "n_tok": 192,
+    "seed": 42,
+    "tau_hi": 512.0,
+    "tau_lo": 4.0,
+    "warmup": 500,
+    "wd": 0.01,
+    "z0": 2.2882602214813232
+  },
+  "baseline_retrain": false,
+  "candidate_only_change": "tokenizer + <2% type embedding",
+  "fold": "2025-10-16",
+  "full_folds_automatic": false,
+  "gated": true,
+  "history_tokens": 191,
+  "query_tokens": 1,
+  "seed": 42,
+  "submission": false,
+  "test_inference": false
+}

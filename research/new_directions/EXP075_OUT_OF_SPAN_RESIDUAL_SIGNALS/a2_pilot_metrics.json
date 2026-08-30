@@ -1,0 +1,47 @@
+{
+  "experiment": "A2_WEEKLY_RESIDUAL_CNN_PILOT",
+  "validation_cutoff": "2025-10-16",
+  "train_cutoffs": [
+    "2025-07-31",
+    "2025-08-14",
+    "2025-08-28",
+    "2025-09-11"
+  ],
+  "train_rows": 746631,
+  "validation_rows": 197379,
+  "device": "NVIDIA GeForce RTX 4060 Ti",
+  "best_epoch_internal": 1,
+  "curve": [
+    {
+      "epoch": 1,
+      "train_mse": 3.2127885729573062,
+      "internal_valid_mse": 3.2114717028216275
+    },
+    {
+      "epoch": 2,
+      "train_mse": 3.2078257343060472,
+      "internal_valid_mse": 3.2134442437296
+    },
+    {
+      "epoch": 3,
+      "train_mse": 3.2055311364933066,
+      "internal_valid_mse": 3.2121284409385726
+    }
+  ],
+  "rho_latest": 0.02559537056626528,
+  "b": 0.00206727855778596,
+  "G": 0.0021374080840667778,
+  "oracle_amplitude": 0.9671894539916848,
+  "oracle_MSE_gain": -0.00199945001955372,
+  "u_raw_rms": 0.04967245802874687,
+  "u_perp_rms": 0.04623211096269321,
+  "corr_with_A1_365_latest": 0.3898567490855916,
+  "projection": {
+    "mean_removed": -0.01809919619990803,
+    "baseline_beta_first": -0.0009742954065576067,
+    "baseline_beta_second": 1.9875017621564101e-19,
+    "max_projection_after_second_pass": 1.8068197837785545e-19
+  },
+  "runtime_seconds": 180.24946093559265,
+  "verdict": "PROMOTE_TO_FULL_FOLDS"
+}

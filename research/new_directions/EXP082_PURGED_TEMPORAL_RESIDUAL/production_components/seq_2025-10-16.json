@@ -1,0 +1,16 @@
+{
+  "mode": "canonical frozen artifact reuse",
+  "family": "seq",
+  "cutoff": "2025-10-16",
+  "source_name": "SEQ-01-S42",
+  "source_paths": [
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_SEQ-01-S42.npz"
+  ],
+  "source_sha256": [
+    "186af9eef1f950eed25ae9de5ee2d144911f43b3e0061ec5800d41c3af994fae"
+  ],
+  "runtime_seconds": 0.0,
+  "config_changed": false,
+  "artifact": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP082_PURGED_TEMPORAL_RESIDUAL\\production_components\\seq_2025-10-16.npz",
+  "sha256": "d956c2b44acfb1f955f322e18864509bbde661cc779d5b5540b9de6e8871ecae"
+}

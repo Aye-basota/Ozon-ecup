@@ -1,0 +1,13 @@
+{
+  "method": "Poisson cluster bootstrap by user_id across purged transitions",
+  "seed": 20260829,
+  "reps": 2000,
+  "point_delta_mse": 0.0002403224983728533,
+  "ci95": [
+    0.00013558535393563546,
+    0.0003479812874840294
+  ],
+  "p_gain": 0.0,
+  "draw_mean": 0.00024037948638240263,
+  "draw_sd": 5.455703901300505e-05
+}
