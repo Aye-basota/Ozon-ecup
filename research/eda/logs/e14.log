@@ -1,0 +1,40 @@
+﻿[     4s 4.76GB] built 2025-06-15 n=179,735 agg=227 seq=96 mu_pop=3.318 sig_pop=1.135
+[    10s 5.11GB] built 2025-07-15 n=182,086 agg=227 seq=104 mu_pop=3.317 sig_pop=1.135
+[    15s 5.23GB] built 2025-08-15 n=185,692 agg=227 seq=104 mu_pop=3.314 sig_pop=1.136
+[    20s 5.58GB] built 2025-09-16 n=190,690 agg=227 seq=104 mu_pop=3.311 sig_pop=1.138
+[    20s 5.58GB] raw frame released
+
+================================================================================================
+A. DIRECT GBM (reference)
+================================================================================================
+  direct RMSLE=1.77086   mean(z)=2.7343 true=2.6431
+[    51s 6.06GB] direct done
+
+================================================================================================
+B. STRUCTURAL: Poisson(buy-days) x lognormal(value) -> exact E[log1p(S)]
+================================================================================================
+  lambda mean=2.0508  true mean n=1.9762
+  structural RMSLE=1.80034  mean(z)=2.9654
+  best value-model tweak: sigma x0.8, mu-0.30 -> RMSLE=1.77661
+[   107s 6.09GB] structural done
+
+================================================================================================
+C. SEQUENCE: aggregates + 104 weekly log-features
+================================================================================================
+python : Traceback (most recent call last):
+At line:1 char:431
++ ... f21fa\scratchpad"; python -u e14_struct_seq.py > e14.log 2>&1; "exit= ...
++                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Admin\AppData\Local\Temp\claude\C--Users-Admin-Desktop-OZON-E-CUP\f013b07e-ef3c-43c2-884c-856362ff21fa
+\scratchpad\e14_struct_seq.py", line 162, in <module>
+    Str = np.hstack([Atr, np.vstack([D[T]["S"] for T in CUTS])])
+                          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packa
+ges\Python313\site-packages\numpy\_core\shape_base.py", line 292, in vstack
+    return _nx.concatenate(arrs, 0, dtype=dtype, casting=casting)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1,
+ the array at index 0 has size 96 and the array at index 1 has size 104

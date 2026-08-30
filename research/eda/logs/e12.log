@@ -1,0 +1,74 @@
+﻿[     3s 6.18GB] built 2025-06-15 n=179,735
+[     7s 5.88GB] built 2025-07-15 n=182,086
+[    11s 5.20GB] built 2025-08-15 n=185,692
+[    16s 6.59GB] built 2025-09-16 n=190,690
+[    21s 7.04GB] built 2025-10-16 n=197,379
+[    27s 6.01GB] built 2026-02-13 n=250,000
+[    28s 6.02GB] train (547513, 227)
+[   104s 6.05GB] model trained
+
+====================================================================================================
+A. OUT-OF-TIME BIAS AND OPTIMAL LOG-OFFSET (train = Jun/Jul/Aug 2025)
+====================================================================================================
+  val 2025-09-16 (gap  32d): RMSLE=1.77086  mean_bias=-0.0913  best_offset=-0.0900 -> 1.76851  gain=+0.00235
+      mean log1p: pred=2.7343  true=2.6431   P(y>0)=0.6106
+  val 2025-10-16 (gap  62d): RMSLE=1.75921  mean_bias=-0.1671  best_offset=-0.1650 -> 1.75126  gain=+0.00795
+      mean log1p: pred=2.7986  true=2.6315   P(y>0)=0.6129
+
+====================================================================================================
+B. TEST-CUTOFF PREDICTION LEVEL vs the anchors from sample_submit
+====================================================================================================
+  test panel n=250,000
+  mean(log1p(pred)) on TEST      = 2.6465
+  trailing-30d level m_x         = 2.2421   (sample_submit)
+  anchor scenarios for E[log1p(y_test)]: 2.3308 (typical drift) .. 2.4180 (YoY analogue)
+  => raw model is -0.3157 .. -0.2285 away from the anchor band
+  implied share of zero-ish preds: P(pred<0.5)=0.0488
+
+====================================================================================================
+C. ERROR ANATOMY on V1
+====================================================================================================
+  total RMSLE=1.77086
+    y == 0   n= 74,249 ( 38.9%) RMSLE=1.9586 shareMSE= 47.6%
+    y > 0    n=116,441 ( 61.1%) RMSLE=1.6399 shareMSE= 52.4%
+
+  by w180_days_buy (history purchase frequency):
+      0-0       n= 25,220 ( 13.2%) RMSLE=1.3216 shareMSE=  7.4% P(y>0)=0.148 best_off=-0.070->1.3198
+      1-1       n= 16,651 (  8.7%) RMSLE=1.7608 shareMSE=  8.6% P(y>0)=0.306 best_off=-0.100->1.7581
+      2-3       n= 27,665 ( 14.5%) RMSLE=1.9415 shareMSE= 17.4% P(y>0)=0.432 best_off=-0.135->1.9369
+      4-7       n= 39,212 ( 20.6%) RMSLE=2.0464 shareMSE= 27.5% P(y>0)=0.611 best_off=-0.115->2.0433
+      8-15      n= 42,074 ( 22.1%) RMSLE=1.9203 shareMSE= 25.9% P(y>0)=0.803 best_off=-0.090->1.9182
+     16-1000000 n= 39,868 ( 20.9%) RMSLE=1.4047 shareMSE= 13.2% P(y>0)=0.951 best_off=-0.050->1.4038
+
+    never bought      n= 20,600 ( 10.8%) RMSLE=1.2292 shareMSE=  5.2%
+
+====================================================================================================
+D. ADVERSARIAL VALIDATION
+====================================================================================================
+  2025-09-16 vs TEST: AUC=0.9930
+    tenure, first_buy_age, all_days_present, gap_mean, trend_pres_90_365, gap_max, gap_std, w365_days_present, lifetime_gmv_per_day, all_lgmv
+  2025-10-16 vs TEST: AUC=0.9912
+    tenure, first_buy_age, all_days_present, gap_mean, gap_max, trend_pres_90_365, gap_std, w365_days_present, w365_presence_rate, trend_pres_60_180
+  2025-09-16 vs 2025-10-16 (two historical): AUC=0.9811
+    tenure, first_buy_age, all_days_present, gap_mean, gap_std, w365_days_present, gap_max, trend_pres_90_365, w365_days_buy, weekend_share
+
+====================================================================================================
+E. FEATURE-LEVEL SHIFT clean-val -> TEST
+====================================================================================================
+  feature                         V2 mean    TEST mean    ratio
+  w30_gmv                        111.4885      84.0340    0.754
+  w90_gmv                        324.4588     287.5389    0.886
+  w365_gmv                       875.4926    1004.5252    1.147
+  w30_days_present                11.7201      11.1759    0.954
+  w30_days_buy                     1.9509       1.6682    0.855
+  w180_days_buy                   10.1593      10.0564    0.990
+  w30_searches                    38.5401      35.4281    0.919
+  w30_orders                       3.3028       2.8002    0.848
+  tenure                         268.7838     366.5982    1.364
+  rec_buy                         33.4282      43.7952    1.310
+  rec_any                          3.1584       3.8554    1.221
+  w30_ponly_share                  0.1598       0.1802    1.127
+  w30_presence_rate                0.3907       0.3725    0.954
+  lifetime_buyrate                 0.1366       0.1288    0.943
+  trend_gmv_30_90                  0.8313       0.6799    0.818
+[   163s 5.59GB] done

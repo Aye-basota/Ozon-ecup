@@ -1,0 +1,42 @@
+﻿[     4s 4.73GB] built 2025-06-15 n=179,735 feats=189
+[     8s 8.51GB] built 2025-07-15 n=182,086 feats=189
+[    12s 9.67GB] built 2025-08-15 n=185,692 feats=189
+[    17s 7.60GB] built 2025-09-16 n=190,690 feats=189
+[    21s 9.10GB] built 2025-10-16 n=197,379 feats=189
+[    25s 8.03GB] built 2026-02-13 n=250,000 feats=189
+[    96s 8.09GB] trained
+
+====================================================================================================
+CAPPED FEATURES (history truncated to last 180d at every cutoff, no unbounded features)
+====================================================================================================
+  val 2025-09-16 (gap  32d): RMSLE=1.77693  mean_bias=-0.0294  best_off=-0.0300 -> 1.77668
+  val 2025-10-16 (gap  62d): RMSLE=1.76241  mean_bias=-0.0867  best_off=-0.0850 -> 1.76027
+
+  mean(log1p(pred)) on TEST = 2.5362
+  anchor band 2.2791 (median drift) .. 2.4080 (YoY analogue);  UNCAPPED model gave 2.6465
+  => capped model is -0.2571 .. -0.1282 from the band
+
+====================================================================================================
+ADVERSARIAL VALIDATION WITH CAPPED FEATURES
+====================================================================================================
+  2025-09-16 vs TEST: AUC=0.7005   (uncapped был 0.9930 / 0.9912 / 0.9811)
+    weekend_share, w60_days_cart, trend_pres_30_90, w30_aov, w90_days_present, rec_any, w60_carts, w90_cart2ord
+  2025-10-16 vs TEST: AUC=0.6723   (uncapped был 0.9930 / 0.9912 / 0.9811)
+    trend_pres_30_90, w60_days_cart, trend_pres_30_60, w90_cart2ord, w60_carts, w30_aov, trend_pres_60_180, w90_carts
+  2025-09-16 vs 2025-10-16: AUC=0.6244   (uncapped был 0.9930 / 0.9912 / 0.9811)
+    weekend_share, rec_any, rec_search, rec_cart, trend_pres_60_180, rec_cat, rec_buy, trend_srch_14_30
+
+====================================================================================================
+FEATURE SHIFT AFTER CAPPING
+====================================================================================================
+  w30_gmv                V2=   111.4885  TEST=    84.0340  ratio= 0.754
+  w90_gmv                V2=   324.4588  TEST=   287.5389  ratio= 0.886
+  w180_gmv               V2=   594.5429  TEST=   559.4997  ratio= 0.941
+  w30_days_buy           V2=     1.9509  TEST=     1.6682  ratio= 0.855
+  w180_days_buy          V2=    10.1593  TEST=    10.0564  ratio= 0.990
+  rec_buy                V2=    27.1485  TEST=    31.1625  ratio= 1.148
+  rec_any                V2=     3.1584  TEST=     3.8554  ratio= 1.221
+  w30_ponly_share        V2=     0.1598  TEST=     0.1802  ratio= 1.127
+  trend_gmv_30_90        V2=     0.8313  TEST=     0.6799  ratio= 0.818
+  gap_mean               V2=     4.3209  TEST=     4.5837  ratio= 1.061
+[   162s 7.69GB] done

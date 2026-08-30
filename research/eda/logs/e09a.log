@@ -1,0 +1,53 @@
+﻿built 2025-04-15 n=172,496
+built 2025-05-15 n=176,474
+built 2025-06-15 n=179,735
+built 2025-07-15 n=182,086
+built 2025-08-15 n=185,692
+built 2025-09-16 n=190,690
+built 2025-10-16 n=197,379
+
+========================================================================================================
+EXP 7: ANCHORED (delta) TARGET vs raw level
+========================================================================================================
+  anchor=None        V1 RMSLE=1.77002 bias=-0.0865  |  V2 RMSLE=1.75681 bias=-0.1534
+  anchor=w30_gmv     V1 RMSLE=1.77018 bias=-0.0962  |  V2 RMSLE=1.75877 bias=-0.1723
+  anchor=w90_gmv     V1 RMSLE=1.77095 bias=-0.1054  |  V2 RMSLE=1.76074 bias=-0.1905
+  anchor=w365_gmv    V1 RMSLE=1.77082 bias=-0.1062  |  V2 RMSLE=1.76122 bias=-0.1947
+
+========================================================================================================
+EXP 8: GLOBAL LOG-OFFSET — gain and stability
+========================================================================================================
+  2025-09-16: RMSLE=1.77002  best_offset=-0.0850 -> 1.76790 (gain +0.00211)  mean_bias=-0.0865
+  2025-10-16: RMSLE=1.75681  best_offset=-0.1550 -> 1.75010 (gain +0.00671)  mean_bias=-0.1534
+
+  --- expanding-window: offset as a function of the train->val gap ---
+    train 2025-04-15..2025-05-15 -> val 2025-06-15 (gap  31d): RMSLE=1.80916 offset=-0.0321 corrected=1.80887
+    train 2025-04-15..2025-06-15 -> val 2025-07-15 (gap  30d): RMSLE=1.81914 offset=+0.0055 corrected=1.81913
+    train 2025-04-15..2025-07-15 -> val 2025-08-15 (gap  31d): RMSLE=1.80235 offset=-0.0088 corrected=1.80233
+    train 2025-04-15..2025-08-15 -> val 2025-09-16 (gap  32d): RMSLE=1.77002 offset=-0.0865 corrected=1.76790
+    train 2025-04-15..2025-08-15 -> val 2025-10-16 (gap  62d): RMSLE=1.75681 offset=-0.1534 corrected=1.75010
+
+========================================================================================================
+EXP 10: ERROR ANATOMY on V1 + segment-specific offsets
+========================================================================================================
+  total RMSLE=1.77002
+    y == 0   n= 74,249 ( 38.9%)  RMSLE=1.9572  share_MSE= 47.6%
+    y > 0    n=116,441 ( 61.1%)  RMSLE=1.6395  share_MSE= 52.4%
+
+  by w180_days_buy:
+    buydays180   0-0       n= 25,220 ( 13.2%) RMSLE=1.3219 share_MSE=  7.4% P(y>0)=0.148  best_off=-0.075->1.3197
+    buydays180   1-1       n= 16,651 (  8.7%) RMSLE=1.7581 share_MSE=  8.6% P(y>0)=0.306  best_off=-0.100->1.7553
+    buydays180   2-3       n= 27,665 ( 14.5%) RMSLE=1.9390 share_MSE= 17.4% P(y>0)=0.432  best_off=-0.130->1.9347
+    buydays180   4-7       n= 39,212 ( 20.6%) RMSLE=2.0474 share_MSE= 27.5% P(y>0)=0.611  best_off=-0.110->2.0443
+    buydays180   8-15      n= 42,074 ( 22.1%) RMSLE=1.9195 share_MSE= 25.9% P(y>0)=0.803  best_off=-0.085->1.9175
+    buydays180  16-1000000 n= 39,868 ( 20.9%) RMSLE=1.4031 share_MSE= 13.1% P(y>0)=0.951  best_off=-0.030->1.4028
+
+  by rec_buy (days since last purchase; NaN = never bought):
+    rec_buy 0-7      n= 60,464 ( 31.7%) RMSLE=1.6583 share_MSE= 27.8%
+    rec_buy 8-30     n= 57,270 ( 30.0%) RMSLE=1.9208 share_MSE= 35.4%
+    rec_buy 31-90    n= 35,251 ( 18.5%) RMSLE=1.9599 share_MSE= 22.7%
+    rec_buy 91-180   n= 12,583 (  6.6%) RMSLE=1.7963 share_MSE=  6.8%
+    rec_buy 181+     n=  4,522 (  2.4%) RMSLE=1.6738 share_MSE=  2.1%
+    never bought    n= 20,600 ( 10.8%) RMSLE=1.2303 share_MSE=  5.2%
+
+total 941s
