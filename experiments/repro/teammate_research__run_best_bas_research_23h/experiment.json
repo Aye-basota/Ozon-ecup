@@ -1,0 +1,28 @@
+{
+  "catalog_id": "teammate_research__run_best_bas_research_23h",
+  "namespace": "teammate_research",
+  "experiment_id": "run_best_bas_research_23h",
+  "title": "!/usr/bin/env python3",
+  "kind": "teammate research runner",
+  "original_path": "пайплайн сокомандника/research_scripts/run_best_bas_research_23h.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/run_best_bas_research_23h.py"
+  ],
+  "commands": [
+    "python run_best_bas_research_23h.py"
+  ],
+  "model": "LightGBM, dilated TCN, sequence model, two-part / hurdle, blend",
+  "features": "recency, occurrence features, gap/burst features, history-depth features",
+  "validation": "about *new* signal.  It reuses the teammate's exact validation protocol, then",
+  "score": "3) temporal occurrence and RMSLE-effective-q models.  q*=clip(z_true/mu,0,1)",
+  "submission": "path=ctx.submissions/f\"submission_best_bas_{k}_{lab.lower()}_{s['name']}.csv\"",
+  "seed": "\"Global blend validation uses the one-seed structural proxy; final blend retains the stronger exact friend AVG3 base.\",",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "\"All final candidates are shifted to teammate-proven level 2.3293 before expm1.\",",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

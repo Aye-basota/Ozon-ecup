@@ -1,0 +1,77 @@
+{
+  "historical_artifact_reuse": {
+    "architecture_and_semantics": true,
+    "model_trajectory_or_predictions": false,
+    "reason": "historical encoders used workers=3 race policy and exact TEST checkpoint is absent"
+  },
+  "historical_fold_checkpoint_hashes": [
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-V0904.pt",
+      "sha256": "cc63eb41a893f8cd24b77b6b7b129a503f1e37001c1eae42b09c7398b1704dd6"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-V0918.pt",
+      "sha256": "19147af98a944c2d403b68e0383c0f857cab0e5d08564a7ce918d058f9ee85bb"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-V1002.pt",
+      "sha256": "d6c29829bad07e5998627fd6882c96e4efa49012cabe7100aa81a3bf7aad48b3"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-V1016.pt",
+      "sha256": "e5493a0f704944fdbc00551ddd38a3009e7cf93ac14dc86c6e9ad50d2c198a66"
+    }
+  ],
+  "historical_recipe": {
+    "aug": "none",
+    "batch": 1024,
+    "blocks": 8,
+    "chunk": 256,
+    "compile": false,
+    "dropout": 0.1,
+    "epochs": 4,
+    "hidden": 64,
+    "kernel": 3,
+    "lr": 0.003,
+    "seed": 42,
+    "warmup": 300,
+    "wd": 0.01,
+    "workers": 3
+  },
+  "model_family": "SEQ-D3A-BASE TCN; hidden64, 8 blocks, kernel3, pooled [last,mean,max]",
+  "new_plan_or_model_artifacts": [],
+  "reason": "one honest BTYD05 submission was obtained; task requires stopping BTYD/FRESH research",
+  "required_conditional_head_fits": {
+    "count": 30,
+    "explanation": "(4 OOF folds + 1 production) x 2 donor sides x CLEAN/VOL/FRESH"
+  },
+  "required_encoder_runs": {
+    "count": 5,
+    "explanation": "four fold-compatible encoders plus one same-recipe production encoder",
+    "targets": [
+      "V0904",
+      "V0918",
+      "V1002",
+      "V1016",
+      "TEST/full-history"
+    ]
+  },
+  "required_new_recipe": {
+    "architecture": "fixed historical SEQ-D3A-BASE family; no hyperparameter search",
+    "cublas_workspace_config": ":4096:8",
+    "deterministic_algorithms": true,
+    "deterministic_cuda": true,
+    "materialized_batch_plan": true,
+    "seed": 42,
+    "seed_source": "src/config.py",
+    "workers": 1
+  },
+  "semantic_protocol": {
+    "clean_extra": "same CLEAN/EXTRA protocol as EXP-040",
+    "correction": "FRESH-CLEAN; donor-safe 0.5/99.5 winsorization; GLOBAL; center; alpha=1",
+    "crossfit": "splitmix64(user_id)&1; two-sided donor A/B",
+    "depth_clip": 289,
+    "heads": "CLEAN/VOL/FRESH conditional heads"
+  },
+  "status": "NOT_RUN_AFTER_CASE_B_SUBMISSION"
+}

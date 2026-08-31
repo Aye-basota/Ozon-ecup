@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__tbr_refresh",
+  "namespace": "team_a_run",
+  "experiment_id": "TBR-REFRESH",
+  "title": "Logged run — TBR-REFRESH",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "sequence model, blend",
+  "features": "freshness/conditional features",
+  "validation": "wcv:** 1.747507416",
+  "score": "wcv:** 1.747507416",
+  "submission": "None documented",
+  "seed": "params:** {\"components\": [\"UNC\", \"CAP\"], \"rounds\": [200, 250, 300, 600], \"primary_round\": 300, \"seeds\": [42, 43, 44], \"weights\": {\"CAP\": 0.1, \"UNC\": 0.2, \"S1-DIST\": 0.25, \"ETX-AVG3\": 0.225, \"SEQ-AVG3\": 0.225}, \"replay\": \"bitwise\", \"early_stopping\": false}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__s1_mix_e11",
+  "namespace": "team_a_run",
+  "experiment_id": "S1-MIX-E11",
+  "title": "Logged run — S1-MIX-E11",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "params:** {\"level\": 2.3293, \"selection\": \"\\u043f\\u0435\\u0440\\u0435\\u0431\\u043e\\u0440 \\u043f\\u043e wCV, \\u0448\\u0430\\u0433 0.05, 10626 \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0439\", \"weights\": {\"S1-DIST\": 0.3, \"S1-E02\": 0.35, \"S1-E03a\": 0.0, \"S1-E10\": 0.1, \"S1-E11\": 0.25}}",
+  "score": "params:** {\"level\": 2.3293, \"selection\": \"\\u043f\\u0435\\u0440\\u0435\\u0431\\u043e\\u0440 \\u043f\\u043e wCV, \\u0448\\u0430\\u0433 0.05, 10626 \\u043a\\u043e\\u043c\\u0431\\u0438\\u043d\\u0430\\u0446\\u0438\\u0439\", \"weights\": {\"S1-DIST\": 0.3, \"S1-E02\": 0.35, \"S1-E03a\": 0.0, \"S1-E10\": 0.1, \"S1-E11\": 0.25}}",
+  "submission": "conclusion:** Последний сабмит проекта, отправлен вопреки вердикту exp_016 §7. wCV 1.74911 против 1.74948 у S1-DIST-MIX (-0.00038; LOFO-честно -0.00036), лучше на 4 фолдах из 4. LB 1.6510029 против 1.6507774 — НА +0.00023 ХУЖЕ. Промах прогноза +0.00060 = 2.4 парных SE, прогноз отвергается; сама дельта LB t=+0.9, то есть кандидат не «хуже», а «не лучше». Коэффициент переноса -0.60 (к S1-DIST-MIX) и 0.288 (к S1-BEST) против ~1.0 на крупных дельтах. Первая инверсия порядка в проекте: Spearman(wCV, ",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "description:** Смесь 0.10 S1-E10 + 0.35 S1-E02 + 0.30 S1-DIST + 0.25 S1-E11 (S1-E03a обнулён), --level 2.3293",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

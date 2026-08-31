@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_052_channel_shapley_split",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_052_channel_shapley_split",
+  "title": "exp_052 — CHANNEL-SHAPLEY-SPLIT",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_052_channel_shapley_split.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/channel_shapley_split.py",
+    "src/test_channel_shapley_split.py",
+    "src/test_pipeline.py",
+    "src/test_validation.py"
+  ],
+  "commands": [
+    "python src/channel_shapley_split.py\npython src/channel_shapley_split.py --analysis-only\npython -m pytest src/test_channel_shapley_split.py src/test_pipeline.py src/test_validation.py -q",
+    "python src/channel_shapley_split.py",
+    "python src/channel_shapley_split.py --analysis-only",
+    "python -m pytest src/test_channel_shapley_split.py src/test_pipeline.py src/test_validation.py -q"
+  ],
+  "model": "LightGBM",
+  "features": "Search/Catalog decomposition, channel Shapley, 227 tabular features",
+  "validation": "Raw OOF reconstruction: `PASS_EXACT`; calibrated folds `1.766883357 / 1.760509577 / 1.748629224 / 1.741278566`, wCV `1.747509863`.",
+  "score": "Raw OOF reconstruction: `PASS_EXACT`; calibrated folds `1.766883357 / 1.760509577 / 1.748629224 / 1.741278566`, wCV `1.747509863`.",
+  "submission": "None documented",
+  "seed": "REJECT.** Pre-flight подтвердил наличие composition signal, но pilot causal control его не перенёс: REAL хуже SHUF, обе честные directions выбрали `alpha=0`, residual alignment имеет отрицательный знак, а вся positive alpha curve ухудшает метрику. `PROMOTE_TO_FULL_FOLDS = NO`; full folds, test inference, public LB и submission не запускались. Не спасать bins, seeds, rounds, alpha grid, targets или segment gates.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

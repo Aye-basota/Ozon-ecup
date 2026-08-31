@@ -1,0 +1,24 @@
+{
+  "prefix": "RECENCY_RIDGE_PRED_EXP068_A1",
+  "verdict": "BLOCKED_HISTORICAL_REPLAY",
+  "phase_A": "FAILED: exact input bank absent; no circular replay claimed",
+  "phase_B": {
+    "status": "TEST_ONLY_AUDIT_COMPLETE; OOF_RESIDUAL_AUDIT_BLOCKED",
+    "historical_directly_in_friend": false,
+    "historical_directly_in_occ_meta_B": false,
+    "historical_directly_in_occ_raw_X3": false,
+    "historical_directly_in_latest": false,
+    "later_ridge_greedy_ancestry_in_occ_meta_B_occ_raw_X3_latest": true,
+    "corr_historical_latest_test": 0.999968243561061,
+    "var_historical_minus_latest_test": 0.000159636752561801
+  },
+  "phase_C": "NOT_RUN",
+  "controls": "NOT_RUN",
+  "test_regime": "NOT_RUN",
+  "submission_created": false,
+  "leaderboard_upload": false,
+  "canonical_latest_oof_available": false,
+  "CAP_LINEAGE": "UNKNOWN",
+  "public_lb_exact_csv": null,
+  "public_lb_family_recorded_unbound": 1.6492897556391737
+}

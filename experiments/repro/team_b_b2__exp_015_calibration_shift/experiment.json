@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_b2__exp_015_calibration_shift",
+  "namespace": "team_b_b2",
+  "experiment_id": "exp_015_calibration_shift",
+  "title": "exp_015 — G14 fixed calibration log shift",
+  "kind": "git-history experiment card",
+  "original_path": "git:88dc69163b1f:experiments/exp_015_calibration_shift.md",
+  "source_ref": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "source_commit": "30a276391f860890b6236058e0cfc76b9b503d83",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, calibration diagnostic",
+  "features": "See preserved experiment card and implementation",
+  "validation": "В `predict_gmv` добавлен фиксированный `CALIBRATION_DELTA = -0.17`; признаки, параметры модели и validation cutoffs не менялись.",
+  "score": "CV mean: `1.708737` (лучший до этого: exp_001, `1.717017`)",
+  "submission": "Локально accept по fold1–2: улучшение mean `0.008279`, оба основных фолда лучше baseline. После LB-пробы submit-калибровка rejected: local +`0.008` → LB −`0.009`. Причина: нетрансферабельность глобального `δ` через сезонность. Новое правило: глобальные калибровочные константы подбираются per-fold; в сабмит константа идёт только если её знак и порядок подтверждены на фолде, имитирующем конфигурацию сабмита (сейчас fold2), иначе сабмит без калибровки.",
+  "seed": "LightGBM baseline, `CALIBRATION_DELTA = -0.17`, folds 1–2 для решения, fold3 справочно, seed из `src/config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

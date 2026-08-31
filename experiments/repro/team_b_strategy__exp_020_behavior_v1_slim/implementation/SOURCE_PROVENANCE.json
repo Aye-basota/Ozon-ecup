@@ -1,0 +1,54 @@
+{
+  "src/behavior_feature_eval.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/catboost_blend.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/classifier_gate.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/config.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/dense_ensemble.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/dist_head_ensemble.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/ensemble.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/features.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/post_order_ensemble.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/predict.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/train.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/validation.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  },
+  "src/weight_grid.py": {
+    "card_introduction_commit": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d",
+    "implementation_source": "adc03ee1ea639bcde0b4e10cfca61936b1aaac1d"
+  }
+}

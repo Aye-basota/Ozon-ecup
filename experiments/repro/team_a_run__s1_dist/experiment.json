@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__s1_dist",
+  "namespace": "team_a_run",
+  "experiment_id": "S1-DIST",
+  "title": "Logged run — S1-DIST",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "distribution head, calibration diagnostic",
+  "features": "227 tabular features",
+  "validation": "conclusion:** E0. Голова распределения лучше S1-E10 на 4 фолдах из 4: калиброванный OOF 1.75744 против 1.75889 (-0.00145). Пре-регистрированный порог >=0.003 на >=3 фолдах НЕ выполнен: эталон N12 (-0.00396) снимался на базе из 3 cutoff'ов, на плотной сетке остаётся -0.0007..-0.0019. Var(z-z_E10)=0.01320 при пороге разнообразия 0.10 — та же функция, а не новый класс. Смесь 0.15/0.30/0.10/0.45 с S1-E10/S1-E02/S1-E03a: OOF 1.75645 против 1.75716 у S1-BEST, лучше на 4 фолдах из 4. Сабмит submissions",
+  "score": "verdict:** ПРИНЯТО; LB 1.6507774106",
+  "submission": "conclusion:** E0. Голова распределения лучше S1-E10 на 4 фолдах из 4: калиброванный OOF 1.75744 против 1.75889 (-0.00145). Пре-регистрированный порог >=0.003 на >=3 фолдах НЕ выполнен: эталон N12 (-0.00396) снимался на базе из 3 cutoff'ов, на плотной сетке остаётся -0.0007..-0.0019. Var(z-z_E10)=0.01320 при пороге разнообразия 0.10 — та же функция, а не новый класс. Смесь 0.15/0.30/0.10/0.45 с S1-E10/S1-E02/S1-E03a: OOF 1.75645 против 1.75716 у S1-BEST, лучше на 4 фолдах из 4. Сабмит submissions",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

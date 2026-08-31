@@ -1,0 +1,36 @@
+{
+  "catalog_id": "team_a_current__exp_015_last_fold_only",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_015_last_fold_only",
+  "title": "exp_015 — S1-DIST-F4: модель, обученная только на выборке последнего фолда",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_015_last_fold_only.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/predict.py",
+    "src/test_pipeline.py"
+  ],
+  "commands": [
+    "python -m src.predict --exp S1-DIST-F4 --variant S1-DIST-F4 --L 0 --norm-long \\\n  --min-history 90 --step 7 --train-blocks 1 --rounds 250 --blend dist \\\n  --train-for-fold 2025-10-16\npython -m src.submit --z S1-DIST-F4 --level 2.3293 --out submission_experimental_f4.csv\npython -m src.submit --z S1-NORM S1-UNC S1-CAP S1-DIST-F4 --weights 0.15 0.30 0.10 0.45 \\\n  --level 2.3293 --out submission_experimental_f4_mix.csv",
+    "python -m src.predict --exp S1-DIST-F4 --variant S1-DIST-F4 --L 0 --norm-long \\",
+    "python -m src.submit --z S1-DIST-F4 --level 2.3293 --out submission_experimental_f4.csv",
+    "python -m src.submit --z S1-NORM S1-UNC S1-CAP S1-DIST-F4 --weights 0.15 0.30 0.10 0.45 \\"
+  ],
+  "model": "blend, calibration diagnostic",
+  "features": "See preserved experiment card and implementation",
+  "validation": "# exp_015 — S1-DIST-F4: модель, обученная только на выборке последнего фолда",
+  "score": "самый низкий** — модель фолда `2025-10-16` (RMSLE 1.74491, калиброванный 1.74427),",
+  "submission": "level 2.3293 --out submission_experimental_f4_mix.csv",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "level 2.3293 --out submission_experimental_f4_mix.csv",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

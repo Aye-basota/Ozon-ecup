@@ -1,0 +1,26 @@
+{
+  "catalog_id": "eda__e08_baseline",
+  "namespace": "eda",
+  "experiment_id": "e08_baseline",
+  "title": "Cutoffs.  Target of T must NOT overlap the guaranteed window [2025-11-16..2026-02-13]",
+  "kind": "EDA experiment/script",
+  "original_path": "research/eda/e08_baseline.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "research/eda/e08_baseline.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "print(\"EXP 1: naive baselines on the CLEAN validation cutoff\", VAL_CUT)",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "lambda_l2=5.0, verbose=-1, seed=SEED, num_threads=12)",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "report(f\"best constant (log-space {best[1]:.3f})\", np.expm1(np.full(len(yv), best[1])), yv)",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

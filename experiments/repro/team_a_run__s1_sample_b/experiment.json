@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__s1_sample_b",
+  "namespace": "team_a_run",
+  "experiment_id": "S1-SAMPLE-B",
+  "title": "Logged run — S1-SAMPLE-B",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN",
+  "features": "227 tabular features",
+  "validation": "conclusion:** Capacity-matched dense wCV 1.752339 vs baseline 1.751076: +0.001263, 0/4 folds. Weighted AUC -0.000416; rec_buy 15-60 RMSLE/AUC +0.001557/-0.001208; 2-15 purchase days +0.001512/-0.000935. Train rows within +/-1% each fold. Dense supervision gate for HDN/TCN failed; details exp_022.",
+  "score": "conclusion:** Capacity-matched dense wCV 1.752339 vs baseline 1.751076: +0.001263, 0/4 folds. Weighted AUC -0.000416; rec_buy 15-60 RMSLE/AUC +0.001557/-0.001208; 2-15 purchase days +0.001512/-0.000935. Train rows within +/-1% each fold. Dense supervision gate for HDN/TCN failed; details exp_022.",
+  "submission": "None documented",
+  "seed": "params:** {\"baseline_rounds\": 300, \"dense_rounds\": 200, \"dense_step\": 3, \"row_frac\": 0.422, \"seed\": 42}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

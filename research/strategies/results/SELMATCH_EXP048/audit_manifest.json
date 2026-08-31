@@ -1,0 +1,267 @@
+{
+  "candidate_artifacts": {
+    "btyd_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\BTYD_DAY_BGNBD_EXP047_V2\\oof_raw.npz",
+    "btyd_sha256": "754d930b2347beb400b947c416cf56cc036f0b80c35ea039402432263b89d6af",
+    "candidate_formulas": {
+      "BTYD05": ".95*STRONGEST+.05*BTYD",
+      "BTYD05_FRESH1": ".95*STRONGEST+.05*BTYD+fresh_processed_nested",
+      "FRESH": "STRONGEST+fresh_processed_nested (GLOBAL alpha=1 all outer folds)",
+      "SEQ_SLOT_25": "backbone+.45*(.25*ETX+.75*SEQ)",
+      "SEQ_SLOT_50": "backbone+.45*(.50*ETX+.50*SEQ)=STRONGEST",
+      "SEQ_SLOT_75": "backbone+.45*(.75*ETX+.25*SEQ)",
+      "ZERO2D": "exact exp_042 honest outer z_honest"
+    },
+    "candidate_prediction_sha256": {
+      "BTYD": "f9fa7df8864bd1cc7082ebf1038fdd246de46faf993fd2ee4b6530ce00f1c1ee",
+      "BTYD05": "8c4a5e97637e3ea9c209994b11e0f80cbca4267b421c335d8f61bb198e042d47",
+      "BTYD05_FRESH1": "6ce41fb512627eff0ec96dc6327baf113c0cf60aa2a97fb2f35d7f3a29ae91c8",
+      "CAP": "cfe7a192a2ce93b16de32d1fb4dadcd434ee246c03fbfa2e69fe003c987fe222",
+      "DIST": "1dea1b8e98c4795d117729eeb53ef1edc177324aeddace3e248bdd06e158ef53",
+      "ETX-AVG3": "7d219cb20ec5a403fee3cde25f9cff6ef25b808c7fb4199939e917d13629bd1b",
+      "FRESH": "7fee4e99724791bb2667f8477173d6c0307675e8376edf2f7276428997fa368f",
+      "SEQ-AVG3": "3321ffca3afa8d3ae25d1ced278c5911e304a9933d02753f218b54bc7a66cdb3",
+      "SEQ_SLOT_25": "2bfedcba1a445fa535cbdb70b5151af6d2ee884f6ff07fa26891f5d71441f5b6",
+      "SEQ_SLOT_50": "4f0189e56af7ead4532e3691a0c56537059de0233ada55aaf8a75055395051e4",
+      "SEQ_SLOT_75": "000350350f4b34f7e0d03d021d30282e8950658938109b96030d0980c02d97b9",
+      "STRONGEST": "8194f906f1bb82bea1180a0626e20d3541050133f1fd771e502de5a868d45d09",
+      "UNC": "f496be245fe757696253da6fb7de31b14600be343997ac1eeee602d33ac85f50",
+      "ZERO2D": "04928219c06036d8f450cb31f84c504e824995f4ca6298384e852994b1c7b63a"
+    },
+    "fresh_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_FRESH_CONTRAST_MOE.npz",
+    "fresh_sha256": "1fb3b8a2d0d77afd06bc529d69e32e07bd5f01060a775a7fc02fb65f6cb03cda",
+    "history_diagnostics_artifact": {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\research\\rmsle_diagnostics\\fold_predictions.parquet",
+      "sha256": "77204fffb42482899e13e48a8eefbe275db9ec3ade54026ecbb247338f7fcf6e"
+    },
+    "zero2d_expected_wcv": 1.747485106715659,
+    "zero2d_input_artifacts": [
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\PACT_dist_2025-09-04.npz",
+        "sha256": "c36ac560269cf60c2caed89d65245fc0995ab0ebd18d66b19d4a61bc2c63656d"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\PACT_dist_2025-09-18.npz",
+        "sha256": "9d9ed453146e8e016491d590eb584997c50b8e4b40157485d5eb3dce31a758b6"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\PACT_dist_2025-10-02.npz",
+        "sha256": "cf6d587b2dfb98bd8dffbf97cc79aff0f37cefd30e17ad9db80cfc420d96d55f"
+      },
+      {
+        "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\PACT_dist_2025-10-16.npz",
+        "sha256": "09b0bf07368356d2869874757880c3b2f812254c5dd0982d6a9da87ebfd5cb99"
+      }
+    ],
+    "zero2d_reconstructed_from_saved_artifacts": true,
+    "zero2d_wcv": 1.747485106715659
+  },
+  "competition_selection": {
+    "active_users_by_block": [
+      250000,
+      250000,
+      250000
+    ],
+    "activity_definition": "any daily row",
+    "all_validation_users_in_global_selection": true,
+    "competition_blocks": [
+      [
+        "2025-11-16",
+        "2025-12-15"
+      ],
+      [
+        "2025-12-16",
+        "2026-01-14"
+      ],
+      [
+        "2026-01-15",
+        "2026-02-13"
+      ]
+    ],
+    "raw_universe_users": 250000,
+    "selected_users": 250000,
+    "test_panel_rule_equivalent": true
+  },
+  "components": [
+    {
+      "artifact": "S1-E03a",
+      "file_sha256": "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525",
+      "label": "CAP",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E03a.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "0461e52abc4f50a7d4d950600475ff7949dc20b1ac5436fbf454bcc53c1af5f1",
+      "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+      "rows": 770616,
+      "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+      "weight": 0.1
+    },
+    {
+      "artifact": "S1-E02",
+      "file_sha256": "2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff",
+      "label": "UNC",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E02.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "89a389580fa3b1f0c940b9a3c035a1246fe8d86e3e8af618ad332eb99b985504",
+      "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+      "rows": 770616,
+      "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+      "weight": 0.2
+    },
+    {
+      "artifact": "S1-DIST",
+      "file_sha256": "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+      "label": "DIST",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-DIST.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "3ba241497c210edcabcdcf6cf62f716e2ffb03bb31cf7c19eef3ff44c786b169",
+      "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+      "rows": 770616,
+      "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+      "weight": 0.25
+    },
+    {
+      "artifact": "ETX-AVG3",
+      "file_sha256": "890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f",
+      "label": "ETX-AVG3",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-AVG3.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "4ec361ad9216d9a72250c077f72e53964b7efb7485808a73307f4b85f7a0458f",
+      "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+      "rows": 770616,
+      "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+      "weight": 0.225
+    },
+    {
+      "artifact": "SEQ-AVG3",
+      "file_sha256": "8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c",
+      "label": "SEQ-AVG3",
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_SEQ-AVG3.npz",
+      "prediction_dtype": "float32",
+      "prediction_sha256": "0e6a0c5ed26b74fe3d5509d60a22a1aa598f9ca5606df6bc9bf7291a4a827667",
+      "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+      "rows": 770616,
+      "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+      "weight": 0.225
+    }
+  ],
+  "fold_cal": [
+    1.7668833567997195,
+    1.7605095767798136,
+    1.748629223964952,
+    1.7412785664479717
+  ],
+  "fold_offsets": [
+    -0.11734465876764338,
+    -0.07873621159214053,
+    -0.02097755276250928,
+    -0.035387154112119984
+  ],
+  "fold_sizes": [
+    188518,
+    191025,
+    193694,
+    197379
+  ],
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "forbidden_actions": {
+    "model_training": false,
+    "public_lb_used": false,
+    "submission": false,
+    "test_inference": false
+  },
+  "prediction_semantics": "raw log1p-space",
+  "prediction_sha256": "8194f906f1bb82bea1180a0626e20d3541050133f1fd771e502de5a868d45d09",
+  "prefix": "SELMATCH_EXP048",
+  "row_keys_sha256": "ed3d9ac282d9b323870d18a4abc7852a2b2f83a1e42945cf7cc2c40d940fee15",
+  "rows": 770616,
+  "selection_source_dates": {
+    "2025-09-04": {
+      "F1": [
+        "2025-10-05",
+        "2025-11-03"
+      ],
+      "F2": [
+        "2025-11-04",
+        "2025-12-03"
+      ],
+      "F3": [
+        "2025-12-04",
+        "2026-01-02"
+      ],
+      "target": [
+        "2025-09-05",
+        "2025-10-04"
+      ]
+    },
+    "2025-09-18": {
+      "F1": [
+        "2025-10-19",
+        "2025-11-17"
+      ],
+      "F2": [
+        "2025-11-18",
+        "2025-12-17"
+      ],
+      "F3": [
+        "2025-12-18",
+        "2026-01-16"
+      ],
+      "target": [
+        "2025-09-19",
+        "2025-10-18"
+      ]
+    },
+    "2025-10-02": {
+      "F1": [
+        "2025-11-02",
+        "2025-12-01"
+      ],
+      "F2": [
+        "2025-12-02",
+        "2025-12-31"
+      ],
+      "F3": [
+        "2026-01-01",
+        "2026-01-30"
+      ],
+      "target": [
+        "2025-10-03",
+        "2025-11-01"
+      ]
+    },
+    "2025-10-16": {
+      "F1": [
+        "2025-11-16",
+        "2025-12-15"
+      ],
+      "F2": [
+        "2025-12-16",
+        "2026-01-14"
+      ],
+      "F3": [
+        "2026-01-15",
+        "2026-02-13"
+      ],
+      "target": [
+        "2025-10-17",
+        "2025-11-15"
+      ]
+    }
+  },
+  "selection_variables": {
+    "days_to_first_activity_after_target": "days after V+30; 91 if none",
+    "future_blocks_active": "sum any daily row in F1/F2/F3",
+    "future_min_active_days": "min block daily rows; 0 if a block inactive",
+    "future_min_events": "min block sum(searches+cat+to_cart+to_ord); 0 if inactive",
+    "future_total_active_days": "daily rows in F1+F2+F3"
+  },
+  "status": "PASS_EXACT",
+  "target_semantics": "GMV on (V,V+30]",
+  "target_sha256": "791620e73b728010a3f2a86d2e39ad7d438ac003dcffd3aef89ac7ace5498c47",
+  "target_window_read_by_selection": false,
+  "wcv": 1.7475098625201952
+}

@@ -1,0 +1,29 @@
+{
+  "catalog_id": "teammate_candidate__ridge_drop_recent_hurdle_stable18_s075",
+  "namespace": "teammate_candidate",
+  "experiment_id": "ridge_drop_recent_hurdle_stable18_s075",
+  "title": "Teammate candidate — ridge_drop_recent_hurdle_stable18_s075",
+  "kind": "completed teammate candidate/subrun",
+  "original_path": "пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv | пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/combo_validation_extra90.csv | пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/primitive_validation_extra90.csv | пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/STABLE_BRANCH_VALIDATION.csv | пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/ALL_FINAL6H_VALIDATION.csv | пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/combo_validation_final6h_base.csv | пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/primitive_validation_final6h_base.csv | пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/STABLE_BRANCH_VALIDATION.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/ALL_VALIDATION.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_after_recent_hurdle_stable18.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_final.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_final_reload.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/FINAL_CANDIDATE_METRICS.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/FINAL_SELECTION.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/primitive_validation_after_recent_hurdle_stable18.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/primitive_validation_final.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/primitive_validation_final_reload.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/SHORTLIST_VALIDATION.csv",
+  "source_ref": "external teammate review bundles",
+  "source_commit": "NOT_IN_GIT_HISTORY",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py",
+    "пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py",
+    "пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py",
+    "пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py"
+  ],
+  "commands": [],
+  "model": "Ridge, two-part / hurdle",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Source: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv`",
+  "score": "| wcv | 1.7482567583377555 |",
+  "submission": "| file | C:\\Users\\Dimentiy\\repoVScode\\Ozon-ecup\\src\\DL\\best_bas\\_best_bas_combo_10h\\submissions\\submission_combo10h_candidate_1_ridge_drop_recent_hurdle_stable18_s075.csv |",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact result rows and runner code survive; checkpoint bank and raw data are external",
+  "notes": "Recovered from 18 result-table row(s); no score or parameter was inferred.",
+  "preserved_document": "README.md"
+}

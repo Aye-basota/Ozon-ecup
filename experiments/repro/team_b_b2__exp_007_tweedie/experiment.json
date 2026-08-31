@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_b2__exp_007_tweedie",
+  "namespace": "team_b_b2",
+  "experiment_id": "exp_007_tweedie",
+  "title": "exp_007 — G7 tweedie raw target loss",
+  "kind": "git-history experiment card",
+  "original_path": "git:88dc69163b1f:experiments/exp_007_tweedie.md",
+  "source_ref": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "source_commit": "30a276391f860890b6236058e0cfc76b9b503d83",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM",
+  "features": "See preserved experiment card and implementation",
+  "validation": "CV по фолдам: fold1 `2.394555`, fold2 `2.388086`, fold3 `2.331039`",
+  "score": "CV mean: `2.391320` (лучший на момент: exp_001, `1.717017`)",
+  "submission": "None documented",
+  "seed": "LightGBM Tweedie, `tweedie_variance_power=1.5`, folds 1–2 для решения, fold3 справочно, seed из `src/config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

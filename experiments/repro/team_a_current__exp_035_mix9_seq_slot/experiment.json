@@ -1,0 +1,36 @@
+{
+  "catalog_id": "team_a_current__exp_035_mix9_seq_slot",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_035_mix9_seq_slot",
+  "title": "exp_035 — MIX9: выбор SEQ-члена смеси и сборка `SEQ-AVG3-CLIP-MIX`",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_035_mix9_seq_slot.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "research/strategies/results/MIX9/lofo_mix.py",
+    "research/strategies/results/MIX9/verify_submission.py",
+    "research/strategies/results/MIX9/build_d3a_avg3.py",
+    "research/strategies/results/MIX9/seed_noise.py"
+  ],
+  "commands": [
+    "PYTHONPATH=. python research/strategies/results/MIX9/build_d3a_avg3.py\nPYTHONPATH=. python research/strategies/results/MIX9/lofo_mix.py\nPYTHONPATH=. python research/strategies/results/MIX9/seed_noise.py\nHOST=root@<a10> bash research/strategies/results/MIX9/push_pull.sh push\nHOST=root@<a10> bash research/strategies/results/MIX9/push_pull.sh run    # ~1 ч\nHOST=root@<a10> bash research/strategies/results/MIX9/push_pull.sh pull\nbash research/strategies/results/MIX9/make_submission.sh",
+    "bash research/strategies/results/MIX9/make_submission.sh"
+  ],
+  "model": "dilated TCN, sequence model",
+  "features": "history-depth features",
+  "validation": "`SEQ-D3A` подтверждён как приём (`exp_030c`: ΔwCV −0.00095, 3 сида × 4 фолда),",
+  "score": "`SEQ-D3A` подтверждён как приём (`exp_030c`: ΔwCV −0.00095, 3 сида × 4 фолда),",
+  "submission": "`submissions/submission_SEQAVG3_clip289_mix.csv`, `SEQ-AVG3-CLIP-MIX` —",
+  "seed": "PYTHONPATH=. python research/strategies/results/MIX9/seed_noise.py",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "что `SEQ-AVG3` в OOF. `delta = −0.11639`, уровень **2.329318**, 250 000 строк в",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

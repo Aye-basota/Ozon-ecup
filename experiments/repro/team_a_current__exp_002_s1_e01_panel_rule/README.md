@@ -1,0 +1,86 @@
+# exp_002 — S1-E01: переприменение 3-блочного правила панели на обучении
+
+## Catalogue metadata
+
+- **Catalogue ID:** `team_a_current__exp_002_s1_e01_panel_rule`
+- **Namespace:** `team_a_current`
+- **Experiment ID:** `exp_002_s1_e01_panel_rule`
+- **Original source:** `experiments/exp_002_s1_e01_panel_rule.md`
+- **Source ref:** `working tree`
+- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Kind:** experiment card
+- **Model:** Unknown / not recoverable from repository history
+- **Features:** recency
+- **Preprocessing:** See preserved experiment card and frozen implementation
+- **Validation:** Панель валидации в обоих случаях 3-блочная.
+- **Known score:** | **CV mean** | **1.76879** | **1.76981** | **+0.00102** |
+- **Seed:** Seed from src/config.py unless the preserved card explicitly states otherwise
+- **Postprocessing:** Причина: разница уровня 0.198 — это **маргинальная**, а не **условная** разница.
+- **Submission:** None documented
+- **External data/artifacts:** Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card
+- **Reproducibility:** FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card
+
+## Reproduction
+
+Run `python run.py` to inspect recovered commands and provenance. Use `python run.py --execute N` only after preparing the data/artifacts listed below.
+
+## Preserved original documentation
+# exp_002 — S1-E01: переприменение 3-блочного правила панели на обучении
+
+- **Дата:** 2026-08-10
+- **Автор:** A1 (Strategy 1)
+- **Ветка:** `team-a-strategy-1-impl`
+
+## Гипотеза (из `strategy_1.md`, Эксперимент 1)
+
+Тестовая панель отобрана правилом «активен в каждом из трёх последних 30-дневных
+блоков». На историческом cutoff'е 3-блочная панель даёт `mean log1p(y) = 2.6431`,
+а наивная 1-блочная — `2.4450`; разница уровня **0.198**. Ожидание стратегии:
+модель, обученная на неправильной популяции, «целится не туда», поэтому
+переприменение правила на обучающих cutoff'ах должно улучшить перенос.
+
+## Что изменено относительно базы
+
+Только панель **обучающих** cutoff'ов: 1-блочная → 3-блочная.
+Панель валидации в обоих случаях 3-блочная.
+
+## Результат
+
+| фолд | B0 (train 1-блок) | E01 (train 3-блока) | Δ |
+|------|-------------------|---------------------|---|
+| 2025-09-04 | 1.78975 | 1.79156 | +0.00181 |
+| 2025-09-18 | 1.77428 | 1.77452 | +0.00024 |
+| 2025-10-02 | 1.75873 | 1.75982 | +0.00109 |
+| 2025-10-16 | 1.75240 | 1.75332 | +0.00092 |
+| **CV mean** | **1.76879** | **1.76981** | **+0.00102** |
+
+bias: −0.1022 (B0) против −0.1064 (E01) — практически одинаков.
+Размер обучающей выборки: 627 244 → 549 298 строк.
+
+## Вердикт и вывод
+
+**REJECT.** Гипотеза стратегии **опровергнута экспериментально**.
+
+Переприменение правила панели на обучении не улучшает, а слегка **ухудшает** CV,
+причём последовательно на 4 фолдах из 4.
+
+Причина: разница уровня 0.198 — это **маргинальная**, а не **условная** разница.
+1-блочная панель является надмножеством 3-блочной, и она отличается составом
+пользователей, который модель и так видит в признаках (частота покупок, recency,
+число активных дней). Условное матожидание `E[z | x]` от панели не зависит,
+поэтому обучение на надмножестве просто даёт **на 14% больше данных** — и выигрывает.
+
+Что из гипотезы **остаётся в силе**: панель **валидации** обязана быть 3-блочной.
+Иначе RMSLE считается по другой популяции и несопоставим с leaderboard.
+Это правило зафиксировано в протоколе и соблюдается во всех экспериментах.
+
+## Конфиг прогона
+
+```
+L=None, min_history=90, cutoffs=recent3, train_blocks=3, panel_blocks=3
+остальное — как в B0
+```
+
+```bash
+python -m src.train --exp S1-E01 --L 0 --min-history 90 --cutoffs recent3
+```

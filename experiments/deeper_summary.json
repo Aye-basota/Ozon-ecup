@@ -1,0 +1,460 @@
+{
+  "domain_variants": {
+    "recent_raw": {
+      "auc": 0.6600712280986052,
+      "top_gain": [
+        {
+          "feature": "w90_active_days",
+          "gain": 110592.17341136932,
+          "share": 0.27324302230403547
+        },
+        {
+          "feature": "w60_active_days",
+          "gain": 66000.59247398376,
+          "share": 0.16306941807144476
+        },
+        {
+          "feature": "visible_days_change_30",
+          "gain": 48176.16974258423,
+          "share": 0.11903014306926216
+        },
+        {
+          "feature": "zero_days_change_30",
+          "gain": 30024.36137008667,
+          "share": 0.07418198766195523
+        },
+        {
+          "feature": "order_recency",
+          "gain": 19675.91297531128,
+          "share": 0.04861380115902971
+        },
+        {
+          "feature": "cat_recency",
+          "gain": 15846.186373710632,
+          "share": 0.03915159385321014
+        },
+        {
+          "feature": "w30_gmv",
+          "gain": 13019.159846305847,
+          "share": 0.03216678427171807
+        },
+        {
+          "feature": "w90_searches",
+          "gain": 10958.91856956482,
+          "share": 0.02707649138961462
+        },
+        {
+          "feature": "w60_searches",
+          "gain": 10379.547401428223,
+          "share": 0.025645023645250817
+        },
+        {
+          "feature": "w90_gmv",
+          "gain": 9448.283311843872,
+          "share": 0.023344124706817584
+        }
+      ]
+    },
+    "recent_plus_sequence": {
+      "auc": 0.6658150008497722,
+      "top_gain": [
+        {
+          "feature": "w90_active_days",
+          "gain": 97653.41304302216,
+          "share": 0.2301151228829381
+        },
+        {
+          "feature": "w60_active_days",
+          "gain": 61048.080797195435,
+          "share": 0.14385658602864335
+        },
+        {
+          "feature": "visible_days_change_30",
+          "gain": 49674.9665184021,
+          "share": 0.11705644143284488
+        },
+        {
+          "feature": "hist_purchase_days",
+          "gain": 31011.248554229736,
+          "share": 0.07307637336409337
+        },
+        {
+          "feature": "zero_days_change_30",
+          "gain": 29040.143719673157,
+          "share": 0.06843156867079185
+        },
+        {
+          "feature": "order_recency",
+          "gain": 17356.282509803772,
+          "share": 0.04089916530387846
+        },
+        {
+          "feature": "w30_gmv",
+          "gain": 16161.517526626587,
+          "share": 0.03808376456822855
+        },
+        {
+          "feature": "w180_std_activity_gap",
+          "gain": 14253.060884475708,
+          "share": 0.03358658703965788
+        },
+        {
+          "feature": "cat_recency",
+          "gain": 10876.706726074219,
+          "share": 0.025630386351469085
+        },
+        {
+          "feature": "w60_searches",
+          "gain": 9901.87013053894,
+          "share": 0.02333323527418357
+        }
+      ]
+    },
+    "recent_plus_age": {
+      "auc": 0.9653635040650728,
+      "top_gain": [
+        {
+          "feature": "history_age_days",
+          "gain": 3669924.0917186737,
+          "share": 0.9361073931649564
+        },
+        {
+          "feature": "hist_active_days",
+          "gain": 73469.16346549988,
+          "share": 0.01874017700935359
+        },
+        {
+          "feature": "w90_active_days",
+          "gain": 42069.14961147308,
+          "share": 0.010730805594679168
+        },
+        {
+          "feature": "visible_days_change_30",
+          "gain": 25871.61804008484,
+          "share": 0.006599213584584356
+        },
+        {
+          "feature": "w60_active_days",
+          "gain": 23154.266263008118,
+          "share": 0.005906083965339239
+        },
+        {
+          "feature": "w180_std_activity_gap",
+          "gain": 14992.13803100586,
+          "share": 0.0038241257583073534
+        },
+        {
+          "feature": "zero_days_change_30",
+          "gain": 11694.987169265747,
+          "share": 0.0029831036496975583
+        },
+        {
+          "feature": "w30_max_daily_gmv",
+          "gain": 7435.589547157288,
+          "share": 0.0018966360539556307
+        },
+        {
+          "feature": "order_recency",
+          "gain": 6233.541394233704,
+          "share": 0.0015900231282465654
+        },
+        {
+          "feature": "w90_searches",
+          "gain": 4360.080801963806,
+          "share": 0.0011121493991456072
+        }
+      ]
+    },
+    "recent_plus_cross_section": {
+      "auc": 1.0,
+      "top_gain": [
+        {
+          "feature": "pct_w30_to_ord",
+          "gain": 1648301.0430455208,
+          "share": 0.2914421753876271
+        },
+        {
+          "feature": "rel_w30_to_ord",
+          "gain": 1573442.0514073372,
+          "share": 0.27820608149421694
+        },
+        {
+          "feature": "w30_to_ord",
+          "gain": 1096675.5559067726,
+          "share": 0.1939072422822451
+        },
+        {
+          "feature": "order_recency",
+          "gain": 895311.6084041595,
+          "share": 0.15830334143390912
+        },
+        {
+          "feature": "pct_w30_gmv",
+          "gain": 249239.35387420654,
+          "share": 0.04406892769484179
+        },
+        {
+          "feature": "b0_daynorm_active",
+          "gain": 39217.17559814453,
+          "share": 0.00693413318950752
+        },
+        {
+          "feature": "w30_active_days",
+          "gain": 33608.03630256653,
+          "share": 0.005942360621472853
+        },
+        {
+          "feature": "rel_w30_active_days",
+          "gain": 21353.608864307404,
+          "share": 0.0037756101933246176
+        },
+        {
+          "feature": "pct_shift_to_ord",
+          "gain": 19848.398834228516,
+          "share": 0.0035094684667071746
+        },
+        {
+          "feature": "b0_daynorm_to_ord",
+          "gain": 17171.945037841797,
+          "share": 0.0030362348180150794
+        }
+      ]
+    }
+  },
+  "conditional_lookup": {
+    "annual_bin": {
+      "n": 250000,
+      "base": 1.8035297953912128,
+      "with_feature": 1.789596056754498,
+      "delta": -0.013933738636714876
+    },
+    "zero_days_bin": {
+      "n": 250000,
+      "base": 1.8035297953912128,
+      "with_feature": 1.8145350234955884,
+      "delta": 0.011005228104375542
+    },
+    "cycle_bin": {
+      "n": 184486,
+      "base": 1.9291343980607412,
+      "with_feature": 1.9219352589350798,
+      "delta": -0.007199139125661391
+    },
+    "history_age_bin": {
+      "n": 250000,
+      "base": 1.8035297953912128,
+      "with_feature": 1.8095716183783392,
+      "delta": 0.006041822987126411
+    },
+    "search_pct_bin": {
+      "n": 250000,
+      "base": 1.8035297953912128,
+      "with_feature": 1.8072881828234917,
+      "delta": 0.0037583874322788535
+    },
+    "pct_shift_gmv_bin": {
+      "n": 250000,
+      "base": 1.8035297953912128,
+      "with_feature": 1.7824518316691613,
+      "delta": -0.021077963722051507
+    },
+    "daynorm_trend_gmv_bin": {
+      "n": 250000,
+      "base": 1.8035297953912128,
+      "with_feature": 1.78977919311972,
+      "delta": -0.013750602271492829
+    },
+    "raw_trend_gmv_bin": {
+      "n": 250000,
+      "base": 1.8035297953912128,
+      "with_feature": 1.7892738502920615,
+      "delta": -0.01425594509915129
+    }
+  },
+  "oot_lookup": {
+    "all": {
+      "base": 1.8134207705151597,
+      "zero_days_bin": {
+        "rmse": 1.813352154450969,
+        "delta": -6.861606419072963e-05
+      },
+      "search_pct_bin": {
+        "rmse": 1.8116488776842323,
+        "delta": -0.0017718928309273796
+      },
+      "raw_trend_gmv_bin": {
+        "rmse": 1.784783318730666,
+        "delta": -0.028637451784493617
+      },
+      "pct_shift_gmv_bin": {
+        "rmse": 1.7790380346427526,
+        "delta": -0.034382735872407144
+      },
+      "daynorm_trend_gmv_bin": {
+        "rmse": 1.784404123967813,
+        "delta": -0.029016646547346703
+      },
+      "raw_trend_plus_pct_shift_gmv_bin": {
+        "rmse": 1.7824266368287254,
+        "delta_vs_raw_trend": -0.002356681901940716
+      },
+      "raw_trend_plus_daynorm_trend_gmv_bin": {
+        "rmse": 1.7987757987199195,
+        "delta_vs_raw_trend": 0.013992479989253459
+      }
+    },
+    "three_blocks": {
+      "base": 1.831003382084083,
+      "zero_days_bin": {
+        "rmse": 1.8321289458925158,
+        "delta": 0.0011255638084328723
+      },
+      "search_pct_bin": {
+        "rmse": 1.8295593101838326,
+        "delta": -0.001444071900250421
+      },
+      "raw_trend_gmv_bin": {
+        "rmse": 1.80022277716502,
+        "delta": -0.03078060491906287
+      },
+      "pct_shift_gmv_bin": {
+        "rmse": 1.7941961324956843,
+        "delta": -0.03680724958839865
+      },
+      "daynorm_trend_gmv_bin": {
+        "rmse": 1.8002617516298367,
+        "delta": -0.03074163045424627
+      },
+      "raw_trend_plus_pct_shift_gmv_bin": {
+        "rmse": 1.7963305187907093,
+        "delta_vs_raw_trend": -0.003892258374310842
+      },
+      "raw_trend_plus_daynorm_trend_gmv_bin": {
+        "rmse": 1.8096536213450947,
+        "delta_vs_raw_trend": 0.00943084418007456
+      }
+    }
+  },
+  "population_match": {
+    "train_all_validate_three_blocks": 1.8273370931982893,
+    "train_three_blocks_validate_three_blocks": 1.831003382084083,
+    "centered_train_all_validate_three_blocks": 1.8544793433336102,
+    "centered_train_three_blocks_validate_three_blocks": 1.8153363847344313
+  },
+  "cross_section_stationarity": {
+    "w30_gmv": {
+      "abs_bin": {
+        "mean_cross_cutoff_sd": 0.055533863081005136,
+        "median_cross_cutoff_sd": 0.05480216549470951,
+        "bins": 6
+      },
+      "pct_bin": {
+        "mean_cross_cutoff_sd": 0.10588480371853085,
+        "median_cross_cutoff_sd": 0.10443907223251035,
+        "bins": 7
+      }
+    },
+    "w30_searches": {
+      "abs_bin": {
+        "mean_cross_cutoff_sd": 0.0849187224369461,
+        "median_cross_cutoff_sd": 0.08898081698391239,
+        "bins": 10
+      },
+      "pct_bin": {
+        "mean_cross_cutoff_sd": 0.13034619597240812,
+        "median_cross_cutoff_sd": 0.13027218547990072,
+        "bins": 10
+      }
+    },
+    "w30_to_ord": {
+      "abs_bin": {
+        "mean_cross_cutoff_sd": 0.08118859328797164,
+        "median_cross_cutoff_sd": 0.08439441083916607,
+        "bins": 6
+      },
+      "pct_bin": {
+        "mean_cross_cutoff_sd": 0.11662654584114181,
+        "median_cross_cutoff_sd": 0.12256170402510495,
+        "bins": 6
+      }
+    },
+    "w30_active_days": {
+      "abs_bin": {
+        "mean_cross_cutoff_sd": 0.10773546186069187,
+        "median_cross_cutoff_sd": 0.11776504443301411,
+        "bins": 10
+      },
+      "pct_bin": {
+        "mean_cross_cutoff_sd": 0.13267762803312563,
+        "median_cross_cutoff_sd": 0.14036304505671157,
+        "bins": 10
+      }
+    }
+  },
+  "anniversary": {
+    "jan_validation": {
+      "window_gmv_total": 14389480.958596934,
+      "window_gmv_mean": 57.557923834387736,
+      "buyer_share": 0.367276,
+      "active_share": 0.763188,
+      "spearman_annual_gmv_vs_target_z": 0.4072685269925515,
+      "pearson_log_annual_gmv_vs_target_z": 0.41383003578966854
+    },
+    "production": {
+      "window_gmv_total": 16731754.475392515,
+      "window_gmv_mean": 66.92701790157005,
+      "buyer_share": 0.402928,
+      "active_share": 0.7829
+    }
+  },
+  "selection_latest": [
+    {
+      "cutoff": "2025-11-15 00:00:00",
+      "population": "all",
+      "n": 250000,
+      "zero_mass": 0.437316,
+      "target_z_mean": 2.417411298470709,
+      "gmv_mean": 102.0789315437938
+    },
+    {
+      "cutoff": "2025-11-15 00:00:00",
+      "population": "three_blocks",
+      "n": 205349,
+      "zero_mass": 0.3749226925867669,
+      "target_z_mean": 2.7134236224779635,
+      "gmv_mean": 117.72526102337393
+    },
+    {
+      "cutoff": "2025-12-15 00:00:00",
+      "population": "all",
+      "n": 250000,
+      "zero_mass": 0.43692,
+      "target_z_mean": 2.41704531670095,
+      "gmv_mean": 101.42594358015299
+    },
+    {
+      "cutoff": "2025-12-15 00:00:00",
+      "population": "three_blocks",
+      "n": 218400,
+      "zero_mass": 0.3954212454212454,
+      "target_z_mean": 2.614456507197309,
+      "gmv_mean": 111.54435216467573
+    },
+    {
+      "cutoff": "2026-01-14 00:00:00",
+      "population": "all",
+      "n": 250000,
+      "zero_mass": 0.45934,
+      "target_z_mean": 2.242098864551439,
+      "gmv_mean": 84.03404163321817
+    },
+    {
+      "cutoff": "2026-01-14 00:00:00",
+      "population": "three_blocks",
+      "n": 233152,
+      "zero_mass": 0.4381476461707384,
+      "target_z_mean": 2.3376374728242872,
+      "gmv_mean": 88.33570686715096
+    }
+  ]
+}

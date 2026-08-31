@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_b_b2__exp_034_temporal_ensemble",
+  "namespace": "team_b_b2",
+  "experiment_id": "exp_034_temporal_ensemble",
+  "title": "exp_034 — A1 temporal ensemble",
+  "kind": "git-history experiment card",
+  "original_path": "git:88dc69163b1f:experiments/exp_034_temporal_ensemble.md",
+  "source_ref": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "source_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/temporal_ensemble.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, ensemble",
+  "features": "See preserved experiment card and implementation",
+  "validation": "CV temporal по фолдам: fold1 `1.700107`, fold2 `1.742105`, fold3 `1.731667`.",
+  "score": "CV mean(1,2): temporal `1.721106`, central `1.716842`, разница `+0.004264`.",
+  "submission": "None documented",
+  "seed": "LightGBM из `src/train.py`, seed из `src/config.py` (`42`), `CALIBRATION_DELTA=0.0`. Cutoff'ы: fold1 `2025-11-17,2025-12-01,2025-12-15`; fold2 `2025-10-18,2025-11-01,2025-11-15`; fold3 `2025-09-18,2025-10-02,2025-10-16`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: card metrics survive; runnable source uses a documented later branch-head fallback",
+  "notes": "Frozen implementation is copied from the commit that introduced this card. The card-introduction commit contained syntactically incomplete WIP source; the frozen implementation uses the nearest surviving branch-head version for: src/train.py. Exact provenance is in implementation/SOURCE_PROVENANCE.json.",
+  "preserved_document": "README.md"
+}

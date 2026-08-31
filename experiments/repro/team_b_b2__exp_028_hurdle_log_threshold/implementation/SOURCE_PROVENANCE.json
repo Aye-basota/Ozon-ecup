@@ -1,0 +1,30 @@
+{
+  "src/config.py": {
+    "card_introduction_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+    "implementation_source": "427abcc36b2e94a1c58345458f90df36c122f2a4"
+  },
+  "src/ensemble.py": {
+    "card_introduction_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+    "implementation_source": "427abcc36b2e94a1c58345458f90df36c122f2a4"
+  },
+  "src/features.py": {
+    "card_introduction_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+    "implementation_source": "427abcc36b2e94a1c58345458f90df36c122f2a4"
+  },
+  "src/predict.py": {
+    "card_introduction_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+    "implementation_source": "427abcc36b2e94a1c58345458f90df36c122f2a4"
+  },
+  "src/temporal_ensemble.py": {
+    "card_introduction_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+    "implementation_source": "427abcc36b2e94a1c58345458f90df36c122f2a4"
+  },
+  "src/train.py": {
+    "card_introduction_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+    "implementation_source": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf"
+  },
+  "src/validation.py": {
+    "card_introduction_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+    "implementation_source": "427abcc36b2e94a1c58345458f90df36c122f2a4"
+  }
+}

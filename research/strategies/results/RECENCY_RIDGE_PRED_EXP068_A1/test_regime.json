@@ -1,0 +1,54 @@
+{
+  "status": "NOT_RUN",
+  "historical_reference_csv_available": true,
+  "historical_formula_replay_passed": false,
+  "canonical_latest_oof_available": false,
+  "production_parity": "UNRESOLVED",
+  "CAP_LINEAGE": "UNKNOWN",
+  "latest_level": 2.32930256438812,
+  "fixed_level_reference": 2.3293,
+  "test_only_redundancy": {
+    "friend": {
+      "corr": 0.9997312220661128,
+      "var_diff": 0.0014729675154166839,
+      "std_diff": 0.038379258922192384,
+      "mean_abs_diff": 0.028930432937613885,
+      "max_abs_diff": 0.8541956866423783
+    },
+    "occ_meta_B": {
+      "corr": 0.999948024799602,
+      "var_diff": 0.00026779850250763037,
+      "std_diff": 0.01636455017736908,
+      "mean_abs_diff": 0.011641404010899498,
+      "max_abs_diff": 0.3270904464077744
+    },
+    "occ_raw_X3": {
+      "corr": 0.999956581013229,
+      "var_diff": 0.00021815177299313847,
+      "std_diff": 0.014769961848059678,
+      "mean_abs_diff": 0.010934324077424682,
+      "max_abs_diff": 0.22125096450809845
+    },
+    "latest": {
+      "corr": 0.999968243561061,
+      "var_diff": 0.000159636752561801,
+      "std_diff": 0.01263474386609404,
+      "mean_abs_diff": 0.009473147752104422,
+      "max_abs_diff": 0.2576803448370728
+    },
+    "late_ridge_anchor": {
+      "corr": 0.9999898176086854,
+      "var_diff": 5.5333132485314935e-05,
+      "std_diff": 0.007438624367805847,
+      "mean_abs_diff": 0.005510078651069749,
+      "max_abs_diff": 0.18735719154946207
+    }
+  },
+  "blocked_diagnostics": [
+    "Var(correction_test)/Var(correction_oof)",
+    "quantile support",
+    "activity-bin support",
+    "max leverage",
+    "outside-OOF-range share"
+  ]
+}

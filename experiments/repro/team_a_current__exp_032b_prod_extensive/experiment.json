@@ -1,0 +1,43 @@
+{
+  "catalog_id": "team_a_current__exp_032b_prod_extensive",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_032b_prod_extensive",
+  "title": "exp_032b — EXP-032B: боевой экстенсив под свежий conditional интенсив",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_032b_prod_extensive.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seq_cond.py",
+    "src/seq.py",
+    "src/dist_pact.py",
+    "src/test_seq_cond.py",
+    "research/strategies/results/SEQ8/prod_folds.py",
+    "research/strategies/results/SEQ8/mix_diversity.py"
+  ],
+  "commands": [
+    "python -m src.dist_pact                                   # боевой p0, 4 фолда\npython -m src.seq_cond prod --ckpt SEQ-D3A-BASE-S42-V1016 --head-seeds 42 43 44\npython -m src.seq_cond prod --ckpt SEQ-D3A-BASE-S42-V1002 --head-seeds 42 43 44\npython -m src.seq_cond prod --ckpt SEQ-D3A-BASE-S42-V0918 --head-seeds 42 43 44\npython -m src.seq_cond prod --ckpt SEQ-D3A-BASE-S42-V0904 --head-seeds 42 43 44\nPYTHONPATH=. python research/strategies/results/SEQ8/prod_folds.py\nPYTHONPATH=. python research/strategies/results/SEQ8/mix_diversity.py\npython -m pytest src/test_seq_cond.py -q          # 31 passed",
+    "python -m src.dist_pact                                   # боевой p0, 4 фолда",
+    "python -m src.seq_cond prod --ckpt SEQ-D3A-BASE-S42-V1016 --head-seeds 42 43 44",
+    "python -m src.seq_cond prod --ckpt SEQ-D3A-BASE-S42-V1002 --head-seeds 42 43 44",
+    "python -m src.seq_cond prod --ckpt SEQ-D3A-BASE-S42-V0918 --head-seeds 42 43 44",
+    "python -m src.seq_cond prod --ckpt SEQ-D3A-BASE-S42-V0904 --head-seeds 42 43 44",
+    "python -m pytest src/test_seq_cond.py -q          # 31 passed"
+  ],
+  "model": "LightGBM, dilated TCN, sequence model, calibration diagnostic",
+  "features": "freshness/conditional features, history-depth features",
+  "validation": "Вычисления:** боевая голова `S1-DIST` переобучена на 4 фолдах на локальном",
+  "score": "пересборка стоит **+0.00088 wCV(A)**, и `COND-FRESH` обгоняет одноголовую базу",
+  "submission": "Сабмит не готовился и не планируется.",
+  "seed": "вариантов и все `P`; `artifacts/S04PROD_S42-V*_mu.npz` — кэш голов по сидам",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "SEQ-члене, а разнообразие — на уровне 0.04, а не 0.015.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

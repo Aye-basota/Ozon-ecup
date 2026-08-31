@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_a_current__exp_067_authoritative_latest_integration",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_067_authoritative_latest_integration",
+  "title": "exp_067 — AUTHORITATIVE-LATEST-INTEGRATION",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_067_authoritative_latest_integration.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/authoritative_latest_audit.py",
+    "src/test_authoritative_latest_audit.py"
+  ],
+  "commands": [
+    "python src/authoritative_latest_audit.py --prefix AUTHORITATIVE_LATEST_AUDIT_20260825_160144_V2`."
+  ],
+  "model": "blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "`occ_raw_X3` в bundle отсутствует. Summary validation CSV не использовались",
+  "score": "Public LB `1.64921756224069` найден только в README/text provenance и там",
+  "submission": "LB upload/new submission: **NO**.",
+  "seed": "Training/model/seed отсутствуют. Runner:",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "как surrogate; `oof_latest_canonical.npz`, project wCV, сегменты и level audit",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

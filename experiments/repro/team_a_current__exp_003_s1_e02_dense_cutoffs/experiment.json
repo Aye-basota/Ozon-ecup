@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_a_current__exp_003_s1_e02_dense_cutoffs",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_003_s1_e02_dense_cutoffs",
+  "title": "exp_003 — S1-E02: плотная сетка cutoff'ов",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_003_s1_e02_dense_cutoffs.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/train.py",
+    "src/models.py"
+  ],
+  "commands": [
+    "python -m src.train --exp S1-E02 --L 0 --min-history 90 --train-blocks 1 --cutoffs all"
+  ],
+  "model": "LightGBM",
+  "features": "See preserved experiment card and implementation",
+  "validation": "`cutoffs: recent3 → all` (18–24 cutoff'а в зависимости от фолда вместо 3).",
+  "score": "Ожидание стратегии: −0.005…−0.012 RMSLE.",
+  "submission": "None documented",
+  "seed": "LightGBM как в B0, 600 раундов, seed 42",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

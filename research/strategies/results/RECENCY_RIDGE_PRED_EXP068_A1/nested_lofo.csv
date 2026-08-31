@@ -1,0 +1,13 @@
+formulation,fold,status,base_rmsle_cal,candidate_rmsle_cal,delta,selected_scale,condition_number,reason
+FULL_RECENCY_RIDGE,2025-09-04,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+FULL_RECENCY_RIDGE,2025-09-18,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+FULL_RECENCY_RIDGE,2025-10-02,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+FULL_RECENCY_RIDGE,2025-10-16,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+PREDICTIONS_ONLY,2025-09-04,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+PREDICTIONS_ONLY,2025-09-18,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+PREDICTIONS_ONLY,2025-10-02,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+PREDICTIONS_ONLY,2025-10-16,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+SHUFFLED_RECENT,2025-09-04,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+SHUFFLED_RECENT,2025-09-18,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+SHUFFLED_RECENT,2025-10-02,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing
+SHUFFLED_RECENT,2025-10-16,BLOCKED_NOT_RUN,,,,,,historical replay failed before Phase C; canonical latest OOF also missing

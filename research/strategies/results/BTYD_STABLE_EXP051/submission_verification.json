@@ -1,0 +1,41 @@
+{
+  "columns": [
+    "user_id",
+    "predict"
+  ],
+  "duplicate_users": 0,
+  "finite": true,
+  "level_shift": -0.11984712850465207,
+  "mean_log1p_disk": 2.3293000001716084,
+  "missing_users": 0,
+  "nonnegative": true,
+  "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_BTYD05.csv",
+  "prediction": {
+    "max": 2723.635987,
+    "mean": 36.899329696612,
+    "min": 0.0,
+    "n": 250000,
+    "quantiles": {
+      "0": 0.0,
+      "0.001": 0.013614998,
+      "0.005": 0.07139494,
+      "0.01": 0.11002176,
+      "0.05": 0.25974475,
+      "0.25": 1.6506669999999999,
+      "0.5": 7.352907,
+      "0.75": 32.14396575,
+      "0.95": 166.93508769999985,
+      "0.99": 425.8338236500005,
+      "0.995": 566.9008035300001,
+      "0.999": 1019.4577079709856,
+      "1": 2723.635987
+    },
+    "std": 89.8848324226271
+  },
+  "raw_candidate_sha256": "99d7286b669ff2d5476ad21bb4d51f232f0578049fc6e13b40047c3746128c17",
+  "reference_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_STRONGEST_CURRENT.csv",
+  "reference_sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+  "rows": 250000,
+  "sha256": "c3cfb4d90f50ceff8f5d8f8aaca072664966fb91018eb0a3fa01195dc38c2932",
+  "zero_fraction": 0.000508
+}

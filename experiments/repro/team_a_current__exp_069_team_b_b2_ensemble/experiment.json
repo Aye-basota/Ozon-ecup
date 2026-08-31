@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_069_team_b_b2_ensemble",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_069_team_b_b2_ensemble",
+  "title": "exp_069 — TEAM-B-B2 ensemble",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_069_team_b_b2_ensemble.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/team_b_b2_ensemble.py"
+  ],
+  "commands": [],
+  "model": "CatBoost, ensemble, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Наш replay: **1.747509863**; по фолдам `1.766883 / 1.760510 / 1.748629 / 1.741279`.",
+  "score": "PREPARED по запросу, но REJECT как новый чемпион:** LOFO подтверждает неслучайность optimum веса на этих фолдах, однако выигрыш `0.000151` ниже project gate `0.0005` и ожидаемого public noise `0.00025`. `STRONGEST-CURRENT` остаётся research/private-safe anchor; соседние веса, поздние загрязнённые cutoff'ы и public-LB tuning не продолжать.",
+  "submission": "LB: не отправляли. Submission создан: `submissions/submission_TEAM_B_B2_OPTIMAL_ENSEMBLE.csv`, SHA256 `9b2cc1b4cd3de6394f1e891904f58ab6e5c5f8c7b3505d83d797bd706bad899f`.",
+  "seed": "Pinned `features.py/train.py/predict.py` из team SHA `88dc691…`; exact 4 модели команды (LGBM classifier, positive LGBM, all-user LGBM, CatBoost), seed **42** только из `config.py`, 260 features. S1 validation dates 09-04/09-18/10-02/10-16; team feature cutoff = `V+1`, latest safe single train snapshot starts `V-29` and its target ends on `V`. Production team model: cutoff `2025-10-17` (history through clean `2025-10-16`), test feature cutoff `2026-02-14` (history through `2026-02-13`). Training",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Pinned `features.py/train.py/predict.py` из team SHA `88dc691…`; exact 4 модели команды (LGBM classifier, positive LGBM, all-user LGBM, CatBoost), seed **42** только из `config.py`, 260 features. S1 validation dates 09-04/09-18/10-02/10-16; team feature cutoff = `V+1`, latest safe single train snapshot starts `V-29` and its target ends on `V`. Production team model: cutoff `2025-10-17` (history through clean `2025-10-16`), test feature cutoff `2026-02-14` (history through `2026-02-13`). Training",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

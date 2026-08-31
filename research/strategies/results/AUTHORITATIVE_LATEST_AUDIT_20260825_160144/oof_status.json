@@ -1,0 +1,70 @@
+{
+  "CANONICAL_OOF": "MISSING",
+  "components": {
+    "friend": {
+      "component_paths": {
+        "ETX-AVG3": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_ETX-AVG3.npz",
+        "S1-CAP": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E03a.npz",
+        "S1-DIST": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-DIST.npz",
+        "S1-UNC": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E02.npz",
+        "SEQ-AVG3": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_SEQ-AVG3.npz"
+      },
+      "component_sha256": {
+        "ETX-AVG3": "890aef1a0967df5fb70b4546dadb77b70b4aafa08f4cae6a31a3a030f3e7bf2f",
+        "S1-CAP": "38fb0270611250934130730f92b37345a982fcdaddda9d0b387e7878e0e6d525",
+        "S1-DIST": "7ef1251928305bd80040a63723cf0a3669e8a37411664b26bf0c0777e8dd4c4e",
+        "S1-UNC": "2a8e543f4e5a2362eeaf2e8136d2f5204e4c2d83874276499711fd9dcac874ff",
+        "SEQ-AVG3": "8e8ec7907587406de1224555a42e11803b98f79492ac124b2fd136f6e8ac646c"
+      },
+      "fold_sizes": [
+        188518,
+        191025,
+        193694,
+        197379
+      ],
+      "folds": [
+        "2025-09-04",
+        "2025-09-18",
+        "2025-10-02",
+        "2025-10-16"
+      ],
+      "problems": [
+        "S1-DIST: cutoff order differs",
+        "S1-DIST: user_id order differs",
+        "S1-DIST: target differs"
+      ],
+      "row_order_equality": false,
+      "rows": 770616,
+      "status": "INVALID",
+      "target_equality": false,
+      "unique_keys": 770616
+    },
+    "occ_meta_B": {
+      "reason": "row-level production-candidate OOF/cache omitted from supplied bundle",
+      "status": "MISSING"
+    },
+    "occ_raw_X3": {
+      "reason": "row-level production-candidate OOF/cache omitted from supplied bundle",
+      "status": "MISSING"
+    }
+  },
+  "native_second_line_diagnostics_promoted_to_project_wcv": false,
+  "oof_latest_canonical_created": false,
+  "project_wcv_computed": false,
+  "required_fold_sizes": [
+    188518,
+    191025,
+    193694,
+    197379
+  ],
+  "required_folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "segments_computed": false,
+  "stacking_leakage_status": "UNRESOLVED_FOR_EXACT_LATE_COMPONENTS",
+  "summary_validation_csvs_are_canonical_oof": false,
+  "training_target_leakage_status": "UNRESOLVED_FOR_EXACT_LATE_COMPONENTS"
+}

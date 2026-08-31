@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_strategy__exp_010_ensemble_tuning",
+  "namespace": "team_b_strategy",
+  "experiment_id": "exp_010_ensemble_tuning",
+  "title": "exp_010 — ensemble tuning",
+  "kind": "git-history experiment card",
+  "original_path": "git:824f41575bc2:experiments/exp_010_ensemble_tuning.md",
+  "source_ref": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+  "source_commit": "68b543d7b654257812ba4bbb58547fd8a832fb00",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, ensemble",
+  "features": "recency",
+  "validation": "CV по фолдам: validation cutoff 2026-01-15",
+  "score": "После LB 1.656853 на exp_009 стоит не менять модель резко, а подобрать близкие веса ансамбля и общий scale. Локальный CV вокруг optimum плоский, поэтому небольшое смещение может улучшить public LB.",
+  "submission": "None documented",
+  "seed": "Модели: два `LGBMRegressor` из exp_009. Train cutoffs: 2025-10-01, 2025-11-01, 2025-12-01. Validation cutoff: 2026-01-15. Seed: 42 из `config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Используется тот же ансамбль exp_009: `recency LightGBM scale 0.64` + `long_buy LightGBM scale 0.62` в log-space. Проверены веса `w_recency` 0.30..0.70 и global scale 0.94..1.06.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,26 @@
+{
+  "catalog_id": "teammate_final__rebuild_latest",
+  "namespace": "teammate_final",
+  "experiment_id": "rebuild_latest",
+  "title": "Public-LB calibrated final blend in z=log1p space.",
+  "kind": "authoritative latest submission rebuild",
+  "original_path": "пайплайн сокомандника/latest/rebuild_latest.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "пайплайн сокомандника/latest/rebuild_latest.py"
+  ],
+  "commands": [],
+  "model": "ensemble, blend",
+  "features": "occurrence features",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

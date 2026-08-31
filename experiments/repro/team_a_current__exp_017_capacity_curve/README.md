@@ -1,0 +1,124 @@
+# exp_017 — S_05 A: кривая по раундам для `direct` (ёмкость оценщика)
+
+## Catalogue metadata
+
+- **Catalogue ID:** `team_a_current__exp_017_capacity_curve`
+- **Namespace:** `team_a_current`
+- **Experiment ID:** `exp_017_capacity_curve`
+- **Original source:** `experiments/exp_017_capacity_curve.md`
+- **Source ref:** `working tree`
+- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Kind:** experiment card
+- **Model:** ensemble, calibration diagnostic
+- **Features:** 227 tabular features
+- **Preprocessing:** See preserved experiment card and frozen implementation
+- **Validation:** ось: зависимость `RMSLE_cal(rounds)` по всем четырём фолдам. Срез по префиксу
+- **Known score:** Опорная модель — `S1-E10` (600 раундов), **wCV 1.75170**.
+- **Seed:** train_blocks=1, panel_blocks=3, LGB_PARAMS из config.py, seed=42, 227 признаков
+- **Postprocessing:** None documented
+- **Submission:** LB: не отправлялось, сабмиты кончились (`STATE.md`).
+- **External data/artifacts:** Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card
+- **Reproducibility:** FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card
+
+## Reproduction
+
+Run `python run.py` to inspect recovered commands and provenance. Use `python run.py --execute N` only after preparing the data/artifacts listed below.
+
+## Preserved original documentation
+# exp_017 — S_05 A: кривая по раундам для `direct` (ёмкость оценщика)
+
+- **Дата:** 2026-08-12
+- **Автор:** A1
+- **Коммит:** e3032ca
+- **Стратегия:** `research/strategies/STRATEGY_05_capacity_seed_ensemble.md`, вариант A
+- **Полный разбор:** `research/strategies/results/STRATEGY_05/variant_A.md`
+
+## Гипотеза
+
+`LGB_ROUNDS = 600` приехало из бейзлайна `S1-B0` (3 cutoff'а, 0.63 млн строк)
+на плотную сетку (24 cutoff'а, 4.96 млн строк) без пересмотра.
+`strategy_1_results.md` §9 п.2 предсказывал **недобор** раундов. Проверяется одна
+ось: зависимость `RMSLE_cal(rounds)` по всем четырём фолдам. Срез по префиксу
+деревьев стоит инференс, а не переобучение, поэтому вся кривая — одно обучение
+на фолд.
+
+## Что изменено относительно базы
+
+Только число раундов у `direct` на признаках `S1-E10`. Признаки, таргет, фолды,
+панели, обучающая выборка, калибровка, смесь, `lr`/`num_leaves`/`min_data_in_leaf`
+не трогались; `seed = config.SEED = 42`.
+
+## Результат
+
+Опорная модель — `S1-E10` (600 раундов), **wCV 1.75170**.
+
+| раундов | 09-04 | 09-18 | 10-02 | 10-16 | wCV | Δ к 600 | фолдов лучше |
+|---|---|---|---|---|---|---|---|
+| 100 | 1.77095 | 1.76546 | 1.75340 | 1.74555 | 1.75199 | +0.00029 | 1/4 |
+| 150 | 1.77060 | 1.76478 | 1.75246 | 1.74469 | 1.75117 | −0.00053 | 4/4 |
+| **200** | 1.77077 | 1.76473 | 1.75233 | 1.74449 | **1.75103** | **−0.00067** | **4/4** |
+| 250 | 1.77094 | 1.76475 | 1.75230 | 1.74450 | 1.75104 | −0.00066 | 4/4 |
+| 300 | 1.77106 | 1.76480 | 1.75243 | 1.74447 | 1.75108 | −0.00062 | 4/4 |
+| 600 | 1.77209 | 1.76537 | 1.75326 | 1.74495 | 1.75170 | 0 | — |
+| 1000 | 1.77363 | 1.76680 | 1.75442 | 1.74591 | 1.75281 | +0.00111 | 0/4 |
+| 1600 | 1.77602 | 1.76878 | 1.75619 | 1.74752 | 1.75457 | +0.00287 | 0/4 |
+
+Полная сетка (16 точек: 25, 50, 75, 100, 125, 150, 200, 250, 300, 450, 600, 800,
+1000, 1200, 1400, 1600) — в `variant_A.md`; OOF каждой точки лежит в
+`artifacts/oof_S1-ROUNDS-R<k>.npz`, отчёты — `artifacts/report_S1-ROUNDS-R<k>.json`.
+
+- `OOF cal` 1.75889 → **1.75801**, `CV mean` 1.75988 → 1.75885,
+  `mean(log1p(pred))` 2.6798 → 2.6749.
+- argmin по фолдам: **150 / 200 / 250 / 300** при 18 / 20 / 22 / 24 обучающих
+  cutoff'ах — оптимум растёт вместе с объёмом выборки, ровно +50 раундов
+  на два cutoff'а. Дно плоское: на фолде 10-16 разброс между 200 и 300 равен
+  0.00003 при парной SE фолда ≈0.00012, поэтому позиция argmin внутри 150–300
+  не разрешена — разрешено только «не 600».
+- Контроль методики: срез 600 воспроизвёл `S1-E10` на всех четырёх фолдах до
+  пятого знака; полный прогон на 300 раундов побитово совпал со срезом 300 из
+  прогона на 1600 (`Var(z − z_ref) = 0.00000`).
+- runtime: 1600 раундов × 4 фолда — 20 мин makespan (два процесса × 6 потоков),
+  добор 25..300 — ещё 7.5 мин.
+- LB: не отправлялось, сабмиты кончились (`STATE.md`).
+
+## Вердикт и вывод
+
+**ПРИНЯТО в разработку** (по `exp_016` §6: −0.00067 попадает в −0.0020…−0.0005,
+плюс 4 фолда из 4, включая 10-16). Критерий приёмки варианта A из стратегии
+(«минимум воспроизводится на ≥3 фолдах и выигрыш ≥ 0.0005») выполнен.
+
+**Знак предсказания оказался обратным: 600 раундов — переобучение, а не недобор.**
+Правый край сетки стратегии (1600 раундов) стоит **+0.00287 wCV** — больше, чем
+весь выигрыш `E0` (−0.00145) и смеси с головой распределения (−0.00071) вместе.
+Рекомендация `strategy_1_results.md` §9 п.2 «поднять раунды» опровергнута
+замером и уходит в «Не повторять».
+
+Боевое число раундов для `direct` — **300** (обоснование выбора между 200 и 300:
+`variant_A.md` §«Конфигурация, передаваемая в вариант B»). Эта же конфигурация
+стала базой варианта B (`exp_018`).
+
+## Конфиг прогона
+
+```
+model=direct, L=None, norm_long=True, min_history=90, cutoffs=all шаг 7,
+train_blocks=1, panel_blocks=3, LGB_PARAMS из config.py, seed=42, 227 признаков
+
+LGB_THREADS=6 python -m src.train --exp S1-ROUNDS-A --model direct --L 0 --norm-long \
+  --min-history 90 --train-blocks 1 --cutoffs all --rounds 1600 \
+  --snap 300 450 600 800 1000 1200 1400 --snap-save --val 2025-10-16 2025-09-04 --no-log
+LGB_THREADS=6 python -m src.train --exp S1-ROUNDS-B ... --val 2025-10-02 2025-09-18 --no-log
+LGB_THREADS=6 python -m src.train --exp S1-ROUNDSL-A --model direct --L 0 --norm-long \
+  --min-history 90 --train-blocks 1 --cutoffs all --rounds 300 \
+  --snap 25 50 75 100 125 150 200 250 --snap-save --val 2025-10-16 2025-09-04 --no-log
+LGB_THREADS=6 python -m src.train --exp S1-ROUNDSL-B ... --val 2025-10-02 2025-09-18 --no-log
+for k in ...: python -m src.merge_oof --out S1-ROUNDS-R$k --parts <A-R$k> <B-R$k> \
+  --ref S1-E10 --model direct --no-log
+# строка журнала: S1-ROUNDS = точка 300 раундов (боевой выбор)
+```
+
+## Реализация
+
+`src/train.py`: флаг `--snap-save` — OOF каждого среза сохраняется как
+самостоятельный эксперимент `<exp>-R<раунды>` (`save_snapshot`), поэтому каждая
+точка кривой имеет полноценные артефакты и склеивается `merge_oof` наравне
+с обычным прогоном. `src/config.py` и `src/validation.py` не изменялись.

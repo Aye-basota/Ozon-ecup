@@ -1,0 +1,29 @@
+{
+  "catalog_id": "teammate_candidate__blend_ridge_recentpow1p7_s075_occ_platt_guard_pr70",
+  "namespace": "teammate_candidate",
+  "experiment_id": "blend_ridge_recentpow1p7_s075__occ_platt_guard_pr70",
+  "title": "Teammate candidate — blend_ridge_recentpow1p7_s075__occ_platt_guard_pr70",
+  "kind": "completed teammate candidate/subrun",
+  "original_path": "пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv | пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/combo_validation_extra90.csv | пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/STABLE_BRANCH_VALIDATION.csv | пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/ALL_FINAL6H_VALIDATION.csv | пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/combo_validation_final6h_base.csv | пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/STABLE_BRANCH_VALIDATION.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/ALL_VALIDATION.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_after_recent_hurdle_fast12.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_after_recent_hurdle_stable18.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_existing.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_final.csv | пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/combo_validation_final_reload.csv",
+  "source_ref": "external teammate review bundles",
+  "source_commit": "NOT_IN_GIT_HISTORY",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py",
+    "пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py",
+    "пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py",
+    "пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py"
+  ],
+  "commands": [],
+  "model": "Ridge, two-part / hurdle, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Source: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv`",
+  "score": "| wcv | 1.7483408233315214 |",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact result rows and runner code survive; checkpoint bank and raw data are external",
+  "notes": "Recovered from 12 result-table row(s); no score or parameter was inferred.",
+  "preserved_document": "README.md"
+}

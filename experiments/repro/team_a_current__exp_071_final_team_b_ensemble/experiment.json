@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_071_final_team_b_ensemble",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_071_final_team_b_ensemble",
+  "title": "exp_071 — финальный ансамбль STRONGEST-CURRENT + team-b-B2",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_071_final_team_b_ensemble.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/final_team_b_ensemble.py"
+  ],
+  "commands": [],
+  "model": "sequence model, ensemble, blend, calibration diagnostic",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Вес выбирать без LB: непрерывный optimum на канонической S1 wCV, с обязательной",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "Submission: `submissions/submission_FINAL_CAP_UNC_DIST_SEQ_ETX_TEAM_B.csv`,",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "веса фолдов 1:2:4:8, пофолдовая log-калибровка; production level `2.3293`.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

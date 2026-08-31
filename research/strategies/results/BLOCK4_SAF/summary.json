@@ -1,0 +1,28 @@
+{
+  "verdict": "REJECT",
+  "reasons": [
+    "fold 2025-10-16 did not improve",
+    "honest LOFO gain +0.000240 is below the -0.0005 floor",
+    "only 0/4 folds improve"
+  ],
+  "honest_lofo_delta_wcv": 0.00023961341518433283,
+  "honest_fold_deltas": [
+    0.0006907216092593149,
+    0.000279439107535584,
+    0.00016105733486426743,
+    0.00021254650799718
+  ],
+  "heldout_alphas": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "alpha_range": 0.0,
+  "alpha_production": 0.25,
+  "shuffle_delta_wcv": 0.0074006659228728145,
+  "test_var_ratio": 0.8714994254867989,
+  "test_regime_pass": true,
+  "submission": null,
+  "audit": "PASS"
+}

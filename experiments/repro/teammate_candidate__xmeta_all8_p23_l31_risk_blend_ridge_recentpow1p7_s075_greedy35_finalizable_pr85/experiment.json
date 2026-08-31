@@ -1,0 +1,29 @@
+{
+  "catalog_id": "teammate_candidate__xmeta_all8_p23_l31_risk_blend_ridge_recentpow1p7_s075_greedy35_finalizable_pr85",
+  "namespace": "teammate_candidate",
+  "experiment_id": "xmeta_all8_p23_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85",
+  "title": "Teammate candidate — xmeta_all8_p23_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85",
+  "kind": "completed teammate candidate/subrun",
+  "original_path": "пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv | пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/MATERIALIZED_CANDIDATES.csv",
+  "source_ref": "external teammate review bundles",
+  "source_commit": "NOT_IN_GIT_HISTORY",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py",
+    "пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py",
+    "пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py",
+    "пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py"
+  ],
+  "commands": [],
+  "model": "Ridge, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Source: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv`",
+  "score": "| wcv | 1.748020498532981 |",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact result rows and runner code survive; checkpoint bank and raw data are external",
+  "notes": "Recovered from 2 result-table row(s); no score or parameter was inferred.",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,47 @@
+{
+  "base_head": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "experiment": "PRODUCTION-STATE-REWEIGHT",
+  "guardrails": {
+    "config_modified": false,
+    "features_only_via_build_features_cache": true,
+    "gpu_used": false,
+    "test_or_public_paths_read": false,
+    "validation_utility_modified": false
+  },
+  "number": 57,
+  "phase0": {
+    "feature_order_sha256": "47d91fbae17fce48232f8cfe226d2ed63f078fd5022fd8bb19e1af1228db5d44",
+    "fold": "2025-10-16",
+    "fresh_prediction_sha256": "76193afe9c48768184bbb617777237a465d5c5d35a36cab266677cf452ab9c7f",
+    "n_features": 236,
+    "n_validation": 197379,
+    "status": "PASS_BITWISE",
+    "tbr_model": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S42_V1016.txt",
+    "tbr_model_sha256": "eca596dca27a01952e00105e71105429c13f4785f00bda790e8bf922d240a0b5",
+    "tbr_npz": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S42_V1016.npz",
+    "tbr_npz_sha256": "f72767992d213989259694992defd23a85d650a0093fdbd09b8babd54fbd0247",
+    "unc_prediction_sha256": "76193afe9c48768184bbb617777237a465d5c5d35a36cab266677cf452ab9c7f"
+  },
+  "prefix": "STATE_REWEIGHT_EXP057",
+  "strongest_current": {
+    "all_fold_scores": [
+      1.7668833567997195,
+      1.7605095767798136,
+      1.748629223964952,
+      1.7412785664479717
+    ],
+    "expected_fold_score": 1.741278566,
+    "fold": "2025-10-16",
+    "formula": {
+      "ETX-AVG3": 0.225,
+      "S1-DIST": 0.25,
+      "S1-E02": 0.2,
+      "S1-E03a": 0.1,
+      "SEQ-AVG3": 0.225
+    },
+    "offset": -0.035387154112119984,
+    "prediction_sha256": "2617e5f1b2f8e726f13fd21a19fbfad0cdf4c740b6bc4f503e9c4e24afdf9f1c",
+    "rmsle_cal": 1.7412785664479717,
+    "wcv": 1.7475098625201952
+  }
+}

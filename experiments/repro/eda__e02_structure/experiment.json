@@ -1,0 +1,26 @@
+{
+  "catalog_id": "eda__e02_structure",
+  "namespace": "eda",
+  "experiment_id": "e02_structure",
+  "title": "what do \"zero\" rows look like — is `cat` ever >0 while search==0?",
+  "kind": "EDA experiment/script",
+  "original_path": "research/eda/e02_structure.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "research/eda/e02_structure.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "calendar features",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

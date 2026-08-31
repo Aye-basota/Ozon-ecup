@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__btyd_stable",
+  "namespace": "team_a_run",
+  "experiment_id": "BTYD-STABLE",
+  "title": "Logged run — BTYD-STABLE",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "BG/NBD, BTYD",
+  "features": "freshness/conditional features",
+  "validation": "wcv:** 1.747240681",
+  "score": "wcv:** 1.747240681",
+  "submission": "conclusion:** Optimizer convergence blocker resolved without model/gate change. New nested LOFO -0.000269182 4/4; fixed 0.05 delta -0.000320983 4/4; residual alignment 4/4; OOF/test predictive stability and support PASS. submission_BTYD05.csv created; FRESH retraining stopped after one honest candidate. Details exp_051",
+  "seed": "params:** {\"candidate\": \"BTYD05\", \"cutoff\": \"2026-02-13\", \"split\": \"splitmix64(user_id)&1\", \"origin\": \"2024-12-31\", \"K\": 3.0, \"starts\": 3, \"weight\": 0.05, \"optimizer\": \"analytic-jac-lbfgsb-bfgs-v1\", \"seed\": 42}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

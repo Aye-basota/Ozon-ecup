@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_055_landmark_memory_etx",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_055_landmark_memory_etx",
+  "title": "exp_055 — retrospective landmark outcome memory",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_055_landmark_memory_etx.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/landmark_memory_etx.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, sequence model",
+  "features": "recency, 227 tabular features",
+  "validation": "SHUFFLED outcome; shared feature/config/validation code не менялся.",
+  "score": "wCV `1.7475098625`; максимум расхождения с registered values `4.48e-10`.",
+  "submission": "GPU/full folds/test inference/public LB/submission: **не запускались**.",
+  "seed": "lr .03, feature/bagging .8, lambda_l2 20, max_bin 63, seed 42.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

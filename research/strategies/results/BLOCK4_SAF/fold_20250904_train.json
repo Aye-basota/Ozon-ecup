@@ -1,0 +1,124 @@
+{
+  "q": {
+    "rows": 3408233,
+    "cutoffs": [
+      {
+        "cutoff": "2025-04-03",
+        "rows": 183115,
+        "activity_rate": 0.9557545804549054
+      },
+      {
+        "cutoff": "2025-04-10",
+        "rows": 184046,
+        "activity_rate": 0.9547504428240766
+      },
+      {
+        "cutoff": "2025-04-17",
+        "rows": 184782,
+        "activity_rate": 0.9547304391120347
+      },
+      {
+        "cutoff": "2025-04-24",
+        "rows": 185642,
+        "activity_rate": 0.9557750939981254
+      },
+      {
+        "cutoff": "2025-05-01",
+        "rows": 186278,
+        "activity_rate": 0.9567635469566991
+      },
+      {
+        "cutoff": "2025-05-08",
+        "rows": 186961,
+        "activity_rate": 0.9572424195420435
+      },
+      {
+        "cutoff": "2025-05-15",
+        "rows": 187574,
+        "activity_rate": 0.9580698817533346
+      },
+      {
+        "cutoff": "2025-05-22",
+        "rows": 188245,
+        "activity_rate": 0.9572897022497278
+      },
+      {
+        "cutoff": "2025-05-29",
+        "rows": 189100,
+        "activity_rate": 0.9560867265996827
+      },
+      {
+        "cutoff": "2025-06-05",
+        "rows": 189903,
+        "activity_rate": 0.9554720041284235
+      },
+      {
+        "cutoff": "2025-06-12",
+        "rows": 190439,
+        "activity_rate": 0.955224507585106
+      },
+      {
+        "cutoff": "2025-06-19",
+        "rows": 191153,
+        "activity_rate": 0.9549261586268591
+      },
+      {
+        "cutoff": "2025-06-26",
+        "rows": 191813,
+        "activity_rate": 0.9549561291466168
+      },
+      {
+        "cutoff": "2025-07-03",
+        "rows": 192355,
+        "activity_rate": 0.9553169920199631
+      },
+      {
+        "cutoff": "2025-07-10",
+        "rows": 193153,
+        "activity_rate": 0.9569719341661791
+      },
+      {
+        "cutoff": "2025-07-17",
+        "rows": 193790,
+        "activity_rate": 0.9583311832395892
+      },
+      {
+        "cutoff": "2025-07-24",
+        "rows": 194632,
+        "activity_rate": 0.9599038184882239
+      },
+      {
+        "cutoff": "2025-07-31",
+        "rows": 195252,
+        "activity_rate": 0.9620285579661156
+      }
+    ],
+    "activity_rate": 0.9566637609576575,
+    "last_cutoff": "2025-07-31"
+  },
+  "crossfit": {
+    "groups": [
+      {
+        "recipient_group": 0,
+        "donor_group": 1,
+        "train_rows_nu_C": 94280,
+        "train_rows_nu_F": 94280,
+        "prediction_rows": 94238,
+        "overlap": 0
+      },
+      {
+        "recipient_group": 1,
+        "donor_group": 0,
+        "train_rows_nu_C": 94238,
+        "train_rows_nu_F": 94238,
+        "prediction_rows": 94280,
+        "overlap": 0
+      }
+    ],
+    "group0": 94238,
+    "group1": 94280
+  },
+  "C": "2025-07-06",
+  "F": "2025-08-05",
+  "V": "2025-09-04"
+}

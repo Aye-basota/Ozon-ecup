@@ -1,0 +1,9 @@
+family,hash_half,status,rows,baseline_rmsle,candidate_rmsle,delta_rmsle,reason
+SAFE-ANCHOR,0,BLOCKED_NOT_RUN,,,,,missing canonical z_latest OOF
+SAFE-ANCHOR,1,BLOCKED_NOT_RUN,,,,,missing canonical z_latest OOF
+BTYD05,0,BLOCKED_NOT_RUN,,,,,missing canonical z_latest OOF
+BTYD05,1,BLOCKED_NOT_RUN,,,,,missing canonical z_latest OOF
+FRESH,0,BLOCKED_NOT_RUN,,,,,missing canonical z_latest OOF
+FRESH,1,BLOCKED_NOT_RUN,,,,,missing canonical z_latest OOF
+SEQ65,0,BLOCKED_NOT_RUN,,,,,missing canonical z_latest OOF
+SEQ65,1,BLOCKED_NOT_RUN,,,,,missing canonical z_latest OOF

@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_020_train_blocks_zero",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_020_train_blocks_zero",
+  "title": "exp_020 — STRATEGY_02A: `train_blocks=0`",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_020_train_blocks_zero.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/sampleval.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Seed 42: Δ = −0.000049 wCV, 3/4 fold, но последний хуже на +0.000134.",
+  "score": "Seed 42: Δ = −0.000049 wCV, 3/4 fold, но последний хуже на +0.000134.",
+  "submission": "None documented",
+  "seed": "VAL_FOLDS_S1, seeds={config.SEED=42,43,44}, log-space avg3",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "VAL_FOLDS_S1, seeds={config.SEED=42,43,44}, log-space avg3",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

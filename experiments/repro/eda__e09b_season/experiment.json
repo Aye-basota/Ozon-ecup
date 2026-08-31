@@ -1,0 +1,26 @@
+{
+  "catalog_id": "eda__e09b_season",
+  "namespace": "eda",
+  "experiment_id": "e09b_season",
+  "title": "e09b_season",
+  "kind": "EDA experiment/script",
+  "original_path": "research/eda/e09b_season.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "research/eda/e09b_season.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "calendar features",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "print(\"PLATFORM-LEVEL DAILY CALENDAR FACTOR for the target window (from 2025)\")",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

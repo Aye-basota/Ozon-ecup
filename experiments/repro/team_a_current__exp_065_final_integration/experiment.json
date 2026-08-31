@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_065_final_integration",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_065_final_integration",
+  "title": "exp_065 — FINAL-INTEGRATION",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_065_final_integration.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/final_integration.py"
+  ],
+  "commands": [],
+  "model": "sequence model, BTYD, blend",
+  "features": "occurrence features",
+  "validation": "Candidate A rebuilt из 9 component arrays byte-identical зарегистрированному exp_037: SHA256 `abc2218b...e04bda`, wCV reference 1.747509862, mean log1p on disk 2.329321370.",
+  "score": "Candidate A rebuilt из 9 component arrays byte-identical зарегистрированному exp_037: SHA256 `abc2218b...e04bda`, wCV reference 1.747509862, mean log1p on disk 2.329321370.",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Training NONE. A recipe `.10 CAP + .20 UNC + .25 DIST + .075×3 SEQ clip289 + .075×3 ETX DCW`, fixed level 2.3293. B recipe `.95 strong + .05 BTYD`, без изменений exp_051. Запуск `python src/final_integration.py`; manifest SHA256 `442ba96c...ae5e9`; independent ETX/test and disk-recipe verifier PASS; focused tests 11 passed.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

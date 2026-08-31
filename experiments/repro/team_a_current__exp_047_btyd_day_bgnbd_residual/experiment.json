@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_a_current__exp_047_btyd_day_bgnbd_residual",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_047_btyd_day_bgnbd_residual",
+  "title": "exp_047 — BTYD-DAY-BGNBD-RESIDUAL",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_047_btyd_day_bgnbd_residual.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/btyd_day_bgnbd.py",
+    "src/test_btyd_day_bgnbd.py",
+    "src/test_validation.py"
+  ],
+  "commands": [],
+  "model": "sequence model, BG/NBD, BTYD, blend, calibration diagnostic",
+  "features": "recency",
+  "validation": "Глобальная группа пользователя: `splitmix64(user_id) & 1`. Для каждого fold выполнен two-sided donor/recipient cross-fit; validation target и строки после cutoff не участвовали в BG/NBD или monetary fit.",
+  "score": "Baseline wCV 1:2:4:8 = **1.747509863** на 770 616 строках.",
+  "submission": "None documented",
+  "seed": "Seed `42` взят только из `src/config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "BG/NBD даёт реальную неуровневую residual direction: все outer folds и residual-alignment checks имеют правильный знак. Но честная nested оценка **−0.000269** не достигает заранее заданной границы `−0.0003`; full-OOF curve переоценивает эффект. Почти вырожденный `P(alive)≈0.994` и систематическое занижение будущего count (`≈1.52` против `1.91..2.01`) показывают, что classic common-origin dropout/count process недостаточно описывает динамику этой панели.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

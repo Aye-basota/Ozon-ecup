@@ -1,0 +1,34 @@
+{
+  "src/config.py": {
+    "card_introduction_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+    "implementation_source": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549"
+  },
+  "src/ensemble.py": {
+    "card_introduction_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+    "implementation_source": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549"
+  },
+  "src/features.py": {
+    "card_introduction_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+    "implementation_source": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549"
+  },
+  "src/predict.py": {
+    "card_introduction_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+    "implementation_source": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549"
+  },
+  "src/strategy_2.py": {
+    "card_introduction_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+    "implementation_source": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549"
+  },
+  "src/strategy_2_analysis.py": {
+    "card_introduction_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+    "implementation_source": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549"
+  },
+  "src/train.py": {
+    "card_introduction_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+    "implementation_source": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549"
+  },
+  "src/validation.py": {
+    "card_introduction_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+    "implementation_source": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549"
+  }
+}

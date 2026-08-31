@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__selmatch_exp049",
+  "namespace": "team_a_run",
+  "experiment_id": "SELMATCH_EXP049",
+  "title": "Logged run — SELMATCH_EXP049",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "BTYD",
+  "features": "freshness/conditional features",
+  "validation": "conclusion:** Corrected same-fold C delta -0.000551306, 3/3; A -0.000546668, 3/3; bootstrap P=1.0 with calibration refit; signal shuffle PASS. Selection-shuffle contradiction traced to mixed estimands. Validation PREFERRED, but exact BTYD/FRESH test artifacts and registered production recipe are absent; production audit FAIL, no submission. Details exp_049",
+  "score": "wcv:** 1.740877030",
+  "submission": "None documented",
+  "seed": "params:** {\"base\": \"STRONGEST_CURRENT\", \"candidate\": \"BTYD05_FRESH1\", \"folds\": [\"2025-09-04\", \"2025-09-18\", \"2025-10-02\"], \"fold_weights\": [1, 2, 4], \"match\": \"k>0 renormalized reference\", \"bootstrap\": 500, \"signal_shuffle\": 200, \"selection_shuffle\": 100, \"seed\": 42}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

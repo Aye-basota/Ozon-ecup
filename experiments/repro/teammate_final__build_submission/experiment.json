@@ -1,0 +1,26 @@
+{
+  "catalog_id": "teammate_final__build_submission",
+  "namespace": "teammate_final",
+  "experiment_id": "build_submission",
+  "title": "build_submission",
+  "kind": "STRONGEST_CURRENT rebuild",
+  "original_path": "пайплайн сокомандника/friend_original/submission_STRONGEST_CURRENT/pipeline/build_submission.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "пайплайн сокомандника/friend_original/submission_STRONGEST_CURRENT/pipeline/build_submission.py"
+  ],
+  "commands": [],
+  "model": "sequence model",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "print(f\"OK: {OUTPUT.relative_to(ROOT)} побитово совпадает с отправленным сабмитом\")",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "delta = LEVEL - float(z_mix.mean())",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

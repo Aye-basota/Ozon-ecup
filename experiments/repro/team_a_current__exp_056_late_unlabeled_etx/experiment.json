@@ -1,0 +1,31 @@
+{
+  "catalog_id": "team_a_current__exp_056_late_unlabeled_etx",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_056_late_unlabeled_etx",
+  "title": "exp_056 — LATE-UNLABELED-ETX-ADAPT",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_056_late_unlabeled_etx.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/late_unlabeled_etx.py",
+    "src/test_late_unlabeled_etx.py"
+  ],
+  "commands": [],
+  "model": "calibration diagnostic",
+  "features": "calendar features, history-depth features, 227 tabular features",
+  "validation": "Starting checkpoint: `model_ETX-01-S42-V0904.pt`, SHA256 `558fd1554076ec03ea976aa31808697003e98591c03b7ddb9403a2a9fbc1ad53`; validation checkpoint `2025-09-04`, seed 42 из `config.py`.",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "ETX `d_model=128`, 5 blocks, 8 heads, head dim 16, FFN 384, dropout 0.10; batch/chunk 512/128; AdamW `lr=1.5e-3`, `wd=1e-2`, warmup 500, `lambda_ssl=0.25`, SmoothL1 с fixed per-channel constant normalization, grad clip 1.0, bf16/TF32/eager, workers=1, deterministic CUDA, seed 42. На 8 GB GPU два loss terms накоплены отдельными backward до общего clip/optimizer step, чтобы не держать две ETX graphs одновременно; batch/objective/RNG contract не менялся.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "`Var(z_late−z_control)=0.00017742`; `corr(correction, CONTROL residual)=+0.001432`; calibrated mean correction `≈0`, поэтому различие не является только level shift, но residual alignment практически нулевая.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

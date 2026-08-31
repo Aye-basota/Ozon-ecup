@@ -1,0 +1,17 @@
+E-CUP cached extra90 diversification
+runtime_minutes=31.1
+No raw/base/SEQ/ETX model was retrained.
+
+Selected four:
+1. blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 family=adaptive_blend d=-0.001651 latest=-0.001811 corr_friend=0.999722 std=0.03837
+2. xmeta_div4_p23_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 family=xmeta_risk d=-0.001821 latest=-0.002072 corr_friend=0.999631 std=0.04514
+3. xraw_occ_r10_fast_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 family=raw_occ_extra d=-0.001625 latest=-0.001915 corr_friend=0.999660 std=0.04290
+4. hier_trust_bias_ridge_recentpow1p7_s075 family=hierarchical d=-0.001396 latest=-0.001802 corr_friend=0.999621 std=0.04593
+
+Pair diversity:
+blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 <> xmeta_div4_p23_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85: corr=0.999959 std=0.01512 pct02=0.116 pct05=0.011
+blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 <> xraw_occ_r10_fast_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85: corr=0.999973 std=0.01198 pct02=0.077 pct05=0.005
+blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 <> hier_trust_bias_ridge_recentpow1p7_s075: corr=0.999979 std=0.01151 pct02=0.078 pct05=0.001
+xmeta_div4_p23_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 <> xraw_occ_r10_fast_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85: corr=0.999968 std=0.01293 pct02=0.094 pct05=0.006
+xmeta_div4_p23_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 <> hier_trust_bias_ridge_recentpow1p7_s075: corr=0.999955 std=0.01503 pct02=0.139 pct05=0.009
+xraw_occ_r10_fast_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 <> hier_trust_bias_ridge_recentpow1p7_s075: corr=0.999959 std=0.01451 pct02=0.159 pct05=0.005

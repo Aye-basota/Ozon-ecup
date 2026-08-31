@@ -1,0 +1,35 @@
+E-CUP final 6h continuation
+runtime_hours=4.497
+STRONGEST_CURRENT was NEVER retrained.
+known_friend_public=1.6496571
+known_previous_ridge_public=1.6492897556391737
+
+Completed occurrence families: ['occ_r10_fast', 'occ_r16_bal', 'occ_r22_stable', 'occ_r14_multiscale', 'occ_r18_wide', 'occ_r24_multiscale', 'occ_r12_wide', 'occ_r20_shallow']
+
+Best by family:
+occurrence_meta_risk       metaocc_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 d=-0.001767 recent=3/3 latest=-0.002027
+occurrence_meta            metaocc_l31_plain__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 d=-0.001738 recent=3/3 latest=-0.002131
+adaptive_blend             blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85     d=-0.001651 recent=3/3 latest=-0.001811
+super_pband                super_pband_l0p06                                            d=-0.001650 recent=3/3 latest=-0.001809
+super_simplex              super_simplex_l0p05                                          d=-0.001650 recent=3/3 latest=-0.001808
+local_bias                 bias_p_spread_cand_pband_stack                               d=-0.001635 recent=3/3 latest=-0.001779
+candidate_pband            cand_pband_stack                                             d=-0.001629 recent=3/3 latest=-0.001781
+occurrence_overlay         occ_occ_r10_fast_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 d=-0.001625 recent=3/3 latest=-0.001915
+candidate_simplex          cand_simplex_l0p08                                           d=-0.001617 recent=3/3 latest=-0.001762
+ridge_temporal             ridge_recentpow1p7_s075                                      d=-0.001610 recent=3/3 latest=-0.001759
+ridge_shrink               ridge_all_s75                                                d=-0.001548 recent=3/3 latest=-0.001671
+ridge_subset               ridge_all_s075                                               d=-0.001548 recent=3/3 latest=-0.001671
+local_trust                trust_p_ridge_recentpow1p7_s075                              d=-0.001413 recent=2/3 latest=-0.001832
+hierarchical               hier_trust_bias_ridge_recentpow1p7_s075                      d=-0.001396 recent=3/3 latest=-0.001802
+super_ridge                superridge_a20_s95                                           d=-0.001351 recent=3/3 latest=-0.001772
+super_ridge_recent         superridge_recent2_a80_s80                                   d=-0.001324 recent=3/3 latest=-0.001771
+ridge_predonly             ridge_predonly_finalizable                                   d=-0.001119 recent=3/3 latest=-0.001366
+greedy                     greedy35_finalizable                                         d=-0.000808 recent=2/3 latest=-0.001276
+pband                      pband_finalizable                                            d=-0.000581 recent=3/3 latest=-0.000836
+simplex                    simplex_finalizable                                          d=-0.000575 recent=2/3 latest=-0.000834
+raw_new                    recent_hurdle_fast12                                         d=-0.000300 recent=2/3 latest=-0.000773
+occ_cal                    occ_platt_guard                                              d=-0.000149 recent=3/3 latest=-0.000061
+
+Final submissions:
+A: blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 d=-0.001651 corr_friend=0.999722 std=0.03837 file=C:\Users\Dimentiy\repoVScode\Ozon-ecup\src\DL\best_bas\_best_bas_final6h\submissions\submission_final6h_A_blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85.csv
+B: metaocc_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85 d=-0.001767 corr_friend=0.999628 std=0.04536 file=C:\Users\Dimentiy\repoVScode\Ozon-ecup\src\DL\best_bas\_best_bas_final6h\submissions\submission_final6h_B_metaocc_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85.csv

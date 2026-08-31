@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "activity_definition": "any daily-log row in (T,T+30]",
+  "target_interval": "(T,T+30] = dates T+1 through T+30 inclusive",
+  "production": {
+    "V": "2026-02-13",
+    "C": "2025-12-15",
+    "F": "2026-01-14"
+  },
+  "test_panel": {
+    "n": 250000,
+    "unique": 250000,
+    "same_users_as_sample": true
+  },
+  "purchase_implies_activity": {
+    "cutoffs_checked": 40,
+    "violations": 0
+  },
+  "late_activity": {
+    "2025-11-15": {
+      "n": 250000,
+      "active": 250000
+    },
+    "2025-12-15": {
+      "n": 250000,
+      "active": 250000
+    },
+    "2026-01-14": {
+      "n": 250000,
+      "active": 250000
+    }
+  },
+  "validation_panels": {
+    "2025-09-04": {
+      "n": 188518,
+      "active_B2": 188518,
+      "active_B3": 188518
+    },
+    "2025-09-18": {
+      "n": 191025,
+      "active_B2": 191025,
+      "active_B3": 191025
+    },
+    "2025-10-02": {
+      "n": 193694,
+      "active_B2": 193694,
+      "active_B3": 193694
+    },
+    "2025-10-16": {
+      "n": 197379,
+      "active_B2": 197379,
+      "active_B3": 197379
+    }
+  },
+  "model_features": {
+    "n": 288,
+    "user_id_present": false,
+    "calendar_features": [],
+    "base_cap_features": 195,
+    "block_features": 93
+  },
+  "q_training": {
+    "fold_last_cutoffs": {
+      "2025-09-04": "2025-07-31",
+      "2025-09-18": "2025-08-14",
+      "2025-10-02": "2025-08-28",
+      "2025-10-16": "2025-09-11"
+    },
+    "production_last_cutoff": "2025-10-16",
+    "late_rows": 0
+  },
+  "future_feature_lookup": {
+    "implementation": "build_features filters event_date <= cutoff; block raw scan also <= cutoff",
+    "verified_by": [
+      "test_block_features_ignore_future_rows",
+      "test_default_feature_pipeline_is_backward_compatible"
+    ],
+    "violations": 0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_b_b2__exp_028_hurdle_log_threshold",
+  "namespace": "team_b_b2",
+  "experiment_id": "exp_028_hurdle_log_threshold",
+  "title": "exp_028 — G6 log-space hurdle with threshold",
+  "kind": "git-history experiment card",
+  "original_path": "git:88dc69163b1f:experiments/exp_028_hurdle_log_threshold.md",
+  "source_ref": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "source_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/temporal_ensemble.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, two-part / hurdle",
+  "features": "See preserved experiment card and implementation",
+  "validation": "CV по фолдам с единым порогом `0.08`: fold1 `1.689540`, fold2 `1.742963`, fold3 `1.732212`",
+  "score": "CV mean: `1.716251` (baseline exp_001 `1.717017`, локальный exp_015 `1.708737`)",
+  "submission": "None documented",
+  "seed": "LightGBM classifier + LightGBM positive-regressor, baseline 50 features, folds 1–2 для решения, fold3 справочно, threshold grid `0.00..0.80` step `0.01`, seed из `src/config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "# exp_028 — G6 log-space hurdle with threshold",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: card metrics survive; runnable source uses a documented later branch-head fallback",
+  "notes": "Frozen implementation is copied from the commit that introduced this card. The card-introduction commit contained syntactically incomplete WIP source; the frozen implementation uses the nearest surviving branch-head version for: src/train.py. Exact provenance is in implementation/SOURCE_PROVENANCE.json.",
+  "preserved_document": "README.md"
+}

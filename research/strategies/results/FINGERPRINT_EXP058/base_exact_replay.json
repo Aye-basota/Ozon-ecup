@@ -1,0 +1,15 @@
+{
+  "feature_count": 236,
+  "feature_order_match": true,
+  "historical_exact_prediction_match": true,
+  "n_train": 4955174,
+  "recipe_sha256": "db1da6ad20e3543b93883db5b54d675e45c0356cbbcd8f4ba67e8cf327251127",
+  "rounds": 600,
+  "seed": 42,
+  "source": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\TBR_EXP046\\TBR_EXP046_UNC_S42_V1016.npz",
+  "source_sha256": "f72767992d213989259694992defd23a85d650a0093fdbd09b8babd54fbd0247",
+  "status": "PASS",
+  "train_target_sha256": "ba8f1f10739493b346dbd0b187331015bf44196b2fb313623b19899fa5b31946",
+  "validation_target_match": true,
+  "validation_users_match": true
+}

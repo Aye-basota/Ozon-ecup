@@ -1,0 +1,146 @@
+{
+  "fit_rows": [
+    {
+      "donor_group": 0,
+      "fold": "2025-09-04",
+      "max_gradient_norm": 6.28614805765173e-10,
+      "max_log_parameter_spread": 1.3450119951130546e-07,
+      "max_pairwise_abs_delta_z": 1.0390976523666495e-07,
+      "max_pairwise_var_z": 1.618505041877304e-18,
+      "mean_nll_spread": 2.1316282072803006e-14
+    },
+    {
+      "donor_group": 1,
+      "fold": "2025-09-04",
+      "max_gradient_norm": 6.815521566338105e-08,
+      "max_log_parameter_spread": 0.0013506663708682254,
+      "max_pairwise_abs_delta_z": 0.0008307307478596648,
+      "max_pairwise_var_z": 1.521361224792574e-10,
+      "mean_nll_spread": 5.4221516165853245e-11
+    },
+    {
+      "donor_group": 0,
+      "fold": "2025-09-18",
+      "max_gradient_norm": 1.375351144431986e-09,
+      "max_log_parameter_spread": 1.865994057048681e-07,
+      "max_pairwise_abs_delta_z": 2.150233422426595e-07,
+      "max_pairwise_var_z": 2.5962729953309892e-17,
+      "mean_nll_spread": 1.4210854715202004e-14
+    },
+    {
+      "donor_group": 1,
+      "fold": "2025-09-18",
+      "max_gradient_norm": 6.275165212980736e-08,
+      "max_log_parameter_spread": 9.396547087092699e-07,
+      "max_pairwise_abs_delta_z": 8.847828256719481e-07,
+      "max_pairwise_var_z": 2.8261946523186815e-16,
+      "mean_nll_spread": 1.4210854715202004e-14
+    },
+    {
+      "donor_group": 0,
+      "fold": "2025-10-02",
+      "max_gradient_norm": 4.776623754636581e-08,
+      "max_log_parameter_spread": 1.4779955560761948e-05,
+      "max_pairwise_abs_delta_z": 1.314339423785782e-05,
+      "max_pairwise_var_z": 3.646205736836907e-14,
+      "mean_nll_spread": 7.105427357601002e-15
+    },
+    {
+      "donor_group": 1,
+      "fold": "2025-10-02",
+      "max_gradient_norm": 8.703500211267626e-10,
+      "max_log_parameter_spread": 1.471180470780098e-07,
+      "max_pairwise_abs_delta_z": 1.0146952811318499e-07,
+      "max_pairwise_var_z": 5.211360835090157e-18,
+      "mean_nll_spread": 2.842170943040401e-14
+    },
+    {
+      "donor_group": 0,
+      "fold": "2025-10-16",
+      "max_gradient_norm": 1.1628615217761881e-08,
+      "max_log_parameter_spread": 5.67739319823346e-06,
+      "max_pairwise_abs_delta_z": 4.098111538120008e-06,
+      "max_pairwise_var_z": 2.8867249696911156e-15,
+      "mean_nll_spread": 2.842170943040401e-14
+    },
+    {
+      "donor_group": 1,
+      "fold": "2025-10-16",
+      "max_gradient_norm": 2.6022253670051624e-08,
+      "max_log_parameter_spread": 4.83848738674908e-06,
+      "max_pairwise_abs_delta_z": 3.4340754369033277e-06,
+      "max_pairwise_var_z": 2.484027997897713e-15,
+      "mean_nll_spread": 1.4210854715202004e-14
+    }
+  ],
+  "fold_rows": [
+    {
+      "btyd_scores": [
+        1.8157899625282152,
+        1.8157899084285798,
+        1.8157899626342755
+      ],
+      "fixed_005_blend_score_span": 2.620912376016804e-10,
+      "fixed_005_blend_scores": [
+        1.7662286884229985,
+        1.7662286881609073,
+        1.766228688422866
+      ],
+      "fold": "2025-09-04"
+    },
+    {
+      "btyd_scores": [
+        1.8097056858910805,
+        1.8097056859754352,
+        1.8097056859274443
+      ],
+      "fixed_005_blend_score_span": 1.588285059028749e-12,
+      "fixed_005_blend_scores": [
+        1.7599386487749498,
+        1.7599386487733615,
+        1.7599386487748676
+      ],
+      "fold": "2025-09-18"
+    },
+    {
+      "btyd_scores": [
+        1.8016347561712045,
+        1.801634754568024,
+        1.8016347560978414
+      ],
+      "fixed_005_blend_score_span": 1.2857492848183938e-11,
+      "fixed_005_blend_scores": [
+        1.7483873415648115,
+        1.748387341551954,
+        1.7483873415642102
+      ],
+      "fold": "2025-10-02"
+    },
+    {
+      "btyd_scores": [
+        1.7960956269930093,
+        1.7960956271179171,
+        1.7960956269115236
+      ],
+      "fixed_005_blend_score_span": 2.6154634014119438e-12,
+      "fixed_005_blend_scores": [
+        1.7410222300483797,
+        1.741022230049299,
+        1.7410222300466835
+      ],
+      "fold": "2025-10-16"
+    }
+  ],
+  "gates": {
+    "max_fixed_005_blend_score_span": 1e-05,
+    "max_pairwise_abs_delta_z": 0.001,
+    "max_pairwise_var_z": 1e-08
+  },
+  "maxima": {
+    "max_fixed_005_blend_score_span": 2.620912376016804e-10,
+    "max_pairwise_abs_delta_z": 0.0008307307478596648,
+    "max_pairwise_var_z": 1.521361224792574e-10
+  },
+  "policy_id": "analytic-jac-lbfgsb-bfgs-v1",
+  "status": "PASS"
+}

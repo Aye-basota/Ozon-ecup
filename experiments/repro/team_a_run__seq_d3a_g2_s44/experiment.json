@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__seq_d3a_g2_s44",
+  "namespace": "team_a_run",
+  "experiment_id": "SEQ-D3A-G2-S44",
+  "title": "Logged run — SEQ-D3A-G2-S44",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN, sequence model",
+  "features": "history-depth features",
+  "validation": "description:** exp_030c SEQ-D3A на сиде 44: 4 фолда парно BASE/D3A, арендованная A10 #2, --compile",
+  "score": "wcv:** 1.75163",
+  "submission": "None documented",
+  "seed": "params:** {\"arch\": \"dilated causal TCN\", \"blocks\": 8, \"hidden\": 64, \"kernel\": 3, \"dropout\": 0.1, \"batch\": 1024, \"lr\": 0.003, \"wd\": 0.01, \"epochs\": 4, \"precision\": \"bf16\", \"seq_len\": 365, \"channels\": 17, \"depth_aug\": 0.5, \"depth_grid\": [90, 120, 150, 180, 220, 254, 289], \"compile\": true, \"seed\": 44, \"base\": \"SEQ-D3A-G2-BASE-S44 (same machine, same regime)\"}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

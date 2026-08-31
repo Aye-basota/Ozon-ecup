@@ -1,0 +1,39 @@
+{
+  "catalog_id": "team_a_current__exp_049_selection_mismatch_production_followup",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_049_selection_mismatch_production_followup",
+  "title": "exp_049 — corrected EXP-048 same-fold analysis / production audit",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_049_selection_mismatch_production_followup.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/selection_mismatch_followup.py",
+    "src/test_selection_mismatch_cv.py",
+    "src/test_fresh_contrast.py",
+    "src/test_btyd_day_bgnbd.py",
+    "src/test_validation.py"
+  ],
+  "commands": [
+    "printed real value  = matched candidate effect\nshuffle interval    = distribution of (matched - standard) selection shift\noutside boolean     = comparison of that selection shift with its interval",
+    "python src/selection_mismatch_followup.py\npython -m pytest src/test_selection_mismatch_cv.py src/test_fresh_contrast.py \\\n  src/test_btyd_day_bgnbd.py src/test_validation.py -q\n# 53 passed",
+    "python src/selection_mismatch_followup.py",
+    "python -m pytest src/test_selection_mismatch_cv.py src/test_fresh_contrast.py \\"
+  ],
+  "model": "BG/NBD, BTYD, ensemble",
+  "features": "freshness/conditional features",
+  "validation": "Validation-only evidence проходит **PREFERRED**:",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "REJECT**. `submission_BTYD05_FRESH1.csv` не создан, submission slot не",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "user-level OOF FRESH correction на test означало бы выдумать новый recipe.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

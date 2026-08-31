@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_063_occurrence_revisit",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_063_occurrence_revisit",
+  "title": "exp_063 — OCCURRENCE-REVISIT",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_063_occurrence_revisit.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/occurrence_revisit.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "occurrence features",
+  "validation": "Nested E11 дельты: `+0.0000677 / +0.0000641 / −0.0000096 / 0`; wCV **+0.0000105**, 1/4, latest `0`.",
+  "score": "Nested E11 дельты: `+0.0000677 / +0.0000641 / −0.0000096 / 0`; wCV **+0.0000105**, 1/4, latest `0`.",
+  "submission": "None documented",
+  "seed": "Seed/model training отсутствуют; exact 770,616-row aligned OOF SHA256 `40aa9719...0ed0a`; `oof_S1-E11.npz` SHA256 `39f566b4...0c44`, `oof_S1-E10.npz` `b4e43277...0f5c`; canonical folds 2025-09-04/09-18/10-02/10-16 and weights 1:2:4:8. Runner `python src/occurrence_revisit.py`; frozen protocol and results in `research/strategies/results/OCCURRENCE_REVISIT_EXP063/`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Только log-space member `z(alpha)=(1-alpha)·z_exp037+alpha·z_E11` на заранее фиксированной сетке `0/.025/.05/.075/.10/.15/.20`; модели и признаки не переобучались.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

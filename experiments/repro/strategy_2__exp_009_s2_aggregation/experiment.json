@@ -1,0 +1,36 @@
+{
+  "catalog_id": "strategy_2__exp_009_s2_aggregation",
+  "namespace": "strategy_2",
+  "experiment_id": "exp_009_s2_aggregation",
+  "title": "exp_009 — S2-E00: корректность структурной агрегации",
+  "kind": "git-history experiment card",
+  "original_path": "git:3c1d86d836c7:experiments/exp_009_s2_aggregation.md",
+  "source_ref": "3c1d86d836c7b73519abe99f94686431852187cc",
+  "source_commit": "2e1d89d7904ee161939d9c6eed44fe16d4e4c549",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/strategy_2.py",
+    "src/strategy_2_analysis.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [
+    "python src/strategy_2.py aggregation --samples 10000`; seed из `src/config.py`."
+  ],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "`python src/strategy_2.py aggregation --samples 10000`; seed из `src/config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

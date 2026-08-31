@@ -1,0 +1,35 @@
+{
+  "catalog_id": "team_a_current__exp_030c_seq_d3a_multiseed",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_030c_seq_d3a_multiseed",
+  "title": "exp_030c — SEQ-D3A-MS: подтверждение depth curriculum на 3 сидах × 4 фолдах",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_030c_seq_d3a_multiseed.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seq.py",
+    "research/strategies/results/SEQ7/multiseed.py"
+  ],
+  "commands": [
+    "bash run_g1.sh   # A10 #1: сид 43, 4 фолда парно  (research/strategies/results/SEQ7)\nbash run_g2.sh   # A10 #2: сид 44, 4 фолда парно\nPYTHONPATH=. python research/strategies/results/SEQ7/multiseed.py",
+    "bash run_g1.sh   # A10 #1: сид 43, 4 фолда парно  (research/strategies/results/SEQ7)",
+    "bash run_g2.sh   # A10 #2: сид 44, 4 фолда парно"
+  ],
+  "model": "dilated TCN, sequence model",
+  "features": "freshness/conditional features, history-depth features",
+  "validation": "# exp_030c — SEQ-D3A-MS: подтверждение depth curriculum на 3 сидах × 4 фолдах",
+  "score": "`exp_030` дал ΔwCV −0.00077 при 2 фолдах из 4 на ОДНОМ сиде, и это в принципе",
+  "submission": "Сабмит не готовился.** Политика теста прежняя: `--depth-clip 289`.",
+  "seed": "PYTHONPATH=. python research/strategies/results/SEQ7/multiseed.py",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Совпадение до 1e-5 при том, что абсолютные уровни разъезжаются на 0.001–0.0015.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

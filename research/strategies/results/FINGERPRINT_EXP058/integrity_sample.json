@@ -1,0 +1,400 @@
+{
+  "duplicate_user_day_count": 0,
+  "max_abs_gmv_search_plus_cat_minus_gmv": 2.0463630789890885e-12,
+  "missing_date_examples": [
+    {
+      "missing_inside_span": 293,
+      "observed_days": 113,
+      "span_days": 406,
+      "user_id": 7
+    },
+    {
+      "missing_inside_span": 299,
+      "observed_days": 92,
+      "span_days": 391,
+      "user_id": 14709
+    },
+    {
+      "missing_inside_span": 146,
+      "observed_days": 226,
+      "span_days": 372,
+      "user_id": 14713
+    },
+    {
+      "missing_inside_span": 145,
+      "observed_days": 255,
+      "span_days": 400,
+      "user_id": 29117
+    },
+    {
+      "missing_inside_span": 210,
+      "observed_days": 197,
+      "span_days": 407,
+      "user_id": 29133
+    },
+    {
+      "missing_inside_span": 249,
+      "observed_days": 144,
+      "span_days": 393,
+      "user_id": 43398
+    },
+    {
+      "missing_inside_span": 159,
+      "observed_days": 250,
+      "span_days": 409,
+      "user_id": 43467
+    },
+    {
+      "missing_inside_span": 283,
+      "observed_days": 118,
+      "span_days": 401,
+      "user_id": 57918
+    },
+    {
+      "missing_inside_span": 192,
+      "observed_days": 217,
+      "span_days": 409,
+      "user_id": 58014
+    },
+    {
+      "missing_inside_span": 167,
+      "observed_days": 242,
+      "span_days": 409,
+      "user_id": 72890
+    },
+    {
+      "missing_inside_span": 129,
+      "observed_days": 279,
+      "span_days": 408,
+      "user_id": 73011
+    },
+    {
+      "missing_inside_span": 296,
+      "observed_days": 52,
+      "span_days": 348,
+      "user_id": 87173
+    },
+    {
+      "missing_inside_span": 313,
+      "observed_days": 84,
+      "span_days": 397,
+      "user_id": 87431
+    },
+    {
+      "missing_inside_span": 232,
+      "observed_days": 80,
+      "span_days": 312,
+      "user_id": 101765
+    },
+    {
+      "missing_inside_span": 169,
+      "observed_days": 16,
+      "span_days": 185,
+      "user_id": 102027
+    },
+    {
+      "missing_inside_span": 180,
+      "observed_days": 72,
+      "span_days": 252,
+      "user_id": 116501
+    },
+    {
+      "missing_inside_span": 40,
+      "observed_days": 369,
+      "span_days": 409,
+      "user_id": 116766
+    },
+    {
+      "missing_inside_span": 199,
+      "observed_days": 120,
+      "span_days": 319,
+      "user_id": 130896
+    },
+    {
+      "missing_inside_span": 74,
+      "observed_days": 334,
+      "span_days": 408,
+      "user_id": 131262
+    },
+    {
+      "missing_inside_span": 178,
+      "observed_days": 227,
+      "span_days": 405,
+      "user_id": 145317
+    },
+    {
+      "missing_inside_span": 299,
+      "observed_days": 95,
+      "span_days": 394,
+      "user_id": 145735
+    },
+    {
+      "missing_inside_span": 337,
+      "observed_days": 37,
+      "span_days": 374,
+      "user_id": 159291
+    },
+    {
+      "missing_inside_span": 71,
+      "observed_days": 338,
+      "span_days": 409,
+      "user_id": 159699
+    },
+    {
+      "missing_inside_span": 264,
+      "observed_days": 123,
+      "span_days": 387,
+      "user_id": 173598
+    },
+    {
+      "missing_inside_span": 202,
+      "observed_days": 195,
+      "span_days": 397,
+      "user_id": 174080
+    },
+    {
+      "missing_inside_span": 75,
+      "observed_days": 315,
+      "span_days": 390,
+      "user_id": 188076
+    },
+    {
+      "missing_inside_span": 324,
+      "observed_days": 74,
+      "span_days": 398,
+      "user_id": 188424
+    },
+    {
+      "missing_inside_span": 292,
+      "observed_days": 93,
+      "span_days": 385,
+      "user_id": 202356
+    },
+    {
+      "missing_inside_span": 186,
+      "observed_days": 221,
+      "span_days": 407,
+      "user_id": 202677
+    },
+    {
+      "missing_inside_span": 44,
+      "observed_days": 364,
+      "span_days": 408,
+      "user_id": 216646
+    },
+    {
+      "missing_inside_span": 275,
+      "observed_days": 133,
+      "span_days": 408,
+      "user_id": 216772
+    },
+    {
+      "missing_inside_span": 99,
+      "observed_days": 309,
+      "span_days": 408,
+      "user_id": 231285
+    }
+  ],
+  "raw_rows": 19092,
+  "status": "PASS",
+  "target_boundary_rows": [
+    {
+      "cutoff": "2025-09-04",
+      "day_delta": 0,
+      "included": false,
+      "positive_gmv": 187.84209324449398,
+      "rows": 50
+    },
+    {
+      "cutoff": "2025-09-04",
+      "day_delta": 1,
+      "included": true,
+      "positive_gmv": 36.92610485261441,
+      "rows": 42
+    },
+    {
+      "cutoff": "2025-09-04",
+      "day_delta": 30,
+      "included": true,
+      "positive_gmv": 160.35636606973577,
+      "rows": 51
+    },
+    {
+      "cutoff": "2025-09-04",
+      "day_delta": 31,
+      "included": false,
+      "positive_gmv": 355.3509709681281,
+      "rows": 49
+    },
+    {
+      "cutoff": "2025-10-16",
+      "day_delta": 0,
+      "included": false,
+      "positive_gmv": 1033.3166873516093,
+      "rows": 62
+    },
+    {
+      "cutoff": "2025-10-16",
+      "day_delta": 1,
+      "included": true,
+      "positive_gmv": 140.80222042296768,
+      "rows": 47
+    },
+    {
+      "cutoff": "2025-10-16",
+      "day_delta": 30,
+      "included": true,
+      "positive_gmv": 415.81985850981937,
+      "rows": 48
+    },
+    {
+      "cutoff": "2025-10-16",
+      "day_delta": 31,
+      "included": false,
+      "positive_gmv": 311.37557481338786,
+      "rows": 60
+    }
+  ],
+  "target_comparisons": [
+    {
+      "cutoff": "2025-09-04",
+      "max_abs_log1p_diff": 8.881784197001252e-16,
+      "max_abs_target_diff": 4.547473508864641e-13,
+      "n_users": 126
+    },
+    {
+      "cutoff": "2025-10-16",
+      "max_abs_log1p_diff": 8.881784197001252e-16,
+      "max_abs_target_diff": 2.2737367544323206e-13,
+      "n_users": 126
+    }
+  ],
+  "users": [
+    7,
+    14709,
+    14713,
+    29117,
+    29133,
+    43398,
+    43467,
+    57918,
+    58014,
+    72890,
+    73011,
+    87173,
+    87431,
+    101765,
+    102027,
+    116501,
+    116766,
+    130896,
+    131262,
+    145317,
+    145735,
+    159291,
+    159699,
+    173598,
+    174080,
+    188076,
+    188424,
+    202356,
+    202677,
+    216646,
+    216772,
+    231285,
+    231427,
+    245669,
+    245733,
+    259952,
+    260150,
+    274494,
+    274729,
+    289030,
+    289139,
+    303385,
+    303403,
+    317857,
+    317918,
+    332585,
+    332734,
+    347228,
+    347487,
+    361942,
+    362077,
+    376997,
+    377168,
+    391250,
+    391585,
+    405995,
+    406237,
+    420644,
+    420775,
+    435216,
+    435539,
+    450106,
+    450279,
+    465061,
+    465313,
+    479577,
+    479915,
+    494379,
+    494634,
+    509075,
+    509335,
+    523658,
+    523760,
+    538449,
+    538659,
+    553365,
+    553792,
+    568065,
+    568346,
+    582760,
+    583100,
+    597562,
+    597743,
+    611647,
+    611878,
+    626553,
+    626801,
+    641178,
+    641532,
+    655489,
+    656049,
+    670425,
+    671183,
+    684923,
+    685579,
+    699504,
+    700308,
+    714436,
+    715146,
+    728864,
+    729775,
+    743634,
+    744398,
+    758165,
+    758719,
+    772943,
+    773418,
+    787454,
+    787856,
+    802087,
+    802322,
+    817070,
+    817159,
+    831279,
+    831297,
+    845423,
+    845558,
+    860039,
+    860077,
+    874687,
+    874863,
+    889167,
+    889326,
+    903880,
+    903902,
+    918481
+  ]
+}

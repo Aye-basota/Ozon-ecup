@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_b_strategy__exp_013_scale_grid_main_validation",
+  "namespace": "team_b_strategy",
+  "experiment_id": "exp_013_scale_grid_main_validation",
+  "title": "exp_013 — scale grid on main validation",
+  "kind": "git-history experiment card",
+  "original_path": "git:824f41575bc2:experiments/exp_013_scale_grid_main_validation.md",
+  "source_ref": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+  "source_commit": "18c3bdd2a8a04de8ed0650a749659448c98ece5d",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/dense_ensemble.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "ensemble",
+  "features": "recency",
+  "validation": "# exp_013 — scale grid on main validation",
+  "score": "После LB exp_011 лучший scale был `1.2`, но validation из `main` показала, что минимум может быть чуть выше. Проверяем плотную сетку `1.10..1.35` на двух single-cutoff фолдах из `main`.",
+  "submission": "None documented",
+  "seed": "Модель: exp_011 log-space ensemble `recency + long_buy`, component scales `0.64/0.62`, `recency_weight=0.5`, dense8 train cutoffs для submit `2025-08-28..2025-10-16`, seed из `config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Модель: exp_011 log-space ensemble `recency + long_buy`, component scales `0.64/0.62`, `recency_weight=0.5`, dense8 train cutoffs для submit `2025-08-28..2025-10-16`, seed из `config.py`.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

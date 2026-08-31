@@ -1,0 +1,28 @@
+{
+  "catalog_id": "team_b_final__team_b_b2_ensemble",
+  "namespace": "team_b_final",
+  "experiment_id": "team_b_b2_ensemble",
+  "title": "team_b_b2_ensemble",
+  "kind": "team-B B2 integration pipeline",
+  "original_path": "src/team_b_b2_ensemble.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/team_b_b2_ensemble.py"
+  ],
+  "commands": [
+    "python src/team_b_b2_ensemble.py"
+  ],
+  "model": "sequence model, ensemble, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "from src.validation import calibrate",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "f\"regime test/oof={regime_ratio:.3f}, submission={SUBMISSION_PATH.name}\",",
+  "seed": "\"seed\": int(SEED),",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "production_delta = PRODUCTION_LOG_LEVEL - float(raw_z.mean())",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

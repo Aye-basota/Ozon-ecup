@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_019_gap_axis",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_019_gap_axis",
+  "title": "exp_019 — STRATEGY_01 gap-axis validation",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_019_gap_axis.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/gapval.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "gap/burst features",
+  "validation": "# exp_019 — STRATEGY_01 gap-axis validation",
+  "score": "`E10`: stress wCV 1.751415 → 1.756366 (**+0.004951**).",
+  "submission": "None documented",
+  "seed": "k=5, gaps={30,60,90,120}, actual={35,63,91,126}, seed=config.SEED",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

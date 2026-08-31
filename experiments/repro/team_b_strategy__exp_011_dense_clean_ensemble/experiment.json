@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_b_strategy__exp_011_dense_clean_ensemble",
+  "namespace": "team_b_strategy",
+  "experiment_id": "exp_011_dense_clean_ensemble",
+  "title": "exp_011 — dense clean-cutoff ensemble",
+  "kind": "git-history experiment card",
+  "original_path": "git:824f41575bc2:experiments/exp_011_dense_clean_ensemble.md",
+  "source_ref": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+  "source_commit": "0366bd9b40b8ca784dbe3e2ccdb744dcc22f5b4a",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/dense_ensemble.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, ensemble",
+  "features": "recency",
+  "validation": "Добавлен отдельный скрипт `src/dense_ensemble.py`: weekly train-cutoff grid, clean validation cutoff, log-space ансамбль recency + long_buy, multi-scale submit за один fit.",
+  "score": "CV mean: `1.733432` при `global_scale=1.0`; лучший из сетки `1.712473` при `global_scale=1.4`. Сравнивать напрямую с exp_009 нельзя: это другой validation regime.",
+  "submission": "Успех по LB: лучший вариант `scale=1.2` дал `1.6549097093483665` и стал новым лучшим сабмитом. Clean validation из этого эксперимента переоценивала `scale=1.4`, поэтому для дальнейшего scale-тюнинга лучше использовать validation-схему из `main` — см. exp_012.",
+  "seed": "LightGBM `n_estimators=600`, `learning_rate=0.03`, `num_leaves=31`, `subsample=0.8`, `colsample_bytree=0.8`, `reg_lambda=0.05`, seed из `config.py`. CV: `python src/dense_ensemble.py cv --folds 1 --recent-train-cutoffs 8 --components both --scale-grid 0.9,1.0,1.1,1.2,1.3,1.4`. Submit: `python src/dense_ensemble.py submit --recent-train-cutoffs 8 --components both --scale-grid 1.0,1.2,1.4 --output exp_011_dense8_logens.csv`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Добавлен отдельный скрипт `src/dense_ensemble.py`: weekly train-cutoff grid, clean validation cutoff, log-space ансамбль recency + long_buy, multi-scale submit за один fit.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

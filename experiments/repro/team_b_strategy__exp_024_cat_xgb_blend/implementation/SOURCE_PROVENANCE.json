@@ -1,0 +1,74 @@
+{
+  "src/behavior_feature_eval.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/cat_xgb_blend.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/catboost_blend.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/classifier_gate.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/config.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/dense_ensemble.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/dist_head_ensemble.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/ensemble.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/features.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/model_blend_grid.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/post_order_ensemble.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/predict.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/shap_behavior_v1.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/submission_blend.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/train.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/validation.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/weight_grid.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  },
+  "src/xgboost_blend.py": {
+    "card_introduction_commit": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+    "implementation_source": "824f41575bc2fa4ae11b8f6f9dfd907571276d37"
+  }
+}

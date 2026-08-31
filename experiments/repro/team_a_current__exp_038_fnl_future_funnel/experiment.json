@@ -1,0 +1,39 @@
+{
+  "catalog_id": "team_a_current__exp_038_fnl_future_funnel",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_038_fnl_future_funnel",
+  "title": "exp_038 — FNL: future-funnel supervision (Search/Cart) для энкодера SEQ-D3A",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_038_fnl_future_funnel.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/fnl.py",
+    "src/test_fnl.py",
+    "src/seq.py",
+    "research/strategies/results/FNL1/analyze.py"
+  ],
+  "commands": [
+    "python -m src.fnl build\npython -m pytest src/test_fnl.py -q\nbash research/strategies/results/FNL1/run.sh\nbash research/strategies/results/FNL1/run_makeup.sh      # добор + контроль шума\nPYTHONIOENCODING=utf-8 python research/strategies/results/FNL1/analyze.py",
+    "python -m src.fnl build",
+    "python -m pytest src/test_fnl.py -q",
+    "bash research/strategies/results/FNL1/run.sh",
+    "bash research/strategies/results/FNL1/run_makeup.sh      # добор + контроль шума"
+  ],
+  "model": "dilated TCN, sequence model, calibration diagnostic",
+  "features": "funnel features, history-depth features",
+  "validation": "Фолд `2025-10-16`, сид 42, 24 обучающих cutoff'а `2025-04-03..2025-09-11`,",
+  "score": "Но: в RMSLE это даёт максимум −0.0032 при шуме сегмента 0.0015, сегмент весит 4.8%",
+  "submission": "Сабмит не создавался. 4 фолда и мульти-сид не запускались: гейт не пройден.",
+  "seed": "Сабмит не создавался. 4 фолда и мульти-сид не запускались: гейт не пройден.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "контроля 0.00029. Двигается перераспределение УРОВНЯ между нулевыми и",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

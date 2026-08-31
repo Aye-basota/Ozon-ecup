@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_a_current__exp_016_validator_calibration",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_016_validator_calibration",
+  "title": "exp_016 — калибровка валидатора по leaderboard: единая схема wCV",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_016_validator_calibration.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/report.py",
+    "src/cv_lb.py",
+    "src/test_validation.py"
+  ],
+  "commands": [],
+  "model": "blend, calibration diagnostic",
+  "features": "See preserved experiment card and implementation",
+  "validation": "# exp_016 — калибровка валидатора по leaderboard: единая схема wCV",
+  "score": "Уровень сабмита влияет на LB отдельно от модели: `MSE(L) = C + (L*−L)²`, `L* = 2.3293`",
+  "submission": "Проверить это дальше нечем: сабмиты кончились.",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "ошибка уровня на тесте равна нулю по построению и не должна попадать в сравнение",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

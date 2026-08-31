@@ -1,0 +1,12 @@
+{
+  "btyd_production_status": "FAIL_UNSTABLE_MLE",
+  "experiment": "BTYD05-PRODUCTION-RESOLUTION",
+  "failed_donor_group": 0,
+  "fresh_parity_status": "FAIL",
+  "reasons": [
+    "EXP-047 numerical stability gates failed at production cutoff"
+  ],
+  "submission_status": "NOT_CREATED",
+  "test_support_status": "NOT_REACHED",
+  "validation_status": "PREFERRED from EXP-049; no new validation"
+}

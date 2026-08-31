@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__s1_val_w",
+  "namespace": "team_a_run",
+  "experiment_id": "S1-VAL-W",
+  "title": "Logged run — S1-VAL-W",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "calibration diagnostic",
+  "features": "See preserved experiment card and implementation",
+  "validation": "description:** exp_016: калибровка валидатора по LB — единая схема wCV (веса фолдов 1:2:4:8, калиброванные пофолдовые RMSLE)",
+  "score": "conclusion:** Не модель, а схема валидации. По 5 сабмитам с известным LB: Spearman = 1.0 у ВСЕХ локальных метрик (порядок ничего не различает), различает устойчивость коэффициента переноса dLB/dлокальная. wCV 1:2:4:8: перенос 1.000 +- 0.057 против 1.007 +- 0.151 у равных весов и 0.999 +- 0.240 у OOF cal. Асимметрия переноса 0.64x из STATE.md оказалась артефактом OOF cal: на wCV тот же замер даёт 0.975. Парный шум public LB = 0.00025, а не 0.0058 (непарный) — прежний порог 0.01 завышен в 20 раз. ",
+  "submission": "conclusion:** Не модель, а схема валидации. По 5 сабмитам с известным LB: Spearman = 1.0 у ВСЕХ локальных метрик (порядок ничего не различает), различает устойчивость коэффициента переноса dLB/dлокальная. wCV 1:2:4:8: перенос 1.000 +- 0.057 против 1.007 +- 0.151 у равных весов и 0.999 +- 0.240 у OOF cal. Асимметрия переноса 0.64x из STATE.md оказалась артефактом OOF cal: на wCV тот же замер даёт 0.975. Парный шум public LB = 0.00025, а не 0.0058 (непарный) — прежний порог 0.01 завышен в 20 раз. ",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

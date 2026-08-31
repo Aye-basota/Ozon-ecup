@@ -1,0 +1,40 @@
+{
+  "catalog_id": "team_a_current__exp_043_det_pair",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_043_det_pair",
+  "title": "exp_043 — DET-PAIR: deterministic continuation SEQ-D3A",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_043_det_pair.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/det_pair.py",
+    "src/test_det_pair.py",
+    "src/seq.py",
+    "src/test_seq.py",
+    "src/test_fnl.py",
+    "src/test_validation.py"
+  ],
+  "commands": [
+    "python -m pytest src/test_det_pair.py -q\n# 5 passed\n\npython -m pytest src/test_seq.py src/test_fnl.py src/test_validation.py -q -m \"not slow\"\n# 130 passed, 1 deselected\n\npython src/det_pair.py\n# repeat artifacts уже завершены: plan/run1/run2 переиспользуются и compare даёт PASS",
+    "python -m pytest src/test_det_pair.py -q",
+    "python -m pytest src/test_seq.py src/test_fnl.py src/test_validation.py -q -m \"not slow\"",
+    "python src/det_pair.py"
+  ],
+  "model": "dilated TCN, sequence model",
+  "features": "freshness/conditional features, history-depth features",
+  "validation": "`src/validation.py`, `src/config.py` не изменялись",
+  "score": "`|ΔRMSLE_cal| = 0.00033`, `Var(Δz) = 0.02041`. Известный механизм — три CPU",
+  "submission": "None documented",
+  "seed": "эффекты всё равно надо мерить парно на одном plan и подтверждать по фолдам/сидам.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

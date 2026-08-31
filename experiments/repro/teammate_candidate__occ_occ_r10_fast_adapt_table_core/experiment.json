@@ -1,0 +1,29 @@
+{
+  "catalog_id": "teammate_candidate__occ_occ_r10_fast_adapt_table_core",
+  "namespace": "teammate_candidate",
+  "experiment_id": "occ_occ_r10_fast_adapt__table_core",
+  "title": "Teammate candidate — occ_occ_r10_fast_adapt__table_core",
+  "kind": "completed teammate candidate/subrun",
+  "original_path": "пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/ALL_FINAL6H_VALIDATION.csv | пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/OCCURRENCE_BRANCH_VALIDATION.csv",
+  "source_ref": "external teammate review bundles",
+  "source_commit": "NOT_IN_GIT_HISTORY",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py",
+    "пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py",
+    "пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py",
+    "пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "occurrence features",
+  "validation": "Source: `пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/ALL_FINAL6H_VALIDATION.csv`",
+  "score": "| wcv | 1.7496529312046991 |",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact result rows and runner code survive; checkpoint bank and raw data are external",
+  "notes": "Recovered from 2 result-table row(s); no score or parameter was inferred.",
+  "preserved_document": "README.md"
+}

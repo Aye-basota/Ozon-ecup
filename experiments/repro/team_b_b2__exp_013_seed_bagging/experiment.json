@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_b2__exp_013_seed_bagging",
+  "namespace": "team_b_b2",
+  "experiment_id": "exp_013_seed_bagging",
+  "title": "exp_013 — G12 seed bagging",
+  "kind": "git-history experiment card",
+  "original_path": "git:88dc69163b1f:experiments/exp_013_seed_bagging.md",
+  "source_ref": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "source_commit": "30a276391f860890b6236058e0cfc76b9b503d83",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM",
+  "features": "See preserved experiment card and implementation",
+  "validation": "CV по фолдам: fold1 `1.689997`, fold2 `1.742736`, fold3 `1.731774`",
+  "score": "CV mean: `1.716366` (лучший на момент: exp_001, `1.717017`)",
+  "submission": "None documented",
+  "seed": "LightGBM baseline, 5 сидов, log-average, folds 1–2 для решения, fold3 справочно, seed из `src/config.py` плюс соседние seed для bagging.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

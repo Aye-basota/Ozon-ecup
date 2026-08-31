@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_b_b2__exp_030_submit_season_yoy_coefficient",
+  "namespace": "team_b_b2",
+  "experiment_id": "exp_030_submit_season_yoy_coefficient",
+  "title": "exp_030 — submit seasonality coefficient diagnostic",
+  "kind": "git-history experiment card",
+  "original_path": "git:88dc69163b1f:experiments/exp_030_submit_season_yoy_coefficient.md",
+  "source_ref": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "source_commit": "427abcc36b2e94a1c58345458f90df36c122f2a4",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/temporal_ensemble.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "two-part / hurdle, calibration diagnostic",
+  "features": "227 tabular features",
+  "validation": "Для боевого окна `2026-02-14..2026-03-15` нельзя использовать отрицательную калибровку, подобранную на январской валидации. Можно оценить сезонный множитель по прошлому году: отношение GMV окна `2025-02-14..2025-03-15` к GMV окна `2025-01-14..2025-02-12`, потому что submit-модель учится на label-окне `2026-01-14..2026-02-12`, а предсказывает `2026-02-14..2026-03-15`.",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: card metrics survive; runnable source uses a documented later branch-head fallback",
+  "notes": "Frozen implementation is copied from the commit that introduced this card. The card-introduction commit contained syntactically incomplete WIP source; the frozen implementation uses the nearest surviving branch-head version for: src/train.py. Exact provenance is in implementation/SOURCE_PROVENANCE.json.",
+  "preserved_document": "README.md"
+}

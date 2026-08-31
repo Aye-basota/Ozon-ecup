@@ -1,0 +1,26 @@
+{
+  "catalog_id": "teammate_research__materialize_final6h_extra90m",
+  "namespace": "teammate_research",
+  "experiment_id": "materialize_final6h_extra90m",
+  "title": "materialize_final6h_extra90m",
+  "kind": "teammate research runner",
+  "original_path": "пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py"
+  ],
+  "commands": [],
+  "model": "Ridge, blend",
+  "features": "occurrence features",
+  "validation": "rows.sort(key=lambda r:(r[\"delta\"],r[\"latest_delta\"]));save_csv(results/\"ALL_EXTRA90_VALIDATION.csv\",rows)",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "for p in subs.glob(\"submission_extra90_*.csv\"):zf.write(p,arcname=f\"submissions/{p.name}\")",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

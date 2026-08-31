@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_006_s1_best_submission",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_006_s1_best_submission",
+  "title": "exp_006 — S1-BEST: итоговая конфигурация и сабмит",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_006_s1_best_submission.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/blend.py",
+    "src/predict.py",
+    "src/submit.py"
+  ],
+  "commands": [
+    "python -m src.predict --exp S1-NORM --variant S1-NORM --L 0 --norm-long --min-history 90 --train-blocks 1\npython -m src.predict --exp S1-UNC  --variant S1-UNC  --L 0             --min-history 90 --train-blocks 1\npython -m src.predict --exp S1-CAP  --variant S1-CAP  --L 180           --min-history 90 --train-blocks 1\npython -m src.submit --z S1-NORM S1-UNC S1-CAP --weights 0.45 0.45 0.10 \\\n                     --level 2.339 --out submission_strategy_1.csv",
+    "python -m src.predict --exp S1-NORM --variant S1-NORM --L 0 --norm-long --min-history 90 --train-blocks 1",
+    "python -m src.predict --exp S1-UNC  --variant S1-UNC  --L 0             --min-history 90 --train-blocks 1",
+    "python -m src.predict --exp S1-CAP  --variant S1-CAP  --L 180           --min-history 90 --train-blocks 1",
+    "python -m src.submit --z S1-NORM S1-UNC S1-CAP --weights 0.45 0.45 0.10 \\"
+  ],
+  "model": "LightGBM, CatBoost, calibration diagnostic",
+  "features": "227 tabular features",
+  "validation": "панель     обучение — 1-блочная, валидация и тест — 3-блочная (правило организатора)",
+  "score": "CV mean 1.75886, std 0.01162** (B0: 1.76879, std 0.01448)",
+  "submission": "level 2.339 --out submission_strategy_1.csv",
+  "seed": "feature_fraction 0.7, bagging 0.8/1, lambda_l2 5, max_bin 63, seed 42",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "level 2.339 --out submission_strategy_1.csv",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

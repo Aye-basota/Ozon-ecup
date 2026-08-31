@@ -1,0 +1,37 @@
+{
+  "catalog_id": "team_a_current__exp_018_seed_average",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_018_seed_average",
+  "title": "exp_018 — S_05 B: дисперсия по сидам и усреднение",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_018_seed_average.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seedavg.py",
+    "src/train.py"
+  ],
+  "commands": [
+    "model=direct, L=None, norm_long=True, min_history=90, cutoffs=all шаг 7,\ntrain_blocks=1, panel_blocks=3, rounds=300, LGB_PARAMS из config.py, 227 признаков\nseeds = 42 (config.SEED), 43, 44, 45, 46\n\n# каждый сид — 4 фолда двумя процессами (сид 42 = полный прогон из exp_017)\nfor s in 43 44 45 46; do\n  LGB_THREADS=6 python -m src.train --exp S1-SEED$s-A --seed $s --model direct --L 0 \\\n    --norm-long --min-history 90 --train-blocks 1 --cutoffs all --rounds 300 \\\n    --val 2025-10-16 2025-09-04 --no-log\n  LGB_THREADS=6 python -m src.train --exp S1-SEED$s-B --seed $s ... --val 2025-10-02 2025-09-18 --no-log\n  python -m src.merge_oof --out S1-SEED$s --parts S1-SEED$s-A S1-SEED$s-B \\\n    --ref S1-ROUNDS-R300 --model direct --no-log\ndone\npython -m src.merge_oof --out S1-SEED42 --parts S1-ROUNDSL-A S1-ROUNDSL-B --ref S1-E10 --no-log\npython -m src.seedavg --out S1-SEEDAVG5 --exps S1-SEED42 S1-SEED43 S1-SEED44 S1-SEED45 S1-SEED46 \\\n  --ref S1-SEED42 --stats --model direct --n-features 227\npython -m src.seedavg --out S1-SEEDAVG3 --exps S1-SEED42 S1-SEED43 S1-SEED44 \\\n  --ref S1-SEED42 --no-log",
+    "python -m src.merge_oof --out S1-SEED$s --parts S1-SEED$s-A S1-SEED$s-B \\",
+    "python -m src.merge_oof --out S1-SEED42 --parts S1-ROUNDSL-A S1-ROUNDSL-B --ref S1-E10 --no-log",
+    "python -m src.seedavg --out S1-SEEDAVG5 --exps S1-SEED42 S1-SEED43 S1-SEED44 S1-SEED45 S1-SEED46 \\",
+    "python -m src.seedavg --out S1-SEEDAVG3 --exps S1-SEED42 S1-SEED43 S1-SEED44 \\"
+  ],
+  "model": "LightGBM, ensemble",
+  "features": "227 tabular features",
+  "validation": "| сид | 09-04 | 09-18 | 10-02 | 10-16 | wCV |",
+  "score": "Он требовал закрыть тему, если разброс `wCV` по сидам < 0.0003; фактический",
+  "submission": "LB: не отправлялось, сабмиты кончились (`STATE.md`).",
+  "seed": "раундов повторил `S1-E10` на 4 фолдах из 4). `src/seedavg.py`: усреднение",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "в лог-пространстве равными весами + статистика разброса и кривая усреднения.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,37 @@
+{
+  "catalog_id": "team_a_current__exp_039_block4_saf",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_039_block4_saf",
+  "title": "exp_039 — BLOCK4-SAF: selection-aware block-to-block residual correction",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_039_block4_saf.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/block4_saf.py",
+    "src/test_block4_saf.py",
+    "src/test_pipeline.py",
+    "src/test_validation.py"
+  ],
+  "commands": [
+    "python -m pytest src/test_block4_saf.py src/test_pipeline.py src/test_validation.py -q\npython src/block4_saf.py",
+    "python -m pytest src/test_block4_saf.py src/test_pipeline.py src/test_validation.py -q",
+    "python src/block4_saf.py"
+  ],
+  "model": "LightGBM, calibration diagnostic",
+  "features": "calendar features, freshness/conditional features, window aggregates",
+  "validation": "Все числа — пофолдовый optimal log-shift после winsor 0.5/99.5% и вычитания",
+  "score": "| **wCV** | **1.747510** | **1.747749** | **+0.000240** | range 0.0 |",
+  "submission": "validation,test_regime,summary}.json` и плоские CSV diagnostics. Сабмита нет.",
+  "seed": "Следовательно, отрицательный вывод не является одним неудачным seed.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "результат не объясняется уровнем. `corr(delta, ly-z_STRONGEST)` по fold:",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

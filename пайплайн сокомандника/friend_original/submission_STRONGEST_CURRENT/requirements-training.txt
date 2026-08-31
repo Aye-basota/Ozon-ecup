@@ -1,0 +1,6 @@
+numpy>=2.3,<3
+polars>=1.43,<2
+pyarrow
+scikit-learn
+lightgbm>=4.7,<5
+torch>=2.11

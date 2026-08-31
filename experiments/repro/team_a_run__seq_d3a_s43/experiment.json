@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__seq_d3a_s43",
+  "namespace": "team_a_run",
+  "experiment_id": "SEQ-D3A-S43",
+  "title": "Logged run — SEQ-D3A-S43",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN, sequence model, blend",
+  "features": "history-depth features",
+  "validation": "description:** exp_030b SEQ-D3A-S43: разделяющий замер провала фолда 09-18, seed 43, 1 фолд, BASE + D3A",
+  "score": "conclusion:** exp_030b Разделяющий замер пункта 1 плана exp_030: фолд 2025-09-18, seed 43, BASE и D3A, всё остальное как в exp_030 (только --seed 43). ПРОВАЛ +0.00355 НЕ ВОСПРОИЗВЁЛСЯ: приём дал -0.00035 (BASE 1.76402 -> D3A 1.76367), ΔAUC -0.00137 -> -0.00007. Обе history-poor группы вернулись к нулю: 'никогда не покупал' +0.04677 (AUC -0.06367) -> -0.00115 (+0.01032); w180_days_buy 0-1 +0.02015 (-0.02466) -> +0.00024 (+0.00156). Целевые сегменты лучше на ОБОИХ сидах: rec_buy 15-60 -0.00050/-0.",
+  "submission": "conclusion:** exp_030b Разделяющий замер пункта 1 плана exp_030: фолд 2025-09-18, seed 43, BASE и D3A, всё остальное как в exp_030 (только --seed 43). ПРОВАЛ +0.00355 НЕ ВОСПРОИЗВЁЛСЯ: приём дал -0.00035 (BASE 1.76402 -> D3A 1.76367), ΔAUC -0.00137 -> -0.00007. Обе history-poor группы вернулись к нулю: 'никогда не покупал' +0.04677 (AUC -0.06367) -> -0.00115 (+0.01032); w180_days_buy 0-1 +0.02015 (-0.02466) -> +0.00024 (+0.00156). Целевые сегменты лучше на ОБОИХ сидах: rec_buy 15-60 -0.00050/-0.",
+  "seed": "conclusion:** exp_030b Разделяющий замер пункта 1 плана exp_030: фолд 2025-09-18, seed 43, BASE и D3A, всё остальное как в exp_030 (только --seed 43). ПРОВАЛ +0.00355 НЕ ВОСПРОИЗВЁЛСЯ: приём дал -0.00035 (BASE 1.76402 -> D3A 1.76367), ΔAUC -0.00137 -> -0.00007. Обе history-poor группы вернулись к нулю: 'никогда не покупал' +0.04677 (AUC -0.06367) -> -0.00115 (+0.01032); w180_days_buy 0-1 +0.02015 (-0.02466) -> +0.00024 (+0.00156). Целевые сегменты лучше на ОБОИХ сидах: rec_buy 15-60 -0.00050/-0.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "conclusion:** exp_030b Разделяющий замер пункта 1 плана exp_030: фолд 2025-09-18, seed 43, BASE и D3A, всё остальное как в exp_030 (только --seed 43). ПРОВАЛ +0.00355 НЕ ВОСПРОИЗВЁЛСЯ: приём дал -0.00035 (BASE 1.76402 -> D3A 1.76367), ΔAUC -0.00137 -> -0.00007. Обе history-poor группы вернулись к нулю: 'никогда не покупал' +0.04677 (AUC -0.06367) -> -0.00115 (+0.01032); w180_days_buy 0-1 +0.02015 (-0.02466) -> +0.00024 (+0.00156). Целевые сегменты лучше на ОБОИХ сидах: rec_buy 15-60 -0.00050/-0.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

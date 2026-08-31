@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_b2__exp_006_hurdle",
+  "namespace": "team_b_b2",
+  "experiment_id": "exp_006_hurdle",
+  "title": "exp_006 — G6 hurdle",
+  "kind": "git-history experiment card",
+  "original_path": "git:88dc69163b1f:experiments/exp_006_hurdle.md",
+  "source_ref": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "source_commit": "30a276391f860890b6236058e0cfc76b9b503d83",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, two-part / hurdle",
+  "features": "See preserved experiment card and implementation",
+  "validation": "CV по фолдам: fold1 `2.055990`, fold2 `2.035534`, fold3 `1.965917`",
+  "score": "CV mean: `2.045762` (лучший на момент: exp_001, `1.717017`)",
+  "submission": "None documented",
+  "seed": "LightGBM classifier + LightGBM regressor, параметры из `src/train.py`, folds 1–2 для решения, fold3 справочно, seed из `src/config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

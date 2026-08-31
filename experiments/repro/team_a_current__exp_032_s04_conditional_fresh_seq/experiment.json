@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_a_current__exp_032_s04_conditional_fresh_seq",
+  "namespace": "team_a_current",
+  "experiment_id": "EXP_032_S04_conditional_fresh_seq",
+  "title": "EXP-032 — S04: Conditional Fresh Supervision for SEQ",
+  "kind": "experiment card",
+  "original_path": "experiments/EXP_032_S04_conditional_fresh_seq.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seq_cond.py",
+    "src/seq.py",
+    "src/dist_pact.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN, sequence model, ensemble, blend, calibration diagnostic",
+  "features": "freshness/conditional features, history-depth features",
+  "validation": "validation;",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "пороге 0.03. Дальше — 4 фолда × 3 сида головы (пункт 2 лестницы выше).",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "калибровки уровня.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_046_tabular_backbone_refresh",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_046_tabular_backbone_refresh",
+  "title": "exp_046 — TABULAR-BACKBONE-REFRESH: rounds × AVG3 для production UNC/CAP",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_046_tabular_backbone_refresh.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/tabular_backbone_refresh.py",
+    "src/test_tabular_backbone_refresh.py",
+    "src/test_pipeline.py",
+    "src/test_validation.py"
+  ],
+  "commands": [
+    "python src/tabular_backbone_refresh.py\npython src/tabular_backbone_refresh.py --analysis-only\npython -m pytest src/test_tabular_backbone_refresh.py src/test_pipeline.py src/test_validation.py -q\n# 30 passed",
+    "python src/tabular_backbone_refresh.py",
+    "python src/tabular_backbone_refresh.py --analysis-only",
+    "python -m pytest src/test_tabular_backbone_refresh.py src/test_pipeline.py src/test_validation.py -q"
+  ],
+  "model": "LightGBM, sequence model, ensemble, blend, calibration diagnostic",
+  "features": "freshness/conditional features, 227 tabular features",
+  "validation": "| **wCV 1:2:4:8** | **1.747509863** | **1.747509862520** |",
+  "score": "| **wCV 1:2:4:8** | **1.747509863** | **1.747509862520** |",
+  "submission": "None documented",
+  "seed": "`seed_variance_diagnostics.csv`, `ensemble_folds.csv`,",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Исторические raw OOF выровнены по `(cutoff,user_id)` и смешаны в log-space:",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

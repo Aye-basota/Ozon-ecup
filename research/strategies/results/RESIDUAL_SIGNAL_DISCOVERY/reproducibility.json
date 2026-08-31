@@ -1,0 +1,22 @@
+{
+  "aligned_oof_sha256": "40aa9719d4fd903467eceb5f7be5e5d19ce6a67e12856f523946e5fdcda0ed0a",
+  "analysis_only_status": "PASS",
+  "canonical_hashes": {
+    "advantage_probe_metrics.csv": "936ac249ef04f5ab2a0f5b85fc43b18a44ef153e8df7638f5e887f79c5780dce",
+    "best_existing_oracle.csv": "311ea6d01ee43499c5bccabb8dafbd95b5daaaaabf519d200011e1b92aa80901",
+    "calibration_audit.csv": "913800dfe3da384df4461dd9a8bfcbe3697d39db9e54d2919c15fd718e65e89f",
+    "disagreement_summary.csv": "709842d76bf31f1c186ac0aa2667ecfc75b285e31c9fc65636de235d92cbb679",
+    "late_fold_candidates.csv": "d3ebd64aa2085e4ab26080d54e2eea664826db024633dee7e32b2b0ece8d5b63",
+    "oracle_etx_seq.csv": "881344bfb9bdd26e982a10a5ecdf635870716b069eb363cda901870f1f2a3497",
+    "oracle_weight_grid.csv": "86b5df3a85b1627f2daf5bc27736ac2775a9b19cc9b0e6d786fd78ec7cbd019b",
+    "recipient_half_metrics.csv": "cd435702d951ca8f796a109d5efe34f371138c2e5f65e7d0d88c328e6da32d0d",
+    "residual_map.csv": "571371608a25ec56422ca07ccc29d9cd328440ac015e7e72533fbdf1f50ecd4e",
+    "residual_map_bins.csv": "fc04f8f0b1d24e49a50e8d01d448e2e85d0f8908686e5620d04763906d8b4927",
+    "seed_null_oracle.csv": "d860cb4fbbc35205f4386572cf192c27f302392d13431b972366b5169812c459",
+    "segment_candidate_metrics.csv": "2d9bc527ca6d26ddac6210771a8a87e6658c6da622565fdc68e294767ab73992",
+    "segment_residual_map.csv": "a869eedede864eaed734257a8e491e08249d07f771828063e03b7bd890f880ca",
+    "summary.json": "44d87a78fcb67df2f54721e538b7522abcc43abf577919feb81698afc93d6228",
+    "winner_probe_metrics.csv": "bc791b0ce3e70d85063bf2977232d426e6962c9d749653b03a852ecf10a6558a"
+  },
+  "probe_outputs_sha256": "0a68b6d64114105ccc950c0015a048f09187b70797d49b5f5123f2f2d180bbd1"
+}

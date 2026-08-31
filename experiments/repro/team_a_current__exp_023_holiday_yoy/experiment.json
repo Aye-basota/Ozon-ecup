@@ -1,0 +1,34 @@
+{
+  "catalog_id": "team_a_current__exp_023_holiday_yoy",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_023_holiday_yoy",
+  "title": "exp_023 — HOLIDAY-YOY: персональная сезонность 14.02–15.03",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_023_holiday_yoy.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/holiday_yoy.py"
+  ],
+  "commands": [
+    "base=S1-DIST-MIX; weights=0.15/0.30/0.10/0.45; level=2.3293\nfeature source=2025-01-15..2025-04-14; test cutoff=2026-02-13\nshrinkage reliability=support/(support+median_positive_support)\nbeta_m=max(slope_yoy_m-slope_placebo_m, 0); correction=mean_m(beta_m*hy_m)\ncorrection centered within holiday-history; no-history=0; seed=config.SEED\npython src/holiday_yoy.py --stage diagnostic\npython src/holiday_yoy.py --stage fast",
+    "python src/holiday_yoy.py --stage diagnostic",
+    "python src/holiday_yoy.py --stage fast"
+  ],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "holiday/YoY features, Search/Catalog decomposition, window aggregates, 227 tabular features",
+  "validation": "колонок были включены в дорогой DIST-retrain, остановленный после двух фолдов.",
+  "score": "| **wCV 1:2:4:8** | **1.749484** | **1.749577** | **+0.000093** | **−0.000003** |",
+  "submission": "Создан `submissions/submission_HOLIDAY-YOY.csv`: 250 000 строк, SHA-256",
+  "seed": "correction centered within holiday-history; no-history=0; seed=config.SEED",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "`41C551A62A663D29382D3D82274F075F223FFE8E0989ECEF4C71EFD53E9456AA`, уровень",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

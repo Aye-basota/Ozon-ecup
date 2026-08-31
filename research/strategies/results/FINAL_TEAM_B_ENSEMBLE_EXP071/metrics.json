@@ -1,0 +1,89 @@
+{
+  "experiment": "FINAL_TEAM_B_ENSEMBLE_EXP071",
+  "team_source_sha": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "selection": "continuous canonical S1 wCV optimum; LB unused",
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_weights": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "team_fraction_of_tab_slot": 0.449575571207332,
+  "final_absolute_weights": {
+    "CAP": 0.05504244287926681,
+    "UNC": 0.11008488575853362,
+    "DIST": 0.13760610719816702,
+    "TEAM_B": 0.24726656416403262,
+    "SEQ_AVG3": 0.225,
+    "ETX_AVG3_DCW": 0.225
+  },
+  "base": {
+    "wcv": 1.7475098625201952,
+    "fold_scores": [
+      1.7668833567997195,
+      1.7605095767798136,
+      1.748629223964952,
+      1.7412785664479717
+    ]
+  },
+  "candidate": {
+    "wcv": 1.747127498522713,
+    "delta_vs_base": -0.00038236399748226013,
+    "fold_scores": [
+      1.7667697503915853,
+      1.7600474109991227,
+      1.7482650562997402,
+      1.7408734600314881
+    ],
+    "fold_deltas": [
+      -0.00011360640813418144,
+      -0.0004621657806909152,
+      -0.00036416766521174537,
+      -0.0004051064164836138
+    ],
+    "better_folds": 4
+  },
+  "lofo": {
+    "held_out_team_fractions": [
+      0.46025805506852246,
+      0.4416733022909116,
+      0.45095696459062473,
+      0.44042289399568973
+    ],
+    "fold_scores": [
+      1.7667760193551232,
+      1.7600490674506608,
+      1.7482650798757313,
+      1.7408738919565685
+    ],
+    "wcv": 1.7471283739607946,
+    "delta_vs_base": -0.00038148855940067783,
+    "better_folds": 4
+  },
+  "production_regime": {
+    "correction_variance_oof": 0.0013873027076882732,
+    "correction_variance_test": 0.0014175646878800362,
+    "test_oof_variance_ratio": 1.0218135378991582,
+    "gate": "PASS",
+    "target_mean_log1p_before_floor": 2.3293,
+    "pre_level_mean_log1p": 2.4548676677681756,
+    "global_log_shift": -0.12556766776817563
+  },
+  "submission": {
+    "path": "submissions\\submission_FINAL_CAP_UNC_DIST_SEQ_ETX_TEAM_B.csv",
+    "sha256": "d6cdb218a4d149acf3479f32ab875bfbe4d89eca222f09910750309de19698b9",
+    "rows": 250000,
+    "unique_users": 250000,
+    "mean_log1p": 2.329325483519784,
+    "mean_predict": 36.219060947512,
+    "min": 0.0,
+    "max": 3287.613144,
+    "zero_fraction": 0.000992
+  }
+}

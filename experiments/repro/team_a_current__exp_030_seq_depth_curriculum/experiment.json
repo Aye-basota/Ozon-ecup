@@ -1,0 +1,39 @@
+{
+  "catalog_id": "team_a_current__exp_030_seq_depth_curriculum",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_030_seq_depth_curriculum",
+  "title": "exp_030 — SEQ-D3A: depth curriculum (случайная обрезка реальных дней)",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_030_seq_depth_curriculum.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seq.py",
+    "src/test_seq.py",
+    "research/strategies/results/SEQ5/analyze.py",
+    "research/strategies/results/SEQ5/depth_table.py"
+  ],
+  "commands": [
+    "python -m pytest src/test_seq.py -q\nbash research/strategies/results/SEQ5/run.sh          # 7 фолдовых прогонов\nbash research/strategies/results/SEQ5/diag.sh         # depth / crossdepth / availprobe\nPYTHONPATH=. python research/strategies/results/SEQ5/analyze.py\nPYTHONPATH=. python research/strategies/results/SEQ5/depth_table.py",
+    "python -m pytest src/test_seq.py -q` — **82 passed** (было 63). Отдельно проверено:",
+    "python -m pytest src/test_seq.py -q",
+    "bash research/strategies/results/SEQ5/run.sh          # 7 фолдовых прогонов",
+    "bash research/strategies/results/SEQ5/diag.sh         # depth / crossdepth / availprobe"
+  ],
+  "model": "dilated TCN, sequence model, calibration diagnostic",
+  "features": "calendar features, history-depth features, 227 tabular features",
+  "validation": "Вычисления:** 4 фолда, **seed 42** (3 сида НЕ запускались), ~7.9 ч GPU",
+  "score": "wCV (1:2:4:8) 1.75361 → 1.75284, ΔwCV = −0.00077**, лучше на **2 фолдах из 4**.",
+  "submission": "3. LOFO/смесь/сабмит — **не считались и не готовились**: при 2/4 и одном сиде",
+  "seed": "17 каналов, seed 42 (из `config.py`), train-панель 1-блочная, val 3-блочная,",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Калиброванная и сырая Var совпадают до 5-го знака — это не артефакт уровня.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

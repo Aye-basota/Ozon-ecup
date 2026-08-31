@@ -1,0 +1,182 @@
+{
+  "src/adversarial.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/anchor.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/blend.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/calibrate.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/calval.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/config.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/cv_lb.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/data.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/densityval.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/domain01.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/drift.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/ensemble.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/error_analysis.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/features.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/final_experiments.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/gapval.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/holiday_yoy.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/merge_oof.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/mhz.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/models.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/predict.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/ptime.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/ptime_eval.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/ptime_imp.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/renewal.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/renewal_eval.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/report.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/sampleval.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/seasonal.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/seedavg.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/seq.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/smoke.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/submit.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/test_calval.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/test_dist.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/test_domain01.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/test_mhz.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/test_pipeline.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/test_renewal.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/test_seq.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/test_validation.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/tracking.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/train.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/tune.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  },
+  "src/validation.py": {
+    "card_introduction_commit": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0",
+    "implementation_source": "c219dabe316982bb9de23e15c4f24d3e9eb16ae0"
+  }
+}

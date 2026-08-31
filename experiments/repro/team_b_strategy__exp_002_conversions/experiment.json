@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_strategy__exp_002_conversions",
+  "namespace": "team_b_strategy",
+  "experiment_id": "exp_002_conversions",
+  "title": "exp_002 — conversions",
+  "kind": "git-history experiment card",
+  "original_path": "git:824f41575bc2:experiments/exp_002_conversions.md",
+  "source_ref": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+  "source_commit": "68b543d7b654257812ba4bbb58547fd8a832fb00",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "window aggregates",
+  "validation": "CV по фолдам: validation cutoff 2026-01-15",
+  "score": "CV mean: RMSE 243.974514, MAE 65.601427, RMSLE 1.710919",
+  "submission": "Модель: `HistGradientBoostingRegressor(loss=\"squared_error\", learning_rate=0.05, max_leaf_nodes=31, max_iter=250, l2_regularization=0.05)`. Train cutoffs: 2025-10-01, 2025-11-01, 2025-12-01. Validation cutoff: 2026-01-15. Test cutoff для сабмита: 2026-02-14. Seed: 42 из `config.py`. Сабмит: `submissions/exp_002_conversions_hgbr.csv`.",
+  "seed": "Модель: `HistGradientBoostingRegressor(loss=\"squared_error\", learning_rate=0.05, max_leaf_nodes=31, max_iter=250, l2_regularization=0.05)`. Train cutoffs: 2025-10-01, 2025-11-01, 2025-12-01. Validation cutoff: 2026-01-15. Test cutoff для сабмита: 2026-02-14. Seed: 42 из `config.py`. Сабмит: `submissions/exp_002_conversions_hgbr.csv`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

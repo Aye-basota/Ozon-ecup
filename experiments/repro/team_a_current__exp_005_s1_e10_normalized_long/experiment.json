@@ -1,0 +1,35 @@
+{
+  "catalog_id": "team_a_current__exp_005_s1_e10_normalized_long",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_005_s1_e10_normalized_long",
+  "title": "exp_005 — S1-E10: длинные окна, нормированные на доступную глубину истории",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_005_s1_e10_normalized_long.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/train.py",
+    "src/models.py"
+  ],
+  "commands": [
+    "python -m src.features --L 0 --min-history 90 --norm-long\npython -m src.train --exp S1-E10 --L 0 --min-history 90 --train-blocks 1 --cutoffs all --norm-long",
+    "python -m src.features --L 0 --min-history 90 --norm-long",
+    "python -m src.train --exp S1-E10 --L 0 --min-history 90 --train-blocks 1 --cutoffs all --norm-long"
+  ],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "gap/burst features, 227 tabular features",
+  "validation": "| фолд | E02 (uncapped) | E10 (нормированные) | Δ | bias E02 → E10 |",
+  "score": "| **CV mean** | **1.76182** | **1.75988** | **−0.00194** | −0.0950 → **−0.0545** |",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "до `L = 180`, где то же снижение смещения стоило +0.0061. Уровень прогноза на тесте",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

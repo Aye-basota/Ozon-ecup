@@ -1,0 +1,31 @@
+{
+  "catalog_id": "team_a_current__exp_013_s1_e11_two_part",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_013_s1_e11_two_part",
+  "title": "exp_013 — S1-E11: двухчастная модель на нормированных длинных окнах",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_013_s1_e11_two_part.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/models.py",
+    "src/train.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, calibration diagnostic",
+  "features": "227 tabular features",
+  "validation": "CV по фолдам: 1.77344 / 1.76548 / 1.75209 / 1.74469.",
+  "score": "CV mean: **1.75893 ± 0.01121**; bias −0.05520, оптимальный сдвиг −0.055,",
+  "submission": "принятой смеси `S1-BEST`, поэтому в состав сабмита не входила и на leaderboard не",
+  "seed": "LightGBM 600 раундов, параметры по умолчанию из config.LGB_PARAMS, seed из config.py",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "после закрытия вопроса об уровне. `eda_findings.md` (`e08`) до этого показал, что",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

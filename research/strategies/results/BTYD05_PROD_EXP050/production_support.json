@@ -1,0 +1,199 @@
+{
+  "action": "fail-fast; no BTYD predictions, support composition, or submission",
+  "artifact_hashes": {
+    "oof_raw": "754d930b2347beb400b947c416cf56cc036f0b80c35ea039402432263b89d6af",
+    "raw_train": "5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0",
+    "sample_submit": "06a433b0ac32f7c0292ce3cb994c1684b4156b392f30fe537ea6a44d0bc4c1b1"
+  },
+  "cutoff": "2026-02-13",
+  "cutoff_safety": {
+    "fold": "2026-02-13",
+    "future_rows_do_not_change_summary": true,
+    "summary_sha256": "2ceb972242d49bb48667918dd12a186db6556e52036e1f1c43af302bc8ce6d73"
+  },
+  "event_audit": {
+    "date_max": "2026-02-13",
+    "date_min": "2025-01-01",
+    "duplicate_user_days": {
+      "extra_rows": 0,
+      "groups": 0
+    },
+    "event_unit": "one user-day; purchase_day = (gmv > 0)",
+    "mismatches": {
+      "any_disagreement": {
+        "count": 0,
+        "share_rows": 0.0
+      },
+      "gmv_vs_source_ord": {
+        "count": 0,
+        "share_rows": 0.0
+      },
+      "gmv_vs_to_ord": {
+        "count": 0,
+        "share_rows": 0.0
+      },
+      "to_ord_vs_source_ord": {
+        "count": 0,
+        "share_rows": 0.0
+      }
+    },
+    "positive_counts": {
+      "gmv_positive": 4736907,
+      "source_ord_positive": 4736907,
+      "to_ord_positive": 4736907
+    },
+    "primary_event_unchanged": true,
+    "rows": 30631006,
+    "to_ord_semantics": "audit-only purchased-item count; never transaction count",
+    "users": 250000
+  },
+  "failed_fit": {
+    "T": 409,
+    "best_start_index": 2,
+    "donor_group": 0,
+    "fold": "2026-02-13",
+    "input_summary_sha256": "49b23c23e521dc50247f911b0359e8fcd0bfe05204eb7e272e3241e59b49e710",
+    "log_likelihood": -8337164.878887451,
+    "log_parameter_spread": {
+      "a": 1.0986008172575512,
+      "alpha": 0.0006996019144924759,
+      "b": 1.188762826506081,
+      "r": 0.0022933975343295
+    },
+    "max_log_parameter_spread": 1.188762826506081,
+    "mean_nll_spread": 1.6243321624642704e-05,
+    "n_unique_summaries": 8488,
+    "n_users": 124787,
+    "parameters": {
+      "a": 0.30835063946913416,
+      "alpha": 13.134504024212792,
+      "b": 790.3362559755865,
+      "r": 0.612535866649669
+    },
+    "recipient_group": 1,
+    "stability_thresholds": {
+      "gradient_norm": 0.001,
+      "max_log_parameter_spread": 0.1,
+      "mean_nll_spread": 1e-06
+    },
+    "stable": false,
+    "starts": [
+      {
+        "gradient_norm": 0.0022739721128873353,
+        "hit_bound": false,
+        "initial": [
+          0.5,
+          20.0,
+          1.5,
+          3.0
+        ],
+        "log_likelihood": -8337166.905842827,
+        "log_parameters": [
+          -0.4921470611833397,
+          2.5749673041280827,
+          -2.275118520962488,
+          5.483695668871201
+        ],
+        "mean_nll": 66.81118150001865,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nfev": 225,
+        "nit": 21,
+        "parameters": {
+          "a": 0.10278472556873466,
+          "alpha": 13.130887825644841,
+          "b": 240.73474131352327,
+          "r": 0.6113124588880655
+        },
+        "status": 0,
+        "success": true
+      },
+      {
+        "gradient_norm": 9.273059124053036e-05,
+        "hit_bound": false,
+        "initial": [
+          1.0,
+          50.0,
+          2.0,
+          5.0
+        ],
+        "log_likelihood": -8337165.636329906,
+        "log_parameters": [
+          -0.4898536636490102,
+          2.575666906042575,
+          -2.004996061290199,
+          5.799164740130194
+        ],
+        "mean_nll": 66.81117132657974,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nfev": 205,
+        "nit": 28,
+        "parameters": {
+          "a": 0.13466082608437685,
+          "alpha": 13.140077434065654,
+          "b": 330.0237891284077,
+          "r": 0.6127160502552722
+        },
+        "status": 0,
+        "success": true
+      },
+      {
+        "gradient_norm": 0.0002359429895447087,
+        "hit_bound": false,
+        "initial": [
+          2.0,
+          100.0,
+          3.0,
+          8.0
+        ],
+        "log_likelihood": -8337164.878887451,
+        "log_parameters": [
+          -0.4901477804823178,
+          2.575242662562594,
+          -1.1765177037049366,
+          6.672458495377282
+        ],
+        "mean_nll": 66.81116525669702,
+        "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+        "nfev": 340,
+        "nit": 29,
+        "parameters": {
+          "a": 0.30835063946913416,
+          "alpha": 13.134504024212792,
+          "b": 790.3362559755865,
+          "r": 0.612535866649669
+        },
+        "status": 0,
+        "success": true
+      }
+    ],
+    "x_distribution": {
+      "max": 385.0,
+      "mean": 18.968033529133645,
+      "min": 0.0,
+      "q": {
+        "0": 0.0,
+        "0.25": 3.0,
+        "0.5": 10.0,
+        "0.75": 26.0,
+        "0.9": 49.0,
+        "0.99": 116.0,
+        "1": 385.0
+      },
+      "std": 24.845713095108906,
+      "zero_share": 0.12336220920448444
+    }
+  },
+  "forbidden_rescues_not_run": [
+    "different optimizer starts",
+    "relaxed stability gates",
+    "parameter selection",
+    "fold-fit averaging",
+    "latest-fold parameters",
+    "full-population refit",
+    "different BTYD family",
+    "weight tuning"
+  ],
+  "history_inclusive_max": "2026-02-13",
+  "origin": "2024-12-31",
+  "status": "FAIL_UNSTABLE_MLE"
+}

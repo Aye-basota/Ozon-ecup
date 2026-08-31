@@ -1,0 +1,28 @@
+{
+  "catalog_id": "teammate_research__continue_fixedstack_combo_10h",
+  "namespace": "teammate_research",
+  "experiment_id": "continue_fixedstack_combo_10h",
+  "title": "!/usr/bin/env python3",
+  "kind": "teammate research runner",
+  "original_path": "пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py"
+  ],
+  "commands": [
+    "python continue_fixedstack_combo_10h.py --max-hours 9.5"
+  ],
+  "model": "LightGBM, Ridge, two-part / hurdle, blend",
+  "features": "recency, freshness/conditional features",
+  "validation": "E-CUP 2026 / Track 3 — continuation after fixedstack validation (9–10h).",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "path=subs/f\"submission_combo10h_candidate_{i}_{r['name']}.csv\";df.to_csv(path,index=False)",
+  "seed": "for r in seeds:",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "# Candidate-level nonnegative stack.  Uses only already cross-fitted candidate predictions.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

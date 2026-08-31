@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__authoritative_latest_exp067",
+  "namespace": "team_a_run",
+  "experiment_id": "AUTHORITATIVE_LATEST_EXP067",
+  "title": "Logged run — AUTHORITATIVE_LATEST_EXP067",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "wcv:** Unknown / not recoverable from repository history",
+  "score": "conclusion:** TEST reconstruction PASS max log error 8.88e-16; source SHA 7ef5b2c5...e722, rebuilt SHA a9dc2dab...a1. LB 1.6492175622 is EXTERNALLY_REPORTED only; CAP_LINEAGE UNKNOWN; canonical OOF missing for B/X3, so latest is not CV/LOFO/private-safe anchor. Details exp_067",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

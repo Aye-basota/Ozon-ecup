@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_064_event_order",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_064_event_order",
+  "title": "exp_064 — EVENT-ORDER",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_064_event_order.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/event_order.py"
+  ],
+  "commands": [],
+  "model": "LightGBM",
+  "features": "funnel features, window aggregates",
+  "validation": "REAL / SHUFFLED / CONTROL_ONLY по всем folds: exact base scores; `Delta wCV = 0 / 0 / 0`, 0/4, latest `0`.",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "CPU, seed 42 из `src/config.py`; exact aligned exp_037 SHA256 `40aa9719...0ed0a`; 15 event-order features + 11 fixed controls; LightGBM residual 120 rounds, leaves 15, min leaf 1000, L2 50; 4-way cross-user + two-sided scale `0/.25/.5/.75/1`; canonical cutoffs, weights 1:2:4:8. Runtime 62.95s; summary SHA256 `4ad55d3c...1f3d`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

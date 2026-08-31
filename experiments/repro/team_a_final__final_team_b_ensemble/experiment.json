@@ -1,0 +1,28 @@
+{
+  "catalog_id": "team_a_final__final_team_b_ensemble",
+  "namespace": "team_a_final",
+  "experiment_id": "final_team_b_ensemble",
+  "title": "final_team_b_ensemble",
+  "kind": "requested final partial-slot ensemble",
+  "original_path": "src/final_team_b_ensemble.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/final_team_b_ensemble.py"
+  ],
+  "commands": [
+    "python src/final_team_b_ensemble.py"
+  ],
+  "model": "sequence model, ensemble, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "from src.validation import calibrate",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "\"submission\": submission_metrics,",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "level_shift = TARGET_LOG_LEVEL - float(z_candidate_test.mean())",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

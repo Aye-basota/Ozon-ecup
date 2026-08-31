@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_strategy__exp_007_multi_cutoff_cv",
+  "namespace": "team_b_strategy",
+  "experiment_id": "exp_007_multi_cutoff_cv",
+  "title": "exp_007 — multi-cutoff CV",
+  "kind": "git-history experiment card",
+  "original_path": "git:824f41575bc2:experiments/exp_007_multi_cutoff_cv.md",
+  "source_ref": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+  "source_commit": "68b543d7b654257812ba4bbb58547fd8a832fb00",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Один validation cutoff может быть случайно оптимистичным или пессимистичным. Multi-cutoff CV нужен не для сабмита напрямую, а чтобы оценивать устойчивость идей во времени.",
+  "score": "CV по фолдам: 2025-10-01 RMSLE 1.724390; 2025-11-01 RMSLE 1.726790; 2025-12-01 RMSLE 1.754997; 2026-01-15 RMSLE 1.711195",
+  "submission": "Один validation cutoff может быть случайно оптимистичным или пессимистичным. Multi-cutoff CV нужен не для сабмита напрямую, а чтобы оценивать устойчивость идей во времени.",
+  "seed": "Модель: HGBR baseline. Feature set: `baseline`. Фолды: train 2025-07/08/09 → val 2025-10-01; train 2025-08/09/10 → val 2025-11-01; train 2025-09/10/11 → val 2025-12-01; train 2025-10/11/12 → val 2026-01-15. Seed: 42 из `config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

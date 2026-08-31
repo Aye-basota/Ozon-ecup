@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_053_residual_signal_discovery",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_053_residual_signal_discovery",
+  "title": "exp_053 — RESIDUAL SIGNAL DISCOVERY",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_053_residual_signal_discovery.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/residual_signal_discovery.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, ensemble",
+  "features": "gap/burst features, 227 tabular features",
+  "validation": "Alignment/reconstruction: PASS, 770616 строк; folds 188518/191025/193694/197379; exact `(cutoff,user_id)`; `STRONGEST_CURRENT` 1.766883357 / 1.760509577 / 1.748629224 / 1.741278566, wCV 1.747509863.",
+  "score": "В residual `STRONGEST_CURRENT` может оставаться cutoff-safe сигнал, достаточный для улучшения RMSLE не менее чем на 0.001. Проверяем это без новых base-моделей: через semantic ETX/SEQ gate и прямую residual correction, обученные только на сохранённых OOF и существующих признаках.",
+  "submission": "None documented",
+  "seed": "Artifact-only; 227 existing cutoff-safe state columns + 34 fixed disagreement columns; LightGBM CPU `num_leaves=31`, `min_data_in_leaf=2000`, `learning_rate=0.03`, 200 rounds, no early stopping, `feature_fraction=0.8`, `bagging_fraction=0.8`, `bagging_freq=1`, `lambda_l2=20`, `max_bin=63`, row-wise, seed 42 from `config.py`. Donor folds 09-04/09-18/10-02, untouched recipient 10-16, `splitmix64(user_id)&1`; residual scales 0/.25/.50/1 chosen donor-only. Full LOFO not run because late gate failed.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

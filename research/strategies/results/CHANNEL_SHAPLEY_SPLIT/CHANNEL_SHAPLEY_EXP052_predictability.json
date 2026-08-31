@@ -1,0 +1,43 @@
+{
+  "classifier": {
+    "status": "NOT_NEEDED_CORRELATION_GATE_PASS"
+  },
+  "correlation_gate_pass": true,
+  "past90_future_contribution_share": [
+    {
+      "fold": "2025-09-04",
+      "n": 188518,
+      "pearson_all": 0.32379143061539467,
+      "pearson_future_positive": 0.21596768537385672,
+      "spearman_all": 0.2756228179059568,
+      "spearman_future_positive": 0.21572375284668774
+    },
+    {
+      "fold": "2025-09-18",
+      "n": 191025,
+      "pearson_all": 0.3260454030611058,
+      "pearson_future_positive": 0.21855904742318727,
+      "spearman_all": 0.2781710920594433,
+      "spearman_future_positive": 0.2149888031472969
+    },
+    {
+      "fold": "2025-10-02",
+      "n": 193694,
+      "pearson_all": 0.32619142083370073,
+      "pearson_future_positive": 0.2119763247044252,
+      "spearman_all": 0.28058146798027134,
+      "spearman_future_positive": 0.21404565215526367
+    },
+    {
+      "fold": "2025-10-16",
+      "n": 197379,
+      "pearson_all": 0.32524719028599514,
+      "pearson_future_positive": 0.2101978297406842,
+      "spearman_all": 0.2780444773381617,
+      "spearman_future_positive": 0.21567083289480207
+    }
+  ],
+  "positive_folds": 4,
+  "predictability_gate_pass": true,
+  "weighted_spearman": 0.27857644617674815
+}

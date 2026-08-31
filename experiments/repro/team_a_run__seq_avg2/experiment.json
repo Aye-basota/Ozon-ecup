@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__seq_avg2",
+  "namespace": "team_a_run",
+  "experiment_id": "SEQ-AVG2",
+  "title": "Logged run — SEQ-AVG2",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN, sequence model",
+  "features": "history-depth features",
+  "validation": "conclusion:** exp_026 этап 2: SEQ-AVG2 = mean(сид42, сид43) в лог-пространстве. Одиночная wCV 1.75016 (+0.00068 к S1-DIST-MIX против +0.00322 у одного сида), впервые лучше лучшей одиночной табличной S1-ROUNDS на -0.00092, 4/4. AUC(y>0) 0.84265 всё ещё ниже смеси (-0.00069) — ранжирование не улучшилось. Var(z-z_mix) 0.03054 = 4.29x пола сидов. Честный LOFO при S1-E03a=0.10: -0.00160 (в выборке -0.00164), 4/4 включая 10-16 (-0.00134). Гейт этапа 2 пройден, запущен сид 44. Детали exp_026",
+  "score": "conclusion:** exp_026 этап 2: SEQ-AVG2 = mean(сид42, сид43) в лог-пространстве. Одиночная wCV 1.75016 (+0.00068 к S1-DIST-MIX против +0.00322 у одного сида), впервые лучше лучшей одиночной табличной S1-ROUNDS на -0.00092, 4/4. AUC(y>0) 0.84265 всё ещё ниже смеси (-0.00069) — ранжирование не улучшилось. Var(z-z_mix) 0.03054 = 4.29x пола сидов. Честный LOFO при S1-E03a=0.10: -0.00160 (в выборке -0.00164), 4/4 включая 10-16 (-0.00134). Гейт этапа 2 пройден, запущен сид 44. Детали exp_026",
+  "submission": "None documented",
+  "seed": "conclusion:** exp_026 этап 2: SEQ-AVG2 = mean(сид42, сид43) в лог-пространстве. Одиночная wCV 1.75016 (+0.00068 к S1-DIST-MIX против +0.00322 у одного сида), впервые лучше лучшей одиночной табличной S1-ROUNDS на -0.00092, 4/4. AUC(y>0) 0.84265 всё ещё ниже смеси (-0.00069) — ранжирование не улучшилось. Var(z-z_mix) 0.03054 = 4.29x пола сидов. Честный LOFO при S1-E03a=0.10: -0.00160 (в выборке -0.00164), 4/4 включая 10-16 (-0.00134). Гейт этапа 2 пройден, запущен сид 44. Детали exp_026",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "conclusion:** exp_026 этап 2: SEQ-AVG2 = mean(сид42, сид43) в лог-пространстве. Одиночная wCV 1.75016 (+0.00068 к S1-DIST-MIX против +0.00322 у одного сида), впервые лучше лучшей одиночной табличной S1-ROUNDS на -0.00092, 4/4. AUC(y>0) 0.84265 всё ещё ниже смеси (-0.00069) — ранжирование не улучшилось. Var(z-z_mix) 0.03054 = 4.29x пола сидов. Честный LOFO при S1-E03a=0.10: -0.00160 (в выборке -0.00164), 4/4 включая 10-16 (-0.00134). Гейт этапа 2 пройден, запущен сид 44. Детали exp_026",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

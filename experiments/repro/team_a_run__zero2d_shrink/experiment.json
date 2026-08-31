@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__zero2d_shrink",
+  "namespace": "team_a_run",
+  "experiment_id": "ZERO2D-SHRINK",
+  "title": "Logged run — ZERO2D-SHRINK",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "wcv:** 1.747485",
+  "score": "conclusion:** Honest ZERO2D -0.000024756, 2/4, 10-16 -0.000029746, eta=1 all; AMOUNT-ONLY -0.000034321; shuffled-p0 -0.000026348; zero error worsened while positives improved. Explicit post-REJECT LB probe prepared: test regime PASS, Var ratio 1.0438, SHA256 9f1cf32671fb18291659b61da232244d370f7c9af2e0cf9d8aebf9eba406d461; local verdict remains REJECT. Details exp_042",
+  "submission": "None documented",
+  "seed": "params:** {\"amount_edges\": [1, 3, 10, 30, 50, 100], \"base\": \"STRONGEST_CURRENT\", \"eta_grid\": [0.25, 0.5, 0.75, 1.0], \"min_cell_rows\": 500, \"p0_bins\": 5, \"shrinkage\": 20000, \"shuffle_seed\": 42}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

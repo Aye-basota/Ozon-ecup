@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_strategy__exp_009_long_buy_ensemble",
+  "namespace": "team_b_strategy",
+  "experiment_id": "exp_009_long_buy_ensemble",
+  "title": "exp_009 — long buy ensemble",
+  "kind": "git-history experiment card",
+  "original_path": "git:824f41575bc2:experiments/exp_009_long_buy_ensemble.md",
+  "source_ref": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+  "source_commit": "68b543d7b654257812ba4bbb58547fd8a832fb00",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, ensemble",
+  "features": "recency",
+  "validation": "CV по фолдам: validation cutoff 2026-01-15",
+  "score": "CV mean: `long_buy + LightGBM + scale 0.62` RMSLE 1.671832; log-ensemble 50/50 RMSLE 1.670716",
+  "submission": "Добавлен feature set `long_buy`: recency + окна 90/180/365 для покупочных дней, заказов, GMV, log-GMV mean/std, tenure, first_buy_age и buy-rate/aov признаки. Сабмит строится как log-space ансамбль `recency LightGBM scale 0.64` и `long_buy LightGBM scale 0.62` с весами 0.5/0.5.",
+  "seed": "Модели: два `LGBMRegressor` из exp_006. Train cutoffs: 2025-10-01, 2025-11-01, 2025-12-01. Validation cutoff: 2026-01-15. Test cutoff: 2026-02-14. Seed: 42 из `config.py`. Веса ансамбля: 0.5 recency, 0.5 long_buy; смешивание в `log1p(pred)` пространстве.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Успех локально: long_buy сам по себе чуть хуже exp_008, но в log-space ансамбле улучшает CV с 1.671639 до 1.670716. Файл для отправки: `submissions/exp_009_recency_long_buy_lgbm_logens.csv`.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

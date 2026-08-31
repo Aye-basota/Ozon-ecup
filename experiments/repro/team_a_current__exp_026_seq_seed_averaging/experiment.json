@@ -1,0 +1,34 @@
+{
+  "catalog_id": "team_a_current__exp_026_seq_seed_averaging",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_026_seq_seed_averaging",
+  "title": "exp_026 — SEQ-02: усреднение сидов TCN и диагностика по глубине истории",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_026_seq_seed_averaging.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seq.py",
+    "src/seedavg.py",
+    "src/test_seq.py"
+  ],
+  "commands": [
+    "bash research/strategies/results/SEQ2/run.sh`."
+  ],
+  "model": "event Transformer / ETX, dilated TCN, sequence model, calibration diagnostic",
+  "features": "history-depth features, 227 tabular features",
+  "validation": "Архитектура, представление, таргет и схема валидации **не меняются**. Ни",
+  "score": "| RMSLE_cal | 1.81087 | 1.79371 | 1.78334 | 1.77684 | 1.77405 | **1.77273** | 1.77207 | 1.77086 | **1.77013** |",
+  "submission": "сабмита — −0.00060.",
+  "seed": "четвёртый сид (насыщение измерено), плотная позиционная супервизия (её гейт",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "том числе по уровню (mean z 2.4161 против 2.5165). Уровень снимает якорь `L*`,",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

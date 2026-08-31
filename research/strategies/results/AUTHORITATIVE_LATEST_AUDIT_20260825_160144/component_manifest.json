@@ -1,0 +1,127 @@
+{
+  "CAP_LINEAGE": "UNKNOWN",
+  "PRIVATE_SAFE_STATUS": "UNRESOLVED",
+  "components": {
+    "friend": {
+      "columns": [
+        "user_id",
+        "predict"
+      ],
+      "duplicate_user_id": 0,
+      "inf_predictions": 0,
+      "max_predict": 2641.376346,
+      "mean_log1p": 2.3293213699010047,
+      "mean_predict": 36.727126164939996,
+      "min_predict": 0.0,
+      "missing_values": 0,
+      "nan_predictions": 0,
+      "negative_predictions": 0,
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\components\\friend.csv",
+      "rows": 250000,
+      "sample_order_exact": true,
+      "sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+      "unique_user_id": 250000,
+      "zero_predictions": 273
+    },
+    "occ_meta_B": {
+      "columns": [
+        "user_id",
+        "predict"
+      ],
+      "duplicate_user_id": 0,
+      "inf_predictions": 0,
+      "max_predict": 5665.950054315183,
+      "mean_log1p": 2.3293,
+      "mean_predict": 37.96998123312263,
+      "min_predict": 0.0354492454272653,
+      "missing_values": 0,
+      "nan_predictions": 0,
+      "negative_predictions": 0,
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\components\\occ_meta_B.csv",
+      "rows": 250000,
+      "sample_order_exact": true,
+      "sha256": "8d90a0bb1afdfe48cb6181cf1869eb30095da729e36dbea81e2051730e7989d8",
+      "unique_user_id": 250000,
+      "zero_predictions": 0
+    },
+    "occ_raw_X3": {
+      "columns": [
+        "user_id",
+        "predict"
+      ],
+      "duplicate_user_id": 0,
+      "inf_predictions": 0,
+      "max_predict": 5636.424711340324,
+      "mean_log1p": 2.3293,
+      "mean_predict": 37.828759900897666,
+      "min_predict": 0.03296091780272,
+      "missing_values": 0,
+      "nan_predictions": 0,
+      "negative_predictions": 0,
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\latest\\components\\occ_raw_X3.csv",
+      "rows": 250000,
+      "sample_order_exact": true,
+      "sha256": "0ac3f241685d6562c1f5b54993065475845464a0b217a56dbb5d79b42dd27356",
+      "unique_user_id": 250000,
+      "zero_predictions": 0
+    }
+  },
+  "double_counting": {
+    "detail": "occ_meta_B and occ_raw_X3 both preserve the same 45% SEQ/ETX anchor and share Ridge/greedy ancestry",
+    "status": "SHARED_ANCESTRY_CONFIRMED"
+  },
+  "expanded_fixed_ancestry": {
+    "direct_fixed_CAP": 0.012,
+    "occ_meta_B_candidate_table": 0.088,
+    "occ_raw_X3_candidate_table": 0.396,
+    "original_table_core": 0.066,
+    "shared_SEQ_ETX_anchor": 0.45,
+    "total_effective_CAP": "UNKNOWN: candidate tables can depend on CAP and no scalar attribution is recorded"
+  },
+  "friend_identity": {
+    "friend_sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+    "recipe": {
+      "ETX-AVG3@DCW": 0.225,
+      "S1-CAP": 0.1,
+      "S1-DIST": 0.25,
+      "S1-UNC": 0.2,
+      "SEQ-AVG3@clip289": 0.225
+    },
+    "status": "BYTE_IDENTICAL",
+    "strongest_current_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\friend_original\\submission_STRONGEST_CURRENT\\submission\\submission_STRONGEST_CURRENT.csv",
+    "strongest_current_sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda"
+  },
+  "occ_meta_B_lineage": {
+    "canonical_row_level_oof_available": false,
+    "family": "occurrence_meta_risk",
+    "mapped_name": "metaocc_l31_risk__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85",
+    "source_stage": "final6h",
+    "test_prediction_available": true
+  },
+  "occ_raw_X3_lineage": {
+    "canonical_row_level_oof_available": false,
+    "family": "raw_occ_extra",
+    "mapped_name": "xraw_occ_r10_fast_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85",
+    "source_stage": "extra90",
+    "test_prediction_available": true
+  },
+  "recipe": {
+    "friend": 0.12,
+    "occ_meta_B": 0.16,
+    "occ_raw_X3": 0.72
+  },
+  "run_manifests": [
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\review_bundles\\extra90_REVIEW_BUNDLE_20260823_222555_extracted\\results\\RUN_MANIFEST.json",
+      "sha256": "0aadc1e325609ba0242f504bee37013478d936335a6727f509bac9fc3ad637b8"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\review_bundles\\final6h_REVIEW_BUNDLE_20260823_204823_extracted\\results\\RUN_MANIFEST.json",
+      "sha256": "51e51391e00b55d8a202029f79427ce48437b74e3115f56f9a5f421605cdb8c0"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\пайплайн сокомандника\\review_bundles\\fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted\\results\\RUN_MANIFEST.json",
+      "sha256": "22b6333bfafb4c9e8942a13c25714ec32a5a8592866f2bd2945214ad59a39894"
+    }
+  ]
+}

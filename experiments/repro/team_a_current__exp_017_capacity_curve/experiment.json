@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_a_current__exp_017_capacity_curve",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_017_capacity_curve",
+  "title": "exp_017 — S_05 A: кривая по раундам для `direct` (ёмкость оценщика)",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_017_capacity_curve.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/tune.py",
+    "src/train.py"
+  ],
+  "commands": [
+    "model=direct, L=None, norm_long=True, min_history=90, cutoffs=all шаг 7,\ntrain_blocks=1, panel_blocks=3, LGB_PARAMS из config.py, seed=42, 227 признаков\n\nLGB_THREADS=6 python -m src.train --exp S1-ROUNDS-A --model direct --L 0 --norm-long \\\n  --min-history 90 --train-blocks 1 --cutoffs all --rounds 1600 \\\n  --snap 300 450 600 800 1000 1200 1400 --snap-save --val 2025-10-16 2025-09-04 --no-log\nLGB_THREADS=6 python -m src.train --exp S1-ROUNDS-B ... --val 2025-10-02 2025-09-18 --no-log\nLGB_THREADS=6 python -m src.train --exp S1-ROUNDSL-A --model direct --L 0 --norm-long \\\n  --min-history 90 --train-blocks 1 --cutoffs all --rounds 300 \\\n  --snap 25 50 75 100 125 150 200 250 --snap-save --val 2025-10-16 2025-09-04 --no-log\nLGB_THREADS=6 python -m src.train --exp S1-ROUNDSL-B ... --val 2025-10-02 2025-09-18 --no-log\nfor k in ...: python -m src.merge_oof --out S1-ROUNDS-R$k --parts <A-R$k> <B-R$k> \\\n  --ref S1-E10 --model direct --no-log\n# строка журнала: S1-ROUNDS = точка 300 раундов (боевой выбор)"
+  ],
+  "model": "ensemble, calibration diagnostic",
+  "features": "227 tabular features",
+  "validation": "ось: зависимость `RMSLE_cal(rounds)` по всем четырём фолдам. Срез по префиксу",
+  "score": "Опорная модель — `S1-E10` (600 раундов), **wCV 1.75170**.",
+  "submission": "LB: не отправлялось, сабмиты кончились (`STATE.md`).",
+  "seed": "train_blocks=1, panel_blocks=3, LGB_PARAMS из config.py, seed=42, 227 признаков",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

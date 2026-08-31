@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_a_current__exp_002_s1_e01_panel_rule",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_002_s1_e01_panel_rule",
+  "title": "exp_002 — S1-E01: переприменение 3-блочного правила панели на обучении",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_002_s1_e01_panel_rule.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/train.py",
+    "src/models.py"
+  ],
+  "commands": [
+    "python -m src.train --exp S1-E01 --L 0 --min-history 90 --cutoffs recent3"
+  ],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "recency",
+  "validation": "Панель валидации в обоих случаях 3-блочная.",
+  "score": "| **CV mean** | **1.76879** | **1.76981** | **+0.00102** |",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Причина: разница уровня 0.198 — это **маргинальная**, а не **условная** разница.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

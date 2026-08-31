@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_032_s04_cond_fresh_pilot",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_032_s04_cond_fresh_pilot",
+  "title": "exp_032 — S04-SEQ: conditional intensity head на CLEAN+EXTRA (пилот + 4 фолда)",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_032_s04_cond_fresh_pilot.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seq_cond.py",
+    "src/seq.py",
+    "src/test_seq_cond.py"
+  ],
+  "commands": [
+    "python -m pytest src/test_seq_cond.py -q\npython -m src.seq_cond audit\npython -m src.seq_cond pilot --ckpt SEQ-D3A-BASE-S42-V1016 --head-seeds 42 43 44",
+    "python -m pytest src/test_seq_cond.py -q` — **23 passed**. Проверено отдельно:",
+    "python -m pytest src/test_seq_cond.py -q",
+    "python -m src.seq_cond audit",
+    "python -m src.seq_cond pilot --ckpt SEQ-D3A-BASE-S42-V1016 --head-seeds 42 43 44"
+  ],
+  "model": "dilated TCN, sequence model, calibration diagnostic",
+  "features": "freshness/conditional features, history-depth features",
+  "validation": "# exp_032 — S04-SEQ: conditional intensity head на CLEAN+EXTRA (пилот + 4 фолда)",
+  "score": "Главный контраст `FRESH − CLEAN` = −0.00145** калиброванного RMSLE и",
+  "submission": "Сабмит и смесь не готовились.** Метрика на группе A и переобученный",
+  "seed": "python -m src.seq_cond pilot --ckpt SEQ-D3A-BASE-S42-V1016 --head-seeds 42 43 44",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "уровень перестанет быть безобидным.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_062_platform_detrend",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_062_platform_detrend",
+  "title": "exp_062 — PLATFORM-DETREND",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_062_platform_detrend.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/platform_detrend.py"
+  ],
+  "commands": [],
+  "model": "LightGBM",
+  "features": "window aggregates",
+  "validation": "CV по фолдам REAL: 1.766883356 / 1.760509577 / 1.748629224 / 1.741278566; дельты к базе `0 / 0 / 0 / 0`.",
+  "score": "wCV REAL / PLACEBO / CONTROL_ONLY: 1.747509862 / 1.747509862 / 1.747509862; `Delta wCV = 0`, REAL−PLACEBO `0`.",
+  "submission": "None documented",
+  "seed": "CPU preflight, seed 42 из `src/config.py`; exact aligned exp_037 OOF (SHA256 `40aa9719...0ed0a`); 10 новых признаков, 11 fixed controls, LightGBM residual 120 rounds, `num_leaves=15`, `min_data_in_leaf=1000`, `lambda_l2=50`, scales `0/0.25/0.5/0.75/1`, splitmix64 user 4-way + two-sided scale; cutoff 2025-09-04/09-18/10-02/10-16. Полный frozen protocol: `research/strategies/results/PLATFORM_DETREND_EXP062/HYPOTHESIS_CARD.md`; results SHA256 `15154f3f...ba7e`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

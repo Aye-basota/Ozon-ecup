@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__fresh_cond_ft",
+  "namespace": "team_a_run",
+  "experiment_id": "FRESH-COND-FT",
+  "title": "Logged run — FRESH-COND-FT",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN, sequence model",
+  "features": "freshness/conditional features, history-depth features",
+  "validation": "wcv:** Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "params:** {\"baseline\": \"DETSEQ01 seeds 42/43/44\", \"depth_aug\": 0.0, \"direct_head\": \"frozen\", \"encoder_lr\": 3e-05, \"conditional_head_lr\": 0.001, \"lambda_cond\": 0.25, \"fine_tune_epochs\": 1, \"conditional_batch\": \"128 common + 128 added\", \"extra_depth_clip\": 289, \"deterministic\": true}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

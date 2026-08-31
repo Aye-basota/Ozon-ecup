@@ -1,0 +1,41 @@
+{
+  "catalog_id": "team_a_current__exp_037_etx_avg3_strongest",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_037_etx_avg3_strongest",
+  "title": "exp_037 — EXP-037: снятие блокера ETX, `ETX-AVG3` и сборка `STRONGEST_CURRENT`",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_037_etx_avg3_strongest.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/etx.py",
+    "research/strategies/results/ETX2/depth_fix.py",
+    "research/strategies/results/ETX2/lofo2.py",
+    "src/test_etx.py"
+  ],
+  "commands": [
+    "bash research/strategies/results/ETX2/run_a10.sh          # на сервере\nbash research/strategies/results/ETX2/run_local.sh        # локально\nHOST=root@<a10> bash research/strategies/results/ETX2/pull_a10.sh\nbash research/strategies/results/ETX2/run_all.sh          # весь анализ\nALPHA=0.5 OUT=submission_STRONGEST_CURRENT.csv bash research/strategies/results/ETX2/make_submission.sh",
+    "python -m src.etx fold --val <дата> --exp ETX-01-S4{3,4} --seed {43,44} --curve [--compile]",
+    "python -m src.etx predict --exp ETX-01-S4{3,4} --seed {43,44} --depth-clip 289 --compile",
+    "python research/strategies/results/ETX2/depth_fix.py --mode test --ckpt <…>-TEST --dow-shift -1",
+    "bash research/strategies/results/ETX2/run_a10.sh          # на сервере",
+    "bash research/strategies/results/ETX2/run_local.sh        # локально",
+    "bash research/strategies/results/ETX2/run_all.sh          # весь анализ"
+  ],
+  "model": "dilated TCN, sequence model, blend, calibration diagnostic",
+  "features": "calendar features, history-depth features",
+  "validation": "все 4 фолда сида 43, фолд 10-16 сида 44; локальная RTX 4060 Ti (eager,",
+  "score": "> **Итог в одну строку.** Отправлено, **LB 1.6496571** — новый чемпион (было 1.6501764).",
+  "submission": "ALPHA=0.5 OUT=submission_STRONGEST_CURRENT.csv bash research/strategies/results/ETX2/make_submission.sh",
+  "seed": "те швы, которые добавил этот эксперимент, потому что они сидят в горячем пути всех",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "| | уровни сидов 42/43/44 | разброс | попарный `Var(z_i − z_j)` |",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

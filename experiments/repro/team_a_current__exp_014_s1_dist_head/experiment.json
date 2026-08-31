@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_014_s1_dist_head",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_014_s1_dist_head",
+  "title": "exp_014 — E0 / S1-DIST: голова распределения вместо L2",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_014_s1_dist_head.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/models.py",
+    "src/train.py",
+    "src/predict.py",
+    "src/test_pipeline.py"
+  ],
+  "commands": [
+    "model=dist (multiclass, 16 бинов z, центроиды по train), norm_long=True, L=None\nmin_history=90, cutoffs=all шаг 7 (18/20/22/24 обучающих cutoff'а на фолд)\ntrain_blocks=1, panel_blocks=3, 250 раундов, LGB_PARAMS из config.py, seed 42\n227 признаков\n\n# 4 фолда двумя процессами\nLGB_THREADS=6 python -m src.train --exp S1-DIST-A --model dist --L 0 --norm-long \\\n  --rounds 250 --snap 100 150 200 --train-blocks 1 --val 2025-10-16 2025-09-04 --no-log\nLGB_THREADS=6 python -m src.train --exp S1-DIST-B --model dist --L 0 --norm-long \\\n  --rounds 250 --snap 100 150 200 --train-blocks 1 --val 2025-10-02 2025-09-18 --no-log\npython -m src.merge_oof --out S1-DIST --parts S1-DIST-A S1-DIST-B --ref S1-E10\n\n# тестовые предсказания и сабмит\npython -m src.predict --exp S1-DIST --variant S1-DIST --L 0 --norm-long \\\n  --min-history 90 --step 7 --train-blocks 1 --rounds 250 --blend dist\npython -m src.submit --z S1-NORM S1-UNC S1-CAP S1-DIST --weights 0.15 0.30 0.10 0.45 \\\n  --level 2.3293 --out submission_dist_head.csv",
+    "python -m src.merge_oof --out S1-DIST --parts S1-DIST-A S1-DIST-B --ref S1-E10",
+    "python -m src.predict --exp S1-DIST --variant S1-DIST --L 0 --norm-long \\",
+    "python -m src.submit --z S1-NORM S1-UNC S1-CAP S1-DIST --weights 0.15 0.30 0.10 0.45 \\"
+  ],
+  "model": "LightGBM, distribution head, blend, calibration diagnostic",
+  "features": "227 tabular features",
+  "validation": "Замер `N12` (`research/strategy_NN_1.md` §1.4) показал на одном фолде",
+  "score": "CV mean 1.75834 ± 0.01045, bias −0.0515, оптимальный сдвиг −0.050.",
+  "submission": "Сабмиты кончились, `S1-DIST-MIX` остаётся лучшим результатом проекта —",
+  "seed": "train_blocks=1, panel_blocks=3, 250 раундов, LGB_PARAMS из config.py, seed 42",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "level 2.3293 --out submission_dist_head.csv",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

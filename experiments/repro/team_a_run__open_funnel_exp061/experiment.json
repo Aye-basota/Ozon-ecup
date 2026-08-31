@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__open_funnel_exp061",
+  "namespace": "team_a_run",
+  "experiment_id": "OPEN_FUNNEL_EXP061",
+  "title": "Logged run — OPEN_FUNNEL_EXP061",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "funnel features",
+  "validation": "conclusion:** Leakage/alignment/shuffle audits PASS; raw residual corr up to |0.0223| but REAL SHUFFLED and CONTROL_ONLY all selected scale 0 on every fold and both halves. Delta wCV 0; late 0; REAL-SHUFFLED 0. Full model/test/LB/submission not run. Details exp_061",
+  "score": "conclusion:** Leakage/alignment/shuffle audits PASS; raw residual corr up to |0.0223| but REAL SHUFFLED and CONTROL_ONLY all selected scale 0 on every fold and both halves. Delta wCV 0; late 0; REAL-SHUFFLED 0. Full model/test/LB/submission not run. Details exp_061",
+  "submission": "None documented",
+  "seed": "params:** {\"base\":\"STRONGEST_CURRENT\",\"new_features\":14,\"rounds\":120,\"num_leaves\":15,\"min_data_in_leaf\":1000,\"lambda_l2\":50,\"scales\":[0,0.25,0.5,0.75,1],\"shuffle\":\"joint within 392-396 baseline-state strata\",\"split\":\"splitmix64(user_id) 4-way + two-sided scale\",\"seed\":42}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

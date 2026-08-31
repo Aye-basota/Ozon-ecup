@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_a_current__exp_057_production_state_reweight",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_057_production_state_reweight",
+  "title": "EXP-057 — PRODUCTION-STATE-REWEIGHT",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_057_production_state_reweight.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/production_state_reweight.py",
+    "src/test_production_state_reweight.py",
+    "src/test_pipeline.py",
+    "src/test_validation.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, ensemble",
+  "features": "calendar features, recency, history-depth features",
+  "validation": "Source: **4,955,174** legal UNC rows, 24 cutoff'а `2025-04-03…2025-09-11`; target: **197,379** validation states на `2025-10-16`, без target.",
+  "score": "A `UNIFORM`: exact old UNC, RMSLE_cal **1.745131674**.",
+  "submission": "None documented",
+  "seed": "Domain model: LightGBM binary, 31 leaves, min leaf 2000, lr .03, 200 rounds, feature/bagging .8, L2 20, seed 42; equal source/target class mass; two-sided user cross-fit.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

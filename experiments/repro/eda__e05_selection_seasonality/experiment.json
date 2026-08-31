@@ -1,0 +1,26 @@
+{
+  "catalog_id": "eda__e05_selection_seasonality",
+  "namespace": "eda",
+  "experiment_id": "e05_selection_seasonality",
+  "title": "secular growth: same-window YoY",
+  "kind": "EDA experiment/script",
+  "original_path": "research/eda/e05_selection_seasonality.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "research/eda/e05_selection_seasonality.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "anchor[c] = dict(persist=rmsle(y, p30), persist116=rmsle(y, p30 * 1.1628),",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

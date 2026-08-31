@@ -1,0 +1,26 @@
+{
+  "catalog_id": "eda__e09a_calib",
+  "namespace": "eda",
+  "experiment_id": "e09a_calib",
+  "title": "e09a_calib",
+  "kind": "EDA experiment/script",
+  "original_path": "research/eda/e09a_calib.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "research/eda/e09a_calib.py"
+  ],
+  "commands": [],
+  "model": "LightGBM",
+  "features": "gap/burst features",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "print(f\"    {nm:8s} n={msk.sum():7,} ({100*msk.mean():5.1f}%)  RMSLE={np.sqrt(e2[msk].mean()):.4f}\"",
+  "submission": "None documented",
+  "seed": "lambda_l2=5.0, verbose=-1, seed=SEED, num_threads=10, force_row_wise=True)",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

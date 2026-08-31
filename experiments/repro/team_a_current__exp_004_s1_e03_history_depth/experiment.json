@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_004_s1_e03_history_depth",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_004_s1_e03_history_depth",
+  "title": "exp_004 — S1-E03: фиксированная глубина истории `L`",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_004_s1_e03_history_depth.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/train.py",
+    "src/models.py"
+  ],
+  "commands": [
+    "python -m src.train --exp S1-E03a --L 180 --min-history  90 --train-blocks 1 --cutoffs all\npython -m src.train --exp S1-E03b --L 180 --min-history 180 --train-blocks 1 --cutoffs all\npython -m src.train --exp S1-E03c --L  90 --min-history  90 --train-blocks 1 --cutoffs all\npython -m src.train --exp S1-E03d --L 270 --min-history  90 --train-blocks 1 --cutoffs all\npython -m src.train --exp S1-E04  --L 0   --min-history  90 --train-blocks 1 --cutoffs all --drop long --folds 2",
+    "python -m src.train --exp S1-E03a --L 180 --min-history  90 --train-blocks 1 --cutoffs all",
+    "python -m src.train --exp S1-E03b --L 180 --min-history 180 --train-blocks 1 --cutoffs all",
+    "python -m src.train --exp S1-E03c --L  90 --min-history  90 --train-blocks 1 --cutoffs all",
+    "python -m src.train --exp S1-E03d --L 270 --min-history  90 --train-blocks 1 --cutoffs all",
+    "python -m src.train --exp S1-E04  --L 0   --min-history  90 --train-blocks 1 --cutoffs all --drop long --folds 2"
+  ],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "| эксперимент | L | min_history | cutoff'ов | признаков | CV mean | CV std | bias | CV после сдвига |",
+  "score": "4. `L = 90` («минимум смещения») — провал: +0.0375 к RMSLE. Правило «выбирать L по",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_a_current__exp_061_open_funnel",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_061_open_funnel",
+  "title": "exp_061 — OPEN-FUNNEL unresolved intent preflight",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_061_open_funnel.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/open_funnel.py"
+  ],
+  "commands": [
+    "python src/open_funnel.py\nfolds=2025-09-04/09-18/10-02/10-16; weights=1:2:4:8\nseed=config.SEED=42; split=splitmix64(user_id); scales=0/.25/.50/.75/1\nprobe=LightGBM L1, leaves=15, min_data=1000, rounds=120, lambda_l2=50, threads=4\naligned OOF SHA256=40aa9719d4fd903467eceb5f7be5e5d19ce6a67e12856f523946e5fdcda0ed0a\nsummary SHA256=6351e453f43e9808f20d31c852cdd2229ac6628ab3bee654a187ad275a3f57d0",
+    "python src/open_funnel.py"
+  ],
+  "model": "LightGBM, ensemble",
+  "features": "funnel features",
+  "validation": "Exact base fold RMSLE: `1.766883356 / 1.760509577 / 1.748629224 / 1.741278566`; wCV `1.747509862`.",
+  "score": "Exact base fold RMSLE: `1.766883356 / 1.760509577 / 1.748629224 / 1.741278566`; wCV `1.747509862`.",
+  "submission": "None documented",
+  "seed": "seed=config.SEED=42; split=splitmix64(user_id); scales=0/.25/.50/.75/1",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

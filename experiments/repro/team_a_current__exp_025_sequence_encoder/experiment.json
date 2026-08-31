@@ -1,0 +1,34 @@
+{
+  "catalog_id": "team_a_current__exp_025_sequence_encoder",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_025_sequence_encoder",
+  "title": "exp_025 — SEQ-01: энкодер сырой дневной последовательности (dilated TCN)",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_025_sequence_encoder.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seq.py",
+    "src/test_seq.py",
+    "src/blend.py"
+  ],
+  "commands": [
+    "bash research/strategies/results/SEQ/run.sh` — полный прогон (панель, тесты,"
+  ],
+  "model": "dilated TCN, sequence model, blend",
+  "features": "history-depth features, window aggregates, 227 tabular features",
+  "validation": "`exp_021` закрыл новые **функции** от тех же событий (личное время: −0.000006 wCV),",
+  "score": "`exp_021` закрыл новые **функции** от тех же событий (личное время: −0.000006 wCV),",
+  "submission": "четырёх фолдах, к нулю. Для планирования следующего сабмита этого направления",
+  "seed": "bf16, **4 эпохи**, seed 42 из `config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "уровень `L* = 2.3293` (не трогался), страховка `S1-CAP` сохранена.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

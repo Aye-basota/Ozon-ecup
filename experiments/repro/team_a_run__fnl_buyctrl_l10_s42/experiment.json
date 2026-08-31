@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__fnl_buyctrl_l10_s42",
+  "namespace": "team_a_run",
+  "experiment_id": "FNL-BUYCTRL-L10-S42",
+  "title": "Logged run — FNL-BUYCTRL-L10-S42",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN, sequence model",
+  "features": "funnel features, history-depth features",
+  "validation": "description:** EXP-038 FNL: future funnel supervision (Search/Cart) поверх SEQ-D3A, фолд 10-16, сид 42 | арка BUYCTRL, lambda 0.1",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "params:** {\"arm\": \"BUYCTRL\", \"depth_aug\": 0.5, \"epochs\": 4, \"heads\": null, \"lam\": 0.1, \"loss\": \"MSE(z30)+lam*s_z*mean(L_m/s_m)\", \"s_z\": 5.4899, \"seed\": 42}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_066_latest_delta_compatibility",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_066_latest_delta_compatibility",
+  "title": "exp_066 — LATEST-DELTA-COMPATIBILITY",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_066_latest_delta_compatibility.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/authoritative_latest_audit.py"
+  ],
+  "commands": [],
+  "model": "BTYD",
+  "features": "freshness/conditional features",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "Training/model/seed отсутствуют. Выполнен только read-only inventory canonical",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

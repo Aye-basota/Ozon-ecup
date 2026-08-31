@@ -1,0 +1,26 @@
+{
+  "catalog_id": "teammate_research__continue_best_bas_final6h",
+  "namespace": "teammate_research",
+  "experiment_id": "continue_best_bas_final6h",
+  "title": "-----------------------------------------------------------------------------",
+  "kind": "teammate research runner",
+  "original_path": "пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, Ridge, two-part / hurdle, ensemble, blend",
+  "features": "recency, freshness/conditional features, occurrence features, history-depth features",
+  "validation": "Validation",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "for p in subs.glob(\"submission_final6h_*.csv\"):zf.write(p,arcname=f\"submissions/{p.name}\")",
+  "seed": "max_bin=127,random_state=seed,n_jobs=max(2,min(10,os.cpu_count() or 8)),verbosity=-1)",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "# Candidate-level Ridge over already cross-fitted candidate predictions.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

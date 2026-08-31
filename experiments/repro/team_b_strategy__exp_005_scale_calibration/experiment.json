@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_b_strategy__exp_005_scale_calibration",
+  "namespace": "team_b_strategy",
+  "experiment_id": "exp_005_scale_calibration",
+  "title": "exp_005 — scale calibration",
+  "kind": "git-history experiment card",
+  "original_path": "git:824f41575bc2:experiments/exp_005_scale_calibration.md",
+  "source_ref": "824f41575bc2fa4ae11b8f6f9dfd907571276d37",
+  "source_commit": "68b543d7b654257812ba4bbb58547fd8a832fb00",
+  "source_files": [
+    "src/__init__.py",
+    "src/config.py",
+    "src/ensemble.py",
+    "src/features.py",
+    "src/predict.py",
+    "src/train.py",
+    "src/validation.py"
+  ],
+  "commands": [],
+  "model": "calibration diagnostic",
+  "features": "See preserved experiment card and implementation",
+  "validation": "CV по фолдам: validation cutoff 2026-01-15",
+  "score": "CV mean: лучший scale 0.65, RMSLE 1.672748",
+  "submission": "None documented",
+  "seed": "Модель: HGBR baseline. Feature set: `baseline`. Проверенные scale: 0.45–0.90 и грубая сетка 0.7–2.0. Train cutoffs: 2025-10-01, 2025-11-01, 2025-12-01. Validation cutoff: 2026-01-15. Seed: 42 из `config.py`.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Так как метрика RMSLE штрафует относительные ошибки в log-space, модель с `log1p`-таргетом может выигрывать от простой пост-калибровки масштаба. Проверяем множители прогноза на чистом baseline.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back",
+  "notes": "Frozen implementation is copied from the commit that introduced this card.",
+  "preserved_document": "README.md"
+}

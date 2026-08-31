@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_040_fresh_contrast_moe",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_040_fresh_contrast_moe",
+  "title": "exp_040 — FRESH-CONTRAST-MOE: incremental COND-FRESH residual",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_040_fresh_contrast_moe.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/fresh_contrast.py",
+    "src/test_fresh_contrast.py",
+    "src/test_seq_cond.py",
+    "src/test_pipeline.py",
+    "src/test_validation.py"
+  ],
+  "commands": [
+    "python -m pytest src/test_fresh_contrast.py src/test_seq_cond.py \\\n  src/test_pipeline.py src/test_validation.py -q\n# 60 passed\n\npython src/fresh_contrast.py",
+    "python -m pytest src/test_fresh_contrast.py src/test_seq_cond.py \\",
+    "python src/fresh_contrast.py"
+  ],
+  "model": "dilated TCN, sequence model, ensemble",
+  "features": "freshness/conditional features",
+  "validation": "исходная сторона `EXTRA-B -> validation-A`: 887 996 positive строк,",
+  "score": "| **wCV** | **1.747510** | **1.747285** | **−0.000225** | **4/4** |",
+  "submission": "11. Submission: **нет**.",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "4/4, поэтому это не только сдвиг уровня (уровень обнулён preprocessing и fold",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_070_team_b_tabular_slot",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_070_team_b_tabular_slot",
+  "title": "exp_070 — TEAM-B tabular slot replacement",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_070_team_b_tabular_slot.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/final_team_b_ensemble.py"
+  ],
+  "commands": [],
+  "model": "sequence model",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Её wCV: **1.747127499**, дельта **−0.000382364**, лучше 4/4; по фолдам `1.766770 / 1.760047 / 1.748265 / 1.740873`.",
+  "score": "Её wCV: **1.747127499**, дельта **−0.000382364**, лучше 4/4; по фолдам `1.766770 / 1.760047 / 1.748265 / 1.740873`.",
+  "submission": "LB/submission: не запускали и не создавали.",
+  "seed": "Canonical S1 09-04/09-18/10-02/10-16, веса фолдов 1:2:4:8, per-fold log calibration; seed/training NONE. Вес `alpha∈[0,1]` минимизирован непрерывно только по OOF, затем проверен LOFO. Компоненты и team predictions выровнены по `(cutoff,user_id)` с exact key и target parity.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Production regime коррекции: `Var(Δz)` OOF `0.0013873`, TEST `0.0014176`, ratio **1.022 PASS**; mean сдвиг убирается штатной production level calibration.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

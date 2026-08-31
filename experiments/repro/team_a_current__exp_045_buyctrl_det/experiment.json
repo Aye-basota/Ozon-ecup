@@ -1,0 +1,40 @@
+{
+  "catalog_id": "team_a_current__exp_045_buyctrl_det",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_045_buyctrl_det",
+  "title": "exp_045 — BUYCTRL-DET: настоящая `buy30` supervision против shuffle-control",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_045_buyctrl_det.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/buyctrl_det.py",
+    "src/test_buyctrl_det.py",
+    "src/test_seq.py",
+    "src/test_fnl.py",
+    "src/test_det_pair.py",
+    "src/test_fresh_cond_ft.py",
+    "src/test_validation.py"
+  ],
+  "commands": [
+    "python -m pytest src/test_buyctrl_det.py src/test_seq.py src/test_fnl.py \\\n  src/test_det_pair.py src/test_fresh_cond_ft.py src/test_validation.py -q -m \"not slow\"\n# 166 passed, 1 deselected\n\npython src/buyctrl_det.py\n# completed artifacts are verified/reused; analysis must reproduce exactly",
+    "python -m pytest src/test_buyctrl_det.py src/test_seq.py src/test_fnl.py \\",
+    "python src/buyctrl_det.py"
+  ],
+  "model": "dilated TCN, sequence model",
+  "features": "freshness/conditional features, history-depth features, 227 tabular features",
+  "validation": "Фолд:** `2025-10-16`, стандартная полная 3-блочная val-панель, 197 379 строк",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "Leaderboard/submission:** не запускались и не создавались",
+  "seed": "seed/segment/decomposition: `seed_summary.csv`, `segment_summary.csv`,",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Полные seed-level segment и zero/positive таблицы:",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

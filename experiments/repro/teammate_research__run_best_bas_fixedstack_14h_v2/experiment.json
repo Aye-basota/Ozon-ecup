@@ -1,0 +1,26 @@
+{
+  "catalog_id": "teammate_research__run_best_bas_fixedstack_14h_v2",
+  "namespace": "teammate_research",
+  "experiment_id": "run_best_bas_fixedstack_14h_v2",
+  "title": "!/usr/bin/env python3",
+  "kind": "teammate research runner",
+  "original_path": "пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, Ridge, two-part / hurdle, ensemble, blend",
+  "features": "recency, freshness/conditional features, occurrence features, gap/burst features",
+  "validation": "E. Emit 5-7 candidate submissions, selected for validation quality + temporal",
+  "score": "Phase12 RMSLE-effective q*=clip(z/mu,0,1);",
+  "submission": "path=subs/f\"submission_fixedstack_candidate_{i}_{r['name']}.csv\";df.to_csv(path,index=False)",
+  "seed": "for r in seed_rows:",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "# Caruana-style selection with replacement, optimized on log-space MSE.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

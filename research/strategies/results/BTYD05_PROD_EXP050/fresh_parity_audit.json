@@ -1,0 +1,169 @@
+{
+  "action": "STOP FRESH; build BTYD05 only",
+  "exact_encoder_family": "SEQ-D3A-BASE frozen TCN encoder used by EXP-040",
+  "fold_checkpoints": [
+    {
+      "cfg": {
+        "aug": "none",
+        "aug_full": 0.5,
+        "aug_p": 0.5,
+        "batch": 1024,
+        "blocks": 8,
+        "chunk": 256,
+        "compile": false,
+        "depth_aug": 0.0,
+        "depth_grid": [
+          90,
+          120,
+          150,
+          180,
+          220,
+          254,
+          289
+        ],
+        "dropout": 0.1,
+        "epochs": 4,
+        "hidden": 64,
+        "kernel": 3,
+        "lr": 0.003,
+        "seed": 42,
+        "warmup": 300,
+        "wd": 0.01,
+        "workers": 3,
+        "z0": 2.241637706756592
+      },
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-V0904.pt",
+      "sha256": "cc63eb41a893f8cd24b77b6b7b129a503f1e37001c1eae42b09c7398b1704dd6",
+      "val": "2025-09-04"
+    },
+    {
+      "cfg": {
+        "aug": "none",
+        "aug_full": 0.5,
+        "aug_p": 0.5,
+        "batch": 1024,
+        "blocks": 8,
+        "chunk": 256,
+        "compile": false,
+        "depth_aug": 0.0,
+        "depth_grid": [
+          90,
+          120,
+          150,
+          180,
+          220,
+          254,
+          289
+        ],
+        "dropout": 0.1,
+        "epochs": 4,
+        "hidden": 64,
+        "kernel": 3,
+        "lr": 0.003,
+        "seed": 42,
+        "warmup": 300,
+        "wd": 0.01,
+        "workers": 3,
+        "z0": 2.2634661197662354
+      },
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-V0918.pt",
+      "sha256": "19147af98a944c2d403b68e0383c0f857cab0e5d08564a7ce918d058f9ee85bb",
+      "val": "2025-09-18"
+    },
+    {
+      "cfg": {
+        "aug": "none",
+        "aug_full": 0.5,
+        "aug_p": 0.5,
+        "batch": 1024,
+        "blocks": 8,
+        "chunk": 256,
+        "compile": false,
+        "depth_aug": 0.0,
+        "depth_grid": [
+          90,
+          120,
+          150,
+          180,
+          220,
+          254,
+          289
+        ],
+        "dropout": 0.1,
+        "epochs": 4,
+        "hidden": 64,
+        "kernel": 3,
+        "lr": 0.003,
+        "seed": 42,
+        "warmup": 300,
+        "wd": 0.01,
+        "workers": 3,
+        "z0": 2.2772934436798096
+      },
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-V1002.pt",
+      "sha256": "d6c29829bad07e5998627fd6882c96e4efa49012cabe7100aa81a3bf7aad48b3",
+      "val": "2025-10-02"
+    },
+    {
+      "cfg": {
+        "aug": "none",
+        "aug_full": 0.5,
+        "aug_p": 0.5,
+        "batch": 1024,
+        "blocks": 8,
+        "chunk": 256,
+        "compile": false,
+        "dropout": 0.1,
+        "epochs": 4,
+        "hidden": 64,
+        "kernel": 3,
+        "lr": 0.003,
+        "seed": 42,
+        "warmup": 300,
+        "wd": 0.01,
+        "workers": 3,
+        "z0": 2.2882602214813232
+      },
+      "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-V1016.pt",
+      "sha256": "e5493a0f704944fdbc00551ddd38a3009e7cf93ac14dc86c6e9ad50d2c198a66",
+      "val": "2025-10-16"
+    }
+  ],
+  "incompatible_test_checkpoint_inventory": [
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-C289-S43-TEST.pt",
+    "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-C289-S44-TEST.pt"
+  ],
+  "missing_fold_checkpoints": [],
+  "production_checkpoint": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\model_SEQ-D3A-BASE-S42-TEST.pt",
+  "production_checkpoint_exists": false,
+  "reasons": [
+    "exact SEQ-D3A-BASE seed-42 production checkpoint is absent",
+    "EXP-040 conditional head weights were not saved",
+    "available TEST checkpoints have a different seed/model identity"
+  ],
+  "required_alpha": 1.0,
+  "required_depth_policy": 289,
+  "required_donor_split": "splitmix64(user_id)&1; donor B->recipient A and donor A->recipient B",
+  "required_feature_channels": "src.seq stored sequence channels; pooled [last,mean,max]",
+  "required_heads": "CLEAN/VOL/FRESH conditional heads; GLOBAL uses FRESH-CLEAN",
+  "required_preprocessing": "donor-fold 0.5/99.5% winsorization, then GLOBAL gate, then centering",
+  "required_seed": 42,
+  "required_training_recipe": {
+    "aug": "none",
+    "batch": 1024,
+    "blocks": 8,
+    "chunk": 256,
+    "compile": false,
+    "dropout": 0.1,
+    "epochs": 4,
+    "hidden": 64,
+    "kernel": 3,
+    "lr": 0.003,
+    "seed": 42,
+    "warmup": 300,
+    "wd": 0.01,
+    "workers": 3
+  },
+  "saved_conditional_head_weights": [],
+  "status": "FAIL"
+}

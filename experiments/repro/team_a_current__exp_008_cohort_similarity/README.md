@@ -1,0 +1,72 @@
+# exp_008 — hierarchical rank-cohort similarity
+
+## Catalogue metadata
+
+- **Catalogue ID:** `team_a_current__exp_008_cohort_similarity`
+- **Namespace:** `team_a_current`
+- **Experiment ID:** `exp_008_cohort_similarity`
+- **Original source:** `experiments/exp_008_cohort_similarity.md`
+- **Source ref:** `working tree`
+- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Kind:** experiment card
+- **Model:** blend, calibration diagnostic
+- **Features:** recency
+- **Preprocessing:** See preserved experiment card and frozen implementation
+- **Validation:** Чистый similarity CV по фолдам: 1.86578 / 1.86318 / 1.84892 / 1.82889;
+- **Known score:** дала полезной декорреляции ошибок: 50% rank-cohort сигнала ухудшили LB на 0.01694.
+- **Seed:** cutoff'ы и seed из `config.py`; итоговый уровень test 2.3293.
+- **Postprocessing:** cutoff'ы и seed из `config.py`; итоговый уровень test 2.3293.
+- **Submission:** Файл: `submissions/experimental_submission_2.csv`.
+- **External data/artifacts:** Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card
+- **Reproducibility:** FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card
+
+## Reproduction
+
+Run `python run.py` to inspect recovered commands and provenance. Use `python run.py --execute N` only after preparing the data/artifacts listed below.
+
+## Preserved original documentation
+# exp_008 — hierarchical rank-cohort similarity
+
+- **Дата:** 2026-08-10
+- **Автор:** A1
+- **Коммит:** e3b1cde
+
+## Гипотеза
+
+Пользователи с похожим rank-профилем частоты покупок, GMV и recency могут иметь
+сходный будущий GMV без сложной GBDT-аппроксимации. Такой сигнал должен ошибаться
+иначе, поэтому крупная примесь к S1-BEST может дать high-risk/high-reward submission.
+
+## Что изменено относительно базы
+
+Построена не модель деревьев, а иерархическая таблица сглаженных средних `log1p(y)`
+по 2304 rank-cohort из четырёх признаков с backoff к 48 крупным cohort и global mean.
+
+## Результат
+
+- Чистый similarity CV по фолдам: 1.86578 / 1.86318 / 1.84892 / 1.82889;
+  mean **1.85169** (после общего сдвига OOF **1.82105**).
+- Сканирование веса similarity 0.25 / 0.50 / 0.75 / 1.00 дало калиброванный OOF
+  1.76028 / **1.77210** / 1.79245 / 1.82105.
+- Выбран максимальный вес **0.50**, остающийся не дальше +0.020 от S1-BEST OOF.
+- Pearson / Spearman финального submission с current best: **0.92449 / 0.99191**;
+  mean absolute prediction difference: **8.6214**.
+- Калиброванный OOF смеси: **1.77210**, хуже S1-BEST на **+0.01494**.
+- **LB: 1.6682180280505314**, хуже S1-BEST (1.6512803) на **+0.01694** и хуже
+  EXP-MIN на **+0.00079**.
+
+## Вердикт и вывод
+
+**REJECT и как standalone, и как blend.** Низкая Pearson-корреляция сама по себе не
+дала полезной декорреляции ошибок: 50% rank-cohort сигнала ухудшили LB на 0.01694.
+Сильное сжатие extreme-tail потеряло полезную индивидуальную информацию S1-BEST.
+Локальный OOF правильно предсказал и провал, и порядок EXP-MIN < EXP-SIM; необычность
+предсказаний нельзя использовать как критерий без сопоставимого CV.
+
+## Конфиг прогона
+
+`python src/final_experiments.py`; признаки `w180_days_buy`, `w30_days_buy`,
+`w30_lgmv`, `rec_buy`; rank bins 8×6×8×6; smoothing fine/coarse 100/500;
+cutoff'ы и seed из `config.py`; итоговый уровень test 2.3293.
+
+Файл: `submissions/experimental_submission_2.csv`.

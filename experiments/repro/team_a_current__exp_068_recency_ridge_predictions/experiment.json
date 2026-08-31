@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_a_current__exp_068_recency_ridge_predictions",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_068_recency_ridge_predictions",
+  "title": "exp_068 — RECENCY-RIDGE-ON-PREDICTIONS",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_068_recency_ridge_predictions.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/recency_ridge_predictions.py"
+  ],
+  "commands": [
+    "python src/recency_ridge_predictions.py`; seed/model training отсутствуют;"
+  ],
+  "model": "Ridge, two-part / hurdle, blend",
+  "features": "recency, 227 tabular features",
+  "validation": "fit_intercept=True)`, веса фолдов `1:2:4:8`, correction clip `[-2,2]`,",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "Nested LOFO, coefficients, controls, segments, test-regime и submission:",
+  "seed": "`python src/recency_ridge_predictions.py`; seed/model training отсутствуют;",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "сохранены, но coefficients, standardizer state, row-level targets/members и",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,29 @@
+{
+  "catalog_id": "teammate_candidate__xmeta_div4_p23_l31_risk_bias_p_spread_cand_pband_stack",
+  "namespace": "teammate_candidate",
+  "experiment_id": "xmeta_div4_p23_l31_risk__bias_p_spread_cand_pband_stack",
+  "title": "Teammate candidate — xmeta_div4_p23_l31_risk__bias_p_spread_cand_pband_stack",
+  "kind": "completed teammate candidate/subrun",
+  "original_path": "пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv",
+  "source_ref": "external teammate review bundles",
+  "source_commit": "NOT_IN_GIT_HISTORY",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py",
+    "пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py",
+    "пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py",
+    "пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "227 tabular features",
+  "validation": "Source: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/ALL_EXTRA90_VALIDATION.csv`",
+  "score": "| wcv | 1.7480364699820863 |",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact result rows and runner code survive; checkpoint bank and raw data are external",
+  "notes": "Recovered from 1 result-table row(s); no score or parameter was inferred.",
+  "preserved_document": "README.md"
+}

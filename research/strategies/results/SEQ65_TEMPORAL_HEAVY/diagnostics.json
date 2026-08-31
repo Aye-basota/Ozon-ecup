@@ -1,0 +1,118 @@
+{
+  "purpose": "large representation-balance LB probe",
+  "base": "STRONGEST_CURRENT",
+  "only_structural_change": "sequence total weight 0.45 -> 0.65",
+  "level": 2.3293,
+  "semantics": "log-space blend; global shift to raw mean z=2.3293; floor z at 0; expm1",
+  "weights_grouped": {
+    "CAP": 0.1,
+    "UNC": 0.1,
+    "DIST": 0.15,
+    "ETX-AVG3": 0.325,
+    "SEQ-AVG3": 0.325
+  },
+  "component_hashes": {
+    "ztest_S1-CAP.npy": "d6b3c59920d816cb54c5b65e7daf8de0cea3edc338bedb8ea78e3fb01086e7d9",
+    "uid_S1-CAP.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+    "ztest_S1-UNC.npy": "c2a94114f709f8127f4d7ce61dea545a103e4e66851188d153a40d7bc2757773",
+    "uid_S1-UNC.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+    "ztest_S1-DIST.npy": "ad974c09e0c97dedcc622877a5937f9d40c7f4f6604c7bb5eb08d3b7c73fe966",
+    "uid_S1-DIST.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+    "ztest_SEQ-01.npy": "c20ae75cee1eef216ae86a6fa5f594850369cdd92d1a946675942481d194b630",
+    "uid_SEQ-01.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+    "ztest_SEQ-C289-S43.npy": "66bdc5718af747ae0fd3059f18fa97395b4a5715d7085422064bb7d3a6ed022b",
+    "uid_SEQ-C289-S43.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+    "ztest_SEQ-C289-S44.npy": "7662569a90c9ff78c32b6126e09b2b4571a7b46e2d75047c5993c0eef25fd631",
+    "uid_SEQ-C289-S44.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+    "ztest_ETX-01-S42-DCW.npy": "2a9f9955503578fb48b959c7253f1d8a7de0c1ffb85704dfb2ff85253fea1c39",
+    "uid_ETX-01-S42-DCW.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+    "ztest_ETX-01-S43-DCW.npy": "eba71ea4cc7eb43958fa5b3fae9ae6812052643293677f85d8acac7b86283c04",
+    "uid_ETX-01-S43-DCW.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a",
+    "ztest_ETX-01-S44-DCW.npy": "eb69c69fbabef0648ae555bcda4ada05d3ec3d7bbf8214b10fa2ebaab4a19c34",
+    "uid_ETX-01-S44-DCW.npy": "50e5ba9b71a510b05126d5f325d9c63186ca09975680c66e4ee024e3e0fd576a"
+  },
+  "champion_reconstruction": {
+    "sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+    "max_abs_z_reconstruction_error": 4.966115776132082e-07
+  },
+  "production_diagnostics": {
+    "var_delta_z": 0.0011617983114716344,
+    "pearson_z": 0.9997823338661826,
+    "mean_delta_z_before_normalization": -0.010630367525644356,
+    "mean_delta_z_after_normalization": 1.1661833489695538e-06,
+    "max_abs_delta_z": 0.43498365329467825,
+    "delta_z_quantiles": {
+      "0.0": -0.43498365329467825,
+      "0.001": -0.14474199676970506,
+      "0.01": -0.09428397505105336,
+      "0.05": -0.05720813530414901,
+      "0.25": -0.01849988431842514,
+      "0.5": 0.0009006727702101369,
+      "0.75": 0.02015821988865918,
+      "0.95": 0.05275919412152233,
+      "0.99": 0.0828114948947681,
+      "0.999": 0.1336405797602442,
+      "1.0": 0.30158177724754465
+    },
+    "strongest_raw_mean_z": 2.464661871972273,
+    "seq65_raw_mean_z": 2.4540315044466285,
+    "strongest_shift": -0.13536187197227312,
+    "seq65_shift": -0.12473150444662862,
+    "strongest_final_mean_log1p": 2.3293213697927495,
+    "seq65_final_mean_log1p": 2.329322535976099,
+    "seq65_pre_floor_mean_z": 2.3293
+  },
+  "oof": {
+    "informational_only": true,
+    "folds": [
+      "2025-09-04",
+      "2025-09-18",
+      "2025-10-02",
+      "2025-10-16"
+    ],
+    "fold_weights": [
+      0.06666666666666667,
+      0.13333333333333333,
+      0.26666666666666666,
+      0.5333333333333333
+    ],
+    "strongest_fold_rmsle": [
+      1.7668833596147597,
+      1.7605095767798136,
+      1.748629223964952,
+      1.7412785664479717
+    ],
+    "seq65_fold_rmsle": [
+      1.7665383873460359,
+      1.7602791913372597,
+      1.7483571854077933,
+      1.741069245397145
+    ],
+    "delta_by_fold": [
+      -0.00034497226872387543,
+      -0.00023038544255382654,
+      -0.000272038557158627,
+      -0.00020932105082671626
+    ],
+    "strongest_wcv": 1.7475098627078645,
+    "seq65_wcv": 1.7472719649885926,
+    "delta_wcv": -0.00023789771927185122
+  },
+  "submission": {
+    "path": "submissions\\submission_SEQ65_TEMPORAL_HEAVY.csv",
+    "sha256": "33c6a4e70dbc0d061508c8179e3b820ffa00829d134d802fc0767ac3f4b69248",
+    "rows": 250000,
+    "columns": [
+      "user_id",
+      "predict"
+    ],
+    "unique_user_id": 250000,
+    "nan_or_inf": 0,
+    "negative": 0,
+    "zeros": 270,
+    "min": 0.0,
+    "max": 3303.591088,
+    "mean_log1p": 2.329322536169405,
+    "max_abs_z_reconstruction_error": 4.95204670906621e-07
+  }
+}

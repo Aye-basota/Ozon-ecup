@@ -1,0 +1,32 @@
+{
+  "catalog_id": "team_a_current__exp_007_radical_minimalism",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_007_radical_minimalism",
+  "title": "exp_007 — radical feature minimalism",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_007_radical_minimalism.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/final_experiments.py"
+  ],
+  "commands": [
+    "python src/final_experiments.py`; cutoff'ы 2025-04-03..2025-10-16, шаг 7,"
+  ],
+  "model": "LightGBM, calibration diagnostic",
+  "features": "recency",
+  "validation": "CV по фолдам: 1.78521 / 1.77760 / 1.76795 / 1.76262.",
+  "score": "CV mean: **1.77335 ± 0.00870** (текущий лучший: S1-BEST, 1.75886 ± 0.01162).",
+  "submission": "Файл: `submissions/experimental_submission_1.csv`.",
+  "seed": "min leaf 800, lambda_l2 20, seed 42 из `config.py`, уровень test 2.3293.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "min leaf 800, lambda_l2 20, seed 42 из `config.py`, уровень test 2.3293.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

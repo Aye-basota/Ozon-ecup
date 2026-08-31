@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_048_selection_mismatch_cv",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_048_selection_mismatch_cv",
+  "title": "exp_048 — SELECTION-MISMATCH / SELECTION-MATCHED CV",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_048_selection_mismatch_cv.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/selection_mismatch_cv.py"
+  ],
+  "commands": [],
+  "model": "sequence model, BTYD",
+  "features": "freshness/conditional features, Search/Catalog decomposition",
+  "validation": "`1.766883357 / 1.760509577 / 1.748629224 / 1.741278566`, wCV",
+  "score": "`1.766883357 / 1.760509577 / 1.748629224 / 1.741278566`, wCV",
+  "submission": "None documented",
+  "seed": "Shuffle uses 100 fixed seed-42 permutations inside",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "shape comparisons rather than global-level wins.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__fresh_dist_mix",
+  "namespace": "team_a_run",
+  "experiment_id": "FRESH-DIST-MIX",
+  "title": "Logged run — FRESH-DIST-MIX",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "freshness/conditional features",
+  "validation": "conclusion:** Все 13 поздних target-окон физически наблюдаемы, train вырос бы с 6,065,972 до 9,184,968 строк (+51.4%), но T>=2025-10-17 запрещены: 250k пользователей отобраны по гарантированной активности в 2025-11-16..2026-02-13. На 2026-01-14 P(any activity next30)=1.0 по конструкции; e08 уже дал около +0.054 RMSLE и bias +0.366 на clean holdout. По стоп-правилу обучение, late pseudo-validation на загрязнённых targets, test diagnostics и submission не выполнялись. Детали exp_028.",
+  "score": "conclusion:** Все 13 поздних target-окон физически наблюдаемы, train вырос бы с 6,065,972 до 9,184,968 строк (+51.4%), но T>=2025-10-17 запрещены: 250k пользователей отобраны по гарантированной активности в 2025-11-16..2026-02-13. На 2026-01-14 P(any activity next30)=1.0 по конструкции; e08 уже дал около +0.054 RMSLE и bias +0.366 на clean holdout. По стоп-правилу обучение, late pseudo-validation на загрязнённых targets, test diagnostics и submission не выполнялись. Детали exp_028.",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

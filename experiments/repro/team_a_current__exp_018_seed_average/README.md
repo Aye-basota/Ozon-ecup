@@ -1,0 +1,131 @@
+# exp_018 — S_05 B: дисперсия по сидам и усреднение
+
+## Catalogue metadata
+
+- **Catalogue ID:** `team_a_current__exp_018_seed_average`
+- **Namespace:** `team_a_current`
+- **Experiment ID:** `exp_018_seed_average`
+- **Original source:** `experiments/exp_018_seed_average.md`
+- **Source ref:** `working tree`
+- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Kind:** experiment card
+- **Model:** LightGBM, ensemble
+- **Features:** 227 tabular features
+- **Preprocessing:** See preserved experiment card and frozen implementation
+- **Validation:** | сид | 09-04 | 09-18 | 10-02 | 10-16 | wCV |
+- **Known score:** Он требовал закрыть тему, если разброс `wCV` по сидам < 0.0003; фактический
+- **Seed:** раундов повторил `S1-E10` на 4 фолдах из 4). `src/seedavg.py`: усреднение
+- **Postprocessing:** в лог-пространстве равными весами + статистика разброса и кривая усреднения.
+- **Submission:** LB: не отправлялось, сабмиты кончились (`STATE.md`).
+- **External data/artifacts:** Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card
+- **Reproducibility:** FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card
+
+## Reproduction
+
+Run `python run.py` to inspect recovered commands and provenance. Use `python run.py --execute N` only after preparing the data/artifacts listed below.
+
+## Preserved original documentation
+# exp_018 — S_05 B: дисперсия по сидам и усреднение
+
+- **Дата:** 2026-08-12
+- **Автор:** A1
+- **Коммит:** e3032ca
+- **Стратегия:** `research/strategies/STRATEGY_05_capacity_seed_ensemble.md`, вариант B
+- **Полный разбор:** `research/strategies/results/STRATEGY_05/variant_B.md`
+
+## Гипотеза
+
+Часть ошибки — не смещение модели, а **дисперсия оценщика**: при
+`bagging_fraction 0.8`, `bagging_freq 1`, `feature_fraction 0.7` модель
+стохастична, но `seed = 42` стоял во всех 16 строках журнала, и её дисперсия
+не измерялась ни разу. Усреднение `k` сидов обязано убрать `(1 − 1/k)` этой
+дисперсии; знак эффекта известен заранее.
+
+## Что изменено относительно базы
+
+Только `seed` LightGBM (новый флаг `--seed`, по умолчанию `config.SEED`) и
+усреднение OOF пяти сидов в лог-пространстве с равными весами. База — `direct`,
+**300 раундов** (выбор варианта A, `exp_017`), признаки `S1-E10`.
+`config.SEED` не менялся.
+
+## Результат
+
+| сид | 09-04 | 09-18 | 10-02 | 10-16 | wCV |
+|---|---|---|---|---|---|
+| 42 | 1.77106 | 1.76480 | 1.75243 | 1.74447 | 1.75108 |
+| 43 | 1.77102 | 1.76470 | 1.75246 | 1.74454 | 1.75111 |
+| 44 | 1.77121 | 1.76458 | 1.75250 | 1.74453 | 1.75111 |
+| 45 | 1.77128 | 1.76469 | 1.75243 | 1.74448 | 1.75108 |
+| 46 | 1.77120 | 1.76499 | 1.75278 | 1.74466 | 1.75131 |
+| **среднее 3 сидов** | 1.77034 | 1.76399 | 1.75182 | 1.74391 | **1.75046** |
+| **среднее 5 сидов** | 1.77026 | 1.76391 | 1.75175 | 1.74381 | **1.75037** |
+
+- **Разброс между сидами:** mean 1.75114, **std 0.00010**, **range 0.00023**;
+  пофолдово std 0.00011 / 0.00016 / 0.00015 / 0.00008.
+- **`Var(z_i − z_j)` = 0.00712** (среднее по 10 парам, разброс 0.00704–0.00722),
+  corr остатков 0.99885 ⇒ `σ² = 0.00356` на сид, 0.116 % от `MSE = 3.066`.
+- **Кривая усреднения монотонна и выходит на плато:** k = 1/2/3/4/5 →
+  1.75114 / 1.75066 / 1.75050 / 1.75042 / 1.75037. Совпадает с теорией
+  `MSE_k = M + σ²/k` с точностью **0.00004 на всех k**. Предел `k → ∞` = 1.75012.
+- Усреднение 3 сидов лучше сида 42 на **4 фолдах из 4**, Δ **−0.00062**
+  (−0.00064 к ожидаемому сиду); 5 сидов — −0.00071.
+- `mean(log1p(pred))` 2.6764 → 2.6767: сужения распределения, которого опасался
+  §Risks стратегии, нет.
+- Совместно с вариантом A: `S1-E10` 1.75170 → **1.75037**, **−0.00133**, 4/4 фолда.
+- runtime: 4 сида × 4 фолда, 2 процесса × 6 потоков — 8 мин на сид, 32 мин всего
+  (сид 42 посчитан вариантом A).
+- LB: не отправлялось, сабмиты кончились (`STATE.md`).
+
+## Вердикт и вывод
+
+**ПРИНЯТО в разработку.** Критерий приёмки варианта B выполнен (≥3 фолдов,
+выигрыш ≥ 0.0005). Мягкий порог законен: изменение не трогает неизмеримую ось
+`train→test` (`exp_016` §5), а знак эффекта известен до замера. **Брать 3 сида** —
+они дают 83 % выигрыша пяти (63 % предела `k → ∞`), а 4-й и 5-й вместе — 0.00013
+при линейном росте стоимости.
+
+**Критерий закрытия направления из стратегии формально сработал и отвергнут.**
+Он требовал закрыть тему, если разброс `wCV` по сидам < 0.0003; фактический
+разброс 0.00023 — но усреднение при этом дало −0.00071. Посылка неверна:
+разброс **скора** мал потому, что скор усредняет 190 тыс. строк, а усреднение
+снимает дисперсию **предсказаний**. Правильная статистика — `Var(z_i − z_j)`,
+и она в 30 раз крупнее по влиянию.
+
+**Главный побочный результат — пол разнообразия проекта.** Два сида несут ноль
+информации друг о друге, поэтому `Var(Δ) = 0.00712` есть ноль разнообразия.
+`Var(z_DIST − z_E10) = 0.01320` — всего ×1.85 от пола, `Var(z_E11 − z_DIST) =
+0.0107` — ×1.50. **От трети до половины «разнообразия» между членами боевой
+смеси — шум сидов, а не разные функции.** Правило на будущее: `Var(Δ) < 0.007`
+считать нулём, а corr остатков сравнивать не с 1.0, а с 0.9988 (двух сидов).
+
+## Конфиг прогона
+
+```
+model=direct, L=None, norm_long=True, min_history=90, cutoffs=all шаг 7,
+train_blocks=1, panel_blocks=3, rounds=300, LGB_PARAMS из config.py, 227 признаков
+seeds = 42 (config.SEED), 43, 44, 45, 46
+
+# каждый сид — 4 фолда двумя процессами (сид 42 = полный прогон из exp_017)
+for s in 43 44 45 46; do
+  LGB_THREADS=6 python -m src.train --exp S1-SEED$s-A --seed $s --model direct --L 0 \
+    --norm-long --min-history 90 --train-blocks 1 --cutoffs all --rounds 300 \
+    --val 2025-10-16 2025-09-04 --no-log
+  LGB_THREADS=6 python -m src.train --exp S1-SEED$s-B --seed $s ... --val 2025-10-02 2025-09-18 --no-log
+  python -m src.merge_oof --out S1-SEED$s --parts S1-SEED$s-A S1-SEED$s-B \
+    --ref S1-ROUNDS-R300 --model direct --no-log
+done
+python -m src.merge_oof --out S1-SEED42 --parts S1-ROUNDSL-A S1-ROUNDSL-B --ref S1-E10 --no-log
+python -m src.seedavg --out S1-SEEDAVG5 --exps S1-SEED42 S1-SEED43 S1-SEED44 S1-SEED45 S1-SEED46 \
+  --ref S1-SEED42 --stats --model direct --n-features 227
+python -m src.seedavg --out S1-SEEDAVG3 --exps S1-SEED42 S1-SEED43 S1-SEED44 \
+  --ref S1-SEED42 --no-log
+```
+
+## Реализация
+
+`src/train.py`: флаг `--seed` (по умолчанию `config.SEED`; LightGBM выводит из
+него `bagging_seed`, `feature_fraction_seed`, `data_random_seed`, поэтому
+`--seed 42` побитово воспроизводит прежнее поведение — проверено: срез 600
+раундов повторил `S1-E10` на 4 фолдах из 4). `src/seedavg.py`: усреднение
+в лог-пространстве равными весами + статистика разброса и кривая усреднения.
+`src/config.py` и `src/validation.py` не изменялись.

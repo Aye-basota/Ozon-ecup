@@ -1,0 +1,6 @@
+family,status,outer_fold,selected_alpha,baseline_rmsle,candidate_rmsle,heldout_delta,nested_wcv_delta,improved_folds,reason
+SAFE-ANCHOR,BLOCKED_NOT_RUN,,,,,,,,missing canonical z_latest OOF
+BTYD05,BLOCKED_NOT_RUN,,,,,,,,missing canonical z_latest OOF
+FRESH,BLOCKED_NOT_RUN,,,,,,,,missing canonical z_latest OOF and alignment cannot be checked
+SEQ65,BLOCKED_NOT_RUN,,,,,,,,missing canonical z_latest OOF
+NEGATIVE_CONTROL,BLOCKED_NOT_RUN,,,,,,,,primary experiment stopped at prerequisite

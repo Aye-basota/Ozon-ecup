@@ -1,0 +1,26 @@
+{
+  "catalog_id": "eda__e15_seq",
+  "namespace": "eda",
+  "experiment_id": "e15_seq",
+  "title": "e15_seq",
+  "kind": "EDA experiment/script",
+  "original_path": "research/eda/e15_seq.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "research/eda/e15_seq.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "lambda_l2=5.0, verbose=-1, seed=SEED, num_threads=10, max_bin=63, force_row_wise=True)",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,41 @@
+{
+  "components": [
+    {
+      "component": "UNC",
+      "delta_rmsle_cal": 0.0,
+      "exact_prediction_match": true,
+      "fold": "2025-10-16",
+      "mae_delta_z": 0.0,
+      "max_abs_delta_z": 0.0,
+      "old_prediction_sha256": "76193afe9c48768184bbb617777237a465d5c5d35a36cab266677cf452ab9c7f",
+      "old_rmsle_cal": 1.7451316740083374,
+      "pearson": 1.0,
+      "replay_prediction_sha256": "76193afe9c48768184bbb617777237a465d5c5d35a36cab266677cf452ab9c7f",
+      "replay_rmsle_cal": 1.7451316740083374,
+      "status": "PASS_BITWISE",
+      "var_delta_z": 0.0
+    },
+    {
+      "component": "CAP",
+      "delta_rmsle_cal": 0.0,
+      "exact_prediction_match": true,
+      "fold": "2025-10-16",
+      "mae_delta_z": 0.0,
+      "max_abs_delta_z": 0.0,
+      "old_prediction_sha256": "c4bfc7e474d53ec2cab48a06acd9c48a4165d5c4b468bd1d6a1e2b35caa99ea2",
+      "old_rmsle_cal": 1.7553448642465437,
+      "pearson": 0.9999999999999999,
+      "replay_prediction_sha256": "c4bfc7e474d53ec2cab48a06acd9c48a4165d5c4b468bd1d6a1e2b35caa99ea2",
+      "replay_rmsle_cal": 1.7553448642465437,
+      "status": "PASS_BITWISE",
+      "var_delta_z": 0.0
+    }
+  ],
+  "status": "REPLAY_PASS",
+  "thresholds": {
+    "abs_delta_rmsle_cal": 1e-05,
+    "max_abs_delta_z": 1e-05,
+    "pearson": 0.999999999,
+    "var_delta_z": 1e-10
+  }
+}

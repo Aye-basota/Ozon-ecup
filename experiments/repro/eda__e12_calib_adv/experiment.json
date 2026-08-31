@@ -1,0 +1,26 @@
+{
+  "catalog_id": "eda__e12_calib_adv",
+  "namespace": "eda",
+  "experiment_id": "e12_calib_adv",
+  "title": "e12_calib_adv",
+  "kind": "EDA experiment/script",
+  "original_path": "research/eda/e12_calib_adv.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "research/eda/e12_calib_adv.py"
+  ],
+  "commands": [],
+  "model": "LightGBM",
+  "features": "gap/burst features",
+  "validation": "\"\"\"Stage 11 (memory-lean): offset calibration, error anatomy, adversarial validation, test level.\"\"\"",
+  "score": "print(f\"    {nm:8s} n={msk.sum():7,} ({100*msk.mean():5.1f}%) RMSLE={np.sqrt(e2[msk].mean()):.4f}\"",
+  "submission": "None documented",
+  "seed": "idx = np.random.RandomState(SEED).permutation(len(X))",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "print(\"E. FEATURE-LEVEL SHIFT clean-val -> TEST\")",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

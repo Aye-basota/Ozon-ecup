@@ -1,0 +1,33 @@
+{
+  "catalog_id": "team_a_current__exp_028_fresh_dist_mix",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_028_fresh_dist_mix",
+  "title": "exp_028 — FRESH-DIST-MIX: аудит максимально свежей supervision",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_028_fresh_dist_mix.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/dist_pact.py",
+    "src/train.py",
+    "src/predict.py",
+    "research/eda/e08_baseline.py"
+  ],
+  "commands": [],
+  "model": "distribution head, blend",
+  "features": "calendar features, freshness/conditional features, gap/burst features",
+  "validation": "## Validation / diagnostics",
+  "score": "`1.77114 -> 1.82485` (`+0.054 RMSLE`) и получила bias около `+0.366`.",
+  "submission": "LB-сабмитов. Безопасное использование этих 13 cutoff'ов — отдельная гипотеза",
+  "seed": "train panel, данные строго до `2026-02-13`; seed/model params не применялись.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "`0.15/0.30/0.10/0.45`, log-space blend и уровень `L*=2.3293`. Ожидание — убрать",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

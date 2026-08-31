@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__block4_saf",
+  "namespace": "team_a_run",
+  "experiment_id": "BLOCK4-SAF",
+  "title": "Logged run — BLOCK4-SAF",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "wcv:** 1.74775",
+  "score": "wcv:** 1.74775",
+  "submission": "None documented",
+  "seed": "params:** {\"L\": 180, \"alphas\": [0.25, 0.5, 0.75, 1.0, 1.25], \"bagging_fraction\": 0.8, \"base\": \"STRONGEST_CURRENT\", \"conditional_population\": \"opposite splitmix64 group from P_V\", \"feature_fraction\": 0.8, \"lambda_l2\": 10, \"learning_rate\": 0.03, \"max_bin\": 63, \"min_data_in_leaf\": 500, \"num_leaves\": 63, \"q_population\": \"active in previous 2 blocks; clean only\", \"rounds\": 200, \"seeds\": [42, 43, 44], \"winsor\": [0.005, 0.995]}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

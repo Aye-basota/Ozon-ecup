@@ -1,0 +1,21 @@
+{
+  "prefix": "LATEST_DELTA_COMPAT_EXP066_A1",
+  "status": "NOT_RUN_PREREQUISITE_BLOCKED",
+  "validation_gate_reached": false,
+  "canonical_latest_oof_present": false,
+  "reason": "BLOCKED_NO_CANONICAL_LATEST_OOF",
+  "families": {
+    "SAFE-ANCHOR": "NOT_RUN",
+    "BTYD05": "NOT_RUN",
+    "FRESH": "NOT_RUN",
+    "SEQ65": "NOT_RUN"
+  },
+  "variance_ratio": null,
+  "std_ratio": null,
+  "delta_quantiles": null,
+  "tail_shares": null,
+  "mean_delta_before_level_policy": null,
+  "mean_delta_after_level_policy": null,
+  "activity_support": null,
+  "submission_created": false
+}

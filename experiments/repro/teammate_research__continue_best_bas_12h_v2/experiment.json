@@ -1,0 +1,28 @@
+{
+  "catalog_id": "teammate_research__continue_best_bas_12h_v2",
+  "namespace": "teammate_research",
+  "experiment_id": "continue_best_bas_12h_v2",
+  "title": "!/usr/bin/env python3",
+  "kind": "teammate research runner",
+  "original_path": "пайплайн сокомандника/research_scripts/continue_best_bas_12h_v2.py",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "пайплайн сокомандника/research_scripts/continue_best_bas_12h_v2.py"
+  ],
+  "commands": [
+    "python continue_best_bas_12h_v2.py --max-hours 11.25"
+  ],
+  "model": "LightGBM, sequence model, two-part / hurdle, blend",
+  "features": "recency, occurrence features, history-depth features",
+  "validation": "error scores for validation fold i are learned only from folds < i;",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "lines.append(\"\\n=== 6. Три итоговых сабмита ===\")",
+  "seed": "model=make_ranker(seed,threads,240);model.fit(Xtr,ytr,group=grp)",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the inputs/checkpoints named by the preserved runner are available",
+  "notes": "",
+  "preserved_document": "README.md"
+}

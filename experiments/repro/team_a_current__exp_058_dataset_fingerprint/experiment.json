@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_058_dataset_fingerprint",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_058_dataset_fingerprint",
+  "title": "exp_058 — DATASET-FINGERPRINT / USER-IDENTITY AUDIT",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_058_dataset_fingerprint.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/dataset_fingerprint.py",
+    "src/test_dataset_fingerprint.py",
+    "src/test_pipeline.py",
+    "src/test_validation.py"
+  ],
+  "commands": [
+    "python src/dataset_fingerprint.py\npython src/dataset_fingerprint.py --analysis-only\npython -m pytest src/test_dataset_fingerprint.py src/test_pipeline.py src/test_validation.py -q",
+    "python src/dataset_fingerprint.py",
+    "python src/dataset_fingerprint.py --analysis-only",
+    "python -m pytest src/test_dataset_fingerprint.py src/test_pipeline.py src/test_validation.py -q"
+  ],
+  "model": "LightGBM, CatBoost, calibration diagnostic",
+  "features": "calendar features, gap/burst features, dataset/user fingerprint, 227 tabular features",
+  "validation": "manual target против production target: max abs `5.46e-12`, в `log1p` `1.78e-15`; сохранённый OOF float32 совпал бит-в-бит на всех 4 фолдах;",
+  "score": "zero RMSLE `−0.000122291`, но positive RMSLE `+0.000206437` — механизм не согласован с общим улучшением;",
+  "submission": "Test inference / submission: **не запускались и не создавались**.",
+  "seed": "параметры и seed — точный `UNC` из `EXP-046`, seed **42** из `src/config.py`;",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

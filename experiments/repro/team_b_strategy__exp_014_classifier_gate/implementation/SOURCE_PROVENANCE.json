@@ -1,0 +1,46 @@
+{
+  "src/classifier_gate.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/config.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/dense_ensemble.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/dist_head_ensemble.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/ensemble.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/features.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/post_order_ensemble.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/predict.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/train.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/validation.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  },
+  "src/weight_grid.py": {
+    "card_introduction_commit": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123",
+    "implementation_source": "fbf1dc24eadaaa0d2a1e2bdc425270015b272123"
+  }
+}

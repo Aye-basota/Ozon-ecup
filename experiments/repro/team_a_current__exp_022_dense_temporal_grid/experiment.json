@@ -1,0 +1,30 @@
+{
+  "catalog_id": "team_a_current__exp_022_dense_temporal_grid",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_022_dense_temporal_grid",
+  "title": "exp_022 — STRATEGY_02B: dense temporal grid при равном объёме",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_022_dense_temporal_grid.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/densityval.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN",
+  "features": "227 tabular features",
+  "validation": "по минимуму последнего fold; dense minimum wCV на 150 также хуже baseline.",
+  "score": "wCV: **1.752339** против **1.751076**, Δ **+0.001263**.",
+  "submission": "None documented",
+  "seed": "panel_blocks=3, train_blocks=1, VAL_FOLDS_S1, seed=config.SEED=42,",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

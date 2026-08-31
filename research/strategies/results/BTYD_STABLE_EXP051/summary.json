@@ -1,0 +1,64 @@
+{
+  "btyd_production_status": "PASS",
+  "experiment": "BTYD-STABLE-PRODUCTION",
+  "experiment_number": 51,
+  "fresh_parity_status": "FAIL",
+  "fresh_retrain_status": "NOT_RUN_AFTER_CASE_B_SUBMISSION",
+  "oof_nested_delta_wcv": -0.00026918201136146475,
+  "oof_nested_fold_deltas": [
+    -0.0006546683760293437,
+    -0.0005709280078940449,
+    -0.0001750758712302236,
+    -0.00019261278671045545
+  ],
+  "oof_positive_residual_alignment_folds": 4,
+  "oof_predictive_stability": "PASS",
+  "optimizer_policy_id": "analytic-jac-lbfgsb-bfgs-v1",
+  "recipe": "0.95*STRONGEST_CURRENT + 0.05*BTYD; final level 2.3293",
+  "submission": {
+    "columns": [
+      "user_id",
+      "predict"
+    ],
+    "duplicate_users": 0,
+    "finite": true,
+    "level_shift": -0.11984712850465207,
+    "mean_log1p_disk": 2.3293000001716084,
+    "missing_users": 0,
+    "nonnegative": true,
+    "path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_BTYD05.csv",
+    "prediction": {
+      "max": 2723.635987,
+      "mean": 36.899329696612,
+      "min": 0.0,
+      "n": 250000,
+      "quantiles": {
+        "0": 0.0,
+        "0.001": 0.013614998,
+        "0.005": 0.07139494,
+        "0.01": 0.11002176,
+        "0.05": 0.25974475,
+        "0.25": 1.6506669999999999,
+        "0.5": 7.352907,
+        "0.75": 32.14396575,
+        "0.95": 166.93508769999985,
+        "0.99": 425.8338236500005,
+        "0.995": 566.9008035300001,
+        "0.999": 1019.4577079709856,
+        "1": 2723.635987
+      },
+      "std": 89.8848324226271
+    },
+    "raw_candidate_sha256": "99d7286b669ff2d5476ad21bb4d51f232f0578049fc6e13b40047c3746128c17",
+    "reference_path": "C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\submissions\\submission_STRONGEST_CURRENT.csv",
+    "reference_sha256": "abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda",
+    "rows": 250000,
+    "sha256": "c3cfb4d90f50ceff8f5d8f8aaca072664966fb91018eb0a3fa01195dc38c2932",
+    "zero_fraction": 0.000508
+  },
+  "submission_status": "CREATED_BTYD05_ONLY",
+  "test_predictive_stability": "PASS",
+  "test_support_status": "PASS",
+  "validation_status": "NEW EXP-051 OOF revalidation; identical policy to production",
+  "variance_ratio": 1.1734157548979727
+}

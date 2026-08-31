@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__fresh_contrast_moe",
+  "namespace": "team_a_run",
+  "experiment_id": "FRESH-CONTRAST-MOE",
+  "title": "Logged run — FRESH-CONTRAST-MOE",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN",
+  "features": "freshness/conditional features",
+  "validation": "conclusion:** Nested LOFO FRESH -0.000225, 4/4; 10-16 -0.000253; selected GLOBAL alpha=1 on all folds. VOL +0.000008; FRESH-VOL -0.000233; A/B -0.000249/-0.000201; HIGH16 -0.000027 2/4. Validation gate failed; test inference and submission skipped. Details exp_040",
+  "score": "wcv:** 1.74728",
+  "submission": "None documented",
+  "seed": "params:** {\"alphas\": [0.0, 0.25, 0.5, 0.75, 1.0], \"base\": \"STRONGEST_CURRENT\", \"contrasts\": [\"FRESH\", \"VOL\"], \"head_seed\": 42, \"preprocess\": \"donor-fold 0.5/99.5 winsor; gate; center\", \"split\": \"splitmix64(user_id)&1\", \"variants\": [\"GLOBAL\", \"HIGH16\"]}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

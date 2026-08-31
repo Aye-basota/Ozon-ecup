@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__seq_avg3_clip_mix",
+  "namespace": "team_a_run",
+  "experiment_id": "SEQ-AVG3-CLIP-MIX",
+  "title": "Logged run — SEQ-AVG3-CLIP-MIX",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "sequence model, blend",
+  "features": "history-depth features",
+  "validation": "description:** exp_035 MIX9: смесь CAP/E02/DIST/SEQ-AVG3 = 0.10/0.20/0.25/0.45, тест при --depth-clip 289. Честный LOFO -0.00055 к отправленному SEQ-01-MIX (1.74834), 4/4 фолда включая 10-16. Альтернатива SEQ-D3A-AVG3 дала -0.00061 при sd разности 0.00027 - неразрешимо, взят SEQ-AVG3. Сабмит собран и проверен, НЕ отправлен.",
+  "score": "conclusion:** полоса «в разработку» (-0.0020..-0.0005); при переносе 0.57 ожидание LB ~1.64986 = ~1.3 парной SE",
+  "submission": "description:** exp_035 MIX9: смесь CAP/E02/DIST/SEQ-AVG3 = 0.10/0.20/0.25/0.45, тест при --depth-clip 289. Честный LOFO -0.00055 к отправленному SEQ-01-MIX (1.74834), 4/4 фолда включая 10-16. Альтернатива SEQ-D3A-AVG3 дала -0.00061 при sd разности 0.00027 - неразрешимо, взят SEQ-AVG3. Сабмит собран и проверен, НЕ отправлен.",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

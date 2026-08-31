@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__seq_d3a",
+  "namespace": "team_a_run",
+  "experiment_id": "SEQ-D3A",
+  "title": "Logged run — SEQ-D3A",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN, sequence model",
+  "features": "history-depth features",
+  "validation": "description:** exp_030 SEQ-D3A: depth curriculum (случайная обрезка РЕАЛЬНЫХ дней), 4 фолда, seed 42",
+  "score": "conclusion:** exp_030 EXP-030. Один флаг --depth-aug 0.5: с p=0.5 вход обрезается до D~U{90,120,150,180,220,254,289} РЕАЛЬНЫХ дней; вход curriculum побитово равен боевому --depth-clip D (тест). wCV 1.75361 -> 1.75284, ΔwCV -0.00077, но лучше только на 2 фолдах из 4: 09-04 +0.00013, 09-18 +0.00355, 10-02 -0.00129, 10-16 -0.00171. AUC(y>0) склеенного 0.84052 -> 0.84042 (плоско; +0.00083/+0.00047 на двух поздних, -0.00137 на 09-18). Var(z-z_BASE)=0.02776 = 3.90x пола сидов, corr остатков 0.9944..0.",
+  "submission": "conclusion:** exp_030 EXP-030. Один флаг --depth-aug 0.5: с p=0.5 вход обрезается до D~U{90,120,150,180,220,254,289} РЕАЛЬНЫХ дней; вход curriculum побитово равен боевому --depth-clip D (тест). wCV 1.75361 -> 1.75284, ΔwCV -0.00077, но лучше только на 2 фолдах из 4: 09-04 +0.00013, 09-18 +0.00355, 10-02 -0.00129, 10-16 -0.00171. AUC(y>0) склеенного 0.84052 -> 0.84042 (плоско; +0.00083/+0.00047 на двух поздних, -0.00137 на 09-18). Var(z-z_BASE)=0.02776 = 3.90x пола сидов, corr остатков 0.9944..0.",
+  "seed": "conclusion:** exp_030 EXP-030. Один флаг --depth-aug 0.5: с p=0.5 вход обрезается до D~U{90,120,150,180,220,254,289} РЕАЛЬНЫХ дней; вход curriculum побитово равен боевому --depth-clip D (тест). wCV 1.75361 -> 1.75284, ΔwCV -0.00077, но лучше только на 2 фолдах из 4: 09-04 +0.00013, 09-18 +0.00355, 10-02 -0.00129, 10-16 -0.00171. AUC(y>0) склеенного 0.84052 -> 0.84042 (плоско; +0.00083/+0.00047 на двух поздних, -0.00137 на 09-18). Var(z-z_BASE)=0.02776 = 3.90x пола сидов, corr остатков 0.9944..0.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}

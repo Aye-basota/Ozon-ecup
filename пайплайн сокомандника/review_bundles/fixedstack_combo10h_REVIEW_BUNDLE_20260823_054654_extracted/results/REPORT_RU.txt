@@ -1,0 +1,27 @@
+E-CUP fixedstack combo continuation
+runtime_hours=1.470
+STRONGEST_CURRENT was NEVER retrained.
+
+Top validation candidates:
+ridge_drop_recent_hurdle_stable18_s075                  delta=-0.001547 recent=3/3 latest=-0.001662 family=ridge_subset var_ratio=1.209
+ridge_core_plus_recent_dist_s075                        delta=-0.001461 recent=3/3 latest=-0.001529 family=ridge_subset var_ratio=1.120
+ridge_core_plus_recent_hurdle_fast12_s075               delta=-0.001546 recent=3/3 latest=-0.001665 family=ridge_subset var_ratio=1.223
+ridge_core_s075                                         delta=-0.001427 recent=3/3 latest=-0.001480 family=ridge_subset var_ratio=1.102
+ridge_core_plus_recent_direct_s075                      delta=-0.001428 recent=3/3 latest=-0.001493 family=ridge_subset var_ratio=1.118
+ridge_core_plus_multiscale_direct_s075                  delta=-0.001425 recent=3/3 latest=-0.001473 family=ridge_subset var_ratio=1.117
+ridge_drop_recent_hurdle_stable18_s075__slotbeta875     delta=-0.001504 recent=3/3 latest=-0.001607 family=ridge_subset_slotstrength var_ratio=1.209
+ridge_core_plus_recent_dist_s075__slotbeta875           delta=-0.001425 recent=3/3 latest=-0.001484 family=ridge_subset_slotstrength var_ratio=1.120
+ridge_core_plus_recent_hurdle_fast12_s075__slotbeta875  delta=-0.001501 recent=3/3 latest=-0.001609 family=ridge_subset_slotstrength var_ratio=1.223
+ridge_core_plus_recent_direct_s075__slotbeta875         delta=-0.001393 recent=3/3 latest=-0.001451 family=ridge_subset_slotstrength var_ratio=1.118
+ridge_core_plus_recent_dist_s075__slotbeta750           delta=-0.001346 recent=3/3 latest=-0.001397 family=ridge_subset_slotstrength var_ratio=1.120
+ridge_drop_recent_hurdle_stable18_s075__slotbeta750     delta=-0.001418 recent=3/3 latest=-0.001508 family=ridge_subset_slotstrength var_ratio=1.209
+ridge_core_plus_recent_hurdle_fast12_s075__slotbeta750  delta=-0.001414 recent=3/3 latest=-0.001510 family=ridge_subset_slotstrength var_ratio=1.223
+ridge_core_plus_recent_direct_s075__slotbeta750         delta=-0.001317 recent=3/3 latest=-0.001368 family=ridge_subset_slotstrength var_ratio=1.118
+occ_platt_guard                                         delta=-0.000149 recent=3/3 latest=-0.000061 family=occ_cal var_ratio=1.124
+recent_hurdle_fast12                                    delta=-0.000300 recent=2/3 latest=-0.000773 family=raw_new var_ratio=1.187
+
+Emitted submissions:
+1. ridge_drop_recent_hurdle_stable18_s075 delta=-0.001547 corr_friend=0.999731 file=C:\Users\Dimentiy\repoVScode\Ozon-ecup\src\DL\best_bas\_best_bas_combo_10h\submissions\submission_combo10h_candidate_1_ridge_drop_recent_hurdle_stable18_s075.csv
+2. ridge_core_plus_recent_dist_s075 delta=-0.001461 corr_friend=0.999757 file=C:\Users\Dimentiy\repoVScode\Ozon-ecup\src\DL\best_bas\_best_bas_combo_10h\submissions\submission_combo10h_candidate_2_ridge_core_plus_recent_dist_s075.csv
+3. ridge_drop_recent_hurdle_stable18_s075__slotbeta875 delta=-0.001504 corr_friend=0.999794 file=C:\Users\Dimentiy\repoVScode\Ozon-ecup\src\DL\best_bas\_best_bas_combo_10h\submissions\submission_combo10h_candidate_3_ridge_drop_recent_hurdle_stable18_s075__slotbeta875.csv
+4. ridge_core_plus_recent_dist_s075__slotbeta875 delta=-0.001425 corr_friend=0.999813 file=C:\Users\Dimentiy\repoVScode\Ozon-ecup\src\DL\best_bas\_best_bas_combo_10h\submissions\submission_combo10h_candidate_4_ridge_core_plus_recent_dist_s075__slotbeta875.csv

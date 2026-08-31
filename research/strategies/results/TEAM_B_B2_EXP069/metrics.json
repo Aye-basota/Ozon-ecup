@@ -1,0 +1,83 @@
+{
+  "experiment": "TEAM_B_B2_EXP069",
+  "team_sha": "88dc69163b1f39aaac55ddfbfc9986e2203cfbdf",
+  "seed": 42,
+  "folds": [
+    "2025-09-04",
+    "2025-09-18",
+    "2025-10-02",
+    "2025-10-16"
+  ],
+  "fold_weights": [
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "blend_space": "raw_gmv_then_per_fold_log_offset",
+  "our": {
+    "wcv": 1.7475098625880228,
+    "fold_scores": [
+      1.7668833570081914,
+      1.7605095768937138,
+      1.748629224130522,
+      1.7412785664378294
+    ]
+  },
+  "team": {
+    "wcv": 1.7509569765739317,
+    "fold_scores": [
+      1.7711744065743935,
+      1.763373570822714,
+      1.7521275158930305,
+      1.744740379602129
+    ]
+  },
+  "blend": {
+    "our_weight": 0.8351395928604844,
+    "team_weight": 0.16486040713951555,
+    "wcv": 1.7473573818558097,
+    "fold_scores": [
+      1.7669235020238974,
+      1.7602953265978902,
+      1.7485018564145578,
+      1.7411048933699045
+    ],
+    "delta_vs_our": -0.00015248073221307834,
+    "lofo_weights": [
+      0.8276317547931981,
+      0.8416207794661015,
+      0.8324837201447395,
+      0.8427209517358419
+    ],
+    "lofo_fold_scores": [
+      1.7669324533420885,
+      1.7602985732377772,
+      1.7485021099913505,
+      1.7411057415812325
+    ],
+    "lofo_wcv": 1.747358931495527,
+    "lofo_delta_vs_our": -0.00015093109249586512
+  },
+  "diversity": {
+    "oof_log_prediction_correlation": 0.9960877493091352,
+    "oof_log_prediction_difference_variance": 0.01925528327225331,
+    "test_log_prediction_correlation": 0.9951622055465613,
+    "test_log_prediction_difference_variance": 0.024607394356555692,
+    "test_oof_variance_ratio": 1.2779554581788326
+  },
+  "production": {
+    "team_train_cutoff": "2025-10-17",
+    "team_feature_cutoff": "2026-02-14",
+    "target_log_level": 2.3293,
+    "pre_level_blend_mean_log1p": 2.352321928798774,
+    "global_log_delta": -0.023021928798774294,
+    "submission_mean_log1p": 2.329308973915807,
+    "submission_mean_predict": 36.12893745681399,
+    "submission_min": 0.0,
+    "submission_max": 2912.1211826681824,
+    "submission_zero_fraction": 0.000796,
+    "submission_path": "submissions\\submission_TEAM_B_B2_OPTIMAL_ENSEMBLE.csv",
+    "submission_sha256": "9b2cc1b4cd3de6394f1e891904f58ab6e5c5f8c7b3505d83d797bd706bad899f"
+  }
+}

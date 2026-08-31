@@ -1,0 +1,38 @@
+{
+  "catalog_id": "team_a_current__exp_030b_seq_d3a_seed43",
+  "namespace": "team_a_current",
+  "experiment_id": "exp_030b_seq_d3a_seed43",
+  "title": "exp_030b — SEQ-D3A-S43: разделяющий замер провала фолда 09-18",
+  "kind": "experiment card",
+  "original_path": "experiments/exp_030b_seq_d3a_seed43.md",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/config.py",
+    "src/data.py",
+    "src/features.py",
+    "src/validation.py",
+    "src/seq.py",
+    "src/test_seq.py",
+    "research/strategies/results/SEQ6/seed_pair.py",
+    "research/strategies/results/SEQ6/truncation_noise.py"
+  ],
+  "commands": [
+    "python -m pytest src/test_seq.py -q\nbash research/strategies/results/SEQ6/run.sh\nbash research/strategies/results/SEQ6/diag.sh\nPYTHONPATH=. python research/strategies/results/SEQ6/seed_pair.py\nPYTHONPATH=. python research/strategies/results/SEQ6/truncation_noise.py",
+    "python -m pytest src/test_seq.py -q",
+    "bash research/strategies/results/SEQ6/run.sh",
+    "bash research/strategies/results/SEQ6/diag.sh"
+  ],
+  "model": "dilated TCN, sequence model, blend, calibration diagnostic",
+  "features": "history-depth features",
+  "validation": "# exp_030b — SEQ-D3A-S43: разделяющий замер провала фолда 09-18",
+  "score": "`exp_030` дал ΔwCV −0.00077 при 2 фолдах из 4. Единственный крупный проигрыш —",
+  "submission": "дисперсию, что для одиночного сабмита плохо.",
+  "seed": "по сиду и воспроизводит опубликованные числа `exp_030` по контрасту приёма",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "+0.078 → −0.186), и это ломало не только уровень: со своим сдвигом сегмент",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when required data/artifacts are present; otherwise PARTIAL as stated in the card",
+  "notes": "",
+  "preserved_document": "README.md"
+}

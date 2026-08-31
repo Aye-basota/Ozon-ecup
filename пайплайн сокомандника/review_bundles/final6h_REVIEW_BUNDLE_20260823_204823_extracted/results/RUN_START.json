@@ -1,0 +1,24 @@
+{
+  "version": "final6h_fixedfriend_2026-08-23_001",
+  "started": "2026-08-23T16:18:39",
+  "combo_parent": "C:\\Users\\Dimentiy\\repoVScode\\Ozon-ecup\\src\\DL\\best_bas\\continue_fixedstack_combo_10h.py",
+  "fixed_parent": "C:\\Users\\Dimentiy\\repoVScode\\Ozon-ecup\\src\\DL\\best_bas\\run_best_bas_fixedstack_14h_v2.py",
+  "previous_runner": "C:\\Users\\Dimentiy\\repoVScode\\Ozon-ecup\\src\\DL\\best_bas\\run_best_bas_research_23h.py",
+  "work": "C:\\Users\\Dimentiy\\repoVScode\\Ozon-ecup\\src\\DL\\best_bas\\_best_bas_research",
+  "package": "C:\\Users\\Dimentiy\\repoVScode\\Ozon-ecup\\src\\DL\\best_bas\\submission_STRONGEST_CURRENT",
+  "args": {
+    "max_hours": 6.0,
+    "threads": 8,
+    "child_threads": 6,
+    "reuse_work_dir": "C:\\Users\\Dimentiy\\repoVScode\\Ozon-ecup\\src\\DL\\best_bas\\_best_bas_research",
+    "no_install": false,
+    "preflight_only": false,
+    "self_test": false,
+    "child_occ": null,
+    "child_hurdle": null,
+    "child_fold": "TEST"
+  },
+  "friend_rebuild_error": 4.96611577169119e-07,
+  "known_friend_public": 1.6496571,
+  "known_ridge_submission_public": 1.6492897556391737
+}

@@ -1,0 +1,29 @@
+{
+  "catalog_id": "team_a_run__event_order_exp064",
+  "namespace": "team_a_run",
+  "experiment_id": "EVENT_ORDER_EXP064",
+  "title": "Logged run — EVENT_ORDER_EXP064",
+  "kind": "logged run / arm",
+  "original_path": "experiments/log.csv",
+  "source_ref": "working tree",
+  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_files": [
+    "src/train.py",
+    "src/predict.py",
+    "src/features.py",
+    "src/models.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "conclusion:** Cutoff/alignment/finiteness/state-multiset tests and exact transition-count parity PASS; shuffle changes 97.62-97.77% feature rows. REAL SHUFFLED CONTROL all select scale 0 on all folds and both halves; Delta wCV=0. Full model/test/LB not run. Details exp_064",
+  "score": "conclusion:** Cutoff/alignment/finiteness/state-multiset tests and exact transition-count parity PASS; shuffle changes 97.62-97.77% feature rows. REAL SHUFFLED CONTROL all select scale 0 on all folds and both halves; Delta wCV=0. Full model/test/LB not run. Details exp_064",
+  "submission": "None documented",
+  "seed": "params:** {\"base\":\"STRONGEST_CURRENT\",\"new_features\":15,\"controls\":11,\"rounds\":120,\"num_leaves\":15,\"min_data_in_leaf\":1000,\"lambda_l2\":50,\"scales\":[0,0.25,0.5,0.75,1],\"placebo\":\"complete 3-bit daily state permuted within user over fixed dates\",\"split\":\"splitmix64(user_id) 4-way + two-sided scale\",\"seed\":42,\"threads\":4}",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: exact parameters are preserved in the log row; model artifacts may be external/ignored",
+  "notes": "Run-level entry; a numbered experiment card may document the wider experiment family.",
+  "preserved_document": "README.md"
+}
