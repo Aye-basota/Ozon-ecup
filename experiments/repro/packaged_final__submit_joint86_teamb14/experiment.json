@@ -1,0 +1,35 @@
+{
+  "catalog_id": "packaged_final__submit_joint86_teamb14",
+  "namespace": "packaged_final",
+  "experiment_id": "submit_joint86_teamb14",
+  "title": "Reproduce `SUBMIT_JOINT86_TEAMB14.csv`",
+  "kind": "packaged final submission; exact outer blend, frozen upstream anchor",
+  "original_path": "reproducibility/SUBMIT_JOINT86_TEAMB14/README.md",
+  "source_ref": "origin/team-a final/research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "reproducibility/SUBMIT_JOINT86_TEAMB14/build_submit.py",
+    "reproducibility/SUBMIT_JOINT86_TEAMB14/create_manifest.py",
+    "scripts/reproduce_final.py",
+    "scripts/build_optimized_pair_blends.py",
+    "research/OPTIMIZED_PAIR_BLENDS.json"
+  ],
+  "commands": [
+    "python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-precomputed",
+    "python reproducibility/SUBMIT_JOINT86_TEAMB14/build_submit.py",
+    "python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-raw `\n  --raw-data data/raw/train.parquet `\n  --team-b-python .venv-team-b/Scripts/python.exe",
+    "python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-raw "
+  ],
+  "model": "LightGBM, CatBoost, XGBoost, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "training code, validation reports and the reference submission.",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL from frozen inputs; raw-to-JOINT_V2 remains explicitly PROVENANCE_INCOMPLETE",
+  "notes": "Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.",
+  "preserved_document": "README.md"
+}

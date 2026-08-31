@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__exp088_a1_a2_tomography",
+  "namespace": "new_direction",
+  "experiment_id": "EXP088_A1_A2_TOMOGRAPHY",
+  "title": "EXP088 — A1/A2 Residual-Plane Tomography",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP088_A1_A2_TOMOGRAPHY",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP088_A1_A2_TOMOGRAPHY/REPORT.md",
+    "research/new_directions/EXP088_A1_A2_TOMOGRAPHY/run_exp088.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 3 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

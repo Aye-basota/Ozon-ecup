@@ -7,7 +7,7 @@
 - **Experiment ID:** `final_team_b_ensemble`
 - **Original source:** `src/final_team_b_ensemble.py`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** requested final partial-slot ensemble
 - **Model:** sequence model, ensemble, blend
 - **Features:** See preserved experiment card and implementation

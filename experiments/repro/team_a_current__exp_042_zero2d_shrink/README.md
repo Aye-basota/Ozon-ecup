@@ -7,7 +7,7 @@
 - **Experiment ID:** `exp_042_zero2d_shrink`
 - **Original source:** `experiments/exp_042_zero2d_shrink.md`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** experiment card
 - **Model:** sequence model
 - **Features:** 227 tabular features

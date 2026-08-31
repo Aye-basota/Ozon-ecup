@@ -1,0 +1,28 @@
+{
+  "catalog_id": "new_direction__exp086_occurrence_shock",
+  "namespace": "new_direction",
+  "experiment_id": "EXP086_OCCURRENCE_SHOCK",
+  "title": "EXP086 — Occurrence Shock Residual",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP086_OCCURRENCE_SHOCK",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP086_OCCURRENCE_SHOCK/code/analyze.py",
+    "research/new_directions/EXP086_OCCURRENCE_SHOCK/code/run_components.py",
+    "research/new_directions/EXP086_OCCURRENCE_SHOCK/REPORT.md"
+  ],
+  "commands": [],
+  "model": "LightGBM, BTYD, Ridge, two-part / hurdle, ensemble, blend",
+  "features": "recency, funnel features, occurrence features, gap/burst features, 227 tabular features",
+  "validation": "| 8 raw occurrence heads | frozen `OCC_QUEUE` / `train_occ_child` | `1[GMV30 > 0]` | six 227-column and two 202-column normalized-long cutoff-safe tables | last 10–24 eligible weekly cutoffs, always `train cutoff + 30 <= validation cutoff` | exact source TEST child; not run after NO_GO | YES |",
+  "score": "nested `Delta MSE = +0.000240322` и `Delta RMSLE = +0.00006833`, то есть correction ухудшает результат;",
+  "submission": "None documented",
+  "seed": "Bootstrap выполнен как 2,000-replicate Poisson cluster bootstrap по `user_id` сразу через все transitions, seed `20260829`. CI целиком находится на стороне вреда. Expected robust `Delta RMSLE = +0.00006833`, а не improvement.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Incremental semantics здесь конкретна: “насколько восемь cutoff-capped incidence estimators и их meta learner изменяют вероятность следующего 30-дневного occurrence относительно `p_base` данного пользователя”. Это не global activity level и не повтор прямого GMV30 learner.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 60 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

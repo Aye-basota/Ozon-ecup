@@ -1,0 +1,120 @@
+# optimized_pair_blends
+
+## Catalogue metadata
+
+- **Catalogue ID:** `packaged_final__optimized_pair_blends`
+- **Namespace:** `packaged_final`
+- **Experiment ID:** `optimized_pair_blends`
+- **Original source:** `research/OPTIMIZED_PAIR_BLENDS.json`
+- **Source ref:** `origin/team-a final/research package`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
+- **Kind:** pair-blend search and final-candidate generator
+- **Model:** blend
+- **Features:** See preserved experiment card and implementation
+- **Preprocessing:** See preserved experiment card and frozen implementation
+- **Validation:** Unknown / not recoverable from repository history
+- **Known score:** Unknown / not recoverable from repository history
+- **Seed:** Seed from src/config.py unless the preserved card explicitly states otherwise
+- **Postprocessing:** None documented
+- **Submission:** "submission_STRONGEST_CURRENT.csv": 1.6496571902356205,
+- **External data/artifacts:** Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card
+- **Reproducibility:** FULL when the named source submissions are present
+- **Notes:** Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.
+
+## Reproduction
+
+Run `python run.py` to inspect recovered commands and provenance. Use `python run.py --execute N` only after preparing the data/artifacts listed below.
+
+## Preserved original documentation
+# optimized_pair_blends
+
+```json
+{
+  "known_public_lb": {
+    "submission_STRONGEST_CURRENT.csv": 1.6496571902356205,
+    "SUBMIT_STRONGEST80_TEAMB20.csv": 1.6486550051601747,
+    "SUBMIT_JOINT_V2.csv": 1.6459363044782171
+  },
+  "weight_method": "quadratic RMSLE geometry calibrated by the three known public scores, then rounded to stable weights near the inferred minima",
+  "results": {
+    "strongest55_teamb45": {
+      "output": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_STRONGEST55_TEAMB45.csv",
+      "sha256": "1ce85203e3069363e3d2ba425078213d1a723a895e3c684573a6c1b998a14fb4",
+      "blend_space": "log1p",
+      "weights": {
+        "strongest": 0.55,
+        "team_b_final": 0.45
+      },
+      "team_b_level_shift": -0.12190138468055683,
+      "team_b_internal_current_log_scale": 1.12,
+      "source_log_correlation": 0.9960480463024701,
+      "rows": 250000,
+      "unique_user_id": 250000,
+      "same_order_as_sample": true,
+      "columns": [
+        "user_id",
+        "predict"
+      ],
+      "dtypes": {
+        "user_id": "int64",
+        "predict": "float64"
+      },
+      "nan_count": 0,
+      "finite": true,
+      "nonnegative": true,
+      "min_predict": 0.0,
+      "max_predict": 3195.98546859873,
+      "mean_predict": 39.160534934703605,
+      "mean_log1p": 2.3293213699010047,
+      "std_log1p": 1.5983881983434496,
+      "public_lb_forecast": {
+        "point": 1.64823,
+        "reasonable_range": [
+          1.64818,
+          1.64834
+        ],
+        "status": "estimate calibrated with observed STRONGEST80/TEAM20 LB"
+      }
+    },
+    "joint86_teamb14": {
+      "output": "C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\submissions\\SUBMIT_JOINT86_TEAMB14.csv",
+      "sha256": "85d9cd645e14a7895da9ad8cc89065714606266be588c762d37487d2b4edac02",
+      "blend_space": "log1p",
+      "weights": {
+        "joint_v2": 0.86,
+        "team_b_final": 0.14
+      },
+      "team_b_level_shift": -0.1214326530964569,
+      "team_b_internal_current_log_scale": 1.12,
+      "source_log_correlation": 0.9961066418444057,
+      "rows": 250000,
+      "unique_user_id": 250000,
+      "same_order_as_sample": true,
+      "columns": [
+        "user_id",
+        "predict"
+      ],
+      "dtypes": {
+        "user_id": "int64",
+        "predict": "float64"
+      },
+      "nan_count": 0,
+      "finite": true,
+      "nonnegative": true,
+      "min_predict": 0.0,
+      "max_predict": 4607.22001828692,
+      "mean_predict": 40.801636562393455,
+      "mean_log1p": 2.3297898398410823,
+      "std_log1p": 1.6233857551674178,
+      "public_lb_forecast": {
+        "point": 1.64582,
+        "reasonable_range": [
+          1.64579,
+          1.64588
+        ],
+        "status": "estimate calibrated with observed STRONGEST80/TEAM20 LB"
+      }
+    }
+  }
+}
+```

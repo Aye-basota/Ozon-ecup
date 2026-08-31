@@ -1,0 +1,27 @@
+{
+  "catalog_id": "packaged_final__final_threeway_ensemble",
+  "namespace": "packaged_final",
+  "experiment_id": "final_threeway_ensemble",
+  "title": "final_threeway_ensemble",
+  "kind": "three-way final-candidate ensemble",
+  "original_path": "research/FINAL_THREEWAY_ENSEMBLE.json",
+  "source_ref": "origin/team-a final/research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "scripts/build_final_threeway_ensemble.py",
+    "research/FINAL_THREEWAY_ENSEMBLE.json"
+  ],
+  "commands": [],
+  "model": "ensemble, blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "\"team_b_validation\": {",
+  "score": "\"current_rmsle\": 1.7959069747011052,",
+  "submission": "\"submission_STRONGEST_CURRENT.csv\": 1.6496571902356205,",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the three named source submissions are present",
+  "notes": "Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.",
+  "preserved_document": "README.md"
+}

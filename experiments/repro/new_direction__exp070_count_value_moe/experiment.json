@@ -1,0 +1,28 @@
+{
+  "catalog_id": "new_direction__exp070_count_value_moe",
+  "namespace": "new_direction",
+  "experiment_id": "EXP070_COUNT_VALUE_MOE",
+  "title": "EXP070_COUNT_VALUE_MOE — final report",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP070_COUNT_VALUE_MOE",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP070_COUNT_VALUE_MOE/finalize_runtime_stop.py",
+    "research/new_directions/EXP070_COUNT_VALUE_MOE/report.md",
+    "research/new_directions/EXP070_COUNT_VALUE_MOE/run_experiment.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, Ridge",
+  "features": "calendar features, recency, 227 tabular features",
+  "validation": "This is an operationally conservative rejection: the latest-fold pilot passed, but exact fixed training required about 45 minutes per largest fold pair. The two-hour hard stop was reached before `2025-10-02`; therefore canonical four-fold wCV and honest three-donor LOFO do not exist. No PASS or WEAK_SIGNAL claim is inferred from an incomplete fold set.",
+  "score": "The diagnostic three-fold `1:2:8` replacement delta is `-0.000086647` and real-minus-shuffled is `-0.000052609`. This is explicitly **not canonical wCV** and is not a selection result.",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 24 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

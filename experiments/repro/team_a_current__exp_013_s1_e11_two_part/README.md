@@ -7,7 +7,7 @@
 - **Experiment ID:** `exp_013_s1_e11_two_part`
 - **Original source:** `experiments/exp_013_s1_e11_two_part.md`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** experiment card
 - **Model:** LightGBM, calibration diagnostic
 - **Features:** 227 tabular features

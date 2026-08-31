@@ -1,0 +1,26 @@
+{
+  "catalog_id": "new_direction__exp084_level_probe",
+  "namespace": "new_direction",
+  "experiment_id": "EXP084_LEVEL_PROBE",
+  "title": "EXP084 — One-Shot Global Level Probe",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP084_LEVEL_PROBE",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP084_LEVEL_PROBE/REPORT.md"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "gap/burst features",
+  "validation": "forward-OOF фолда (`2025-09-04` ... `2025-10-16`), composition-matched",
+  "score": "| `>= 0.05` | крупная находка, способная объяснить существенную часть LB gap |",
+  "submission": "None documented",
+  "seed": "С seed `84002026` выполнено 2,000 exact simple-random-without-replacement",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "| `0.03 <= |r_bar| < 0.05` | значимый level signal |",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: the report survives, but no experiment launcher was recoverable from this package",
+  "notes": "Directory-level audit unit: 1 files, 0 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

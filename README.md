@@ -1,128 +1,3 @@
-# Ozon eCup 2026 — Team A solution
-
-## Overview
-
-This branch is the reproducible Team-A research and delivery package for the
-30-day user GMV prediction task. The competition metric is RMSLE, so model
-ensembles are assembled in `log1p` space. The repository preserves the actual
-research history, runners, reports and manifests while keeping large raw/cache
-artifacts outside Git.
-
-## Final solutions
-
-| Solution | Formula | Expected SHA256 | Public LB evidence |
-|---|---|---|---|
-| `SUBMIT_STRONGEST55_TEAMB45` | 55% `STRONGEST_CURRENT` + 45% level-aligned Team-B | `1ce85203…a14fb4` | No confirmed score found; geometry report forecast 1.64823 (estimate, not fact) |
-| `SUBMIT_JOINT86_TEAMB14` | 86% `SUBMIT_JOINT_V2` + 14% level-aligned Team-B | `85d9cd64…dac02` | 1.6458200196207617, recorded in the teammate reproduction request |
-
-Both final CSV files reproduce byte-for-byte from committed frozen component
-predictions. The upstream generation script for the 86% `SUBMIT_JOINT_V2`
-anchor was not found; that boundary is explicitly marked
-`PROVENANCE_INCOMPLETE`, while its bytes, SHA, audits and public score are
-preserved.
-
-## Repository structure
-
-- `src/` — clean baseline feature/model/validation utilities;
-- `scripts/reproduce_final.py` — common final reproduction entry point;
-- `experiments/` — 95-entry unified index and preserved `exp_001…exp_071` reports;
-- `research/new_directions/` — later EXP069–EXP090 research, runners and reports;
-- `research/legacy_team_a/` — exact source/report snapshot from the active Team-A worktree;
-- `research/submission_geometry/` — geometry code, reports and two historical champions;
-- `reproducibility/` — standalone packages for the two final submissions;
-- `submissions/` — selected final and direct-parent CSV files only;
-- `docs/TEAM_A_SOURCE_INVENTORY.csv` — 8,022-file SHA256 forensic inventory.
-
-## Data
-
-Place the competition data at:
-
-```text
-data/raw/train.parquet
-data/raw/sample_submit.csv
-```
-
-Expected `train.parquet` SHA256:
-
-```text
-5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0
-```
-
-The feature builders enforce the family-specific cutoff boundary (`<` or `<=`)
-and never read events after cutoff; targets use
-`[cutoff, cutoff + 30 days)`. Raw data, generated panels, caches and large
-research artifacts are ignored by Git and remain traceable through the source
-inventory.
-
-## Environment setup
-
-The exact frozen rebuild uses Python 3.13:
-
-```powershell
-py -3.13 -m venv .venv-rebuild
-.\.venv-rebuild\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-Historical full training used two incompatible pinned environments. Install
-`reproducibility/SUBMIT_STRONGEST55_TEAMB45/requirements-strongest.txt` with
-Python 3.13/CUDA 12.6, and `requirements-team-b.txt` with Python 3.11. The
-Team-B requirements are also stored in the JOINT package.
-
-## Reproduce from precomputed predictions
-
-```powershell
-python scripts/reproduce_final.py --solution SUBMIT_STRONGEST55_TEAMB45 --from-precomputed
-python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-precomputed
-```
-
-Each command validates columns, 250,000 unique users, order, finite/nonnegative
-predictions, expected SHA256, byte identity, maximum absolute prediction
-difference and RMS log-space difference.
-
-## Reproduce from raw data
-
-```powershell
-python scripts/reproduce_final.py --solution SUBMIT_STRONGEST55_TEAMB45 --from-raw `
-  --raw-data data/raw/train.parquet `
-  --strongest-python .venv-strongest/Scripts/python.exe `
-  --team-b-python .venv-team-b/Scripts/python.exe
-
-python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-raw `
-  --raw-data data/raw/train.parquet `
-  --team-b-python .venv-team-b/Scripts/python.exe
-```
-
-For STRONGEST this runs raw → features → three tabular models → frozen
-SEQ/ETX predictions → STRONGEST → retrained Team-B → final blend. Full neural
-retraining commands are preserved in its package README but are intentionally
-not the default multi-hour audit. For JOINT, raw mode retrains Team-B and blends
-it with frozen `SUBMIT_JOINT_V2`; a fully raw JOINT rebuild is impossible until
-the missing upstream anchor generator is recovered.
-
-## Main model families and ensemble
-
-`STRONGEST_CURRENT` combines CAP, UNC and DIST tabular LightGBM families with a
-TCN-like SEQ ensemble and the sparse-event ETX transformer. The external
-Team-B vector combines LightGBM regression/classification, a 16-bin
-distribution head, XGBoost and CatBoost over recency, post-order and behavior
-features. Submission-geometry, ORTH and A1/A2 research operate on prediction
-vectors and are historical ancestors of the JOINT anchor.
-
-See [solution architecture](docs/SOLUTION_ARCHITECTURE.md),
-[experiment index](experiments/README.md) and
-[reproducibility guide](docs/REPRODUCIBILITY.md) for details.
-
-## Final submissions
-
-- `submissions/SUBMIT_STRONGEST55_TEAMB45.csv`
-- `submissions/SUBMIT_JOINT86_TEAMB14.csv`
-
-Do not treat geometry forecasts as measured leaderboard scores. The exact LB
-provenance and remaining gaps are recorded in each package manifest and in the
-packaging report.
-
----
-
 # Ozon E-Cup — полный архив решения и всех экспериментов
 
 ## Overview
@@ -139,7 +14,9 @@ packaging report.
 
 ## Что именно было проаудировано
 
-В catalogue находится **445** отдельных карточек, logged arms, исторических вариантов, EDA/runners и final pipelines. Просмотрены текущее дерево, все 48 pre-archive commits во всех refs, удалённые файлы, shell-скрипты, конфиги, result manifests, внешний teammate bundle, submission registry и generated-artifact manifests. Notebook-файлов нет ни в дереве, ни в git history.
+В catalogue находится **483** отдельных карточек, logged arms, исторических вариантов, EDA/runners и final pipelines. Просмотрены текущее дерево, все **53** commits во всех refs, удалённые файлы, shell-скрипты, конфиги, result manifests, внешний teammate bundle, submission registry и generated-artifact manifests. Notebook-файлов нет ни в дереве, ни в git history.
+
+Дополнительный независимый reconstruction audit дал **124** primary reports, **138** registry rows, **614** component groups, **1134** granular run metrics и **222** main scripts. Его coverage был сопоставлен с каталогом; единственный отсутствовавший primary report восстановлен как PARTIAL без догадок.
 
 Полный path-by-path отчёт: [docs/REPOSITORY_AUDIT.md](docs/REPOSITORY_AUDIT.md). Machine-readable manifest: [experiments/repro/catalog.json](experiments/repro/catalog.json).
 
@@ -151,6 +28,9 @@ packaging report.
 | `domain_branch` | 1 | isolated historical branch |
 | `eda` | 14 | EDA scripts e01…e15 |
 | `global_regime_branch` | 1 | isolated historical branch |
+| `independent_anniversary` | 1 | reconstructed linked-worktree anniversary experiment |
+| `new_direction` | 30 | all late research/new_directions directory packages |
+| `packaged_final` | 7 | late exact final-submission and blend packages |
 | `renewal_branch` | 1 | isolated historical branch |
 | `strategy_2` | 4 | structural Strategy-2 |
 | `team_a_current` | 69 | numbered Team-A experiment cards |
@@ -168,7 +48,23 @@ packaging report.
 
 Репозиторий содержит несколько разных объектов, которые нельзя называть одним «финалом» без уточнения evidence status.
 
-### 1. Лучший точно воспроизводимый отправленный Team-A submission — STRONGEST-CURRENT
+### 1. Лучший подтверждённый финальный submission — SUBMIT_JOINT86_TEAMB14
+
+`SUBMIT_JOINT86_TEAMB14` имеет externally reported public LB **1.6458200196207617** и exact reference SHA256 `85d9cd645e14a7895da9ad8cc89065714606266be588c762d37487d2b4edac02`. Это не forecast: значение отдельно помечено в teammate reproduction request как фактически полученный результат.
+
+Формула в `z=log1p(pred)`: frozen `JOINT_V2` (public **1.6459363044782171**) имеет вес **0.86**; Team-B final сначала получает additive shift **-0.1214326530964569** через bisection до совпадения среднего `z`, клиппинг в ноль, затем вес **0.14**. После смеси применяется `max(expm1(z),0)`. Внешний blend воспроизводится побайтно. Важное ограничение: точный upstream-generator frozen `JOINT_V2` в истории не сохранился, поэтому raw→JOINT_V2 честно отмечен `PROVENANCE_INCOMPLETE`.
+
+Воспроизведение: `python make_final_submission.py` или `python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-precomputed`.
+
+### 2. Точно упакованный, но не подтверждённый LB candidate — STRONGEST55_TEAMB45
+
+Log-space blend: **0.55 STRONGEST-CURRENT + 0.45 level-aligned Team-B**, exact SHA256 `1ce85203e3069363e3d2ba425078213d1a723a895e3c684573a6c1b998a14fb4`. Числа около 1.64823 в research JSON — только forecast, не leaderboard fact. Запуск: `python make_final_submission.py --recipe strongest55-teamb45`.
+
+### 3. Late research candidates: geometry, ORTH, JOINT and three-way
+
+Submission geometry дала зафиксированные public LB **1.6467120** и **1.6466079**; ORTH_ALPHA — **1.6461597403**; JOINT_V2 — **1.6459363044782171**. Скрипты внешнего submission-geometry workspace в этот git не попали, поэтому линия помечена PARTIAL. `STRONGEST80_TEAMB20`, optimized pair blends и final three-way ensemble сохранены отдельно; их projected scores не выдаются за LB.
+
+### 4. Лучший точно воспроизводимый ранний отправленный Team-A submission — STRONGEST-CURRENT
 
 `submission_STRONGEST_CURRENT.csv`, public LB **1.6496571**, wCV **1.74751**, SHA256 `abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda`.
 
@@ -176,19 +72,19 @@ packaging report.
 
 Воспроизведение: `python make_final_submission.py --recipe strongest`. Этот быстрый путь использует сохранённые production predictions; полный retraining невозможен для CAP/UNC/DIST и TCN seed 42, потому что их веса исторически не сохранились.
 
-### 2. Лучший externally reported public result — teammate latest
+### 5. Ранний externally reported teammate latest
 
 `latest.csv`, public LB **1.6492175622 (EXTERNALLY_REPORTED; дата LB-события неизвестна)**, source SHA256 `7ef5b2c58925bd28c5bc7eb83b9cfd4785c608a0c8b2a6d7a3277730cba8e722`. Точный восстановленный рецепт в log-space: `0.12 friend + 0.16 occ_meta_B + 0.72 occ_raw_X3`, затем `z=max(z,0)` и `expm1`; дополнительной level normalization нет. Максимальная ошибка reconstruction — `8.88e-16`.
 
 Воспроизведение: `python make_final_submission.py --recipe latest`. Ограничение: canonical OOF для `latest` отсутствует, CAP lineage не восстановлен; поэтому `latest` не используется как CV/LOFO или private-safe anchor.
 
-### 3. Финальный requested blend exp_071
+### 6. Requested blend exp_071
 
 `submission_FINAL_CAP_UNC_DIST_SEQ_ETX_TEAM_B.csv` — подготовлен, но LB в репозитории не зафиксирован. Абсолютные веса: `CAP=.055042443`, `UNC=.110084886`, `DIST=.137606107`, `TEAM_B=.247266564`, `SEQ-AVG3=.225`, `ETX-AVG3-DCW=.225`. Team-B занимает `0.449575571` от 55%-го tabular slot. Full delta wCV `-0.000382364` (4/4), LOFO `-0.000381489` (4/4), OOF→TEST variance ratio `1.021814` PASS; gain ниже promotion gate 0.0005.
 
-Воспроизведение (default): `python make_final_submission.py`. Скрипт заново подбирает alpha только по canonical OOF, проверяет LOFO и test-regime gate, затем формирует CSV; public LB при выборе не используется.
+Воспроизведение: `python make_final_submission.py --recipe team-a-b2`. Скрипт заново подбирает alpha только по canonical OOF, проверяет LOFO и test-regime gate, затем формирует CSV; public LB при выборе не используется.
 
-### 4. Другие финальные кандидаты
+### 7. Другие финальные кандидаты
 
 `python make_final_submission.py --recipe final-candidates` пересобирает пакет exp_065: A = byte-identical STRONGEST-CURRENT; B = `0.95 STRONGEST + 0.05 BTYD`, для которого nested LOFO `-0.000269` (4/4), fixed .05 `-0.000321` (4/4), production-support PASS. Также подготовлены, но не обязательно отправлены: SEQAVG3@clip289, SEQ65, LEVEL_MINUS_006, RIDGE15, ZERO2D и TEAM_B_B2 candidates.
 
@@ -676,6 +572,44 @@ packaging report.
 | `teammate_candidate__xraw_occ_r10_fast_adapt_blend_ridge_recentpow1p7_s075_greedy35_finalizable_pr85` | [Teammate candidate — xraw_occ_r10_fast_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85](experiments/repro/teammate_candidate__xraw_occ_r10_fast_adapt_blend_ridge_recentpow1p7_s075_greedy35_finalizable_pr85/README.md) | Ridge, blend | 227 tabular features | Source: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/AL… | \| wcv \| 1.7481791013308823 \| | \| file \| C:\Users\Dimentiy\repoVScode\Ozon-ecup\src\DL\best_bas\_best_bas_extra90m\submissions\su… | teammate_candidate; PARTIAL: exact result rows and runner code survive; checkpoint bank and raw data are external; Recovered from 3 result-… |
 | `teammate_candidate__xraw_occ_r20_shallow_adapt_blend_ridge_recentpow1p7_s075_greedy35_finalizable_p…` | [Teammate candidate — xraw_occ_r20_shallow_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85](experiments/repro/teammate_candidate__xraw_occ_r20_shallow_adapt_blend_ridge_recentpow1p7_s075_greedy35_finalizable_pr85/README.md) | Ridge, blend | See preserved experiment card and implementation | Source: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/AL… | \| wcv \| 1.748244896111739 \| | None documented | teammate_candidate; PARTIAL: exact result rows and runner code survive; checkpoint bank and raw data are external; Recovered from 2 result-… |
 | `teammate_candidate__xraw_occ_r22_stable_adapt_blend_ridge_recentpow1p7_s075_greedy35_finalizable_pr…` | [Teammate candidate — xraw_occ_r22_stable_adapt__blend_ridge_recentpow1p7_s075__greedy35_finalizable_pr85](experiments/repro/teammate_candidate__xraw_occ_r22_stable_adapt_blend_ridge_recentpow1p7_s075_greedy35_finalizable_pr85/README.md) | Ridge, blend | See preserved experiment card and implementation | Source: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/AL… | \| wcv \| 1.7482570407780222 \| | None documented | teammate_candidate; PARTIAL: exact result rows and runner code survive; checkpoint bank and raw data are external; Recovered from 1 result-… |
+| `new_direction__claude_cowork_high_upside_review` | [High-upside research review — independent audit and experiment selection](experiments/repro/new_direction__claude_cowork_high_upside_review/README.md) | LightGBM, sequence model, BTYD, Ridge, two-part / hurdle, ensemble, blend | holiday/YoY features, calendar features, recency, freshness/conditional features, funnel … | Parity check of my own evaluator against the registered numbers: EXP-037 wCV reproduces to | `−0.00108` wCV. A single new candidate at `−0.0015…−0.002` would have to be roughly twice the | `C_lgbm_exp015_regen.csv` and `submission_BTYD05.csv`, reference `last (1).csv`, mean-N metric, | new_direction; PARTIAL: the report survives, but no experiment launcher was recoverable from this package; Directory-level audit unit: 4 fi… |
+| `new_direction__claude_private_objective` | [E-CUP — аудит и выбор следующего эксперимента](experiments/repro/new_direction__claude_private_objective/README.md) | LightGBM, sequence model, BTYD, Ridge, two-part / hurdle, calibration diagnostic | holiday/YoY features, calendar features, freshness/conditional features, 227 tabular feat… | \| wCV EXP-037 \| 1.7475098627 \| 1.7475098625 \| | Ноль обучения, один сабмит, ожидаемый Δprivate = −4.69e−05 RMSLE. | второй out-of-sample точки для калибровки τ на ортогональных направлениях — её даёт сабмит №2; | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 2 files, 1 launcher/helper … |
+| `new_direction__claude_private_v2` | [Три действия для приватного борда](experiments/repro/new_direction__claude_private_v2/README.md) | LightGBM, sequence model, Ridge, calibration diagnostic | calendar features, freshness/conditional features, occurrence features, EWM aggregates | \| κ — концентрационный множитель\| измерен напрямую на OOF: медиана 1.15, IQR [1.09,1.18], 4 фолда × 12… | MSE несмещённо; 2.1e−04 RMSLE | Пересчитано в этой сессии из Z.npz, scores/submissions.csv (73 файла), 06/07_ALIGNED_*.parquet, чет… | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 3 files, 1 launcher/helper … |
+| `new_direction__claude_public_ceiling` | [Потолок публичного лидерборда](experiments/repro/new_direction__claude_public_ceiling/README.md) | LightGBM, calibration diagnostic | holiday/YoY features, calendar features, freshness/conditional features, 227 tabular feat… | Обучение оправдано только если ожидаемое a нового направления заметно больше нуля — иначе E[q_P²] = 8.70… | FACT SUBMIT_PRIVATE_OPTIMAL.csv → 1.6468136172663015. Прогноз был 1.6470304 ± 0.000068. Невязка −2.168e−… | Все числа пересчитаны в этой сессии из submission_geometry/cache/Z.npz (67×250 000), scores/submiss… | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 2 files, 1 launcher/helper … |
+| `new_direction__exp069_btyd05_fresh1_prod` | [EXP069 BTYD05 FRESH1 production report](experiments/repro/new_direction__exp069_btyd05_fresh1_prod/README.md) | sequence model, BTYD, Ridge | freshness/conditional features, 227 tabular features | All 770,616 unique canonical `(fold,user_id)` rows and targets align exactly. EXP-037 reconstructs from … | All 770,616 unique canonical `(fold,user_id)` rows and targets align exactly. EXP-037 reconstructs from … | ADD_TO_SUBMISSION_GEOMETRY | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 24 files, 4 launcher/helper… |
+| `new_direction__exp070_count_value_moe` | [EXP070_COUNT_VALUE_MOE — final report](experiments/repro/new_direction__exp070_count_value_moe/README.md) | LightGBM, Ridge | calendar features, recency, 227 tabular features | This is an operationally conservative rejection: the latest-fold pilot passed, but exact fixed training … | The diagnostic three-fold `1:2:8` replacement delta is `-0.000086647` and real-minus-shuffled is `-0.000… | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 24 files, 2 launcher/helper… |
+| `new_direction__exp071_etx_fresh_contrast` | [EXP071_ETX_FRESH_CONTRAST](experiments/repro/new_direction__exp071_etx_fresh_contrast/README.md) | dilated TCN, sequence model | freshness/conditional features | ## 5. Full fold and wCV metrics | Unknown / not recoverable from repository history | EXTRA contributes only positive conditional-amount rows from the opposite splitmix64 user side. It … | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 19 files, 1 launcher/helper… |
+| `new_direction__exp072_lwa_tab` | [EXP072 LWA TAB — final report](experiments/repro/new_direction__exp072_lwa_tab/README.md) | Unknown / not recoverable from repository history | holiday/YoY features, freshness/conditional features | The legal late-window conditional-amount channel does not scale in the preregistered full-capacity tabul… | Unknown / not recoverable from repository history | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 19 files, 1 launcher/helper… |
+| `new_direction__exp073_lwa_control_variate` | [EXP073 — LWA FRESH−VOL Control-Variate Correction](experiments/repro/new_direction__exp073_lwa_control_variate/README.md) | Unknown / not recoverable from repository history | freshness/conditional features | ## Confirmation and full canonical validation | Unknown / not recoverable from repository history | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 7 files, 1 launcher/helper … |
+| `new_direction__exp074_seq_temporal_dist16` | [EXP074 — SEQ Temporal DIST16 Head](experiments/repro/new_direction__exp074_seq_temporal_dist16/README.md) | LightGBM, dilated TCN, sequence model | See preserved experiment card and implementation | ## Full/nested wCV, seed robustness and bootstrap | Unknown / not recoverable from repository history | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 7 files, 2 launcher/helper … |
+| `new_direction__exp075_confirmation` | [EXP075 — independent confirmatory audit](experiments/repro/new_direction__exp075_confirmation/README.md) | LightGBM, CatBoost, BTYD, Ridge, two-part / hurdle | recency, gap/burst features, EWM aggregates | \| held-out user not scored by a model trained on his target \| training targets end at `cutoff-5`, vali… | worse* by `+0.00104` RMSLE. The bet is close to symmetric. | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 26 files, 11 launcher/helpe… |
+| `new_direction__exp075_out_of_span_residual_signals` | [EXP075 — Search for new out-of-span residual signals](experiments/repro/new_direction__exp075_out_of_span_residual_signals/README.md) | LightGBM, BTYD, two-part / hurdle, ensemble, blend | calendar features, recency, freshness/conditional features, funnel features, occurrence f… | ## Validation audit | A legitimate new residual mechanism was found. A1-365 (tree over an explicitly chronological daily/weekl… | Submission: `C:/Users/Admin/Desktop/e-cup-research-clean/submissions/SUBMIT_EXP075_JOINT_A1_365_A2.… | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 45 files, 11 launcher/helpe… |
+| `new_direction__exp076_strong_baseline_validation_channel` | [EXP076 — post-mortem EXP075 и strong-baseline validation channel](experiments/repro/new_direction__exp076_strong_baseline_validation_channel/README.md) | LightGBM, event Transformer / ETX, dilated TCN, sequence model, BG/NBD, BTYD, R… | holiday/YoY features, calendar features, recency, freshness/conditional features, occurre… | # EXP076 — post-mortem EXP075 и strong-baseline validation channel | break-even всего на **1.6 %**, то есть на **+0.08 sigma**. Отсюда `ΔRMSLE = | Leaderboard для настройки чего-либо не использован. Сабмиты не отправлялись. | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 50 files, 27 launcher/helpe… |
+| `new_direction__exp077_forward_stack` | [EXP077 — Forward Production Stack](experiments/repro/new_direction__exp077_forward_stack/README.md) | sequence model, BTYD, Ridge, ensemble, blend | holiday/YoY features, recency, freshness/conditional features, gap/burst features | \| S1-E02 \| TABULAR \| `C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\oof_S1-E02.npz` \| `C:\Users\Admin\… | \| 1_fold4_Delta_RMSLE_le_minus_0.0005 \| PASS \| | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 11 files, 1 launcher/helper… |
+| `new_direction__exp078_level_forecast` | [EXP078 — Forward Global Level Forecast](experiments/repro/new_direction__exp078_level_forecast/README.md) | Ridge | See preserved experiment card and implementation | ## Rolling validation | remaining `Delta RMSLE = -0.001508246136` | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 8 files, 1 launcher/helper … |
+| `new_direction__exp079_exp075_a040` | [EXP079 — EXP075 A040](experiments/repro/new_direction__exp079_exp075_a040/README.md) | Unknown / not recoverable from repository history | recency, gap/burst features | Unknown / not recoverable from repository history | weighted Delta RMSLE = -9.6967654023e-06 | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 5 files, 1 launcher/helper … |
+| `new_direction__exp080_oracle_gap_attribution` | [EXP080 — Mathematical gap attribution](experiments/repro/new_direction__exp080_oracle_gap_attribution/README.md) | LightGBM, BTYD, Ridge, two-part / hurdle | recency, freshness/conditional features, gap/burst features, 227 tabular features | На production-like historical proxy средний residual равен `+0.0590`, но по фолдам меняет знак: | current RMSLE = 1.646143314225527 | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 23 files, 3 launcher/helper… |
+| `new_direction__exp081_adversarial_bound_falsification` | [EXP081 — Adversarial falsification of EXP080 `NO_EVIDENCE`](experiments/repro/new_direction__exp081_adversarial_bound_falsification/README.md) | LightGBM, CatBoost, sequence model, Ridge, blend | holiday/YoY features, calendar features, recency, funnel features, gap/burst features, hi… | Фолды разнесены на 14 дней, а label horizon равен 30 дням. Поэтому residual label предыдущего | current RMSLE 1.646143314225527 | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 24 files, 3 launcher/helper… |
+| `new_direction__exp082_purged_temporal_residual` | [EXP082 — Fully Purged Temporal Residual Validation](experiments/repro/new_direction__exp082_purged_temporal_residual/README.md) | LightGBM, sequence model | recency, gap/burst features, history-depth features | # EXP082 — Fully Purged Temporal Residual Validation | Nested ΔMSE: **0.00149662**; nested ΔRMSLE: **0.00042651**. Cluster-bootstrap 95% CI for ΔMSE: **[0.0010… | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 44 files, 4 launcher/helper… |
+| `new_direction__exp083_information_loss_discovery` | [EXP083 — Information-loss / target-discovery audit](experiments/repro/new_direction__exp083_information_loss_discovery/README.md) | LightGBM, BTYD, Ridge | holiday/YoY features, calendar features, recency, funnel features, Search/Catalog decompo… | Gate A authorized one cheap pilot. For every validation cutoff, one multi-output Ridge was trained on fo… | Delta RMSLE = +0.000301621 | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 17 files, 2 launcher/helper… |
+| `new_direction__exp084_level_probe` | [EXP084 — One-Shot Global Level Probe](experiments/repro/new_direction__exp084_level_probe/README.md) | Unknown / not recoverable from repository history | gap/burst features | forward-OOF фолда (`2025-09-04` ... `2025-10-16`), composition-matched | \| `>= 0.05` \| крупная находка, способная объяснить существенную часть LB gap \| | None documented | new_direction; PARTIAL: the report survives, but no experiment launcher was recoverable from this package; Directory-level audit unit: 1 fi… |
+| `new_direction__exp085_competition_structure_forensic_audit` | [EXP085 — Competition-structure forensic audit](experiments/repro/new_direction__exp085_competition_structure_forensic_audit/README.md) | LightGBM, event Transformer / ETX, BTYD, two-part / hurdle, distribution head, … | holiday/YoY features, calendar features, recency, funnel features, occurrence features, S… | early validation имеет только 247 дней потенциальной истории против 409 у | current RMSLE 1.646143314225527 | `production_reconstruction.json`, `submission_geometry_evidence.json`; | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 16 files, 2 launcher/helper… |
+| `new_direction__exp086_occurrence_shock` | [EXP086 — Occurrence Shock Residual](experiments/repro/new_direction__exp086_occurrence_shock/README.md) | LightGBM, BTYD, Ridge, two-part / hurdle, ensemble, blend | recency, funnel features, occurrence features, gap/burst features, 227 tabular features | \| 8 raw occurrence heads \| frozen `OCC_QUEUE` / `train_occ_child` \| `1[GMV30 > 0]` \| six 227-column … | nested `Delta MSE = +0.000240322` и `Delta RMSLE = +0.00006833`, то есть correction ухудшает результат; | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 60 files, 2 launcher/helper… |
+| `new_direction__exp087_dynamic_factor_residual` | [EXP087 — Dynamic Factor Residual](experiments/repro/new_direction__exp087_dynamic_factor_residual/README.md) | Ridge | calendar features, recency, gap/burst features | Unknown / not recoverable from repository history | Unknown / not recoverable from repository history | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 10 files, 1 launcher/helper… |
+| `new_direction__exp088_a1_a2_tomography` | [EXP088 — A1/A2 Residual-Plane Tomography](experiments/repro/new_direction__exp088_a1_a2_tomography/README.md) | Unknown / not recoverable from repository history | See preserved experiment card and implementation | Unknown / not recoverable from repository history | Unknown / not recoverable from repository history | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 3 files, 1 launcher/helper … |
+| `new_direction__exp089_joint_v2_plane_resolution` | [EXP089 — JOINT_V2 Plane Resolution](experiments/repro/new_direction__exp089_joint_v2_plane_resolution/README.md) | Unknown / not recoverable from repository history | See preserved experiment card and implementation | Unknown / not recoverable from repository history | predicts a diagnostic optimum at RMSLE `1.645894652126` | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 9 files, 1 launcher/helper … |
+| `new_direction__exp090_team_b_audit` | [EXP090 — Team-B Solution Audit](experiments/repro/new_direction__exp090_team_b_audit/README.md) | LightGBM, CatBoost, XGBoost, Ridge, distribution head, ensemble, blend | calendar features, recency, freshness/conditional features, occurrence features, dataset/… | ## Leakage / validation audit | Scale `1.20` and final TEST level also have public-LB lineage. `validation.py` | 1. Best scored Team-B submission: exp019, LB `1.654502353530087`. | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 13 files, 2 launcher/helper… |
+| `new_direction__exp_orth_robust_h12` | [EXP ORTH-ROBUST H12](experiments/repro/new_direction__exp_orth_robust_h12/README.md) | Unknown / not recoverable from repository history | See preserved experiment card and implementation | ## Forward validation | \| `Delta RMSLE = LB_h21 - LB_anchor` \| `-0.000055980023302` \| | Searched the clean repository, `OZON-E-CUP`, `submission_geometry_research`, | new_direction; PARTIAL: the report survives, but no experiment launcher was recoverable from this package; Directory-level audit unit: 1 fi… |
+| `new_direction__exp_orth_robust_h12_interp` | [EXP ORTH-ROBUST H12-INTERP](experiments/repro/new_direction__exp_orth_robust_h12_interp/README.md) | Unknown / not recoverable from repository history | 227 tabular features | Unknown / not recoverable from repository history | Using baseline RMSLE `1.6463246740442117` and | None documented | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 2 files, 1 launcher/helper … |
+| `new_direction__next_submission_after_exp069` | [Next submission after EXP069](experiments/repro/new_direction__next_submission_after_exp069/README.md) | LightGBM, sequence model, BTYD, blend | holiday/YoY features, recency, freshness/conditional features, 227 tabular features | \| **EXP070 COUNT-VALUE MoE** \| **COMPUTE_INCOMPLETE**, not a true reject \| Everything saved reproduce… | \| **EXP070 COUNT-VALUE MoE** \| **COMPUTE_INCOMPLETE**, not a true reject \| Everything saved reproduce… | rewrote its own cache `submission_geometry/cache/loo_backtest.csv` in the geometry | new_direction; FULL when the data/frozen artifacts named by the report are present; Directory-level audit unit: 31 files, 14 launcher/helpe… |
+| `independent_anniversary__exp_058_exact_anniversary` | [Reconstructed primary report — exp_058 EXACT-ANNIVERSARY-WINDOW](experiments/repro/independent_anniversary__exp_058_exact_anniversary/README.md) | Ridge | calendar features | \| interpretation_reported \| **REJECT.** REAL выглядит полезнее baseline и shuffled, но exact calendar<… | Unknown / not recoverable from repository history | \| interpretation_reported \| **REJECT.** REAL выглядит полезнее baseline и shuffled, но exact cale… | independent_anniversary; PARTIAL: normalized report fields, implementation and tests survive; the original Markdown bytes and ignored input… |
+| `packaged_final__submit_joint86_teamb14` | [Reproduce `SUBMIT_JOINT86_TEAMB14.csv`](experiments/repro/packaged_final__submit_joint86_teamb14/README.md) | LightGBM, CatBoost, XGBoost, blend | See preserved experiment card and implementation | training code, validation reports and the reference submission. | Unknown / not recoverable from repository history | None documented | packaged_final; FULL from frozen inputs; raw-to-JOINT_V2 remains explicitly PROVENANCE_INCOMPLETE; Reported leaderboard results and forecas… |
+| `packaged_final__submit_strongest55_teamb45` | [Воспроизведение `SUBMIT_STRONGEST55_TEAMB45.csv`](experiments/repro/packaged_final__submit_strongest55_teamb45/README.md) | LightGBM, CatBoost, XGBoost, sequence model | freshness/conditional features, history-depth features | Unknown / not recoverable from repository history | Unknown / not recoverable from repository history | delivery/submission_STRONGEST_CURRENT_training_bundle_v2/pipeline/data/raw | packaged_final; FULL from frozen inputs; raw retraining has the limitations documented by the package; Reported leaderboard results and for… |
+| `packaged_final__strongest80_teamb20` | [strongest80_teamb20](experiments/repro/packaged_final__strongest80_teamb20/README.md) | blend | See preserved experiment card and implementation | Unknown / not recoverable from repository history | Unknown / not recoverable from repository history | "submission_STRONGEST_CURRENT": 0.8, | packaged_final; FULL when the two named source submissions are present; Reported leaderboard results and forecasts are kept distinct exactl… |
+| `packaged_final__optimized_pair_blends` | [optimized_pair_blends](experiments/repro/packaged_final__optimized_pair_blends/README.md) | blend | See preserved experiment card and implementation | Unknown / not recoverable from repository history | Unknown / not recoverable from repository history | "submission_STRONGEST_CURRENT.csv": 1.6496571902356205, | packaged_final; FULL when the named source submissions are present; Reported leaderboard results and forecasts are kept distinct exactly as… |
+| `packaged_final__final_threeway_ensemble` | [final_threeway_ensemble](experiments/repro/packaged_final__final_threeway_ensemble/README.md) | ensemble, blend | See preserved experiment card and implementation | "team_b_validation": { | "current_rmsle": 1.7959069747011052, | "submission_STRONGEST_CURRENT.csv": 1.6496571902356205, | packaged_final; FULL when the three named source submissions are present; Reported leaderboard results and forecasts are kept distinct exac… |
+| `packaged_final__submit_orth_final` | [E-CUP: обоснование сабмита SUBMIT_ORTH_FINAL.csv](experiments/repro/packaged_final__submit_orth_final/README.md) | Ridge | calendar features, 227 tabular features | на нескольких размеченных валидационных окнах (features cutoff → известный target | \| Новый сабмит команды TEAM_B_B2 как источник нового направления \| ортогональная энергия к спану = 0.0… | `corr(z_final, z_TEAM_EB) = 0.99967` — сабмит остаётся очень близким к чемпиону, | packaged_final; PARTIAL: reasoning and a later interpolation launcher survive; the exact ORTH_FINAL generator is absent; Reported leaderboa… |
+| `packaged_final__submission_geometry` | [Team-A experiment history](experiments/repro/packaged_final__submission_geometry/README.md) | sequence model, BTYD, Ridge, two-part / hurdle, ensemble, blend | personal-time features, holiday/YoY features, calendar features, recency, freshness/condi… | diagnostics. The 1:2:4:8 four-fold wCV protocol became canonical. | Unknown / not recoverable from repository history | None documented | packaged_final; PARTIAL: scores and history survive, but the external geometry workspace scripts are not in this repository; Reported leade… |
 
 ## Experiments — подробные карточки
 
@@ -721,7 +655,7 @@ packaging report.
 
 #### `eda__e01_schema` — e01_schema
 
-- Original code/document: `research/eda/e01_schema.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e01_schema.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -738,7 +672,7 @@ packaging report.
 
 #### `eda__e02_structure` — what do "zero" rows look like — is `cat` ever >0 while search==0?
 
-- Original code/document: `research/eda/e02_structure.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e02_structure.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -755,7 +689,7 @@ packaging report.
 
 #### `eda__e03_submit_forensics` — Every 30-day window ending on a date near the end of history
 
-- Original code/document: `research/eda/e03_submit_forensics.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e03_submit_forensics.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -772,7 +706,7 @@ packaging report.
 
 #### `eda__e04_hidden_structure` — bucket user_id into deciles and look at stats
 
-- Original code/document: `research/eda/e04_hidden_structure.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e04_hidden_structure.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: holiday/YoY features, gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -789,7 +723,7 @@ packaging report.
 
 #### `eda__e05_selection_seasonality` — secular growth: same-window YoY
 
-- Original code/document: `research/eda/e05_selection_seasonality.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e05_selection_seasonality.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -806,7 +740,7 @@ packaging report.
 
 #### `eda__e06_panel_logseason` — is there any extra rule, e.g. min #active days or min gmv?
 
-- Original code/document: `research/eda/e06_panel_logseason.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e06_panel_logseason.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -823,7 +757,7 @@ packaging report.
 
 #### `eda__e07_blocks_anchor` — e07_blocks_anchor
 
-- Original code/document: `research/eda/e07_blocks_anchor.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e07_blocks_anchor.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: holiday/YoY features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -840,7 +774,7 @@ packaging report.
 
 #### `eda__e08_baseline` — Cutoffs.  Target of T must NOT overlap the guaranteed window [2025-11-16..2026-02-13]
 
-- Original code/document: `research/eda/e08_baseline.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e08_baseline.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -857,7 +791,7 @@ packaging report.
 
 #### `eda__e09a_calib` — e09a_calib
 
-- Original code/document: `research/eda/e09a_calib.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e09a_calib.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM.
 - Features: gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -874,7 +808,7 @@ packaging report.
 
 #### `eda__e09b_season` — e09b_season
 
-- Original code/document: `research/eda/e09b_season.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e09b_season.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -891,7 +825,7 @@ packaging report.
 
 #### `eda__e12_calib_adv` — e12_calib_adv
 
-- Original code/document: `research/eda/e12_calib_adv.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e12_calib_adv.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM.
 - Features: gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -908,7 +842,7 @@ packaging report.
 
 #### `eda__e13_capped` — e13_capped
 
-- Original code/document: `research/eda/e13_capped.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e13_capped.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM.
 - Features: gap/burst features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -925,7 +859,7 @@ packaging report.
 
 #### `eda__e14_struct_seq` — e14_struct_seq
 
-- Original code/document: `research/eda/e14_struct_seq.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e14_struct_seq.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -942,7 +876,7 @@ packaging report.
 
 #### `eda__e15_seq` — e15_seq
 
-- Original code/document: `research/eda/e15_seq.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `research/eda/e15_seq.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -975,6 +909,658 @@ packaging report.
 - Prediction/submission: детерминированный повтор (SHA256 блока совпадает при повторном построении), схему сабмита,.
 - Known score/evidence: | `friend` OOF, 4 фолда | `0.10·S1-E03a + 0.20·S1-E02 + 0.25·S1-DIST + 0.225·ETX-AVG3 + 0.225·SEQ-AVG3` | wCV_cal **1.7475098627** (`STATE.md`: 1.74751) |.
 - Status/limitations: FULL from the frozen commit when the card contains a command; PARTIAL when the card explicitly says the experimental code was rolled back. Frozen implementation is copied from the commit that introduced this card.
+
+### Namespace `independent_anniversary`
+
+#### `independent_anniversary__exp_058_exact_anniversary` — Reconstructed primary report — exp_058 EXACT-ANNIVERSARY-WINDOW
+
+- Original code/document: `experiments/exp_058_exact_anniversary.md`; source `LINKED_WORKTREE:exp/058-exact-anniversary` @ `PRIMARY_CARD_NOT_IN_MERGED_GIT; normalized row SHA256=ef7120958e4609afc702dbb778085b8349b7790e2d16659e270e44b681ab21b9`.
+- Idea/model: Ridge.
+- Features: calendar features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: | interpretation_reported | **REJECT.** REAL выглядит полезнее baseline и shuffled, но exact calendar<br>alignment не подтверждён: same-family shifted old window сильнее REAL на обеих<br>половинах. Значит измеренный gain нельзя приписать exact anniversary; он<br>совместим с дополнительной old-history capacity/persistent user level и с<br>разной поддержкой pre-window scale denominators. По preregistered stop-rule<br>окна, Ridge alpha и shrink не тюнились.<br><br>- `ORDINARY TEMPORAL CV: unavailab.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/independent_anniversary__exp_058_exact_anniversary/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: | interpretation_reported | **REJECT.** REAL выглядит полезнее baseline и shuffled, но exact calendar<br>alignment не подтверждён: same-family shifted old window сильнее REAL на обеих<br>половинах. Значит измеренный gain нельзя приписать exact anniversary; он<br>совместим с дополнительной old-history capacity/persistent user level и с<br>разной поддержкой pre-window scale denominators. По preregistered stop-rule<br>окна, Ridge alpha и shrink не тюнились.<br><br>- `ORDINARY TEMPORAL CV: unavailab.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/reconstruction/evidence/worktree_artifacts/independent_anniversary/src/exact_anniversary.py`, `research/reconstruction/evidence/worktree_artifacts/independent_anniversary/src/test_exact_anniversary.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/independent_anniversary__exp_058_exact_anniversary/run.py`.
+- Prediction/submission: | interpretation_reported | **REJECT.** REAL выглядит полезнее baseline и shuffled, но exact calendar<br>alignment не подтверждён: same-family shifted old window сильнее REAL на обеих<br>половинах. Значит измеренный gain нельзя приписать exact anniversary; он<br>совместим с дополнительной old-history capacity/persistent user level и с<br>разной поддержкой pre-window scale denominators. По preregistered stop-rule<br>окна, Ridge alpha и shrink не тюнились.<br><br>- `ORDINARY TEMPORAL CV: unavailab.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: PARTIAL: normalized report fields, implementation and tests survive; the original Markdown bytes and ignored input artifacts do not. Rejected experiment; no submission was created. No missing field was inferred.
+
+### Namespace `new_direction`
+
+#### `new_direction__claude_cowork_high_upside_review` — High-upside research review — independent audit and experiment selection
+
+- Original code/document: `research/new_directions/CLAUDE_COWORK_HIGH_UPSIDE_REVIEW`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, sequence model, BTYD, Ridge, two-part / hurdle, ensemble, blend.
+- Features: holiday/YoY features, calendar features, recency, freshness/conditional features, funnel features, occurrence features, gap/burst features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Parity check of my own evaluator against the registered numbers: EXP-037 wCV reproduces to.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__claude_cowork_high_upside_review/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: `oof_projection_metrics.json`, `seed_robustness.csv`, `runtime_resources.json`,.
+- Postprocessing: twice), verify the level shift is `≈0`, then and only then add it to the incumbent TEST geometry.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/CLAUDE_COWORK_HIGH_UPSIDE_REVIEW/ANALYSIS.md`, `research/new_directions/CLAUDE_COWORK_HIGH_UPSIDE_REVIEW/SELECTED_EXPERIMENT.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__claude_cowork_high_upside_review/run.py`.
+- Prediction/submission: `C_lgbm_exp015_regen.csv` and `submission_BTYD05.csv`, reference `last (1).csv`, mean-N metric,.
+- Known score/evidence: `−0.00108` wCV. A single new candidate at `−0.0015…−0.002` would have to be roughly twice the.
+- Status/limitations: PARTIAL: the report survives, but no experiment launcher was recoverable from this package. Directory-level audit unit: 4 files, 0 launcher/helper scripts, 2 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__claude_private_objective` — E-CUP — аудит и выбор следующего эксперимента
+
+- Original code/document: `research/new_directions/CLAUDE_PRIVATE_OBJECTIVE`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, sequence model, BTYD, Ridge, two-part / hurdle, calibration diagnostic.
+- Features: holiday/YoY features, calendar features, freshness/conditional features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: | wCV EXP-037 | 1.7475098627 | 1.7475098625 |.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__claude_private_objective/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: EXP074 показал утрату чекпоинтов seed-42, EXP071 закрыл ETX-FRESH, и любой результат.
+- Postprocessing: 0.007 < |p_v| < 0.020: уровень среднего существующего направления → реализовать через α*, программу не наращивать..
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/CLAUDE_PRIVATE_OBJECTIVE/build_private_optimal.py`, `research/new_directions/CLAUDE_PRIVATE_OBJECTIVE/REPORT.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__claude_private_objective/run.py`.
+- Prediction/submission: второй out-of-sample точки для калибровки τ на ортогональных направлениях — её даёт сабмит №2;.
+- Known score/evidence: Ноль обучения, один сабмит, ожидаемый Δprivate = −4.69e−05 RMSLE..
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 2 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__claude_private_v2` — Три действия для приватного борда
+
+- Original code/document: `research/new_directions/CLAUDE_PRIVATE_V2`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, sequence model, Ridge, calibration diagnostic.
+- Features: calendar features, freshness/conditional features, occurrence features, EWM aggregates.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: | κ — концентрационный множитель| измерен напрямую на OOF: медиана 1.15, IQR [1.09,1.18], 4 фолда × 12 направлений| FACT предыдущие сессии брали 2.0 (их же признанная верхняя граница).
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__claude_private_v2/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: | Повторное тяжёлое обучение SEQ/ETX| ≈ 0| EXP074 показал утрату чекпоинтов seed-42; EXP071 закрыт; и у результата не было бы валидационного канала с ненулевым переносом.
+- Postprocessing: Уровень усадки подтверждён (реализовано 80% предсказанного), инфляция sd снижена 1.29 → 1.19. FACT.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/CLAUDE_PRIVATE_V2/build_private_v2.py`, `research/new_directions/CLAUDE_PRIVATE_V2/REPORT3.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__claude_private_v2/run.py`.
+- Prediction/submission: Пересчитано в этой сессии из Z.npz, scores/submissions.csv (73 файла), 06/07_ALIGNED_*.parquet, четырёх геометрических кандидатов и четырёх ранее не учтённых оценённых сабмитов. Геометрия: 69 уравнений, K = 58, R = 2.7199234, остаток МНК 1.1e−05, tr Cov(p̂) = 0.0051315, κ = 1.15. Ни один существующий артефакт не изменён; всё новое лежит в research/new_directions/CLAUDE_PRIVATE_V2/..
+- Known score/evidence: MSE несмещённо; 2.1e−04 RMSLE.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 3 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__claude_public_ceiling` — Потолок публичного лидерборда
+
+- Original code/document: `research/new_directions/CLAUDE_PUBLIC_CEILING`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, calibration diagnostic.
+- Features: holiday/YoY features, calendar features, freshness/conditional features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Обучение оправдано только если ожидаемое a нового направления заметно больше нуля — иначе E[q_P²] = 8.70e−05 достигается любым ортогональным вектором вообще без обучения, и тратить на это часы бессмысленно. Измеренный перенос офлайн→тест τ̂ = 0.076 ± 0.046 означает, что OOF не даёт права ожидать большого a ни для какой модели, отобранной по wCV..
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__claude_public_ceiling/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: | модель| LightGBM regression на log1p(y30), блок config/competition.yaml:lightgbm, 400 раундов, seed 42, deterministic.
+- Postprocessing: Ожидаемый путь. Сабмит 1 даёт 1.64625. Сабмиты 2–7 доводят примерно до 1.64604. Дальше каждый ортогональный зонд добавляет 2.6e−05 RMSLE и больше, если направление несёт сигнал. Чтобы дойти до 1.64495, нужно ещё 4.28e−03 MSE — при самом благоприятном реалистичном качестве направлений это 3–5 новых взаимно ортогональных моделей уровня лучших за всю историю проекта плюс по зонду на каждую. PREDICTION вероятность достичь 1.64495 в оставшемся бюджете сабмитов — низкая; вероятность достичь 1.6460–1.6.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/CLAUDE_PUBLIC_CEILING/build_public_eb.py`, `research/new_directions/CLAUDE_PUBLIC_CEILING/REPORT2.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__claude_public_ceiling/run.py`.
+- Prediction/submission: Все числа пересчитаны в этой сессии из submission_geometry/cache/Z.npz (67×250 000), scores/submissions.csv, SUBMIT_NEXT_BEST.csv, SUBMIT_v2_shrunk.csv и нового факта SUBMIT_PRIVATE_OPTIMAL → 1.6468136172663015. Геометрия воспроизведена независимо: ранг 58, R = 2.7199201, остаток OLS 4.23e−06, ‖p̂‖² = 0.0113332. Файлы существующих экспериментов не изменялись. Предыдущий отчёт (Приватная переоценка E-CUP) остаётся аудиторской записью прогноза, сделанного до этого измерения; его §3 о потолке внутр.
+- Known score/evidence: FACT SUBMIT_PRIVATE_OPTIMAL.csv → 1.6468136172663015. Прогноз был 1.6470304 ± 0.000068. Невязка −2.168e−04 RMSLE = −3.19σ. По моему же критерию это выход за 3σ-окно — то есть предыдущая модель провалила собственную калибровку, хоть и в благоприятную сторону..
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 2 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp069_btyd05_fresh1_prod` — EXP069 BTYD05 FRESH1 production report
+
+- Original code/document: `research/new_directions/EXP069_BTYD05_FRESH1_PROD`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: sequence model, BTYD, Ridge.
+- Features: freshness/conditional features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: All 770,616 unique canonical `(fold,user_id)` rows and targets align exactly. EXP-037 reconstructs from CAP/UNC/DIST/SEQ-AVG3/ETX-AVG3 with maximum log error `5.912e-08`; BTYD05 maximum log error is `1.138e-07`. Registered parity passed. EXP-037 wCV is `1.747509862493`..
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp069_btyd05_fresh1_prod/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: The encoder used only the 29 CLEAN cutoff grid through 2025-10-16. EXTRA comprises only positive-target rows at the 13 preregistered cutoffs and updates only conditional amount heads. Two splitmix donor sides and seeds 42/43/44 were averaged in log space. The encoder checksum was unchanged. Frozen OOF preprocessing parameters were applied to TEST without TEST centering or variance matching. Production regime: **PASS**; schema: **PASS**..
+- Postprocessing: No submission was uploaded and no public-LB equation or score was used for evaluation, selection, scaling, or level fitting..
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP069_BTYD05_FRESH1_PROD/finalize_production.py`, `research/new_directions/EXP069_BTYD05_FRESH1_PROD/report.md`, `research/new_directions/EXP069_BTYD05_FRESH1_PROD/run_oof_analysis.py`, `research/new_directions/EXP069_BTYD05_FRESH1_PROD/train_production_fresh.py`, `research/new_directions/EXP069_BTYD05_FRESH1_PROD/validate_outputs.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp069_btyd05_fresh1_prod/run.py`.
+- Prediction/submission: ADD_TO_SUBMISSION_GEOMETRY.
+- Known score/evidence: All 770,616 unique canonical `(fold,user_id)` rows and targets align exactly. EXP-037 reconstructs from CAP/UNC/DIST/SEQ-AVG3/ETX-AVG3 with maximum log error `5.912e-08`; BTYD05 maximum log error is `1.138e-07`. Registered parity passed. EXP-037 wCV is `1.747509862493`..
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 24 files, 4 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp070_count_value_moe` — EXP070_COUNT_VALUE_MOE — final report
+
+- Original code/document: `research/new_directions/EXP070_COUNT_VALUE_MOE`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, Ridge.
+- Features: calendar features, recency, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: This is an operationally conservative rejection: the latest-fold pilot passed, but exact fixed training required about 45 minutes per largest fold pair. The two-hour hard stop was reached before `2025-10-02`; therefore canonical four-fold wCV and honest three-donor LOFO do not exist. No PASS or WEAK_SIGNAL claim is inferred from an incomplete fold set..
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp070_count_value_moe/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP070_COUNT_VALUE_MOE/finalize_runtime_stop.py`, `research/new_directions/EXP070_COUNT_VALUE_MOE/report.md`, `research/new_directions/EXP070_COUNT_VALUE_MOE/run_experiment.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp070_count_value_moe/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: The diagnostic three-fold `1:2:8` replacement delta is `-0.000086647` and real-minus-shuffled is `-0.000052609`. This is explicitly **not canonical wCV** and is not a selection result..
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 24 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp071_etx_fresh_contrast` — EXP071_ETX_FRESH_CONTRAST
+
+- Original code/document: `research/new_directions/EXP071_ETX_FRESH_CONTRAST`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: dilated TCN, sequence model.
+- Features: freshness/conditional features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: ## 5. Full fold and wCV metrics.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp071_etx_fresh_contrast/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: The OOF raw file is explicitly marked `PILOT_ONLY_SEED42` after a pilot rejection. TEST and candidate artifacts are not fabricated when production is not authorized..
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP071_ETX_FRESH_CONTRAST/report.md`, `research/new_directions/EXP071_ETX_FRESH_CONTRAST/run_experiment.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp071_etx_fresh_contrast/run.py`.
+- Prediction/submission: EXTRA contributes only positive conditional-amount rows from the opposite splitmix64 user side. It never updates the ETX encoder, tokenizer, zero/nonzero probability, EXP-037 components, validation labels, eligibility, or normalization. Production status: `{"status": "SKIPPED", "reason": "REJECT_PILOT", "rule": "production inference is authorized only after provisional PASS TYPE A/B", "public_lb_used": false, "submission_uploaded": false}`. Public LB use and upload are both false..
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 19 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp072_lwa_tab` — EXP072 LWA TAB — final report
+
+- Original code/document: `research/new_directions/EXP072_LWA_TAB`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Unknown / not recoverable from repository history.
+- Features: holiday/YoY features, freshness/conditional features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: The legal late-window conditional-amount channel does not scale in the preregistered full-capacity tabular form. Full four-fold validation, seed robustness, bootstrap analysis, OOF vector production, and all TEST inference were stopped exactly at the pilot gate..
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp072_lwa_tab/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: CLOSE_FAMILY.** The single most informative next measurement would be a genuinely different legal late-window data channel with a preregistered matched-row control; another model, seed, round count, or feature manipulation on this same conditional-positive tabular channel is not authorized by this experiment..
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP072_LWA_TAB/report.md`, `research/new_directions/EXP072_LWA_TAB/run_experiment.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp072_lwa_tab/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 19 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp073_lwa_control_variate` — EXP073 — LWA FRESH−VOL Control-Variate Correction
+
+- Original code/document: `research/new_directions/EXP073_LWA_CONTROL_VARIATE`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Unknown / not recoverable from repository history.
+- Features: freshness/conditional features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: ## Confirmation and full canonical validation.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp073_lwa_control_variate/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: REJECT_HEADROOM**. Failed Stage 0 gate(s): `corr_fresh_vol, theoretical_optimal_gain`. The protocol stops before the untouched confirmation fold, seed 43, full OOF, TEST inference, and submission creation..
+- Postprocessing: The complete frozen alpha curve is in `stage0_alpha_curve.csv`; row-level parity and correction vectors are in `stage0_design_rows.parquet`..
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP073_LWA_CONTROL_VARIATE/report.md`, `research/new_directions/EXP073_LWA_CONTROL_VARIATE/run_experiment.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp073_lwa_control_variate/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 7 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp074_seq_temporal_dist16` — EXP074 — SEQ Temporal DIST16 Head
+
+- Original code/document: `research/new_directions/EXP074_SEQ_TEMPORAL_DIST16`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, dilated TCN, sequence model.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: ## Full/nested wCV, seed robustness and bootstrap.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp074_seq_temporal_dist16/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: minimum all seed-42 fold checkpoints and its production checkpoint, plus.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP074_SEQ_TEMPORAL_DIST16/report.md`, `research/new_directions/EXP074_SEQ_TEMPORAL_DIST16/run_reconnaissance.py`, `research/new_directions/EXP074_SEQ_TEMPORAL_DIST16/test_reconnaissance.py`.
+- Reproduction command: `python run_reconnaissance.py` completed successfully. Pytest result: **5 passed**.`; universal inspection: `python experiments/repro/new_direction__exp074_seq_temporal_dist16/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 7 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp075_confirmation` — EXP075 — independent confirmatory audit
+
+- Original code/document: `research/new_directions/EXP075_CONFIRMATION`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, CatBoost, BTYD, Ridge, two-part / hurdle.
+- Features: recency, gap/burst features, EWM aggregates.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: | held-out user not scored by a model trained on his target | training targets end at `cutoff-5`, validation target starts at `cutoff+1`; windows never overlap |.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp075_confirmation/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: | realised ORTH transfer level | 0.01416 | +0.0006911 | +0.0002099 | 1.6463697 | 0.045674 |.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP075_CONFIRMATION/code/a2_cnn.py`, `research/new_directions/EXP075_CONFIRMATION/code/build_panel.py`, `research/new_directions/EXP075_CONFIRMATION/code/final_analysis.py`, `research/new_directions/EXP075_CONFIRMATION/code/frozen_pipeline.py`, `research/new_directions/EXP075_CONFIRMATION/code/hist_span.py`, `research/new_directions/EXP075_CONFIRMATION/code/math_required.py`, `research/new_directions/EXP075_CONFIRMATION/code/post_boot.py`, `research/new_directions/EXP075_CONFIRMATION/code/run_fold.py`, `research/new_directions/EXP075_CONFIRMATION/code/scenarios.py`, `research/new_directions/EXP075_CONFIRMATION/code/survivor_effect.py`, `research/new_directions/EXP075_CONFIRMATION/code/test_correction.py`, `research/new_directions/EXP075_CONFIRMATION/REPORT.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp075_confirmation/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: worse* by `+0.00104` RMSLE. The bet is close to symmetric..
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 26 files, 11 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp075_out_of_span_residual_signals` — EXP075 — Search for new out-of-span residual signals
+
+- Original code/document: `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, BTYD, two-part / hurdle, ensemble, blend.
+- Features: calendar features, recency, freshness/conditional features, funnel features, occurrence features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: ## Validation audit.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp075_out_of_span_residual_signals/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: 6. **Highest-EV next experiment:** a focused two-branch daily+weekly temporal encoder trained on a strictly cross-fitted *post-A1-365 residual*, with the same four folds and an explicit orthogonality penalty to A1. This directly targets the measured missing conditional component instead of retuning the present blend. Run a cheap latest-plus-one-prior pilot, then at most three seeds only if conditional clean rho is at least `0.015` with positive latest sign. The remaining target is small enough (.
+- Postprocessing: Expected mechanism: the incumbent ensemble captures activity level and aggregate recency well but loses temporal path shape. A1 captures non-linear position-specific trajectory interactions; A2 captures local/dilated motifs. Their modest mutual correlation creates the joint gain..
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/analyze_joint.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/analyze_joint_all.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/analyze_joint_rho_bootstrap.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/analyze_residual_correlations.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/finalize_artifacts.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/REPORT.md`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/run_a1_clean_forward.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/run_a2_cnn_pilot.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/run_a2_full.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/run_c_matched.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/train_final_a1_180.py`, `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS/train_final_and_test_gate.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp075_out_of_span_residual_signals/run.py`.
+- Prediction/submission: Submission: `C:/Users/Admin/Desktop/e-cup-research-clean/submissions/SUBMIT_EXP075_JOINT_A1_365_A2.csv`.
+- Known score/evidence: A legitimate new residual mechanism was found. A1-365 (tree over an explicitly chronological daily/weekly tensor) reaches weighted clean-forward `rho=0.032954`; A2 (compact residual CNN) reaches `rho=0.030864`. Their correlation is only `0.418802`, and the rolling-forward joint direction reaches `rho=0.037940`, latest-fold `rho=0.034864`, nested `Delta RMSLE=-0.00125067`, bootstrap `P(Delta MSE<0)=1.000`..
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 45 files, 11 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp076_strong_baseline_validation_channel` — EXP076 — post-mortem EXP075 и strong-baseline validation channel
+
+- Original code/document: `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, event Transformer / ETX, dilated TCN, sequence model, BG/NBD, BTYD, Ridge, distribution head, ensemble, calibration diagnostic.
+- Features: holiday/YoY features, calendar features, recency, freshness/conditional features, occurrence features, gap/burst features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: # EXP076 — post-mortem EXP075 и strong-baseline validation channel.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp076_strong_baseline_validation_channel/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: `s19` (независимая перепроверка) → `s20/s21/s22` (ось уровня)..
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/common.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s10_alpha_composition.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s11_matched_baseline.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s12_sbvc.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s13_regime.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s14_headroom.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s15_checks.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s16_ceiling.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s17_staleness.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s17b.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s18_decision.py`, `research/new_directions/EXP076_STRONG_BASELINE_VALIDATION_CHANNEL/code/s19_verify.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp076_strong_baseline_validation_channel/run.py`.
+- Prediction/submission: Leaderboard для настройки чего-либо не использован. Сабмиты не отправлялись..
+- Known score/evidence: break-even всего на **1.6 %**, то есть на **+0.08 sigma**. Отсюда `ΔRMSLE =.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 50 files, 27 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp077_forward_stack` — EXP077 — Forward Production Stack
+
+- Original code/document: `research/new_directions/EXP077_FORWARD_STACK`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: sequence model, BTYD, Ridge, ensemble, blend.
+- Features: holiday/YoY features, recency, freshness/conditional features, gap/burst features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: | S1-E02 | TABULAR | `C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\oof_S1-E02.npz` | `C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\ztest_S1-UNC.npy` | 4/4: 2025-09-04,2025-09-18,2025-10-02,2025-10-16 | `C:\Users\Admin\Desktop\e-cup-research-clean\research\new_directions\EXP076_STRONG_BASELINE_VALIDATION_CHANNEL\code\s3_build_matrix.py` |.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp077_forward_stack/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: | S1-SEEDAVG5 | TABULAR | `C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\oof_S1-SEEDAVG5.npz` | `— (excluded from deployable fit)` | 4/4: 2025-09-04,2025-09-18,2025-10-02,2025-10-16 | `C:\Users\Admin\Desktop\OZON-E-CUP\artifacts\report_S1-SEEDAVG5.json` |.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP077_FORWARD_STACK/REPORT.md`, `research/new_directions/EXP077_FORWARD_STACK/run_exp077.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp077_forward_stack/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: | 1_fold4_Delta_RMSLE_le_minus_0.0005 | PASS |.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 11 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp078_level_forecast` — EXP078 — Forward Global Level Forecast
+
+- Original code/document: `research/new_directions/EXP078_LEVEL_FORECAST`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Ridge.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: ## Rolling validation.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp078_level_forecast/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: is **NO_GO_LEVEL**.  No residual/temporal search, EXP075 correction, user-level correction, public.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP078_LEVEL_FORECAST/REPORT.md`, `research/new_directions/EXP078_LEVEL_FORECAST/run_exp078.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp078_level_forecast/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: remaining `Delta RMSLE = -0.001508246136`.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 8 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp079_exp075_a040` — EXP079 — EXP075 A040
+
+- Original code/document: `research/new_directions/EXP079_EXP075_A040`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Unknown / not recoverable from repository history.
+- Features: recency, gap/burst features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Unknown / not recoverable from repository history.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp079_exp075_a040/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: | max abs log-space difference | 2.6207559e-08 |.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP079_EXP075_A040/REPORT.md`, `research/new_directions/EXP079_EXP075_A040/run_exp079.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp079_exp075_a040/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: weighted Delta RMSLE = -9.6967654023e-06.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 5 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp080_oracle_gap_attribution` — EXP080 — Mathematical gap attribution
+
+- Original code/document: `research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, BTYD, Ridge, two-part / hurdle.
+- Features: recency, freshness/conditional features, gap/burst features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: На production-like historical proxy средний residual равен `+0.0590`, но по фолдам меняет знак:.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp080_oracle_gap_attribution/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: prediction hashes, fold keys, targets, projection identities и/или сохранённые fold-level моменты,.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION/finalize.py`, `research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION/REPORT.md`, `research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION/run_observable.py`, `research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION/run_oracle.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp080_oracle_gap_attribution/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: current RMSLE                 = 1.646143314225527.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 23 files, 3 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp081_adversarial_bound_falsification` — EXP081 — Adversarial falsification of EXP080 `NO_EVIDENCE`
+
+- Original code/document: `research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, CatBoost, sequence model, Ridge, blend.
+- Features: holiday/YoY features, calendar features, recency, funnel features, gap/burst features, history-depth features, dataset/user fingerprint.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Фолды разнесены на 14 дней, а label horizon равен 30 дням. Поэтому residual label предыдущего.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp081_adversarial_bound_falsification/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: 38-column EXP080 basis восстановлен из primary `observable_predictions.parquet`, seed arrays,.
+- Postprocessing: The backtest is honest for cohort-level transforms and gives no evidence that TEST ranks/density.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION/finalize.py`, `research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION/REPORT.md`, `research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION/run_falsification.py`, `research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION/run_purged_tail.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp081_adversarial_bound_falsification/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: current RMSLE                  1.646143314225527.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 24 files, 3 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp082_purged_temporal_residual` — EXP082 — Fully Purged Temporal Residual Validation
+
+- Original code/document: `research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, sequence model.
+- Features: recency, gap/burst features, history-depth features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: # EXP082 — Fully Purged Temporal Residual Validation.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp082_purged_temporal_residual/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Frozen composition: `0.10 CAP + 0.20 UNC + 0.25 DIST + 0.225 SEQ-S42 + 0.225 ETX-S42`. SEQ/ETX use the allowed frozen single-seed approximation; no weights or model settings were tuned..
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/code/finalize_artifacts.py`, `research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/code/render_report.py`, `research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/code/run_components.py`, `research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/code/run_exp082.py`, `research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/REPORT.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp082_purged_temporal_residual/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Nested ΔMSE: **0.00149662**; nested ΔRMSLE: **0.00042651**. Cluster-bootstrap 95% CI for ΔMSE: **[0.00107916, 0.00192116]**, `P(ΔMSE < 0)=0.0000`..
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 44 files, 4 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp083_information_loss_discovery` — EXP083 — Information-loss / target-discovery audit
+
+- Original code/document: `research/new_directions/EXP083_INFORMATION_LOSS_DISCOVERY`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, BTYD, Ridge.
+- Features: holiday/YoY features, calendar features, recency, funnel features, Search/Catalog decomposition, channel Shapley, gap/burst features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Gate A authorized one cheap pilot. For every validation cutoff, one multi-output Ridge was trained on four historical snapshots at lags `63/49/35/21` days. The longest label is `Y14`, and its latest training target ends seven days before validation. `Y30` and production residual were never training targets..
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp083_information_loss_discovery/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: The apparent span-only result is level-mediated: once the requested strong baseline conditioning and the production span are both enforced, oracle headroom falls below `0.001`. The purged binned pilot has `rho=0.001280`, `Delta MSE=+0.018947`, CI `[+0.016725,+0.021216]`, `P(gain)=0`. Individual post-span-plus-level correlations are tiny; the strongest weighted ones are about `0.00269` for search cart rate and `0.00250` for search order share..
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP083_INFORMATION_LOSS_DISCOVERY/REPORT.md`, `research/new_directions/EXP083_INFORMATION_LOSS_DISCOVERY/run_discovery.py`, `research/new_directions/EXP083_INFORMATION_LOSS_DISCOVERY/run_multihorizon_heads.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp083_information_loss_discovery/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Delta RMSLE                 = +0.000301621.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 17 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp084_level_probe` — EXP084 — One-Shot Global Level Probe
+
+- Original code/document: `research/new_directions/EXP084_LEVEL_PROBE`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Unknown / not recoverable from repository history.
+- Features: gap/burst features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: forward-OOF фолда (`2025-09-04` ... `2025-10-16`), composition-matched.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp084_level_probe/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: С seed `84002026` выполнено 2,000 exact simple-random-without-replacement.
+- Postprocessing: | `0.03 <= |r_bar| < 0.05` | значимый level signal |.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP084_LEVEL_PROBE/REPORT.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp084_level_probe/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: | `>= 0.05` | крупная находка, способная объяснить существенную часть LB gap |.
+- Status/limitations: PARTIAL: the report survives, but no experiment launcher was recoverable from this package. Directory-level audit unit: 1 files, 0 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp085_competition_structure_forensic_audit` — EXP085 — Competition-structure forensic audit
+
+- Original code/document: `research/new_directions/EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, event Transformer / ETX, BTYD, two-part / hurdle, distribution head, blend, calibration diagnostic.
+- Features: holiday/YoY features, calendar features, recency, funnel features, occurrence features, Search/Catalog decomposition, gap/burst features, dataset/user fingerprint, window aggregates.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: early validation имеет только 247 дней потенциальной истории против 409 у.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp085_competition_structure_forensic_audit/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: `0.001670/0.004854 MSE`; восемь узких seed/scale twin directions дали.
+- Postprocessing: 4. **Global correction:** нужен оставшийся log-level error `0.07007`; level/LB.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT/REPORT.md`, `research/new_directions/EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT/run_calendar_profile.py`, `research/new_directions/EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT/run_forensic_audit.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp085_competition_structure_forensic_audit/run.py`.
+- Prediction/submission: `production_reconstruction.json`, `submission_geometry_evidence.json`;.
+- Known score/evidence: current RMSLE                         1.646143314225527.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 16 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp086_occurrence_shock` — EXP086 — Occurrence Shock Residual
+
+- Original code/document: `research/new_directions/EXP086_OCCURRENCE_SHOCK`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, BTYD, Ridge, two-part / hurdle, ensemble, blend.
+- Features: recency, funnel features, occurrence features, gap/burst features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: | 8 raw occurrence heads | frozen `OCC_QUEUE` / `train_occ_child` | `1[GMV30 > 0]` | six 227-column and two 202-column normalized-long cutoff-safe tables | last 10–24 eligible weekly cutoffs, always `train cutoff + 30 <= validation cutoff` | exact source TEST child; not run after NO_GO | YES |.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp086_occurrence_shock/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Bootstrap выполнен как 2,000-replicate Poisson cluster bootstrap по `user_id` сразу через все transitions, seed `20260829`. CI целиком находится на стороне вреда. Expected robust `Delta RMSLE = +0.00006833`, а не improvement..
+- Postprocessing: Incremental semantics здесь конкретна: “насколько восемь cutoff-capped incidence estimators и их meta learner изменяют вероятность следующего 30-дневного occurrence относительно `p_base` данного пользователя”. Это не global activity level и не повтор прямого GMV30 learner..
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP086_OCCURRENCE_SHOCK/code/analyze.py`, `research/new_directions/EXP086_OCCURRENCE_SHOCK/code/run_components.py`, `research/new_directions/EXP086_OCCURRENCE_SHOCK/REPORT.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp086_occurrence_shock/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: nested `Delta MSE = +0.000240322` и `Delta RMSLE = +0.00006833`, то есть correction ухудшает результат;.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 60 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp087_dynamic_factor_residual` — EXP087 — Dynamic Factor Residual
+
+- Original code/document: `research/new_directions/EXP087_DYNAMIC_FACTOR_RESIDUAL`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Ridge.
+- Features: calendar features, recency, gap/burst features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Unknown / not recoverable from repository history.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp087_dynamic_factor_residual/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: обычный monetary-level predictor..
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP087_DYNAMIC_FACTOR_RESIDUAL/REPORT.md`, `research/new_directions/EXP087_DYNAMIC_FACTOR_RESIDUAL/run_exp087.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp087_dynamic_factor_residual/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 10 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp088_a1_a2_tomography` — EXP088 — A1/A2 Residual-Plane Tomography
+
+- Original code/document: `research/new_directions/EXP088_A1_A2_TOMOGRAPHY`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Unknown / not recoverable from repository history.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Unknown / not recoverable from repository history.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp088_a1_a2_tomography/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP088_A1_A2_TOMOGRAPHY/REPORT.md`, `research/new_directions/EXP088_A1_A2_TOMOGRAPHY/run_exp088.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp088_a1_a2_tomography/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 3 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp089_joint_v2_plane_resolution` — EXP089 — JOINT_V2 Plane Resolution
+
+- Original code/document: `research/new_directions/EXP089_JOINT_V2_PLANE_RESOLUTION`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Unknown / not recoverable from repository history.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Unknown / not recoverable from repository history.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp089_joint_v2_plane_resolution/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: The level probe is exactly EXP075 plus a constant in log space; its centered.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP089_JOINT_V2_PLANE_RESOLUTION/REPORT.md`, `research/new_directions/EXP089_JOINT_V2_PLANE_RESOLUTION/run_exp089.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp089_joint_v2_plane_resolution/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: predicts a diagnostic optimum at RMSLE `1.645894652126`.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 9 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp090_team_b_audit` — EXP090 — Team-B Solution Audit
+
+- Original code/document: `research/new_directions/EXP090_TEAM_B_AUDIT`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, CatBoost, XGBoost, Ridge, distribution head, ensemble, blend.
+- Features: calendar features, recency, freshness/conditional features, occurrence features, dataset/user fingerprint.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: ## Leakage / validation audit.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp090_team_b_audit/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: No row-level Team-B OOF vectors exist. The saved `exp024` grid contains only.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP090_TEAM_B_AUDIT/REPORT.md`, `research/new_directions/EXP090_TEAM_B_AUDIT/reproduce_team_b.py`, `research/new_directions/EXP090_TEAM_B_AUDIT/run_exp090.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp090_team_b_audit/run.py`.
+- Prediction/submission: 1. Best scored Team-B submission: exp019, LB `1.654502353530087`..
+- Known score/evidence: Scale `1.20` and final TEST level also have public-LB lineage. `validation.py`.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 13 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp_orth_robust_h12` — EXP ORTH-ROBUST H12
+
+- Original code/document: `research/new_directions/EXP_ORTH_ROBUST_H12`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Unknown / not recoverable from repository history.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: ## Forward validation.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp_orth_robust_h12/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: `reason = exact five-member averaged predictions, per-model configs/seeds,.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP_ORTH_ROBUST_H12/REPORT.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp_orth_robust_h12/run.py`.
+- Prediction/submission: Searched the clean repository, `OZON-E-CUP`, `submission_geometry_research`,.
+- Known score/evidence: | `Delta RMSLE = LB_h21 - LB_anchor` | `-0.000055980023302` |.
+- Status/limitations: PARTIAL: the report survives, but no experiment launcher was recoverable from this package. Directory-level audit unit: 1 files, 0 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__exp_orth_robust_h12_interp` — EXP ORTH-ROBUST H12-INTERP
+
+- Original code/document: `research/new_directions/EXP_ORTH_ROBUST_H12_INTERP`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Unknown / not recoverable from repository history.
+- Features: 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Unknown / not recoverable from repository history.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__exp_orth_robust_h12_interp/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/EXP_ORTH_ROBUST_H12_INTERP/build_submission.py`, `research/new_directions/EXP_ORTH_ROBUST_H12_INTERP/REPORT.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__exp_orth_robust_h12_interp/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Using baseline RMSLE `1.6463246740442117` and.
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 2 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+#### `new_direction__next_submission_after_exp069` — Next submission after EXP069
+
+- Original code/document: `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069`; source `origin/team-a late research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, sequence model, BTYD, blend.
+- Features: holiday/YoY features, recency, freshness/conditional features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: | **EXP070 COUNT-VALUE MoE** | **COMPUTE_INCOMPLETE**, not a true reject | Everything saved reproduces exactly, but `2025-10-02` was never trained, so canonical four-fold wCV and honest LOFO do not exist. The pilot pass was marginal (`−0.000115` vs a `−0.00010` gate) and **the placebo beats the real model on 2 of 3 completed folds** (`+0.000180`, `+0.000086`, `−0.000116`) — the whole `−0.0000526` 1:2:8 advantage is the single weight-8 latest fold. Bootstrap of that 1:2:8 delta: 95% `[−0.000156, .
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/new_direction__next_submission_after_exp069/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: (TEST averages 2 donor sides × 3 seeds vs a single-seed cross-fit OOF) but not fully.
+- Postprocessing: preprocessing, the component decomposition, the candidate choice and the level shift were.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/01_inventory.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/02_exp069_oof_parity.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/03_exp069_bridge_and_decomposition.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/04_exp069_test_span_and_components.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/05_exp071_audit.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/06_exp070_audit.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/07_exp070_real_vs_shuffled.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/08_oof_basis_eligibility.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/09_oof_component_analysis.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/10_cv_to_lb_transfer.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/11_external_direction_backtest.py`, `research/new_directions/NEXT_SUBMISSION_AFTER_EXP069/analysis/12_candidates_and_basis_stability.py`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/new_direction__next_submission_after_exp069/run.py`.
+- Prediction/submission: rewrote its own cache `submission_geometry/cache/loo_backtest.csv` in the geometry.
+- Known score/evidence: | **EXP070 COUNT-VALUE MoE** | **COMPUTE_INCOMPLETE**, not a true reject | Everything saved reproduces exactly, but `2025-10-02` was never trained, so canonical four-fold wCV and honest LOFO do not exist. The pilot pass was marginal (`−0.000115` vs a `−0.00010` gate) and **the placebo beats the real model on 2 of 3 completed folds** (`+0.000180`, `+0.000086`, `−0.000116`) — the whole `−0.0000526` 1:2:8 advantage is the single weight-8 latest fold. Bootstrap of that 1:2:8 delta: 95% `[−0.000156, .
+- Status/limitations: FULL when the data/frozen artifacts named by the report are present. Directory-level audit unit: 31 files, 14 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+### Namespace `packaged_final`
+
+#### `packaged_final__submit_joint86_teamb14` — Reproduce `SUBMIT_JOINT86_TEAMB14.csv`
+
+- Original code/document: `reproducibility/SUBMIT_JOINT86_TEAMB14/README.md`; source `origin/team-a final/research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, CatBoost, XGBoost, blend.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: training code, validation reports and the reference submission..
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/packaged_final__submit_joint86_teamb14/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `reproducibility/SUBMIT_JOINT86_TEAMB14/build_submit.py`, `reproducibility/SUBMIT_JOINT86_TEAMB14/create_manifest.py`, `scripts/reproduce_final.py`, `scripts/build_optimized_pair_blends.py`, `research/OPTIMIZED_PAIR_BLENDS.json`.
+- Reproduction command: `python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-precomputed`; universal inspection: `python experiments/repro/packaged_final__submit_joint86_teamb14/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL from frozen inputs; raw-to-JOINT_V2 remains explicitly PROVENANCE_INCOMPLETE. Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.
+
+#### `packaged_final__submit_strongest55_teamb45` — Воспроизведение `SUBMIT_STRONGEST55_TEAMB45.csv`
+
+- Original code/document: `reproducibility/SUBMIT_STRONGEST55_TEAMB45/README.md`; source `origin/team-a final/research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: LightGBM, CatBoost, XGBoost, sequence model.
+- Features: freshness/conditional features, history-depth features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Unknown / not recoverable from repository history.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/packaged_final__submit_strongest55_teamb45/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: моделей и checkpoint `SEQ-01` seed 42; FP16 ETX зависит от CUDA execution path..
+- Postprocessing: финальный retrained CSV, затем сравнивает каждый уровень с production:.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `reproducibility/SUBMIT_STRONGEST55_TEAMB45/build_submit.py`, `reproducibility/SUBMIT_STRONGEST55_TEAMB45/verify.py`, `scripts/reproduce_final.py`, `scripts/build_optimized_pair_blends.py`, `research/OPTIMIZED_PAIR_BLENDS.json`.
+- Reproduction command: `python scripts/reproduce_final.py --solution SUBMIT_STRONGEST55_TEAMB45 --from-precomputed`; universal inspection: `python experiments/repro/packaged_final__submit_strongest55_teamb45/run.py`.
+- Prediction/submission: delivery/submission_STRONGEST_CURRENT_training_bundle_v2/pipeline/data/raw.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL from frozen inputs; raw retraining has the limitations documented by the package. Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.
+
+#### `packaged_final__strongest80_teamb20` — strongest80_teamb20
+
+- Original code/document: `research/STRONGEST80_TEAMB20.json`; source `origin/team-a final/research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: blend.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Unknown / not recoverable from repository history.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/packaged_final__strongest80_teamb20/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `scripts/build_strongest80_teamb20.py`, `research/STRONGEST80_TEAMB20.json`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/packaged_final__strongest80_teamb20/run.py`.
+- Prediction/submission: "submission_STRONGEST_CURRENT": 0.8,.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL when the two named source submissions are present. Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.
+
+#### `packaged_final__optimized_pair_blends` — optimized_pair_blends
+
+- Original code/document: `research/OPTIMIZED_PAIR_BLENDS.json`; source `origin/team-a final/research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: blend.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: Unknown / not recoverable from repository history.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/packaged_final__optimized_pair_blends/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `scripts/build_optimized_pair_blends.py`, `research/OPTIMIZED_PAIR_BLENDS.json`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/packaged_final__optimized_pair_blends/run.py`.
+- Prediction/submission: "submission_STRONGEST_CURRENT.csv": 1.6496571902356205,.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: FULL when the named source submissions are present. Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.
+
+#### `packaged_final__final_threeway_ensemble` — final_threeway_ensemble
+
+- Original code/document: `research/FINAL_THREEWAY_ENSEMBLE.json`; source `origin/team-a final/research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: ensemble, blend.
+- Features: See preserved experiment card and implementation.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: "team_b_validation": {.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/packaged_final__final_threeway_ensemble/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: Seed from src/config.py unless the preserved card explicitly states otherwise.
+- Postprocessing: None documented.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `scripts/build_final_threeway_ensemble.py`, `research/FINAL_THREEWAY_ENSEMBLE.json`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/packaged_final__final_threeway_ensemble/run.py`.
+- Prediction/submission: "submission_STRONGEST_CURRENT.csv": 1.6496571902356205,.
+- Known score/evidence: "current_rmsle": 1.7959069747011052,.
+- Status/limitations: FULL when the three named source submissions are present. Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.
+
+#### `packaged_final__submit_orth_final` — E-CUP: обоснование сабмита SUBMIT_ORTH_FINAL.csv
+
+- Original code/document: `research/SUBMIT_ORTH_FINAL_reasoning.md`; source `origin/team-a final/research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: Ridge.
+- Features: calendar features, 227 tabular features.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: на нескольких размеченных валидационных окнах (features cutoff → известный target.
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/packaged_final__submit_orth_final/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: измеряет именно новую информацию, а не переоткрывает то, что уже сидит в пуле..
+- Postprocessing: уровень и весь «инспанный» контент чемпиона не тронуты;.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `research/SUBMIT_ORTH_FINAL_reasoning.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/packaged_final__submit_orth_final/run.py`.
+- Prediction/submission: `corr(z_final, z_TEAM_EB) = 0.99967` — сабмит остаётся очень близким к чемпиону,.
+- Known score/evidence: | Новый сабмит команды TEAM_B_B2 как источник нового направления | ортогональная энергия к спану = 0.00014 (порог диверсификации в документе — 0.20–0.30), максимальный возможный выигрыш от него −7.5×10⁻⁶ RMSLE | пренебрежимо мал, но геометрия предсказала его public-скор 1.6498443 против факта 1.6499001 — ещё одно подтверждение точности реконструкции |.
+- Status/limitations: PARTIAL: reasoning and a later interpolation launcher survive; the exact ORTH_FINAL generator is absent. Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.
+
+#### `packaged_final__submission_geometry` — Team-A experiment history
+
+- Original code/document: `docs/EXPERIMENT_HISTORY.md`; source `origin/team-a final/research package` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
+- Idea/model: sequence model, BTYD, Ridge, two-part / hurdle, ensemble, blend.
+- Features: personal-time features, holiday/YoY features, calendar features, recency, freshness/conditional features, funnel features, occurrence features, channel Shapley, gap/burst features, history-depth features, dataset/user fingerprint.
+- Preprocessing: See preserved experiment card and frozen implementation.
+- Validation: diagnostics. The 1:2:4:8 four-fold wCV protocol became canonical..
+- Hyperparameters: preserved verbatim in [the experiment folder](experiments/repro/packaged_final__submission_geometry/README.md); values not present there are **Unknown / not recoverable from repository history**.
+- Seed: `exp_025/026`: sequence encoder and seed averaging. SEQ was valuable as an.
+- Postprocessing: EXP076–EXP089 audited validation transport, forward stacking, level effects,.
+- External inputs: Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card.
+- Implementation files: `docs/EXPERIMENT_HISTORY.md`.
+- Reproduction command: `Unknown / not recoverable from repository history`; universal inspection: `python experiments/repro/packaged_final__submission_geometry/run.py`.
+- Prediction/submission: None documented.
+- Known score/evidence: Unknown / not recoverable from repository history.
+- Status/limitations: PARTIAL: scores and history survive, but the external geometry workspace scripts are not in this repository. Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.
 
 ### Namespace `renewal_branch`
 
@@ -1069,7 +1655,7 @@ packaging report.
 
 #### `team_a_current__exp_001_s1_b0_baseline` — exp_001 — S1-B0: воспроизводимый бейзлайн
 
-- Original code/document: `experiments/exp_001_s1_b0_baseline.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_001_s1_b0_baseline.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM.
 - Features: window aggregates.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1086,7 +1672,7 @@ packaging report.
 
 #### `team_a_current__exp_002_s1_e01_panel_rule` — exp_002 — S1-E01: переприменение 3-блочного правила панели на обучении
 
-- Original code/document: `experiments/exp_002_s1_e01_panel_rule.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_002_s1_e01_panel_rule.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: recency.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1103,7 +1689,7 @@ packaging report.
 
 #### `team_a_current__exp_003_s1_e02_dense_cutoffs` — exp_003 — S1-E02: плотная сетка cutoff'ов
 
-- Original code/document: `experiments/exp_003_s1_e02_dense_cutoffs.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_003_s1_e02_dense_cutoffs.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1120,7 +1706,7 @@ packaging report.
 
 #### `team_a_current__exp_004_s1_e03_history_depth` — exp_004 — S1-E03: фиксированная глубина истории `L`
 
-- Original code/document: `experiments/exp_004_s1_e03_history_depth.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_004_s1_e03_history_depth.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1137,7 +1723,7 @@ packaging report.
 
 #### `team_a_current__exp_005_s1_e10_normalized_long` — exp_005 — S1-E10: длинные окна, нормированные на доступную глубину истории
 
-- Original code/document: `experiments/exp_005_s1_e10_normalized_long.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_005_s1_e10_normalized_long.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: gap/burst features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1154,7 +1740,7 @@ packaging report.
 
 #### `team_a_current__exp_006_s1_best_submission` — exp_006 — S1-BEST: итоговая конфигурация и сабмит
 
-- Original code/document: `experiments/exp_006_s1_best_submission.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_006_s1_best_submission.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, CatBoost, calibration diagnostic.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1171,7 +1757,7 @@ packaging report.
 
 #### `team_a_current__exp_007_radical_minimalism` — exp_007 — radical feature minimalism
 
-- Original code/document: `experiments/exp_007_radical_minimalism.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_007_radical_minimalism.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, calibration diagnostic.
 - Features: recency.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1188,7 +1774,7 @@ packaging report.
 
 #### `team_a_current__exp_008_cohort_similarity` — exp_008 — hierarchical rank-cohort similarity
 
-- Original code/document: `experiments/exp_008_cohort_similarity.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_008_cohort_similarity.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: blend, calibration diagnostic.
 - Features: recency.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1205,7 +1791,7 @@ packaging report.
 
 #### `team_a_current__exp_013_s1_e11_two_part` — exp_013 — S1-E11: двухчастная модель на нормированных длинных окнах
 
-- Original code/document: `experiments/exp_013_s1_e11_two_part.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_013_s1_e11_two_part.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, calibration diagnostic.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1222,7 +1808,7 @@ packaging report.
 
 #### `team_a_current__exp_014_s1_dist_head` — exp_014 — E0 / S1-DIST: голова распределения вместо L2
 
-- Original code/document: `experiments/exp_014_s1_dist_head.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_014_s1_dist_head.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, distribution head, blend, calibration diagnostic.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1239,7 +1825,7 @@ packaging report.
 
 #### `team_a_current__exp_015_last_fold_only` — exp_015 — S1-DIST-F4: модель, обученная только на выборке последнего фолда
 
-- Original code/document: `experiments/exp_015_last_fold_only.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_015_last_fold_only.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: blend, calibration diagnostic.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1256,7 +1842,7 @@ packaging report.
 
 #### `team_a_current__exp_016_validator_calibration` — exp_016 — калибровка валидатора по leaderboard: единая схема wCV
 
-- Original code/document: `experiments/exp_016_validator_calibration.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_016_validator_calibration.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: blend, calibration diagnostic.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1273,7 +1859,7 @@ packaging report.
 
 #### `team_a_current__exp_017_capacity_curve` — exp_017 — S_05 A: кривая по раундам для `direct` (ёмкость оценщика)
 
-- Original code/document: `experiments/exp_017_capacity_curve.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_017_capacity_curve.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: ensemble, calibration diagnostic.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1290,7 +1876,7 @@ packaging report.
 
 #### `team_a_current__exp_018_seed_average` — exp_018 — S_05 B: дисперсия по сидам и усреднение
 
-- Original code/document: `experiments/exp_018_seed_average.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_018_seed_average.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, ensemble.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1307,7 +1893,7 @@ packaging report.
 
 #### `team_a_current__exp_019_gap_axis` — exp_019 — STRATEGY_01 gap-axis validation
 
-- Original code/document: `experiments/exp_019_gap_axis.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_019_gap_axis.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1324,7 +1910,7 @@ packaging report.
 
 #### `team_a_current__exp_020_train_blocks_zero` — exp_020 — STRATEGY_02A: `train_blocks=0`
 
-- Original code/document: `experiments/exp_020_train_blocks_zero.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_020_train_blocks_zero.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1341,7 +1927,7 @@ packaging report.
 
 #### `team_a_current__exp_021_personal_time` — exp_021 — STRATEGY_08: личное время пользователя как представление
 
-- Original code/document: `experiments/exp_021_personal_time.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_021_personal_time.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: personal-time features, calendar features, gap/burst features, window aggregates, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1358,7 +1944,7 @@ packaging report.
 
 #### `team_a_current__exp_022_dense_temporal_grid` — exp_022 — STRATEGY_02B: dense temporal grid при равном объёме
 
-- Original code/document: `experiments/exp_022_dense_temporal_grid.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_022_dense_temporal_grid.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1375,7 +1961,7 @@ packaging report.
 
 #### `team_a_current__exp_023_holiday_yoy` — exp_023 — HOLIDAY-YOY: персональная сезонность 14.02–15.03
 
-- Original code/document: `experiments/exp_023_holiday_yoy.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_023_holiday_yoy.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: holiday/YoY features, Search/Catalog decomposition, window aggregates, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1392,7 +1978,7 @@ packaging report.
 
 #### `team_a_current__exp_024_multihorizon_hazard` — exp_024 — MHZ: multi-horizon hazard + count supervision
 
-- Original code/document: `experiments/exp_024_multihorizon_hazard.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_024_multihorizon_hazard.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, calibration diagnostic.
 - Features: gap/burst features, window aggregates, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1409,7 +1995,7 @@ packaging report.
 
 #### `team_a_current__exp_025_sequence_encoder` — exp_025 — SEQ-01: энкодер сырой дневной последовательности (dilated TCN)
 
-- Original code/document: `experiments/exp_025_sequence_encoder.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_025_sequence_encoder.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, blend.
 - Features: history-depth features, window aggregates, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1426,7 +2012,7 @@ packaging report.
 
 #### `team_a_current__exp_026_seq_seed_averaging` — exp_026 — SEQ-02: усреднение сидов TCN и диагностика по глубине истории
 
-- Original code/document: `experiments/exp_026_seq_seed_averaging.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_026_seq_seed_averaging.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: event Transformer / ETX, dilated TCN, sequence model, calibration diagnostic.
 - Features: history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1443,7 +2029,7 @@ packaging report.
 
 #### `team_a_current__exp_027_depth_support` — exp_027 — SEQ-DEPTH: почему `SEQAVG3-MIX` провалился на LB
 
-- Original code/document: `experiments/exp_027_depth_support.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_027_depth_support.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, calibration diagnostic.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1460,7 +2046,7 @@ packaging report.
 
 #### `team_a_current__exp_028_fresh_dist_mix` — exp_028 — FRESH-DIST-MIX: аудит максимально свежей supervision
 
-- Original code/document: `experiments/exp_028_fresh_dist_mix.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_028_fresh_dist_mix.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: distribution head, blend.
 - Features: calendar features, freshness/conditional features, gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1477,7 +2063,7 @@ packaging report.
 
 #### `team_a_current__exp_029_seq_avail_aug` — exp_029 — SEQ-AVAIL-AUG: train-time augmentation канала `avail`
 
-- Original code/document: `experiments/exp_029_seq_avail_aug.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_029_seq_avail_aug.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, ensemble.
 - Features: calendar features, history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1494,7 +2080,7 @@ packaging report.
 
 #### `team_a_current__exp_030_seq_depth_curriculum` — exp_030 — SEQ-D3A: depth curriculum (случайная обрезка реальных дней)
 
-- Original code/document: `experiments/exp_030_seq_depth_curriculum.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_030_seq_depth_curriculum.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, calibration diagnostic.
 - Features: calendar features, history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1511,7 +2097,7 @@ packaging report.
 
 #### `team_a_current__exp_030b_seq_d3a_seed43` — exp_030b — SEQ-D3A-S43: разделяющий замер провала фолда 09-18
 
-- Original code/document: `experiments/exp_030b_seq_d3a_seed43.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_030b_seq_d3a_seed43.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, blend, calibration diagnostic.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1528,7 +2114,7 @@ packaging report.
 
 #### `team_a_current__exp_030c_seq_d3a_multiseed` — exp_030c — SEQ-D3A-MS: подтверждение depth curriculum на 3 сидах × 4 фолдах
 
-- Original code/document: `experiments/exp_030c_seq_d3a_multiseed.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_030c_seq_d3a_multiseed.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: freshness/conditional features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1545,7 +2131,7 @@ packaging report.
 
 #### `team_a_current__exp_032_s04_cond_fresh_pilot` — exp_032 — S04-SEQ: conditional intensity head на CLEAN+EXTRA (пилот + 4 фолда)
 
-- Original code/document: `experiments/exp_032_s04_cond_fresh_pilot.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_032_s04_cond_fresh_pilot.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, calibration diagnostic.
 - Features: freshness/conditional features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1562,7 +2148,7 @@ packaging report.
 
 #### `team_a_current__exp_032_s04_conditional_fresh_seq` — EXP-032 — S04: Conditional Fresh Supervision for SEQ
 
-- Original code/document: `experiments/EXP_032_S04_conditional_fresh_seq.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/EXP_032_S04_conditional_fresh_seq.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, ensemble, blend, calibration diagnostic.
 - Features: freshness/conditional features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1579,7 +2165,7 @@ packaging report.
 
 #### `team_a_current__exp_032b_prod_extensive` — exp_032b — EXP-032B: боевой экстенсив под свежий conditional интенсив
 
-- Original code/document: `experiments/exp_032b_prod_extensive.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_032b_prod_extensive.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, dilated TCN, sequence model, calibration diagnostic.
 - Features: freshness/conditional features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1596,7 +2182,7 @@ packaging report.
 
 #### `team_a_current__exp_035_mix9_seq_slot` — exp_035 — MIX9: выбор SEQ-члена смеси и сборка `SEQ-AVG3-CLIP-MIX`
 
-- Original code/document: `experiments/exp_035_mix9_seq_slot.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_035_mix9_seq_slot.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1613,7 +2199,7 @@ packaging report.
 
 #### `team_a_current__exp_036_etx_sparse_event_transformer` — exp_036 — ETX-01: Sparse Event Transformer (`STRATEGY_13`, вариант B)
 
-- Original code/document: `experiments/exp_036_etx_sparse_event_transformer.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_036_etx_sparse_event_transformer.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: event Transformer / ETX, dilated TCN, sequence model, calibration diagnostic.
 - Features: calendar features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1630,7 +2216,7 @@ packaging report.
 
 #### `team_a_current__exp_037_etx_avg3_strongest` — exp_037 — EXP-037: снятие блокера ETX, `ETX-AVG3` и сборка `STRONGEST_CURRENT`
 
-- Original code/document: `experiments/exp_037_etx_avg3_strongest.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_037_etx_avg3_strongest.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, blend, calibration diagnostic.
 - Features: calendar features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1647,7 +2233,7 @@ packaging report.
 
 #### `team_a_current__exp_038_fnl_future_funnel` — exp_038 — FNL: future-funnel supervision (Search/Cart) для энкодера SEQ-D3A
 
-- Original code/document: `experiments/exp_038_fnl_future_funnel.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_038_fnl_future_funnel.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, calibration diagnostic.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1664,7 +2250,7 @@ packaging report.
 
 #### `team_a_current__exp_039_block4_saf` — exp_039 — BLOCK4-SAF: selection-aware block-to-block residual correction
 
-- Original code/document: `experiments/exp_039_block4_saf.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_039_block4_saf.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, calibration diagnostic.
 - Features: calendar features, freshness/conditional features, window aggregates.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1681,7 +2267,7 @@ packaging report.
 
 #### `team_a_current__exp_040_fresh_contrast_moe` — exp_040 — FRESH-CONTRAST-MOE: incremental COND-FRESH residual
 
-- Original code/document: `experiments/exp_040_fresh_contrast_moe.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_040_fresh_contrast_moe.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, ensemble.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1698,7 +2284,7 @@ packaging report.
 
 #### `team_a_current__exp_041_ridge15` — exp_041 — RIDGE15: линейный член с фиксированным весом 15%
 
-- Original code/document: `experiments/exp_041_ridge15.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_041_ridge15.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Ridge, blend.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1715,7 +2301,7 @@ packaging report.
 
 #### `team_a_current__exp_042_zero2d_shrink` — exp_042 — ZERO2D-SHRINK: soft negative correction по amount × p0
 
-- Original code/document: `experiments/exp_042_zero2d_shrink.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_042_zero2d_shrink.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1732,7 +2318,7 @@ packaging report.
 
 #### `team_a_current__exp_043_det_pair` — exp_043 — DET-PAIR: deterministic continuation SEQ-D3A
 
-- Original code/document: `experiments/exp_043_det_pair.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_043_det_pair.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: freshness/conditional features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1749,7 +2335,7 @@ packaging report.
 
 #### `team_a_current__exp_044_fresh_conditional_ft` — exp_044 — fresh conditional supervision при paired fine-tune SEQ-01
 
-- Original code/document: `experiments/exp_044_fresh_conditional_ft.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_044_fresh_conditional_ft.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: freshness/conditional features, history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1766,7 +2352,7 @@ packaging report.
 
 #### `team_a_current__exp_045_buyctrl_det` — exp_045 — BUYCTRL-DET: настоящая `buy30` supervision против shuffle-control
 
-- Original code/document: `experiments/exp_045_buyctrl_det.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_045_buyctrl_det.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: freshness/conditional features, history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1783,7 +2369,7 @@ packaging report.
 
 #### `team_a_current__exp_046_tabular_backbone_refresh` — exp_046 — TABULAR-BACKBONE-REFRESH: rounds × AVG3 для production UNC/CAP
 
-- Original code/document: `experiments/exp_046_tabular_backbone_refresh.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_046_tabular_backbone_refresh.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, sequence model, ensemble, blend, calibration diagnostic.
 - Features: freshness/conditional features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1800,7 +2386,7 @@ packaging report.
 
 #### `team_a_current__exp_047_btyd_day_bgnbd_residual` — exp_047 — BTYD-DAY-BGNBD-RESIDUAL
 
-- Original code/document: `experiments/exp_047_btyd_day_bgnbd_residual.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_047_btyd_day_bgnbd_residual.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, BG/NBD, BTYD, blend, calibration diagnostic.
 - Features: recency.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1817,7 +2403,7 @@ packaging report.
 
 #### `team_a_current__exp_048_selection_mismatch_cv` — exp_048 — SELECTION-MISMATCH / SELECTION-MATCHED CV
 
-- Original code/document: `experiments/exp_048_selection_mismatch_cv.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_048_selection_mismatch_cv.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, BTYD.
 - Features: freshness/conditional features, Search/Catalog decomposition.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1834,7 +2420,7 @@ packaging report.
 
 #### `team_a_current__exp_049_selection_mismatch_production_followup` — exp_049 — corrected EXP-048 same-fold analysis / production audit
 
-- Original code/document: `experiments/exp_049_selection_mismatch_production_followup.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_049_selection_mismatch_production_followup.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BG/NBD, BTYD, ensemble.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1851,7 +2437,7 @@ packaging report.
 
 #### `team_a_current__exp_050_btyd05_production_resolution` — exp_050 — BTYD05 production resolution
 
-- Original code/document: `experiments/exp_050_btyd05_production_resolution.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_050_btyd05_production_resolution.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, BTYD.
 - Features: freshness/conditional features, history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1868,7 +2454,7 @@ packaging report.
 
 #### `team_a_current__exp_051_btyd_stable_production` — exp_051 — BTYD stable fit + production
 
-- Original code/document: `experiments/exp_051_btyd_stable_production.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_051_btyd_stable_production.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, BG/NBD, BTYD.
 - Features: freshness/conditional features, history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1885,7 +2471,7 @@ packaging report.
 
 #### `team_a_current__exp_052_channel_shapley_split` — exp_052 — CHANNEL-SHAPLEY-SPLIT
 
-- Original code/document: `experiments/exp_052_channel_shapley_split.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_052_channel_shapley_split.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM.
 - Features: Search/Catalog decomposition, channel Shapley, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1902,7 +2488,7 @@ packaging report.
 
 #### `team_a_current__exp_053_residual_signal_discovery` — exp_053 — RESIDUAL SIGNAL DISCOVERY
 
-- Original code/document: `experiments/exp_053_residual_signal_discovery.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_053_residual_signal_discovery.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, ensemble.
 - Features: gap/burst features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1919,7 +2505,7 @@ packaging report.
 
 #### `team_a_current__exp_054_burst_gap_etx` — exp_054 — BURST-GAP-ETX: activity episodes and inactivity transitions
 
-- Original code/document: `experiments/exp_054_burst_gap_etx.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_054_burst_gap_etx.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, dilated TCN.
 - Features: calendar features, occurrence features, gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1936,7 +2522,7 @@ packaging report.
 
 #### `team_a_current__exp_055_landmark_memory_etx` — exp_055 — retrospective landmark outcome memory
 
-- Original code/document: `experiments/exp_055_landmark_memory_etx.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_055_landmark_memory_etx.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, sequence model.
 - Features: recency, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1953,7 +2539,7 @@ packaging report.
 
 #### `team_a_current__exp_056_late_unlabeled_etx` — exp_056 — LATE-UNLABELED-ETX-ADAPT
 
-- Original code/document: `experiments/exp_056_late_unlabeled_etx.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_056_late_unlabeled_etx.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: calibration diagnostic.
 - Features: calendar features, history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1970,7 +2556,7 @@ packaging report.
 
 #### `team_a_current__exp_057_production_state_reweight` — EXP-057 — PRODUCTION-STATE-REWEIGHT
 
-- Original code/document: `experiments/exp_057_production_state_reweight.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_057_production_state_reweight.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, ensemble.
 - Features: calendar features, recency, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -1987,7 +2573,7 @@ packaging report.
 
 #### `team_a_current__exp_058_dataset_fingerprint` — exp_058 — DATASET-FINGERPRINT / USER-IDENTITY AUDIT
 
-- Original code/document: `experiments/exp_058_dataset_fingerprint.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_058_dataset_fingerprint.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, CatBoost, calibration diagnostic.
 - Features: calendar features, gap/burst features, dataset/user fingerprint, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2004,7 +2590,7 @@ packaging report.
 
 #### `team_a_current__exp_059_seq65_temporal_heavy` — exp_059 — SEQ65_TEMPORAL_HEAVY
 
-- Original code/document: `experiments/exp_059_seq65_temporal_heavy.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_059_seq65_temporal_heavy.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2021,7 +2607,7 @@ packaging report.
 
 #### `team_a_current__exp_060_level_minus_006` — exp_060 — LEVEL_MINUS_006
 
-- Original code/document: `experiments/exp_060_level_minus_006.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_060_level_minus_006.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BTYD, blend, calibration diagnostic.
 - Features: freshness/conditional features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2038,7 +2624,7 @@ packaging report.
 
 #### `team_a_current__exp_061_open_funnel` — exp_061 — OPEN-FUNNEL unresolved intent preflight
 
-- Original code/document: `experiments/exp_061_open_funnel.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_061_open_funnel.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, ensemble.
 - Features: funnel features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2055,7 +2641,7 @@ packaging report.
 
 #### `team_a_current__exp_062_platform_detrend` — exp_062 — PLATFORM-DETREND
 
-- Original code/document: `experiments/exp_062_platform_detrend.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_062_platform_detrend.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM.
 - Features: window aggregates.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2072,7 +2658,7 @@ packaging report.
 
 #### `team_a_current__exp_063_occurrence_revisit` — exp_063 — OCCURRENCE-REVISIT
 
-- Original code/document: `experiments/exp_063_occurrence_revisit.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_063_occurrence_revisit.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: occurrence features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2089,7 +2675,7 @@ packaging report.
 
 #### `team_a_current__exp_064_event_order` — exp_064 — EVENT-ORDER
 
-- Original code/document: `experiments/exp_064_event_order.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_064_event_order.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM.
 - Features: funnel features, window aggregates.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2106,7 +2692,7 @@ packaging report.
 
 #### `team_a_current__exp_065_final_integration` — exp_065 — FINAL-INTEGRATION
 
-- Original code/document: `experiments/exp_065_final_integration.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_065_final_integration.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, BTYD, blend.
 - Features: occurrence features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2123,7 +2709,7 @@ packaging report.
 
 #### `team_a_current__exp_066_latest_delta_compatibility` — exp_066 — LATEST-DELTA-COMPATIBILITY
 
-- Original code/document: `experiments/exp_066_latest_delta_compatibility.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_066_latest_delta_compatibility.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BTYD.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2140,7 +2726,7 @@ packaging report.
 
 #### `team_a_current__exp_067_authoritative_latest_integration` — exp_067 — AUTHORITATIVE-LATEST-INTEGRATION
 
-- Original code/document: `experiments/exp_067_authoritative_latest_integration.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_067_authoritative_latest_integration.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2157,7 +2743,7 @@ packaging report.
 
 #### `team_a_current__exp_068_recency_ridge_predictions` — exp_068 — RECENCY-RIDGE-ON-PREDICTIONS
 
-- Original code/document: `experiments/exp_068_recency_ridge_predictions.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_068_recency_ridge_predictions.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Ridge, two-part / hurdle, blend.
 - Features: recency, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2174,7 +2760,7 @@ packaging report.
 
 #### `team_a_current__exp_069_team_b_b2_ensemble` — exp_069 — TEAM-B-B2 ensemble
 
-- Original code/document: `experiments/exp_069_team_b_b2_ensemble.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_069_team_b_b2_ensemble.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: CatBoost, ensemble, blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2191,7 +2777,7 @@ packaging report.
 
 #### `team_a_current__exp_070_team_b_tabular_slot` — exp_070 — TEAM-B tabular slot replacement
 
-- Original code/document: `experiments/exp_070_team_b_tabular_slot.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_070_team_b_tabular_slot.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2208,7 +2794,7 @@ packaging report.
 
 #### `team_a_current__exp_071_final_team_b_ensemble` — exp_071 — финальный ансамбль STRONGEST-CURRENT + team-b-B2
 
-- Original code/document: `experiments/exp_071_final_team_b_ensemble.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/exp_071_final_team_b_ensemble.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, ensemble, blend, calibration diagnostic.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2225,7 +2811,7 @@ packaging report.
 
 #### `team_a_current__exp_032_s04_conditional_fresh_seq__1d1214ae` — EXP-032 — S04: Conditional Fresh Supervision for SEQ
 
-- Original code/document: `experiments/EXP_032_S04_conditional_fresh_seq.md`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/EXP_032_S04_conditional_fresh_seq.md`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, ensemble, blend, calibration diagnostic.
 - Features: freshness/conditional features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2244,7 +2830,7 @@ packaging report.
 
 #### `team_a_final__final_team_b_ensemble` — final_team_b_ensemble
 
-- Original code/document: `src/final_team_b_ensemble.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `src/final_team_b_ensemble.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, ensemble, blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2263,7 +2849,7 @@ packaging report.
 
 #### `team_a_run__s1_b0` — Logged run — S1-B0
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2280,7 +2866,7 @@ packaging report.
 
 #### `team_a_run__s1_e01` — Logged run — S1-E01
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2297,7 +2883,7 @@ packaging report.
 
 #### `team_a_run__s1_e02` — Logged run — S1-E02
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2314,7 +2900,7 @@ packaging report.
 
 #### `team_a_run__s1_e03a` — Logged run — S1-E03a
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2331,7 +2917,7 @@ packaging report.
 
 #### `team_a_run__s1_e03b` — Logged run — S1-E03b
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2348,7 +2934,7 @@ packaging report.
 
 #### `team_a_run__s1_e04` — Logged run — S1-E04
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2365,7 +2951,7 @@ packaging report.
 
 #### `team_a_run__s1_e03c` — Logged run — S1-E03c
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2382,7 +2968,7 @@ packaging report.
 
 #### `team_a_run__s1_e10` — Logged run — S1-E10
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: calendar features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2399,7 +2985,7 @@ packaging report.
 
 #### `team_a_run__exp_min` — Logged run — EXP-MIN
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2416,7 +3002,7 @@ packaging report.
 
 #### `team_a_run__exp_sim` — Logged run — EXP-SIM
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: blend, calibration diagnostic.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2433,7 +3019,7 @@ packaging report.
 
 #### `team_a_run__s1_e11` — Logged run — S1-E11
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: calibration diagnostic.
 - Features: calendar features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2450,7 +3036,7 @@ packaging report.
 
 #### `team_a_run__s1_dist` — Logged run — S1-DIST
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: distribution head, calibration diagnostic.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2467,7 +3053,7 @@ packaging report.
 
 #### `team_a_run__s1_dist_f4` — Logged run — S1-DIST-F4
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: calibration diagnostic.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2484,7 +3070,7 @@ packaging report.
 
 #### `team_a_run__s1_val_w` — Logged run — S1-VAL-W
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: calibration diagnostic.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2501,7 +3087,7 @@ packaging report.
 
 #### `team_a_run__s1_mix_e11` — Logged run — S1-MIX-E11
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2518,7 +3104,7 @@ packaging report.
 
 #### `team_a_run__s1_seedavg5` — Logged run — S1-SEEDAVG5
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2535,7 +3121,7 @@ packaging report.
 
 #### `team_a_run__s1_rounds` — Logged run — S1-ROUNDS
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2552,7 +3138,7 @@ packaging report.
 
 #### `team_a_run__s1_sample_a` — Logged run — S1-SAMPLE-A
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2569,7 +3155,7 @@ packaging report.
 
 #### `team_a_run__s1_gapaxis` — Logged run — S1-GAPAXIS
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: gap/burst features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2586,7 +3172,7 @@ packaging report.
 
 #### `team_a_run__pt_od_avg3` — Logged run — PT-OD-AVG3
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2603,7 +3189,7 @@ packaging report.
 
 #### `team_a_run__pt_full_avg3` — Logged run — PT-FULL-AVG3
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: personal-time features, gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2620,7 +3206,7 @@ packaging report.
 
 #### `team_a_run__pt_shuf_avg3` — Logged run — PT-SHUF-AVG3
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: personal-time features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2637,7 +3223,7 @@ packaging report.
 
 #### `team_a_run__s1_sample_b` — Logged run — S1-SAMPLE-B
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2654,7 +3240,7 @@ packaging report.
 
 #### `team_a_run__holiday_yoy` — Logged run — HOLIDAY-YOY
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: holiday/YoY features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2671,7 +3257,7 @@ packaging report.
 
 #### `team_a_run__mhz_base` — Logged run — MHZ-BASE
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2688,7 +3274,7 @@ packaging report.
 
 #### `team_a_run__mhz_self` — Logged run — MHZ-SELF
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2705,7 +3291,7 @@ packaging report.
 
 #### `team_a_run__mhz_p30` — Logged run — MHZ-P30
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2722,7 +3308,7 @@ packaging report.
 
 #### `team_a_run__mhz_full` — Logged run — MHZ-FULL
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2739,7 +3325,7 @@ packaging report.
 
 #### `team_a_run__seq_01` — Logged run — SEQ-01
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2756,7 +3342,7 @@ packaging report.
 
 #### `team_a_run__seq_avg2` — Logged run — SEQ-AVG2
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2773,7 +3359,7 @@ packaging report.
 
 #### `team_a_run__seq_avg3` — Logged run — SEQ-AVG3
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, calibration diagnostic.
 - Features: history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2790,7 +3376,7 @@ packaging report.
 
 #### `team_a_run__seq_depth` — Logged run — SEQ-DEPTH
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2807,7 +3393,7 @@ packaging report.
 
 #### `team_a_run__fresh_dist_mix` — Logged run — FRESH-DIST-MIX
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2824,7 +3410,7 @@ packaging report.
 
 #### `team_a_run__seq_avail_aug` — Logged run — SEQ-AVAIL-AUG
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2841,7 +3427,7 @@ packaging report.
 
 #### `team_a_run__seq_d3a` — Logged run — SEQ-D3A
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2858,7 +3444,7 @@ packaging report.
 
 #### `team_a_run__seq_d3a_s43` — Logged run — SEQ-D3A-S43
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model, blend.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2875,7 +3461,7 @@ packaging report.
 
 #### `team_a_run__seq_d3a_g1_s43` — Logged run — SEQ-D3A-G1-S43
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2892,7 +3478,7 @@ packaging report.
 
 #### `team_a_run__seq_d3a_g2_s44` — Logged run — SEQ-D3A-G2-S44
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2909,7 +3495,7 @@ packaging report.
 
 #### `team_a_run__seq_d3a_ms` — Logged run — SEQ-D3A-MS
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2926,7 +3512,7 @@ packaging report.
 
 #### `team_a_run__s04_seq_fresh` — Logged run — S04-SEQ-FRESH
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: freshness/conditional features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2943,7 +3529,7 @@ packaging report.
 
 #### `team_a_run__s04_prod_fresh` — Logged run — S04-PROD-FRESH
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: freshness/conditional features, history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2960,7 +3546,7 @@ packaging report.
 
 #### `team_a_run__seq_avg3_clip_mix` — Logged run — SEQ-AVG3-CLIP-MIX
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, blend.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2977,7 +3563,7 @@ packaging report.
 
 #### `team_a_run__etx_01_s42` — Logged run — ETX-01-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: event Transformer / ETX, sequence model, calibration diagnostic.
 - Features: calendar features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -2994,7 +3580,7 @@ packaging report.
 
 #### `team_a_run__etx_01_s42_4f` — Logged run — ETX-01-S42-4F
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: event Transformer / ETX, dilated TCN, sequence model.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3011,7 +3597,7 @@ packaging report.
 
 #### `team_a_run__etx_avg3` — Logged run — ETX-AVG3
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: event Transformer / ETX, dilated TCN, sequence model.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3028,7 +3614,7 @@ packaging report.
 
 #### `team_a_run__strongest_current` — Logged run — STRONGEST-CURRENT
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, blend.
 - Features: history-depth features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3045,7 +3631,7 @@ packaging report.
 
 #### `team_a_run__fnl_base_s42` — Logged run — FNL-BASE-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3062,7 +3648,7 @@ packaging report.
 
 #### `team_a_run__fnl_funnel_l30_s42` — Logged run — FNL-FUNNEL-L30-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3079,7 +3665,7 @@ packaging report.
 
 #### `team_a_run__fnl_buyctrl_l30_s42` — Logged run — FNL-BUYCTRL-L30-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3096,7 +3682,7 @@ packaging report.
 
 #### `team_a_run__fnl_cart_l30_s42` — Logged run — FNL-CART-L30-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3113,7 +3699,7 @@ packaging report.
 
 #### `team_a_run__fnl_funnel_l10_s42` — Logged run — FNL-FUNNEL-L10-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3130,7 +3716,7 @@ packaging report.
 
 #### `team_a_run__fnl_buyctrl_l10_s42` — Logged run — FNL-BUYCTRL-L10-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3147,7 +3733,7 @@ packaging report.
 
 #### `team_a_run__fnl_cart_l10_s42` — Logged run — FNL-CART-L10-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3164,7 +3750,7 @@ packaging report.
 
 #### `team_a_run__fnl_baser2_s42` — Logged run — FNL-BASER2-S42
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: funnel features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3181,7 +3767,7 @@ packaging report.
 
 #### `team_a_run__block4_saf` — Logged run — BLOCK4-SAF
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3198,7 +3784,7 @@ packaging report.
 
 #### `team_a_run__fresh_contrast_moe` — Logged run — FRESH-CONTRAST-MOE
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3215,7 +3801,7 @@ packaging report.
 
 #### `team_a_run__ridge15` — Logged run — RIDGE15
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, Ridge, blend.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3232,7 +3818,7 @@ packaging report.
 
 #### `team_a_run__zero2d_shrink` — Logged run — ZERO2D-SHRINK
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3249,7 +3835,7 @@ packaging report.
 
 #### `team_a_run__fresh_cond_ft` — Logged run — FRESH-COND-FT
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: freshness/conditional features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3266,7 +3852,7 @@ packaging report.
 
 #### `team_a_run__buyctrl_det` — Logged run — BUYCTRL-DET
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: dilated TCN, sequence model.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3283,7 +3869,7 @@ packaging report.
 
 #### `team_a_run__tbr_refresh` — Logged run — TBR-REFRESH
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, blend.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3300,7 +3886,7 @@ packaging report.
 
 #### `team_a_run__btyd_day_bgnbd_residual` — Logged run — BTYD-DAY-BGNBD-RESIDUAL
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BG/NBD, BTYD, blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3317,7 +3903,7 @@ packaging report.
 
 #### `team_a_run__selmatch_exp048` — Logged run — SELMATCH_EXP048
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BTYD.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3334,7 +3920,7 @@ packaging report.
 
 #### `team_a_run__selmatch_exp049` — Logged run — SELMATCH_EXP049
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BTYD.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3351,7 +3937,7 @@ packaging report.
 
 #### `team_a_run__btyd05_prod` — Logged run — BTYD05-PROD
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, BTYD.
 - Features: freshness/conditional features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3368,7 +3954,7 @@ packaging report.
 
 #### `team_a_run__btyd_stable` — Logged run — BTYD-STABLE
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BG/NBD, BTYD.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3385,7 +3971,7 @@ packaging report.
 
 #### `team_a_run__channel_shapley_split` — Logged run — CHANNEL-SHAPLEY-SPLIT
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: Search/Catalog decomposition, channel Shapley, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3402,7 +3988,7 @@ packaging report.
 
 #### `team_a_run__resdisc_053` — Logged run — RESDISC_053
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: ensemble.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3419,7 +4005,7 @@ packaging report.
 
 #### `team_a_run__burst_gap_etx` — Logged run — BURST-GAP-ETX
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3436,7 +4022,7 @@ packaging report.
 
 #### `team_a_run__landmark_memory_055` — Logged run — LANDMARK-MEMORY-055
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3453,7 +4039,7 @@ packaging report.
 
 #### `team_a_run__fingerprint_exp058` — Logged run — FINGERPRINT_EXP058
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: dataset/user fingerprint.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3470,7 +4056,7 @@ packaging report.
 
 #### `team_a_run__late_ssl_exp056` — Logged run — LATE_SSL_EXP056
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3487,7 +4073,7 @@ packaging report.
 
 #### `team_a_run__state_reweight_exp057` — Logged run — STATE_REWEIGHT_EXP057
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3504,7 +4090,7 @@ packaging report.
 
 #### `team_a_run__level_minus_006_exp060` — Logged run — LEVEL_MINUS_006_EXP060
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3521,7 +4107,7 @@ packaging report.
 
 #### `team_a_run__open_funnel_exp061` — Logged run — OPEN_FUNNEL_EXP061
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: funnel features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3538,7 +4124,7 @@ packaging report.
 
 #### `team_a_run__platform_detrend_exp062` — Logged run — PLATFORM_DETREND_EXP062
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3555,7 +4141,7 @@ packaging report.
 
 #### `team_a_run__occurrence_revisit_exp063` — Logged run — OCCURRENCE_REVISIT_EXP063
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: occurrence features, 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3572,7 +4158,7 @@ packaging report.
 
 #### `team_a_run__event_order_exp064` — Logged run — EVENT_ORDER_EXP064
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Unknown / not recoverable from repository history.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3589,7 +4175,7 @@ packaging report.
 
 #### `team_a_run__final_integration_exp065` — Logged run — FINAL_INTEGRATION_EXP065
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BTYD, blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3606,7 +4192,7 @@ packaging report.
 
 #### `team_a_run__latest_delta_compat_exp066` — Logged run — LATEST_DELTA_COMPAT_EXP066
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: BTYD.
 - Features: freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3623,7 +4209,7 @@ packaging report.
 
 #### `team_a_run__authoritative_latest_exp067` — Logged run — AUTHORITATIVE_LATEST_EXP067
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -3640,7 +4226,7 @@ packaging report.
 
 #### `team_a_run__recency_ridge_pred_exp068` — Logged run — RECENCY_RIDGE_PRED_EXP068
 
-- Original code/document: `experiments/log.csv`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `experiments/log.csv`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Ridge, two-part / hurdle.
 - Features: recency.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -4256,7 +4842,7 @@ packaging report.
 
 #### `team_b_final__team_b_b2_ensemble` — team_b_b2_ensemble
 
-- Original code/document: `src/team_b_b2_ensemble.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `src/team_b_b2_ensemble.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model, ensemble, blend.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8070,7 +8656,7 @@ packaging report.
 
 #### `teammate_final__rebuild_latest` — Public-LB calibrated final blend in z=log1p space.
 
-- Original code/document: `пайплайн сокомандника/latest/rebuild_latest.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/latest/rebuild_latest.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: ensemble, blend.
 - Features: occurrence features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8087,7 +8673,7 @@ packaging report.
 
 #### `teammate_final__build_submission` — build_submission
 
-- Original code/document: `пайплайн сокомандника/friend_original/submission_STRONGEST_CURRENT/pipeline/build_submission.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/friend_original/submission_STRONGEST_CURRENT/pipeline/build_submission.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: sequence model.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8106,7 +8692,7 @@ packaging report.
 
 #### `teammate_research__continue_best_bas_12h_v2` — !/usr/bin/env python3
 
-- Original code/document: `пайплайн сокомандника/research_scripts/continue_best_bas_12h_v2.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/research_scripts/continue_best_bas_12h_v2.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, sequence model, two-part / hurdle, blend.
 - Features: recency, occurrence features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8123,7 +8709,7 @@ packaging report.
 
 #### `teammate_research__continue_best_bas_final6h` — -----------------------------------------------------------------------------
 
-- Original code/document: `пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/research_scripts/continue_best_bas_final6h.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, Ridge, two-part / hurdle, ensemble, blend.
 - Features: recency, freshness/conditional features, occurrence features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8140,7 +8726,7 @@ packaging report.
 
 #### `teammate_research__continue_fixedstack_combo_10h` — !/usr/bin/env python3
 
-- Original code/document: `пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, Ridge, two-part / hurdle, blend.
 - Features: recency, freshness/conditional features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8157,7 +8743,7 @@ packaging report.
 
 #### `teammate_research__make_last20` — Public-LB calibrated final blend in z=log1p space.
 
-- Original code/document: `пайплайн сокомандника/research_scripts/make_last20.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/research_scripts/make_last20.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: ensemble, blend.
 - Features: occurrence features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8174,7 +8760,7 @@ packaging report.
 
 #### `teammate_research__materialize_final6h_extra90m` — materialize_final6h_extra90m
 
-- Original code/document: `пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/research_scripts/materialize_final6h_extra90m.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Ridge, blend.
 - Features: occurrence features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8191,7 +8777,7 @@ packaging report.
 
 #### `teammate_research__run_best_bas_fixedstack_14h_v2` — !/usr/bin/env python3
 
-- Original code/document: `пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/research_scripts/run_best_bas_fixedstack_14h_v2.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, Ridge, two-part / hurdle, ensemble, blend.
 - Features: recency, freshness/conditional features, occurrence features, gap/burst features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8208,7 +8794,7 @@ packaging report.
 
 #### `teammate_research__run_best_bas_research_23h` — !/usr/bin/env python3
 
-- Original code/document: `пайплайн сокомандника/research_scripts/run_best_bas_research_23h.py`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/research_scripts/run_best_bas_research_23h.py`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: LightGBM, dilated TCN, sequence model, two-part / hurdle, blend.
 - Features: recency, occurrence features, gap/burst features, history-depth features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8227,7 +8813,7 @@ packaging report.
 
 #### `teammate_review_bundle__extra90_review_bundle_20260823_222555_extracted` — extra90_REVIEW_BUNDLE_20260823_222555_extracted
 
-- Original code/document: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/RUN_MANIFEST.json`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/RUN_MANIFEST.json`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Ridge, blend.
 - Features: 227 tabular features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8244,7 +8830,7 @@ packaging report.
 
 #### `teammate_review_bundle__final6h_review_bundle_20260823_204823_extracted` — final6h_REVIEW_BUNDLE_20260823_204823_extracted
 
-- Original code/document: `пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/RUN_MANIFEST.json`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/review_bundles/final6h_REVIEW_BUNDLE_20260823_204823_extracted/results/RUN_MANIFEST.json`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Ridge, two-part / hurdle, blend.
 - Features: occurrence features.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8261,7 +8847,7 @@ packaging report.
 
 #### `teammate_review_bundle__fixedstack_combo10h_review_bundle_20260823_054654_extracted` — fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted
 
-- Original code/document: `пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/RUN_MANIFEST.json`; source `working tree` @ `a28a71fb2d0194052014c542f36d180dfe74bcf9`.
+- Original code/document: `пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/RUN_MANIFEST.json`; source `working tree` @ `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`.
 - Idea/model: Ridge, two-part / hurdle.
 - Features: See preserved experiment card and implementation.
 - Preprocessing: See preserved experiment card and frozen implementation.
@@ -8316,19 +8902,21 @@ Exact commands for every experiment are in its preserved card. Full retraining o
 ### 5. Final submissions
 
 ```bash
-python make_final_submission.py                       # exp_071 requested final
-python make_final_submission.py --recipe strongest   # exp_037 exact submitted champion
-python make_final_submission.py --recipe latest      # teammate .12/.16/.72 reconstruction
+python make_final_submission.py                              # exact JOINT86/Team-B14 final
+python make_final_submission.py --recipe strongest55-teamb45  # exact unsubmitted candidate
+python make_final_submission.py --recipe team-a-b2             # exp_071 requested blend
+python make_final_submission.py --recipe strongest             # exp_037 early champion
+python make_final_submission.py --recipe latest                # teammate .12/.16/.72 reconstruction
 python make_final_submission.py --recipe final-candidates
 ```
 
 ## Verification
 
-`python tools/verify_experiment_archive.py` завершился PASS: **445** уникальных entries, **90** исторических карточек, **2 909** Python-файлов успешно скомпилированы in-memory, tracked raw data/submissions отсутствуют. Все **68/68** активных `src`-модулей импортируются; обязательные зависимости доступны.
+`python tools/verify_experiment_archive.py` завершился PASS: **483** уникальных entries, **132** исторических карточек, **3493** Python-файлов успешно скомпилированы in-memory, archive-added raw data/submission paths: **0**. Все **69/69** активных root-level `src`-модулей импортируются; обязательные зависимости доступны. Merge-коллизия module-vs-package для `features/models/validation` устранена compatibility exports: legacy bare imports и новые explicit submodules обеих линий доступны одновременно.
 
-`python -m pytest -q`: **494 passed, 1 failed**. Единственный остающийся pre-existing failure — `src/test_calval.py::test_early_control_is_inside_corridor_and_earliest_first`: cutoff `2025-08-08` даёт конец 30-дневного окна `2025-09-07`, позже первого validation cutoff `2025-09-04`. Validation/config не менялись без явного запроса. `pytest.ini` ограничивает обычный discovery активной `src/`; все замороженные historical tests всё равно прошли отдельную syntax-компиляцию.
+`python -m pytest -q`: **492 passed, 3 failed**. Failure 1 — защищённый calendar contract: cutoff `2025-08-08` даёт конец окна `2025-09-07`, позже validation cutoff `2025-09-04`. Failure 2 — `LANDMARK_MEMORY_EXP055`: fetched `preflight_verdict.json` не совпадает с canonical hash старого replay manifest. Failure 3 — `STATE_REWEIGHT_EXP057`: immutable `phase0_audit.json` содержит pre-archive `base_head`; тест правильно отказывается молча переписать evidence после rebase. Ни один evidence artifact, `src/validation.py` или `src/config.py` ради зелёного теста не переписывался. `pytest.ini` ограничивает обычный discovery активной `src/`; frozen snapshots отдельно syntax-checked.
 
-Фактические быстрые final rebuilds также пройдены: STRONGEST побайтно совпал с отправленным CSV; `latest` совпал в log-space с max error `8.88e-16`; exp_071 сформировал 250 000 строк с SHA256 `d6cdb218…`; exp_065 пересобрал оба финальных кандидата.
+Фактические final rebuilds также пройдены: JOINT86/Team-B14 и STRONGEST55/Team-B45 побайтно совпали с reference SHA и дали 250 000 валидных строк; STRONGEST совпал с отправленным CSV; `latest` совпал в log-space с max error `8.88e-16`; exp_071 и exp_065 ранее пересобрали заявленные candidates.
 
 ## Repository structure
 
@@ -8349,11 +8937,12 @@ OZON-E-CUP/
 │           ├── run.py
 │           └── implementation/       # frozen relevant Python source
 ├── src/                              # active shared training/inference code
-├── research/                         # EDA, strategy docs, compact results/runners
+├── research/                         # EDA, strategies, reconstruction, new directions
+├── reproducibility/                  # exact frozen final-submission packages
 ├── пайплайн сокомандника/            # external teammate provenance bundle
 ├── weights_archives/                 # external model-weight archives
 ├── docs/REPOSITORY_AUDIT.md           # path-level audit and git-history coverage
-├── data/                             # ignored competition data
+├── data/                             # local raw data ignored; fetched frozen package evidence preserved
 ├── artifacts/                        # ignored generated OOF/checkpoints/cache
 └── submissions/                      # ignored generated competition CSVs
 ```
@@ -8366,9 +8955,10 @@ Historical Team-B variants are not silently mapped onto Team-A validation: they 
 
 ## Reproducibility limits
 
-- Raw competition data and generated submissions are intentionally unversioned.
+- Local raw competition data and newly generated submissions remain ignored; fetched `origin/team-a` exact-reproduction packages intentionally contain reviewed frozen inputs/references with manifests.
+- Exact JOINT86 outer blend is byte-reproducible; the upstream generator of its frozen JOINT_V2 anchor is not recoverable and is not claimed as complete.
 - Many OOF arrays/checkpoints are generated artifacts; manifests/hashes and commands are committed, binaries remain external.
 - STRONGEST-CURRENT is exactly reproducible from saved predictions, but not every underlying model can be retrained because several weights were never saved.
 - `latest` is exactly reconstructible from three component CSVs, but its canonical OOF and complete CAP lineage are missing.
 - A score shown as Unknown was not guessed. External reports are explicitly labelled.
-- Один active calendar-validation test остаётся красным; точная причина и значения дат приведены в разделе Verification.
+- Три active evidence/state tests остаются красными; точные причины приведены в разделе Verification и не маскируются изменением исторических артефактов.

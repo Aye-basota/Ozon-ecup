@@ -7,7 +7,7 @@
 - **Experiment ID:** `rebuild_latest`
 - **Original source:** `пайплайн сокомандника/latest/rebuild_latest.py`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** authoritative latest submission rebuild
 - **Model:** ensemble, blend
 - **Features:** occurrence features

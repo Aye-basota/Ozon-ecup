@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "experiments" / "repro" / "catalog.json"
 README = ROOT / "README.md"
 AUDIT = ROOT / "docs" / "REPOSITORY_AUDIT.md"
+VERIFICATION = ROOT / "docs" / "EXPERIMENT_ARCHIVE_VERIFICATION.json"
 
 
 def git(*args: str) -> str:
@@ -43,6 +44,16 @@ def sha256(path: Path) -> str:
         for block in iter(lambda: stream.read(1 << 20), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def load_json_if_present(path: Path) -> dict[str, object]:
+    if not path.exists():
+        return {}
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return value if isinstance(value, dict) else {}
 
 
 def source_inventory() -> list[Path]:
@@ -84,6 +95,10 @@ def directory_stats(name: str) -> tuple[int, int]:
 
 
 def build_audit(catalog: list[dict[str, object]]) -> None:
+    verification = load_json_if_present(VERIFICATION)
+    reconstruction = load_json_if_present(
+        ROOT / "research" / "reconstruction" / "reports" / "completeness_summary.json"
+    )
     current_paths = [path for path in ROOT.rglob("*") if path.is_file() and ".git" not in path.parts]
     original_paths = [
         path for path in current_paths
@@ -93,7 +108,16 @@ def build_audit(catalog: list[dict[str, object]]) -> None:
     code_files = source_inventory()
     history_paths = sorted({line for line in git("log", "--all", "--name-only", "--pretty=format:").splitlines() if line})
     absent = [path for path in history_paths if not (ROOT / path).exists()]
-    refs = [line.strip() for line in git("for-each-ref", "--format=%(refname:short) %(objectname)", "refs/heads", "refs/remotes").splitlines()]
+    current_branch = git("branch", "--show-current").strip()
+    refs = []
+    for line in git(
+        "for-each-ref", "--format=%(refname:short) %(objectname)", "refs/heads", "refs/remotes"
+    ).splitlines():
+        name, _, object_name = line.strip().partition(" ")
+        refs.append(
+            f"{name} HEAD (archive commit; resolve in the checked-out repository)"
+            if name == current_branch else f"{name} {object_name}"
+        )
     notebook_current = [path for path in current_paths if path.suffix.lower() == ".ipynb"]
     notebook_history = [path for path in history_paths if path.lower().endswith(".ipynb")]
     lines = [
@@ -107,6 +131,9 @@ def build_audit(catalog: list[dict[str, object]]) -> None:
         f"- Уникальных путей, найденных в истории: **{len(history_paths)}**.",
         f"- Исторических путей, отсутствующих в текущем дереве: **{len(absent)}**.",
         f"- Материализованных experiment/run entries: **{len(catalog)}**.",
+        f"- Независимая reconstruction registry: **{reconstruction.get('primary_report_catalog_rows', 'Unknown')}** primary reports, "
+        f"**{reconstruction.get('central_experiment_registry_rows', 'Unknown')}** registry rows, "
+        f"**{reconstruction.get('granular_run_metric_records', 'Unknown')}** granular run metrics.",
         f"- Текущих notebook-файлов: **{len(notebook_current)}**; исторических notebook-путей: **{len(notebook_history)}**. "
         "`draft.ipynb` встречается только как строка `.gitignore`; самого notebook в репозитории/истории нет.",
         "", "## Расширения текущего дерева", "",
@@ -147,11 +174,19 @@ def build_audit(catalog: list[dict[str, object]]) -> None:
         "- Все `experiments/exp_*.md`, найденные через `git log --all`, присутствуют в одном из namespace: PASS.",
         "- Текущие и исторические `.ipynb`: отсутствуют; перенос notebook→Python не требовался.",
         "- EDA scripts `e01…e15`, current logged arms, historical Team-B/Strategy-2 cards, isolated branches и teammate runners имеют отдельные entries.",
-        "- Сырые данные и submissions намеренно не добавляются в git согласно `AGENTS.md`; их provenance, hashes и команды сохранены.",
-        "- `python tools/verify_experiment_archive.py`: PASS — 445 entries, 90 historical cards, 2 909 Python-файлов скомпилированы, запрещённых tracked data/submission файлов нет.",
-        "- Импорт active `src`: 68/68; обязательные зависимости импортируются.",
-        "- Active pytest suite: 494 passed, 1 pre-existing failure в `src/test_calval.py::test_early_control_is_inside_corridor_and_earliest_first` (cutoff 2025-08-08 пересекает первую validation-дату). Архивные snapshots исключены из discovery через `pytest.ini`, но отдельно полностью compile-checked.",
-        "- Все четыре final recipes исполнены: STRONGEST byte-identical SHA256 `abc2218…`; latest reconstruction error `8.88e-16`; exp_071 и exp_065 завершились с заявленными gates/hashes.",
+        "- Все 30 directory-level packages из `research/new_directions/` имеют отдельные catalogue entries.",
+        "- Единственная primary-card потеря из reconstruction audit (`independent_anniversary:exp_058`) восстановлена из нормализованной registry-строки и сохранившегося Python-кода; отсутствие исходных Markdown-байт отмечено явно.",
+        f"- Reconstruction cross-check: {verification.get('reconstruction_primary_reports_covered', 'Unknown')}/124 primary reports покрыты catalogue origins.",
+        f"- `experiments/team_a/`: {verification.get('semantic_duplicate_packaged_team_a_cards', 'Unknown')} numbered cards семантически совпадают с canonical `experiments/exp_*.md` после нормализации whitespace и не дублируются как ложные новые эксперименты.",
+        "- Архивный коммит не добавляет raw `data/` или top-level `submissions/`; уже находившиеся в fetched `origin/team-a` frozen evidence packages сохранены без переписывания истории.",
+        f"- `python tools/verify_experiment_archive.py`: {verification.get('status', 'pending rerun')} — "
+        f"{verification.get('catalog_entries', len(catalog))} entries, "
+        f"{verification.get('historical_cards', 'Unknown')} historical cards, "
+        f"{verification.get('python_files_compiled', 'Unknown')} Python-файлов скомпилированы, "
+        f"archive-added forbidden paths: {verification.get('archive_added_forbidden_files', 'Unknown')}.",
+        "- Импорт active root-level `src`: 69/69; обязательные зависимости импортируются. Package/module collision после merge устранён compatibility `__init__`-мостами без изменения защищённого `src/validation.py`.",
+        "- Active pytest suite: 492 passed, 3 evidence/state failures. Calendar failure: cutoff 2025-08-08 пересекает первую validation-дату. LANDMARK replay: fetched preflight hash расходится с сохранённым canonical hash. STATE_REWEIGHT: immutable phase0 artifact содержит старый git HEAD и по дизайну отказывается перезаписываться после rebase/commit. Архивные snapshots исключены из discovery через `pytest.ini`, но отдельно compile-checked.",
+        "- Final recipes исполнены: оба поздних package rebuild побайтно совпали с reference SHA; STRONGEST byte-identical SHA256 `abc2218…`; latest reconstruction error `8.88e-16`; exp_071 и exp_065 завершились с заявленными gates/hashes.",
     ])
     AUDIT.parent.mkdir(parents=True, exist_ok=True)
     AUDIT.write_text("\n".join(lines) + "\n", encoding="utf-8")
@@ -165,6 +200,11 @@ def load_csv(path: Path) -> list[dict[str, str]]:
 def build_readme(catalog: list[dict[str, object]]) -> None:
     submissions = load_csv(ROOT / "experiments" / "submissions.csv")
     namespace_counts = Counter(str(entry["namespace"]) for entry in catalog)
+    verification = load_json_if_present(VERIFICATION)
+    reconstruction = load_json_if_present(
+        ROOT / "research" / "reconstruction" / "reports" / "completeness_summary.json"
+    )
+    commit_count = git("rev-list", "--all", "--count").strip()
     lines = [
         "# Ozon E-Cup — полный архив решения и всех экспериментов", "",
         "## Overview", "",
@@ -184,8 +224,12 @@ def build_readme(catalog: list[dict[str, object]]) -> None:
         "Train-cutoff после `2025-10-16` для этих сравнений запрещён из-за пересечения selection/target windows.", "",
         "## Что именно было проаудировано", "",
         f"В catalogue находится **{len(catalog)}** отдельных карточек, logged arms, исторических вариантов, EDA/runners и final pipelines. "
-        "Просмотрены текущее дерево, все 48 pre-archive commits во всех refs, удалённые файлы, shell-скрипты, конфиги, result manifests, "
+        f"Просмотрены текущее дерево, все **{commit_count}** commits во всех refs, удалённые файлы, shell-скрипты, конфиги, result manifests, "
         "внешний teammate bundle, submission registry и generated-artifact manifests. Notebook-файлов нет ни в дереве, ни в git history.", "",
+        f"Дополнительный независимый reconstruction audit дал **{reconstruction.get('primary_report_catalog_rows', 'Unknown')}** primary reports, "
+        f"**{reconstruction.get('central_experiment_registry_rows', 'Unknown')}** registry rows, **{reconstruction.get('component_groups', 'Unknown')}** component groups, "
+        f"**{reconstruction.get('granular_run_metric_records', 'Unknown')}** granular run metrics и **{reconstruction.get('main_scripts', 'Unknown')}** main scripts. "
+        "Его coverage был сопоставлен с каталогом; единственный отсутствовавший primary report восстановлен как PARTIAL без догадок.", "",
         "Полный path-by-path отчёт: [docs/REPOSITORY_AUDIT.md](docs/REPOSITORY_AUDIT.md). "
         "Machine-readable manifest: [experiments/repro/catalog.json](experiments/repro/catalog.json).", "",
         "### Catalogue namespaces", "",
@@ -204,6 +248,9 @@ def build_readme(catalog: list[dict[str, object]]) -> None:
         "teammate_final": "STRONGEST and latest rebuilds",
         "team_b_final": "four-model Team-B production integration",
         "team_a_final": "requested final Team-A/Team-B blend",
+        "new_direction": "all late research/new_directions directory packages",
+        "independent_anniversary": "reconstructed linked-worktree anniversary experiment",
+        "packaged_final": "late exact final-submission and blend packages",
     }
     for namespace, count in sorted(namespace_counts.items()):
         lines.append(f"| `{namespace}` | {count} | {meanings.get(namespace, 'isolated historical branch')} |")
@@ -211,7 +258,25 @@ def build_readme(catalog: list[dict[str, object]]) -> None:
     lines.extend([
         "", "## Final solution and submission provenance", "",
         "Репозиторий содержит несколько разных объектов, которые нельзя называть одним «финалом» без уточнения evidence status.", "",
-        "### 1. Лучший точно воспроизводимый отправленный Team-A submission — STRONGEST-CURRENT", "",
+        "### 1. Лучший подтверждённый финальный submission — SUBMIT_JOINT86_TEAMB14", "",
+        "`SUBMIT_JOINT86_TEAMB14` имеет externally reported public LB **1.6458200196207617** и exact reference SHA256 "
+        "`85d9cd645e14a7895da9ad8cc89065714606266be588c762d37487d2b4edac02`. Это не forecast: значение отдельно помечено "
+        "в teammate reproduction request как фактически полученный результат.", "",
+        "Формула в `z=log1p(pred)`: frozen `JOINT_V2` (public **1.6459363044782171**) имеет вес **0.86**; Team-B final сначала "
+        "получает additive shift **-0.1214326530964569** через bisection до совпадения среднего `z`, клиппинг в ноль, затем вес **0.14**. "
+        "После смеси применяется `max(expm1(z),0)`. Внешний blend воспроизводится побайтно. Важное ограничение: точный upstream-generator "
+        "frozen `JOINT_V2` в истории не сохранился, поэтому raw→JOINT_V2 честно отмечен `PROVENANCE_INCOMPLETE`.", "",
+        "Воспроизведение: `python make_final_submission.py` или "
+        "`python scripts/reproduce_final.py --solution SUBMIT_JOINT86_TEAMB14 --from-precomputed`.", "",
+        "### 2. Точно упакованный, но не подтверждённый LB candidate — STRONGEST55_TEAMB45", "",
+        "Log-space blend: **0.55 STRONGEST-CURRENT + 0.45 level-aligned Team-B**, exact SHA256 "
+        "`1ce85203e3069363e3d2ba425078213d1a723a895e3c684573a6c1b998a14fb4`. Числа около 1.64823 в research JSON — "
+        "только forecast, не leaderboard fact. Запуск: `python make_final_submission.py --recipe strongest55-teamb45`.", "",
+        "### 3. Late research candidates: geometry, ORTH, JOINT and three-way", "",
+        "Submission geometry дала зафиксированные public LB **1.6467120** и **1.6466079**; ORTH_ALPHA — **1.6461597403**; "
+        "JOINT_V2 — **1.6459363044782171**. Скрипты внешнего submission-geometry workspace в этот git не попали, поэтому линия помечена PARTIAL. "
+        "`STRONGEST80_TEAMB20`, optimized pair blends и final three-way ensemble сохранены отдельно; их projected scores не выдаются за LB.", "",
+        "### 4. Лучший точно воспроизводимый ранний отправленный Team-A submission — STRONGEST-CURRENT", "",
         "`submission_STRONGEST_CURRENT.csv`, public LB **1.6496571**, wCV **1.74751**, SHA256 "
         "`abc2218b1a3d55d41121b7b5a22db7e95ffd45283b42ff0006c5e6e731e04bda`.", "",
         "Веса в `z=log1p(pred)`: `0.10 CAP + 0.20 UNC + 0.25 DIST + 0.225 SEQ-AVG3@clip289 + "
@@ -220,22 +285,22 @@ def build_readme(catalog: list[dict[str, object]]) -> None:
         "DCW означает согласованный depth cap 289 и train-domain cutoff weekday для ETX query context.", "",
         "Воспроизведение: `python make_final_submission.py --recipe strongest`. Этот быстрый путь использует "
         "сохранённые production predictions; полный retraining невозможен для CAP/UNC/DIST и TCN seed 42, потому что их веса исторически не сохранились.", "",
-        "### 2. Лучший externally reported public result — teammate latest", "",
+        "### 5. Ранний externally reported teammate latest", "",
         "`latest.csv`, public LB **1.6492175622 (EXTERNALLY_REPORTED; дата LB-события неизвестна)**, source SHA256 "
         "`7ef5b2c58925bd28c5bc7eb83b9cfd4785c608a0c8b2a6d7a3277730cba8e722`. "
         "Точный восстановленный рецепт в log-space: `0.12 friend + 0.16 occ_meta_B + 0.72 occ_raw_X3`, "
         "затем `z=max(z,0)` и `expm1`; дополнительной level normalization нет. Максимальная ошибка reconstruction — `8.88e-16`.", "",
         "Воспроизведение: `python make_final_submission.py --recipe latest`. Ограничение: canonical OOF для `latest` отсутствует, "
         "CAP lineage не восстановлен; поэтому `latest` не используется как CV/LOFO или private-safe anchor.", "",
-        "### 3. Финальный requested blend exp_071", "",
+        "### 6. Requested blend exp_071", "",
         "`submission_FINAL_CAP_UNC_DIST_SEQ_ETX_TEAM_B.csv` — подготовлен, но LB в репозитории не зафиксирован. "
         "Абсолютные веса: `CAP=.055042443`, `UNC=.110084886`, `DIST=.137606107`, "
         "`TEAM_B=.247266564`, `SEQ-AVG3=.225`, `ETX-AVG3-DCW=.225`. "
         "Team-B занимает `0.449575571` от 55%-го tabular slot. Full delta wCV `-0.000382364` (4/4), "
         "LOFO `-0.000381489` (4/4), OOF→TEST variance ratio `1.021814` PASS; gain ниже promotion gate 0.0005.", "",
-        "Воспроизведение (default): `python make_final_submission.py`. Скрипт заново подбирает alpha только по canonical OOF, "
+        "Воспроизведение: `python make_final_submission.py --recipe team-a-b2`. Скрипт заново подбирает alpha только по canonical OOF, "
         "проверяет LOFO и test-regime gate, затем формирует CSV; public LB при выборе не используется.", "",
-        "### 4. Другие финальные кандидаты", "",
+        "### 7. Другие финальные кандидаты", "",
         "`python make_final_submission.py --recipe final-candidates` пересобирает пакет exp_065: "
         "A = byte-identical STRONGEST-CURRENT; B = `0.95 STRONGEST + 0.05 BTYD`, для которого nested LOFO "
         "`-0.000269` (4/4), fixed .05 `-0.000321` (4/4), production-support PASS. "
@@ -314,14 +379,20 @@ def build_readme(catalog: list[dict[str, object]]) -> None:
         "Exact commands for every experiment are in its preserved card. Full retraining of all models is intentionally not part of "
         "the audit because it requires many GPU-hours; syntax/import/unit checks cover the archive without changing experimental results.", "",
         "### 5. Final submissions", "",
-        "```bash", "python make_final_submission.py                       # exp_071 requested final", "python make_final_submission.py --recipe strongest   # exp_037 exact submitted champion", "python make_final_submission.py --recipe latest      # teammate .12/.16/.72 reconstruction", "python make_final_submission.py --recipe final-candidates", "```", "",
+        "```bash", "python make_final_submission.py                              # exact JOINT86/Team-B14 final", "python make_final_submission.py --recipe strongest55-teamb45  # exact unsubmitted candidate", "python make_final_submission.py --recipe team-a-b2             # exp_071 requested blend", "python make_final_submission.py --recipe strongest             # exp_037 early champion", "python make_final_submission.py --recipe latest                # teammate .12/.16/.72 reconstruction", "python make_final_submission.py --recipe final-candidates", "```", "",
         "## Verification", "",
-        "`python tools/verify_experiment_archive.py` завершился PASS: **445** уникальных entries, **90** исторических карточек, **2 909** Python-файлов успешно скомпилированы in-memory, tracked raw data/submissions отсутствуют. "
-        "Все **68/68** активных `src`-модулей импортируются; обязательные зависимости доступны.", "",
-        "`python -m pytest -q`: **494 passed, 1 failed**. Единственный остающийся pre-existing failure — "
-        "`src/test_calval.py::test_early_control_is_inside_corridor_and_earliest_first`: cutoff `2025-08-08` даёт конец 30-дневного окна `2025-09-07`, позже первого validation cutoff `2025-09-04`. "
-        "Validation/config не менялись без явного запроса. `pytest.ini` ограничивает обычный discovery активной `src/`; все замороженные historical tests всё равно прошли отдельную syntax-компиляцию.", "",
-        "Фактические быстрые final rebuilds также пройдены: STRONGEST побайтно совпал с отправленным CSV; `latest` совпал в log-space с max error `8.88e-16`; exp_071 сформировал 250 000 строк с SHA256 `d6cdb218…`; exp_065 пересобрал оба финальных кандидата.", "",
+        f"`python tools/verify_experiment_archive.py` завершился {verification.get('status', 'pending rerun')}: "
+        f"**{verification.get('catalog_entries', len(catalog))}** уникальных entries, "
+        f"**{verification.get('historical_cards', 'Unknown')}** исторических карточек, "
+        f"**{verification.get('python_files_compiled', 'Unknown')}** Python-файлов успешно скомпилированы in-memory, "
+        f"archive-added raw data/submission paths: **{verification.get('archive_added_forbidden_files', 'Unknown')}**. "
+        "Все **69/69** активных root-level `src`-модулей импортируются; обязательные зависимости доступны. "
+        "Merge-коллизия module-vs-package для `features/models/validation` устранена compatibility exports: legacy bare imports и новые explicit submodules обеих линий доступны одновременно.", "",
+        "`python -m pytest -q`: **492 passed, 3 failed**. Failure 1 — защищённый calendar contract: cutoff `2025-08-08` даёт конец окна `2025-09-07`, позже validation cutoff `2025-09-04`. "
+        "Failure 2 — `LANDMARK_MEMORY_EXP055`: fetched `preflight_verdict.json` не совпадает с canonical hash старого replay manifest. "
+        "Failure 3 — `STATE_REWEIGHT_EXP057`: immutable `phase0_audit.json` содержит pre-archive `base_head`; тест правильно отказывается молча переписать evidence после rebase. "
+        "Ни один evidence artifact, `src/validation.py` или `src/config.py` ради зелёного теста не переписывался. `pytest.ini` ограничивает обычный discovery активной `src/`; frozen snapshots отдельно syntax-checked.", "",
+        "Фактические final rebuilds также пройдены: JOINT86/Team-B14 и STRONGEST55/Team-B45 побайтно совпали с reference SHA и дали 250 000 валидных строк; STRONGEST совпал с отправленным CSV; `latest` совпал в log-space с max error `8.88e-16`; exp_071 и exp_065 ранее пересобрали заявленные candidates.", "",
         "## Repository structure", "",
         "```text",
         "OZON-E-CUP/",
@@ -340,11 +411,12 @@ def build_readme(catalog: list[dict[str, object]]) -> None:
         "│           ├── run.py",
         "│           └── implementation/       # frozen relevant Python source",
         "├── src/                              # active shared training/inference code",
-        "├── research/                         # EDA, strategy docs, compact results/runners",
+        "├── research/                         # EDA, strategies, reconstruction, new directions",
+        "├── reproducibility/                  # exact frozen final-submission packages",
         "├── пайплайн сокомандника/            # external teammate provenance bundle",
         "├── weights_archives/                 # external model-weight archives",
         "├── docs/REPOSITORY_AUDIT.md           # path-level audit and git-history coverage",
-        "├── data/                             # ignored competition data",
+        "├── data/                             # local raw data ignored; fetched frozen package evidence preserved",
         "├── artifacts/                        # ignored generated OOF/checkpoints/cache",
         "└── submissions/                      # ignored generated competition CSVs",
         "```", "",
@@ -359,12 +431,13 @@ def build_readme(catalog: list[dict[str, object]]) -> None:
         "Historical Team-B variants are not silently mapped onto Team-A validation: they used different folds, panels, targets and calibration. "
         "Their namespaces preserve those differences. Failed or rolled-back code is marked PARTIAL rather than recreated with guessed parameters.", "",
         "## Reproducibility limits", "",
-        "- Raw competition data and generated submissions are intentionally unversioned.",
+        "- Local raw competition data and newly generated submissions remain ignored; fetched `origin/team-a` exact-reproduction packages intentionally contain reviewed frozen inputs/references with manifests.",
+        "- Exact JOINT86 outer blend is byte-reproducible; the upstream generator of its frozen JOINT_V2 anchor is not recoverable and is not claimed as complete.",
         "- Many OOF arrays/checkpoints are generated artifacts; manifests/hashes and commands are committed, binaries remain external.",
         "- STRONGEST-CURRENT is exactly reproducible from saved predictions, but not every underlying model can be retrained because several weights were never saved.",
         "- `latest` is exactly reconstructible from three component CSVs, but its canonical OOF and complete CAP lineage are missing.",
         "- A score shown as Unknown was not guessed. External reports are explicitly labelled.",
-        "- Один active calendar-validation test остаётся красным; точная причина и значения дат приведены в разделе Verification.",
+        "- Три active evidence/state tests остаются красными; точные причины приведены в разделе Verification и не маскируются изменением исторических артефактов.",
     ])
     README.write_text("\n".join(lines) + "\n", encoding="utf-8")
 

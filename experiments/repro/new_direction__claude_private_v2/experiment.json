@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__claude_private_v2",
+  "namespace": "new_direction",
+  "experiment_id": "CLAUDE_PRIVATE_V2",
+  "title": "Три действия для приватного борда",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/CLAUDE_PRIVATE_V2",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/CLAUDE_PRIVATE_V2/build_private_v2.py",
+    "research/new_directions/CLAUDE_PRIVATE_V2/REPORT3.md"
+  ],
+  "commands": [],
+  "model": "LightGBM, sequence model, Ridge, calibration diagnostic",
+  "features": "calendar features, freshness/conditional features, occurrence features, EWM aggregates",
+  "validation": "| κ — концентрационный множитель| измерен напрямую на OOF: медиана 1.15, IQR [1.09,1.18], 4 фолда × 12 направлений| FACT предыдущие сессии брали 2.0 (их же признанная верхняя граница)",
+  "score": "MSE несмещённо; 2.1e−04 RMSLE",
+  "submission": "Пересчитано в этой сессии из Z.npz, scores/submissions.csv (73 файла), 06/07_ALIGNED_*.parquet, четырёх геометрических кандидатов и четырёх ранее не учтённых оценённых сабмитов. Геометрия: 69 уравнений, K = 58, R = 2.7199234, остаток МНК 1.1e−05, tr Cov(p̂) = 0.0051315, κ = 1.15. Ни один существующий артефакт не изменён; всё новое лежит в research/new_directions/CLAUDE_PRIVATE_V2/.",
+  "seed": "| Повторное тяжёлое обучение SEQ/ETX| ≈ 0| EXP074 показал утрату чекпоинтов seed-42; EXP071 закрыт; и у результата не было бы валидационного канала с ненулевым переносом",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Уровень усадки подтверждён (реализовано 80% предсказанного), инфляция sd снижена 1.29 → 1.19. FACT",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 3 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

@@ -23,3 +23,10 @@ def sample_submit() -> pl.DataFrame:
     if "ss" not in _CACHE:
         _CACHE["ss"] = pl.read_csv(SAMPLE_SUBMIT)
     return _CACHE["ss"]  # type: ignore[return-value]
+
+
+# Compatibility aliases for the later clean-workspace package.  They do not
+# change the original loader or paths; they only let ``src.features.canonical``
+# and ``src.validation.workflow`` coexist with the preserved Strategy-1 API.
+load_events = load
+sample_submission = sample_submit

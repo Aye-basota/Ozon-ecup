@@ -1,0 +1,30 @@
+{
+  "catalog_id": "new_direction__exp069_btyd05_fresh1_prod",
+  "namespace": "new_direction",
+  "experiment_id": "EXP069_BTYD05_FRESH1_PROD",
+  "title": "EXP069 BTYD05 FRESH1 production report",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP069_BTYD05_FRESH1_PROD",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP069_BTYD05_FRESH1_PROD/finalize_production.py",
+    "research/new_directions/EXP069_BTYD05_FRESH1_PROD/report.md",
+    "research/new_directions/EXP069_BTYD05_FRESH1_PROD/run_oof_analysis.py",
+    "research/new_directions/EXP069_BTYD05_FRESH1_PROD/train_production_fresh.py",
+    "research/new_directions/EXP069_BTYD05_FRESH1_PROD/validate_outputs.py"
+  ],
+  "commands": [],
+  "model": "sequence model, BTYD, Ridge",
+  "features": "freshness/conditional features, 227 tabular features",
+  "validation": "All 770,616 unique canonical `(fold,user_id)` rows and targets align exactly. EXP-037 reconstructs from CAP/UNC/DIST/SEQ-AVG3/ETX-AVG3 with maximum log error `5.912e-08`; BTYD05 maximum log error is `1.138e-07`. Registered parity passed. EXP-037 wCV is `1.747509862493`.",
+  "score": "All 770,616 unique canonical `(fold,user_id)` rows and targets align exactly. EXP-037 reconstructs from CAP/UNC/DIST/SEQ-AVG3/ETX-AVG3 with maximum log error `5.912e-08`; BTYD05 maximum log error is `1.138e-07`. Registered parity passed. EXP-037 wCV is `1.747509862493`.",
+  "submission": "ADD_TO_SUBMISSION_GEOMETRY",
+  "seed": "The encoder used only the 29 CLEAN cutoff grid through 2025-10-16. EXTRA comprises only positive-target rows at the 13 preregistered cutoffs and updates only conditional amount heads. Two splitmix donor sides and seeds 42/43/44 were averaged in log space. The encoder checksum was unchanged. Frozen OOF preprocessing parameters were applied to TEST without TEST centering or variance matching. Production regime: **PASS**; schema: **PASS**.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "No submission was uploaded and no public-LB equation or score was used for evaluation, selection, scaling, or level fitting.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 24 files, 4 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,14 @@
+{
+  "catalog_entries": 483,
+  "historical_cards": 132,
+  "python_files_compiled": 3493,
+  "preserved_forensic_wip_syntax_failures": [
+    "research/reconstruction/code_index/snapshots/team_b_core/src/train.py: SyntaxError: invalid syntax (train.py, line 277)"
+  ],
+  "inherited_reviewed_data_submission_files": 5,
+  "archive_added_forbidden_files": 0,
+  "late_new_direction_packages": 30,
+  "reconstruction_primary_reports_covered": 124,
+  "semantic_duplicate_packaged_team_a_cards": 68,
+  "status": "PASS"
+}

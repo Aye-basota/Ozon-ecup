@@ -1,0 +1,30 @@
+{
+  "catalog_id": "new_direction__exp074_seq_temporal_dist16",
+  "namespace": "new_direction",
+  "experiment_id": "EXP074_SEQ_TEMPORAL_DIST16",
+  "title": "EXP074 — SEQ Temporal DIST16 Head",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP074_SEQ_TEMPORAL_DIST16",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP074_SEQ_TEMPORAL_DIST16/report.md",
+    "research/new_directions/EXP074_SEQ_TEMPORAL_DIST16/run_reconnaissance.py",
+    "research/new_directions/EXP074_SEQ_TEMPORAL_DIST16/test_reconnaissance.py"
+  ],
+  "commands": [
+    "python run_reconnaissance.py` completed successfully. Pytest result: **5 passed**."
+  ],
+  "model": "LightGBM, dilated TCN, sequence model",
+  "features": "See preserved experiment card and implementation",
+  "validation": "## Full/nested wCV, seed robustness and bootstrap",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "minimum all seed-42 fold checkpoints and its production checkpoint, plus",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 7 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

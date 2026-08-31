@@ -7,7 +7,7 @@
 - **Experiment ID:** `exp_024_multihorizon_hazard`
 - **Original source:** `experiments/exp_024_multihorizon_hazard.md`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** experiment card
 - **Model:** LightGBM, calibration diagnostic
 - **Features:** gap/burst features, window aggregates, 227 tabular features

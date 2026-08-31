@@ -7,7 +7,7 @@
 - **Experiment ID:** `exp_060_level_minus_006`
 - **Original source:** `experiments/exp_060_level_minus_006.md`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** experiment card
 - **Model:** BTYD, blend, calibration diagnostic
 - **Features:** freshness/conditional features, 227 tabular features

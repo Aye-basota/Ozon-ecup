@@ -1,0 +1,171 @@
+# EXP075 — Search for new out-of-span residual signals
+
+## Catalogue metadata
+
+- **Catalogue ID:** `new_direction__exp075_out_of_span_residual_signals`
+- **Namespace:** `new_direction`
+- **Experiment ID:** `EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS`
+- **Original source:** `research/new_directions/EXP075_OUT_OF_SPAN_RESIDUAL_SIGNALS`
+- **Source ref:** `origin/team-a late research package`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
+- **Kind:** late research direction / experiment package
+- **Model:** LightGBM, BTYD, two-part / hurdle, ensemble, blend
+- **Features:** calendar features, recency, freshness/conditional features, funnel features, occurrence features
+- **Preprocessing:** See preserved experiment card and frozen implementation
+- **Validation:** ## Validation audit
+- **Known score:** A legitimate new residual mechanism was found. A1-365 (tree over an explicitly chronological daily/weekly tensor) reaches weighted clean-forward `rho=0.032954`; A2 (compact residual CNN) reaches `rho=0.030864`. Their correlation is only `0.418802`, and the rolling-forward joint direction reaches `rho=0.037940`, latest-fold `rho=0.034864`, nested `Delta RMSLE=-0.00125067`, bootstrap `P(Delta MSE<0)=1.000`.
+- **Seed:** 6. **Highest-EV next experiment:** a focused two-branch daily+weekly temporal encoder trained on a strictly cross-fitted *post-A1-365 residual*, with the same four folds and an explicit orthogonality penalty to A1. This directly targets the measured missing conditional component instead of retuning the present blend. Run a cheap latest-plus-one-prior pilot, then at most three seeds only if conditional clean rho is at least `0.015` with positive latest sign. The remaining target is small enough (
+- **Postprocessing:** Expected mechanism: the incumbent ensemble captures activity level and aggregate recency well but loses temporal path shape. A1 captures non-linear position-specific trajectory interactions; A2 captures local/dilated motifs. Their modest mutual correlation creates the joint gain.
+- **Submission:** Submission: `C:/Users/Admin/Desktop/e-cup-research-clean/submissions/SUBMIT_EXP075_JOINT_A1_365_A2.csv`
+- **External data/artifacts:** Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card
+- **Reproducibility:** FULL when the data/frozen artifacts named by the report are present
+- **Notes:** Directory-level audit unit: 45 files, 11 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.
+
+## Reproduction
+
+Run `python run.py` to inspect recovered commands and provenance. Use `python run.py --execute N` only after preparing the data/artifacts listed below.
+
+## Preserved original documentation
+# EXP075 — Search for new out-of-span residual signals
+
+## Executive result
+
+A legitimate new residual mechanism was found. A1-365 (tree over an explicitly chronological daily/weekly tensor) reaches weighted clean-forward `rho=0.032954`; A2 (compact residual CNN) reaches `rho=0.030864`. Their correlation is only `0.418802`, and the rolling-forward joint direction reaches `rho=0.037940`, latest-fold `rho=0.034864`, nested `Delta RMSLE=-0.00125067`, bootstrap `P(Delta MSE<0)=1.000`.
+
+The final joint TEST correction retains `63.76%` of its energy after projection out of the 67-vector canonical bank plus explicit `SUBMIT_ORTH_ALPHA`, `SUBMIT_ORTH_FINAL`, `PUBLIC_EB`, and all discoverable local submission vectors. Its second-pass maximum projection is `4.78e-15`, and its correlation with the current ORTH correction is `3.86e-09`. No leaderboard result was used for selection or tuning, and nothing was uploaded.
+
+## Baseline math
+
+| Quantity | Value |
+| --- | ---: |
+| Current reference RMSLE | 1.6461597403364463 |
+| Target reference RMSLE | 1.6446514942 |
+| Required Delta RMSLE | -0.0015082461364464 |
+| Current MSE | 2.7098418907045563 |
+| Target MSE | 2.7048785373742925 |
+| Required Delta MSE | -0.0049633533302638 |
+| Required total residual rho | 0.0427972260 |
+| Required total rho squared | 0.0018316026 |
+
+The exact equivalent is `rho_required=sqrt((current_MSE-target_MSE)/current_MSE)=0.0427972`, consistent with the expected approximately `0.043`.
+
+## Validation audit
+
+Validation was rebuilt from raw `train.parquet`; teammate OOF and the contaminated old window predictions were not used. The four fixed forward cutoffs and panels were:
+
+| Cutoff | Panel rows | Train cutoffs | Feature max | Target interval |
+| --- | ---: | --- | --- | --- |
+| 2025-09-04 | 188,518 | 2025-06-19, 07-03, 07-17, 07-31 | 2025-09-04 | (2025-09-04, 2025-10-04] |
+| 2025-09-18 | 191,025 | 2025-07-03, 07-17, 07-31, 08-14 | 2025-09-18 | (2025-09-18, 2025-10-18] |
+| 2025-10-02 | 193,694 | 2025-07-17, 07-31, 08-14, 08-28 | 2025-10-02 | (2025-10-02, 2025-11-01] |
+| 2025-10-16 | 197,379 | 2025-07-31, 08-14, 08-28, 09-11 | 2025-10-16 | (2025-10-16, 2025-11-15] |
+
+Eligibility reproduces the TEST construction without targets: activity in each of three consecutive 30-day blocks. Every feature builder asserts `feature_date <= cutoff`; every target is the strict next 30 days and is fully observed. The latest raw-rebuilt cutoff is the clean analogue used instead of the old contaminated late-window artifact.
+
+The experiment-local raw parity audit sampled 4,012 users / 491,194 raw rows. The 11-channel dense input is bitwise identical to rebuilding the historical float32-to-`log1p`-to-float16 representation from raw, and the GMV target maximum absolute error is `0`. Raw SHA256 is `5f3aa90992652b8a4f0f398e735a3ba11c2ea6ccf9e8fb1d236436e9a49167c0`.
+
+The clean baseline is a reproducible LightGBM over cutoff-safe RFM context. Residual training labels are generated by deterministic global user-hash half cross-fitting, so no row is predicted by a baseline fitted on that user's target. Fold weights are fixed at `1:2:4:8`; bootstrap is Poisson cluster bootstrap by `user_id` with 1,000 replicates.
+
+## Novelty audit
+
+The following were marked `SKIP_DUPLICATE` and not rerun: ordinary blend/stacking and ORTH scaling; generic aggregate LightGBM; hurdle and BTYD/BG-NBD; hand-built trend/acceleration/change-point; calendar/anniversary YoY; Hawkes/recency equivalents; GAM/spline calibration; segment weights; scalar density-ratio weighting; FRESH/VOL/SEQ/ETX reweighting; event-order/open-funnel/occurrence variants.
+
+Experiment B was also `SKIP_DUPLICATE`, not silently omitted. Its proposed auxiliary mechanisms have already been tested by old `exp_024` (cross-fitted hazard/count/any-purchase/conditional-value heads, FULL=SELF, 0/4), `EXP070_COUNT_VALUE_MOE` (diagnostic `Delta=-0.000086647`), `EXP072_LWA_TAB` (latest conditional-value pilot `Delta=+0.000704492`), and old `exp_038` (future-funnel multitask, no target gain). Repeating those heads would violate the mechanism-level novelty rule.
+
+A1 is new because it preserves the chronological axis in 11 raw channels and learns the clean residual, rather than collapsing history into slopes/statistics. A2 uses a sequence representation related to old SEQ, but its objective and validation are materially different: direct cross-fitted baseline residual on raw-rebuilt forward folds, not direct GMV or an in-span SEQ reweighting.
+
+Full evidence is in `novelty_audit.csv`.
+
+## Experiment table
+
+| Experiment | Representation | Clean rho | Latest rho | Nested Delta RMSLE | t / 95% CI | TEST perp fraction | Runtime | Verdict |
+| --- | --- | ---: | ---: | ---: | --- | ---: | ---: | --- |
+| A1-180 | 26 weekly + 28 daily bins x 11, tree | 0.030559 | 0.028847 | -0.00081312 | 19.91 / [0.02768, 0.03354] | 0.3586 (strict post-EXP075 span) | shared 20.0m | STRONG variant; stop refinement |
+| A1-365 | 53 weekly + 28 daily bins x 11, tree | 0.032954 | 0.032076 | -0.00094964 | 21.08 / [0.02997, 0.03603] | 0.7537 | shared 20.0m | STRONG SIGNAL |
+| A2 | 53 weekly bins x 11, dilated residual CNN | 0.030864 | 0.025595 | -0.00082780 | 22.46 / [0.02815, 0.03347] | 0.6888 | 12.2m incl. pilot | STRONG SIGNAL |
+| A1-365 + A2 | rolling 2-direction residual head | 0.037940 | 0.034864 | -0.00125067 | 25.98 / [0.03506, 0.04072] | 0.6376 | <1m analysis | BREAKTHROUGH JOINT |
+| C matched A1-365 | target-free matched example construction | 0.030877 | 0.029937 | -0.00082313 | — | — | 13.8m | REJECT_MATCHED |
+| B auxiliary decomposition | prior-equivalent auxiliary heads | — | — | — | — | — | audit only | SKIP_DUPLICATE |
+
+A1/A2 per-fold signs are positive on all four folds. Individual bootstrap `P(Delta MSE<0)=1.000`; joint `Delta MSE` CI is `[-0.00505065,-0.00373240]`, also with probability `1.000`. A2's GPU timing pilot projected 136 seconds and completed in 180 seconds; all neural runs were far below six hours.
+
+C failed all continuation conditions: weighted rho fell by `6.30%`, latest rho fell from `0.032076` to `0.029937`, and nested `Delta MSE` weakened from `-0.00333375` to `-0.00288938`. Verdict: `REJECT_MATCHED`.
+
+## Strong directions
+
+### A1_TREE_TRAJ_365
+
+- Mechanism: non-linear interactions among the exact positions of weekly/daily search, funnel, order, and monetary trajectories.
+- New information: clean `rho=0.032954`, `rho^2=0.001085998`, latest `rho=0.032076`; nested expected MSE headroom `-0.00333375`.
+- Stability: four fold rhos `[0.03231, 0.03417, 0.03428, 0.03208]`; `t=21.08`, `P(gain)=1.000`.
+- TEST: raw/perpendicular RMS `0.05687/0.04937`, perpendicular fraction `0.7537`, TEST/OOF RMS ratio `0.965`.
+
+### A2_WEEKLY_RESIDUAL_CNN
+
+- Mechanism: compact convolutional encoding of local and dilated temporal motifs before residual regression.
+- New information: clean `rho=0.030864`, `rho^2=0.000952582`, latest `rho=0.025595`; nested expected MSE headroom `-0.00290881`.
+- Compatibility: correction correlation with A1-365 is `0.418802`, leaving conditional incremental `rho^2=0.000353432` beyond A1.
+- TEST: raw/perpendicular RMS `0.06596/0.05475`, perpendicular fraction `0.6888`, TEST/OOF RMS ratio `1.100`.
+
+The weighted correlation of each corrected residual with the old baseline residual remains near one (`0.99946` for A1, `0.99955` for A2, `0.99935` for joint), which is expected for small incremental corrections; the predictive evidence is the signed covariance and nested loss reduction, not a visually large residual rotation. After TEST projection, correlations with current ORTH are below `4e-09` in absolute value.
+
+A1-180 is a correlated representation variant (`corr(A1-180,A1-365)=0.7990`), not a third independent mechanism. Adding it to the joint improves rho by only `0.90%` and nested RMSLE by about `1.25%`, below the fixed `+10%` refinement threshold. Its extra conditional `rho^2` is only `0.0000261`, so refinement stopped even though its strict TEST perpendicular fraction is `0.3586`.
+
+## Joint signal
+
+For `U=[A1-365,A2]`, the fixed-fold weighted system is:
+
+```text
+G = [[0.003258932875, 0.001340833928],
+     [0.001340833928, 0.003150918586]]
+b = [0.003299037444, 0.003038120415]
+a_oracle = [0.7462560853, 0.6466415685]
+condition number = 2.4406
+```
+
+Deployable rolling coefficients, fitted only on earlier held-out folds, were `[0.5,0.5]`, `[0.66357,0.61141]`, `[0.68417,0.67713]`, and `[0.67588,0.69339]`. Fold joint rhos were `[0.03943,0.04153,0.04124,0.03486]`. Nested `Delta MSE=-0.00439191`, nested `Delta RMSLE=-0.00125067`, and joint `rho^2=0.001439430`.
+
+LOFO nested `Delta MSE` is `-0.00290881` without A1 and `-0.00333375` without A2. Conditional contributions are `rho^2=0.000486847` for A1 given A2 and `0.000353432` for A2 given A1. These are not sums of raw rho.
+
+## TEST out-of-span gate
+
+The initial TEST bank contains all 67 canonical vectors and 78 unique vectors after explicit/local additions; centered numerical rank is 67. Required `SUBMIT_ORTH_ALPHA`, `SUBMIT_ORTH_FINAL`, `PUBLIC_EB`, and the canonical bank were asserted present. Projection was reapplied a second time.
+
+| Candidate | RMS(D) | RMS(D_perp) | Perp fraction | Second-pass max | corr(D_perp, ORTH) |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| A1-365 | 0.056866 | 0.049370 | 0.753734 | 1.97e-15 | 3.95e-09 |
+| A2 | 0.065964 | 0.054746 | 0.688792 | 1.78e-15 | 2.24e-09 |
+| Joint | 0.073178 | 0.058434 | 0.637639 | 4.78e-15 | 3.86e-09 |
+| A1-180, after adding accepted EXP075 vectors | 0.052397 | 0.031379 | 0.358638 | 1.23e-15 | -1.85e-09 |
+
+All four pass `perp_fraction >= 0.20`; the joint is the promoted candidate. A1-180 is retained only as an auditable variant because its historical conditional gain is below the refinement gate.
+
+## Best candidate
+
+Submission: `C:/Users/Admin/Desktop/e-cup-research-clean/submissions/SUBMIT_EXP075_JOINT_A1_365_A2.csv`
+
+SHA256: `d567d91d66e4d80e28998de6139c48c59f7a607b3f8165c88a1d05259c66c901`
+
+Raw perpendicular correction: `JOINT_A1_365_A2_TEST_PERP.npy`, SHA256 `e3667884a661adf64a6ce5f231956bab18e45a7e6f017e453506f5e93d3045da`.
+
+Formula in log space:
+
+```text
+D = 0.7462560853 * u_A1_365 + 0.6466415685 * u_A2
+D_perp = double_project_out_current_TEST_span(remove_constant(D))
+z_submit = max(log1p(SUBMIT_ORTH_ALPHA.predict) + D_perp, 0)
+predict = expm1(z_submit)
+```
+
+Expected mechanism: the incumbent ensemble captures activity level and aggregate recency well but loses temporal path shape. A1 captures non-linear position-specific trajectory interactions; A2 captures local/dilated motifs. Their modest mutual correlation creates the joint gain.
+
+## Final verdict
+
+1. **New legitimate out-of-span signal:** yes. Both predictive clean-forward evidence and TEST span novelty pass the fixed gates.
+2. **Strength versus current ORTH (`rho≈0.0141`):** A1-365 is `2.34x`, A2 is `2.19x`, and the joint is `2.69x` in rho.
+3. **At least one `rho>=0.025`:** yes; two independent model families do, and the joint exceeds `0.030`.
+4. **Independent residual variance added:** promoted joint `rho^2=0.00143943`; the A1/A2 conditional pieces are both material. This is `78.6%` of the `0.00183160` target requirement.
+5. **Mathematically sufficient for approximately 1.64465:** not by itself. Even adding the existing ORTH `0.0141^2` under an optimistic independence assumption gives `rho^2≈0.00163824`, or `89.4%` of required. The remaining equivalent independent rho is about `0.01391`. TEST orthogonality is necessary but does not by itself prove that historical predictive information transfers unchanged.
+6. **Highest-EV next experiment:** a focused two-branch daily+weekly temporal encoder trained on a strictly cross-fitted *post-A1-365 residual*, with the same four folds and an explicit orthogonality penalty to A1. This directly targets the measured missing conditional component instead of retuning the present blend. Run a cheap latest-plus-one-prior pilot, then at most three seeds only if conditional clean rho is at least `0.015` with positive latest sign. The remaining target is small enough (`rho≈0.0139`) that this is a plausible closing experiment, but it must pass the unchanged gates.
+
+All OOF/test predictions, models, fold metrics, bootstrap draws, projection diagnostics, runtimes, configs, verdicts, and SHA256 manifests are stored in this experiment directory. Submission files were created locally but not sent.

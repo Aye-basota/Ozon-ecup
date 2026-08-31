@@ -1,0 +1,26 @@
+{
+  "catalog_id": "packaged_final__submission_geometry",
+  "namespace": "packaged_final",
+  "experiment_id": "submission_geometry",
+  "title": "Team-A experiment history",
+  "kind": "submission-geometry research lineage",
+  "original_path": "docs/EXPERIMENT_HISTORY.md",
+  "source_ref": "origin/team-a final/research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "docs/EXPERIMENT_HISTORY.md"
+  ],
+  "commands": [],
+  "model": "sequence model, BTYD, Ridge, two-part / hurdle, ensemble, blend",
+  "features": "personal-time features, holiday/YoY features, calendar features, recency, freshness/conditional features, funnel features, occurrence features, channel Shapley, gap/burst features, history-depth features, dataset/user fingerprint",
+  "validation": "diagnostics. The 1:2:4:8 four-fold wCV protocol became canonical.",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "`exp_025/026`: sequence encoder and seed averaging. SEQ was valuable as an",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "EXP076–EXP089 audited validation transport, forward stacking, level effects,",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: scores and history survive, but the external geometry workspace scripts are not in this repository",
+  "notes": "Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.",
+  "preserved_document": "README.md"
+}

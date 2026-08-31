@@ -1,0 +1,27 @@
+{
+  "catalog_id": "packaged_final__optimized_pair_blends",
+  "namespace": "packaged_final",
+  "experiment_id": "optimized_pair_blends",
+  "title": "optimized_pair_blends",
+  "kind": "pair-blend search and final-candidate generator",
+  "original_path": "research/OPTIMIZED_PAIR_BLENDS.json",
+  "source_ref": "origin/team-a final/research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "scripts/build_optimized_pair_blends.py",
+    "research/OPTIMIZED_PAIR_BLENDS.json"
+  ],
+  "commands": [],
+  "model": "blend",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "\"submission_STRONGEST_CURRENT.csv\": 1.6496571902356205,",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the named source submissions are present",
+  "notes": "Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.",
+  "preserved_document": "README.md"
+}

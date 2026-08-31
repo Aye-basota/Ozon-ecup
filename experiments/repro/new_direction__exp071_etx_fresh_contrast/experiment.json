@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__exp071_etx_fresh_contrast",
+  "namespace": "new_direction",
+  "experiment_id": "EXP071_ETX_FRESH_CONTRAST",
+  "title": "EXP071_ETX_FRESH_CONTRAST",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP071_ETX_FRESH_CONTRAST",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP071_ETX_FRESH_CONTRAST/report.md",
+    "research/new_directions/EXP071_ETX_FRESH_CONTRAST/run_experiment.py"
+  ],
+  "commands": [],
+  "model": "dilated TCN, sequence model",
+  "features": "freshness/conditional features",
+  "validation": "## 5. Full fold and wCV metrics",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "EXTRA contributes only positive conditional-amount rows from the opposite splitmix64 user side. It never updates the ETX encoder, tokenizer, zero/nonzero probability, EXP-037 components, validation labels, eligibility, or normalization. Production status: `{\"status\": \"SKIPPED\", \"reason\": \"REJECT_PILOT\", \"rule\": \"production inference is authorized only after provisional PASS TYPE A/B\", \"public_lb_used\": false, \"submission_uploaded\": false}`. Public LB use and upload are both false.",
+  "seed": "The OOF raw file is explicitly marked `PILOT_ONLY_SEED42` after a pilot rejection. TEST and candidate artifacts are not fabricated when production is not authorized.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 19 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

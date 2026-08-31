@@ -7,7 +7,7 @@
 - **Experiment ID:** `EXP_032_S04_conditional_fresh_seq`
 - **Original source:** `experiments/EXP_032_S04_conditional_fresh_seq.md`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** experiment design/card
 - **Model:** dilated TCN, sequence model, ensemble, blend, calibration diagnostic
 - **Features:** freshness/conditional features, history-depth features

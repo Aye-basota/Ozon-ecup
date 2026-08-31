@@ -1,0 +1,28 @@
+{
+  "catalog_id": "new_direction__exp090_team_b_audit",
+  "namespace": "new_direction",
+  "experiment_id": "EXP090_TEAM_B_AUDIT",
+  "title": "EXP090 — Team-B Solution Audit",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP090_TEAM_B_AUDIT",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP090_TEAM_B_AUDIT/REPORT.md",
+    "research/new_directions/EXP090_TEAM_B_AUDIT/reproduce_team_b.py",
+    "research/new_directions/EXP090_TEAM_B_AUDIT/run_exp090.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, CatBoost, XGBoost, Ridge, distribution head, ensemble, blend",
+  "features": "calendar features, recency, freshness/conditional features, occurrence features, dataset/user fingerprint",
+  "validation": "## Leakage / validation audit",
+  "score": "Scale `1.20` and final TEST level also have public-LB lineage. `validation.py`",
+  "submission": "1. Best scored Team-B submission: exp019, LB `1.654502353530087`.",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "No row-level Team-B OOF vectors exist. The saved `exp024` grid contains only",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 13 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

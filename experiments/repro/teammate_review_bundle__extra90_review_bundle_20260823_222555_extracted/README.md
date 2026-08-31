@@ -7,7 +7,7 @@
 - **Experiment ID:** `extra90_REVIEW_BUNDLE_20260823_222555_extracted`
 - **Original source:** `пайплайн сокомандника/review_bundles/extra90_REVIEW_BUNDLE_20260823_222555_extracted/results/RUN_MANIFEST.json`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** completed teammate review run
 - **Model:** Ridge, blend
 - **Features:** 227 tabular features

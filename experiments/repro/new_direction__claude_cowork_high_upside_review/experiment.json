@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__claude_cowork_high_upside_review",
+  "namespace": "new_direction",
+  "experiment_id": "CLAUDE_COWORK_HIGH_UPSIDE_REVIEW",
+  "title": "High-upside research review — independent audit and experiment selection",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/CLAUDE_COWORK_HIGH_UPSIDE_REVIEW",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/CLAUDE_COWORK_HIGH_UPSIDE_REVIEW/ANALYSIS.md",
+    "research/new_directions/CLAUDE_COWORK_HIGH_UPSIDE_REVIEW/SELECTED_EXPERIMENT.md"
+  ],
+  "commands": [],
+  "model": "LightGBM, sequence model, BTYD, Ridge, two-part / hurdle, ensemble, blend",
+  "features": "holiday/YoY features, calendar features, recency, freshness/conditional features, funnel features, occurrence features, gap/burst features, 227 tabular features",
+  "validation": "Parity check of my own evaluator against the registered numbers: EXP-037 wCV reproduces to",
+  "score": "`−0.00108` wCV. A single new candidate at `−0.0015…−0.002` would have to be roughly twice the",
+  "submission": "`C_lgbm_exp015_regen.csv` and `submission_BTYD05.csv`, reference `last (1).csv`, mean-N metric,",
+  "seed": "`oof_projection_metrics.json`, `seed_robustness.csv`, `runtime_resources.json`,",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "twice), verify the level shift is `≈0`, then and only then add it to the incumbent TEST geometry",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: the report survives, but no experiment launcher was recoverable from this package",
+  "notes": "Directory-level audit unit: 4 files, 0 launcher/helper scripts, 2 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

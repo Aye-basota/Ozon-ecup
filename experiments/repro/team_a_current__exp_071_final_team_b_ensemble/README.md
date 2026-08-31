@@ -7,7 +7,7 @@
 - **Experiment ID:** `exp_071_final_team_b_ensemble`
 - **Original source:** `experiments/exp_071_final_team_b_ensemble.md`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** experiment card
 - **Model:** sequence model, ensemble, blend, calibration diagnostic
 - **Features:** See preserved experiment card and implementation

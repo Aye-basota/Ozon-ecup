@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__exp079_exp075_a040",
+  "namespace": "new_direction",
+  "experiment_id": "EXP079_EXP075_A040",
+  "title": "EXP079 — EXP075 A040",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP079_EXP075_A040",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP079_EXP075_A040/REPORT.md",
+    "research/new_directions/EXP079_EXP075_A040/run_exp079.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "recency, gap/burst features",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "weighted Delta RMSLE = -9.6967654023e-06",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "| max abs log-space difference | 2.6207559e-08 |",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 5 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

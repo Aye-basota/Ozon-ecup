@@ -1,0 +1,28 @@
+{
+  "catalog_id": "new_direction__exp085_competition_structure_forensic_audit",
+  "namespace": "new_direction",
+  "experiment_id": "EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT",
+  "title": "EXP085 — Competition-structure forensic audit",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT/REPORT.md",
+    "research/new_directions/EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT/run_calendar_profile.py",
+    "research/new_directions/EXP085_COMPETITION_STRUCTURE_FORENSIC_AUDIT/run_forensic_audit.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, event Transformer / ETX, BTYD, two-part / hurdle, distribution head, blend, calibration diagnostic",
+  "features": "holiday/YoY features, calendar features, recency, funnel features, occurrence features, Search/Catalog decomposition, gap/burst features, dataset/user fingerprint, window aggregates",
+  "validation": "early validation имеет только 247 дней потенциальной истории против 409 у",
+  "score": "current RMSLE                         1.646143314225527",
+  "submission": "`production_reconstruction.json`, `submission_geometry_evidence.json`;",
+  "seed": "`0.001670/0.004854 MSE`; восемь узких seed/scale twin directions дали",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "4. **Global correction:** нужен оставшийся log-level error `0.07007`; level/LB",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 16 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

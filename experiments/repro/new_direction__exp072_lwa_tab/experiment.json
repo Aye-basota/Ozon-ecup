@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__exp072_lwa_tab",
+  "namespace": "new_direction",
+  "experiment_id": "EXP072_LWA_TAB",
+  "title": "EXP072 LWA TAB — final report",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP072_LWA_TAB",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP072_LWA_TAB/report.md",
+    "research/new_directions/EXP072_LWA_TAB/run_experiment.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "holiday/YoY features, freshness/conditional features",
+  "validation": "The legal late-window conditional-amount channel does not scale in the preregistered full-capacity tabular form. Full four-fold validation, seed robustness, bootstrap analysis, OOF vector production, and all TEST inference were stopped exactly at the pilot gate.",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "CLOSE_FAMILY.** The single most informative next measurement would be a genuinely different legal late-window data channel with a preregistered matched-row control; another model, seed, round count, or feature manipulation on this same conditional-positive tabular channel is not authorized by this experiment.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 19 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

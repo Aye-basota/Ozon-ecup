@@ -7,7 +7,7 @@
 - **Experiment ID:** `e05_selection_seasonality`
 - **Original source:** `research/eda/e05_selection_seasonality.py`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** EDA experiment/script
 - **Model:** Unknown / not recoverable from repository history
 - **Features:** See preserved experiment card and implementation

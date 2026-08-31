@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__exp073_lwa_control_variate",
+  "namespace": "new_direction",
+  "experiment_id": "EXP073_LWA_CONTROL_VARIATE",
+  "title": "EXP073 — LWA FRESH−VOL Control-Variate Correction",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP073_LWA_CONTROL_VARIATE",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP073_LWA_CONTROL_VARIATE/report.md",
+    "research/new_directions/EXP073_LWA_CONTROL_VARIATE/run_experiment.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "freshness/conditional features",
+  "validation": "## Confirmation and full canonical validation",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "None documented",
+  "seed": "REJECT_HEADROOM**. Failed Stage 0 gate(s): `corr_fresh_vol, theoretical_optimal_gain`. The protocol stops before the untouched confirmation fold, seed 43, full OOF, TEST inference, and submission creation.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "The complete frozen alpha curve is in `stage0_alpha_curve.csv`; row-level parity and correction vectors are in `stage0_design_rows.parquet`.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 7 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

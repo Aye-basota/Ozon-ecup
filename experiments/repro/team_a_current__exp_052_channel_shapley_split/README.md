@@ -7,7 +7,7 @@
 - **Experiment ID:** `exp_052_channel_shapley_split`
 - **Original source:** `experiments/exp_052_channel_shapley_split.md`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** experiment card
 - **Model:** LightGBM
 - **Features:** Search/Catalog decomposition, channel Shapley, 227 tabular features

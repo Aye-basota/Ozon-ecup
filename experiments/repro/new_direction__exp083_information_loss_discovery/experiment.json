@@ -1,0 +1,28 @@
+{
+  "catalog_id": "new_direction__exp083_information_loss_discovery",
+  "namespace": "new_direction",
+  "experiment_id": "EXP083_INFORMATION_LOSS_DISCOVERY",
+  "title": "EXP083 — Information-loss / target-discovery audit",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP083_INFORMATION_LOSS_DISCOVERY",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP083_INFORMATION_LOSS_DISCOVERY/REPORT.md",
+    "research/new_directions/EXP083_INFORMATION_LOSS_DISCOVERY/run_discovery.py",
+    "research/new_directions/EXP083_INFORMATION_LOSS_DISCOVERY/run_multihorizon_heads.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, BTYD, Ridge",
+  "features": "holiday/YoY features, calendar features, recency, funnel features, Search/Catalog decomposition, channel Shapley, gap/burst features, 227 tabular features",
+  "validation": "Gate A authorized one cheap pilot. For every validation cutoff, one multi-output Ridge was trained on four historical snapshots at lags `63/49/35/21` days. The longest label is `Y14`, and its latest training target ends seven days before validation. `Y30` and production residual were never training targets.",
+  "score": "Delta RMSLE                 = +0.000301621",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "The apparent span-only result is level-mediated: once the requested strong baseline conditioning and the production span are both enforced, oracle headroom falls below `0.001`. The purged binned pilot has `rho=0.001280`, `Delta MSE=+0.018947`, CI `[+0.016725,+0.021216]`, `P(gain)=0`. Individual post-span-plus-level correlations are tiny; the strongest weighted ones are about `0.00269` for search cart rate and `0.00250` for search order share.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 17 files, 2 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,26 @@
+{
+  "catalog_id": "packaged_final__submit_orth_final",
+  "namespace": "packaged_final",
+  "experiment_id": "submit_orth_final",
+  "title": "E-CUP: обоснование сабмита SUBMIT_ORTH_FINAL.csv",
+  "kind": "ORTH final submission lineage",
+  "original_path": "research/SUBMIT_ORTH_FINAL_reasoning.md",
+  "source_ref": "origin/team-a final/research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/SUBMIT_ORTH_FINAL_reasoning.md"
+  ],
+  "commands": [],
+  "model": "Ridge",
+  "features": "calendar features, 227 tabular features",
+  "validation": "на нескольких размеченных валидационных окнах (features cutoff → известный target",
+  "score": "| Новый сабмит команды TEAM_B_B2 как источник нового направления | ортогональная энергия к спану = 0.00014 (порог диверсификации в документе — 0.20–0.30), максимальный возможный выигрыш от него −7.5×10⁻⁶ RMSLE | пренебрежимо мал, но геометрия предсказала его public-скор 1.6498443 против факта 1.6499001 — ещё одно подтверждение точности реконструкции |",
+  "submission": "`corr(z_final, z_TEAM_EB) = 0.99967` — сабмит остаётся очень близким к чемпиону,",
+  "seed": "измеряет именно новую информацию, а не переоткрывает то, что уже сидит в пуле.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "уровень и весь «инспанный» контент чемпиона не тронуты;",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: reasoning and a later interpolation launcher survive; the exact ORTH_FINAL generator is absent",
+  "notes": "Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.",
+  "preserved_document": "README.md"
+}

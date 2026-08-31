@@ -1,0 +1,30 @@
+{
+  "catalog_id": "new_direction__exp082_purged_temporal_residual",
+  "namespace": "new_direction",
+  "experiment_id": "EXP082_PURGED_TEMPORAL_RESIDUAL",
+  "title": "EXP082 — Fully Purged Temporal Residual Validation",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/code/finalize_artifacts.py",
+    "research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/code/render_report.py",
+    "research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/code/run_components.py",
+    "research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/code/run_exp082.py",
+    "research/new_directions/EXP082_PURGED_TEMPORAL_RESIDUAL/REPORT.md"
+  ],
+  "commands": [],
+  "model": "LightGBM, sequence model",
+  "features": "recency, gap/burst features, history-depth features",
+  "validation": "# EXP082 — Fully Purged Temporal Residual Validation",
+  "score": "Nested ΔMSE: **0.00149662**; nested ΔRMSLE: **0.00042651**. Cluster-bootstrap 95% CI for ΔMSE: **[0.00107916, 0.00192116]**, `P(ΔMSE < 0)=0.0000`.",
+  "submission": "None documented",
+  "seed": "Frozen composition: `0.10 CAP + 0.20 UNC + 0.25 DIST + 0.225 SEQ-S42 + 0.225 ETX-S42`. SEQ/ETX use the allowed frozen single-seed approximation; no weights or model settings were tuned.",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 44 files, 4 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

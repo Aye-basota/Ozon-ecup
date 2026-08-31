@@ -1,0 +1,29 @@
+{
+  "catalog_id": "new_direction__exp081_adversarial_bound_falsification",
+  "namespace": "new_direction",
+  "experiment_id": "EXP081_ADVERSARIAL_BOUND_FALSIFICATION",
+  "title": "EXP081 — Adversarial falsification of EXP080 `NO_EVIDENCE`",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION/finalize.py",
+    "research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION/REPORT.md",
+    "research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION/run_falsification.py",
+    "research/new_directions/EXP081_ADVERSARIAL_BOUND_FALSIFICATION/run_purged_tail.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, CatBoost, sequence model, Ridge, blend",
+  "features": "holiday/YoY features, calendar features, recency, funnel features, gap/burst features, history-depth features, dataset/user fingerprint",
+  "validation": "Фолды разнесены на 14 дней, а label horizon равен 30 дням. Поэтому residual label предыдущего",
+  "score": "current RMSLE                  1.646143314225527",
+  "submission": "None documented",
+  "seed": "38-column EXP080 basis восстановлен из primary `observable_predictions.parquet`, seed arrays,",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "The backtest is honest for cohort-level transforms and gives no evidence that TEST ranks/density",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 24 files, 3 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

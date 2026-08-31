@@ -7,7 +7,7 @@
 - **Experiment ID:** `continue_fixedstack_combo_10h`
 - **Original source:** `пайплайн сокомандника/research_scripts/continue_fixedstack_combo_10h.py`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** teammate research runner
 - **Model:** LightGBM, Ridge, two-part / hurdle, blend
 - **Features:** recency, freshness/conditional features

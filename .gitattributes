@@ -9,3 +9,8 @@ reproducibility/**/*.csv binary
 # files stay diffable, but Git must not rewrite their historical line endings.
 reproducibility/**/*.py -text
 reproducibility/**/*.json -text
+
+# Materialized implementations are forensic byte copies.  Preserve source
+# whitespace instead of treating historical trailing spaces as archive errors;
+# generated catalogue envelopes remain under normal whitespace checks.
+experiments/repro/**/implementation/** whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab

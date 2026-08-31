@@ -5,12 +5,14 @@ config/paths.local.yaml
 !.env.example
 
 # Additional local/generated payloads recovered during the exhaustive audit.
+artifacts/
 catboost_info/
 submission/
 *.zip
 weights_archives/
 пайплайн сокомандника/latest/components/
 пайплайн сокомандника/latest/*.csv
+пайплайн сокомандника/**/submissions/*.csv
 
 # Python / tooling
 __pycache__/
@@ -70,6 +72,7 @@ research/rmsle_diagnostics/*.parquet
 # Historical submission banks are inventoried by SHA; only the final lineage is
 # kept as live repository files.
 submissions/*.csv
+submissions/**/*.csv
 !submissions/submission_STRONGEST_CURRENT.csv
 !submissions/SUBMIT_EXP075_JOINT_A1_365_A2.csv
 !submissions/SUBMIT_JOINT_V2.csv

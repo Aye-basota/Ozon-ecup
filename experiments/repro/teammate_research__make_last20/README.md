@@ -7,7 +7,7 @@
 - **Experiment ID:** `make_last20`
 - **Original source:** `пайплайн сокомандника/research_scripts/make_last20.py`
 - **Source ref:** `working tree`
-- **Source commit:** `a28a71fb2d0194052014c542f36d180dfe74bcf9`
+- **Source commit:** `cdf74c77108e3b731f9ecb4f4e8f7b198cbded66`
 - **Kind:** teammate research runner
 - **Model:** ensemble, blend
 - **Features:** occurrence features

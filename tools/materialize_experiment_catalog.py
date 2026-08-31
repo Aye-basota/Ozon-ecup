@@ -489,6 +489,199 @@ def teammate_candidate_entries() -> list[tuple[Entry, str, bool]]:
     return result
 
 
+def new_direction_entries() -> list[tuple[Entry, str, bool]]:
+    """Materialize every late research/new_directions package as one experiment.
+
+    These packages landed on ``team-a`` after the first history pass.  Treat the
+    directory as the unit of provenance: reports, launchers and frozen helper
+    modules from one directory belong to the same research decision.
+    """
+    base = ROOT / "research" / "new_directions"
+    if not base.exists():
+        return []
+    result: list[tuple[Entry, str, bool]] = []
+    code_suffixes = {".py", ".sh", ".ps1"}
+    for directory in sorted((path for path in base.iterdir() if path.is_dir()), key=lambda path: path.name.lower()):
+        files = sorted(path for path in directory.rglob("*") if path.is_file())
+        reports = [
+            path for path in files
+            if path.suffix.lower() == ".md" and (
+                "report" in path.name.lower()
+                or path.name.lower() in {"analysis.md", "selected_experiment.md"}
+            )
+        ]
+        if not reports:
+            reports = [path for path in files if path.suffix.lower() == ".md"]
+        document_parts = [path.read_text(encoding="utf-8", errors="replace") for path in reports]
+        content = "\n\n---\n\n".join(document_parts)
+        if not content:
+            content = (
+                f"# {directory.name}\n\n"
+                "No narrative report survived in this package. See the frozen implementation files.\n"
+            )
+        source_paths = [
+            str(path.relative_to(ROOT)).replace("\\", "/")
+            for path in files
+            if path.suffix.lower() in code_suffixes or path in reports
+        ]
+        code_count = sum(path.suffix.lower() in code_suffixes for path in files)
+        rel = str(directory.relative_to(ROOT)).replace("\\", "/")
+        reproducibility = (
+            "FULL when the data/frozen artifacts named by the report are present"
+            if code_count
+            else "PARTIAL: the report survives, but no experiment launcher was recoverable from this package"
+        )
+        entry = build_entry(
+            namespace="new_direction", experiment_id=directory.name,
+            original_path=rel, source_ref="origin/team-a late research package",
+            source_commit=git("rev-parse", "HEAD").strip(), content=content,
+            kind="late research direction / experiment package", source_files=source_paths,
+            reproducibility=reproducibility,
+            notes=(
+                f"Directory-level audit unit: {len(files)} files, {code_count} launcher/helper scripts, "
+                f"{len(reports)} preserved report documents. Numeric claims are copied from those reports."
+            ),
+        )
+        result.append((entry, content, False))
+    return result
+
+
+def reconstructed_anniversary_entry() -> list[tuple[Entry, str, bool]]:
+    """Recover the sole primary report missing from the normal source tree."""
+    registry = ROOT / "research" / "reconstruction" / "registry" / "report_catalog.csv"
+    if not registry.exists():
+        return []
+    with registry.open(encoding="utf-8-sig", newline="") as stream:
+        rows = list(csv.DictReader(stream))
+    row = next(
+        (item for item in rows if item.get("experiment_id") == "independent_anniversary:exp_058"),
+        None,
+    )
+    if row is None:
+        return []
+    body = [
+        "# Reconstructed primary report — exp_058 EXACT-ANNIVERSARY-WINDOW", "",
+        "The original Markdown card is absent from the merged tree. The independent reconstruction "
+        "preserved its normalized primary-report row verbatim; every field is reproduced below.", "",
+        "| Registry field | Preserved value |", "|---|---|",
+    ]
+    for key, value in row.items():
+        escaped = (value or "Unknown / not recoverable from repository history").replace("|", "&#124;").replace("\n", "<br>")
+        body.append(f"| {key} | {escaped} |")
+    content = "\n".join(body) + "\n"
+    source_files = [
+        "research/reconstruction/evidence/worktree_artifacts/independent_anniversary/src/exact_anniversary.py",
+        "research/reconstruction/evidence/worktree_artifacts/independent_anniversary/src/test_exact_anniversary.py",
+    ]
+    entry = build_entry(
+        namespace="independent_anniversary", experiment_id="exp_058_exact_anniversary",
+        original_path=row.get("source_path") or "experiments/exp_058_exact_anniversary.md",
+        source_ref=row.get("source_ref") or "reconstructed linked worktree",
+        source_commit="PRIMARY_CARD_NOT_IN_MERGED_GIT; normalized row SHA256=" + (row.get("sha256") or "UNKNOWN"),
+        content=content, kind="reconstructed primary experiment report", source_files=source_files,
+        reproducibility=(
+            "PARTIAL: normalized report fields, implementation and tests survive; "
+            "the original Markdown bytes and ignored input artifacts do not"
+        ),
+        notes="Rejected experiment; no submission was created. No missing field was inferred.",
+    )
+    return [(entry, content, False)]
+
+
+def packaged_final_entries() -> list[tuple[Entry, str, bool]]:
+    """Create explicit catalogue units for late submission and blend pipelines."""
+    specs = [
+        (
+            "submit_joint86_teamb14",
+            "reproducibility/SUBMIT_JOINT86_TEAMB14/README.md",
+            [
+                "reproducibility/SUBMIT_JOINT86_TEAMB14/build_submit.py",
+                "reproducibility/SUBMIT_JOINT86_TEAMB14/create_manifest.py",
+                "scripts/reproduce_final.py",
+                "scripts/build_optimized_pair_blends.py",
+                "research/OPTIMIZED_PAIR_BLENDS.json",
+            ],
+            "packaged final submission; exact outer blend, frozen upstream anchor",
+            "FULL from frozen inputs; raw-to-JOINT_V2 remains explicitly PROVENANCE_INCOMPLETE",
+        ),
+        (
+            "submit_strongest55_teamb45",
+            "reproducibility/SUBMIT_STRONGEST55_TEAMB45/README.md",
+            [
+                "reproducibility/SUBMIT_STRONGEST55_TEAMB45/build_submit.py",
+                "reproducibility/SUBMIT_STRONGEST55_TEAMB45/verify.py",
+                "scripts/reproduce_final.py",
+                "scripts/build_optimized_pair_blends.py",
+                "research/OPTIMIZED_PAIR_BLENDS.json",
+            ],
+            "packaged final candidate; exact outer blend, frozen upstream inputs",
+            "FULL from frozen inputs; raw retraining has the limitations documented by the package",
+        ),
+        (
+            "strongest80_teamb20",
+            "research/STRONGEST80_TEAMB20.json",
+            ["scripts/build_strongest80_teamb20.py", "research/STRONGEST80_TEAMB20.json"],
+            "late pair-blend candidate",
+            "FULL when the two named source submissions are present",
+        ),
+        (
+            "optimized_pair_blends",
+            "research/OPTIMIZED_PAIR_BLENDS.json",
+            ["scripts/build_optimized_pair_blends.py", "research/OPTIMIZED_PAIR_BLENDS.json"],
+            "pair-blend search and final-candidate generator",
+            "FULL when the named source submissions are present",
+        ),
+        (
+            "final_threeway_ensemble",
+            "research/FINAL_THREEWAY_ENSEMBLE.json",
+            ["scripts/build_final_threeway_ensemble.py", "research/FINAL_THREEWAY_ENSEMBLE.json"],
+            "three-way final-candidate ensemble",
+            "FULL when the three named source submissions are present",
+        ),
+        (
+            "submit_orth_final",
+            "research/SUBMIT_ORTH_FINAL_reasoning.md",
+            [
+                "research/SUBMIT_ORTH_FINAL_reasoning.md",
+                "research/new_directions/EXP_ORTH_ROBUST_H12_INTERP/run_orth_h12_interp.py",
+            ],
+            "ORTH final submission lineage",
+            "PARTIAL: reasoning and a later interpolation launcher survive; the exact ORTH_FINAL generator is absent",
+        ),
+        (
+            "submission_geometry",
+            "docs/EXPERIMENT_HISTORY.md",
+            ["docs/EXPERIMENT_HISTORY.md"],
+            "submission-geometry research lineage",
+            "PARTIAL: scores and history survive, but the external geometry workspace scripts are not in this repository",
+        ),
+    ]
+    result: list[tuple[Entry, str, bool]] = []
+    for experiment_id, report_name, sources, kind, reproducibility in specs:
+        report = ROOT / report_name
+        if not report.exists():
+            continue
+        raw = report.read_text(encoding="utf-8", errors="replace")
+        if report.suffix.lower() == ".json":
+            try:
+                raw = json.dumps(json.loads(raw), ensure_ascii=False, indent=2)
+            except json.JSONDecodeError:
+                pass
+            content = f"# {experiment_id}\n\n```json\n{raw}\n```\n"
+        else:
+            content = raw
+        existing_sources = [path for path in sources if (ROOT / path).is_file()]
+        entry = build_entry(
+            namespace="packaged_final", experiment_id=experiment_id,
+            original_path=report_name, source_ref="origin/team-a final/research package",
+            source_commit=git("rev-parse", "HEAD").strip(), content=content,
+            kind=kind, source_files=existing_sources, reproducibility=reproducibility,
+            notes="Reported leaderboard results and forecasts are kept distinct exactly as in the preserved source.",
+        )
+        result.append((entry, content, False))
+    return result
+
+
 def script_entries() -> list[tuple[Entry, str, bool]]:
     groups: list[tuple[str, Path, str]] = []
     for path in sorted((ROOT / "research" / "eda").glob("e*.py")):
@@ -605,6 +798,9 @@ def main() -> None:
     collected.extend(historical_table_only_entries())
     collected.extend(script_entries())
     collected.extend(teammate_candidate_entries())
+    collected.extend(new_direction_entries())
+    collected.extend(reconstructed_anniversary_entry())
+    collected.extend(packaged_final_entries())
 
     unique: dict[str, tuple[Entry, str, bool]] = {}
     for item in collected:

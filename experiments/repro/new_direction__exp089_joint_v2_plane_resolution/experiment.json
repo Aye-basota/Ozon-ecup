@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__exp089_joint_v2_plane_resolution",
+  "namespace": "new_direction",
+  "experiment_id": "EXP089_JOINT_V2_PLANE_RESOLUTION",
+  "title": "EXP089 — JOINT_V2 Plane Resolution",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP089_JOINT_V2_PLANE_RESOLUTION",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP089_JOINT_V2_PLANE_RESOLUTION/REPORT.md",
+    "research/new_directions/EXP089_JOINT_V2_PLANE_RESOLUTION/run_exp089.py"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "Unknown / not recoverable from repository history",
+  "score": "predicts a diagnostic optimum at RMSLE `1.645894652126`",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "The level probe is exactly EXP075 plus a constant in log space; its centered",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 9 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

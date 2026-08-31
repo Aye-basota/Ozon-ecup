@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__exp077_forward_stack",
+  "namespace": "new_direction",
+  "experiment_id": "EXP077_FORWARD_STACK",
+  "title": "EXP077 — Forward Production Stack",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP077_FORWARD_STACK",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP077_FORWARD_STACK/REPORT.md",
+    "research/new_directions/EXP077_FORWARD_STACK/run_exp077.py"
+  ],
+  "commands": [],
+  "model": "sequence model, BTYD, Ridge, ensemble, blend",
+  "features": "holiday/YoY features, recency, freshness/conditional features, gap/burst features",
+  "validation": "| S1-E02 | TABULAR | `C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-E02.npz` | `C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\ztest_S1-UNC.npy` | 4/4: 2025-09-04,2025-09-18,2025-10-02,2025-10-16 | `C:\\Users\\Admin\\Desktop\\e-cup-research-clean\\research\\new_directions\\EXP076_STRONG_BASELINE_VALIDATION_CHANNEL\\code\\s3_build_matrix.py` |",
+  "score": "| 1_fold4_Delta_RMSLE_le_minus_0.0005 | PASS |",
+  "submission": "None documented",
+  "seed": "| S1-SEEDAVG5 | TABULAR | `C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\oof_S1-SEEDAVG5.npz` | `— (excluded from deployable fit)` | 4/4: 2025-09-04,2025-09-18,2025-10-02,2025-10-16 | `C:\\Users\\Admin\\Desktop\\OZON-E-CUP\\artifacts\\report_S1-SEEDAVG5.json` |",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 11 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

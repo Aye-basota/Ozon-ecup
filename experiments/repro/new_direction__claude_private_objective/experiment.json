@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__claude_private_objective",
+  "namespace": "new_direction",
+  "experiment_id": "CLAUDE_PRIVATE_OBJECTIVE",
+  "title": "E-CUP — аудит и выбор следующего эксперимента",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/CLAUDE_PRIVATE_OBJECTIVE",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/CLAUDE_PRIVATE_OBJECTIVE/build_private_optimal.py",
+    "research/new_directions/CLAUDE_PRIVATE_OBJECTIVE/REPORT.md"
+  ],
+  "commands": [],
+  "model": "LightGBM, sequence model, BTYD, Ridge, two-part / hurdle, calibration diagnostic",
+  "features": "holiday/YoY features, calendar features, freshness/conditional features, 227 tabular features",
+  "validation": "| wCV EXP-037 | 1.7475098627 | 1.7475098625 |",
+  "score": "Ноль обучения, один сабмит, ожидаемый Δprivate = −4.69e−05 RMSLE.",
+  "submission": "второй out-of-sample точки для калибровки τ на ортогональных направлениях — её даёт сабмит №2;",
+  "seed": "EXP074 показал утрату чекпоинтов seed-42, EXP071 закрыл ETX-FRESH, и любой результат",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "0.007 < |p_v| < 0.020: уровень среднего существующего направления → реализовать через α*, программу не наращивать.",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 2 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

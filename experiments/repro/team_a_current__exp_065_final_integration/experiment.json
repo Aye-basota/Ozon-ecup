@@ -6,7 +6,7 @@
   "kind": "experiment card",
   "original_path": "experiments/exp_065_final_integration.md",
   "source_ref": "working tree",
-  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
   "source_files": [
     "src/config.py",
     "src/data.py",

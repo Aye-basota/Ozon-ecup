@@ -1,0 +1,27 @@
+{
+  "catalog_id": "independent_anniversary__exp_058_exact_anniversary",
+  "namespace": "independent_anniversary",
+  "experiment_id": "exp_058_exact_anniversary",
+  "title": "Reconstructed primary report — exp_058 EXACT-ANNIVERSARY-WINDOW",
+  "kind": "reconstructed primary experiment report",
+  "original_path": "experiments/exp_058_exact_anniversary.md",
+  "source_ref": "LINKED_WORKTREE:exp/058-exact-anniversary",
+  "source_commit": "PRIMARY_CARD_NOT_IN_MERGED_GIT; normalized row SHA256=ef7120958e4609afc702dbb778085b8349b7790e2d16659e270e44b681ab21b9",
+  "source_files": [
+    "research/reconstruction/evidence/worktree_artifacts/independent_anniversary/src/exact_anniversary.py",
+    "research/reconstruction/evidence/worktree_artifacts/independent_anniversary/src/test_exact_anniversary.py"
+  ],
+  "commands": [],
+  "model": "Ridge",
+  "features": "calendar features",
+  "validation": "| interpretation_reported | **REJECT.** REAL выглядит полезнее baseline и shuffled, но exact calendar<br>alignment не подтверждён: same-family shifted old window сильнее REAL на обеих<br>половинах. Значит измеренный gain нельзя приписать exact anniversary; он<br>совместим с дополнительной old-history capacity/persistent user level и с<br>разной поддержкой pre-window scale denominators. По preregistered stop-rule<br>окна, Ridge alpha и shrink не тюнились.<br><br>- `ORDINARY TEMPORAL CV: unavailab",
+  "score": "Unknown / not recoverable from repository history",
+  "submission": "| interpretation_reported | **REJECT.** REAL выглядит полезнее baseline и shuffled, но exact calendar<br>alignment не подтверждён: same-family shifted old window сильнее REAL на обеих<br>половинах. Значит измеренный gain нельзя приписать exact anniversary; он<br>совместим с дополнительной old-history capacity/persistent user level и с<br>разной поддержкой pre-window scale denominators. По preregistered stop-rule<br>окна, Ridge alpha и shrink не тюнились.<br><br>- `ORDINARY TEMPORAL CV: unavailab",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "| interpretation_reported | **REJECT.** REAL выглядит полезнее baseline и shuffled, но exact calendar<br>alignment не подтверждён: same-family shifted old window сильнее REAL на обеих<br>половинах. Значит измеренный gain нельзя приписать exact anniversary; он<br>совместим с дополнительной old-history capacity/persistent user level и с<br>разной поддержкой pre-window scale denominators. По preregistered stop-rule<br>окна, Ridge alpha и shrink не тюнились.<br><br>- `ORDINARY TEMPORAL CV: unavailab",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: normalized report fields, implementation and tests survive; the original Markdown bytes and ignored input artifacts do not",
+  "notes": "Rejected experiment; no submission was created. No missing field was inferred.",
+  "preserved_document": "README.md"
+}

@@ -1,0 +1,27 @@
+{
+  "catalog_id": "new_direction__claude_public_ceiling",
+  "namespace": "new_direction",
+  "experiment_id": "CLAUDE_PUBLIC_CEILING",
+  "title": "Потолок публичного лидерборда",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/CLAUDE_PUBLIC_CEILING",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/CLAUDE_PUBLIC_CEILING/build_public_eb.py",
+    "research/new_directions/CLAUDE_PUBLIC_CEILING/REPORT2.md"
+  ],
+  "commands": [],
+  "model": "LightGBM, calibration diagnostic",
+  "features": "holiday/YoY features, calendar features, freshness/conditional features, 227 tabular features",
+  "validation": "Обучение оправдано только если ожидаемое a нового направления заметно больше нуля — иначе E[q_P²] = 8.70e−05 достигается любым ортогональным вектором вообще без обучения, и тратить на это часы бессмысленно. Измеренный перенос офлайн→тест τ̂ = 0.076 ± 0.046 означает, что OOF не даёт права ожидать большого a ни для какой модели, отобранной по wCV.",
+  "score": "FACT SUBMIT_PRIVATE_OPTIMAL.csv → 1.6468136172663015. Прогноз был 1.6470304 ± 0.000068. Невязка −2.168e−04 RMSLE = −3.19σ. По моему же критерию это выход за 3σ-окно — то есть предыдущая модель провалила собственную калибровку, хоть и в благоприятную сторону.",
+  "submission": "Все числа пересчитаны в этой сессии из submission_geometry/cache/Z.npz (67×250 000), scores/submissions.csv, SUBMIT_NEXT_BEST.csv, SUBMIT_v2_shrunk.csv и нового факта SUBMIT_PRIVATE_OPTIMAL → 1.6468136172663015. Геометрия воспроизведена независимо: ранг 58, R = 2.7199201, остаток OLS 4.23e−06, ‖p̂‖² = 0.0113332. Файлы существующих экспериментов не изменялись. Предыдущий отчёт (Приватная переоценка E-CUP) остаётся аудиторской записью прогноза, сделанного до этого измерения; его §3 о потолке внутр",
+  "seed": "| модель| LightGBM regression на log1p(y30), блок config/competition.yaml:lightgbm, 400 раундов, seed 42, deterministic",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "Ожидаемый путь. Сабмит 1 даёт 1.64625. Сабмиты 2–7 доводят примерно до 1.64604. Дальше каждый ортогональный зонд добавляет 2.6e−05 RMSLE и больше, если направление несёт сигнал. Чтобы дойти до 1.64495, нужно ещё 4.28e−03 MSE — при самом благоприятном реалистичном качестве направлений это 3–5 новых взаимно ортогональных моделей уровня лучших за всю историю проекта плюс по зонду на каждую. PREDICTION вероятность достичь 1.64495 в оставшемся бюджете сабмитов — низкая; вероятность достичь 1.6460–1.6",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 2 files, 1 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

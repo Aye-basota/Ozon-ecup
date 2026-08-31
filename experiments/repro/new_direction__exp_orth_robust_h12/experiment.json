@@ -1,0 +1,26 @@
+{
+  "catalog_id": "new_direction__exp_orth_robust_h12",
+  "namespace": "new_direction",
+  "experiment_id": "EXP_ORTH_ROBUST_H12",
+  "title": "EXP ORTH-ROBUST H12",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP_ORTH_ROBUST_H12",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP_ORTH_ROBUST_H12/REPORT.md"
+  ],
+  "commands": [],
+  "model": "Unknown / not recoverable from repository history",
+  "features": "See preserved experiment card and implementation",
+  "validation": "## Forward validation",
+  "score": "| `Delta RMSLE = LB_h21 - LB_anchor` | `-0.000055980023302` |",
+  "submission": "Searched the clean repository, `OZON-E-CUP`, `submission_geometry_research`,",
+  "seed": "`reason = exact five-member averaged predictions, per-model configs/seeds,",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "None documented",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "PARTIAL: the report survives, but no experiment launcher was recoverable from this package",
+  "notes": "Directory-level audit unit: 1 files, 0 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

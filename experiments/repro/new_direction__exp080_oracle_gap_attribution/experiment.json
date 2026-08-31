@@ -1,0 +1,29 @@
+{
+  "catalog_id": "new_direction__exp080_oracle_gap_attribution",
+  "namespace": "new_direction",
+  "experiment_id": "EXP080_ORACLE_GAP_ATTRIBUTION",
+  "title": "EXP080 — Mathematical gap attribution",
+  "kind": "late research direction / experiment package",
+  "original_path": "research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION",
+  "source_ref": "origin/team-a late research package",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
+  "source_files": [
+    "research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION/finalize.py",
+    "research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION/REPORT.md",
+    "research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION/run_observable.py",
+    "research/new_directions/EXP080_ORACLE_GAP_ATTRIBUTION/run_oracle.py"
+  ],
+  "commands": [],
+  "model": "LightGBM, BTYD, Ridge, two-part / hurdle",
+  "features": "recency, freshness/conditional features, gap/burst features, 227 tabular features",
+  "validation": "На production-like historical proxy средний residual равен `+0.0590`, но по фолдам меняет знак:",
+  "score": "current RMSLE                 = 1.646143314225527",
+  "submission": "None documented",
+  "seed": "Seed from src/config.py unless the preserved card explicitly states otherwise",
+  "preprocessing": "See preserved experiment card and frozen implementation",
+  "postprocessing": "prediction hashes, fold keys, targets, projection identities и/или сохранённые fold-level моменты,",
+  "external_data": "Competition train.parquet and sample_submit.csv; additional artifacts are listed in the card",
+  "reproducibility": "FULL when the data/frozen artifacts named by the report are present",
+  "notes": "Directory-level audit unit: 23 files, 3 launcher/helper scripts, 1 preserved report documents. Numeric claims are copied from those reports.",
+  "preserved_document": "README.md"
+}

@@ -6,7 +6,7 @@
   "kind": "completed teammate review run",
   "original_path": "пайплайн сокомандника/review_bundles/fixedstack_combo10h_REVIEW_BUNDLE_20260823_054654_extracted/results/RUN_MANIFEST.json",
   "source_ref": "working tree",
-  "source_commit": "a28a71fb2d0194052014c542f36d180dfe74bcf9",
+  "source_commit": "cdf74c77108e3b731f9ecb4f4e8f7b198cbded66",
   "source_files": [],
   "commands": [],
   "model": "Ridge, two-part / hurdle",
