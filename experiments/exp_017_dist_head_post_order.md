@@ -1,7 +1,7 @@
 # exp_017 — dist head on post-order features
 
 - **Дата:** 2026-08-15
-- **Автор:** Codex
+- **Автор:** B1
 - **Коммит:** 18c3bdd
 
 ## Гипотеза
